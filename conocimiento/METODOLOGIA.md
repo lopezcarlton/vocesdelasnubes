@@ -857,3 +857,117 @@ Permanecen pendientes de consolidación o prueba:
 - validación a escala del generador vigente;
 - formalización del criterio exacto de secuenciación entre funciones;
 - pruebas de transferencia y retención.
+
+---
+
+# 12. Sesión de validación con hablantes
+
+## Propósito
+
+La sesión de validación presenta material preparado en español a un hablante nativo para que:
+
+- Valide la naturalidad y pertinencia cultural de cada expresión
+- Rechace lo que resulte intraducible o culturalmente inapropiado
+- Proponga reformulaciones cuando sea posible
+- Autorice la grabación en didxazá
+- Permita revisión posterior de la consistencia entre audio y transcripción
+
+## Estructura
+
+La sesión opera en tres fases:
+
+### Fase A: Preparación previa
+
+Material en español es preparado, organizado con identificadores claros y enviado al hablante con anticipación para lectura inicial.
+
+El hablante revisa en su tiempo, identifica problemas potenciales y llega a la sesión presencial con una comprensión preliminar.
+
+### Fase B: Sesión presencial de validación y grabación
+
+En reunión directa, el coordinador y el hablante dialogan frase por frase.
+
+El hablante explica sus decisiones:
+
+- "Esta no existe en didxazá" (rechazo definitivo)
+- "Esto suena extraño, pero podría decirse así..." (reformulación)
+- "Esto está bien" (aprobación)
+
+El coordinador **no argumenta ni defiende**. Su función es escuchar, registrar y ejecutar.
+
+Solo las frases aprobadas o reformuladas se graban en didxazá. El hablante produce mínimo dos tomas de cada una.
+
+### Fase C: Revisión posterior
+
+Semanas después, el coordinador escucha el material grabado como si fuera un estudiante.
+
+Objetivo: detectar si la traducción inicial en español corresponde realmente a lo que se grabó en didxazá.
+
+Si hay discrepancias (traducción demasiado literal, imprecisiones), se prepara una versión en español más natural y se regrabación ese español de referencia.
+
+## Principios metodológicos
+
+**1. El hablante es autoridad lingüística y cultural**
+
+No el coordinador, no la bibliografía, no la intuición del diseñador.
+
+Las decisiones del hablante son finales dentro de su ámbito: naturalidad, pertinencia, existencia de una expresión.
+
+**2. Lo intraducible se rechaza sin reformulación**
+
+Si el hablante dice "esto no existe en didxazá", no existe. No se reformula.
+
+**3. Las reformulaciones las propone el hablante**
+
+Si el hablante propone una alternativa, se usa esa. Si no propone alternativa, se rechaza la frase.
+
+**4. Se documenta cada decisión**
+
+Cada frase recibe un estado: ✓ (aprobada), ✗ (rechazada con motivo), → (reformulada).
+
+Este registro permite reconstruir por qué el corpus final contiene lo que contiene.
+
+**5. El audio grabado es la fuente primaria**
+
+La escritura es secundaria. Si hay conflicto entre lo que está escrito y lo que se grabó, prevalece lo grabado.
+
+La audición crítica posterior (Fase C) existe precisamente para detectar esos conflictos.
+
+**6. La traducción puede cambiar después de la grabación**
+
+No es un fracaso. Es parte del proceso.
+
+La versión inicial en español puede ser demasiado literal. Después de escuchar la pronunciación del hablante nativo, se ajusta a algo más natural que sigue siendo fiel.
+
+## Roles
+
+**Hablante nativo:**
+
+- Valida naturalidad y pertinencia cultural
+- Explica decisiones de rechazo
+- Propone reformulaciones
+- Produce grabaciones en didxazá
+- Puede validar léxico (si aplica)
+
+**Coordinador:**
+
+- Prepara material en español
+- Registra decisiones del hablante
+- Dirige técnicamente la grabación
+- Realiza audición crítica posterior
+- Prepara regrabaciones en español si es necesario
+
+## Productos esperados
+
+Después de completar las tres fases:
+
+1. **Frases validadas** — documentadas en hoja de cálculo con estado final (aprobada/rechazada/reformulada)
+2. **Audio en didxazá** — grabaciones de todas las frases aprobadas/reformuladas, mínimo 2 tomas por frase
+3. **Registro de cambios** — documento que especifica qué frases fueron rechazadas (y por qué), cuáles fueron reformuladas y cuáles necesitaron regrabación en español
+4. **Audio en español ajustado** — si aplica, versiones mejoradas de la referencia en español
+5. **Inventario léxico validado** — si el proyecto mantiene un inventario, este ha sido revisado y validado por el hablante
+
+## Notas operativas
+
+Esta descripción captura los principios metodológicos. Los detalles operativos — duración de sesiones, medio de envío, software de edición, número exacto de tomas, número de días de anticipación — pueden variar según contexto, hablante y disponibilidad sin que cambien los principios.
+
+La sesión ha sido elaborada a partir de evidencia obtenida durante las primeras sesiones del proyecto. Se espera que evolucione conforme participen más hablantes y nuevas prácticas emerjan del trabajo real.
