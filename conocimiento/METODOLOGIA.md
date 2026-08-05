@@ -971,3 +971,91 @@ Después de completar las tres fases:
 Esta descripción captura los principios metodológicos. Los detalles operativos — duración de sesiones, medio de envío, software de edición, número exacto de tomas, número de días de anticipación — pueden variar según contexto, hablante y disponibilidad sin que cambien los principios.
 
 La sesión ha sido elaborada a partir de evidencia obtenida durante las primeras sesiones del proyecto. Se espera que evolucione conforme participen más hablantes y nuevas prácticas emerjan del trabajo real.
+
+---
+
+# 13. Comunicación e informes
+
+## Principios de documentación de decisiones
+
+Todas las decisiones del proyecto deben documentarse con esta estructura:
+
+1. **Decisión** — Qué se decidió, de forma clara
+2. **Porque** — Fundamentación (evidencia, experiencia, teoría)
+3. **Validado por** — Quién tiene autoridad para esa decisión (hablante, especialista, coordinador)
+4. **Aplicar a** — Alcance e impacto (qué se ve afectado)
+5. **Conflictúa con** — Qué alternativas se rechazaron y por qué
+6. **Causa/depende de** — Trazabilidad: qué la originó, qué causa después, de qué depende
+7. **Status** — Estado actual (Firmemente decidida / Abierta a revisión / Pendiente)
+8. **Notas** — Observaciones adicionales, limitaciones, cambios futuro posibles
+
+Si una decisión no fue validada, esto debe registrarse explícitamente: "Validación pendiente" o "No consta validación".
+
+## Informes mensuales / bimestrales
+
+Los informes que comunican resultados al exterior deben seguir estas reglas:
+
+### Estructura esperada
+
+1. **Resumen** — Párrafo que sintetiza el período (qué se logró, qué se aprendió)
+2. **Presentación del período** — Contexto, preguntas que surgieron, hallazgos principales
+3. **Informe de actividades** — Descripción de trabajo realizado, participantes, decisiones tomadas
+4. **Informe de lectura/investigación** (si aplica) — Bibliografía revisada, aportes a las decisiones del proyecto
+5. **Aprendizajes del período** — Reflexión sobre lo que quedó validado, lo que sorprendió, lo que cambió metodológicamente
+6. **Actualización del cronograma** (si hay cambios)
+
+### Reglas de contenido
+
+**No mencionar herramientas de IA o generadores automáticos**
+
+- Aunque internamente se use un modelo para generar borradores, los informes no lo explicitan
+- Los borradores son insumo del proceso, no son conocimiento documentable del proyecto
+
+**Hablar del propio aprendizaje como dato válido**
+
+- Si Emiliano experimenta algo al intentar aprender la lengua, eso es evidencia legítima
+- Ejemplo: "Descubrí escuchando [material]..." es un punto de partida para investigación
+
+**Los hallazgos emergen del trabajo, no de la especulación**
+
+- No proponer lo que "podría" ocurrir
+- Solo documentar lo que realmente ocurrió
+- Las decisiones de hablantes se registran sin defensas: si Vicente rechazó una frase, basta decirlo
+
+**Bibliografía como fundamentación, no reemplazo**
+
+- "Más que modificar el rumbo, estas lecturas permitieron explicar y fundamentar decisiones que ya habían comenzado a consolidarse"
+- La evidencia de campo y la voz de hablantes tienen prioridad sobre la teoría
+
+**Distinguir autoridades por tipo de decisión**
+
+- Decisiones técnicas (audio, formato, exportación): Emiliano valida
+- Decisiones lingüísticas (naturalidad, significado, ortografía): Hablante valida
+- Decisiones pedagógicas (progresión, ordenamiento): Emiliano + revisión de especialista cuando sea posible
+- Decisiones culturales (pertinencia, respeto): Hablante y comunidad validan
+
+**Evitar que la relación con hablantes parezca extractiva**
+
+- No decir: "El hablante nos proporcionó datos"
+- Decir: "El hablante validó el corpus mediante una sesión colaborativa"
+- Presentar participación como construcción conjunta, no como recolección
+
+**Separación clara entre actividades y reflexión**
+
+- Una sección para qué se hizo (responsables, fechas, participantes)
+- Una sección separada para qué se aprendió (validaciones, cambios metodológicos, sorpresas)
+
+### Tono
+
+- Directo y sin artificios
+- Honesto sobre lo que no se sabe o está pendiente
+- Reconocimiento explícito de autoridades (hablante, especialista) en sus ámbitos
+- Evitar sobrevender el proyecto; reportar el estado real
+
+### Qué evitar
+
+- Mencionar herramientas de IA o procesos automáticos
+- Atribuir decisiones a Emiliano cuando las tomó un hablante
+- Generalizar una preferencia de un hablante como norma universal sin aclaración
+- Proponer cambios metodológicos grandes sin reconocer que emergen del trabajo, no de la planeación
+- Confundir conclusiones con especulaciones
