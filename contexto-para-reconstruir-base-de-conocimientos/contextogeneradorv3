@@ -1,0 +1,127 @@
+# Iteración del prompt generador de corpus dramatúrgico (Voces de las Nubes)
+
+---
+
+# 1. Objetivo del chat
+
+Diseñar y refinar, mediante prueba y error, un prompt que genere el corpus de conversaciones en español que servirá como base para la traducción posterior al didxazá por parte de hablantes nativos. El corpus debe tener calidad dramatúrgica (habla real, no material didáctico artificial), organizarse alrededor de 22 situaciones comunicativas y 8 bloques de vocabulario de alta frecuencia ya definidos por el usuario, y producirse en cantidad suficiente dentro de los límites de una sola respuesta.
+
+El chat partió de un prompt inicial con salida estructurada en JSON y medición cuantitativa de frecuencia léxica, y terminó migrando a un enfoque de texto plano con control cualitativo, tras detectar que el formato original no era ejecutable dentro de los límites de salida de un modelo.
+
+---
+
+# 2. Estado inicial
+
+El usuario ya contaba con: 22 situaciones comunicativas con pasos pragmáticos detallados, y 8 bloques de vocabulario de alta frecuencia (frases generadoras, verbos, conversación doméstica, comprensión, estados físicos/emocionales, marcadores conversacionales, relaciones espaciales/temporales, preguntas fundamentales). El primer intento de prompt pedía salida JSON con metadatos, lotes de 50 conversaciones y un módulo de reporte de frecuencia cada 50 conversaciones, además de generar el diálogo bilingüe (didxazá + español).
+
+---
+
+# 3. Decisiones adoptadas
+
+- **Decisión:** el corpus se genera únicamente en español; el modelo no produce didxazá bajo ninguna circunstancia.
+  **Justificación:** la traducción al didxazá la hará un hablante nativo posteriormente.
+  **Consecuencias:** se eliminaron todos los campos y menciones a ortografía del didxazá del prompt.
+
+- **Decisión:** se elimina la salida en JSON y el módulo de medición cuantitativa de frecuencia; el formato de salida es texto plano.
+  **Justificación:** la combinación de JSON + metadatos + reporte de frecuencia por lotes de 50 superaba el límite de salida de una sola respuesta, haciendo la tarea inejecutable.
+  **Consecuencias:** el control de reutilización léxica pasó de ser cuantitativo (conteo, porcentajes) a cualitativo (guía de comportamiento sin verificación automática).
+
+- **Decisión:** los pasos pragmáticos listados en cada situación se tratan como inventario disponible, no como checklist obligatorio; saludo y despedida solo aparecen cuando la escena concreta los requiere.
+  **Justificación:** la repetición excesiva de saludos y despedidas se diagnosticó como un problema del diseño de las situaciones (que listan "Saludar" y "Despedirse" como primer y último paso) combinado con que el prompt las trataba como guion literal.
+  **Consecuencias:** se añadieron reglas de variación forzada en aperturas y cierres, con tope de repetición literal de fórmulas.
+
+- **Decisión:** cada conversación debe tener mínimo 20 líneas de diálogo, logradas mediante turnos naturales, nunca mediante relleno o alargamiento artificial de líneas.
+  **Justificación:** requerimiento explícito del usuario de interacciones más largas.
+  **Consecuencias:** se abandonó la meta previa de "50 conversaciones por mensaje" como cuota fija, priorizando conversaciones completas sobre cantidad.
+
+- **Decisión:** el criterio organizador de complejidad lingüística es "productividad de patrón" (mostrar un mismo patrón ya sembrado en 2-3 contextos distintos dentro de la misma escena), no un tope rígido de palabras o prohibición de subordinadas.
+  **Justificación:** un primer ajuste con tope duro de palabras y prohibición de subordinadas produjo texto robótico tipo drill de pregunta-respuesta; el nivel intermedio no deseado en el punto anterior tampoco se resolvía solo con restricciones de longitud.
+  **Consecuencias:** se permite coordinación simple ("y", "pero", "porque") entre patrones ya conocidos; se prohíbe únicamente introducir un patrón sintáctico nuevo no derivado de los bloques.
+
+- **Decisión:** un subconjunto básico de marcadores conversacionales (bloque_6: "ajá", "a ver", "pues", "oye", "¿verdad?", etc.) está disponible desde criterio_1, sin esperar a la habilitación formal del bloque.
+  **Justificación:** se identificaron como pegamento pragmático, no vocabulario de contenido nuevo; su ausencia en criterios tempranos contribuía a que el diálogo sonara a drill.
+  **Consecuencias:** excepción explícita a la regla de progresión de criterios por bloques.
+
+- **Decisión:** se añadió una regla anti-ping-pong: no más de 3 turnos consecutivos de pregunta-respuesta limpia; se debe romper con eco, duda/autocorrección o turnos asimétricos.
+  **Justificación:** ejemplo de salida real mostró un patrón de alternancia perfecta pregunta-respuesta que sonaba antinatural pese a cumplir el resto de las reglas.
+  **Consecuencias:** se añadió también la instrucción de entretejer la textura emocional de un personaje a lo largo de la escena, no como línea aislada al final.
+
+- **Decisión:** balance de género 50/50 en el total de personajes del corpus, con combinaciones libres por conversación (mujer-hombre, mujer-mujer, hombre-hombre, grupos mixtos).
+  **Justificación:** requerimiento explícito del usuario.
+  **Consecuencias:** se instruye al modelo a revisar el balance acumulado del mensaje antes de asignar género a cada personaje nuevo.
+
+- **Decisión:** la progresión de complejidad temática usa 8 criterios secuenciales (`criterio_1` a `criterio_7`) que habilitan progresivamente los 8 bloques léxicos, y `criterio_8` en adelante permite combinación libre.
+  **Justificación:** resolver la ambigüedad de "criterio i+1" del prompt original, que no estaba definido.
+  **Consecuencias:** las conversaciones del corpus se reparten proporcionalmente entre criterios.
+
+---
+
+# 4. Hallazgos
+
+- La repetición excesiva de saludos/despedidas no era principalmente un problema del prompt de generación, sino del diseño de las `<situaciones>`, que listan "Saludar" y "Despedirse" como pasos numerados fijos.
+- Un tope rígido de longitud/complejidad sintáctica (máximo de palabras, prohibición de subordinadas) produce texto que se percibe como robótico, no como principiante natural.
+- La ausencia de marcadores conversacionales de pegamento pragmático (independientemente del vocabulario de contenido correcto) es suficiente para que un diálogo se perciba como drill de manual.
+- Instruir "añade textura y digresiones" para alcanzar una cuota de longitud tiende a elevar la complejidad sintáctica hacia un nivel intermedio no deseado; instruir "más turnos, no turnos más largos" no fue suficiente por sí solo y requirió además el criterio de productividad de patrón.
+- Un formato de salida con JSON + metadatos + reporte de frecuencia por lotes de 50 no es ejecutable en una sola respuesta por límite de longitud de salida del modelo.
+
+---
+
+# 5. Cambios metodológicos
+
+- **Qué cambió:** el mecanismo de control de calidad léxica pasó de cuantitativo (JSON con campos `vocabulario_clave`, conteos por lote de 50, porcentajes 80/20) a cualitativo (instrucciones de comportamiento sin verificación automática).
+  **Por qué:** el mecanismo cuantitativo hacía inviable generar el corpus dentro del límite de salida de una respuesta.
+  **Qué reemplaza:** al eliminarse la medición, el usuario pierde por ahora la capacidad de verificar objetivamente qué tan reforzado está el vocabulario inicial; la reutilización léxica depende de que el modelo siga la guía cualitativa de forma consistente.
+
+- **Qué cambió:** el criterio organizador de nivel de dificultad pasó de "restricción de longitud/sintaxis" a "productividad de patrón" (mismo patrón, distintos contextos).
+  **Por qué:** la restricción rígida generaba texto antinatural en ambas direcciones (muy simple o muy elaborado) sin lograr el punto pedagógico intermedio buscado.
+  **Qué reemplaza:** sustituye al tope de palabras y a la prohibición genérica de subordinadas.
+
+---
+
+# 6. Validaciones
+
+No consta en este chat. Ninguna versión del prompt ni del material generado fue validada por un hablante nativo (Vicente, Vidal, Laura) ni por el padre del usuario durante esta conversación; las correcciones se basaron en la evaluación directa del usuario sobre las muestras de salida.
+
+---
+
+# 7. Bibliografía y fuentes utilizadas
+
+No consta en este chat.
+
+---
+
+# 8. Productos generados
+
+- `prompt_corpus_didxaza.md` — primera versión del prompt (con JSON y generación bilingüe).
+- `prompt_corpus_didxaza_v2.md` — segunda versión (progresión de criterios definida, control de reutilización léxica cuantificado, continuidad entre respuestas, aún en JSON y bilingüe).
+- `prompt_corpus_didxaza_v3.md` — versión vigente: texto plano, solo español, criterio de productividad de patrón, marcadores conversacionales liberados desde criterio_1, regla anti-ping-pong, balance de género 50/50. Este es el archivo activo para uso futuro.
+
+---
+
+# 9. Trabajo pendiente
+
+- Ejecutar el prompt `v3` con el listado real completo de las 22 situaciones y los 8 bloques léxicos para generar una muestra grande y evaluar si el balance de género, la variedad de aperturas/cierres, el criterio de productividad de patrón y la regla anti-ping-pong funcionan como se espera a escala.
+- Definir el número total de conversaciones objetivo para el corpus completo (campo no definido en la versión vigente).
+- Evaluar si, tras probar a escala, hace falta reintroducir algún mecanismo de medición de frecuencia léxica (aunque sea manual o externo al prompt) para verificar objetivamente el refuerzo de vocabulario.
+
+---
+
+# 10. Riesgos o limitaciones
+
+- El control de reutilización léxica y de balance de género es puramente cualitativo (instructivo), sin mecanismo de verificación automática dentro del propio proceso de generación; su cumplimiento depende de la consistencia del modelo a lo largo de una respuesta larga.
+- Los ajustes del prompt se hicieron sobre muestras pequeñas (una conversación de ejemplo en el caso del ajuste anti-ping-pong); no se ha probado el comportamiento del prompt en una generación grande y continua.
+- Persiste una tensión estructural entre "generar muchas conversaciones" y "conversaciones largas y de alta calidad dramatúrgica" impuesta por el límite de longitud de salida de una sola respuesta; se resolvió priorizando calidad y conversaciones completas sobre cantidad fija, pero el límite de fondo no desaparece.
+
+---
+
+# 11. Conflictos detectados
+
+- Tensión entre la instrucción original de producir "cientos de conversaciones" en un solo comando y el límite real de longitud de salida de una respuesta del modelo. No se resolvió el conflicto de fondo; se mitigó cambiando la métrica de éxito de "cantidad fija" a "conversaciones completas de calidad".
+
+---
+
+# 12. Información insuficiente
+
+No consta en este chat el número total de conversaciones objetivo para el corpus completo.
+
+No consta en este chat qué sistema de ortografía se usará para el didxazá (el campo se eliminó del prompt al decidir que el modelo no genera didxazá).
