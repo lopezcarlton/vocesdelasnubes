@@ -1,0 +1,39 @@
+# Puente de sesión — Generador de corpus dramatúrgico (español → didxazá)
+
+## Contexto
+Proyecto: prompt que genera conversaciones dramatúrgicas en español de Oaxaca/Istmo para un corpus que luego un hablante nativo traduce a didxazá. El prompt (motor) se apoya en dos archivos de datos externos: `corpus_v2.txt` (banco de situaciones con pasos etiquetados por nivel gramatical G1-G5 y pragmático P1-P5) y `lexico_v2.txt` (vocabulario rotativo). Ambos archivos no se modificaron en esta sesión, solo se consultaron.
+
+## Estado actual (decisión vigente)
+Versión congelada: **`prompt_generador_corpus_v7.md`** (entregado en outputs). Sustituye a v5 y v6, que quedan obsoletas — no usar.
+
+Arquitectura de tres capas:
+- Capa 1 (Motor) = el prompt v7, estable.
+- Capa 2 (Datos) = `corpus_v2.txt` + `lexico_v2.txt`, se actualizan sin tocar el prompt.
+- Capa 3 (Tarea) = bloque que un pipeline externo debe anteponer a cada solicitud de generación, con situación/patrón/léxico/personajes/saludo ya resueltos por conversación. Si un campo llega vacío, el motor decide con la regla de Selección interna, pero solo dentro del mismo mensaje (no recuerda entre mensajes).
+
+Cambios acumulados de v5 a v7:
+- Historial y balance estadístico dejaron de ser responsabilidad del modelo; se movieron al bloque TAREA (pipeline externo).
+- Se agregó jerarquía de prioridades: naturalidad > gramática (G) > pragmática (P) > lo indicado por TAREA > balance residual.
+- Se definió "patrón" en sentido estricto: estructura sintáctica (tipo de complementación/cláusula/negación), no verbo ni tema. "Quiero agua" / "quiero comprar agua" / "quiero que venga" son tres patrones distintos.
+- Se añadió techo del 33% para conversaciones que abren con saludo o cierran con despedida/agradecimiento verbalizados (excepto funeral y vela, donde sí son socialmente reales).
+- Se consolidaron reglas negativas dispersas en una sola lista final ("Reglas duras"), eliminando duplicados.
+- Se conservó una sola ancla concreta de ritmo dramático (límite de turnos de pregunta-respuesta consecutiva limpia); el resto del control de ritmo quedó como principio general, no checklist.
+
+## Validaciones que ocurrieron
+- Se leyó `corpus_v2.txt` completo (48 situaciones). Se confirmó con grep que "Saludar", "Despedirse" o "Agradecer" aparecen 52 veces — presentes en prácticamente todas las situaciones. Esto valida la observación del usuario de que el corpus sobrerrepresenta fórmulas sociales fijas, y justifica el techo del 33% agregado en v6/v7.
+- No se generó todavía ningún lote real de conversaciones con v7; el techo del 33% y el resto de reglas están definidas pero no probadas contra output real.
+
+## Descartado (no reproponer sin nueva justificación)
+- Checklist obligatorio de 8 "beats" dramáticos por escena (acción/pregunta/reacción/comentario/silencio/cambio de tema/microconflicto/resolución) — se descartó por riesgo de producir escenas mecánicas. Quedó como principio general con una sola ancla concreta, no como lista a cumplir.
+- Que el modelo interprete y rankee "déficits de cobertura" numéricos dentro del bloque TAREA — se descartó; el pipeline debe entregar la decisión ya tomada (fila por conversación), no datos crudos para que el modelo decida.
+- Eliminar toda microdirección de ritmo y dejar solo "alterna de forma natural" (propuesta de ChatGPT) — se descartó parcialmente: se mantuvo el límite de turnos P-R consecutivos porque es un tic documentado de los modelos generando diálogo.
+
+## Pendiente vigente
+- **Controlador/pipeline externo real**: selector de situaciones, balanceador de léxico, historial de patrones y personajes, cálculo determinista de cobertura, generación automática del bloque TAREA. Decisión explícita del usuario: no se construye todavía; se retoma como proyecto aparte cuando lo pida.
+- Sin ese controlador, cada lote de generación sigue dependiendo de que alguien complete manualmente (o deje vacío) el bloque TAREA de v7.
+- Falta correr un lote real con v7 y verificar en la práctica el techo de saludo/despedida (33%) y la regla de economía del habla.
+
+## Archivos de esta sesión
+- `prompt_generador_corpus_v7.md` — vigente, en outputs.
+- `prompt_generador_corpus_v6.md` — obsoleto, conservado solo como historial de cambios.
+- `corpus_v2.txt`, `lexico_v2.txt` — sin cambios, solo consultados.
