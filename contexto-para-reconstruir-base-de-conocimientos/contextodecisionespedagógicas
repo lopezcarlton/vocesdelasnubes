@@ -1,0 +1,62 @@
+# Contexto generado — Modularización del prompt generador de corpus dramatúrgico en español (v4)
+
+## 1. Objetivo del trabajo
+
+Evaluar la eficiencia estructural del prompt generador de corpus en español (v4, integrado con la secuencia gramatical COR002) tras varias rondas de expansión (situaciones, bloques léxicos, progresión de criterios, variables de rotación léxica, ajustes de nivel gramatical). El prompt había crecido en extensión y el coordinador del proyecto planteó la sospecha de redundancia y baja eficiencia, y solicitó una forma más modular de seguir agregando elementos (lugares, vocabulario, situaciones, pronombres, posesivos, etc.). Esta sesión quedó interrumpida antes de producir la propuesta de modularización solicitada.
+
+## 2. Decisiones finales
+
+Ninguna decisión firme se cerró en esta sesión. La consulta sobre modularización del prompt quedó sin respuesta desarrollada.
+
+## 3. Cambios realizados
+
+Ninguno en esta sesión. Ver sesiones previas (documentadas en el corpus de conversación ya generado) para el histórico de cambios acumulados sobre el prompt v4.
+
+## 4. Estado actual
+
+- El prompt generador (v4) integra: rol, especificaciones fijas, tabla de nivel estructural/meta gramatical (niveles 1-5), 24 situaciones clasificadas por nivel, 8 bloques léxicos subdivididos por subcapa estructural, progresión de 8 criterios (léxico + nivel + meta gramatical cruzados), variables léxicas de rotación obligatoria (verificadas contra el Vocabulario Zapoteco del Istmo), límite estructural para bloques de negación, regla de variedad de dinámica de personajes, y dos entradas añadidas en la última sesión (numerales de sistema vigesimal; distinción futuro vs. potencial).
+- Se han generado varias tandas de corpus en español cubriendo principalmente criterio_1 y criterio_2, más algunas conversaciones sueltas de criterio_3 (situaciones de movimiento/indicaciones/visitas) y de criterio_7 (situaciones de nivel_5: reunión, comparación, autoevaluación de aprendizaje).
+- El prompt no ha sido evaluado aún por longitud/eficiencia ni reestructurado en módulos.
+
+## 5. Pendientes
+
+**Alta prioridad**
+- Evaluar si el prompt v4 contiene redundancia y diseñar un mecanismo modular para agregar nuevos elementos (lugares, vocabulario, situaciones, pronombres personales, posesivos, etc.) sin reescribir el documento completo cada vez. Solicitado explícitamente por el coordinador; sin resolver.
+- Insertar en el prompt las dos entradas ya redactadas y aprobadas (numerales vigesimales; distinción futuro/potencial) dentro de la sección `NIVEL ESTRUCTURAL Y META GRAMATICAL`, inmediatamente después del bloque `nivel_5` y antes de las reglas de composición. (Redactadas en sesión anterior, pendiente de confirmarse si ya se aplicó al documento maestro.)
+
+**Prioridad media**
+- Continuar la generación de corpus en los criterios aún no cubiertos (criterio_3 completo, criterio_4, criterio_5, criterio_6, criterio_7 completo, criterio_8) siguiendo la progresión ya definida, en vez de asumir que falta diseño.
+- Revisar si conviene reclasificar en el prompt las líneas de estados emocionales intensos (vergüenza, asco, susto, odio) que actualmente puedan estar generándose como estativo simple (nivel_1) en tandas ya producidas, dado que estructuralmente corresponden a nivel_2 (verbo compuesto con la'dxi', correferencia obligatoria).
+
+**Baja prioridad**
+- Ninguna registrada en esta sesión.
+
+## 6. Validaciones pendientes
+
+Sin cambios respecto a validaciones ya conocidas del proyecto (léxico cultural, tono, matices de uso real) — no se generaron validaciones nuevas en esta sesión.
+
+## 7. Criterios adoptados
+
+- No se estableció ningún criterio nuevo en esta sesión.
+
+## 8. Información importante descubierta
+
+Ninguna en esta sesión.
+
+## 9. Propuestas descartadas
+
+Ninguna en esta sesión.
+
+## 10. Riesgos o problemas detectados
+
+- Riesgo de ineficiencia y posible redundancia en el prompt generador v4 debido a su extensión acumulada tras múltiples rondas de expansión (situaciones, bloques léxicos, variables de rotación, ajustes de nivel). Señalado por el coordinador, sin diagnóstico técnico aún realizado ni solución propuesta.
+- Riesgo de que agregar nuevos elementos al prompt (más lugares, vocabulario, situaciones, categorías gramaticales como pronombres personales o posesivos) mediante edición directa del documento monolítico se vuelva progresivamente más costoso y propenso a inconsistencias internas (ya se detectaron previamente inconsistencias menores entre secciones, p. ej. entre la lista léxica de estados emocionales y su nivel gramatical asignado).
+
+## 11. Documentos probablemente afectados
+
+- Documento maestro del prompt generador de corpus v4 (nombre de archivo no especificado en el chat).
+- No puede determinarse con claridad si existe un documento formal `METODOLOGIA.md`, `CORPUS.md` u otro dentro del Sistema de Conocimiento del proyecto al que esto deba integrarse; no se mencionó en esta sesión.
+
+## 12. Próximo paso recomendado
+
+Diagnosticar la estructura actual del prompt v4 para identificar qué secciones son fijas (reglas de rol, control dramatúrgico, formato de salida) y cuáles son de contenido variable/expansible (situaciones, bloques léxicos, variables de rotación, niveles gramaticales), como base para proponer una arquitectura modular que permita añadir o actualizar elementos sin reescribir el documento completo.
