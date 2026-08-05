@@ -1,0 +1,1039 @@
+ChatGPT Plus
+
+
+
+
+
+
+
+
+hoy 1:10
+
+Se ha pegado el markdown(1).md
+Archivo
+lo que estoy haciendo ahora es un markdown de contexto de cada chat que contiene voces de las nubes ya los puse en un repositorio y se los di de contexto a un proyecto de claude, ahora voy a organizar: teoría, metodología, corpus, pedagogía, etc este es el prompt 
+
+detecta como podemos mejorarlo, 
+
+
+INGESTA_PILOTO_VDlN_2026-08-05.md
+Archivo
+aqui está la respuesta, analizó solo dos archivos
+
+Resumen ejecutivo del análisis piloto
+
+He procesado dos contextos integrados (formulación inicial + diseño COR002) y producido una propuesta estructurada de ingesta de 53 entidades organizadas así:
+
+Hallazgos (12)
+
+Observaciones, interpretaciones y resultados documentados que permiten reconstruir cómo se llegó a cada decisión. Ejemplo: "Desgaste en modelo laboral anterior" → causó decisión de reincorporación estructurada.
+
+Decisiones (11)
+
+Desde reincorporación laboral (nivel institucional) hasta especificaciones técnicas de audio (nivel operativo). Todas con hallazgos que las sustentan, alternativas descartadas y condiciones de revisión.
+
+Supuestos (4)
+
+Creencias no completamente probadas que condicionan el proyecto. Ejemplo: "Herramienta digital será revitalizador efectivo" (teórico) + "Vicente estará disponible regularmente" (operativo).
+
+Principios (3)
+
+Enfoque auditivo, participación de hablantes como autoridad, documentación sistemática de decisiones.
+
+Validaciones (2)
+
+Lo que sí fue validado: aprobación institucional, participación de Vicente en COR001.
+
+Aplicaciones teóricas (5)
+
+Cómo se aplicaron Krashen, Swain, McCarty/Lee, Sallabank en decisiones concretas.
+
+Procedimientos (3)
+
+Sesión de grabación, postproducción de audio, depuración de escenas.
+
+Riesgos (3)
+
+Sobrecarga de trabajo, dependencia de colaboradores no confirmados, percepción de proyecto genérico.
+
+Preguntas abiertas (4)
+
+¿Nomenclatura de archivos? ¿Formalización de acuerdos? ¿Validez de metodología para Didxazá?
+
+Relaciones (31)
+
+Mapa completo de qué sustenta qué, qué reemplaza qué, qué cuestiona qué.
+
+Contradicciones (5)
+
+Documentadas sin resolver artificialmente (ej: urgencia vs. formalización, independencia pedagógica vs. validación lingüística).
+
+Vacíos (16)
+
+Información faltante clasificada en: fuente incompleta, atribución insuficiente, evidencia insuficiente, validación pendiente.
+
+Evaluación de la arquitectura
+
+✓ Calidad de fuente: Alta (documentación excepcional de decisiones)
+✓ Utilidad documental: Alta (reconstrucción completa posible sin regresar al chat)
+⚠ Carga de revisión humana: Media (40-50% incorporable directamente; 25-40% requiere validaciones específicas)
+✓ Recomendación: Incorporar con ciclo de validación
+
+El documento contiene todo el análisis detallado con citas específicas de cada hallazgo, justificaciones de ingesta y especificaciones de qué debe validarse y por quién.
+
+¿Hay secciones específicas que quieras revisar o discutir?
+
+
+2026-08-05_reincorporacion-y-formulacion-inicial-voces-de-las-nubes.md
+Archivo
+
+contexto_diseno_COR002_metodologia.md
+Archivo
+
+contexto_postproduccion_audio_2026-08-05.md
+Archivo
+
+reglas_sistema_fichas_bibliograficas.md
+Archivo
+
+VdlN_contexto_chat_04082026.md
+Archivo
+porque no revisas los archivos tu mismo mejor antes de que cambiemos el rumbo
+
+Creo que este puede ser uno de los documentos más importantes que hagamos.
+
+Y voy a hacer una propuesta que no habíamos explicitado: cada documento debe tener una única responsabilidad (Single Responsibility Principle). Si una sección puede moverse a otro documento sin perder sentido, probablemente nunca debió estar aquí.
+
+Con esa regla, esta sería la arquitectura que construiría.
+
+Sistema de Conocimiento — Índices Maestros
+01. METODOLOGIA.md
+Pregunta que responde
+
+¿Cómo trabaja Voces de las Nubes?
+
+Índice
+1. Propósito metodológico
+
+2. Filosofía del proyecto
+
+3. Principios metodológicos
+
+4. Flujo general de trabajo
+
+5. Diseño del proceso de aprendizaje
+
+6. Papel de cada participante
+
+7. Proceso de validación
+
+8. Control de calidad
+
+9. Evolución metodológica
+
+10. Alcances y limitaciones
+No incluye:
+
+corpus
+
+audio
+
+bibliografía
+
+teoría
+
+GitHub
+
+prompts
+
+02. CORPUS.md
+Pregunta que responde
+
+¿Cómo está diseñado el corpus?
+
+Índice
+1. Objetivo del corpus
+
+2. Unidad de diseño
+
+3. Arquitectura del corpus
+
+4. Cobertura comunicativa
+
+5. Criterios de selección
+
+6. Organización interna
+
+7. Evolución del corpus
+
+8. Estado actual
+
+9. Pendientes
+No incluye:
+
+teoría de adquisición
+
+audio
+
+validación institucional
+
+03. AUDIO.md
+Pregunta que responde
+
+¿Cómo se produce el audio?
+
+Índice
+1. Objetivo del audio
+
+2. Filosofía de producción
+
+3. Flujo de grabación
+
+4. Flujo de edición
+
+5. Estándares técnicos
+
+6. Participación de hablantes
+
+7. Control de calidad
+
+8. Publicación
+
+9. Evolución del proceso
+No incluye:
+
+corpus
+
+teoría
+
+metodología general
+
+04. PEDAGOGIA.md
+Pregunta que responde
+
+¿Por qué este sistema favorece el aprendizaje?
+
+Índice
+1. Objetivo pedagógico
+
+2. Principios de adquisición
+
+3. Papel del input
+
+4. Papel de la escucha
+
+5. Papel de la repetición
+
+6. Diseño de progresión
+
+7. Papel del error
+
+8. Papel de la producción
+
+9. Evaluación del aprendizaje
+No incluye:
+
+teoría completa
+
+bibliografía
+
+corpus
+
+05. TEORIA.md
+Pregunta que responde
+
+¿Qué fundamenta intelectualmente el proyecto?
+
+Índice
+1. Introducción
+
+2. Principales autores
+
+3. Conceptos adoptados
+
+4. Conceptos descartados
+
+5. Influencia sobre la metodología
+
+6. Influencia sobre el corpus
+
+7. Influencia sobre la pedagogía
+
+8. Temas abiertos
+No incluye:
+
+metodología detallada
+
+bibliografía completa
+
+06. BIBLIOGRAFIA.md
+Pregunta que responde
+
+¿Qué literatura utiliza el proyecto?
+
+Índice
+1. Organización
+
+2. Bibliografía fundamental
+
+3. Bibliografía metodológica
+
+4. Bibliografía lingüística
+
+5. Bibliografía pedagógica
+
+6. Bibliografía histórica
+
+7. Estado de revisión
+No explica las obras.
+
+Solo las organiza.
+
+07. VALIDACION.md
+Pregunta que responde
+
+¿Cómo se valida el conocimiento del proyecto?
+
+Índice
+1. Tipos de validación
+
+2. Validación comunitaria
+
+3. Validación lingüística
+
+4. Validación metodológica
+
+5. Validación pedagógica
+
+6. Validaciones realizadas
+
+7. Pendientes
+08. PRINCIPIOS.md
+Pregunta que responde
+
+¿Qué principios gobiernan el proyecto?
+
+Índice
+1. Principios generales
+
+2. Principios lingüísticos
+
+3. Principios pedagógicos
+
+4. Principios éticos
+
+5. Principios documentales
+No incluye procedimientos.
+
+09. DECISIONES.md
+Pregunta que responde
+
+¿Qué decisiones estructurales se han tomado?
+
+Índice
+1. Decisiones vigentes
+
+2. Decisiones históricas
+
+3. Decisiones reemplazadas
+
+4. Cambios importantes
+
+5. Decisiones pendientes
+10. GLOSARIO.md
+Pregunta que responde
+
+¿Qué significan los términos utilizados en el proyecto?
+
+No explica teoría.
+
+Solo vocabulario interno.
+
+11. BACKLOG.md
+Ya construido.
+
+Lo que más me interesa de esta arquitectura
+Creo que ningún documento explica el proyecto completo.
+
+Eso es deliberado.
+
+Cada uno responde una única pregunta.
+
+Si una sección responde otra pregunta, está en el documento equivocado.
+
+Hay una última decisión que sí creo que debemos tomar antes de empezar a consolidar
+Y esta no es abrir un frente nuevo; es una decisión que afecta directamente el trabajo que viene.
+
+¿Cuál será el "documento raíz"?
+Porque, si mañana alguien clona el repositorio, ¿qué lee primero?
+
+Yo propondría una estructura así:
+
+00_README.md
+│
+├── Sistema de Conocimiento
+│   ├── 00_ARQUITECTURA_DEL_CONOCIMIENTO.md
+│   ├── 01_JERARQUIA_DE_VERDAD.md
+│   ├── 02_BACKLOG.md
+│
+├── Conocimiento consolidado
+│   ├── METODOLOGIA.md
+│   ├── CORPUS.md
+│   ├── AUDIO.md
+│   ├── PEDAGOGIA.md
+│   ├── TEORIA.md
+│   ├── BIBLIOGRAFIA.md
+│   ├── VALIDACION.md
+│   ├── PRINCIPIOS.md
+│   ├── DECISIONES.md
+│   └── GLOSARIO.md
+│
+└── Contextos históricos
+    └── (Markdown de chats)
+Y aquí sí quiero hacer una observación crítica, porque creo que es el momento adecuado para hacerla.
+
+No estoy convencido de que necesitemos los once documentos desde el principio.
+
+Si mañana empezáramos la consolidación, yo construiría primero solo cinco:
+
+METODOLOGIA.md
+
+CORPUS.md
+
+AUDIO.md
+
+PEDAGOGIA.md
+
+TEORIA.md
+
+Durante esa consolidación aparecerá de forma natural si realmente hacen falta VALIDACION.md, PRINCIPIOS.md, DECISIONES.md o GLOSARIO.md.
+
+Eso es coherente con la disciplina que acabamos de adoptar: el sistema debe crecer cuando el trabajo lo exija, no porque podamos imaginar documentos útiles.
+
+Mi recomendación sería empezar mañana mismo con METODOLOGIA.md usando los Markdown que ya generaste. Ahí veremos si esta arquitectura resiste el primer caso real.
+
+
+este chat ya es muy largo
+
+Sí. Y creo que este es exactamente el momento para cerrarlo.
+
+No porque ya no podamos trabajar, sino porque ya cumplió su función.
+
+De hecho, si reviso objetivamente lo que logramos hoy, avanzamos mucho más de lo que parecía:
+
+Documentos aprobados
+✅ 00_ARQUITECTURA_DEL_CONOCIMIENTO.md (borrador sólido)
+
+✅ 01_JERARQUIA_DE_VERDAD.md
+
+✅ 02_BACKLOG.md
+
+Decisiones importantes
+Los Markdown de contexto no se rehacen. Son documentos de migración.
+
+El objetivo ya no es construir una ontología, sino construir los documentos definitivos.
+
+El sistema crece por necesidad, no por diseño.
+
+La unidad de construcción será un documento (METODOLOGIA.md, CORPUS.md, etc.), no una entidad.
+
+Separación clara entre:
+
+Constitución del sistema.
+
+Documentos de conocimiento.
+
+Contextos históricos.
+
+Cambio conceptual más importante
+Creo que fue este:
+
+Al principio pensábamos:
+
+Chat
+↓
+Markdown
+↓
+Base de conocimiento
+Ahora pensamos:
+
+Chat
+↓
+Markdown (documento de migración)
+↓
+Documento definitivo (Metodología, Corpus, Audio...)
+↓
+Actualizaciones futuras
+Ese cambio cambia completamente el proyecto.
+
+Lo que haría ahora
+No seguiría en este chat.
+
+Abriría uno nuevo con un objetivo único:
+
+Construir METODOLOGIA.md v1.0
+
+Y le daría exactamente:
+
+00_ARQUITECTURA_DEL_CONOCIMIENTO.md
+
+01_JERARQUIA_DE_VERDAD.md
+
+02_BACKLOG.md
+
+Los Markdown relacionados con metodología.
+
+Nada más.
+
+No volvería a discutir la arquitectura.
+
+No volvería a discutir el sistema.
+
+Ya empezamos la construcción.
+
+Creo que este es un muy buen punto de corte para este chat.
+
+
+Ejecuta el prompt
+
+
+Rol
+
+Actúa como documentalista técnico del proyecto.
+
+Tu única tarea consiste en convertir este chat completo en un documento Markdown que sirva como documento de migración hacia el Sistema de Conocimiento del proyecto.
+
+Este documento no es el Sistema de Conocimiento.
+
+Es una fuente documental que posteriormente será utilizada para construir y actualizar los documentos permanentes del proyecto.
+
+No hagas un resumen narrativo.
+
+No expliques la conversación.
+
+Extrae únicamente la información que seguirá siendo útil cuando este chat ya no exista.
+
+Piensa que este documento será leído meses después por otra IA o por un integrante nuevo del proyecto.
+
+Todo debe quedar autocontenido.
+
+Objetivo
+
+Genera un único archivo Markdown listo para guardarse dentro del repositorio del proyecto.
+
+Debe preservar todo el conocimiento permanente del chat necesario para construir o actualizar posteriormente los documentos del Sistema de Conocimiento.
+
+No intentes consolidar el conocimiento.
+
+No reorganices el proyecto.
+
+No combines información con otros documentos.
+
+Principios
+
+Prioriza información permanente sobre información circunstancial.
+
+Documenta decisiones, no debates.
+
+No repitas ideas equivalentes.
+
+Elimina completamente:
+
+saludos;
+ejemplos improvisados;
+razonamientos descartados;
+intentos fallidos;
+explicaciones repetidas;
+texto de relleno.
+
+Si durante el chat una decisión cambió varias veces:
+
+conserva únicamente la versión final;
+menciona las decisiones anteriores únicamente cuando sea importante evitar repetir el mismo error.
+
+Nunca inventes información.
+
+Si algo quedó abierto, indícalo explícitamente.
+
+No utilices conocimiento externo para completar el documento.
+
+Trabaja únicamente con el contenido del chat.
+
+Estructura obligatoria
+Título
+
+Debe describir claramente el contenido.
+
+Ejemplo:
+
+Contexto generado — Rediseño metodológico del COR002
+
+1. Objetivo del trabajo
+
+Explica brevemente:
+
+qué problema resolvió este trabajo;
+para qué parte del proyecto;
+en qué estado quedó.
+2. Decisiones finales
+
+Lista únicamente decisiones firmes.
+
+Para cada decisión indicar:
+
+qué se decidió;
+justificación;
+consecuencias cuando existan.
+
+No describas el debate.
+
+3. Cambios realizados
+
+Describe únicamente resultados.
+
+Agrupa por tema.
+
+Ejemplos:
+
+metodología;
+corpus;
+audio;
+documentación;
+prompts;
+organización;
+bibliografía;
+arquitectura;
+validación.
+4. Estado actual
+
+Responder claramente:
+
+¿Qué existe ahora?
+¿Qué quedó terminado?
+¿Qué permanece incompleto?
+5. Pendientes
+
+Registrar únicamente trabajo pendiente que siga vigente.
+
+Clasificar como:
+
+Alta prioridad
+Prioridad media
+Baja prioridad
+
+Indicar dependencias cuando existan.
+
+6. Validaciones pendientes
+
+Registrar únicamente decisiones que requieran intervención humana.
+
+Indicar exactamente qué debe validarse.
+
+No inventar validaciones.
+
+7. Criterios adoptados
+
+Documentar reglas que quedaron establecidas.
+
+Ejemplos:
+
+metodología;
+criterios editoriales;
+convenciones;
+principios de trabajo;
+estructura documental;
+reglas de validación.
+8. Información importante descubierta
+
+Registrar únicamente conocimiento nuevo que deba conservarse.
+
+No repetir información ya conocida del proyecto.
+
+9. Propuestas descartadas
+
+Registrar únicamente:
+
+propuestas rechazadas;
+enfoques abandonados;
+decisiones revertidas.
+
+Indicar el motivo cuando sea importante evitar que vuelvan a proponerse.
+
+10. Riesgos o problemas detectados
+
+Documentar únicamente riesgos reales que permanezcan vigentes.
+
+No incluir problemas ya resueltos.
+
+11. Documentos probablemente afectados
+
+Identificar qué documentos del Sistema de Conocimiento probablemente deberán actualizarse cuando este documento sea consolidado.
+
+No proponer modificaciones.
+
+No intentar consolidar.
+
+Solo listar los documentos.
+
+Ejemplos:
+
+METODOLOGIA.md
+CORPUS.md
+AUDIO.md
+PEDAGOGIA.md
+TEORIA.md
+BIBLIOGRAFIA.md
+
+Si no puede determinarse con claridad, indicarlo explícitamente.
+
+12. Próximo paso recomendado
+
+Debe ser una única acción concreta.
+
+No una lista.
+
+Debe indicar exactamente cuál debería ser el siguiente trabajo del proyecto.
+
+Alcance
+
+Este documento no debe decidir dónde quedará finalmente el conocimiento.
+
+No debe proponer la estructura del Sistema de Conocimiento.
+
+No debe fusionar información con otros documentos.
+
+Su responsabilidad termina cuando el conocimiento permanente del chat ha sido preservado de forma clara, autocontenida y listo para su posterior consolidación.
+
+Reglas de escritura
+
+Escribe directamente en Markdown.
+
+Usa encabezados H1–H3.
+
+Usa listas únicamente cuando mejoren la claridad.
+
+No escribas introducciones.
+
+No cierres con conclusiones.
+
+No escribas frases como:
+
+"Durante esta conversación..."
+"En este chat..."
+"Hemos hablado..."
+"El usuario indicó..."
+
+Escribe siempre desde la perspectiva del proyecto.
+
+El documento debe parecer documentación técnica interna del proyecto.
+
+No un resumen generado por IA.
+
+Criterios de calidad
+
+Antes de entregar el documento verifica:
+
+¿Se eliminaron todas las partes circunstanciales de la conversación?
+¿Solo permanecen decisiones finales?
+¿Las validaciones realmente ocurrieron?
+¿Las propuestas descartadas quedaron claramente identificadas?
+¿Los pendientes siguen vigentes?
+¿El documento puede entenderse sin leer el chat?
+¿Facilita la consolidación dentro del Sistema de Conocimiento?
+¿Todo el contenido está sustentado únicamente por el chat?
+
+Si alguna respuesta es negativa, corrige el documento antes de entregarlo.
+
+Regla final
+
+Este documento no es el Sistema de Conocimiento.
+
+Es un documento de migración.
+
+Su única finalidad consiste en preservar el conocimiento permanente del chat para que posteriormente pueda integrarse, con el mínimo trabajo adicional, dentro de los documentos definitivos del proyecto.
+
+Entrega únicamente el contenido del archivo Markdown.
+
+Contexto generado — Diseño del Sistema de Conocimiento y arquitectura de consolidación documental
+1. Objetivo del trabajo
+Definir la arquitectura inicial del Sistema de Conocimiento de Voces de las Nubes y establecer un flujo de trabajo que permita sustituir progresivamente los Markdown de contexto por documentación permanente organizada por temas.
+
+El trabajo concluyó con la aprobación de los primeros documentos constitucionales del sistema, la definición del papel que cumplen los Markdown existentes y la decisión de comenzar la construcción de los documentos permanentes del proyecto.
+
+2. Decisiones finales
+Se estableció una arquitectura constitucional mínima
+Decisión
+
+Construir inicialmente una constitución del Sistema de Conocimiento compuesta por:
+
+Arquitectura del Conocimiento.
+
+Jerarquía de Verdad.
+
+Backlog.
+
+Justificación
+
+Estos documentos son suficientes para comenzar la construcción del sistema sin continuar ampliando la arquitectura de forma indefinida.
+
+Consecuencia
+
+La incorporación de nuevos documentos constitucionales deberá justificarse por necesidades reales detectadas durante la consolidación.
+
+Se aprobó el documento "Jerarquía de Verdad"
+Decisión
+
+Adoptar un documento constitucional que establezca las reglas para resolver conflictos entre evidencias, autoridades y documentos.
+
+Justificación
+
+Evitar que las mismas discusiones epistemológicas se repitan durante el desarrollo del proyecto.
+
+Se aprobó el documento "Backlog"
+Decisión
+
+Mantener una única lista oficial de trabajo pendiente.
+
+Justificación
+
+Impedir la apertura constante de nuevos frentes de trabajo y controlar el alcance del proyecto.
+
+Los Markdown existentes pasan a considerarse documentos de migración
+Decisión
+
+Los Markdown generados a partir de chats dejan de entenderse como documentación definitiva.
+
+Justificación
+
+Su función consiste en preservar el conocimiento del chat para facilitar posteriormente la construcción del Sistema de Conocimiento.
+
+Consecuencia
+
+No deberán rehacerse ni regenerarse.
+
+El conocimiento se consolidará documento por documento
+Decisión
+
+La construcción del Sistema de Conocimiento se realizará creando cada documento definitivo de manera independiente.
+
+Justificación
+
+Cada documento responde una única pregunta y requiere criterios específicos de consolidación.
+
+Consecuencia
+
+No se realizará una consolidación global del repositorio.
+
+Se distinguen dos fases del sistema
+Decisión
+
+Separar claramente:
+
+construcción inicial de documentos;
+
+mantenimiento posterior mediante actualizaciones.
+
+Justificación
+
+Los documentos inexistentes requieren un proceso diferente al de los documentos ya consolidados.
+
+Los prompts futuros serán específicos para cada documento
+Decisión
+
+Abandonar la idea de un consolidado universal.
+
+Justificación
+
+La metodología, el corpus, el audio y la pedagogía requieren criterios distintos de construcción.
+
+El sistema crecerá únicamente por necesidad
+Decisión
+
+No crear nuevos documentos, reglas o convenciones mientras no exista un problema real que los haga necesarios.
+
+Justificación
+
+Evitar el diseño infinito detectado durante el desarrollo del proyecto.
+
+3. Cambios realizados
+Arquitectura
+Definición del papel constitucional de la Arquitectura del Conocimiento.
+
+Aprobación de la Jerarquía de Verdad.
+
+Aprobación del Backlog como mecanismo oficial de control del trabajo.
+
+Documentación
+Redefinición del papel de los Markdown existentes como documentos de migración.
+
+Eliminación de la necesidad de regenerar los Markdown históricos.
+
+Organización
+Separación entre construcción inicial y mantenimiento del Sistema de Conocimiento.
+
+Definición del documento como unidad básica de consolidación.
+
+Prompts
+Se abandonó el enfoque de:
+
+extracción de entidades;
+
+consolidación global;
+
+actualización del repositorio completo.
+
+Se adoptó el enfoque de:
+
+construcción dirigida de documentos permanentes.
+
+Sistema de Conocimiento
+Se propuso una colección inicial de documentos permanentes, entre ellos:
+
+METODOLOGIA.md
+
+CORPUS.md
+
+AUDIO.md
+
+PEDAGOGIA.md
+
+TEORIA.md
+
+BIBLIOGRAFIA.md
+
+Se definieron sus responsabilidades mediante índices preliminares.
+
+4. Estado actual
+Existe
+Arquitectura del Sistema de Conocimiento.
+
+Jerarquía de Verdad aprobada.
+
+Backlog aprobado.
+
+Definición conceptual del proceso de migración.
+
+Índices preliminares de los principales documentos permanentes.
+
+Terminado
+Definición del papel de los Markdown como documentos de migración.
+
+Criterios generales para iniciar la consolidación.
+
+Incompleto
+Construcción del primer documento permanente.
+
+Prompts específicos para construir cada documento definitivo.
+
+Consolidación efectiva del conocimiento contenido en los Markdown.
+
+5. Pendientes
+Alta prioridad
+Construir la primera versión de METODOLOGIA.md utilizando los Markdown relacionados.
+
+Dependencias
+Arquitectura del Sistema.
+
+Jerarquía de Verdad.
+
+Backlog.
+
+Prioridad media
+Construir los documentos permanentes restantes.
+
+Diseñar los constructores específicos para cada tipo documental.
+
+Baja prioridad
+Evaluar la necesidad real de nuevos documentos constitucionales durante la consolidación.
+
+6. Validaciones pendientes
+No se identificaron validaciones lingüísticas, comunitarias o metodológicas que requieran intervención externa.
+
+Permanece pendiente la validación editorial de los índices propuestos para los documentos permanentes durante su construcción.
+
+7. Criterios adoptados
+Arquitectura documental
+Cada documento permanente debe responder una única pregunta.
+
+Cada documento debe tener una única responsabilidad.
+
+Organización del conocimiento
+El conocimiento se consolida documento por documento.
+
+Los Markdown funcionan como evidencia histórica.
+
+Desarrollo del sistema
+El sistema debe crecer únicamente cuando el trabajo lo exija.
+
+Las reglas no deben diseñarse para problemas hipotéticos.
+
+Gestión del proyecto
+El Backlog constituye la única referencia oficial del trabajo pendiente.
+
+Los nuevos frentes de trabajo deberán registrarse antes de iniciarse.
+
+Consolidación
+La construcción inicial y el mantenimiento son procesos distintos.
+
+Los documentos inexistentes requieren un proceso de construcción, no de actualización.
+
+8. Información importante descubierta
+Los Markdown existentes ya contienen suficiente estructura para servir como documentos de migración y no necesitan rehacerse.
+
+La unidad adecuada de consolidación es el documento permanente y no el repositorio completo.
+
+La arquitectura documental debe emerger del trabajo real y no de un diseño anticipado.
+
+La construcción de los documentos permanentes puede abordarse de manera independiente utilizando únicamente los Markdown relevantes para cada uno.
+
+9. Propuestas descartadas
+Regenerar todos los Markdown de contexto
+Motivo
+
+Los documentos existentes ya cumplen adecuadamente la función de preservar el conocimiento de los chats.
+
+Construir una ontología completa antes de iniciar la consolidación
+Motivo
+
+Se detectó que retrasaba innecesariamente el inicio del trabajo documental.
+
+Consolidar todo el repositorio simultáneamente
+Motivo
+
+Incrementa la complejidad y dificulta el control editorial.
+
+Diseñar nuevos documentos constitucionales antes de comenzar la consolidación
+Motivo
+
+Se decidió que el sistema deberá crecer únicamente cuando aparezcan necesidades reales.
+
+10. Riesgos o problemas detectados
+Riesgo de volver al diseño infinito mediante la creación continua de nuevas reglas y documentos antes de iniciar la consolidación.
+
+Riesgo de mezclar responsabilidades entre documentos permanentes, provocando duplicación de conocimiento.
+
+Riesgo de tratar los Markdown como documentación definitiva en lugar de utilizarlos como fuentes de migración.
+
+11. Documentos probablemente afectados
+METODOLOGIA.md
+
+CORPUS.md
+
+AUDIO.md
+
+PEDAGOGIA.md
+
+TEORIA.md
+
+BIBLIOGRAFIA.md
+
+00_ARQUITECTURA_DEL_CONOCIMIENTO.md
+
+01_JERARQUIA_DE_VERDAD.md
+
+02_BACKLOG.md
+
+12. Próximo paso recomendado
+Construir la primera versión de METODOLOGIA.md utilizando exclusivamente los Markdown relacionados con metodología y los documentos constitucionales aprobados como marco de referencia.
+
+
