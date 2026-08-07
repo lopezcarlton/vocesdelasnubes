@@ -1,0 +1,154 @@
+# Contexto generado — Revisión del inventario de situaciones comunicativas y sistema de niveles (Voces de las Nubes)
+
+## 1. Objetivo del trabajo
+
+Se revisó el inventario completo de situaciones comunicativas usado para la generación del corpus de Voces de las Nubes, con tres objetivos:
+
+- Detectar incoherencias de formato y de nivel dentro del inventario existente (24 situaciones originales).
+- Identificar vacíos temáticos y gramaticales frente al contenido documentado en la Gramática Popular y el Vocabulario del proyecto, y proponer situaciones nuevas para cubrirlos.
+- Resolver una ambigüedad estructural en el propio sistema de niveles: la etiqueta "nivel" mezclaba complejidad gramatical y complejidad pragmática/social sin distinguirlas, lo cual generaba clasificaciones inconsistentes.
+
+El trabajo quedó en estado de propuesta completa: el inventario corregido, ampliado y reetiquetado con el nuevo sistema de doble nivel está redactado en su totalidad, pero no ha sido validado ni integrado a los documentos permanentes del proyecto.
+
+## 2. Decisiones finales
+
+**Separación del "nivel" en dos ejes independientes.**
+Se decidió que el sistema de niveles del corpus debe declarar dos ejes por separado en cada paso de cada situación, en vez de un solo número:
+- `nivel_gramatical (1–5)`: complejidad de la estructura lingüística necesaria (de fórmula fija memorizada a subordinación/condicional/cadi/posesión completa). Sigue la escala ya documentada por bloques en la Gramática Popular (Bloque 1 al 7).
+- `nivel_pragmático (1–5)`: exigencia social/discursiva del acto de habla en sí (de interacción rutinaria de bajo riesgo a negociación, mediación de conflicto, autoevaluación emocional o reflexión metalingüística).
+
+Justificación: casos como "¿Cuántos hermanos tienes?" (gramática relativamente alta — numeral + posesión completa — pero pragmáticamente una pregunta rutinaria de primer contacto) y "Vas a escuchar muchas fallas porque apenas estoy aprendiendo" (estructura gramatical moderada, pero pragmáticamente autoevaluación/vulnerabilidad) no podían clasificarse de forma consistente bajo un solo número de nivel.
+
+Consecuencia: cuando ambos ejes coinciden, pueden mostrarse juntos como un solo número para lectura humana simplificada del inventario. Cuando divergen, el generador debe priorizar la restricción gramatical más baja para la estructura de la oración, pero puede mantener el contenido/tema en su nivel pragmático real (se puede hablar de un tema pragmáticamente avanzado con gramática simple, pero no al revés).
+
+**Reclasificación de "Quién soy".**
+Pasa de nivel_5 a nivel_gramatical bajo (G2, con excepción G4 en "¿Cuántos hermanos tienes?" por posesión completa) y nivel_pragmático_1 en todos sus pasos. Es contenido de entrada (léxico de parentesco + interrogativas simples), no negociación compleja; no debía estar junto a "Organizar una reunión" o "En una reunión comunitaria".
+
+**Desagregación de "La casa" en cuatro situaciones independientes.**
+Se dividió en: "Rutina matutina", "Tareas domésticas", "Buscar un objeto perdido" y "Salir de casa". Motivo: mezclaba actos de habla de naturaleza distinta (rutina fática, instrucción/mandato doméstico, conflicto menor, despedida) bajo un solo rótulo, diluyendo la rotación léxica deliberada del diseño del corpus.
+
+**Reformato de "Estoy aprendiendo zapoteco".**
+Los pasos se convirtieron de oraciones ya redactadas en primera persona a rótulos de acto de habla (infinitivo/sustantivo), consistente con el resto del inventario. Se generalizó la descripción del método de aprendizaje (se dejó como "mencionar el método o sistema usado" en vez de una descripción específica del mecanismo), para evitar fijar en un documento de trabajo interno una redacción que pudiera filtrarse sin revisión a contextos públicos.
+
+**Unificación del formato de nivel.**
+Se eliminaron los rangos de nivel ("nivel_2-3", "nivel_1 mayoría") y se sustituyeron por nivel base único + excepciones anotadas entre paréntesis en el encabezado de cada situación, consistente con el resto del documento.
+
+**Anotación completa de excepciones de nivel dentro de cada situación.**
+Se revisó cada situación para que toda subida de nivel interna (uso de cadi, condicionales, comparación, etc.) quedara anotada en el encabezado, no solo la excepción mencionada originalmente. Aplica a: Comprar en el mercado, Compartir una comida, Pedir indicaciones, Pedir ayuda, Hacer una llamada telefónica, Comprar medicina, En la escuela, Resolver un problema doméstico, Rutina matutina (ahora independiente), Asistir a un funeral.
+
+**Normalización de la granularidad de las situaciones de compra.**
+"Comprar medicina" no tenía los pasos "aceptar o rechazar", "pagar" y "recibir cambio" explícitos, a diferencia de "Comprar en una tienda" y "Comprar en el mercado". Se agregaron para igualar la estructura entre las tres situaciones de compra.
+
+**Aclaración de pares recíprocos, no fusión.**
+"Recibir una visita" y "Visitar familiares" se mantienen como situaciones separadas pero se marcaron explícitamente como par recíproco (perspectiva anfitrión / perspectiva visitante), con nota de que el prompt de generación debe explotar ambos puntos de vista para no duplicar contenido. Mismo tratamiento para "Saludar a un vecino" vs. "Conversación casual" (se distinguen por duración/contexto del encuentro: fugaz vs. extendido).
+
+## 3. Cambios realizados
+
+### Metodología / sistema de niveles
+- Definido el criterio de doble etiqueta `nivel_gramatical` / `nivel_pragmático` (ver Sección 2 y Sección 7).
+- Redactado el texto exacto para incorporar al prompt v4 que instruye al generador a usar este criterio (ver Sección 7).
+
+### Corpus — inventario original (24 situaciones)
+Las 24 situaciones originales fueron revisadas, corregidas y reetiquetadas con el sistema de doble nivel (G/P). Se conservan con su contenido esencial; los cambios estructurales relevantes están en la Sección 2. Lista de situaciones tras la desagregación de "La casa" (quedan 27 en total, ya que "La casa" se convirtió en 4 situaciones):
+
+Saludar a un vecino, Comprar en una tienda, Comprar en el mercado, Viajar en mototaxi o taxi, Recibir una visita, Compartir una comida, Pedir indicaciones, Pedir ayuda, Conversación casual, Hacer una llamada telefónica, Organizar una reunión, Ir al médico, Comprar medicina, En la escuela, En una reunión comunitaria, Ir a una fiesta, Hacer un trámite, Resolver un problema doméstico, Visitar familiares, Final del día, Rutina matutina, Tareas domésticas, Buscar un objeto perdido, Salir de casa, Asistir a un funeral, Estoy aprendiendo zapoteco, Quién soy.
+
+### Corpus — situaciones nuevas propuestas (20 situaciones)
+Se identificaron y redactaron 20 situaciones ausentes del inventario, justificadas por contenido ya documentado en la Gramática Popular y el Vocabulario que no tenía bloque comunicativo propio:
+
+Trabajar la milpa, Asistir a una vela, Vender en el mercado, Cuidar a un bebé, Dar indicaciones, Pedir prestado algo, Ir a misa o celebración religiosa, Contar una anécdota personal, Expresar una emoción o estado de ánimo, Usar transporte colectivo, Resolver un conflicto entre personas, Enseñar un oficio, Pescar / vender pescado, Cocinar / preparar una comida, Bordar / hacer un huipil, Una boda (guenda xheela), Contar dinero / hacer cuentas, Decir la hora / hablar del tiempo del día, Contar un cuento tradicional, Describir una enfermedad en casa.
+
+Cada una fue redactada con la misma estructura de pasos + etiquetas gramaticales que el inventario original, y posteriormente reetiquetada con el sistema G/P.
+
+### Documentación
+Todo el inventario (47 situaciones en total: 27 del corpus original desagregado + 20 nuevas) fue producido en su versión final con doble etiqueta G/P en cada paso, dentro de este mismo chat. El texto completo del inventario final no se reproduce en este documento de migración (es contenido de corpus, no conocimiento de proceso), pero está disponible en el historial del chat para su traslado directo al documento de corpus correspondiente.
+
+## 4. Estado actual
+
+**Qué existe ahora:**
+- Un inventario completo de 47 situaciones comunicativas, cada una con pasos etiquetados según el nuevo sistema de doble nivel (nivel_gramatical / nivel_pragmático), redactado en su versión final dentro del chat.
+- Un criterio explícito y redactado para el prompt v4 sobre cómo debe interpretarse y aplicarse el nivel gramatical vs. el nivel pragmático.
+- Identificación completa de las inconsistencias del inventario original y su corrección aplicada.
+
+**Qué quedó terminado:**
+- La reclasificación y reformato de las 24 situaciones originales.
+- La redacción de las 20 situaciones nuevas.
+- La doble etiqueta G/P aplicada a las 47 situaciones completas.
+- El texto de instrucción para el prompt v4 sobre el criterio de niveles.
+
+**Qué permanece incompleto:**
+- El inventario de 47 situaciones no ha sido integrado al documento de corpus permanente del proyecto (fuera de este chat).
+- No se ha revisado el balance de pasos por combinación G/P a lo largo de todo el corpus ampliado (por ejemplo, si algún cuadrante como G5/P1 o G1/P5 está sub-representado).
+- El texto de instrucción del criterio de niveles no ha sido incorporado formalmente al prompt v4 real del sistema (solo se redactó y se entregó en el chat).
+- Las 20 situaciones nuevas no han sido validadas por el usuario en cuanto a prioridad o pertinencia real de inclusión en el corpus.
+
+## 5. Pendientes
+
+**Alta prioridad**
+- Incorporar el texto de criterio de doble nivel (Sección 7) al prompt v4 real del sistema de generación.
+- Decidir si las 47 situaciones (24 revisadas + 20 nuevas) se integran todas al corpus_v2, o si se selecciona un subconjunto priorizado.
+
+**Prioridad media**
+- Revisar el balance de pasos por combinación G/P en todo el corpus ampliado, para detectar cuadrantes sub-representados (ejemplo: G5/P1, G1/P5).
+- Validar que la separación de "La casa" en cuatro situaciones no rompa continuidad narrativa/escénica que pudiera haber sido intencional en el diseño original (dependencia: revisión humana del propósito original de esa situación).
+
+**Baja prioridad**
+- Evaluar si otras situaciones del inventario ampliado tienen el mismo tipo de solapamiento funcional detectado entre "Recibir una visita" / "Visitar familiares" y aclarar en el prompt generador cuáles deben tratarse como pares recíprocos de perspectiva.
+
+## 6. Validaciones pendientes
+
+- El usuario debe confirmar si acepta la reclasificación de "Quién soy" de nivel_5 a nivel_gramatical bajo / nivel_pragmático_1, dado que implica un cambio de posición relativamente drástico dentro del sistema de niveles.
+- El usuario debe confirmar si el criterio de doble nivel (G/P) se adopta tal como está redactado en la Sección 7, o si requiere ajustes antes de incorporarse al prompt v4.
+- El usuario debe decidir cuáles de las 20 situaciones nuevas propuestas se incorporan efectivamente al corpus_v2 (no se asumió inclusión automática; son propuestas, no decisiones).
+- Debe confirmarse si la generalización de la descripción del método de aprendizaje en "Estoy aprendiendo zapoteco" (evitar detallar el mecanismo de grabación/IA) es suficiente, o si se requiere una revisión adicional antes de que ese contenido pueda usarse en cualquier contexto que no sea estrictamente interno.
+
+## 7. Criterios adoptados
+
+**Criterio de niveles — texto para incorporar al prompt v4:**
+
+> Este corpus distingue dos ejes de dificultad que deben etiquetarse por separado en cada paso de cada situación:
+>
+> 1. `nivel_gramatical (1–5)`: mide la complejidad de la estructura lingüística necesaria — desde fórmulas fijas memorizadas (nivel_1) hasta subordinación, condicionales, cadi, y posesión compleja (nivel_5). Esta escala ya está definida y documentada en la Gramática Popular por bloques (Bloque 1 al 7) y debe seguir usándose tal como está.
+>
+> 2. `nivel_pragmático (1–5)`: mide la exigencia social/discursiva del acto de habla en sí — desde interacciones rutinarias de bajo riesgo (saludo, pregunta de datos, nivel_1) hasta actos que requieren negociación, mediación de conflicto, autoevaluación emocional, reflexión metalingüística, o manejo de un tema delicado (nivel_5).
+>
+> Cada paso de cada situación debe llevar ambas etiquetas. Cuando ambos niveles coincidan (lo más común), pueden mostrarse juntos como un solo número para simplificar la lectura humana del inventario, pero el generador debe calibrar la dificultad real de la oración según el nivel_gramatical (que rige la estructura permitida) y ajustar el tono/registro/profundidad del contenido según el nivel_pragmático (que rige qué tan personal, delicado o socialmente cargado puede ser el intercambio).
+>
+> Si un paso tiene nivel_gramatical bajo pero nivel_pragmático alto (o viceversa), el generador debe priorizar la restricción gramatical más baja para la estructura de la oración, pero puede mantener el contenido/tema en su nivel pragmático real — es decir, se puede hablar de un tema pragmáticamente avanzado usando gramática simple, pero no al revés.
+
+**Convención de formato del inventario:**
+- Cada situación se encabeza como `Nombre | nivel_base (excepciones entre paréntesis, con el nivel al que suben y el paso que lo motiva)`.
+- No se usan rangos de nivel ("nivel_2-3") ni calificadores ambiguos ("nivel_1 mayoría"); toda variación de nivel dentro de una situación debe anotarse explícitamente como excepción en el encabezado.
+- Cada paso se redacta como acto de habla en infinitivo o sustantivo (ej. "Saludar", "Preguntar el precio"), nunca como oración ya redactada en primera persona ni como instrucción dirigida al sistema generador.
+- Cada situación con propósito comunicativo único debe mantenerse separada de otras situaciones con actos de habla de naturaleza distinta, aunque ocurran en el mismo contexto físico (ej. la separación de "La casa").
+
+**Convención sobre contenido sensible en documentos de trabajo interno:**
+Las descripciones de mecanismos de IA o grabación (relevantes para el protocolo de no mencionar estos mecanismos en contextos públicos o de cara a CaCiO) deben generalizarse incluso en documentos de trabajo interno, para reducir el riesgo de que una redacción específica se filtre sin revisión a un documento de cara al público.
+
+## 8. Información importante descubierta
+
+- El sistema de niveles del inventario original no tenía un criterio explícito y consistente: mezclaba complejidad gramatical y complejidad pragmática sin distinguirlas, lo que producía clasificaciones erráticas en situaciones con actos de habla metalingüísticos o de alta carga social pero estructura gramatical simple (y viceversa).
+- El inventario original tenía múltiples excepciones de nivel internas no anotadas en los encabezados de varias situaciones (detectado en al menos 10 de las 24 situaciones originales), lo cual podría haber afectado la calibración de dificultad si el prompt de generación usa exclusivamente el encabezado para calibrar el nivel de cada situación.
+- Existen vacíos temáticos identificables por contraste directo con la Gramática Popular y el Vocabulario del proyecto que no tenían ninguna situación comunicativa dedicada: construcciones atmosféricas impersonales (cap. 12.5 de la Gramática), léxico marino/fluvial, campo semántico de cocción, léxico textil del huipil, sistema de numeración vigesimal, adverbios de tiempo del día, y registro narrativo tradicional (cap. 15 de la Gramática, tradición de Terán/Toledo/Cata).
+
+## 9. Propuestas descartadas
+
+- **Fusionar "nivel" en un solo eje eligiendo uno de los dos criterios (solo gramatical o solo pragmático).** Se descartó porque perdería información ya bien documentada en el inventario (fórmula fija vs. productivo, cadi, potencial, etc.); se optó por mantener ambos ejes por separado en vez de sacrificar uno.
+- **Mantener "La casa" como una sola situación con etiqueta "nivel_1 mayoría".** Se descartó por diluir la rotación léxica deliberada del diseño del corpus y por mezclar actos de habla de naturaleza distinta bajo un solo rótulo.
+- **Dejar "Estoy aprendiendo zapoteco" con oraciones ya redactadas en primera persona como pasos del inventario.** Se descartó porque mezclaba dos niveles de abstracción (inventario de pasos vs. contenido final del corpus) y podía confundir al prompt generador.
+
+## 10. Riesgos o problemas detectados
+
+- Si el prompt de generación real no distingue explícitamente entre nivel_gramatical y nivel_pragmático, situaciones con divergencia entre ambos ejes (ej. "Estoy aprendiendo zapoteco", "Quién soy") seguirán generando contenido de dificultad real inconsistente con la etiqueta de nivel visible.
+- La descripción del método de aprendizaje en "Estoy aprendiendo zapoteco" fue generalizada en este chat, pero no se verificó contra el protocolo completo de no mención de mecanismos de IA/grabación de cara a CaCiO; si este contenido llega a usarse fuera de un documento de trabajo interno, requiere revisión adicional antes de publicarse.
+- Las 20 situaciones nuevas no han sido priorizadas ni validadas; incorporarlas todas sin selección podría desbalancear el corpus en relación con el principio de "producir más antes de generar más sistemas" ya establecido como regla de trabajo del proyecto.
+
+## 11. Documentos probablemente afectados
+
+- `CORPUS.md` (o equivalente — corpus_v2): requiere actualización con el inventario de 47 situaciones y el nuevo sistema de doble etiqueta G/P.
+- Documento(s) de prompt del sistema (prompt v4 o posterior): requiere incorporación del criterio de niveles descrito en la Sección 7.
+- No puede determinarse con la información de este chat si existe un documento de metodología separado (`METODOLOGIA.md` o similar) donde deba registrarse la convención de formato del inventario (Sección 7); se indica explícitamente como no determinado.
+
+## 12. Próximo paso recomendado
+
+Incorporar el texto de criterio de doble nivel (Sección 7) al prompt v4 real del sistema de generación, como paso previo indispensable antes de integrar el inventario de 47 situaciones al corpus_v2.
