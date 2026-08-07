@@ -1,0 +1,170 @@
+Contexto generado — Arranque del proyecto Voces de las Nubes
+1. Objetivo del trabajo
+
+Establecer los documentos fundacionales del proyecto Voces de las Nubes: propuesta institucional para la Casa de las Ciencias, cronograma de actividades, documento para hablantes, registro bibliográfico y primer informe mensual. El proyecto quedó aprobado verbalmente por los directivos de la Casa de las Ciencias con solicitud de propuesta escrita formal.
+
+2. Decisiones finales
+
+Nombre del proyecto
+Voces de las Nubes — Herramienta digital para el aprendizaje del Didxazá. El subtítulo "aprendizaje auditivo" fue descartado en favor de "herramienta digital" por ser más preciso sobre el alcance real del producto.
+
+Público objetivo
+Personas que se identifican como zapotecas pero crecieron sin acceso cotidiano a la lengua — ya sea fuera del Istmo, en comunidades donde el español desplazó al zapoteco, o en familias donde la transmisión se interrumpió. No se define como herramienta de revitalización sino de acceso inicial.
+
+Productos finales de la herramienta
+Dos formatos complementarios:
+
+Tarjetas de estudio compatibles con Anki — frase en Didxazá, audio de hablante binnizá, significado en español. Basadas en repetición espaciada.
+Entorno de escucha progresiva — organizado por niveles de complejidad creciente, comparable a un podcast para aprendices.
+
+Ambos formatos disponibles en sitio web de acceso abierto sin necesidad de descargar aplicaciones.
+
+Plataforma de distribución
+Sitio web de acceso abierto con materiales descargables. Anki se usa internamente como herramienta de producción y como formato de entrega, pero no se presenta públicamente como tecnología central del proyecto.
+
+Enfoque pedagógico
+Comprensión auditiva como vía principal. El audio es el eje; la transcripción es apoyo opcional. Sin memorización de reglas gramaticales como punto de entrada. Basado en el principio de input comprensible y progresión natural — no se cita a Krashen explícitamente en ningún documento público.
+
+Posicionamiento institucional
+El proyecto se ancla en el eje de saberes comunitarios de la Casa de las Ciencias, referenciando el marco de Carrillo Trueba (pluriverso) y el enfoque constructivista. Este posicionamiento fue diseñado específicamente para responder al perfil de Jesús, director con especialidad en sociolingüística.
+
+Alcance declarado
+La herramienta es complementaria con cualquier esfuerzo de enseñanza o revitalización. No compite con el aprendizaje comunitario. Se declara explícitamente como herramienta de primer acercamiento.
+
+Financiamiento
+El proyecto inicia sin financiamiento específico. La primera fase genera el prototipo funcional que servirá de base para participar en convocatorias públicas estatales y federales.
+
+Responsable
+Emiliano López Carlton. El proyecto justifica su reintegración al equipo de La Ciencia en la Escuela bajo un rol de innovación educativa y desarrollo de herramientas digitales.
+
+Crítica de variantes dialectales
+En la reunión de aprobación se planteó que no considerar las variantes dialectales de la región era racista. Esta crítica fue desestimada por Jesús, el director con especialidad en sociolingüística, quien defendió el proyecto. No requiere modificación en los documentos actuales.
+
+3. Cambios realizados
+
+Documentación
+
+Propuesta institucional completa redactada y aprobada verbalmente.
+Cronograma de actividades elaborado para dos ciclos escolares: mayo-julio 2026 y agosto 2026-junio 2027.
+Documento para hablantes redactado en lenguaje accesible, en singular, desde primera persona del plural en la apertura.
+Primer informe mensual (mayo 2026) redactado.
+
+Bibliografía
+
+Registro sistematizado de 41 fuentes en tabla con campos: ID, Tipo, Autor(es), Año, Título, Editorial/Revista, Disponibilidad, Ubicación, Pertinencia, Notas, Revisado. Prefijo de identificación: B + tres dígitos (B001, B002...).
+
+Fuentes revisadas hasta la fecha: B001, B002, B003, B017, B018, B041.
+
+Decisiones editoriales sobre los documentos públicos
+
+No mencionar IA en ningún documento institucional ni en documentos para hablantes.
+No usar lenguaje técnico sobre herramientas específicas (ElevenLabs, Fish Audio, modelos de voz) en documentos públicos.
+Tono directo, no académico, sin cierres retóricos ni frases de relleno.
+Los documentos deben poder defenderse oralmente sin depender del texto escrito.
+4. Estado actual
+
+Terminado
+
+Propuesta institucional — versión final lista para entregar con firma.
+Documento para hablantes — versión final lista para imprimir y presentar.
+Cronograma primer año — elaborado y ajustado con restricciones reales de tiempo.
+Informe mayo 2026 — redactado.
+Registro bibliográfico — 41 entradas, 6 revisadas.
+
+Incompleto
+
+Apellido de Vicente (hablante principal) — pendiente de confirmar.
+Contacto formal con Vicente — pendiente, programado para los días siguientes al 19 de mayo.
+Contacto con Vidal Ramírez — pendiente para junio.
+Contacto con Na' Lidia — pendiente de evaluación en primera fase.
+5. Pendientes
+
+Alta prioridad
+
+Confirmar apellido de Vicente y establecer primera sesión formal de grabación — junio 2026. Sin este paso no puede iniciarse el corpus.
+Elaborar guía temática de frases para las primeras sesiones de grabación — necesaria antes del primer encuentro con hablantes.
+
+Prioridad media
+
+Contactar a Vidal Ramírez — visita a Oaxaca programada para julio.
+Evaluar participación de Na' Lidia y otros hablantes potenciales — parte de la primera fase.
+Continuar revisión bibliográfica — especialmente B004, B005, B026, B028, B034, B036.
+
+Baja prioridad
+
+Definir estructura técnica del sitio web.
+Establecer protocolo de calibración de audio para nuevos hablantes.
+Explorar convocatorias de financiamiento vigentes.
+6. Validaciones pendientes
+Apellido de Vicente — confirmar antes de incluirlo en cualquier documento.
+Participación de Vidal Ramírez — pendiente de primera reunión de presentación.
+Participación de Na' Lidia — pendiente de evaluación en primera fase.
+Revisión de materiales antes de publicación — comprometido con todos los hablantes en el documento para hablantes; requiere protocolo formal.
+7. Criterios adoptados
+
+Sobre los documentos institucionales
+
+Nunca mencionar IA, entrenamiento de modelos ni herramientas tecnológicas específicas.
+El proyecto se presenta como herramienta de aprendizaje auditivo, no como proyecto tecnológico.
+Tono directo, sin inflación retórica, sin cierres que resuman lo ya dicho.
+La sección de alcance y límites permanece en la propuesta — no es debilidad sino demostración de criterio, especialmente ante perfiles sociolingüísticos.
+
+Sobre los documentos para hablantes
+
+Redacción en singular (dirigida a una persona).
+Apertura en primera persona del plural — "somos muchas las personas que queremos" — para posicionar al responsable como parte de la comunidad afectada, no como observador externo.
+Usar "hablantes binnizá" en lugar de "hablantes de la comunidad" u otras variantes genéricas.
+Explicitar voluntariedad y derecho de revisión previa de materiales.
+No usar "habemos" en documentos escritos.
+
+Sobre el registro bibliográfico
+
+Prefijo B + tres dígitos para identificación.
+Campo "Revisado" con valores sí/no.
+Pertinencia clasificada como Alta/Media/Baja.
+Las referencias en los informes mensuales usan el ID de la bibliografía.
+
+Sobre el cronograma
+
+Entregas mensuales en formato de reunión con informe escrito y diapositivas cuando aplique.
+Dos ciclos delimitados por calendario escolar mexicano.
+Paréntesis sin actividades: 15 julio — 17 agosto, semana navideña, Semana Santa.
+Viaje al extranjero del responsable: 20 mayo — 2 junio 2026.
+Trabajo de campo en Juchitán: primera semana de septiembre 2026.
+Grabaciones con Vidal Ramírez: julio 2026 en Oaxaca.
+8. Información importante descubierta
+Jesús (director, especialista en sociolingüística) resultó ser el defensor del proyecto en la reunión de aprobación, no el crítico más severo. El posicionamiento teórico en la propuesta institucional fue determinante.
+La crítica de variantes dialectales provino de otros directivos, no de Jesús, y fue desestimada por él mismo.
+B002 (Rafael-Pérez et al., 2024) documenta una aplicación web preexistente para el aprendizaje del Didxazá — requiere revisión para evitar duplicidades y para identificar posibles referentes o diferenciadores del proyecto.
+9. Propuestas descartadas
+
+Podcast como eje del proyecto
+Descartado antes de la reunión de aprobación por exceso de carga de trabajo. Puede reaparecer como eje secundario en etapas posteriores pero no forma parte de la propuesta actual.
+
+Mención explícita de IA en documentos públicos
+Descartada por generar rechazo entre los directivos. Toda referencia a herramientas de IA se omite en documentos institucionales y para hablantes.
+
+Distinción tú/usted en el corpus
+No aplica — el Didxazá no tiene distinción pronominal equivalente. No debe reintroducirse en el diseño del corpus.
+
+Subtítulo "aprendizaje auditivo"
+Reemplazado por "herramienta digital" en el título definitivo del proyecto.
+
+Diagnóstico de riesgo de pérdida de la lengua
+Descartado de la propuesta. El Didxazá es una de las lenguas originarias con mayor número de hablantes en Oaxaca. El proyecto no se justifica desde la urgencia de revitalización sino desde el acceso y la apropiación activa.
+
+10. Riesgos detectados
+Dependencia de un solo hablante principal (Vicente) — si no está disponible, el arranque del corpus se retrasa. Mitigación: activar contacto con Vidal y Na' Lidia en paralelo.
+Ventana de trabajo muy corta en mayo — dos semanas efectivas. Ya gestionado en el informe mensual.
+B002 como antecedente directo — existe una aplicación web para aprendizaje de Didxazá publicada en 2024. Requiere revisión para determinar diferenciadores del proyecto y evitar que sea usada como argumento en contra durante futuras presentaciones.
+11. Documentos probablemente afectados
+PROPUESTA_INSTITUCIONAL.md
+DOCUMENTO_HABLANTES.md
+CRONOGRAMA.md
+BIBLIOGRAFIA.md
+INFORME_MAYO_2026.md
+PEDAGOGIA.md
+METODOLOGIA.md
+12. Próximo paso recomendado
+
+Elaborar la guía temática de frases para la primera sesión de grabación con Vicente, necesaria antes del contacto formal programado para los días siguientes al 19 de mayo.
