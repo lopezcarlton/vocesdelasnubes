@@ -1,0 +1,130 @@
+# Contexto generado — Rediseño del sistema de etiquetado G/P y edición del corpus COR002
+
+## 1. Objetivo del trabajo
+
+El inventario de situaciones comunicativas de COR002 (Voces de las Nubes) usa una doble etiqueta por paso — `nivel_gramatical` (G1–G5) y `nivel_pragmático` (P1–P5) — para calibrar la dificultad estructural y el riesgo social de cada acto de habla. Este trabajo auditó esa doble etiqueta contra el corpus completo y contra tres documentos de referencia (Gramática Popular del Zapoteco del Istmo, Vocabulario Zapoteco del Istmo/ZAI, y "Clases verbales en diidxa za" de Pérez Báez y Kaufman), identificó inconsistencias y vacíos, y luego editó directamente el corpus para corregirlos. Finalmente se ajustó el prompt maestro (v5) que genera el corpus en español, para que use correctamente el sistema de dos ejes y una capa de secuenciación derivada de ellos.
+
+Corresponde al diseño metodológico y de contenido de COR002. Queda en estado de trabajo intermedio: el corpus fue corregido y ampliado sobre una copia de trabajo (`corpus_v2.txt`), no sobre el archivo fuente real del proyecto; el prompt maestro fue corregido solo en la sección de criterios de nivel que se compartió en el chat.
+
+## 2. Decisiones finales
+
+- **Doble eje de etiquetado confirmado:** `nivel_gramatical` (1–5, complejidad estructural) y `nivel_pragmático` (1–5, exigencia social/discursiva) son ejes independientes y deben permanecer separados. Cuando coinciden se escriben como un solo par (`G1/P1`), nunca colapsados en un número único.
+- **"Comparar opciones" (Comprar en el mercado):** baja de G5/P3 a G3/P3. "Regatear" (Vender en el mercado) se mantiene en G5/P3. Justificación: la comparación simple está definida como G3 en la leyenda del propio corpus y como estructura simple en la Gramática Popular (§6.1); "regatear" conserva G5 porque añade negociación social, no solo comparación.
+- **"Asistir a un funeral":** se completa con apertura genérica ("Llegar G1/P1") y cierre distinto al resto del corpus ("Despedirse con cariño/afecto G1/P2" en vez de "Despedirse G1/P1" genérico). Pendiente de validación con hablante nativo (ver sección 6).
+- **Desacuerdo cortés:** se omite como función del corpus por decisión del autor del proyecto. No se determinó si existe una construcción lingüística específica para esto en diidxazá.
+- **Sistema numérico vigesimal:** se mantiene completo (decenas y centenas) como contenido obligatorio en todo el corpus, aunque la Gramática Popular documenta que su uso real actual es predominantemente generacional/pasivo. Decisión explícita: prioridad pedagógica/identitaria sobre frecuencia estadística de uso. No se crea ruta alterna simplificada.
+- **Migración:** se incluye como situación nueva del corpus. Contexto cultural aportado por el autor: los destinos de migración más comunes desde el Istmo son Ciudad de México, Oaxaca, Minatitlán y Coatzacoalcos; los motivos principales son trabajo, estudios universitarios y mejores oportunidades laborales.
+- **Diversidad de roles de género (muxe'):** no se crea una situación de conversación dedicada. Se trata como entrada de vocabulario dentro de situaciones familiares ya existentes (p. ej. "Quién soy", "Visitar familiares"), no como tema de conversación autónomo.
+- **Pasos con doble notación G/P (variantes, ej. "fórmula fija G1/P2 / productivo G4/P2"):** el generador (v5) no elige una sola versión por conveniencia del mensaje. Debe generar ambas variantes en instancias separadas de la situación, cada una asignada a su etapa correspondiente (etiqueta más baja → etapa temprana; etiqueta más alta → etapa tardía), con cobertura registrada por variante. Excepción: bifurcaciones marcadas como condicionales al contenido (ej. "G5/P3 si hay condicional", único caso: paso "Acordar algo" en "Hacer una llamada telefónica") se resuelven según lo que la conversación concreta requiera, no según la etapa objetivo.
+- **Terminología "Etapa" vs. "nivel":** se adopta "Etapa" (1–4) exclusivamente para las unidades de secuenciación/entrega del curso, derivadas de G/P. No debe usarse "nivel" para esto, porque ese término ya está tomado por `nivel_gramatical`/`nivel_pragmático` (1–5, por paso). Definición de Etapa: Etapa 1 = G1–2/P1–2; Etapa 2 = G3/P1–3; Etapa 3 = G4, o G3 con P4; Etapa 4 = G5, o G4 con P5.
+- **Diseño en espiral confirmado como principio general:** la mayoría de las situaciones (34 de 48) deben fragmentarse y entregarse en más de una etapa a lo largo del curso, revisitando el mismo marco comunicativo con mayor profundidad, en vez de entregarse completas de una sola vez.
+
+## 3. Cambios realizados
+
+**Corrección de etiquetas (consistencia interna):**
+- "Preguntar cuánto cuesta o cuánto hay" (Contar dinero): G2/P1 → G4/P1.
+- "Confirmar el total" (Contar dinero): G2/P1 → G3/P1.
+- "Preguntar qué hora es" (Decir la hora): G2/P1 → G4/P1.
+- "Comparar opciones" (Comprar en el mercado): G5/P3 → G3/P3.
+
+**Corrección estructural:**
+- "Pescar y vender el pescado": la remisión cruzada sin etiqueta ("ver Vender en el mercado") se reemplazó por la secuencia completa y etiquetada, eliminando el único paso sin etiqueta de todo el corpus.
+- "Asistir a un funeral": se agregó apertura ("Llegar G1/P1") y cierre ("Despedirse con cariño/afecto [fórmula fija] G1/P2"), ausentes originalmente pese a ser el único encuentro social completo del corpus sin marco de apertura/cierre.
+
+**Normalización de nombres:**
+- "Cocinar / preparar una comida" → "Preparar una comida".
+- "Bordar / hacer un huipil" → "Bordar un huipil".
+- "Pescar / vender pescado" → "Pescar y vender el pescado".
+
+**Contenido nuevo — puentes de dificultad (llenan la celda G3/P4, antes vacía en toda la matriz):**
+- "Pedir ayuda": + "Mostrar disposición o duda antes de comprometerse [estativo + atenuación] G3/P4".
+- "Resolver un conflicto entre personas": + "Expresar el propio punto de vista sin culpar directamente [estativo + atenuación] G3/P4"; + "Proponer una condición o compromiso parcial [potencial + condicional simple] G4/P4".
+- "Estoy aprendiendo zapoteco": + "Reconocer con timidez que comete errores al hablar [estativo + atenuación] G3/P4".
+
+**Contenido nuevo — funciones comunicativas ausentes:**
+- "Organizar una reunión": + "Expresar duda sobre si alguien podrá asistir [incertidumbre: zándaca + potencial] G4/P3" (recurso documentado en Gramática Popular §7.2.5, ejemplo 69).
+- "Comprar en el mercado": + "Expresar preferencia por una opción [verbo compuesto + complemento potencial] G3/P2" (recurso *riula'dxi'* + potencial, Gramática Popular §7.2.5, ejemplo 67b).
+
+**Situación nueva:**
+- "Hablar de un familiar que migró" (7 pasos, G2–G4/P2–P3, tipo temático sin marco llegar/despedirse), con léxico de destinos (Ciudad de México, Oaxaca, Minatitlán, Coatzacoalcos) y motivos (trabajo, estudios, mejores oportunidades) especificados por el autor.
+
+**Prompts:**
+- Corregido el bloque "Criterio de niveles" del prompt maestro v5: eliminada la atribución falsa de la escala `nivel_gramatical` a una numeración "Bloque 1 al 7" de la Gramática Popular (esa numeración no existe en ese libro; corresponde en realidad a los 8 "Bloques" léxicos propios del proyecto, un eje distinto); corregido el ejemplo, que tenía los valores G/P invertidos (correcto: G4/P2 para "Preguntar cómo está aprendiendo [interrogativa de información]"); aclarado que la coincidencia de ejes se abrevia como par ("G1/P1"), nunca como número único.
+- Añadida al prompt maestro la regla de manejo de pasos con doble notación (variantes por etapa, con la excepción de bifurcaciones condicionales al contenido).
+
+**Documentación / organización:**
+- Generado `corpus_v2.txt`: corpus completo corregido, 48 situaciones, 324 pasos etiquetados, 0 pasos sin etiqueta.
+- Generado `indice_niveles.txt`: índice de secuenciación por Etapa (1–4), con nota explícita distinguiendo Etapa de `nivel_gramatical`/`nivel_pragmático`.
+
+## 4. Estado actual
+
+Existe una versión corregida y ampliada del corpus de situaciones (`corpus_v2.txt`, 48 situaciones, 324 pasos, matriz G/P sin inconsistencias internas conocidas) y un índice de secuenciación por etapas derivado de esa matriz (`indice_niveles.txt`). El bloque de criterios de nivel del prompt maestro v5 quedó corregido y se estableció la regla de manejo de variantes.
+
+Queda incompleto: la fusión de `corpus_v2.txt` con el archivo fuente real del proyecto (el trabajo se hizo sobre el texto pegado en el chat, no sobre el repositorio); la incorporación del término léxico para muxe'/roles de género familiares (no se tuvo acceso al archivo de léxico en esta sesión); la validación con hablante nativo del marco de saludo/despedida en la situación de funeral.
+
+## 5. Pendientes
+
+**Alta prioridad**
+- Fusionar `corpus_v2.txt` con el corpus fuente real de COR002 en el repositorio del proyecto.
+- Agregar el término léxico de "muxe'" (y roles de género familiares en general) a la lista de léxico del proyecto, en el bloque de vocabulario de parentesco. Depende de que se comparta ese archivo en una sesión futura.
+- Validar con hablante nativo el marco de saludo/despedida de "Asistir a un funeral" (ver sección 6).
+
+**Prioridad media**
+- Confirmar con hablante nativo si existe una construcción de desacuerdo cortés/atenuado en diidxazá (la función quedó fuera del corpus por decisión editorial, pero la pregunta lingüística sigue abierta).
+- Definir qué hacer con el aspecto verbal "Perfecto" (*hua-*): está documentado como uno de los 8 marcadores TAM del idioma (Gramática Popular §7.2.4; confirmado en Pérez Báez y Kaufman, Cuadro 1) pero no tiene representación en la leyenda G1–G5 ni en ningún paso del corpus. No se generó todavía una propuesta concreta de dónde insertarlo.
+- Revisar si el error detectado en el bloque "Criterio de niveles" (atribución incorrecta a "Bloque 1–7" de la Gramática Popular) se propagó a otras partes del prompt maestro v5 no vistas en este chat.
+
+**Baja prioridad**
+- Ninguna registrada.
+
+## 6. Validaciones pendientes
+
+- **Funeral — marco social:** ¿existe una fórmula de saludo verbal distinta (o se omite el saludo) antes de dar el pésame en una vela funeraria del Istmo? ¿La despedida afectuosa usa una construcción específica, o basta con una fórmula genérica de cariño? Se aplicó una solución provisional (llegada genérica + "despedirse con cariño/afecto") sin confirmación de hablante nativo.
+- **Desacuerdo cortés:** ¿existe en diidxazá una construcción de desacuerdo atenuado/cortés distinta de la negación directa (*cadi*/*qué*)? No resuelto; la Gramática Popular no ofrece ejemplos de cortesía mitigada.
+- **Vigencia del dato sobre uso del vigesimal:** la Gramática Popular (edición 2001) indica que decenas y centenas vigesimales son usadas sobre todo por hablantes mayores. El autor del proyecto decidió mantener el sistema completo de todos modos por razones pedagógicas, por lo que esta validación ya no bloquea ninguna decisión, pero el dato de vigencia real en 2026 sigue sin confirmarse.
+
+## 7. Criterios adoptados
+
+- `nivel_gramatical` (1–5) mide complejidad estructural; `nivel_pragmático` (1–5) mide exigencia social/discursiva del acto de habla. Son ejes independientes, siempre etiquetados por separado, aunque se abrevien juntos cuando coinciden.
+- El `nivel_gramatical` rige la estructura permitida de la oración; el `nivel_pragmático` rige el tono/registro/profundidad del contenido. Se puede tratar un tema pragmáticamente avanzado con gramática simple; nunca al revés.
+- "Etapa" (1–4) es una agrupación de secuenciación curricular derivada de G/P, no un tercer eje independiente. No debe llamarse "nivel".
+- Cada situación puede — y en la mayoría de los casos debe — fragmentarse en varias etapas y entregarse en tandas sucesivas a lo largo del curso (diseño en espiral), en vez de completa de una sola vez.
+- Los pasos con doble notación G/P no se resuelven por elección puntual del generador; ambas variantes deben generarse, cada una en su etapa correspondiente, salvo cuando la bifurcación esté marcada como condicional al contenido de la conversación.
+- "Bloque" (1–8) designa exclusivamente la secuencia de campos léxicos del proyecto. No debe confundirse con `nivel_gramatical` ni con "Etapa".
+- El vigesimal completo se mantiene como contenido pedagógico obligatorio independientemente de su frecuencia de uso real documentada.
+- Al corregir etiquetas G/P, el criterio de validación es la consistencia interna del propio corpus (misma función discursiva → misma etiqueta en todas sus apariciones), contrastada contra la Gramática Popular cuando exista ambigüedad.
+
+## 8. Información importante descubierta
+
+- La Gramática Popular documenta 8 marcadores TAM (Habitual, Completivo, Progresivo, Perfecto, Potencial, Irrealizado/Contrafactual, Estativo, Futuro; confirmado también en Pérez Báez y Kaufman, Cuadro 1), de los cuales el Perfecto no está representado en la leyenda G1–G5 del corpus.
+- La construcción comparativa del diidxazá (verbo "pasar" nativo, o préstamos "que"/"para" + estativo; Gramática Popular §6.1) es estructuralmente simple, sin morfología adicional — dato que sustentó la corrección de "Comparar opciones" a G3.
+- El sistema numérico vigesimal completo (decenas/centenas) es, según la Gramática Popular §6.3.1, de uso actual mayormente generacional/pasivo; el conteo cotidiano recurre en la práctica a préstamos del español.
+- Existen tres mecanismos de posesión en diidxazá (prefijo xh-/x-, sustantivos siempre poseídos, frase nominal posesiva con *xti'*), documentados en Gramática Popular §4.2 — la construcción con *xti'* es la que el corpus marca como "posesión completa" (G5).
+- La distinción inclusivo/exclusivo en primera persona plural (*laanu*/*laadu*) es una categoría gramatical real y obligatoria del idioma (Gramática Popular §5.1.1), no una elección estilística — sustenta el uso de G5 para pasos etiquetados "inclusivo/exclusivo".
+- *Zándaca* + potencial es el recurso documentado para incertidumbre epistémica (Gramática Popular §7.2.5, ejemplo 69); *riula'dxi'* + potencial es el recurso documentado para expresar gusto/preferencia (mismo apartado, ejemplo 67b). Ninguno de los dos tenía representación en el corpus antes de esta sesión.
+- Existe en los archivos del proyecto un cuarto documento académico no solicitado como referencia oficial ("Más allá de tópico y foco: construcciones quiásticas y el morfema LA en el zapoteco del Istmo", Bueno Holle) que trata la partícula *la?*/*la'* usada en interrogativas sí/no del corpus. No se utilizó en este trabajo pero podría ser relevante para una revisión futura de esa categoría.
+
+## 9. Propuestas descartadas
+
+- Ofrecer una ruta de conteo simplificada (numerales nativos 1–10 + préstamos del español) en paralelo al vigesimal completo en "Contar dinero" — descartada; se mantiene solo el sistema vigesimal completo en todo el corpus, por decisión explícita del autor.
+- Crear una situación de conversación dedicada a diversidad de roles de género (muxe') — descartada; se opta por tratarlo como entrada de léxico dentro de situaciones familiares existentes.
+- Incluir "desacuerdo cortés" como función del corpus — descartada por el autor.
+- Que el generador elija la variante de un paso de doble notación según "criterio activo del mensaje" (comportamiento heredado del prompt v4) — descartada como regla general; sustituida por generación obligatoria de ambas variantes por etapa, con la excepción ya documentada.
+- Retagear "Regatear" (Vender en el mercado) de G5/P3 a G3/P3 junto con "Comparar opciones" — descartada; se mantiene "Regatear" en G5/P3 porque combina comparación con negociación social.
+
+## 10. Riesgos o problemas detectados
+
+- `corpus_v2.txt` es una copia de trabajo derivada del texto pegado en el chat, no el archivo fuente real del proyecto; existe riesgo de divergencia si el archivo fuente real ha cambiado desde que se pegó el contenido original en esta conversación.
+- El aspecto "Perfecto" no tiene representación en el sistema de etiquetado ni en el corpus, lo que implica que ninguna función que dependa de él (p. ej. expresar experiencia acumulada o repetición, "ya he ido tres veces") está actualmente cubierta.
+- El bloque "Criterio de niveles" que el autor había redactado para el prompt maestro v5 contenía un error factual (atribución a una numeración inexistente de la Gramática Popular) antes de esta corrección; no se verificó si ese mismo error aparece en otras secciones del prompt maestro no compartidas en este chat.
+
+## 11. Documentos probablemente afectados
+
+- Inventario/documento de situaciones de COR002 (el equivalente a `CORPUS.md`, si existe con ese nombre en el repositorio) — requiere incorporar la versión corregida de 48 situaciones.
+- Documento de metodología o criterios editoriales del proyecto — requiere incorporar la definición de `nivel_gramatical`/`nivel_pragmático`, la definición de "Etapa", y la regla de manejo de variantes.
+- Prompt maestro del generador de corpus (v5) — requiere incorporar el bloque de criterios corregido y la regla de variantes por etapa.
+- No puede determinarse con la información de este chat si existe un documento de léxico/vocabulario donde deba registrarse el pendiente de "muxe'"/roles de género, ni el nombre exacto de los documentos del Sistema de Conocimiento del proyecto — no se mencionaron en esta conversación.
+
+## 12. Próximo paso recomendado
+
+Fusionar `corpus_v2.txt` con el archivo fuente real del corpus COR002 del proyecto, ya que todo el trabajo de esta sesión se realizó sobre una copia derivada del contenido pegado en el chat y no sobre el repositorio.
