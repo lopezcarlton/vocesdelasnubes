@@ -2,9 +2,9 @@
 
 **Proyecto:** Voces de las Nubes
 
-**Versión:** 1.1
+**Versión:** 1.2
 
-**Última actualización:** 2026-08-05
+**Última actualización:** 2026-08-06
 
 ---
 
@@ -254,6 +254,44 @@ Definir canales de publicación, niveles de acceso (interno/público), términos
 
 ---
 
+### BL-020 — Validar el inventario léxico base de COR002
+
+**Estado:** Abierto
+**Prioridad:** Alta
+
+**Descripción**
+
+Identificar el inventario léxico vigente que servirá como base para COR002 y someterlo a revisión con Vicente Gutiérrez para documentar:
+
+- naturalidad de los términos propuestos;
+- variantes por localidad cuando correspondan;
+- correspondencia con el uso contemporáneo;
+- duplicados o vacíos relevantes;
+- contextos de uso adecuados;
+- observaciones sobre escritura según el Alfabeto Popular vigente cuando Vicente pueda validarla con seguridad.
+
+La tarea no se considera cerrada únicamente por realizar la sesión. Debe producir un inventario identificable y reutilizable dentro del Sistema de Conocimiento.
+
+**Responsable:** Emiliano López Carlton
+**Validador:** Vicente Gutiérrez
+
+**Dependencias:**
+
+- identificar y fijar la versión del inventario léxico que será revisada;
+- disponibilidad de Vicente para la sesión de validación.
+
+**Criterio de cierre:**
+
+- existe una versión identificable del inventario léxico revisado;
+- quedan registrados términos aceptados, rechazados o sustituidos;
+- se documentan observaciones de variación y contexto cuando existan;
+- los vacíos relevantes detectados quedan registrados;
+- el resultado puede utilizarse como referencia para COR002 y trabajo posterior.
+
+**Fecha objetivo:** A acordar con Vicente.
+
+---
+
 # Criterios de cierre
 
 Una tarea se considera completada cuando:
@@ -277,5 +315,6 @@ Una tarea se reabre si:
 
 - Este backlog es un registro de deuda técnica permanente, no un planificador de todas las actividades del proyecto.
 - Las actividades operativas (grabación, edición, trabajo de campo, solicitudes administrativas) no entran aquí a menos que generen una laguna documentacional.
+- La primera sesión de COR002 con `DEC-GRABAR-EN-VIVO` es trabajo operativo y, por tanto, no se registra como BL-021. Su función de validación queda documentada en la decisión y en `conocimiento/AUDIO.md`.
 - Cada entrada debe incluir: descripción clara, responsable, prioridad relativa, dependencias, criterio de cierre.
 - El estado se revisa regularmente. Las revisiones deben quedar registradas en el historial del documento.
