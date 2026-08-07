@@ -1059,3 +1059,94 @@ Los informes que comunican resultados al exterior deben seguir estas reglas:
 - Generalizar una preferencia de un hablante como norma universal sin aclaración
 - Proponer cambios metodológicos grandes sin reconocer que emergen del trabajo, no de la planeación
 - Confundir conclusiones con especulaciones
+
+- # 14. Registro de actividad y generación de informes
+
+## Propósito
+
+El proyecto documenta su actividad mediante la reconstrucción del trabajo realizado durante un período a partir de las fuentes registradas en el Sistema de Conocimiento.
+
+El objetivo no es mantener una bitácora administrativa, sino conservar suficiente evidencia para reconstruir posteriormente el trabajo realizado y generar informes institucionales completos y verificables.
+
+---
+
+## Principio general
+
+La información debe registrarse una sola vez, en el lugar donde naturalmente se produce.
+
+Cuando una actividad ya queda documentada mediante:
+
+* documentos del proyecto;
+* modificaciones al corpus;
+* decisiones metodológicas;
+* hallazgos registrados;
+* backlog;
+* sesiones de trabajo;
+* grabaciones;
+* validaciones;
+* chats de trabajo;
+* control de versiones del repositorio;
+
+no debe duplicarse en una bitácora mensual.
+
+La generación de informes recuperará posteriormente esa información desde sus fuentes originales.
+
+---
+
+## Registro complementario
+
+Solo cuando una actividad relevante no deje evidencia recuperable por sí misma podrá registrarse mediante una nota breve.
+
+Ejemplos:
+
+* llamada telefónica con un colaborador;
+* reunión informal;
+* decisión tomada fuera del repositorio;
+* gestión administrativa;
+* trabajo de coordinación;
+* observaciones personales surgidas durante el proyecto.
+
+Estas notas constituyen un apoyo para la reconstrucción posterior y no requieren formato rígido ni clasificación previa.
+
+Su propósito es evitar la pérdida de información, no generar carga administrativa.
+
+---
+
+## Elaboración de informes
+
+La elaboración de un informe mensual sigue el siguiente procedimiento:
+
+1. Recuperar toda la actividad correspondiente al período desde las fuentes disponibles.
+2. Integrar también las notas complementarias que no aparezcan en otras fuentes.
+3. Generar una lista exhaustiva de actividades realizadas durante el período.
+4. Revisar esa lista con el coordinador del proyecto.
+5. Distinguir entre:
+
+   * actividades que deben aparecer en el informe institucional;
+   * actividades que permanecen únicamente como registro interno.
+6. Redactar el informe mensual conforme a los criterios establecidos en la sección anterior.
+
+La clasificación temática (operativa, lingüística, metodológica, administrativa u otra) constituye una herramienta de organización interna y puede realizarse durante la elaboración del informe. No forma parte del trabajo cotidiano del proyecto.
+
+---
+
+## Cambio de período
+
+El inicio de un nuevo mes no requiere crear nuevos documentos, limpiar registros ni reiniciar plantillas.
+
+Cada informe se construye exclusivamente a partir de las actividades cuya fecha corresponda al período solicitado.
+
+Los registros históricos permanecen disponibles como parte del Sistema de Conocimiento y pueden reutilizarse cuando sea necesario reconstruir la evolución del proyecto.
+
+---
+
+## Principio de mínima fricción
+
+El sistema de documentación debe minimizar el trabajo administrativo.
+
+Siempre que una actividad pueda recuperarse posteriormente desde las fuentes existentes, no deberá volver a registrarse.
+
+El coordinador únicamente añadirá registros complementarios cuando exista un riesgo real de que una actividad importante quede fuera de la reconstrucción posterior.
+
+De esta forma, el esfuerzo cotidiano se concentra en desarrollar el proyecto, mientras que la organización y síntesis del trabajo se realizan durante el proceso de generación del informe.
+
