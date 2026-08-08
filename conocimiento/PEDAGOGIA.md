@@ -119,6 +119,26 @@ Los materiales pueden clasificarse con niveles G1–G5 y P1–P5.
 
 Las fuentes disponibles no documentan todavía definiciones completas y consolidadas de cada nivel.
 
+### Definiciones formales de G1–G5 y P1–P5
+
+**nivel_gramatical (1–5):** Mide la complejidad de la estructura lingüística necesaria.
+
+- **G1:** Material que ya se puede memorizar como unidad. Fórmulas fijas, saludos, existenciales básicos.
+- **G2:** Estructuras básicas productivas. Interrogativas simples, imperativos suaves, marcadores conversacionales básicos.
+- **G3:** Estructuras moderadas. Potencial simple, algunos condicionales, comparación simple.
+- **G4:** Estructuras complejas. Condicionales elaborados, cadi en ciertos contextos, posesión completa, algunos usos de potencial complejo.
+- **G5:** Estructuras muy complejas. Cadi generalizado, condicional+subordinación, posesión completa combinada con otros subsistemas, inclusivo/exclusivo en contextos de negociación.
+
+**nivel_pragmático (1–5):** Mide la exigencia social y discursiva del acto de habla.
+
+- **P1:** Actos rutinarios, ritualizados, de bajo riesgo (saludos, cortesías, agradecimientos).
+- **P2:** Actos de bajo-medio riesgo con algo de contenido personal (preguntas sobre datos básicos, comentarios sobre contexto compartido, transacciones simples).
+- **P3:** Actos que requieren manejo de contenido moderadamente delicado o negociación (pedir cosas, hacer crítica constructiva, plantear opciones).
+- **P4:** Actos con riesgo social significativo o que requieren reflexión (disculparse, reconocer limitaciones propias, manejar desacuerdo atenuado, negociar términos).
+- **P5:** Actos de máximo riesgo social, máxima negociación, o máxima reflexividad (mediar conflicto, hacer propuesta en asamblea, contar cuento tradicional, expresar vulnerabilidad emocional).
+
+**Regla operativa:** La restricción gramatical (G) rige la forma; la etiqueta pragmática (P) rige el contenido y tono. Se puede tema pragmáticamente avanzado con gramática simple, NUNCA al revés.
+
 ## 6.4 Escenas
 
 Las escenas sirven como origen contextual, pero no se ordenan automáticamente como lecciones.
@@ -126,6 +146,28 @@ Las escenas sirven como origen contextual, pero no se ordenan automáticamente c
 ## 6.5 Marcadores conversacionales
 
 Un conjunto básico de marcadores puede utilizarse desde etapas tempranas para evitar que los diálogos suenen artificiales.
+
+## 6.6 Etapas de secuenciación curricular
+
+Una "Etapa" es una unidad de secuenciación/entrega del curso, derivada de la combinación de nivel_gramatical y nivel_pragmático.
+
+El proyecto define 4 etapas:
+
+- **Etapa 1:** nivel_gramatical 1–2, nivel_pragmático 1–2. Material introductor: fórmulas fijas, saludos, rutinas básicas, preguntas de datos simples.
+- **Etapa 2:** nivel_gramatical 3, nivel_pragmático 1–3. Material de consolidación temprana: potencial, imperativo, coordinación, temas de bajo-medio riesgo.
+- **Etapa 3:** nivel_gramatical 4 O (nivel_gramatical 3 con nivel_pragmático 4). Material de profundización: condicionales complejos, posesión completa en ciertos contextos, temas que requieren negociación aunque gramática sea moderada.
+- **Etapa 4:** nivel_gramatical 5 O (nivel_gramatical 4 con nivel_pragmático 5). Material avanzado: cadi generalizado, negociación compleja, máximo riesgo social, narrativas tradicionales.
+
+## 6.7 Diseño en espiral
+
+La mayoría de las situaciones comunicativas (aproximadamente 34 de 48 en el corpus actual) no se entregan completas de una sola vez. En cambio, se fragmentan y se entregan en múltiples etapas a lo largo del curso, revisitando el mismo marco comunicativo con mayor profundidad en cada ocasión.
+
+**Ventajas del diseño en espiral:**
+
+- Reutilización de vocabulario en contextos expandidos.
+- Consolidación de estructuras al practicarlas nuevamente en contextos donde ya es competente pragmáticamente.
+- Progresión que respeta la curva de aprendizaje real sin exigir que domine todo antes de pasar a lo siguiente.
+- Textura narrativa y cultural: permite introducir detalles, variantes y matices que no cabrían en una presentación única.
 
 ---
 
