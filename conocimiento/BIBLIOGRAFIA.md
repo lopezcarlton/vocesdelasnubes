@@ -181,3 +181,51 @@ No puede documentarse todavía:
 - bibliografía de ELDP;
 - bibliografía comunitaria y literaria completa;
 - DOI, ISBN y URL de cada entrada.
+
+---
+
+# 12. Cambio de sistema de identificadores (julio 2026)
+
+A partir de julio 2026, el proyecto cambió el sistema de identificadores de fuentes.
+
+## 12.1 Sistemas en uso
+
+**Sistema anterior (histórico, no en uso):**
+
+- Formato: `B` + 3 dígitos (B001, B002, ..., B019, etc.)
+- Usado hasta: junio 2026
+- Estado: histórico, referencia solamente
+
+**Sistema vigente (desde julio 2026):**
+
+- Formato: `BIB` + 3 dígitos (BIB001, BIB002, BIB003, ...)
+- Usado desde: julio 2026
+- Estado: único formato activo
+
+## 12.2 Remapeo de fuentes revisadas en mayo 2026
+
+Las siete fuentes documentadas como revisadas a profundidad en mayo de 2026 (listadas en § 3) tienen ahora los siguientes identificadores en el sistema vigente:
+
+| Anterior | Vigente | Referencia |
+|----------|---------|-----------|
+| B001 | BIB001 | Manzo (2009) |
+| B002 | BIB002 | Rafael-Pérez et al. (2024) — Aplicación web preexistente para Didxazá |
+| B003 | BIB003 | Vocabulario zapoteco del Istmo (revisión parcial en mayo) |
+| B017 | BIB017 | Pérez Báez, Cata y Bueno Holle (2015) |
+| B018 | BIB018 | Proyectolaos / Cortamortaja (2018) |
+| B019 | BIB019 | ALAI (1978) |
+| B041 | BIB041 | Muntzel (1998) |
+
+**Nota:** BIB002 (Rafael-Pérez et al. 2024) es un antecedente conocido del proyecto (aplicación web preexistente para aprendizaje de Didxazá) que requiere análisis de diferenciadores y cobertura para evitar que sea usada como argumento en contra del proyecto en presentaciones futuras.
+
+## 12.3 Nuevas entradas
+
+Todas las nuevas fuentes incorporadas después de julio 2026 utilizan el formato `BIB020` en adelante.
+
+No se reutilizan identificadores del sistema anterior ni se reasignan IDs eliminados.
+
+## 12.4 Hoja de cálculo
+
+La hoja de cálculo de administración bibliográfica ha sido actualizada a los nuevos identificadores.
+
+Los registros históricos con IDs antiguos (B001-B019) se conservan como referencia, pero todas las referencias internas del proyecto utilizan ahora los IDs vigentes (BIB001-...).
