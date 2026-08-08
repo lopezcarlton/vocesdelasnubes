@@ -191,6 +191,59 @@ El proyecto distingue:
 
 Una propuesta producida por una herramienta automática no constituye evidencia. Solo entra en vigor cuando el proyecto la adopta explícitamente mediante revisión.
 
+## 3.9 Criterios editoriales: documentos institucionales
+
+Los documentos dirigidos a la institución (Casa de las Ciencias de Oaxaca) o a público externo siguen estas reglas:
+
+**No mencionar IA ni tecnología específica:**
+
+- NO mencionar: IA, entrenamiento de modelos, herramientas específicas (ChatGPT, Claude, ElevenLabs, etc.).
+- SÍ describir: "herramienta digital de aprendizaje", "plataforma web de acceso abierto", "material de audio profesional".
+- **Justificación:** Prevenir rechazo basado en ideología tecnológica. El proyecto debe presentarse como herramienta educativa, no como proyecto tecnológico.
+
+**Tono directo:**
+
+- Evitar inflación retórica.
+- Evitar cierres que resuman lo ya dicho.
+- No usar lenguaje académico innecesario.
+- Los documentos deben poder defenderse oralmente sin depender del texto escrito.
+- **Criterio de validación:** Si alguien pregunta oralmente "¿por qué el proyecto hace X?", la respuesta debe ser la misma que está escrita.
+
+## 3.10 Criterios editoriales: documentos dirigidos a hablantes
+
+Los documentos dirigidos a hablantes colaboradores siguen estas reglas:
+
+**Redacción:**
+
+- **Singular, no plural formal:** Dirigirse como "a una persona", no "a ustedes como grupo". Ejemplo: "Queremos invitarte a participar" en lugar de "Queremos invitarles a participar".
+- **Apertura en primera persona plural:** "Somos muchas las personas que queremos..." — posiciona al responsable como parte de la comunidad afectada, no como observador externo.
+- **Usar "hablantes binnizá"** cuando se hable de quien participa en el proyecto.
+- **No usar "habemos"** en documentos escritos (aunque sea correcto en algunos contextos, genera distancia).
+
+**Contenido:**
+
+- Explícitamente voluntario: "Participas si quieres, no es obligatorio."
+- Derecho de revisión previa: "Revisaremos contigo todo lo que grabemos antes de que se use públicamente."
+- Claridad sobre uso: "Estos materiales se usan para que otras personas aprendan la lengua."
+- Confidencialidad y atribución: Según lo acordado con hablante específico.
+
+**Tono:**
+
+- Respetuoso pero no reverencial.
+- Reconocimiento de expertise del hablante (sabe la lengua, no necesita explicaciones sobre su propia lengua).
+- Transparencia sobre limitaciones del proyecto.
+
+## 3.11 Protocolo sobre contenido sensible en documentos internos
+
+Descripciones de mecanismos de IA o grabación (relevantes para el protocolo de no mencionar estos mecanismos en contextos públicos) deben generalizarse incluso en documentos de trabajo interno.
+
+**Razón:** Reducir riesgo de que una redacción específica se filtre sin revisión a un documento de cara al público, generando exposición involuntaria.
+
+**Ejemplos:**
+
+- ❌ Evitar: "El corpus se genera usando un prompt de Claude que..."
+- ✅ Usar: "El corpus se genera mediante un proceso sistemático que..."
+
 ---
 
 # 4. Flujo general de trabajo
