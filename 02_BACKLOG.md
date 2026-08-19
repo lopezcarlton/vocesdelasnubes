@@ -97,17 +97,29 @@ La tarea activa del backlog representa la deuda técnica prioritaria del Sistema
 
 ## Tareas pendientes
 
-### BL-010 — Actualizar CORPUS.md con procedimiento de sesión
+### BL-010 — Vincular CORPUS.md con el procedimiento de sesión de validación
 
 **Estado:** Abierto
 **Prioridad:** Media
 
 **Descripción**
 
-Integrar la sección 12 de METODOLOGIA.md (sesión de validación) en CORPUS.md sección 4.5, reemplazando la descripción incompleta de "elicitación y construcción con hablantes".
+Establecer en `conocimiento/CORPUS.md`, sección 8 (Validación del corpus), una referencia explícita al procedimiento documentado en `conocimiento/METODOLOGIA.md` sección 12 (Sesión de validación con hablantes).
+
+CORPUS.md §8 enumera qué debe revisar cada tipo de validación, pero no indica mediante qué procedimiento se ejecuta la validación lingüística y comunitaria con hablantes. METODOLOGIA.md §12 documenta ese procedimiento en tres fases. La laguna es de vinculación, no de contenido.
+
+El procedimiento no debe copiarse dentro de CORPUS.md. La responsabilidad sobre el método corresponde a METODOLOGIA.md; CORPUS.md solo debe remitir a él.
+
+**Nota de corrección:** La versión anterior de esta tarea indicaba integrar el procedimiento en «CORPUS.md sección 4.5, reemplazando la descripción de elicitación y construcción con hablantes». Ese anclaje no corresponde al documento vigente: la sección 4.5 de CORPUS.md es «Cobertura de género» y no existe en el documento una sección sobre elicitación. La tarea se reformula sobre el estado real del documento.
 
 **Responsable:** Emiliano
 **Dependencias:** BL-009 (Completado)
+
+**Criterio de cierre:**
+
+- CORPUS.md §8 remite explícitamente a METODOLOGIA.md §12;
+- la remisión identifica qué tipos de validación (lingüística y comunitaria) se ejecutan mediante ese procedimiento;
+- no se duplica contenido metodológico dentro de CORPUS.md.
 
 ---
 
