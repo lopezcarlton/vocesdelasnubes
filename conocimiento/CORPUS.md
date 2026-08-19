@@ -1,9 +1,9 @@
 # CORPUS
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.0  
-**Estado:** Borrador consolidado  
-**Fecha:** 2026-08-05  
+**Versión:** 1.1  
+**Estado:** Borrador consolidado y evolutivo  
+**Fecha:** 2026-08-19  
 
 ---
 
@@ -124,23 +124,17 @@ No debe crecer mediante relleno ni cumplir una lista rígida de movimientos dram
 
 ## 3.1 COR001
 
-COR001 constituye el primer bloque validado de frases básicas.
+COR001 constituye el primer bloque de 107 frases trabajado y validado oralmente con hablantes, pero **no está cerrado como producto final**.
 
-Su versión consolidada contiene 107 frases.
+Su estado vigente es de consolidación final. Permanecen pendientes, entre otros aspectos:
 
-Incluye materiales relacionados con:
+- revisión ortográfica sistemática de las traducciones;
+- incorporación de correcciones derivadas de esa revisión;
+- regrabación de materiales que no hayan quedado suficientemente bien;
+- normalización final del audio;
+- preparación y entrega de derivados para Anki y escucha.
 
-- saludos y despedidas;
-- presentación;
-- familia;
-- cuerpo;
-- comida;
-- entorno;
-- verbos cotidianos;
-- preguntas esenciales;
-- números y tiempo;
-- cortesía y afecto;
-- negación.
+Por tanto, la expresión «validado» en COR001 describe principalmente el trabajo lingüístico y oral realizado hasta ahora; no significa que texto, ortografía, audio y distribución estén definitivamente cerrados.
 
 COR001 se conserva como base de referencia para:
 
@@ -150,7 +144,7 @@ COR001 se conserva como base de referencia para:
 - construir progresión;
 - conservar trazabilidad entre texto y audio.
 
-COR001 no debe ampliarse retroactivamente sin una razón documentada.
+COR001 no debe ampliarse retroactivamente sin una razón documentada, pero sí puede corregirse, regrabarse o normalizarse mientras permanezca abierto.
 
 ## 3.2 COR002
 
@@ -180,6 +174,16 @@ Pueden recuperarse únicamente si superan una nueva revisión basada en:
 
 No existe todavía una versión definitiva de COR002.
 
+Su diseño permanece en revisión profunda. Entre los factores que pueden modificarlo están:
+
+- la revisión pendiente con Vicente Gutiérrez;
+- una nueva revisión de situaciones comunicativas;
+- la revisión del sistema de complejidad gramatical y pragmática;
+- la incorporación de reglas gramaticales y ortográficas extraídas de la literatura disponible;
+- los resultados del trabajo de corrección ortográfica y análisis lingüístico actualmente en curso.
+
+No se ha realizado ninguna grabación de COR002.
+
 ## 3.3 Corpus posteriores
 
 Los corpus posteriores deben conservar continuidad con lo ya aprendido y ampliar capacidad comunicativa real.
@@ -192,7 +196,7 @@ No se estructuran como:
 - colecciones de frases traducidas;
 - secuencias arbitrarias de dificultad.
 
-Deben construirse mediante matrices que relacionen:
+Deben construirse mediante matrices que relacionen, cuando resulte útil:
 
 - escena;
 - función;
@@ -205,13 +209,15 @@ Deben construirse mediante matrices que relacionen:
 - participantes;
 - estado de validación.
 
-## 3.4 Arquitectura de tres capas para generación de borradores
+## 3.4 Arquitectura provisional para generación de borradores
 
-El sistema de generación automática de conversaciones en español se organiza en tres capas.
+El sistema de generación automática de conversaciones en español ha trabajado con una arquitectura de tres capas: motor, datos y tarea.
+
+Esta arquitectura es **provisional y está sujeta a revisión**. No debe tratarse como diseño definitivo del generador mientras continúe la integración de nueva evidencia gramatical, ortográfica, metodológica y pedagógica.
 
 ### Capa 1: Motor
 
-Contiene las reglas estables sobre:
+Contiene reglas sobre:
 
 - naturalidad;
 - gramática;
@@ -222,29 +228,23 @@ Contiene las reglas estables sobre:
 - formato;
 - prohibiciones.
 
-La versión vigente es `prompt_generador_corpus_v7.md`.
-
-Las versiones v5 y v6 quedan obsoletas.
+Las versiones históricas del prompt del generador conservan valor de trazabilidad, pero ninguna debe considerarse estable por el solo hecho de ser la versión más reciente.
 
 ### Capa 2: Datos
 
-Contiene los bancos actualizables:
+Puede contener bancos actualizables de:
 
 - situaciones;
-- niveles gramaticales;
-- niveles pragmáticos;
+- niveles o etiquetas de complejidad;
 - léxico;
 - patrones;
 - personajes.
 
-Los archivos identificados son:
-
-- `corpus_v2.txt`;
-- `lexico_v2.txt`.
+Su estructura deberá revisarse a la luz de la evidencia lingüística acumulada.
 
 ### Capa 3: Tarea
 
-Contiene las decisiones concretas para cada conversación:
+Contiene decisiones concretas para cada conversación, como:
 
 - situación;
 - patrón;
@@ -253,9 +253,7 @@ Contiene las decisiones concretas para cada conversación:
 - presencia o ausencia de saludo;
 - restricciones particulares.
 
-El motor no debe recibir déficits numéricos crudos para decidir qué compensar.
-
-La tarea debe llegar resuelta por un controlador externo o por preparación manual.
+La relación exacta entre estas capas y el futuro controlador externo sigue abierta.
 
 ---
 
@@ -483,7 +481,7 @@ Los identificadores deben permanecer estables aunque cambie la representación.
 
 ## 6.2 Relación entre COR y AUD
 
-Cada elemento lingüístico debe relacionarse con su material de audio.
+Cada elemento lingüístico debe relacionarse con su material de audio cuando exista.
 
 La relación debe permitir reconstruir:
 
@@ -511,7 +509,7 @@ Cada elemento del corpus debe poder marcarse como:
 - reemplazado;
 - descartado.
 
-Un elemento no debe presentarse como definitivo únicamente por haber sido grabado.
+Un elemento no debe presentarse como definitivo únicamente por haber sido grabado o validado oralmente.
 
 ## 6.4 Versiones
 
@@ -545,7 +543,7 @@ Cada entrada debería registrar, como mínimo:
 - función comunicativa;
 - patrón;
 - escena;
-- nivel;
+- nivel o etiquetas de complejidad cuando correspondan;
 - hablante;
 - validador;
 - localidad o variante cuando sea pertinente;
@@ -560,425 +558,16 @@ La forma principal adoptada para los materiales es el Alfabeto Popular.
 
 El AFI se utiliza como sistema técnico secundario cuando sea necesario.
 
-Las decisiones ortográficas permanecen sujetas a validación por hablantes y revisión especializada.
+Las decisiones ortográficas permanecen sujetas a validación por hablantes, revisión especializada y al trabajo de corrección sistemática en curso.
 
-La escritura no debe reemplazar la referencia al audio.
-
-## 6.7 Variación
-
-Cuando existan formas distintas, debe registrarse si la diferencia corresponde a:
-
-- localidad;
-- generación;
-- estilo;
-- persona;
-- contexto;
-- preferencia;
-- incertidumbre;
-- posible error;
-- cambio lingüístico.
-
-No se debe fusionar automáticamente la variación en una sola forma normalizada.
+La escritura no debe reemplazar la referencia oral cuando exista incertidumbre.
 
 ---
 
-# 7. Generación de borradores en español
+# 7. Principio de evolución
 
-## 7.1 Alcance
+Este documento describe una arquitectura de trabajo, no un sistema terminado.
 
-El generador produce conversaciones dramatúrgicas únicamente en español.
+La evidencia procedente de hablantes, corrección ortográfica, bibliografía, pruebas del generador, validación pedagógica y trabajo de audio puede modificar sus categorías y relaciones.
 
-No produce Didxazá.
-
-Su función es crear material de partida para:
-
-- revisión;
-- selección;
-- elicitación;
-- adaptación;
-- traducción por hablantes.
-
-## 7.2 Registro
-
-El español debe reflejar habla humana situada en Oaxaca y el Istmo.
-
-Debe evitar:
-
-- español neutro artificial;
-- tono de manual;
-- diálogo didáctico explícito;
-- explicaciones excesivas;
-- dramatización literaria ajena al nivel;
-- estructuras que no puedan sostenerse al traducir.
-
-## 7.3 Longitud
-
-Cada conversación debe tener al menos 20 líneas cuando la tarea lo requiera.
-
-La longitud se logra mediante turnos naturales, no alargando cada intervención.
-
-La calidad y completitud tienen prioridad sobre una cuota fija de conversaciones por mensaje.
-
-## 7.4 Productividad de patrón
-
-El generador debe reutilizar un patrón ya sembrado en dos o tres contextos cuando sea posible.
-
-Se permite coordinación simple con elementos conocidos.
-
-No debe introducir patrones sintácticos nuevos fuera de lo autorizado por la tarea.
-
-## 7.5 Marcadores conversacionales
-
-Un conjunto básico de marcadores puede aparecer desde los niveles iniciales porque funciona como pegamento pragmático.
-
-Ejemplos:
-
-- ajá;
-- a ver;
-- pues;
-- oye;
-- ¿verdad?
-
-Su presencia debe ser natural y no convertirse en muletilla automática.
-
-## 7.6 Regla anti-ping-pong
-
-No deben aparecer más de tres turnos consecutivos de pregunta–respuesta limpia.
-
-La secuencia debe romperse mediante:
-
-- eco;
-- reacción;
-- duda;
-- autocorrección;
-- comentario;
-- respuesta incompleta;
-- iniciativa del otro interlocutor;
-- cambio menor en la situación.
-
-## 7.7 Aperturas y cierres
-
-Las conversaciones que abren con saludo o cierran con despedida o agradecimiento verbalizado no deben superar aproximadamente un tercio del total, salvo situaciones donde estas fórmulas sean socialmente centrales.
-
-El inventario de pasos pragmáticos no funciona como checklist.
-
-## 7.8 Jerarquía de prioridades
-
-La versión vigente del generador aplica esta prioridad:
-
-1. naturalidad;
-2. gramática;
-3. pragmática;
-4. instrucciones de la tarea;
-5. balance residual.
-
-Esta jerarquía evita sacrificar naturalidad para cumplir métricas secundarias.
-
-## 7.9 Límites
-
-El generador no mantiene de forma confiable entre mensajes:
-
-- historial;
-- balance acumulado;
-- déficit de situaciones;
-- déficit de patrones;
-- balance de personajes;
-- cobertura léxica.
-
-Estas funciones corresponden a un controlador externo.
-
----
-
-# 8. Validación del corpus
-
-## 8.1 Validación lingüística
-
-Debe revisar:
-
-- significado;
-- naturalidad;
-- pronunciación;
-- segmentación;
-- orden;
-- equivalencia;
-- escritura;
-- variante;
-- contexto de uso.
-
-## 8.2 Validación comunitaria
-
-Debe revisar:
-
-- pertinencia;
-- realidad de la escena;
-- relación social;
-- posibles implicaciones;
-- fórmulas de cortesía;
-- uso local;
-- representatividad.
-
-La validación de una persona no se presenta como consenso de toda la comunidad.
-
-## 8.3 Validación pedagógica
-
-Debe revisar:
-
-- función;
-- novedad;
-- progresión;
-- producibilidad;
-- reutilización;
-- relación con COR001;
-- carga acumulada;
-- transferencia.
-
-## 8.4 Validación dramatúrgica
-
-Debe revisar:
-
-- coherencia;
-- ritmo;
-- economía;
-- continuidad;
-- naturalidad;
-- ausencia de relleno;
-- variación de turnos;
-- plausibilidad.
-
-## 8.5 Validación técnica
-
-Debe verificar:
-
-- correspondencia entre entrada y audio;
-- integridad de identificadores;
-- versiones;
-- metadatos;
-- disponibilidad de archivos;
-- relación con derivados.
-
----
-
-# 9. Evolución del corpus
-
-## 9.1 Primera etapa: frases básicas
-
-La primera etapa organizó 107 frases en bloques temáticos.
-
-Este enfoque permitió crear una base inicial clara y manejable.
-
-## 9.2 Crisis de COR002
-
-La ampliación mediante los mismos bloques mostró límites:
-
-- repetición;
-- falta de progresión;
-- frases poco productivas;
-- acumulación temática;
-- baja continuidad;
-- artificialidad.
-
-El problema no se resolvía reemplazando algunas frases.
-
-Requería cambiar la arquitectura.
-
-## 9.3 Paso a situaciones
-
-Las situaciones comunicativas se adoptaron como origen del material.
-
-Esto permitió pensar en:
-
-- actores;
-- objetivos;
-- contexto;
-- secuencias;
-- funciones;
-- pragmática;
-- cultura.
-
-## 9.4 Paso a funciones
-
-Las funciones comunicativas se adoptaron como unidad principal para medir avance.
-
-Esto permitió distinguir entre:
-
-- frases nuevas;
-- funciones nuevas;
-- patrones nuevos;
-- variantes;
-- repeticiones vacías.
-
-## 9.5 Paso a corpus dramatúrgico
-
-Se desarrolló un generador de conversaciones en español para producir escenas más naturales.
-
-El proceso mostró que:
-
-- JSON y metadatos excesivos hacían inviable la generación;
-- la prohibición rígida de complejidad producía diálogos robóticos;
-- los marcadores conversacionales eran necesarios desde etapas tempranas;
-- el ritmo requería una regla concreta contra la alternancia mecánica;
-- el historial no podía depender del modelo.
-
-## 9.6 Paso a arquitectura de tres capas
-
-El generador se separó en:
-
-- motor;
-- datos;
-- tarea.
-
-Esto permite modificar situaciones y léxico sin reescribir las reglas estables.
-
-## 9.7 Estado vigente
-
-La arquitectura actual combina:
-
-- COR001 como base;
-- reconstrucción pendiente de COR002;
-- escenas;
-- funciones;
-- patrones;
-- léxico rotativo;
-- niveles gramaticales y pragmáticos;
-- borradores dramatúrgicos en español;
-- validación y traducción por hablantes;
-- control externo futuro de cobertura.
-
----
-
-# 10. Estado actual
-
-## 10.1 Existe
-
-- COR001 con 107 frases validadas;
-- audios relacionados con COR001;
-- un borrador anterior de COR002 descartado como bloque definitivo;
-- inventarios de situaciones;
-- niveles gramaticales G1–G5;
-- niveles pragmáticos P1–P5;
-- bancos de léxico;
-- `corpus_v2.txt`;
-- `lexico_v2.txt`;
-- `prompt_generador_corpus_v7.md`;
-- reglas de naturalidad y dramatización;
-- criterio de balance de género;
-- regla de límite de saludos y despedidas;
-- arquitectura de tres capas.
-
-## 10.2 Está terminado
-
-- decisión de no generar Didxazá automáticamente;
-- decisión de no usar listas temáticas como arquitectura principal;
-- definición de escena, función y patrón;
-- separación entre motor, datos y tarea;
-- abandono de v5 y v6;
-- adopción de v7 como versión vigente;
-- identificación de COR002 anterior como borrador reemplazable.
-
-## 10.3 Permanece incompleto
-
-- COR002 definitivo;
-- matriz completa de funciones;
-- mapa consolidado de patrones;
-- controlador externo;
-- medición acumulada de cobertura;
-- pruebas a escala de v7;
-- validación comunitaria de las escenas;
-- validación lingüística de nuevas conversaciones;
-- formalización completa de metadatos;
-- secuenciación final entre niveles.
-
----
-
-# 11. Pendientes
-
-## Alta prioridad
-
-### Reconstruir COR002
-
-Debe construirse desde:
-
-- escenas;
-- funciones;
-- cobertura de COR001;
-- patrones;
-- validación comunitaria;
-- progresión.
-
-No debe reutilizar automáticamente el bloque anterior.
-
-### Probar `prompt_generador_corpus_v7.md`
-
-Debe ejecutarse un lote real para verificar:
-
-- naturalidad;
-- economía;
-- regla anti-ping-pong;
-- techo de saludos y despedidas;
-- balance de género;
-- productividad de patrones;
-- cumplimiento de la tarea.
-
-### Construir la matriz de cobertura
-
-Debe relacionar:
-
-- escena;
-- función;
-- patrón;
-- nivel G;
-- nivel P;
-- léxico;
-- cobertura previa;
-- novedad;
-- validación.
-
-## Prioridad media
-
-### Diseñar el controlador externo
-
-Debe gestionar:
-
-- historial;
-- selección;
-- balance;
-- déficits;
-- personajes;
-- léxico;
-- patrones;
-- generación del bloque TAREA.
-
-### Formalizar el esquema de metadatos
-
-Debe definir campos obligatorios, estados y reglas de versionado.
-
-### Validar las situaciones con hablantes
-
-Debe revisar realidad cultural, frecuencia y naturalidad.
-
-## Baja prioridad
-
-### Evaluar un sistema externo de frecuencia léxica
-
-Debe determinarse si conviene reintroducir medición cuantitativa fuera del prompt.
-
-### Revisar materiales recuperables del COR002 anterior
-
-Solo después de contar con la nueva arquitectura y la matriz de cobertura.
-
----
-
-# 12. Límites del documento
-
-Este documento describe cómo está diseñado y organizado el corpus.
-
-No define:
-
-- la metodología general del proyecto;
-- la fundamentación pedagógica;
-- el marco teórico;
-- los parámetros técnicos de audio;
-- la bibliografía;
-- la arquitectura del repositorio;
-- los procedimientos administrativos;
-- los acuerdos de colaboración.
+Toda modificación sustantiva debe seguir las reglas de actualización del Sistema de Conocimiento.
