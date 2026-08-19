@@ -23,13 +23,13 @@ Construir materiales de aprendizaje auditivo del Didxazá a partir de situacione
 
 ## Complejidad dual
 
-La decisión de diseño central del proyecto es separar explícitamente dos ejes de dificultad:
+El proyecto separa actualmente dos ejes de dificultad:
 
 **Eje gramatical (G1–G5)** — qué estructuras lingüísticas está permitido usar.
 
 **Eje pragmático (P1–P5)** — qué profundidad de contenido y qué registro se incluyen.
 
-El eje gramatical opera como restricción dura; el pragmático, como restricción blanda. Esto permite que el aprendiz avance en estructura sin que la carga conceptual lo rebase. Las decisiones y principios que sustentan esta separación están documentados en `conocimiento/decisiones/` y `conocimiento/principios/`.
+El eje gramatical opera como restricción dura y el pragmático como restricción blanda. Esta arquitectura está vigente como marco de trabajo, pero **no se considera terminada**. Debe seguir revisándose a la luz de la evidencia lingüística y gramatical que el proyecto continúa extrayendo y validando. Las decisiones y principios relacionados están documentados en `conocimiento/decisiones/` y `conocimiento/principios/`.
 
 ---
 
@@ -42,6 +42,7 @@ vocesdelasnubes/
 ├── 01_JERARQUIA_DE_VERDAD.md             # Resolución de conflictos entre fuentes
 ├── 02_BACKLOG.md                         # Deuda técnica del sistema
 ├── 03_REGLAS_DE_ACTUALIZACIÓN.md         # Cómo se modifica el sistema
+├── 04_RELACION_CON_ELDP.md               # Frontera de autoridad con la candidatura ELDP
 ├── conocimiento/
 │   ├── METODOLOGIA.md                    # Cómo trabaja el proyecto
 │   ├── CORPUS.md                         # Arquitectura del corpus
@@ -71,15 +72,19 @@ El proyecto se gobierna mediante un conjunto de documentos versionados que const
 
 `01_JERARQUIA_DE_VERDAD.md` establece qué fuente prevalece según el tipo de pregunta. Para el uso contemporáneo de la lengua, la evidencia oral registrada y la validación comunitaria tienen precedencia sobre la bibliografía.
 
+La relación con la candidatura al Small Grant de ELDP se regula en `04_RELACION_CON_ELDP.md`: este repositorio conserva la autoridad sobre el estado lingüístico, pedagógico, metodológico y operativo de Voces de las Nubes; el repositorio ELDP conserva la autoridad sobre la candidatura.
+
 ---
 
 ## Estado del proyecto
 
-**COR001** — corpus inicial de frases básicas, grabado y procesado.
+**COR001 — abierto, en consolidación final.** El corpus inicial de 107 frases ya fue grabado y procesado en una primera etapa, pero todavía no está cerrado. Permanecen pendientes la revisión y corrección ortográfica de las traducciones, correcciones derivadas de esa revisión, regrabación de algunos materiales que no quedaron adecuadamente, normalización final del audio y las entregas finales para Anki y para distribución de audio. El proyecto está desarrollando fuera de este repositorio un procedimiento automatizado de corrección ortográfica que todavía no se incorpora formalmente al Sistema de Conocimiento.
 
-**COR002** — en construcción. El borrador original fue descartado tras una revisión crítica que detectó repeticiones, baja productividad y selección por valor poético más que comunicativo. La versión actual se organiza según la arquitectura de complejidad dual. Se encuentra en revisión y traducción con hablante nativo. **No se ha realizado ninguna grabación de COR002.**
+**COR002 — en revisión profunda, sin versión definitiva.** El borrador anterior fue descartado tras detectar repeticiones, baja productividad y selección insuficientemente comunicativa. Existe trabajo posterior sobre situaciones y complejidad dual, pero su arquitectura sigue abierta a cambios importantes. Se espera la revisión de Vicente Gutiérrez y deben volver a revisarse las situaciones, la arquitectura G/P y su relación con la evidencia gramatical y lingüística que continúa extrayéndose de la literatura disponible. **No se ha realizado ninguna grabación de COR002.** El generador vigente tampoco debe considerarse estable mientras este trabajo continúe.
 
-El trabajo pendiente del Sistema de Conocimiento está registrado en `02_BACKLOG.md`.
+**Metodología, teoría y pedagogía — consolidadas como base de trabajo, pero evolutivas.** Los documentos actuales permiten operar y tomar decisiones, pero no se consideran cerrados: deben seguir cambiando cuando nueva evidencia del proyecto, de hablantes o de fuentes especializadas lo justifique.
+
+El trabajo pendiente del Sistema de Conocimiento se registra en `02_BACKLOG.md` únicamente cuando constituye deuda estructural permanente; el backlog no debe utilizarse como planificador general de todas las actividades operativas.
 
 ---
 
