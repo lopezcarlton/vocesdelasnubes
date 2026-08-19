@@ -1,133 +1,115 @@
 # Voces de las Nubes
 
-Corpus lingüístico digital del Didxazá (zapoteco istmeño) con una herramienta interactiva para aprender a escuchar la lengua a través de grabaciones autênticas de hablantes nativos.
-
-## Descripción del Proyecto
-
-**Voces de las Nubes** es un proyecto de documentación y revitalización del Didxazá, la lengua zapoteca del Istmo de Tehuantepec, Oaxaca. El proyecto combina investigación lingüística rigurosa con tecnología digital para crear recursos accesibles que permitan a hablantes, estudiantes y investigadores conectar con la lengua a través de situaciones comunicativas contextualizadas.
-
-### Objetivo Principal
-
-Desarrollar una plataforma digital que facilite el aprendizaje auditivo del Didxazá mediante:
-- Grabaciones de hablantes nativos en situaciones cotidianas y culturales
-- Una clasificación sistemática de contextos comunicativos organizados por complejidad gramatical y pragmática
-- Recursos para la documentación y análisis lingüístico
-- Herramientas que apoyen la revitalización de la lengua
-
-## Características
-
-### Fase Pública (Herramienta de Escucha Interactiva)
-
-Una aplicación digital que permite a los usuarios:
-- Escuchar grabaciones auténticas de hablantes nativos del Didxazá
-- Explorar situaciones comunicativas variadas (convocar, celebrar, recordar, despedir, renovar)
-- Identificar patrones gramaticales y pragmáticos
-- Acceder a transcripciones, traduciones y anotaciones
-- Navegar por niveles de complejidad (G1–G5 para gramática, P1–P5 para pragmática)
-
-### Organización de Situaciones Comunicativas
-
-El corpus se estructura en torno a **24 situaciones** organizadas según:
-
-**Eje Gramatical (G1–G5):** complejidad estructural permitida en cada nivel
-- G1: Frases simples, vocabulario básico
-- G2: Oraciones coordinadas, presente/pasado simple
-- G3: Subordinación básica, tiempos complejos
-- G4: Subordinación avanzada, construcciones idiomáticas
-- G5: Registro formal, construcciones arcaicas, complejidad máxima
-
-**Eje Pragmático (P1–P5):** profundidad de contenido y registro
-- P1: Saludos, presentaciones, información factual
-- P2: Interacciones cotidianas, narración simple
-- P3: Conversaciones con matices emocionales, contexto cultural
-- P4: Debates, expresión de opinión, registro formal
-- P5: Análisis profundo, registro especializado, contexto histórico
-
-El nivel gramatical **toma precedencia** sobre el pragmático en la estructuración del contenido.
-
-## Estructura del Repositorio
-
-```
-voces-de-las-nubes/
-├── README.md                          # Este archivo
-├── docs/
-│   ├── situaciones/                   # Inventario de situaciones comunicativas
-│   ├── metodologia.md                 # Descripción de la metodología
-│   └── referencias.md                 # Fuentes y referencias bibliográficas
-├── data/
-│   ├── grabaciones/                   # Archivos de audio (estructura TBD)
-│   ├── transcripciones/               # Transcripciones en Didxazá
-│   ├── traducciones/                  # Traducciones al español/inglés
-│   └── anotaciones/                   # Anotaciones lingüísticas
-├── resources/
-│   ├── vocabulario/                   # Listas de vocabulario por tema
-│   └── categorias-rotacion/           # Categorías de rotación léxica
-├── corpus-generation/
-│   └── prompts/                       # Sistema modular de generación de corpus (v5)
-└── LICENSE
-```
-
-## Metodología
-
-### Principios de Diseño
-
-1. **Autenticidad:** Todas las grabaciones provienen de hablantes nativos del Didxazá en contextos naturales
-2. **Contextualización:** Cada grabación se sitúa en una situación comunicativa específica que refleja funciones sociales reales
-3. **Accesibilidad:** La herramienta es diseñada para usuarios sin preparación lingüística formal
-4. **Rigor académico:** El corpus mantiene estándares de documentación lingüística profesional
-5. **Respeto cultural:** El proyecto centra las voces y agencia de los hablantes nativos
-
-### Complejidad Dual
-
-La innovación central del proyecto es separar explícitamente:
-- **Complejidad gramatical:** qué estructuras lingüísticas está permitido usar
-- **Complejidad pragmática:** qué profundidad de contenido y registro se incluye
-
-Esto permite a los usuarios progresar a su propio ritmo sin que la dificultad conceptual (P) los supere cuando están aprendiendo estructura (G).
-
-## Acceso y Uso
-
-### Herramienta Interactiva
-
-[Enlace a aplicación web TBD]
-
-La herramienta permite:
-- Navegar por situaciones según nivel de complejidad
-- Escuchar audio y leer transcripciones sincronizadas
-- Ver traducciones y anotaciones gramaticales
-- Buscar por palabra, tema, o función comunicativa
-
-### Datos del Corpus
-
-El corpus completo está disponible en este repositorio para investigadores bajo licencia [TBD].
-
-## Créditos y Colaboradores
-
-**Dirección:** Emiliano López Carlton  
-**Grabaciones y Edición Lingüística:** [Colaboradores TBD]  
-**Hablantes Nativos:** Comunidad del Istmo de Tehuantepec
-
-Este proyecto fue desarrollado con apoyo de [instituciones/financiamiento TBD].
-
-## Licencia
-
-[A definir: CC-BY-NC-SA u otra licencia apropiada para corpus lingüísticos comunitarios]
-
-## Citas
-
-Si utilizas este corpus en investigación, por favor cita:
-
-```
-López Carlton, E. (2026). Voces de las Nubes: Corpus digital del Didxazá. 
-https://github.com/[usuario]/voces-de-las-nubes
-```
-
-## Contacto
-
-Para preguntas sobre el proyecto:
-- lopezcarlton@gmail.com
-- [Sitio web/institución TBD]
+Corpus lingüístico digital del Didxazá (zapoteco del Istmo) y herramienta de aprendizaje auditivo basada en grabaciones de hablantes nativos.
 
 ---
 
-**Nota sobre fases del proyecto:** Esta documentación pública describe únicamente la herramienta de escucha interactiva (fase pública). El proyecto incluye fases adicionales de investigación y desarrollo que se documentarán según corresponda.
+## Descripción
+
+**Voces de las Nubes** es un proyecto de documentación y revitalización del Didxazá, la lengua zapoteca del Istmo de Tehuantepec, Oaxaca. Se desarrolla en Casa de las Ciencias de Oaxaca, institución pública dedicada a acompañar a docentes con herramientas pedagógicas y didácticas, bajo el principio de que el conocimiento indígena y el conocimiento científico tienen el mismo valor y deben sostener un diálogo en igualdad de condiciones.
+
+El proyecto está dirigido especialmente a personas que tienen la lengua en su historia familiar pero no la recibieron, y que hoy carecen de recursos para aprenderla por cuenta propia.
+
+### Objetivo
+
+Construir materiales de aprendizaje auditivo del Didxazá a partir de situaciones comunicativas reales, mediante:
+
+- grabaciones de hablantes nativos;
+- una progresión organizada por complejidad gramatical y pragmática;
+- documentación lingüística trazable;
+- procedimientos de validación con hablantes y especialistas.
+
+---
+
+## Complejidad dual
+
+La decisión de diseño central del proyecto es separar explícitamente dos ejes de dificultad:
+
+**Eje gramatical (G1–G5)** — qué estructuras lingüísticas está permitido usar.
+
+**Eje pragmático (P1–P5)** — qué profundidad de contenido y qué registro se incluyen.
+
+El eje gramatical opera como restricción dura; el pragmático, como restricción blanda. Esto permite que el aprendiz avance en estructura sin que la carga conceptual lo rebase. Las decisiones y principios que sustentan esta separación están documentados en `conocimiento/decisiones/` y `conocimiento/principios/`.
+
+---
+
+## Estructura del repositorio
+
+```
+vocesdelasnubes/
+├── README.md
+├── 00_ARQUITECTURA_DEL_CONOCIMIENTO.md   # Organización del sistema
+├── 01_JERARQUIA_DE_VERDAD.md             # Resolución de conflictos entre fuentes
+├── 02_BACKLOG.md                         # Deuda técnica del sistema
+├── 03_REGLAS_DE_ACTUALIZACIÓN.md         # Cómo se modifica el sistema
+├── conocimiento/
+│   ├── METODOLOGIA.md                    # Cómo trabaja el proyecto
+│   ├── CORPUS.md                         # Arquitectura del corpus
+│   ├── AUDIO.md                          # Producción y postproducción de audio
+│   ├── PEDAGOGIA.md                      # Diseño pedagógico
+│   ├── TEORIA.md                         # Marcos teóricos adoptados
+│   ├── VALIDACION.md                     # Procedimientos de validación
+│   ├── BIBLIOGRAFIA.md                   # Sistema de fichas bibliográficas
+│   ├── decisiones/                       # Decisiones formales del proyecto
+│   ├── principios/                       # Principios de diseño
+│   ├── hallazgos/                        # Hallazgos documentados
+│   └── fuentes/                          # Fuentes de razonamiento
+├── contexto-para-reconstruir-base-de-conocimientos/
+└── prompts/
+```
+
+---
+
+## Sistema de Conocimiento
+
+El proyecto se gobierna mediante un conjunto de documentos versionados que constituyen su memoria permanente. Cuatro reglas lo rigen:
+
+1. **Una sola fuente de verdad.** Los documentos del sistema prevalecen sobre la memoria de trabajo.
+2. **Las contradicciones se documentan, no se ocultan.** Ninguna evidencia se elimina para preservar coherencia documental.
+3. **Toda afirmación es trazable** hasta su fuente, justificación, fecha y alcance.
+4. **Ninguna modificación silenciosa.** Los cambios al sistema se proponen, se aprueban y se registran.
+
+`01_JERARQUIA_DE_VERDAD.md` establece qué fuente prevalece según el tipo de pregunta. Para el uso contemporáneo de la lengua, la evidencia oral registrada y la validación comunitaria tienen precedencia sobre la bibliografía.
+
+---
+
+## Estado del proyecto
+
+**COR001** — corpus inicial de frases básicas, grabado y procesado.
+
+**COR002** — en construcción. El borrador original fue descartado tras una revisión crítica que detectó repeticiones, baja productividad y selección por valor poético más que comunicativo. La versión actual se organiza según la arquitectura de complejidad dual. Se encuentra en revisión y traducción con hablante nativo. **No se ha realizado ninguna grabación de COR002.**
+
+El trabajo pendiente del Sistema de Conocimiento está registrado en `02_BACKLOG.md`.
+
+---
+
+## Créditos
+
+**Coordinación:** Emiliano López Carlton
+**Validación lingüística:** Vicente Gutiérrez
+**Hablantes:** Comunidad del Istmo de Tehuantepec
+**Institución:** Casa de las Ciencias de Oaxaca (CaCiO)
+
+---
+
+## Licencia y acceso
+
+La licencia del corpus está **por definir**. Requiere acuerdos comunitarios previos sobre uso, autoría y distribución (ver BL-013 y BL-019 en el backlog).
+
+Los materiales de audio y las transcripciones no se publican en este repositorio. El repositorio contiene únicamente el Sistema de Conocimiento del proyecto.
+
+---
+
+## Cita
+
+```
+López Carlton, E. (2026). Voces de las Nubes: corpus digital del Didxazá.
+Casa de las Ciencias de Oaxaca.
+https://github.com/lopezcarlton/vocesdelasnubes
+```
+
+---
+
+## Contacto
+
+lopezcarlton@gmail.com
