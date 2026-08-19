@@ -1,332 +1,212 @@
 # BACKLOG
 
-**Proyecto:** Voces de las Nubes
-
-**Versión:** 1.2
-
-**Última actualización:** 2026-08-06
+**Proyecto:** Voces de las Nubes  
+**Versión:** 1.3  
+**Última actualización:** 2026-08-19
 
 ---
 
 # Filosofía del backlog
 
-El backlog representa la deuda técnica permanente del Sistema de Conocimiento.
+El backlog registra únicamente **deuda estructural permanente del Sistema de Conocimiento**.
+
+No es un planificador general del proyecto y no debe intentar representar todas las tareas operativas en curso.
 
 Una tarea entra al backlog cuando:
 
 - existe una laguna documentada en el Sistema de Conocimiento;
 - esa laguna obstaculiza decisiones posteriores;
-- la laguna requiere investigación, análisis o formulación;
-- la solución no es evidente ni inmediata.
+- requiere investigación, análisis o formulación no trivial;
+- su resolución debe quedar integrada de forma permanente en el sistema.
 
-Una tarea sale del backlog cuando:
+Una tarea no debe permanecer abierta únicamente porque sería conveniente añadir una referencia cruzada, mejorar una redacción o completar mantenimiento documental menor.
 
-- se ha documentado la solución en el sistema;
-- esa solución ha sido validada según corresponda;
-- se ha integrado en el documento pertinente;
-- está disponible como referencia para trabajo futuro.
+El trabajo operativo —corpus, revisión ortográfica, audio, sesiones con hablantes, solicitudes, producción de materiales— puede continuar fuera del backlog. Solo entra aquí cuando revela una deuda estructural que deba resolverse de forma permanente.
 
 ---
 
-# Separación entre tarea activa y trabajo operativo
-
-La tarea activa del backlog representa la deuda técnica prioritaria del Sistema de Conocimiento. El trabajo operativo del proyecto (corpus, audio, sesiones con hablantes, solicitudes) puede continuar en paralelo. Solo se registran nuevas tareas cuando el trabajo real genera deuda permanente.
-
----
-
-# Estado actual
-
-## Tareas completadas
+# Tareas completadas o superadas
 
 ### BL-001 — Establecer la Jerarquía de Verdad
-
 - **Estado:** Completado
 - **Documento:** `01_JERARQUIA_DE_VERDAD.md`
 - **Fecha:** 2026-06-15
 
 ### BL-002 — Definir la Arquitectura del Conocimiento
-
 - **Estado:** Completado
 - **Documento:** `00_ARQUITECTURA_DEL_CONOCIMIENTO.md`
 - **Fecha:** 2026-06-20
 
 ### BL-003 — Formulación de Metodología
-
-- **Estado:** Completado
+- **Estado:** Completado como base operativa; documento evolutivo
 - **Documento:** `conocimiento/METODOLOGIA.md`
 - **Fecha:** 2026-07-30
 
 ### BL-004 — Definición de Corpus
-
-- **Estado:** Completado
+- **Estado:** Completado como arquitectura inicial; documento evolutivo
 - **Documento:** `conocimiento/CORPUS.md`
 - **Fecha:** 2026-07-15
 
 ### BL-005 — Establecer pautas de validación
-
-- **Estado:** Completado
+- **Estado:** Completado como base operativa; documento evolutivo
 - **Documento:** `conocimiento/VALIDACION.md`
 - **Fecha:** 2026-07-20
 
 ### BL-006 — Documentar procedimientos de audio
-
-- **Estado:** Completado
+- **Estado:** Completado como base operativa; sujeto a actualización por trabajo real
 - **Documento:** `conocimiento/AUDIO.md`
 - **Fecha:** 2026-07-25
 
 ### BL-007 — Fundamentación pedagógica
-
-- **Estado:** Completado
+- **Estado:** Completado como base operativa; documento evolutivo
 - **Documento:** `conocimiento/PEDAGOGIA.md`
 - **Fecha:** 2026-07-22
 
 ### BL-008 — Compilar y organizar bibliografía
-
-- **Estado:** Completado
+- **Estado:** Completado como sistema; la bibliografía continúa creciendo
 - **Documento:** `conocimiento/BIBLIOGRAFIA.md`
 - **Fecha:** 2026-08-01
 
 ### BL-009 — Documentar la preparación de materiales para sesiones con hablantes
-
 - **Estado:** Completado
-- **Documento:** `conocimiento/METODOLOGIA.md` (sección 12)
-- **Criterio de cierre alcanzado:** Se documentó el procedimiento metodológico de validación con hablantes a partir de evidencia obtenida durante las primeras sesiones del proyecto. Integrado en METODOLOGIA.md sección 12.
+- **Documento:** `conocimiento/METODOLOGIA.md`, sección 12
 - **Fecha:** 2026-08-05
 
----
-
-## Tareas pendientes
-
 ### BL-010 — Vincular CORPUS.md con el procedimiento de sesión de validación
+- **Estado:** Superado como tarea independiente
+- **Fecha:** 2026-08-19
+- **Razón:** La tarea describía una referencia cruzada entre documentos, no una deuda metodológica real. El procedimiento vive en `METODOLOGIA.md` y la arquitectura de validación en `CORPUS.md`. La ausencia de un enlace explícito no justifica mantener una tarea activa que obstaculiza la lectura del estado del proyecto. La referencia puede añadirse durante mantenimiento ordinario si resulta útil.
 
-**Estado:** Abierto
-**Prioridad:** Media
+### BL-011 — Actualizar VALIDACION.md con puntos específicos de la sesión
+- **Estado:** Superado como tarea independiente
+- **Fecha:** 2026-08-19
+- **Razón:** Los detalles surgidos de sesiones con hablantes deben incorporarse a `VALIDACION.md` cuando constituyan reglas estables y suficientemente generalizables. No existe actualmente una deuda estructural claramente formulada que justifique mantener este identificador abierto.
 
-**Descripción**
-
-Establecer en `conocimiento/CORPUS.md`, sección 8 (Validación del corpus), una referencia explícita al procedimiento documentado en `conocimiento/METODOLOGIA.md` sección 12 (Sesión de validación con hablantes).
-
-CORPUS.md §8 enumera qué debe revisar cada tipo de validación, pero no indica mediante qué procedimiento se ejecuta la validación lingüística y comunitaria con hablantes. METODOLOGIA.md §12 documenta ese procedimiento en tres fases. La laguna es de vinculación, no de contenido.
-
-El procedimiento no debe copiarse dentro de CORPUS.md. La responsabilidad sobre el método corresponde a METODOLOGIA.md; CORPUS.md solo debe remitir a él.
-
-**Nota de corrección:** La versión anterior de esta tarea indicaba integrar el procedimiento en «CORPUS.md sección 4.5, reemplazando la descripción de elicitación y construcción con hablantes». Ese anclaje no corresponde al documento vigente: la sección 4.5 de CORPUS.md es «Cobertura de género» y no existe en el documento una sección sobre elicitación. La tarea se reformula sobre el estado real del documento.
-
-**Responsable:** Emiliano
-**Dependencias:** BL-009 (Completado)
-
-**Criterio de cierre:**
-
-- CORPUS.md §8 remite explícitamente a METODOLOGIA.md §12;
-- la remisión identifica qué tipos de validación (lingüística y comunitaria) se ejecutan mediante ese procedimiento;
-- no se duplica contenido metodológico dentro de CORPUS.md.
+### BL-016 — Documentación de teoría del aprendizaje vigente
+- **Estado:** Completado como base operativa
+- **Documento:** `conocimiento/TEORIA.md`
+- **Fecha de cierre:** 2026-08-19
+- **Razón:** La descripción anterior decía incorrectamente que `TEORIA.md` permanecía vacío. El documento ya contiene marcos de adquisición, revitalización, estructura del Didxazá y decisiones pedagógicas. La teoría seguirá evolucionando, pero esa evolución normal no constituye por sí misma una tarea abierta de backlog.
 
 ---
 
-### BL-011 — Actualizar VALIDACION.md con puntos de validación específicos
-
-**Estado:** Abierto
-**Prioridad:** Media
-
-**Descripción**
-
-Expandir VALIDACION.md con los puntos de validación específicos de la sesión de hablantes (rechazo, reformulación, audio, regrabación en español, inventario léxico). Referencia: METODOLOGIA.md sección 12.
-
-**Responsable:** Emiliano
-**Dependencias:** BL-009 (Completado)
-
----
+# Tareas abiertas
 
 ### BL-012 — Prueba de procedimiento con nuevo hablante
 
-**Estado:** Abierto
+**Estado:** Abierto  
 **Prioridad:** Alta
 
-**Descripción**
+Aplicar el procedimiento de trabajo documentado con un segundo hablante para comprobar su reproducibilidad y registrar qué ajustes exige la práctica.
 
-Aplicar el procedimiento documentado en METODOLOGIA.md sección 12 con un segundo hablante para validar que el procedimiento es reproducible y que genera decisiones consistentes. Recolectar evidencia de funcionamiento.
-
-**Responsable:** Emiliano
-**Dependencias:** BL-009 (Completado)
+**Responsable:** Emiliano  
+**Dependencias:** disponibilidad de un segundo hablante.
 
 ---
 
 ### BL-013 — Formalización de acuerdos con hablantes
 
-**Estado:** Abierto
+**Estado:** Abierto  
 **Prioridad:** Alta
 
-**Descripción**
-
-Desarrollar un protocolo formal de consentimiento, uso de materiales, reconocimiento de autoría y participación. Debe ser claro, accesible en español, y acordado con los colaboradores participantes.
+Desarrollar un protocolo formal de consentimiento, uso de materiales, reconocimiento de autoría, atribución, acceso y participación, suficientemente claro para utilizarse con colaboradores del proyecto.
 
 **Responsable:** Emiliano + Institución
-**Dependencias:** BL-009 (recomendable), disponibilidad legal/institucional
 
 ---
 
 ### BL-014 — Sistema de control externo de cobertura
 
-**Estado:** Abierto
+**Estado:** Abierto  
 **Prioridad:** Media
 
-**Descripción**
-
-Establecer un sistema (herramienta, registro, formato) que mantenga control sobre:
-
-- situaciones cubiertas;
-- patrones introducidos;
-- léxico acumulado;
-- balance entre dominios;
-- dependencias entre funciones.
-
-Este sistema debe permitir al coordinador tomar decisiones sobre qué generar a continuación sin confiar únicamente en la memoria.
+Establecer un sistema reutilizable que permita controlar situaciones, patrones, léxico, balance entre dominios y dependencias entre funciones sin depender de la memoria de una sesión o de un modelo.
 
 **Responsable:** Emiliano
-**Dependencias:** Ninguna inmediata
 
 ---
 
 ### BL-015 — Validación pedagógica con aprendices
 
-**Estado:** Abierto
-**Prioridad:** Media
+**Estado:** Abierto  
+**Prioridad:** Posterior
 
-**Descripción**
+Realizar pruebas con aprendices reales para validar comprensibilidad, pausas, dificultad, transferencia, retención y disposición de uso.
 
-Realizar pruebas con aprendices reales para validar:
+No es una tarea inmediata. Requiere materiales suficientemente maduros y acuerdos de participación.
 
-- comprensibilidad del material;
-- pausas de duración adecuada;
-- nivel de dificultad;
-- transferencia a contextos nuevos;
-- retención después del uso;
-- disposición para seguir usando la herramienta.
-
-Requiere consentimiento informado de participantes y protocolos de investigación.
-
-**Responsable:** Emiliano + Especialista en evaluación pedagógica
-**Dependencias:** BL-013 (acuerdos con participantes)
+**Responsable:** Emiliano + apoyo especializado cuando corresponda.
 
 ---
 
-### BL-016 — Documentación de teoría del aprendizaje vigente
+### BL-017 — Evaluación del generador de borradores
 
-**Estado:** Abierto
-**Prioridad:** Baja
+**Estado:** Abierto  
+**Prioridad:** Media, pero dependiente de la revisión actual del sistema
 
-**Descripción**
+Evaluar el desempeño del generador de borradores en español: aceptación por hablantes, artificialidad, errores, cobertura y utilidad real.
 
-TEORIA.md existe pero permanece vacío. Desarrollar una sección sobre qué teorías de adquisición de segunda lengua informan el diseño de Voces de las Nubes. Puede incluir: hipótesis de input comprensible (Krashen), output (Swain), conexión de forma-significado (VanPatten y Herschensohn), perspectivas socioculturales, etc.
+**Nota 2026-08-19:** El generador vigente no debe considerarse estable. La revisión de la arquitectura G/P y la nueva evidencia gramatical y lingüística pueden producir cambios importantes antes de que tenga sentido una evaluación definitiva.
 
-**Responsable:** Emiliano + Especialista en lingüística aplicada
-**Dependencias:** BL-004, BL-007 (ya completados)
-
----
-
-### BL-017 — Evaluación del generador de borradores vigente
-
-**Estado:** Abierto
-**Prioridad:** Media
-
-**Descripción**
-
-Realizar análisis sobre el desempeño del modelo automático que genera borradores en español. Métricas: tasa de aceptación por hablantes, tipos de errores más frecuentes, cobertura de funciones, falsos positivos (frases artificiales).
-
-**Responsable:** Emiliano + Especialista en LLM/evaluación
-**Dependencias:** Ninguna inmediata
+**Responsable:** Emiliano
 
 ---
 
 ### BL-018 — Formalización del estatus de Emiliano López Carlton
 
-**Estado:** Abierto
+**Estado:** Abierto  
 **Prioridad:** Alta
 
-**Descripción**
-
-Acuerdo formal entre Emiliano y la institución sobre rol, tiempo asignado, reconocimiento, autoridad sobre decisiones, acceso a recursos, y continuidad del proyecto. Necesario para evitar ambigüedades administrativas y para clarificar límites de responsabilidad.
+Formalizar con la institución rol, tiempo asignado, reconocimiento, autoridad sobre decisiones, acceso a recursos y continuidad del proyecto.
 
 **Responsable:** Institución + Emiliano
-**Dependencias:** Institucional
 
 ---
 
 ### BL-019 — Publicación y acceso a materiales
 
-**Estado:** Abierto
-**Prioridad:** Media
+**Estado:** Abierto  
+**Prioridad:** Media / posterior
 
-**Descripción**
+Definir canales de publicación, niveles de acceso, términos de uso, formatos de distribución, plataformas y procedimientos de actualización.
 
-Definir canales de publicación, niveles de acceso (interno/público), términos de uso, formatos de distribución, plataformas tecnológicas y procedimientos de actualización. Requiere análisis de audiencia, sostenibilidad técnica y acuerdos comunitarios.
-
-**Responsable:** Emiliano + Institución + Especialista en tecnología educativa
-**Dependencias:** BL-013 (acuerdos), BL-015 (validación)
+**Dependencias principales:** acuerdos con participantes y madurez suficiente de los materiales.
 
 ---
 
 ### BL-020 — Validar el inventario léxico base de COR002
 
-**Estado:** Abierto
+**Estado:** Abierto  
 **Prioridad:** Alta
 
-**Descripción**
+Identificar el inventario léxico vigente que servirá como referencia para COR002 y someterlo a revisión con Vicente Gutiérrez para documentar naturalidad, variantes, uso contemporáneo, duplicados, vacíos, contexto y observaciones de escritura cuando puedan validarse con seguridad.
 
-Identificar el inventario léxico vigente que servirá como base para COR002 y someterlo a revisión con Vicente Gutiérrez para documentar:
+**Nota 2026-08-19:** Esta tarea debe entenderse dentro de una revisión más amplia de COR002. El corpus está esperando revisión de Vicente y además deben revisarse situaciones, arquitectura G/P y su relación con la evidencia gramatical y lingüística que continúa incorporándose al proyecto.
 
-- naturalidad de los términos propuestos;
-- variantes por localidad cuando correspondan;
-- correspondencia con el uso contemporáneo;
-- duplicados o vacíos relevantes;
-- contextos de uso adecuados;
-- observaciones sobre escritura según el Alfabeto Popular vigente cuando Vicente pueda validarla con seguridad.
-
-La tarea no se considera cerrada únicamente por realizar la sesión. Debe producir un inventario identificable y reutilizable dentro del Sistema de Conocimiento.
-
-**Responsable:** Emiliano López Carlton
+**Responsable:** Emiliano López Carlton  
 **Validador:** Vicente Gutiérrez
 
-**Dependencias:**
-
-- identificar y fijar la versión del inventario léxico que será revisada;
-- disponibilidad de Vicente para la sesión de validación.
-
-**Criterio de cierre:**
-
-- existe una versión identificable del inventario léxico revisado;
-- quedan registrados términos aceptados, rechazados o sustituidos;
-- se documentan observaciones de variación y contexto cuando existan;
-- los vacíos relevantes detectados quedan registrados;
-- el resultado puede utilizarse como referencia para COR002 y trabajo posterior.
-
-**Fecha objetivo:** A acordar con Vicente.
+**Criterio de cierre:** existe un inventario identificable y reutilizable con términos aceptados, rechazados o sustituidos, observaciones relevantes de variación y vacíos documentados.
 
 ---
 
 # Criterios de cierre
 
-Una tarea se considera completada cuando:
+Una tarea estructural se considera completada cuando:
 
-1. Existe un documento en el Sistema de Conocimiento que resuelve la necesidad.
-2. El documento es suficiente para que otros tomen decisiones o ejecuten trabajo basado en él.
-3. Ha sido validado según corresponde (por hablantes, especialistas o coordinación).
-4. Está integrado en el lugar pertinente de la arquitectura.
-5. Es referenciable — tiene título, sección o identificador claro.
+1. existe una solución documentada o una decisión explícita que elimina la laguna;
+2. otros pueden trabajar sin depender de reconstruir el problema desde conversaciones anteriores;
+3. la solución está integrada en el lugar pertinente del Sistema de Conocimiento;
+4. se ha validado según corresponda.
 
-Una tarea se reabre si:
-
-- la evidencia posterior contradice la solución adoptada;
-- el trabajo operativo revela que la solución es insuficiente;
-- aparece información que obliga a revisar la decisión;
-- el documento fue completado con alcance limitado que requiere expansión.
+Una tarea también puede declararse **superada como tarea independiente** cuando una revisión demuestra que nunca constituyó deuda estructural suficiente para justificar su mantenimiento en el backlog.
 
 ---
 
-# Notas
+# Regla de mantenimiento
 
-- Este backlog es un registro de deuda técnica permanente, no un planificador de todas las actividades del proyecto.
-- Las actividades operativas (grabación, edición, trabajo de campo, solicitudes administrativas) no entran aquí a menos que generen una laguna documentacional.
-- La primera sesión de COR002 con `DEC-GRABAR-EN-VIVO` es trabajo operativo y, por tanto, no se registra como BL-021. Su función de validación queda documentada en la decisión y en `conocimiento/AUDIO.md`.
-- Cada entrada debe incluir: descripción clara, responsable, prioridad relativa, dependencias, criterio de cierre.
-- El estado se revisa regularmente. Las revisiones deben quedar registradas en el historial del documento.
+El backlog debe mantenerse pequeño y legible.
+
+No se abrirán tareas por mantenimiento editorial menor, referencias cruzadas triviales o evolución normal de documentos que ya cumplen su función.
+
+Si mantener una entrada cuesta más trabajo que la deuda que representa, debe revisarse si realmente pertenece al backlog.
