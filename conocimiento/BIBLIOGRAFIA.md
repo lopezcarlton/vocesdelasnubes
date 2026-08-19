@@ -1,9 +1,9 @@
 # BIBLIOGRAFIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.0  
+**Versión:** 1.1  
 **Estado:** Borrador consolidado  
-**Fecha:** 2026-08-05  
+**Fecha:** 2026-08-14  
 
 ---
 
@@ -29,29 +29,63 @@ El orden no debe modificarse.
 
 # 2. Identificadores
 
-Las entradas anteriores utilizan `B001`–`B019`.
+## 2.1 Formato vigente
 
-Las nuevas entradas utilizan `BIB` seguido de tres dígitos, desde `BIB020`.
+El formato vigente es `BIB` seguido de tres dígitos: `BIB001`, `BIB002`, `BIB003`.
 
-Los identificadores anteriores no se cambian retroactivamente.
+Es el único formato válido. No existe un sistema paralelo en uso.
 
-No se reutilizan identificadores eliminados.
+## 2.2 Relación con el formato anterior
+
+Hasta junio de 2026 el proyecto utilizó el formato `B` seguido de tres dígitos.
+
+En julio de 2026 el prefijo `BIB` **sustituyó** al prefijo `B` conservando el número de cada entrada. No son dos series distintas ni un rango heredado que convive con uno nuevo. Es la misma serie con otro prefijo.
+
+La equivalencia es directa y sin excepciones:
+
+B001 = BIB001
+B016 = BIB016
+B041 = BIB041
+
+Toda referencia con formato `B###` encontrada en documentos antiguos, notas de trabajo o versiones previas de este documento debe leerse como `BIB###`. Designa la misma fuente.
+
+El formato `B###` no debe usarse en documentos nuevos ni en referencias nuevas.
+
+## 2.3 Crecimiento del sistema
+
+La numeración es secuencial y continua. No existe límite superior ni rango reservado.
+
+La numeración alcanza `BIB055` a la fecha de esta versión. Las entradas siguientes continúan a partir del último identificador asignado en la hoja de cálculo, que es el registro operativo de la bibliografía.
+
+Este documento no se actualiza cada vez que se añade una fuente. Solo se actualiza cuando cambian las reglas del sistema.
+
+## 2.4 Reglas permanentes
+
+- Un identificador designa siempre la misma fuente.
+- No se reutilizan identificadores eliminados.
+- No se reasignan identificadores existentes.
+- El cambio de prefijo no alteró ninguna asignación numérica.
 
 ---
 
 # 3. Bibliografía fundamental
 
-Las fuentes documentadas como revisadas a profundidad en mayo de 2026 son:
+Las fuentes registradas como revisadas a profundidad son:
 
-- B001 — Manzo (2009).
-- B002 — Rafael-Pérez et al. (2024).
-- B016 — Pickett, Villalobos y Marlett (2009).
-- B017 — Pérez Báez, Cata y Bueno Holle (2015).
-- B018 — Proyectolaos / Cortamortaja (2018).
-- B019 — ALAI (1978).
-- B041 — Muntzel (1998).
+- BIB001 — Manzo (2009).
+- BIB002 — Rafael-Pérez et al. (2024).
+- BIB003 — Vocabulario zapoteco del Istmo, ILV (5ª ed.).
+- BIB004 — Pickett, Black y Marcial Cerqueda (2001).
+- BIB016 — Pickett, Villalobos y Marlett (2009).
+- BIB017 — Pérez Báez, Cata y Bueno Holle (2015).
+- BIB018 — Proyectolaos / Cortamortaja (2018).
+- BIB019 — ALAI (1978).
+- BIB041 — Muntzel (1998).
+- BIB044 — Swain (1985).
+- BIB046 — Austin y Sallabank (2012).
+- BIB052 — Calderón Corona (2021).
 
-B003, Vocabulario zapoteco del Istmo, estaba registrado pero solo había sido revisado parcialmente.
+El estado de revisión de cada entrada se registra en la hoja de cálculo. Esta sección refleja el estado a la fecha de la versión del documento y no se actualiza entrada por entrada.
 
 ---
 
@@ -160,11 +194,11 @@ Las ediciones distintas pueden registrarse por separado o aclararse mediante añ
 
 # 10. Estado de revisión
 
-Existe evidencia de revisión profunda de siete fuentes en mayo de 2026.
+Doce fuentes están registradas como revisadas a profundidad. Se enumeran en la sección 3.
 
-Existen otras fuentes registradas y parcialmente consultadas.
+Otras fuentes están registradas y parcialmente consultadas.
 
-No existe en los documentos de contexto una exportación completa y actualizada de toda la hoja bibliográfica.
+El estado de revisión de cada entrada se administra en la hoja de cálculo, no en este documento.
 
 ---
 
@@ -173,9 +207,7 @@ No existe en los documentos de contexto una exportación completa y actualizada 
 No puede documentarse todavía:
 
 - lista completa de todas las entradas;
-- referencias bibliográficas completas de las siete fuentes;
-- registros posteriores a BIB020;
-- estado actual de cada fuente;
+- referencias bibliográficas completas de las fuentes revisadas;
 - ubicación exacta de todos los archivos;
 - bibliografía pedagógica completa;
 - bibliografía de ELDP;
@@ -190,17 +222,9 @@ A partir de julio 2026, el proyecto cambió el sistema de identificadores de fue
 
 ## 12.1 Sistemas en uso
 
-**Sistema anterior (histórico, no en uso):**
+El sistema de identificadores está definido en la sección 2 de este documento.
 
-- Formato: `B` + 3 dígitos (B001, B002, ..., B019, etc.)
-- Usado hasta: junio 2026
-- Estado: histórico, referencia solamente
-
-**Sistema vigente (desde julio 2026):**
-
-- Formato: `BIB` + 3 dígitos (BIB001, BIB002, BIB003, ...)
-- Usado desde: julio 2026
-- Estado: único formato activo
+En julio de 2026 el prefijo `B` fue sustituido por `BIB` conservando la numeración. Esta sección conserva la tabla de equivalencias elaborada durante ese cambio, con valor histórico.
 
 ## 12.2 Remapeo de fuentes revisadas en mayo 2026
 
@@ -220,12 +244,14 @@ Las siete fuentes documentadas como revisadas a profundidad en mayo de 2026 (lis
 
 ## 12.3 Nuevas entradas
 
-Todas las nuevas fuentes incorporadas después de julio 2026 utilizan el formato `BIB020` en adelante.
+Las entradas nuevas continúan la numeración secuencial vigente conforme a la sección 2.3.
 
-No se reutilizan identificadores del sistema anterior ni se reasignan IDs eliminados.
+**Nota de corrección:** la versión anterior de esta sección indicaba que las fuentes incorporadas después de julio de 2026 usarían el formato `BIB020` en adelante. Esa indicación era errónea: el rango `BIB020`–`BIB041` corresponde a fuentes anteriores al cambio de prefijo (Córdova, Kaufman, Pérez Báez, entre otras). No existe rango reservado para entradas nuevas.
+
+---
 
 ## 12.4 Hoja de cálculo
 
-La hoja de cálculo de administración bibliográfica ha sido actualizada a los nuevos identificadores.
+La hoja de cálculo de administración bibliográfica utiliza los identificadores vigentes en todas sus entradas.
 
-Los registros históricos con IDs antiguos (B001-B019) se conservan como referencia, pero todas las referencias internas del proyecto utilizan ahora los IDs vigentes (BIB001-...).
+Los identificadores con formato `B###` que aparezcan en documentos o notas anteriores al cambio de prefijo corresponden a la misma fuente que el identificador `BIB###` con igual número.
