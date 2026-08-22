@@ -1,9 +1,9 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.0  
-**Estado:** Borrador consolidado  
-**Fecha:** 2026-08-05  
+**Versión:** 1.1  
+**Estado:** Borrador consolidado y evolutivo  
+**Fecha:** 2026-08-21  
 
 ---
 
@@ -206,7 +206,14 @@ No puede documentarse todavía:
 
 ---
 
-# 10. Estructura del Didxazá: decisiones pedagógicas
+# 10. Estructura del Didxazá: evidencia lingüística e hipótesis pedagógicas
+
+Esta sección distingue entre dos niveles de afirmación:
+
+- **evidencia lingüística documentada**, proveniente de gramáticas, vocabularios y otras fuentes descriptivas;
+- **decisiones o hipótesis pedagógicas de trabajo**, que organizan el diseño actual pero pueden cambiar conforme avance la revisión lingüística, la validación con hablantes, el análisis de COR001 y COR002 y las pruebas con aprendices.
+
+Las referencias a niveles G1–G5, P1–P5 o etapas curriculares deben leerse de acuerdo con `PEDAGOGIA.md`: son herramientas provisionales de diseño, no una secuencia curricular validada ni una taxonomía cerrada.
 
 ## 10.1 Sistema de marcadores TAM
 
@@ -221,7 +228,7 @@ La Gramática Popular documenta 8 marcadores de TAM (Tiempo-Aspecto-Modo) en did
 7. **Estativo:** Estados o condiciones.
 8. **Futuro:** Acciones venideras.
 
-**Nota pedagógica:** El aspecto Perfecto no tiene representación actualmente en el corpus. Esto implica que ninguna función comunicativa que dependa fundamentalmente de él (expresar experiencia acumulada, resultado presente de acciones pasadas, ej. "ya he ido tres veces") está cubierta. Este es un vacío conocido y pendiente de resolución.
+**Observación pedagógica de trabajo:** El aspecto Perfecto no tiene representación actualmente identificada en el corpus. Esto señala un posible vacío de cobertura para funciones que dependan de él (por ejemplo, expresar experiencia acumulada o resultado presente de acciones pasadas). Su tratamiento curricular sigue pendiente de resolución.
 
 ## 10.2 Posesión: tres mecanismos
 
@@ -231,7 +238,7 @@ La Gramática Popular documenta tres mecanismos distintos:
 2. **Sustantivos siempre poseídos:** Palabras que en didxazá siempre llevan marca de posesión (ej. términos de parentesco, partes del cuerpo).
 3. **Frase nominal posesiva con xti':** Construcción más explícita que permite mayor flexibilidad.
 
-**Decisión pedagógica:** La enseñanza de posesión sigue esta progresión: primero sustantivos siempre poseídos en fórmulas fijas (Etapa 1), luego prefijos en contextos simples (Etapa 2), finalmente xti' con su capacidad de modificación (Etapa 3+). La construcción con xti' es lo que el corpus marca como "posesión completa" (nivel_gramatical 5).
+**Hipótesis pedagógica de trabajo:** Se ha propuesto una progresión que introduce primero sustantivos siempre poseídos en fórmulas de alta frecuencia, después prefijos posesivos en contextos simples y posteriormente construcciones con `xti'` de mayor flexibilidad. En versiones anteriores de la arquitectura, esta progresión se vinculó a Etapas 1/2/3+ y la llamada "posesión completa" se ubicó en nivel_gramatical 5. Esas ubicaciones se conservan como antecedentes de diseño y **no deben interpretarse como niveles o etapas definitivamente aprobados**.
 
 ## 10.3 Inclusivo/Exclusivo en primera persona plural
 
@@ -239,7 +246,7 @@ La Gramática Popular §5.1.1 documenta que la distinción inclusivo/exclusivo e
 
 En español, "nosotros" es ambiguo. En didxazá, el hablante está obligado a especificar.
 
-**Ubicación en escala G/P:** El uso correcto de inclusivo/exclusivo en contextos donde la distinción realmente importa (ej. proponer algo a alguien) está marcado como nivel_gramatical 5.
+**Clasificación pedagógica provisional:** En versiones de trabajo de la escala G/P, el uso correcto de inclusivo/exclusivo en contextos donde la distinción resulta funcionalmente relevante (por ejemplo, proponer algo a alguien) se ubicó en nivel_gramatical 5. Esa ubicación sigue sujeta a revisión y no constituye una definición formal vigente de G5.
 
 ## 10.4 Construcción comparativa
 
@@ -250,7 +257,7 @@ La Gramática Popular §6.1 documenta que la comparación en didxazá usa estruc
 
 **Sin morfología adicional especial.**
 
-**Decisión pedagógica:** "Comparar opciones" fue reclasificada de nivel_gramatical 5 a nivel_gramatical 3 basándose en esta estructura simple. En cambio, "Regatear" (Vender en el mercado) permanece en nivel_gramatical 5 porque añade negociación social, no solo comparación.
+**Decisión de trabajo dentro de la taxonomía provisional:** "Comparar opciones" fue reclasificada de nivel_gramatical 5 a nivel_gramatical 3 porque la evidencia descriptiva mostró una estructura menos compleja de lo supuesto inicialmente. Esta reclasificación es válida como antecedente y decisión operativa dentro del modelo G/P actualmente utilizado, pero **no convierte G3 ni G5 en categorías curriculares definitivas**. En el mismo modelo de trabajo, "Regatear" (Vender en el mercado) permaneció en nivel_gramatical 5 por combinar recursos lingüísticos con una exigencia pragmática mayor; esta ubicación también queda abierta a revisión.
 
 ## 10.5 Sistema vigesimal: decisión explícita
 
@@ -262,6 +269,8 @@ La Gramática Popular §6.3.1 documenta que el sistema numérico vigesimal compl
 
 **Implicación:** No se crea ruta alterna simplificada. El corpus enseña el sistema completo; el aprendiz decide después cómo lo usa.
 
+Esta decisión sobre contenido no fija por sí misma su ubicación en una etapa o nivel G/P determinado.
+
 ## 10.6 Marcadores de incertidumbre y preferencia
 
 La Gramática Popular §7.2.5 documenta dos recursos específicos para actos de habla particulares:
@@ -269,11 +278,11 @@ La Gramática Popular §7.2.5 documenta dos recursos específicos para actos de 
 - **zándaca + potencial:** Recurso para expresar incertidumbre epistémica. Ejemplo: "Expresar duda sobre si alguien podrá asistir."
 - **riula'dxi' + potencial:** Recurso para expresar gusto/preferencia. Ejemplo: "Expresar preferencia por una opción."
 
-Ambos recursos estaban sin representación en el corpus anterior a agosto 2026. Han sido integrados en situaciones donde resultan funcionales.
+Ambos recursos estaban sin representación en versiones anteriores del corpus. Su incorporación y ubicación definitiva dentro de COR002 deben verificarse en la revisión vigente del corpus y no darse por cerradas a partir de versiones anteriores de diseño.
 
 ## 10.7 Vacíos conocidos en cobertura
 
-El siguiente contenido está documentado en la Gramática Popular y el Vocabulario del proyecto pero no tiene situación comunicativa dedicada:
+El siguiente contenido está documentado en la Gramática Popular y el Vocabulario del proyecto pero no tiene situación comunicativa dedicada confirmada en la arquitectura vigente:
 
 - Construcciones atmosféricas impersonales (Gramática Popular cap. 12.5)
 - Léxico marino/fluvial
@@ -282,4 +291,4 @@ El siguiente contenido está documentado en la Gramática Popular y el Vocabular
 - Adverbios de tiempo del día
 - Registro narrativo tradicional (Gramática Popular cap. 15, tradición de Terán, Toledo, Cata)
 
-Estos vacíos son candidatos para expansión futura del corpus.
+Estos vacíos son candidatos para expansión futura del corpus y deben verificarse nuevamente conforme COR002 sea revisado.
