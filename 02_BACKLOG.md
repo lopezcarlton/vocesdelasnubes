@@ -1,8 +1,8 @@
 # BACKLOG
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.3  
-**Última actualización:** 2026-08-19
+**Versión:** 1.4  
+**Última actualización:** 2026-08-31
 
 ---
 
@@ -139,14 +139,16 @@ No es una tarea inmediata. Requiere materiales suficientemente maduros y acuerdo
 
 ---
 
-### BL-017 — Evaluación del generador de borradores
+### BL-017 — Evaluación futura del generador de borradores
 
 **Estado:** Abierto  
-**Prioridad:** Media, pero dependiente de la revisión actual del sistema
+**Prioridad:** Posterior al piloto de escenas de referencia
 
-Evaluar el desempeño del generador de borradores en español: aceptación por hablantes, artificialidad, errores, cobertura y utilidad real.
+Evaluar el desempeño de un generador de borradores en español: aceptación por hablantes, artificialidad, errores, cobertura y utilidad real.
 
-**Nota 2026-08-19:** El generador vigente no debe considerarse estable. La revisión de la arquitectura G/P y la nueva evidencia gramatical y lingüística pueden producir cambios importantes antes de que tenga sentido una evaluación definitiva.
+**Actualización 2026-08-31:** El generador v7 y las iteraciones v8.x se conservan como antecedentes experimentales, pero no constituyen el motor activo de COR002. El piloto actual suspende la generación masiva y prioriza obtener primero unas pocas escenas de referencia aceptadas mediante revisión manual y trabajo con hablantes.
+
+Esta tarea se reactivará cuando exista suficiente evidencia concreta para decidir qué debe hacer un generador nuevo o reducido. No se considera necesario evaluar v7 “a escala” como requisito previo.
 
 **Responsable:** Emiliano
 
@@ -181,7 +183,7 @@ Definir canales de publicación, niveles de acceso, términos de uso, formatos d
 
 Identificar el inventario léxico vigente que servirá como referencia para COR002 y someterlo a revisión con Vicente Gutiérrez para documentar naturalidad, variantes, uso contemporáneo, duplicados, vacíos, contexto y observaciones de escritura cuando puedan validarse con seguridad.
 
-**Nota 2026-08-19:** Esta tarea debe entenderse dentro de una revisión más amplia de COR002. El corpus está esperando revisión de Vicente y además deben revisarse situaciones, arquitectura G/P y su relación con la evidencia gramatical y lingüística que continúa incorporándose al proyecto.
+**Actualización 2026-08-31:** La tarea estructural permanece abierta, pero ya no bloquea el inicio del piloto. Para las primeras escenas se revisará primero el léxico que efectivamente entre en ellas. El inventario general podrá consolidarse progresivamente a partir de ese trabajo y de la revisión específica con Vicente.
 
 **Responsable:** Emiliano López Carlton  
 **Validador:** Vicente Gutiérrez
@@ -210,3 +212,11 @@ El backlog debe mantenerse pequeño y legible.
 No se abrirán tareas por mantenimiento editorial menor, referencias cruzadas triviales o evolución normal de documentos que ya cumplen su función.
 
 Si mantener una entrada cuesta más trabajo que la deuda que representa, debe revisarse si realmente pertenece al backlog.
+
+---
+
+# Nota de estado 2026-08-31
+
+El modo de trabajo del piloto COR002 quedó definido en `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md`. Ese flujo es trabajo operativo y metodológico vigente, no una nueva entrada de backlog.
+
+La validación del material COR002 continúa abierta por razones documentadas en `conocimiento/VALIDACION.md`: todavía deben producirse escenas de referencia aceptadas, realizarse con hablantes y probarse pedagógicamente. La existencia de una ruta de trabajo ya definida no equivale a que los materiales resultantes estén validados.
