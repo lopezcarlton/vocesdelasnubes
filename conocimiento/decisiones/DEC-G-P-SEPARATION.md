@@ -1,67 +1,81 @@
-# DEC-G-P-SEPARATION — Adoptar doble etiquetado nivel_gramatical + nivel_pragmático como ejes independientes
+# DEC-G-P-SEPARATION — Mantener complejidad gramatical y pragmática como dimensiones separables
 
 ```yaml
 id: DEC-G-P-SEPARATION
-titulo: "Adoptar doble etiquetado nivel_gramatical + nivel_pragmático como ejes independientes"
+titulo: "Mantener complejidad gramatical y pragmática como dimensiones separables"
 decision: >
-  A partir de agosto 2026, el sistema de etiquetado del corpus COR002 utiliza dos ejes independientes
-  por cada paso de cada situación comunicativa:
+  A partir de agosto de 2026, el proyecto conserva la distinción entre complejidad gramatical (G)
+  y complejidad pragmática (P) como dos dimensiones que pueden divergir y que resultan útiles para
+  analizar, comparar y calibrar materiales de COR002.
 
-  1. nivel_gramatical (1–5): mide la complejidad de la estructura lingüística necesaria, desde
-     fórmulas fijas memorizadas (1) hasta subordinación, condicionales, cadi, y posesión completa (5).
-     Esta escala está anclada en las categorías de la Gramática Popular (Bloques 1-7).
+  Esta decisión NO establece que las definiciones actuales G1–G5 y P1–P5 sean una taxonomía
+  definitiva, ni que deban funcionar como secuencia curricular cerrada, ni que un generador deba
+  aplicarlas automáticamente antes de construir una escena.
 
-  2. nivel_pragmático (1–5): mide la exigencia social/discursiva del acto de habla en sí, desde
-     interacciones rutinarias de bajo riesgo (saludo, pregunta de datos, 1) hasta actos que requieren
-     negociación, mediación de conflicto, autoevaluación emocional, reflexión metalingüística,
-     o manejo de temas delicados (5).
+  Durante el piloto principiante de COR002, el orden operativo es:
 
-  Cuando ambos niveles coinciden (caso común), pueden mostrarse juntos como un solo número
-  para lectura humana simplificada. Cuando divergen, se escriben separados como G3/P5.
+  escena -> revisión contextual -> corrección -> análisis G/P -> hablante -> aprendizaje metodológico
 
-  El generador debe interpretar esta doble etiqueta de la siguiente manera:
-  - La restricción gramatical rige la forma: no se puede rebasar nivel_gramatical asignado
-    (restricción dura).
-  - La etiqueta pragmática rige el contenido, tono, y densidad social: se puede explorar hasta
-    ese nivel de riqueza temática incluso si expone al aprendiz a contenido más denso de lo que
-    podría producir por sí solo (restricción blanda).
-  - Regla de resolución: si hay conflicto, priorizar no rebasar restricción gramatical y ajustar
-    contenido a lo que quepa dentro de esa restricción.
+  Por tanto, G/P se utiliza después de contar con una escena contextual y conversacionalmente
+  aceptable para entender qué complejidad contiene y si cabe en el alcance provisional del piloto.
 
-estado: vigente
-fecha_decision: 2026-08-07
+  La ventana actual G1–G3 / P1–P3 es experimental y reversible. P3 funciona como borde de prueba.
+  Este corte no redefine el sistema general G/P.
+
+estado: vigente_como_separacion_de_dimensiones
+fecha_decision_original: 2026-08-07
+fecha_revision: 2026-08-31
 responsable: Emiliano López Carlton
+
 hallazgos_que_la_sustentan:
   - HALL-0006
 
 principios_relacionados:
+  - PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL
   - PRIN-G-RESTRICCION-DURA
   - PRIN-P-RESTRICCION-BLANDA
-  - PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL
 
 validadores:
   - Emiliano López Carlton
 
 impacta_a:
-  - CORPUS.md (etiquetado de 48 situaciones)
-  - PEDAGOGIA.md (sistema de niveles y etapas)
-  - prompt_generador_corpus_v5.md (calibración del generador)
-  - METODOLOGIA.md (convención de formato)
+  - CORPUS.md
+  - PEDAGOGIA.md
+  - METODOLOGIA.md
+  - futuros generadores, cuando vuelvan a activarse
+
+implementacion_anterior_ya_no_vigente: >
+  La formulación original interpretaba G como restricción dura no negociable de generación y P como
+  restricción blanda que gobernaba contenido y tono. Esa implementación produjo una arquitectura
+  demasiado rígida cuando se aplicó antes de disponer de escenas de referencia aceptadas.
+
+  Al 2026-08-31 queda suspendida como regla automática del generador durante el piloto.
+  Se conserva como hipótesis histórica que podrá reevaluarse con escenas reales, realizaciones de
+  hablantes y pruebas con aprendices.
 
 condiciones_de_revision:
-  - Revisar cuando el prompt generador sea implementado y se detecten inconsistencias reales
-    en output generado (verificar que respete restricción dura del eje gramatical).
-  - Revisar si la experiencia con aprendices reales sugiere que restricción blanda del eje
-    pragmático (exposición a contenido denso) produce efectos pedagógicos positivos o negativos.
-  - Revisar si hay cuadrantes G/P sistemáticamente no-representados tras análisis de cobertura.
+  - Revisar las fronteras G1–G5 y P1–P5 a partir de escenas aceptadas y realizaciones en Didxazá.
+  - Revisar si la carga discursiva/referencial queda suficientemente representada dentro de P o necesita otra descripción.
+  - Revisar si alguna forma de restricción previa resulta útil cuando vuelva a existir un generador general.
+  - Revisar con aprendices reales qué complejidad resulta comprensible, producible y transferible.
+
+provenance:
+  - conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md
 
 etiquetas:
   - decisión_pedagógica
   - corpus
   - ejes_de_dificultad
   - sistema_de_etiquetado
+  - revisable
 ```
 
-## Nota de nomenclatura
+## Historial
 
-El identificador original de esta decisión (`DEC-G/P-SEPARATION`) contenía una barra, incompatible con nombres de archivo. Se adoptó `DEC-G-P-SEPARATION` como identificador estable, tanto en el nombre del archivo como en el campo `id` interno.
+### 2026-08-07
+
+Se adoptó la separación G/P con una implementación fuerte: G como restricción dura de forma y P como restricción blanda de contenido.
+
+### 2026-08-31
+
+Se conserva la separación entre dimensiones, pero se retira su interpretación automática como regla obligatoria de generación durante el piloto principiante. G/P pasa a operar principalmente como capa posterior de análisis y calibración mientras se construyen las primeras escenas de referencia.
