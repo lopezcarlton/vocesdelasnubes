@@ -1,9 +1,9 @@
 # METODOLOGIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.0  
-**Estado:** Borrador consolidado  
-**Fecha:** 2026-08-05  
+**Versión:** 1.1  
+**Estado:** Borrador consolidado y evolutivo  
+**Fecha:** 2026-08-31  
 
 ---
 
@@ -15,7 +15,7 @@ Este documento responde a una sola pregunta:
 
 Voces de las Nubes construye materiales para el aprendizaje del Didxazá mediante un proceso colaborativo que articula observación de situaciones comunicativas reales, diseño pedagógico, trabajo directo con hablantes, revisión bibliográfica, producción oral, documentación de decisiones y validación especializada.
 
-La metodología no parte de una lista cerrada de contenidos lingüísticos ni de una traducción lineal desde el español. Parte de usos comunicativos situados y distribuye la autoridad entre participantes según el tipo de decisión que deba tomarse.
+La metodología no parte de una lista cerrada de contenidos lingüísticos ni de una traducción lineal desde el español como método único. Parte de usos comunicativos situados y distribuye la autoridad entre participantes según el tipo de decisión que deba tomarse.
 
 Este documento define el método general del proyecto. No describe en detalle la arquitectura del corpus, la producción técnica del audio, la fundamentación teórica, la bibliografía ni la administración del repositorio.
 
@@ -111,6 +111,7 @@ Ejemplos:
 - expresar necesidad;
 - confirmar;
 - rechazar;
+- reparar un malentendido;
 - agradecer;
 - despedirse.
 
@@ -126,7 +127,7 @@ La producción no se añade al final del proceso. Se considera desde la selecci�
 
 ## 3.4 Reutilización productiva
 
-Las estructuras ya introducidas deben reaparecer en contextos diferentes.
+Las estructuras y recursos ya introducidos deben reaparecer en contextos diferentes.
 
 La progresión se construye mediante:
 
@@ -163,20 +164,11 @@ Cuando se requieren conversaciones largas, deben crecer mediante más turnos nat
 
 ## 3.7 Control externo de cobertura cuando sea necesario
 
-El modelo que genera borradores no debe asumir tareas estadísticas que no puede sostener con fiabilidad entre sesiones.
+El proceso de generación de borradores no debe asumir tareas estadísticas que no puede sostener con fiabilidad entre sesiones.
 
-El historial de:
+El historial de situaciones, funciones, patrones, léxico, personajes, balance y cobertura acumulada debe mantenerse mediante herramientas o registros externos cuando el volumen del corpus lo exija.
 
-- situaciones;
-- patrones;
-- léxico;
-- personajes;
-- balance;
-- cobertura acumulada;
-
-debe mantenerse mediante herramientas o registros externos cuando el volumen del corpus lo exija.
-
-Las decisiones ya resueltas por ese control externo deben entregarse al proceso de generación como instrucciones concretas, no como datos crudos que el modelo deba interpretar nuevamente.
+Las decisiones ya resueltas por ese control externo deben entregarse al proceso de generación como instrucciones concretas, no como datos crudos que deban interpretarse nuevamente.
 
 ## 3.8 Separación entre evidencia, interpretación y decisión
 
@@ -197,9 +189,9 @@ Los documentos dirigidos a la institución (Casa de las Ciencias de Oaxaca) o a 
 
 **No mencionar IA ni tecnología específica:**
 
-- NO mencionar: IA, entrenamiento de modelos, herramientas específicas (ChatGPT, Claude, ElevenLabs, etc.).
-- SÍ describir: "herramienta digital de aprendizaje", "plataforma web de acceso abierto", "material de audio profesional".
-- **Justificación:** Prevenir rechazo basado en ideología tecnológica. El proyecto debe presentarse como herramienta educativa, no como proyecto tecnológico.
+- NO mencionar: IA, entrenamiento de modelos, herramientas específicas.
+- SÍ describir: "herramienta digital de aprendizaje", "sistema lingüístico documental", "herramientas internas de análisis y revisión", "plataforma web de acceso abierto", "material de audio profesional".
+- **Justificación:** El proyecto debe presentarse por sus objetivos educativos, lingüísticos y documentales, no por la tecnología utilizada internamente.
 
 **Tono directo:**
 
@@ -207,7 +199,7 @@ Los documentos dirigidos a la institución (Casa de las Ciencias de Oaxaca) o a 
 - Evitar cierres que resuman lo ya dicho.
 - No usar lenguaje académico innecesario.
 - Los documentos deben poder defenderse oralmente sin depender del texto escrito.
-- **Criterio de validación:** Si alguien pregunta oralmente "¿por qué el proyecto hace X?", la respuesta debe ser la misma que está escrita.
+- Si alguien pregunta oralmente "¿por qué el proyecto hace X?", la respuesta debe ser la misma que está escrita.
 
 ## 3.10 Criterios editoriales: documentos dirigidos a hablantes
 
@@ -215,34 +207,109 @@ Los documentos dirigidos a hablantes colaboradores siguen estas reglas:
 
 **Redacción:**
 
-- **Singular, no plural formal:** Dirigirse como "a una persona", no "a ustedes como grupo". Ejemplo: "Queremos invitarte a participar" en lugar de "Queremos invitarles a participar".
-- **Apertura en primera persona plural:** "Somos muchas las personas que queremos..." — posiciona al responsable como parte de la comunidad afectada, no como observador externo.
-- **Usar "hablantes binnizá"** cuando se hable de quien participa en el proyecto.
-- **No usar "habemos"** en documentos escritos (aunque sea correcto en algunos contextos, genera distancia).
+- Singular, no plural formal: "Queremos invitarte a participar".
+- Apertura en primera persona plural cuando corresponda.
+- Usar "hablantes binnizá" cuando se hable de quien participa en el proyecto.
+- No usar "habemos" en documentos escritos.
 
 **Contenido:**
 
-- Explícitamente voluntario: "Participas si quieres, no es obligatorio."
-- Derecho de revisión previa: "Revisaremos contigo todo lo que grabemos antes de que se use públicamente."
-- Claridad sobre uso: "Estos materiales se usan para que otras personas aprendan la lengua."
-- Confidencialidad y atribución: Según lo acordado con hablante específico.
+- participación explícitamente voluntaria;
+- derecho de revisión previa;
+- claridad sobre uso de materiales;
+- confidencialidad y atribución según lo acordado con cada persona.
 
 **Tono:**
 
-- Respetuoso pero no reverencial.
-- Reconocimiento de expertise del hablante (sabe la lengua, no necesita explicaciones sobre su propia lengua).
-- Transparencia sobre limitaciones del proyecto.
+- respetuoso pero no reverencial;
+- reconocimiento del conocimiento del hablante;
+- transparencia sobre limitaciones del proyecto.
 
 ## 3.11 Protocolo sobre contenido sensible en documentos internos
 
-Descripciones de mecanismos de IA o grabación (relevantes para el protocolo de no mencionar estos mecanismos en contextos públicos) deben generalizarse incluso en documentos de trabajo interno.
+Descripciones de mecanismos internos de generación, análisis o procesamiento deben generalizarse incluso en documentos de trabajo cuando el detalle tecnológico no sea necesario para comprender una decisión metodológica.
 
-**Razón:** Reducir riesgo de que una redacción específica se filtre sin revisión a un documento de cara al público, generando exposición involuntaria.
+**Razón:** Reducir el riesgo de que una redacción técnica se filtre sin revisión a un documento de cara al público.
 
-**Ejemplos:**
+Ejemplo:
 
-- ❌ Evitar: "El corpus se genera usando un prompt de Claude que..."
-- ✅ Usar: "El corpus se genera mediante un proceso sistemático que..."
+- evitar describir una herramienta específica cuando basta decir "el corpus se genera mediante un proceso sistemático".
+
+## 3.12 Triangulación de vías de evidencia
+
+La metodología incorpora varias vías complementarias para producir y comprobar conocimiento lingüístico. Ninguna de ellas se considera suficiente por sí sola.
+
+Se distinguen:
+
+1. **escenas pedagógicamente diseñadas y trabajo de traducción/reformulación con hablantes**;
+2. **habla espontánea o relativamente libre**;
+3. **elicitación dirigida mediante estímulos no lingüísticos**;
+4. **juicios explícitos de hablantes sobre ejemplos o contrastes**;
+5. **evidencia documental**.
+
+Esta ampliación se fundamenta especialmente en Bueno Holle (2019), quien combina en Juchitán discurso espontáneo, elicitación controlada y juicios de hablantes. Su método muestra dos límites complementarios: la traducción desde una lengua de contacto puede no hacer aparecer estructuras propias del discurso natural, mientras que el habla espontánea puede no contener con suficiente frecuencia fenómenos específicos que se necesitan investigar.
+
+Por tanto:
+
+- el habla natural sirve para descubrir qué hacen realmente los hablantes en interacción;
+- la elicitación dirigida permite crear contextos claros para provocar contrastes poco frecuentes;
+- los juicios permiten comprobar posibilidades y restricciones;
+- la traducción y reformulación siguen siendo recursos válidos, pero no deben funcionar como única vía de descubrimiento de la estructura del Didxazá.
+
+## 3.13 Elicitación no lingüística
+
+La elicitación no equivale necesariamente a pedir una traducción.
+
+Cuando resulte útil, el proyecto puede usar:
+
+- imágenes;
+- videos breves;
+- secuencias visuales;
+- objetos;
+- juegos estructurados;
+- situaciones representadas.
+
+El estímulo debe crear una necesidad comunicativa o un contexto inequívoco sin proporcionar de antemano la forma sintáctica de la respuesta.
+
+Esta vía será especialmente útil para comprobar estructuras o contrastes que:
+
+- aparecen poco en conversación libre;
+- pueden verse condicionados por el contexto informativo;
+- corren riesgo de ser calcados desde el español;
+- requieren observar alternativas de orden, referencia o formulación.
+
+## 3.14 Procedencia de la evidencia
+
+Toda evidencia nueva debe conservar el modo en que fue obtenida.
+
+Como etiquetas operativas iniciales pueden utilizarse:
+
+- `SPONTANEOUS`;
+- `ELICITED_NONLINGUISTIC`;
+- `SPEAKER_JUDGMENT`;
+- `TRANSLATION_REFORMULATION`;
+- `DOCUMENTARY`.
+
+Estas etiquetas no forman una jerarquía automática de verdad. Permiten interpretar correctamente qué demuestra cada dato y evitar que una respuesta a una tarea dirigida sea presentada como si hubiera aparecido espontáneamente.
+
+## 3.15 Evidencia primaria y capas de análisis
+
+La grabación primaria debe permanecer intacta y las interpretaciones posteriores deben añadirse como capas diferenciadas.
+
+Cuando existan, el proyecto puede distinguir:
+
+1. audio o video original;
+2. transcripción ortográfica;
+3. segmentación morfológica;
+4. glosa;
+5. traducción libre;
+6. análisis fonético o prosódico;
+7. análisis gramatical o pragmático;
+8. decisiones pedagógicas derivadas.
+
+Audio no equivale a transcripción; transcripción no equivale a segmentación; segmentación no equivale a traducción; traducción no equivale a análisis.
+
+Del mismo modo, una ortografía superficial de publicación puede omitir información lingüística que una fuente conserva en otra capa. Bueno Holle, por ejemplo, utiliza una ortografía escrita sin tono visible pero conserva información tonal subyacente en su análisis. El proyecto no debe interpretar ausencia de una marca superficial como ausencia de información lingüística conocida.
 
 ---
 
@@ -250,7 +317,7 @@ Descripciones de mecanismos de IA o grabación (relevantes para el protocolo de 
 
 ## 4.1 Identificación de una necesidad comunicativa
 
-El proceso comienza con una situación, interacción o necesidad real que resulte pertinente para el uso cotidiano del Didxazá.
+El proceso puede comenzar con una situación, interacción o necesidad real que resulte pertinente para el uso cotidiano del Didxazá.
 
 La situación puede proceder de:
 
@@ -259,7 +326,8 @@ La situación puede proceder de:
 - propuesta de un hablante;
 - revisión del material existente;
 - detección de una carencia del corpus;
-- requerimiento pedagógico.
+- requerimiento pedagógico;
+- evidencia procedente de habla espontánea o de una sesión de elicitación.
 
 ## 4.2 Descomposición en funciones
 
@@ -267,7 +335,7 @@ La situación se analiza para identificar:
 
 - qué intenta hacer cada participante;
 - qué funciones comunicativas aparecen;
-- qué turnos son indispensables;
+- qué turnos o movimientos son indispensables;
 - qué recursos ya existen;
 - qué elementos serían nuevos;
 - qué parte requiere validación cultural.
@@ -285,19 +353,23 @@ Antes de crear material nuevo se revisa lo ya construido para detectar:
 
 La revisión evita que el proyecto confunda crecimiento numérico con avance pedagógico.
 
-## 4.4 Preparación de microescenas
+## 4.4 Preparación de la escena conversacional
 
-La necesidad se convierte en una microescena manejable.
+En COR002, la unidad primaria de diseño es la conversación o escena conversacional completa.
 
-La microescena especifica, como mínimo:
+La preparación especifica, como mínimo cuando corresponda:
 
 - contexto;
 - participantes;
+- relación entre ellos;
 - objetivo de cada participante;
 - funciones centrales;
+- objetivo lingüístico o pedagógico;
 - información necesaria;
 - posibles restricciones culturales;
 - elementos que deben ser elicitados y no inventados.
+
+Los fragmentos breves y microescenas pueden derivarse después para estudio, práctica o elicitación focalizada.
 
 ## 4.5 Elicitación y construcción con hablantes
 
@@ -313,11 +385,49 @@ Se busca reconstruir:
 - cómo cambia la forma según contexto, edad, confianza o localidad;
 - qué elementos requieren explicación adicional.
 
-Las propuestas en español funcionan como apoyo o punto de partida, no como molde obligatorio de la estructura final en Didxazá.
+Las propuestas en español funcionan como apoyo o puente semántico, no como molde obligatorio de la estructura final en Didxazá.
 
-## 4.6 Organización pedagógica
+## 4.6 Vía de habla espontánea
 
-Después de obtener y validar el material lingüístico, se determina su lugar dentro del proceso de aprendizaje.
+En paralelo al corpus pedagógicamente diseñado, el proyecto puede registrar habla espontánea o relativamente libre con consentimiento y metadatos adecuados.
+
+Esta vía busca obtener evidencia sobre:
+
+- organización real de los turnos;
+- recursos discursivos no anticipados;
+- formas de referencia;
+- información implícita;
+- marcadores conversacionales;
+- variación;
+- prosodia;
+- estrategias para mantener, ampliar o cerrar una interacción.
+
+El material espontáneo no reemplaza COR002. Sirve como fuente independiente que puede revelar patrones, restricciones y estrategias que después retroalimenten el diseño pedagógico.
+
+## 4.7 Vía de elicitación controlada no lingüística
+
+Cuando se necesite observar un fenómeno específico que podría ser raro en habla libre, se puede diseñar una tarea mediante imágenes, videos, objetos o juegos.
+
+Debe registrarse:
+
+- qué estímulo se utilizó;
+- qué contexto se creó;
+- qué se pidió al participante;
+- qué información se mantuvo abierta;
+- qué producción resultó;
+- si hubo aclaraciones o juicios posteriores.
+
+## 4.8 Juicios y contraste
+
+Después de observar o elicitar una forma, puede ser necesario pedir al hablante que compare alternativas o juzgue un ejemplo construido.
+
+Ese juicio debe registrarse como tal y no confundirse con una producción espontánea.
+
+La baja frecuencia en un corpus no autoriza por sí sola a declarar una construcción imposible.
+
+## 4.9 Organización pedagógica
+
+Después de obtener y revisar el material lingüístico, se determina su lugar dentro del proceso de aprendizaje.
 
 Se considera:
 
@@ -332,13 +442,13 @@ Se considera:
 
 La frecuencia cotidiana orienta la selección, pero no determina por sí sola el orden.
 
-## 4.7 Producción del material
+## 4.10 Producción del material
 
 El contenido aprobado pasa a las etapas de registro, edición, catalogación y preparación de formatos de aprendizaje.
 
 Los procedimientos específicos de grabación, edición, niveles, exportación y publicación se documentan en `AUDIO.md`.
 
-## 4.8 Revisión y control de calidad
+## 4.11 Revisión y control de calidad
 
 Antes de considerarse listo, el material debe superar las revisiones que correspondan:
 
@@ -350,35 +460,15 @@ Antes de considerarse listo, el material debe superar las revisiones que corresp
 
 No todas las revisiones requieren a la misma persona. La autoridad depende del objeto revisado.
 
-## 4.9 Registro de decisiones
+## 4.12 Registro de decisiones
 
-Las decisiones relevantes deben conservar:
+Las decisiones relevantes deben conservar formulación, justificación, fuente, responsable, validadores, alcance, estado, condiciones de revisión y relación con decisiones anteriores.
 
-- formulación;
-- justificación;
-- fuente;
-- responsable;
-- validadores;
-- alcance;
-- estado;
-- condiciones de revisión;
-- relación con decisiones anteriores.
-
-Las decisiones reemplazadas se conservan como historia, pero no se reutilizan como instrucciones vigentes.
-
-## 4.10 Publicación y retroalimentación
+## 4.13 Publicación y retroalimentación
 
 La publicación no cierra definitivamente el material.
 
-La observación de uso puede revelar:
-
-- problemas de comprensión;
-- pausas insuficientes;
-- dificultad de producción;
-- expresiones poco naturales;
-- secuencias mal graduadas;
-- problemas de acceso;
-- errores de transcripción o catalogación.
+La observación de uso puede revelar problemas de comprensión, pausas insuficientes, dificultad de producción, expresiones poco naturales, secuencias mal graduadas, problemas de acceso o errores de transcripción y catalogación.
 
 La retroalimentación vuelve al proceso como evidencia para corregir versiones posteriores.
 
@@ -420,7 +510,9 @@ No toda palabra nueva equivale a una dificultad estructural nueva.
 
 Un patrón se define como una estructura lingüística productiva, no como un verbo, un tema o una frase superficialmente semejante.
 
-La metodología busca que un patrón aparezca en más de un contexto para que el aprendiz pueda reconocer su productividad.
+Los objetivos de elicitación proyectados desde el español deben distinguirse de los patrones efectivamente observados y respaldados en Didxazá.
+
+La metodología busca que una estructura suficientemente documentada aparezca en más de un contexto para que el aprendiz pueda reconocer su productividad.
 
 ## 5.4 Escucha reiterada
 
@@ -463,7 +555,22 @@ Las gramáticas descriptivas se utilizan para:
 
 No se utilizan como método directo de enseñanza ni como sustituto de la lengua viva.
 
-## 5.7 Evaluación
+## 5.7 Contexto informativo y discurso
+
+La producción de una forma no depende únicamente del contenido proposicional.
+
+La lectura de Bueno Holle refuerza la necesidad de observar también, cuando sea pertinente:
+
+- qué información ya conoce el interlocutor;
+- qué referente está activo o saliente;
+- qué se introduce como nuevo;
+- qué se contrasta;
+- qué tema continúa o cambia;
+- qué pretende lograr el hablante con el turno.
+
+Estas dimensiones no se convierten automáticamente en nuevas categorías pedagógicas obligatorias. Funcionan como información relevante para diseñar mejores estímulos, interpretar discurso real y evitar proyectar desde el español una única manera de organizar una proposición.
+
+## 5.8 Evaluación
 
 El avance debe evaluarse por lo que la persona puede comprender y realizar, no solo por el número de frases escuchadas o memorizadas.
 
@@ -501,12 +608,14 @@ No le corresponde validar por sí mismo la naturalidad, pronunciación, gramáti
 
 ## 6.2 Hablantes y colaboradores comunitarios
 
-Los hablantes participan en:
+Los hablantes pueden participar en:
 
 - elicitación;
 - traducción;
 - reformulación;
 - producción oral;
+- conversación espontánea;
+- juicios de aceptabilidad o contraste;
 - revisión;
 - contextualización;
 - identificación de variantes;
@@ -521,36 +630,19 @@ La participación es voluntaria y debe basarse en acuerdos claros sobre uso, rec
 
 Los especialistas intervienen únicamente dentro de su ámbito.
 
-Pueden revisar:
-
-- metodología;
-- pedagogía;
-- lingüística;
-- sociolingüística;
-- audio;
-- tecnología;
-- documentación;
-- ética;
-- evaluación.
+Pueden revisar metodología, pedagogía, lingüística, sociolingüística, audio, tecnología, documentación, ética o evaluación.
 
 Su opinión no sustituye automáticamente la autoridad de los hablantes sobre el uso vivo de la lengua.
 
 ## 6.4 Institución
 
-La Casa de las Ciencias de Oaxaca puede validar:
-
-- coherencia institucional;
-- objetivos;
-- entregables;
-- cronograma;
-- condiciones administrativas;
-- relación con sus programas.
+La Casa de las Ciencias de Oaxaca puede validar coherencia institucional, objetivos, entregables, cronograma, condiciones administrativas y relación con sus programas.
 
 La aprobación institucional no equivale a validación lingüística, comunitaria o pedagógica.
 
-## 6.5 Herramientas automáticas
+## 6.5 Herramientas internas
 
-Las herramientas automáticas pueden apoyar:
+Las herramientas internas pueden apoyar:
 
 - generación de borradores;
 - comparación;
@@ -558,7 +650,9 @@ Las herramientas automáticas pueden apoyar:
 - detección de duplicados;
 - transformación de formatos;
 - procesamiento por lotes;
-- análisis preliminar.
+- análisis preliminar;
+- recuperación de evidencia;
+- explicación pedagógica basada en conocimiento documentado.
 
 No pueden:
 
@@ -603,27 +697,13 @@ La aprobación de una parte no se extiende automáticamente al conjunto.
 
 Cuando dos hablantes difieren, no se elige una forma de manera automática.
 
-Se documenta:
-
-- localidad;
-- contexto;
-- edad o perfil cuando sea pertinente;
-- situación de uso;
-- posible variación;
-- grado de acuerdo;
-- necesidad de nuevas consultas.
+Se documenta localidad, contexto, perfil cuando sea pertinente, situación de uso, posible variación, grado de acuerdo y necesidad de nuevas consultas.
 
 La diferencia puede representar variación legítima y no un error.
 
 ## 7.4 Bibliografía y validación comunitaria
 
-La bibliografía puede:
-
-- describir;
-- fundamentar;
-- ofrecer antecedentes;
-- alertar sobre fenómenos;
-- aportar categorías de análisis.
+La bibliografía puede describir, fundamentar, ofrecer antecedentes, alertar sobre fenómenos y aportar categorías de análisis.
 
 No reemplaza la validación del uso contemporáneo.
 
@@ -657,7 +737,8 @@ Se verifica que:
 - la progresión dependa de conocimientos previos;
 - no se duplique material sin propósito;
 - la interacción no sea artificial;
-- las responsabilidades estén correctamente distribuidas.
+- las responsabilidades estén correctamente distribuidas;
+- la procedencia de la evidencia esté registrada cuando resulte relevante.
 
 ## 8.2 Calidad lingüística
 
@@ -674,53 +755,23 @@ Se verifica, según el alcance disponible:
 
 ## 8.3 Calidad pedagógica
 
-Se verifica que el material:
-
-- sea comprensible para el nivel previsto;
-- permita producción;
-- reutilice estructuras;
-- introduzca novedades controladas;
-- evite sobrecarga;
-- tenga pausas suficientes;
-- pueda transferirse a situaciones distintas.
+Se verifica que el material sea comprensible para el nivel previsto, permita producción, reutilice estructuras, introduzca novedades controladas, evite sobrecarga, tenga pausas suficientes y pueda transferirse a situaciones distintas.
 
 ## 8.4 Calidad técnica
 
-Se verifica que los archivos y formatos:
-
-- sean reproducibles;
-- conserven trazabilidad;
-- mantengan calidad suficiente;
-- no introduzcan alteraciones que afecten la percepción lingüística;
-- puedan procesarse de forma sostenible;
-- sean accesibles en los dispositivos previstos.
+Se verifica que los archivos y formatos sean reproducibles, conserven trazabilidad, mantengan calidad suficiente, no introduzcan alteraciones que afecten la percepción lingüística, puedan procesarse de forma sostenible y sean accesibles en los dispositivos previstos.
 
 Los parámetros concretos se mantienen en `AUDIO.md`.
 
 ## 8.5 Calidad documental
 
-Se verifica que:
-
-- cada material tenga identificador;
-- la fuente esté registrada;
-- las versiones sean distinguibles;
-- las decisiones sean trazables;
-- los créditos sean correctos;
-- las validaciones no se exageren;
-- las tareas pendientes se encuentren en el backlog oficial.
+Se verifica que cada material tenga identificador, la fuente esté registrada, las versiones sean distinguibles, las decisiones sean trazables, los créditos sean correctos y las validaciones no se exageren.
 
 ## 8.6 Revisión por lotes
 
 Cuando el volumen lo permita, las tareas repetitivas deben procesarse por lotes.
 
-La automatización es adecuada para:
-
-- conversiones;
-- normalización técnica;
-- metadatos;
-- comparaciones;
-- detección preliminar de duplicados;
-- reportes de cobertura.
+La automatización es adecuada para conversiones, normalización técnica, metadatos, comparaciones, detección preliminar de duplicados y reportes de cobertura.
 
 La revisión auditiva, lingüística o cultural no debe eliminarse por el hecho de automatizar el procesamiento.
 
@@ -730,28 +781,23 @@ La revisión auditiva, lingüística o cultural no debe eliminarse por el hecho 
 
 ## 9.1 Primera formulación
 
-El proyecto se formuló inicialmente como una herramienta digital basada en:
-
-- escucha reiterada;
-- materiales graduados;
-- transcripción;
-- equivalencia en español;
-- tarjetas de repetición espaciada;
-- acceso web.
+El proyecto se formuló inicialmente como una herramienta digital basada en escucha reiterada, materiales graduados, transcripción, equivalencia en español, tarjetas de repetición espaciada y acceso web.
 
 Este núcleo permanece vigente, pero la metodología se volvió más colaborativa y situada.
 
-## 9.2 Abandono de la traducción lineal
+## 9.2 Abandono de la traducción lineal como método único
 
 El flujo inicial podía resumirse como:
 
 > español escrito → traducción → grabación
 
-Este flujo fue reemplazado por:
+Ese flujo resultó insuficiente como **arquitectura única de construcción del corpus**.
 
-> situación real → funciones comunicativas → microescena → elicitación con hablantes → organización pedagógica → producción
+Fue reemplazado como principio general por un proceso más amplio:
 
-El cambio respondió a la artificialidad, las repeticiones y la baja productividad detectadas en los primeros intentos de ampliación del corpus.
+> situación real → funciones comunicativas → escena → trabajo con hablantes → organización pedagógica → producción
+
+Esto no significa que la traducción haya sido prohibida ni que COR001 pierda valor. La traducción y la reformulación continúan siendo herramientas válidas dentro del proceso, especialmente como puente semántico, siempre que no se confunda la estructura del español con la estructura final del Didxazá.
 
 ## 9.3 Abandono de listas temáticas como arquitectura principal
 
@@ -761,30 +807,24 @@ Se mantienen como herramientas auxiliares de cobertura, no como estructura metod
 
 ## 9.4 Separación de responsabilidades
 
-La metodología se refinó al distinguir:
-
-- diseño pedagógico;
-- autoridad lingüística;
-- autoridad comunitaria;
-- revisión técnica;
-- control documental;
-- generación automática;
-- control externo de cobertura.
+La metodología distingue diseño pedagógico, autoridad lingüística, autoridad comunitaria, revisión técnica, control documental, generación de borradores y control externo de cobertura.
 
 Esta separación evita pedirle a una sola persona o herramienta que resuelva decisiones para las que no tiene autoridad o capacidad.
 
 ## 9.5 Evolución del generador de borradores
 
-La generación automática del corpus en español pasó por varias etapas:
+La generación de borradores del corpus pasó por varias etapas:
 
 1. generación bilingüe y salida estructurada;
-2. eliminación de la producción automática en Didxazá;
+2. eliminación de la producción autónoma de Didxazá como salida confiable;
 3. eliminación de formatos demasiado pesados;
-4. prioridad de naturalidad y productividad de patrones;
+4. prioridad de naturalidad y productividad;
 5. separación entre motor, datos y tarea;
-6. traslado del historial y el balance a un controlador externo.
+6. traslado del historial y el balance a un control externo;
+7. integración progresiva de situación, función comunicativa y objetivo lingüístico/pedagógico;
+8. incorporación de evidencia lingüística para reducir la dependencia estructural del español.
 
-La versión vigente del enfoque automático genera únicamente borradores en español. Esos borradores no entran al corpus sin intervención de hablantes.
+El diseño sigue siendo provisional. Los borradores no entran al corpus sin revisión y participación de hablantes.
 
 ## 9.6 Método de mejora
 
@@ -800,6 +840,26 @@ La metodología se modifica mediante:
 8. documentación de la decisión.
 
 No se crean reglas nuevas únicamente por anticipar problemas hipotéticos.
+
+## 9.7 Incorporación de un enfoque de discurso y elicitación complementaria
+
+En agosto de 2026, la lectura de Juan José Bueno Holle, *Information structure in Isthmus Zapotec narrative and conversation* (2019), permitió formular con mayor precisión una ampliación metodológica.
+
+Bueno Holle trabajó durante 17 meses en Juchitán combinando grabación de habla espontánea, elicitación controlada y juicios de hablantes. Utilizó además juegos estructurados, imágenes y videos breves como estímulos no lingüísticos para provocar construcciones o contornos difíciles de obtener en conversación libre.
+
+Voces de las Nubes adopta de esta fuente los siguientes principios compatibles con su trabajo previo:
+
+- el corpus pedagógicamente diseñado se mantiene;
+- la traducción/reformulación con hablantes se mantiene como una vía;
+- se incorpora un corpus oral independiente de habla espontánea o relativamente libre;
+- se incorpora la posibilidad de elicitación no lingüística dirigida;
+- se distinguen los juicios metalingüísticos de las producciones espontáneas;
+- cada dato conserva su procedencia;
+- la grabación primaria se mantiene separada de las capas posteriores de transcripción y análisis;
+- la información prosódica o tonal conocida puede conservarse internamente aunque la ortografía superficial no la represente;
+- las unidades entonacionales pueden registrarse como capa de análisis del corpus oral sin sustituir la conversación completa como unidad pedagógica de COR002.
+
+Esta incorporación es una **ampliación**, no un reinicio metodológico.
 
 ---
 
@@ -817,67 +877,36 @@ La metodología permite:
 - revisar y reemplazar decisiones;
 - reutilizar estructuras;
 - combinar trabajo de campo, bibliografía y producción técnica;
+- combinar escenas diseñadas, habla espontánea, elicitación dirigida y juicios;
 - escalar tareas repetitivas mediante automatización controlada.
 
 ## 10.2 Limitaciones lingüísticas
 
 La coordinación no habla Didxazá y depende de la disponibilidad de hablantes para validar el material.
 
-No todas las formas:
-
-- tienen una única escritura;
-- se usan del mismo modo en todas las localidades;
-- cuentan con documentación suficiente;
-- pueden resolverse mediante una sola consulta.
+No todas las formas tienen una única escritura, se usan del mismo modo en todas las localidades, cuentan con documentación suficiente o pueden resolverse mediante una sola consulta.
 
 ## 10.3 Limitaciones comunitarias
 
 La participación de una persona no equivale a consenso comunitario.
 
-La metodología debe evitar:
-
-- generalizar una variante individual;
-- presentar una preferencia como norma universal;
-- atribuir autoridad colectiva sin respaldo;
-- extraer materiales sin acuerdos claros.
+La metodología debe evitar generalizar una variante individual, presentar una preferencia como norma universal, atribuir autoridad colectiva sin respaldo o extraer materiales sin acuerdos claros.
 
 ## 10.4 Limitaciones pedagógicas
 
 La metodología todavía no cuenta con validación sistemática mediante grupos de aprendices.
 
-Permanecen pendientes:
-
-- pruebas de comprensión;
-- medición de retención;
-- evaluación de transferencia;
-- ajuste empírico de progresión;
-- evaluación de la duración de pausas;
-- definición completa de métricas de aprendizaje.
+Permanecen pendientes pruebas de comprensión, medición de retención, evaluación de transferencia, ajuste empírico de progresión, evaluación de la duración de pausas y definición completa de métricas de aprendizaje.
 
 ## 10.5 Limitaciones operativas
 
-El proceso depende de:
-
-- tiempo de coordinación;
-- disponibilidad de colaboradores;
-- recursos de grabación y edición;
-- control de versiones;
-- herramientas de seguimiento;
-- financiamiento;
-- formalización de acuerdos.
+El proceso depende de tiempo de coordinación, disponibilidad de colaboradores, recursos de grabación y edición, control de versiones, herramientas de seguimiento, financiamiento y formalización de acuerdos.
 
 La automatización reduce carga operativa, pero no elimina la revisión especializada.
 
-## 10.6 Limitaciones del material generado automáticamente
+## 10.6 Limitaciones del material generado mediante herramientas internas
 
-Los modelos pueden producir:
-
-- repeticiones;
-- diálogos mecánicos;
-- complejidad inadecuada;
-- falsa naturalidad;
-- patrones desequilibrados;
-- inconsistencias entre lotes.
+Los procesos de generación de borradores pueden producir repeticiones, diálogos mecánicos, complejidad inadecuada, falsa naturalidad, patrones desequilibrados o inconsistencias entre lotes.
 
 Por ello, sus resultados son borradores sometidos a selección, revisión y validación.
 
@@ -891,7 +920,9 @@ Se consideran vigentes:
 - comprensión progresiva;
 - producción integrada;
 - situaciones comunicativas como punto de partida;
+- conversación completa como unidad primaria de COR002;
 - funciones comunicativas como unidad funcional;
+- objetivo lingüístico/pedagógico explícito cuando corresponda;
 - colaboración con hablantes;
 - separación entre diseño pedagógico y validación lingüística;
 - gramática como referencia y control;
@@ -899,17 +930,22 @@ Se consideran vigentes:
 - trazabilidad documental;
 - validación según autoridad pertinente;
 - automatización limitada a tareas apropiadas;
-- revisión de decisiones a partir de evidencia.
+- revisión de decisiones a partir de evidencia;
+- triangulación entre escenas diseñadas, habla espontánea, elicitación no lingüística y juicios de hablantes;
+- conservación de evidencia primaria y análisis en capas separadas.
 
 Permanecen pendientes de consolidación o prueba:
 
-- protocolo formal de sesiones con hablantes;
+- protocolo formal de sesiones con nuevos hablantes;
 - sistema completo de evaluación con aprendices;
 - procedimiento uniforme de consentimiento, reconocimiento y uso;
 - controlador externo de cobertura;
 - validación a escala del generador vigente;
 - formalización del criterio exacto de secuenciación entre funciones;
-- pruebas de transferencia y retención.
+- pruebas de transferencia y retención;
+- protocolo operativo del corpus oral independiente;
+- protocolo de estímulos no lingüísticos;
+- criterios de segmentación y anotación prosódica del nuevo corpus oral.
 
 ---
 
@@ -917,113 +953,48 @@ Permanecen pendientes de consolidación o prueba:
 
 ## Propósito
 
-La sesión de validación presenta material preparado en español a un hablante nativo para que:
+La sesión de validación puede presentar material preparado para que un hablante nativo:
 
-- Valide la naturalidad y pertinencia cultural de cada expresión
-- Rechace lo que resulte intraducible o culturalmente inapropiado
-- Proponga reformulaciones cuando sea posible
-- Autorice la grabación en didxazá
-- Permita revisión posterior de la consistencia entre audio y transcripción
+- valide naturalidad y pertinencia cultural;
+- rechace lo que resulte inadecuado;
+- proponga reformulaciones;
+- produzca o grabe la forma en Didxazá;
+- permita revisión posterior de la consistencia entre audio, transcripción y traducción.
+
+Este procedimiento corresponde principalmente a la vía `TRANSLATION_REFORMULATION`. No agota las demás vías incorporadas en la metodología.
 
 ## Estructura
 
-La sesión opera en tres fases:
-
 ### Fase A: Preparación previa
 
-Material en español es preparado, organizado con identificadores claros y enviado al hablante con anticipación para lectura inicial.
-
-El hablante revisa en su tiempo, identifica problemas potenciales y llega a la sesión presencial con una comprensión preliminar.
+El material se organiza con identificadores claros y puede enviarse con anticipación para lectura inicial cuando esa forma de trabajo sea adecuada al colaborador.
 
 ### Fase B: Sesión presencial de validación y grabación
 
-En reunión directa, el coordinador y el hablante dialogan frase por frase.
-
-El hablante explica sus decisiones:
-
-- "Esta no existe en didxazá" (rechazo definitivo)
-- "Esto suena extraño, pero podría decirse así..." (reformulación)
-- "Esto está bien" (aprobación)
-
-El coordinador **no argumenta ni defiende**. Su función es escuchar, registrar y ejecutar.
-
-Solo las frases aprobadas o reformuladas se graban en didxazá. El hablante produce mínimo dos tomas de cada una.
+El coordinador y el hablante revisan el material. El hablante puede aprobar, rechazar o reformular. Solo el material aprobado o reformulado pasa a grabación cuando la sesión tenga ese objetivo.
 
 ### Fase C: Revisión posterior
 
-Semanas después, el coordinador escucha el material grabado como si fuera un estudiante.
-
-Objetivo: detectar si la traducción inicial en español corresponde realmente a lo que se grabó en didxazá.
-
-Si hay discrepancias (traducción demasiado literal, imprecisiones), se prepara una versión en español más natural y se regrabación ese español de referencia.
+El coordinador escucha el material como aprendiz y comprueba si la traducción de referencia corresponde realmente a lo grabado. Si es necesario, se ajusta la traducción de referencia o se prepara una nueva sesión.
 
 ## Principios metodológicos
 
-**1. El hablante es autoridad lingüística y cultural**
+1. El hablante es autoridad lingüística y cultural dentro del alcance de su participación.
+2. Las reformulaciones lingüísticas corresponden al hablante.
+3. Se documenta cada decisión.
+4. El audio grabado es la fuente primaria cuando existe conflicto con una transcripción incierta.
+5. La traducción puede cambiar después de la grabación.
+6. Una sesión con un hablante no representa consenso comunitario.
+7. Esta vía puede complementarse con conversación espontánea, elicitación no lingüística y juicios específicos.
 
-No el coordinador, no la bibliografía, no la intuición del diseñador.
+## Productos posibles
 
-Las decisiones del hablante son finales dentro de su ámbito: naturalidad, pertinencia, existencia de una expresión.
-
-**2. Lo intraducible se rechaza sin reformulación**
-
-Si el hablante dice "esto no existe en didxazá", no existe. No se reformula.
-
-**3. Las reformulaciones las propone el hablante**
-
-Si el hablante propone una alternativa, se usa esa. Si no propone alternativa, se rechaza la frase.
-
-**4. Se documenta cada decisión**
-
-Cada frase recibe un estado: ✓ (aprobada), ✗ (rechazada con motivo), → (reformulada).
-
-Este registro permite reconstruir por qué el corpus final contiene lo que contiene.
-
-**5. El audio grabado es la fuente primaria**
-
-La escritura es secundaria. Si hay conflicto entre lo que está escrito y lo que se grabó, prevalece lo grabado.
-
-La audición crítica posterior (Fase C) existe precisamente para detectar esos conflictos.
-
-**6. La traducción puede cambiar después de la grabación**
-
-No es un fracaso. Es parte del proceso.
-
-La versión inicial en español puede ser demasiado literal. Después de escuchar la pronunciación del hablante nativo, se ajusta a algo más natural que sigue siendo fiel.
-
-## Roles
-
-**Hablante nativo:**
-
-- Valida naturalidad y pertinencia cultural
-- Explica decisiones de rechazo
-- Propone reformulaciones
-- Produce grabaciones en didxazá
-- Puede validar léxico (si aplica)
-
-**Coordinador:**
-
-- Prepara material en español
-- Registra decisiones del hablante
-- Dirige técnicamente la grabación
-- Realiza audición crítica posterior
-- Prepara regrabaciones en español si es necesario
-
-## Productos esperados
-
-Después de completar las tres fases:
-
-1. **Frases validadas** — documentadas en hoja de cálculo con estado final (aprobada/rechazada/reformulada)
-2. **Audio en didxazá** — grabaciones de todas las frases aprobadas/reformuladas, mínimo 2 tomas por frase
-3. **Registro de cambios** — documento que especifica qué frases fueron rechazadas (y por qué), cuáles fueron reformuladas y cuáles necesitaron regrabación en español
-4. **Audio en español ajustado** — si aplica, versiones mejoradas de la referencia en español
-5. **Inventario léxico validado** — si el proyecto mantiene un inventario, este ha sido revisado y validado por el hablante
-
-## Notas operativas
-
-Esta descripción captura los principios metodológicos. Los detalles operativos — duración de sesiones, medio de envío, software de edición, número exacto de tomas, número de días de anticipación — pueden variar según contexto, hablante y disponibilidad sin que cambien los principios.
-
-La sesión ha sido elaborada a partir de evidencia obtenida durante las primeras sesiones del proyecto. Se espera que evolucione conforme participen más hablantes y nuevas prácticas emerjan del trabajo real.
+- material aprobado/rechazado/reformulado;
+- audio en Didxazá;
+- registro de cambios;
+- traducción de referencia ajustada;
+- inventario léxico revisado;
+- juicios o notas sobre variantes y contexto.
 
 ---
 
@@ -1031,89 +1002,73 @@ La sesión ha sido elaborada a partir de evidencia obtenida durante las primeras
 
 ## Principios de documentación de decisiones
 
-Todas las decisiones del proyecto deben documentarse con esta estructura:
+Todas las decisiones del proyecto deben documentarse con esta estructura cuando el nivel de formalidad lo requiera:
 
-1. **Decisión** — Qué se decidió, de forma clara
-2. **Porque** — Fundamentación (evidencia, experiencia, teoría)
-3. **Validado por** — Quién tiene autoridad para esa decisión (hablante, especialista, coordinador)
-4. **Aplicar a** — Alcance e impacto (qué se ve afectado)
-5. **Conflictúa con** — Qué alternativas se rechazaron y por qué
-6. **Causa/depende de** — Trazabilidad: qué la originó, qué causa después, de qué depende
-7. **Status** — Estado actual (Firmemente decidida / Abierta a revisión / Pendiente)
-8. **Notas** — Observaciones adicionales, limitaciones, cambios futuro posibles
+1. **Decisión** — qué se decidió.
+2. **Porque** — fundamentación.
+3. **Validado por** — autoridad pertinente.
+4. **Aplicar a** — alcance e impacto.
+5. **Conflictúa con** — alternativas rechazadas cuando corresponda.
+6. **Causa/depende de** — trazabilidad.
+7. **Status** — estado actual.
+8. **Notas** — limitaciones u observaciones.
 
-Si una decisión no fue validada, esto debe registrarse explícitamente: "Validación pendiente" o "No consta validación".
+Si una decisión no fue validada, esto debe registrarse explícitamente.
 
 ## Informes mensuales / bimestrales
 
-Los informes que comunican resultados al exterior deben seguir estas reglas:
+Los informes que comunican resultados al exterior siguen esta estructura esperada:
 
-### Estructura esperada
-
-1. **Resumen** — Párrafo que sintetiza el período (qué se logró, qué se aprendió)
-2. **Presentación del período** — Contexto, preguntas que surgieron, hallazgos principales
-3. **Informe de actividades** — Descripción de trabajo realizado, participantes, decisiones tomadas
-4. **Informe de lectura/investigación** (si aplica) — Bibliografía revisada, aportes a las decisiones del proyecto
-5. **Aprendizajes del período** — Reflexión sobre lo que quedó validado, lo que sorprendió, lo que cambió metodológicamente
-6. **Actualización del cronograma** (si hay cambios)
+1. **Resumen** — síntesis del período.
+2. **Presentación del período** — contexto y preguntas principales.
+3. **Informe de actividades** — trabajo realizado, participantes y decisiones.
+4. **Informe de lectura/investigación** — bibliografía revisada y aportes al proyecto.
+5. **Aprendizajes del período** — qué quedó validado, qué sorprendió, qué cambió metodológicamente.
+6. **Actualización del cronograma** — cuando corresponda.
 
 ### Reglas de contenido
 
 **No mencionar herramientas de IA o generadores automáticos**
 
-- Aunque internamente se use un modelo para generar borradores, los informes no lo explicitan
-- Los borradores son insumo del proceso, no son conocimiento documentable del proyecto
+Los informes describen el proceso de diseño, documentación lingüística, análisis, revisión, herramientas internas y resultados, no la marca o mecanismo tecnológico que produjo un borrador.
 
 **Hablar del propio aprendizaje como dato válido**
 
-- Si Emiliano experimenta algo al intentar aprender la lengua, eso es evidencia legítima
-- Ejemplo: "Descubrí escuchando [material]..." es un punto de partida para investigación
+La experiencia de Emiliano como aprendiz puede funcionar como evidencia para formular preguntas y revisar el material.
 
 **Los hallazgos emergen del trabajo, no de la especulación**
 
-- No proponer lo que "podría" ocurrir
-- Solo documentar lo que realmente ocurrió
-- Las decisiones de hablantes se registran sin defensas: si Vicente rechazó una frase, basta decirlo
+Se documenta lo ocurrido y se distinguen claramente decisiones, hipótesis y pendientes.
 
 **Bibliografía como fundamentación, no reemplazo**
 
-- "Más que modificar el rumbo, estas lecturas permitieron explicar y fundamentar decisiones que ya habían comenzado a consolidarse"
-- La evidencia de campo y la voz de hablantes tienen prioridad sobre la teoría
+La evidencia de campo y la voz de hablantes tienen prioridad para el uso contemporáneo. La bibliografía permite explicar, ampliar y formular mejores preguntas.
 
 **Distinguir autoridades por tipo de decisión**
 
-- Decisiones técnicas (audio, formato, exportación): Emiliano valida
-- Decisiones lingüísticas (naturalidad, significado, ortografía): Hablante valida
-- Decisiones pedagógicas (progresión, ordenamiento): Emiliano + revisión de especialista cuando sea posible
-- Decisiones culturales (pertinencia, respeto): Hablante y comunidad validan
+- decisiones técnicas: coordinación o especialista pertinente;
+- decisiones lingüísticas: hablante y/o especialista según el objeto;
+- decisiones pedagógicas: coordinación con revisión cuando sea posible;
+- decisiones culturales: hablantes y comunidad pertinente.
 
 **Evitar que la relación con hablantes parezca extractiva**
 
-- No decir: "El hablante nos proporcionó datos"
-- Decir: "El hablante validó el corpus mediante una sesión colaborativa"
-- Presentar participación como construcción conjunta, no como recolección
+Presentar la participación como construcción conjunta y reconocer el alcance real de cada colaboración.
 
-**Separación clara entre actividades y reflexión**
+**Separación entre actividades y reflexión**
 
-- Una sección para qué se hizo (responsables, fechas, participantes)
-- Una sección separada para qué se aprendió (validaciones, cambios metodológicos, sorpresas)
+Distinguir qué se hizo de qué se aprendió.
 
 ### Tono
 
-- Directo y sin artificios
-- Honesto sobre lo que no se sabe o está pendiente
-- Reconocimiento explícito de autoridades (hablante, especialista) en sus ámbitos
-- Evitar sobrevender el proyecto; reportar el estado real
+- directo y sin artificios;
+- honesto sobre lo que no se sabe o está pendiente;
+- reconocimiento explícito de autoridades en sus ámbitos;
+- evitar sobrevender el proyecto.
 
-### Qué evitar
+---
 
-- Mencionar herramientas de IA o procesos automáticos
-- Atribuir decisiones a Emiliano cuando las tomó un hablante
-- Generalizar una preferencia de un hablante como norma universal sin aclaración
-- Proponer cambios metodológicos grandes sin reconocer que emergen del trabajo, no de la planeación
-- Confundir conclusiones con especulaciones
-
-- # 14. Registro de actividad y generación de informes
+# 14. Registro de actividad y generación de informes
 
 ## Propósito
 
@@ -1121,85 +1076,37 @@ El proyecto documenta su actividad mediante la reconstrucción del trabajo reali
 
 El objetivo no es mantener una bitácora administrativa, sino conservar suficiente evidencia para reconstruir posteriormente el trabajo realizado y generar informes institucionales completos y verificables.
 
----
-
 ## Principio general
 
 La información debe registrarse una sola vez, en el lugar donde naturalmente se produce.
 
-Cuando una actividad ya queda documentada mediante:
-
-* documentos del proyecto;
-* modificaciones al corpus;
-* decisiones metodológicas;
-* hallazgos registrados;
-* backlog;
-* sesiones de trabajo;
-* grabaciones;
-* validaciones;
-* chats de trabajo;
-* control de versiones del repositorio;
-
-no debe duplicarse en una bitácora mensual.
-
-La generación de informes recuperará posteriormente esa información desde sus fuentes originales.
-
----
+Cuando una actividad ya queda documentada mediante documentos del proyecto, modificaciones al corpus, decisiones metodológicas, hallazgos, backlog, sesiones, grabaciones, validaciones, chats de trabajo o control de versiones, no debe duplicarse en una bitácora mensual.
 
 ## Registro complementario
 
 Solo cuando una actividad relevante no deje evidencia recuperable por sí misma podrá registrarse mediante una nota breve.
 
-Ejemplos:
-
-* llamada telefónica con un colaborador;
-* reunión informal;
-* decisión tomada fuera del repositorio;
-* gestión administrativa;
-* trabajo de coordinación;
-* observaciones personales surgidas durante el proyecto.
-
 Estas notas constituyen un apoyo para la reconstrucción posterior y no requieren formato rígido ni clasificación previa.
-
-Su propósito es evitar la pérdida de información, no generar carga administrativa.
-
----
 
 ## Elaboración de informes
 
-La elaboración de un informe mensual sigue el siguiente procedimiento:
+La elaboración de un informe mensual sigue este procedimiento:
 
-1. Recuperar toda la actividad correspondiente al período desde las fuentes disponibles.
-2. Integrar también las notas complementarias que no aparezcan en otras fuentes.
-3. Generar una lista exhaustiva de actividades realizadas durante el período.
-4. Revisar esa lista con el coordinador del proyecto.
-5. Distinguir entre:
-
-   * actividades que deben aparecer en el informe institucional;
-   * actividades que permanecen únicamente como registro interno.
-6. Redactar el informe mensual conforme a los criterios establecidos en la sección anterior.
-
-La clasificación temática (operativa, lingüística, metodológica, administrativa u otra) constituye una herramienta de organización interna y puede realizarse durante la elaboración del informe. No forma parte del trabajo cotidiano del proyecto.
-
----
+1. recuperar toda la actividad correspondiente al período desde las fuentes disponibles;
+2. integrar notas complementarias;
+3. generar una lista exhaustiva de actividades realizadas;
+4. revisar esa lista con el coordinador;
+5. distinguir entre actividades institucionalmente reportables y registro interno;
+6. redactar el informe conforme a los criterios de la sección anterior.
 
 ## Cambio de período
 
-El inicio de un nuevo mes no requiere crear nuevos documentos, limpiar registros ni reiniciar plantillas.
+El inicio de un nuevo mes no requiere limpiar registros ni reiniciar plantillas.
 
 Cada informe se construye exclusivamente a partir de las actividades cuya fecha corresponda al período solicitado.
 
-Los registros históricos permanecen disponibles como parte del Sistema de Conocimiento y pueden reutilizarse cuando sea necesario reconstruir la evolución del proyecto.
-
----
-
 ## Principio de mínima fricción
-
-El sistema de documentación debe minimizar el trabajo administrativo.
 
 Siempre que una actividad pueda recuperarse posteriormente desde las fuentes existentes, no deberá volver a registrarse.
 
-El coordinador únicamente añadirá registros complementarios cuando exista un riesgo real de que una actividad importante quede fuera de la reconstrucción posterior.
-
-De esta forma, el esfuerzo cotidiano se concentra en desarrollar el proyecto, mientras que la organización y síntesis del trabajo se realizan durante el proceso de generación del informe.
-
+El esfuerzo cotidiano debe concentrarse en desarrollar el proyecto; la organización y síntesis se realizan durante la generación del informe.
