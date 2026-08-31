@@ -1,7 +1,7 @@
 # CORPUS
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.2  
+**Versión:** 1.3  
 **Estado:** Borrador consolidado y evolutivo  
 **Fecha:** 2026-08-31  
 
@@ -160,29 +160,69 @@ El estudio intensivo de COR001 mostró que el formato favorece familiaridad fono
 
 COR001 se conserva como antecedente pedagógico y como material en mantenimiento. No debe ampliarse retroactivamente sin una razón documentada, pero sí puede corregirse, regrabarse o normalizarse mientras permanezca abierto.
 
-## 3.2 COR002
+## 3.2 COR002 — estado del piloto principiante
 
 El primer borrador de COR002, correspondiente a las frases 108–224, dejó de considerarse una continuación válida de COR001 por problemas de repetición, baja productividad, dependencia temática y falta de progresión suficiente.
 
-No existe todavía una versión definitiva de COR002 y **no se ha realizado ninguna grabación**.
+No existe todavía una versión definitiva de COR002 y **no se ha realizado ninguna grabación**, pero al cierre de agosto de 2026 su modo de trabajo inmediato deja de estar abierto o indeterminado.
 
-La arquitectura actual trabaja con un banco de **46 situaciones comunicativas**. Las situaciones "Ir al médico" y "Comprar medicina / ir a la farmacia" fueron retiradas del banco activo porque se consideró que, en el Juchitán contemporáneo, esas interacciones probablemente se desarrollarían principalmente en español y no constituyen prioridades adecuadas para el corpus inicial de uso del Didxazá.
+El estado vigente es:
+
+> **piloto metodológico congelado para unas pocas conversaciones de principiantes; generación masiva suspendida.**
+
+El objetivo inmediato no es completar COR002 ni cubrir todo el banco de situaciones. Es producir unas pocas escenas que el proyecto considere suficientemente plausibles, útiles y aprendibles como para llevarlas al trabajo con un hablante y aprender de su realización en Didxazá.
+
+La arquitectura general conserva un banco de **46 situaciones comunicativas**, pero ese inventario no funciona por ahora como cola automática de generación. Las situaciones "Ir al médico" y "Comprar medicina / ir a la farmacia" permanecen fuera del banco prioritario porque se consideró que, en el Juchitán contemporáneo, esas interacciones probablemente se desarrollarían principalmente en español y no constituyen prioridades adecuadas para el corpus inicial de uso del Didxazá.
 
 Esta decisión establece un criterio general: una situación no se prioriza únicamente porque sea cotidiana. Debe considerarse también si constituye un dominio real de uso del Didxazá.
 
-COR002 se construye actualmente mediante la combinación de:
+### Flujo activo del piloto
 
-- situación comunicativa;
-- funciones comunicativas;
-- objetivo lingüístico o pedagógico;
-- relación entre interlocutores;
-- progresión gramatical y pragmática como marco todavía evolutivo;
-- núcleo funcional de alta recurrencia;
-- léxico de escena y léxico reciclado;
-- naturalidad conversacional;
-- revisión y producción con hablantes.
+Mientras dure este piloto, el trabajo sigue por defecto este orden:
 
-La conversación completa es la unidad primaria. Los fragmentos destinados al estudio se extraen posteriormente.
+1. seleccionar una situación concreta y cotidiana;
+2. declarar quién es el aprendiz y qué necesita hacer;
+3. producir una primera escena sencilla;
+4. revisar manualmente su plausibilidad contextual y conversacional;
+5. corregir incoherencias, prácticas improbables y turnos artificiales;
+6. analizar **después** G/P, patrones, complejidad, recurrencias y posibilidades de reuso;
+7. llevar al hablante únicamente una escena fuente suficientemente aceptable;
+8. observar qué partes sobreviven, cambian, se reestructuran o se descartan en Didxazá;
+9. utilizar esa evidencia para decidir qué debe modificarse antes de escalar.
+
+La revisión contextual puede expresarse de manera simple como **SÍ / NO / FALTA**, sin convertir ese procedimiento en un sistema universal de validación.
+
+### Alcance de principiantes
+
+Como frontera operativa provisional, el piloto trabaja con la idea de que un principiante pueda resolver una interacción cotidiana breve, cara a cara, con un interlocutor cooperativo y sobre algo presente o concreto.
+
+La ventana de trabajo actual es **G1–G3 / P1–P3**, con P3 como borde experimental y reversible. Este corte no constituye una definición definitiva del nivel principiante ni modifica por sí mismo la arquitectura general G/P.
+
+G/P se conserva como herramienta de análisis y calibración. Durante este piloto no sustituye el juicio sobre la escena ni funciona como una taxonomía rígida que deba determinar de antemano toda la conversación.
+
+### CORE / SUPPORT / RITUAL / SCENIC
+
+Se conserva la distinción:
+
+- **CORE** — función que justifica la escena;
+- **SUPPORT** — sostiene la interacción;
+- **RITUAL** — saludo, agradecimiento o despedida;
+- **SCENIC** — información o acción de contexto.
+
+Una situación sólo debe activarse para el piloto cuando exista al menos una función **CORE** compatible con su alcance. La disponibilidad de un saludo, despedida o elemento escénico no basta para justificar una conversación.
+
+### Formato de revisión
+
+Las conversaciones del piloto se presentan en dos columnas:
+
+| Personaje | Conversación |
+|---|---|
+| Rita | ¿Hay camarón seco? |
+| Marchanta | Ya no hay camarón, se acabó temprano. |
+
+Los metadatos pedagógicos pueden mantenerse fuera del diálogo.
+
+El documento de provenance de este cambio es `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md`.
 
 ## 3.3 Núcleo funcional y léxico
 
@@ -204,6 +244,8 @@ COR002 necesita reutilizar de forma transversal recursos como:
 - relaciones entre participantes y objetos.
 
 El vocabulario específico de alimentos, lugares, objetos, actividades u otros campos funciona principalmente como **léxico de escena** y como recurso de variación y reciclaje.
+
+En el piloto no se exige cerrar primero todo el inventario léxico de COR002. Se prioriza revisar y validar el léxico que efectivamente entra en las escenas seleccionadas, sin perder la tarea estructural de construir posteriormente un inventario reutilizable.
 
 ## 3.4 Distinciones funcionales recientes
 
@@ -423,6 +465,8 @@ No se incorpora una unidad únicamente porque contenga vocabulario nuevo, comple
 
 La naturalidad exige evitar traducciones literales, cadenas mecánicas de pregunta-respuesta, explicaciones impropias de la escena y repeticiones visibles como ejercicio.
 
+Durante el piloto se añade una regla de orden: **la escena debe ser aceptable como interacción antes de usarse para extraer reglas sobre cómo debe generar el sistema**.
+
 ---
 
 # 8. Organización interna y trazabilidad
@@ -483,9 +527,19 @@ El tono, la fonación, la segmentación y otras representaciones lingüísticas 
 
 # 9. Generación de borradores
 
-El sistema de generación de conversaciones y estímulos continúa en evolución.
+El sistema general de generación de conversaciones y estímulos continúa en evolución, pero **no constituye el motor activo del piloto actual de COR002**.
 
-Puede utilizar:
+Las versiones v7 y v8.x del generador se conservan como antecedentes experimentales. Permitieron descubrir problemas reales —longitud rígida, activación sin CORE, exceso de trama, ritmo de entrevista, artificialidad por repetición y regresiones entre reglas—, pero ninguna se considera actualmente un generador general aprobado.
+
+Durante el piloto:
+
+- no se genera COR002 masivamente;
+- no se exige una nueva versión general del prompt;
+- la generación se limita a propuestas de pocas escenas concretas;
+- esas escenas se revisan manualmente antes del análisis pedagógico y del trabajo con hablantes;
+- sólo después de contar con escenas aceptadas se decidirá qué reglas o capacidades debe recuperar un futuro generador.
+
+Cuando vuelva a escalar, el sistema podrá utilizar:
 
 - situaciones;
 - funciones comunicativas;
@@ -499,7 +553,7 @@ Puede utilizar:
 
 La generación de borradores no valida Didxazá ni declara productividad por sí sola.
 
-El nuevo enfoque de habla espontánea y elicitación no lingüística **complementa** la generación de escenas pedagógicas: sus resultados pueden revelar estructuras, estrategias conversacionales y restricciones que luego retroalimenten los nuevos borradores.
+El enfoque de habla espontánea y elicitación no lingüística **complementa** la generación de escenas pedagógicas: sus resultados pueden revelar estructuras, estrategias conversacionales y restricciones que luego retroalimenten nuevos borradores.
 
 ---
 
@@ -507,7 +561,7 @@ El nuevo enfoque de habla espontánea y elicitación no lingüística **compleme
 
 Este documento describe una arquitectura de trabajo, no un sistema terminado.
 
-La evidencia procedente de hablantes, habla espontánea, elicitación dirigida, juicios, corrección ortográfica, bibliografía, pruebas del generador, validación pedagógica y trabajo de audio puede modificar sus categorías y relaciones.
+La evidencia procedente de hablantes, habla espontánea, elicitación dirigida, juicios, corrección ortográfica, bibliografía, pruebas del dispositivo, validación pedagógica y trabajo de audio puede modificar sus categorías y relaciones.
 
 Toda modificación sustantiva debe seguir las reglas de actualización del Sistema de Conocimiento.
 
@@ -516,3 +570,13 @@ Toda modificación sustantiva debe seguir las reglas de actualización del Siste
 La lectura de Juan José Bueno Holle (2019), *Information structure in Isthmus Zapotec narrative and conversation*, aportó una fundamentación específica para combinar habla espontánea, elicitación controlada y juicios de hablantes, así como para conservar la grabación primaria y las anotaciones posteriores en capas diferenciadas.
 
 La incorporación de este enfoque es una **ampliación metodológica**. No invalida las escenas pedagógicamente diseñadas ni el trabajo de traducción/reformulación con hablantes; limita únicamente la pretensión de que una sola vía pueda descubrir y representar por sí misma el rango del uso real del Didxazá.
+
+## Cambio 2026-08-31 — checkpoint metodológico del piloto principiante
+
+La revisión acumulada de las versiones v7–v8.x mostró que seguir añadiendo reglas antes de contar con escenas de referencia producía oscilaciones entre naturalidad, adquiribilidad y coherencia.
+
+Se adopta por ello, de manera provisional, el cambio de orden documentado en `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md`:
+
+> **escena → revisión contextual → corrección → análisis G/P → hablante → aprendizaje metodológico**.
+
+Este cambio define el modo de trabajo del piloto, no una pedagogía definitiva.
