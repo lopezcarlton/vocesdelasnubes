@@ -1,48 +1,37 @@
-# PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL — La competencia comunicativa es multidimensional y sus ejes no avanzan juntos
+# PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL — La competencia comunicativa tiene dimensiones separables
 
 ```yaml
 id: PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL
-titulo: "La competencia comunicativa es multidimensional y sus ejes no avanzan juntos"
+titulo: "La competencia comunicativa tiene dimensiones separables"
+estado: vigente_como_principio_general_aplicacion_revisable
+fecha_revision: 2026-08-31
+
 principio: >
-  Dell Hymes (1972) acuñó el concepto "competencia comunicativa" en respuesta directa a la
-  competencia lingüística de Chomsky, reconociendo que saber una lengua va más allá de la
-  gramática. Canale & Swain (1980) formalizaron que la competencia comunicativa tiene varios
-  componentes independientes:
+  La competencia comunicativa no se reduce al dominio gramatical. Resulta útil distinguir, entre otras,
+  dimensiones gramaticales, sociolingüísticas, discursivas y estratégicas, y no asumir que todas avanzan
+  de manera idéntica en una persona que aprende una lengua.
 
-  - Competencia gramatical: dominio de las estructuras lingüísticas.
-  - Competencia sociolingüística: capacidad de variar el registro según contexto social.
-  - Competencia discursiva: capacidad de organizar el discurso, conectar ideas, mantener coherencia.
-  - Competencia estratégica: capacidad de resolver problemas comunicativos cuando faltan recursos.
+aplicacion_a_voces_de_las_nubes: >
+  El proyecto debe evitar comprimir toda la dificultad de una interacción en un solo número. La separación
+  G/P surgió como una forma de conservar parte de esa multidimensionalidad y sigue siendo útil como marco
+  de trabajo y análisis.
 
-  Hallazgo empírico: estos componentes NO siempre avanzan juntos en el aprendiente real. Un
-  aprendiente puede tener competencia sociolingüística/pragmática altísima (porque ya está inmerso
-  socialmente en la comunidad de habla) pero competencia gramatical muy baja (porque no domina
-  las estructuras de la L2 todavía).
-
-aplicacion_a_voces_de_las_nubes:
-  - El perfil típico del aprendiente no es un principiante ab initio de una lengua extranjera.
-    Es, frecuentemente, alguien que YA está inmerso en un mundo social zapoteco: sabe cómo funciona
-    una vela, sabe quién es mayordomo, sabe cómo se pide algo con respeto, sabe cómo se saluda a un mayor.
-
-  - Este aprendiente tiene competencia pragmática/sociocultural ALTÍSIMA pero competencia gramatical
-    en didxazá BAJA.
-
-  - Un sistema de enseñanza que confunde los ejes va a subestimar sistemáticamente a este aprendiz,
-    ofreciéndole contenido pragmáticamente empobrecido ("hola, ¿cómo estás?, bien, adiós") cuando
-    en realidad puede sostener el andamiaje social de una conversación compleja si se le dan las
-    piezas gramaticales adecuadas.
-
-  - La solución es precisamente la doble etiqueta G/P: respetar la restricción gramatical dura
-    (el aprendiz no tiene andamiaje para procesar cadi en nivel 2) pero no desperdiciar la
-    competencia pragmática que el aprendiz ya trae (exponerlo a densidad social que está a su nivel).
+  Sin embargo, no se presupone que todas las personas aprendices tengan una competencia pragmática alta
+  por definición ni que la solución pedagógica definitiva sea exactamente la doble escala G1–G5/P1–P5.
+  El perfil real de aprendices debe comprobarse y la carga discursiva o referencial puede requerir una
+  descripción más precisa que la escala pragmática actual.
 
 implicaciones_curriculares:
-  - El corpus debe diseñarse pensando en aprendientes cuyas dimensiones de competencia están
-    desalineadas, no en aprendientes donde todo avanza parejo.
+  - no asumir que gramática, riesgo social, negociación y organización discursiva suben juntas;
+  - permitir que una misma situación pueda revisitarse con recursos distintos;
+  - mantener abierta la posibilidad de que ciertas cargas discursivas/referenciales se describan aparte;
+  - no convertir la riqueza del dispositivo lingüístico en obligación de contenido para principiantes;
+  - validar con aprendices reales qué combinaciones de complejidad resultan comprensibles y útiles.
 
-  - Esto justifica el "diseño en espiral": una situación como "Quién soy" (pragmáticamente trivial)
-    se revisa múltiples veces a lo largo del curso, cada vez con estructuras más complejas, porque
-    la competencia pragmática del aprendiz puede permanecer alta aunque la gramatical esté subiendo.
+relacion_con_GP: >
+  G/P se conserva como implementación de trabajo, no como demostración de que sólo existen dos dimensiones
+  ni como currículo cerrado. Durante el piloto de COR002 se aplica principalmente después de revisar una
+  escena contextual y conversacionalmente plausible.
 
 marco_teorico:
   - "Hymes, Dell (1972). On Communicative Competence"
@@ -50,10 +39,19 @@ marco_teorico:
   - "Marco Común Europeo de Referencia para las Lenguas (MCER)"
   - "ACTFL Proficiency Guidelines"
 
+provenance:
+  - conocimiento/decisiones/DEC-G-P-SEPARATION.md
+  - conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md
+
 etiquetas:
   - pedagogia
   - competencia_comunicativa
   - multidimensionalidad
   - corpus
   - teoría_adquisición_lenguas
+  - revisable
 ```
+
+## Nota de revisión
+
+La formulación anterior generalizaba que el aprendiz típico tendría competencia pragmática/sociocultural muy alta y presentaba la doble etiqueta G/P como la solución pedagógica precisa. Al cierre de agosto esas afirmaciones se restringen: la multidimensionalidad se conserva como principio, mientras que el perfil de aprendices y la arquitectura exacta de dificultad permanecen sujetos a evidencia.
