@@ -1,60 +1,58 @@
-# PRIN-P-RESTRICCION-BLANDA — El eje pragmático tiene restricción blanda: exposición permitida a contenido denso
+# PRIN-P-RESTRICCION-BLANDA — Hipótesis histórica sobre exposición pragmática
 
 ```yaml
 id: PRIN-P-RESTRICCION-BLANDA
-titulo: "El eje pragmático tiene restricción blanda: exposición permitida a contenido denso"
-principio: >
-  El nivel_pragmático asignado a un paso constituye una guía sobre la densidad social/discursiva
-  del contenido que el generador puede explorar, pero NO es una restricción que deba ser nunca violada.
+titulo: "Hipótesis histórica sobre exposición pragmática"
+estado: provisional_not_automatic_generator_policy
+fecha_revision: 2026-08-31
 
-  Fundamento: el aprendiente adulto típico de Voces de las Nubes es sociocultural y pragmáticamente
-  competente en español (y muchas veces en vida social zapoteca). Puede procesar contenido pragmáticamente
-  denso aunque gramaticalmente no pueda producirlo todavía. La exposición a material sociocultural
-  rico — con sus vacilaciones, sus marcadores, su peso emocional, sus juegos — es lo que da
-  textura y realidad al mundo lingüístico que está aprendiendo.
+principio_original: >
+  La formulación inicial sostenía que el nivel_pragmático podía funcionar como restricción blanda:
+  el generador podría explorar contenido social o discursivamente más denso que la capacidad productiva
+  del aprendiz, siempre que la estructura gramatical permaneciera dentro del techo G asignado.
 
-  Distinción BICS/CALP (Cummins): competencia interpersonal básica y competencia académica/reflexiva
-  no siguen la misma curva de desarrollo en bilingües. El eje pragmático respeta esta distinción.
+estado_actual: >
+  El proyecto conserva la idea de que complejidad gramatical y complejidad pragmática no tienen por
+  qué avanzar juntas. No se conserva, en cambio, la regla automática según la cual un principiante
+  debe exponerse deliberadamente a alta densidad pragmática sólo porque pueda comprender socialmente
+  el contenido en español.
 
-implicaciones_operativas:
-  - Si un paso está etiquetado nivel_pragmático 1, el generador produce actos rutinarios, ritualizados,
-    de bajo riesgo (saludos, cortesías, agradecimientos).
+  Durante el piloto de COR002 se trabaja con una ventana provisional P1–P3 y P3 funciona como borde
+  reversible. La densidad social, discursiva o contextual debe justificarse por la escena y por el
+  objetivo del principiante, no por una obligación del generador de explotar todo el rango P disponible.
 
-  - Si un paso está etiquetado nivel_pragmático 5, el generador puede explorar actos que requieren
-    negociación real, manejo de riesgo social, estructura discursiva extendida (mediación de pleito,
-    propuesta en asamblea, disculpa por algo grave, cuento tradicional con su estética propia).
+razon_de_revision: >
+  El piloto se redujo deliberadamente a interacciones cotidianas breves para principiantes. Además,
+  la revisión lingüística reciente sugiere que "dificultad pragmática" puede mezclar fenómenos distintos:
+  riesgo social, negociación, densidad discursiva, seguimiento referencial e información compartida.
+  Antes de convertir P en una regla productiva fuerte se necesita observar escenas reales y decidir
+  si todas esas cargas deben permanecer dentro de una sola escala.
 
-  - A diferencia de la restricción gramatical dura, la restricción pragmática BLANDA permite
-    exposición a material que el aprendiz no podría producir por sí solo.
+no_se_concluye:
+  - que la dimensión pragmática deba eliminarse;
+  - que un principiante sólo pueda escuchar contenido socialmente trivial;
+  - que P1–P5 deba sustituirse inmediatamente;
+  - que la exposición a contenido rico sea perjudicial por definición.
 
-  - Cuando nivel_gramatical y nivel_pragmático divergen: la estructura obedece a gramatical
-    (restricción dura), pero el contenido, tono, registro pueden alcanzar la densidad pragmática
-    (restricción blanda).
+criterio_actual_piloto:
+  - justificar la densidad pragmática por la función concreta de la escena;
+  - analizar P después de revisar la plausibilidad conversacional;
+  - mantener P1–P3 como ventana experimental;
+  - retirar P3 si empieza a exigir negociación o carga incompatible con el objetivo del principiante;
+  - revisar posteriormente si carga discursiva/referencial necesita descripción separada.
 
-aplicacion_concreta:
-  - Caso Estoy aprendiendo zapoteco: G3/P5. Estructura es nivel 3 (futuro + causal, manejable desde
-    ese nivel). Contenido es nivel 5 (autoevaluación, vulnerabilidad, negociación de imagen social,
-    marco metalingüístico). El generador produce oración con estructura G3 pero tono/registro que
-    capte la densidad emocional de una confesión de principiante.
-
-  - Caso Quién soy: G2-G4/P1. Estructura puede alcanzar G4 (posesión completa). Contenido permanece
-    en P1 (preguntas socialmente fáciles, sin riesgo). El aprendiz aprende estructuras avanzadas
-    en contexto donde no tiene que preocuparse por peso social del contenido.
-
-contraste_con_restriccion_dura:
-  - Restricción gramatical dura: no se negocia, no se puede rebasar, no hay exposición sin procesabilidad.
-  - Restricción pragmática blanda: se puede explorar, permitida la exposición, el aprendiz procesa
-    aunque no produzca.
-
-validado_por:
-  - Cummins, Jim. BICS/CALP distinction
-  - Análisis del perfil de aprendiente de Voces de las Nubes
-  - SRC-PEDAGOGICAL-FUNDAMENTOS
+provenance:
+  - conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md
+  - conocimiento/decisiones/DEC-G-P-SEPARATION.md
 
 etiquetas:
   - pedagogia
-  - restricción_blanda
-  - exposición_sociocultural
+  - complejidad_pragmatica
+  - hipótesis
+  - revisable
   - corpus
-  - competencia_pragmática
 ```
+
+## Nota histórica
+
+La versión del 7 de agosto de 2026 defendía explícitamente la exposición a contenido pragmáticamente denso como política del generador. Esa implementación permanece en el historial del repositorio, pero no gobierna el piloto principiante al cierre de agosto.
