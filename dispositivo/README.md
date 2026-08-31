@@ -71,6 +71,18 @@ Entre los artefactos desarrollados fuera del repositorio se encuentra `JUCHITAN_
 
 La incorporación de esta carpeta **no implica que todos esos artefactos hayan sido migrados ya al repositorio**. El estado exacto se registra en `ESTADO_ACTUAL_2026-08-31.md`.
 
+## Discusión pedagógica derivada del dispositivo
+
+La subcarpeta `pedagogia/` conserva documentos de discusión producidos durante el trabajo del dispositivo cuando puedan afectar preguntas pedagógicas.
+
+Estos documentos **no son política pedagógica** y no modifican automáticamente `conocimiento/PEDAGOGIA.md`, COR002 ni las reglas del Generator.
+
+Actualmente contiene:
+
+- `pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` — discusión congelada posterior a la lectura intensiva de Bueno Holle 2019. Su estado interno es `FROZEN_DISCUSSION_INPUT_NOT_POLICY`.
+
+La función de esta subcarpeta es impedir que el razonamiento quede fuera del repositorio sin confundirlo con una decisión adoptada.
+
 ## Frontera con documentos institucionales
 
 Esta capa utiliza nombres funcionales internos para permitir trabajo técnico y trazable.
