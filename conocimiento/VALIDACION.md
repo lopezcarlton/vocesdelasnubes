@@ -1,9 +1,9 @@
 # VALIDACION
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.0  
-**Estado:** Borrador consolidado  
-**Fecha:** 2026-08-05  
+**Versión:** 1.1  
+**Estado:** Borrador consolidado y evolutivo  
+**Fecha:** 2026-08-31  
 
 ---
 
@@ -133,6 +133,8 @@ La bibliografía orienta, pero no sustituye el uso actual.
 
 Las transcripciones deben construirse de forma colaborativa cuando impliquen decisiones no recuperables automáticamente del audio.
 
+Una escena fuente aceptada en español no constituye validación lingüística del Didxazá. La realización con hablante puede reformular, reorganizar o descartar partes de la propuesta y debe registrarse como evidencia distinta.
+
 ---
 
 # 6. Validación metodológica
@@ -147,15 +149,38 @@ Deben revisarse si:
 - los hablantes cuestionan sus efectos;
 - cambia el alcance del proyecto.
 
+Una decisión metodológica puede estar suficientemente documentada para gobernar un piloto y seguir siendo provisional. **Validar el procedimiento no equivale a validar todos los materiales que ese procedimiento produzca.**
+
 ---
 
 # 7. Validación pedagógica
 
-Actualmente existe fundamentación teórica y revisión interna.
+Actualmente existe fundamentación teórica, revisión interna y un flujo metodológico congelado para el piloto principiante de COR002.
 
 No existe todavía evidencia documentada de validación sistemática con aprendices.
 
 Por tanto, las decisiones pedagógicas permanecen sujetas a prueba empírica.
+
+## 7.1 Estado específico del piloto COR002
+
+El checkpoint metodológico del 31 de agosto resuelve cómo se trabajará de inmediato:
+
+> escena → revisión contextual manual → corrección → análisis G/P → hablante → aprendizaje metodológico.
+
+Este checkpoint **sí permite considerar definido el procedimiento provisional del piloto**, pero no permite declarar validado COR002 como material pedagógico.
+
+La validación del material sigue pendiente por razones identificables:
+
+1. todavía no existe un conjunto suficiente de escenas de referencia aprobadas como modelos de COR002;
+2. las escenas fuente deben pasar primero por revisión contextual y conversacional;
+3. después deben ser realizadas, reformuladas o corregidas por un hablante de didxazá;
+4. la realización en didxazá puede modificar la estructura que se había imaginado desde el español;
+5. todavía no existen pruebas sistemáticas con aprendices sobre comprensibilidad, producibilidad, recuperación, transferencia y retención;
+6. la ventana G1–G3 / P1–P3 y el borde P3 siguen siendo experimentales y reversibles.
+
+Por ello el estado correcto no es “validación indefinida” sino:
+
+> **procedimiento del piloto definido; material lingüístico y pedagógico pendiente de producir y validar.**
 
 ---
 
@@ -169,6 +194,8 @@ Las decisiones técnicas deben apoyarse en:
 4. recomendaciones generales.
 
 Las especificaciones de audio vigentes fueron adoptadas como decisiones técnicas internas, no como validaciones comunitarias.
+
+El dispositivo lingüístico puede producir análisis, candidatos o restricciones útiles, pero una capacidad implementada en Analyzer, Corrector, Tutor o Generator no se convierte automáticamente en validación pedagógica ni lingüística.
 
 ---
 
@@ -208,9 +235,35 @@ Se documentaron:
 - revisión del corpus de situaciones;
 - frecuencia excesiva de saludos, despedidas y agradecimientos;
 - problemas de COR002;
-- necesidad de automatizar el procesamiento de audio.
+- necesidad de automatizar el procesamiento de audio;
+- problemas producidos por mínimos rígidos de longitud;
+- escenas habilitadas sin una función CORE disponible;
+- oscilaciones entre exceso de trama, ritmo de entrevista y repetición tipo drill en distintas iteraciones del generador.
 
 Estas pruebas fundamentan decisiones, pero no validan por sí solas todos los resultados futuros.
+
+## 9.5 Checkpoint metodológico del piloto COR002
+
+El documento `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md` registra y congela el procedimiento de trabajo actual.
+
+Su alcance de validación es **metodológico e interno**:
+
+- justifica detener temporalmente la generación masiva;
+- prioriza pocas escenas de principiantes;
+- establece revisión manual antes del análisis pedagógico;
+- conserva G/P como herramienta de análisis y calibración;
+- conserva el CORE gate;
+- establece que el hablante entra después de aceptar la escena fuente;
+- conserva progresión por revisita;
+- impide convertir automáticamente artefactos pedagógicos en reglas permanentes.
+
+No valida todavía:
+
+- una conversación específica como Didxazá natural;
+- la frontera definitiva del nivel principiante;
+- G1–G3/P1–P3 como currículo estable;
+- el generador general;
+- resultados de aprendizaje.
 
 ---
 
@@ -247,8 +300,16 @@ Toda validación debería conservar:
 
 # 12. Validaciones pendientes
 
-- Naturalidad y pertinencia de COR002 reconstruido.
-- Lista de escenas.
+## Inmediatas para COR002
+
+- Primera o primeras escenas fuente aceptadas mediante el flujo manual del piloto.
+- Naturalidad, pertinencia y realización en didxazá de esas escenas con hablante.
+- Confirmación de que las funciones CORE elegidas sobreviven de manera útil a la realización en didxazá.
+- Revisión del corte G1–G3 / P1–P3 a partir de escenas reales, manteniendo P3 reversible.
+- Validación del inventario léxico que efectivamente entre en el piloto, en lugar de exigir primero el cierre de todo el inventario general.
+
+## Estructurales o posteriores
+
 - Sistema ortográfico principal con hablantes.
 - Nomenclatura comunitaria de tipos de vocal.
 - Protocolos de coautoría.
@@ -256,12 +317,14 @@ Toda validación debería conservar:
 - Progresión pedagógica con aprendices.
 - Duración de pausas.
 - Transferencia y retención.
-- Generador de corpus v7 a escala.
-- Controlador externo.
+- Controlador externo de cobertura cuando el volumen del corpus lo requiera.
 - Implementación web.
 - Alcance técnico de Anki.
-- Revisión de Jesús, especialista en sociolingüística.
+- Revisión especializada sociolingüística cuando corresponda.
 - Variación entre localidades.
+- Evaluación futura de un generador general **después** de disponer de escenas de referencia aceptadas.
+
+La antigua tarea “validar el generador v7 a escala” deja de representar el estado operativo actual: v7 y las iteraciones posteriores son antecedentes experimentales, no el motor activo del piloto.
 
 ---
 
@@ -271,11 +334,23 @@ No puede documentarse todavía:
 
 - un registro completo de sesiones de validación;
 - fechas y resultados de todas las intervenciones de Vicente;
-- validaciones realizadas por Vidal o Lauris;
+- validaciones realizadas por otros colaboradores cuando no estén registradas;
 - formularios o protocolos de consentimiento;
 - criterios formales para declarar consenso;
 - número mínimo de validadores;
-- procedimiento de resolución de desacuerdos;
+- procedimiento definitivo de resolución de desacuerdos;
 - pruebas pedagógicas con usuarios;
 - validación externa de la metodología;
 - política definitiva de autoría y reconocimiento.
+
+---
+
+# 14. Cambio 2026-08-31 — piloto principiante COR002
+
+La incorporación del checkpoint metodológico permite distinguir entre tres estados que antes aparecían mezclados:
+
+1. **procedimiento interno del piloto:** definido provisionalmente;
+2. **material COR002 concreto:** todavía en producción y pendiente de validación lingüística/pedagógica;
+3. **pedagogía general del proyecto:** evolutiva y no cerrada por este piloto.
+
+Esta distinción explica por qué la validación sigue abierta sin que el proyecto carezca ya de una ruta de trabajo para COR002.
