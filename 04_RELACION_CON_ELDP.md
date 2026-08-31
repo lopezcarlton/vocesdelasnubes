@@ -1,82 +1,83 @@
 # RELACIÓN CON EL REPOSITORIO ELDP
 
 **Proyecto:** Voces de las Nubes  
-**Estado:** Vigente  
-**Fecha:** 2026-08-19
+**Versión:** 1.1  
+**Estado:** Vigente como regla de archivo y futura reapertura  
+**Fecha:** 2026-08-31
 
 ## Propósito
 
-Este documento define la relación entre el Sistema de Conocimiento de **Voces de las Nubes** y el repositorio `lopezcarlton/ELDP`, utilizado para desarrollar la candidatura al Small Grant del Endangered Languages Documentation Programme.
+Este documento define la relación entre el Sistema de Conocimiento de **Voces de las Nubes** y el repositorio `lopezcarlton/ELDP`.
 
-Los dos repositorios están relacionados, pero gobiernan objetos distintos. No deben sincronizarse mediante copia sistemática de contenido.
+El ciclo de candidatura ELDP 2026 está **cerrado**. No existe actualmente una solicitud, modalidad, institución administradora, presupuesto, cronograma ni formulario activo.
+
+El repositorio ELDP se conserva como archivo de la exploración realizada y como posible antecedente para una iniciativa futura.
 
 ## Regla de autoridad
 
 **Voces de las Nubes es la fuente autoritativa sobre el proyecto lingüístico, pedagógico y documental permanente.**
 
-Esto incluye, entre otros:
+Esto incluye:
 
-- estado y diseño de COR001, COR002 y corpus posteriores;
-- metodología general del proyecto;
+- COR001, COR002 y corpus posteriores;
+- metodología;
 - teoría y pedagogía;
 - decisiones lingüísticas y ortográficas;
 - producción y procesamiento de audio;
 - validación con hablantes y aprendices;
 - arquitectura de complejidad gramatical y pragmática;
-- sistemas y herramientas internas que formen parte del trabajo lingüístico;
-- estado real de materiales y procesos de Voces de las Nubes.
+- herramientas internas de análisis, revisión, apoyo pedagógico y generación;
+- estado real de materiales y procesos.
 
-Cuando el repositorio ELDP necesite afirmar algo sobre estos temas, debe consultar este repositorio y no utilizar como fuente vigente una copia histórica almacenada en ELDP.
+El repositorio ELDP no debe utilizarse para determinar el estado vigente de estos temas.
 
-## Autoridad del repositorio ELDP
+## Estado del repositorio ELDP
 
-El repositorio `lopezcarlton/ELDP` es la fuente autoritativa sobre la **candidatura al Small Grant**.
+`lopezcarlton/ELDP` funciona actualmente como **archivo de conocimiento**.
 
-Esto incluye:
+Conserva:
 
-- requisitos y documentación oficial de ELDP;
-- elegibilidad;
-- decisiones estratégicas de la candidatura;
-- formulación del proyecto financiable;
-- presupuesto y cronograma de la candidatura;
-- entregables comprometidos ante ELDP;
-- estrategia de archivo y gestión de datos exigida o adoptada para la subvención.
+- documentación oficial consultada;
+- historial de la exploración Rapid Grant y Small Grant 2026;
+- decisiones y aprendizajes de ese ciclo;
+- evidencia sobre criterios de elegibilidad, documentación y archivo;
+- materiales que podrían ser útiles si en el futuro se abre una nueva candidatura.
 
-Una decisión adoptada exclusivamente para la candidatura no modifica automáticamente Voces de las Nubes.
+Ningún pendiente histórico del ciclo 2026 constituye una tarea activa de Voces de las Nubes.
+
+## Decisión de cierre 2026
+
+Se decidió no presentar una solicitud ELDP en 2026.
+
+La exploración mostró que el programa prioriza fuertemente lenguas altamente amenazadas y escasamente documentadas. El Didxazá cuenta con documentación previa considerable y no se consideró estratégico seguir dedicando trabajo de Voces de las Nubes a una candidatura para su fase actual.
+
+Este cierre no descarta:
+
+- una candidatura futura cuando Voces esté más consolidado;
+- un proyecto posterior sobre otra lengua o variedad con una brecha documental más clara;
+- una modalidad diferente si las condiciones futuras lo justifican.
 
 ## Regla de no duplicación
 
 La información debe conservarse donde nace su autoridad.
 
-El otro repositorio puede:
+El repositorio ELDP puede conservar referencias o instantáneas históricas de Voces, pero no una segunda versión que pretenda describir su estado actual.
 
-- referenciarla;
-- resumirla cuando sea indispensable para su propio objeto;
-- registrar la fecha o versión consultada.
+## Regla de futura reapertura
 
-No debe mantener una segunda versión que pretenda describir el estado vigente de la misma materia.
+Una candidatura ELDP sólo vuelve a convertirse en proyecto activo mediante una decisión explícita que defina, como mínimo:
 
-## Información compartida
+1. ciclo de aplicación;
+2. lengua o variedad;
+3. comunidad o región;
+4. brecha documental;
+5. modalidad plausible;
+6. razón estratégica para priorizar la solicitud.
 
-Cuando un dato sea relevante para ambos repositorios, se determinará primero cuál es su fuente original.
-
-Ejemplos:
-
-- El estado de COR001 o COR002 se consulta en Voces de las Nubes.
-- Las reglas del Small Grant se consultan en ELDP.
-- La metodología permanente del proyecto se consulta en Voces de las Nubes.
-- Una adaptación metodológica hecha únicamente para cumplir un requisito de ELDP se registra en ELDP.
-
-## Regla de adopción
-
-Una práctica, requisito o decisión nacida en ELDP solo pasa a formar parte de Voces de las Nubes cuando el proyecto la adopta explícitamente por mérito propio.
-
-Del mismo modo, que una práctica exista en Voces de las Nubes no implica que deba formar parte del Small Grant.
+Hasta entonces, ninguna tarea del ciclo 2026 debe reactivarse automáticamente.
 
 ## Control de contradicciones
 
-Antes de consolidar en ELDP una afirmación sobre el estado de Voces de las Nubes, debe verificarse el repositorio `lopezcarlton/vocesdelasnubes`.
+Si el repositorio ELDP contiene una afirmación histórica incompatible con el estado actual de Voces de las Nubes, se interpreta como registro de una etapa anterior y no como instrucción vigente.
 
-Si los repositorios contienen versiones incompatibles sobre una materia gobernada por Voces de las Nubes, prevalece este repositorio y ELDP debe corregirse.
-
-Si la contradicción se refiere exclusivamente a reglas o decisiones de la candidatura, prevalece el repositorio ELDP.
+Para cualquier cuestión lingüística, metodológica, pedagógica, documental u operativa del proyecto actual, prevalece `lopezcarlton/vocesdelasnubes`.
