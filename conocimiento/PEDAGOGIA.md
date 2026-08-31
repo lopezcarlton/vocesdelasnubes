@@ -1,9 +1,9 @@
 # PEDAGOGIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.1  
+**Versión:** 1.2  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-08-19
+**Fecha:** 2026-08-31
 
 ## 1. Objetivo pedagógico
 
@@ -68,19 +68,27 @@ El proyecto trabaja actualmente con la hipótesis de separar dos dimensiones de 
 - **complejidad gramatical (G):** estructuras lingüísticas necesarias;
 - **complejidad pragmática (P):** exigencia social, discursiva y contextual del acto comunicativo.
 
-Esta separación es una **arquitectura de trabajo, no un sistema terminado**.
+Esta separación sigue siendo una **arquitectura de trabajo, no un sistema terminado**.
 
-Las etiquetas G1–G5 y P1–P5 han resultado útiles para pensar la progresión, pero sus límites, contenidos y relaciones continúan en revisión. Deben contrastarse con la evidencia gramatical extraída de la literatura disponible, observaciones de hablantes, comportamiento real de COR001 y COR002, resultados de la corrección ortográfica y análisis lingüístico en curso, pruebas del generador y futura validación con aprendices.
+Para evitar una ambigüedad que produjo problemas en versiones anteriores del generador, se distinguen tres afirmaciones diferentes:
 
-La hipótesis operativa actual es que la restricción gramatical puede funcionar como límite más duro que la pragmática: un contenido socialmente complejo podría expresarse con estructuras relativamente simples, mientras que una estructura gramatical avanzada no debería introducirse solo porque el tema sea sencillo. Esta formulación sigue siendo provisional.
+1. **G/P sigue activo como instrumento de análisis, comparación y calibración pedagógica.** No se abandona la separación entre complejidad gramatical y pragmática.
+2. **Las definiciones exactas de G1–G5 y P1–P5 no constituyen todavía una taxonomía definitiva ni una secuencia curricular aprobada.** Sus límites, contenidos y relaciones pueden cambiar con nueva evidencia.
+3. **El piloto actual de COR002 utiliza provisionalmente una ventana G1–G3 / P1–P3.** P3 funciona como borde experimental y reversible. Este corte sirve únicamente para limitar el piloto de principiantes y no redefine por sí mismo el sistema general G/P.
 
-Han existido definiciones de trabajo para G1–G5 y P1–P5, así como propuestas de cuatro etapas curriculares. Se conservan como antecedentes de diseño, pero **no deben tratarse como definiciones formales vigentes ni como secuencia curricular aprobada**.
+La consecuencia metodológica es que, durante el piloto, G/P no se utiliza como sustituto del juicio sobre una conversación. Primero se revisa si la escena es contextual y conversacionalmente plausible; después se analiza qué G/P, patrones y cargas contiene y si son compatibles con el alcance del piloto.
 
-La nueva evidencia lingüística puede reclasificar estructuras entre niveles, modificar el número de etapas o incluso cambiar la forma en que se usa la doble dimensión G/P.
+Las etiquetas G1–G5 y P1–P5 deben seguir contrastándose con la evidencia gramatical extraída de la literatura disponible, observaciones de hablantes, comportamiento real de COR001 y COR002, resultados de la corrección ortográfica y análisis lingüístico en curso, pruebas del dispositivo y futura validación con aprendices.
+
+La hipótesis operativa de que la restricción gramatical puede funcionar como límite más duro que la pragmática permanece como antecedente útil, pero no se convierte en regla universal. Un contenido socialmente complejo puede a veces expresarse con estructuras relativamente simples, mientras que una estructura gramatical avanzada no debería introducirse sólo porque el tema sea sencillo; la aplicación concreta debe probarse en escenas reales.
+
+Las propuestas anteriores de definiciones cerradas para G1–G5, P1–P5 o etapas curriculares se conservan como antecedentes de diseño, pero **no gobiernan automáticamente el piloto actual ni futuras generaciones de materiales**.
 
 ### 6.4 Escenas
 
 Las escenas sirven como origen contextual, pero no se ordenan automáticamente como lecciones.
+
+En el piloto actual de COR002, la conversación concreta funciona además como unidad de aprendizaje metodológico: antes de añadir nuevas reglas al sistema se busca obtener escenas que el proyecto considere suficientemente plausibles y útiles como para llevarlas al trabajo con un hablante.
 
 ### 6.5 Marcadores conversacionales
 
@@ -88,15 +96,36 @@ Un conjunto básico de marcadores puede utilizarse desde etapas tempranas para e
 
 ### 6.6 Secuenciación curricular
 
-No existe todavía una secuencia curricular definitiva. Las propuestas anteriores de etapas deben entenderse como modelos exploratorios.
+No existe todavía una secuencia curricular definitiva.
+
+El piloto de COR002 no intenta resolverla. Su alcance inmediato es más reducido: producir y revisar unas pocas conversaciones para principiantes, observar qué pueden aprenderse de ellas y usar esa evidencia para revisar después la progresión general.
+
+Las propuestas anteriores de etapas deben entenderse como modelos exploratorios.
 
 ### 6.7 Diseño en espiral
 
-El principio de revisitar situaciones comunicativas con mayor profundidad sigue siendo una hipótesis pedagógica útil.
+El principio de revisitar situaciones comunicativas con mayor profundidad sigue siendo una hipótesis pedagógica útil y forma parte del piloto actual.
 
-No se mantiene aquí una cifra fija de cuántas situaciones pertenecen a cada etapa ni cuántas deben fragmentarse, porque COR002 y su arquitectura continúan en revisión.
+Una situación puede reaparecer cuando cambia lo que el aprendiz puede hacer dentro de ella. Por ejemplo, una primera escena puede trabajar disponibilidad o cantidad y una revisita posterior añadir elección o preferencia sencilla.
 
-Su aplicación concreta debe validarse en el diseño futuro del corpus y con aprendices reales.
+No se mantiene una cifra fija de cuántas situaciones pertenecen a cada etapa ni cuántas veces deben revisitarse.
+
+### 6.8 Piloto metodológico actual de COR002
+
+Al cierre de agosto de 2026 queda congelado, como flujo de trabajo provisional, el siguiente orden:
+
+1. seleccionar una situación concreta y cotidiana;
+2. declarar quién es el aprendiz y qué necesita hacer;
+3. producir una escena sencilla;
+4. revisar manualmente plausibilidad contextual y conversacional;
+5. corregir la escena antes de imponer análisis pedagógico adicional;
+6. analizar después G/P, patrones, complejidad y posibilidades de reuso;
+7. llevar al hablante únicamente escenas fuente suficientemente aceptables;
+8. aprender de la realización en Didxazá antes de volver a escalar la automatización.
+
+Este flujo no convierte sus parámetros provisionales en teoría permanente. En particular, no fija de manera definitiva G1–G3/P1–P3, longitud, número de repeticiones, cantidad de léxico nuevo ni número ideal de escenas.
+
+El generador masivo permanece fuera del flujo activo mientras no existan escenas de referencia aprobadas suficientes para calibrarlo.
 
 ## 7. Papel del error
 
@@ -116,6 +145,8 @@ Las fuentes identifican como relevantes comprensión auditiva, recuperación sin
 
 No existe todavía un sistema de evaluación validado con aprendices.
 
+El piloto actual permite producir material suficientemente definido para que esa validación sea posible más adelante, pero no la sustituye.
+
 ## 10. Limitaciones y carácter evolutivo
 
 No puede documentarse todavía de forma definitiva:
@@ -124,6 +155,7 @@ No puede documentarse todavía de forma definitiva:
 - definiciones consolidadas de G1–G5 y P1–P5;
 - número definitivo de etapas;
 - relación final entre complejidad gramatical y pragmática;
+- frontera definitiva del nivel principiante;
 - métricas de dominio;
 - instrumentos de evaluación;
 - resultados de pruebas con aprendices;
@@ -133,3 +165,9 @@ No puede documentarse todavía de forma definitiva:
 - evidencia empírica sobre retención o transferencia.
 
 Este documento debe evolucionar junto con la evidencia lingüística, metodológica y pedagógica del proyecto. Las clasificaciones actuales son herramientas de trabajo y no deben convertirse en restricciones permanentes por inercia documental.
+
+## Cambio 2026-08-31 — checkpoint metodológico del piloto COR002
+
+Se incorpora el flujo documentado en `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md`.
+
+El cambio resuelve una ambigüedad anterior: **G/P puede seguir siendo una pieza central del trabajo sin que sus definiciones actuales sean una teoría pedagógica cerrada**. El piloto utiliza una ventana provisional para limitar el trabajo inmediato, mientras conserva abierta la revisión del sistema general.
