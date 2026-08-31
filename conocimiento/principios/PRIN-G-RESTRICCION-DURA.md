@@ -1,42 +1,59 @@
-# PRIN-G-RESTRICCION-DURA — El eje gramatical tiene restricción dura no negociable
+# PRIN-G-RESTRICCION-DURA — Hipótesis histórica sobre restricción gramatical previa
 
 ```yaml
 id: PRIN-G-RESTRICCION-DURA
-titulo: "El eje gramatical tiene restricción dura no negociable"
-principio: >
-  El nivel_gramatical asignado a un paso constituye una restricción dura sobre la estructura
-  lingüística que el generador puede producir. Esta restricción no se puede violar.
+titulo: "Hipótesis histórica sobre restricción gramatical previa"
+estado: provisional_suspended_as_hard_generator_rule
+fecha_revision: 2026-08-31
 
-  Fundamento: la lógica del input comprensible de Krashen (i+1). El material debe estar un paso
-  arriba del nivel actual del aprendiz, no cinco pasos arriba. Exposición prematura a estructuras
-  fuera del alcance del aprendiz genera ruido más que aprendizaje.
+principio_original: >
+  La formulación inicial sostenía que el nivel_gramatical asignado a un paso debía constituir una
+  restricción dura no negociable sobre la estructura que un generador podía producir.
 
-  Implicaciones operativas:
-  - Si un paso está etiquetado nivel_gramatical 2, el generador NO debe producir cadi, subordinación
-    condicional, posesión completa (todas nivel 5).
-  - Si un paso está etiquetado nivel_gramatical 3, se pueden usar estructuras hasta nivel 3
-    (existenciales, potencial simple, imperativo suave, algunas fórmulas de cortesía), pero no nivel 4-5.
-  - Las excepciones internas de una situación (ej. "un paso sube a G4 por esto") deben estar
-    anotadas explícitamente en el encabezado.
-  - El generador debe calibrar cada oración a la restricción más baja presentada en su paso.
+  Esta formulación buscaba proteger la progresión y evitar exposición prematura a estructuras que
+  el aprendiz no pudiera procesar.
 
-aplicacion_concreta:
-  - Caso Quién soy: aunque pragmáticamente es trivial (P1), incluye pasos con G4 (posesión completa
-    en "¿Cuántos hermanos tienes?"). El generador respeta G4 ≤ estructura ≤ G4, no baja a G1
-    solo porque la pregunta es socialmente fácil.
+estado_actual: >
+  El proyecto conserva la intuición de que la complejidad gramatical importa y que un material de
+  principiantes no debe sobrecargarse arbitrariamente. Sin embargo, la regla "G asignado = techo duro
+  obligatorio antes de generar" queda suspendida durante el piloto actual de COR002.
 
-  - Caso Estoy aprendiendo zapoteco: aunque pragmáticamente es denso (P5), la estructura
-    gramaticalmente es moderada (G3). El generador produce oración con estructura G3 ≤ ≤ G3,
-    pero explora la densidad emocional/reflexiva dentro de lo que permite esa estructura.
+  El piloto trabaja primero una escena plausible y después analiza qué complejidad gramatical contiene.
+  Si la escena rebasa el alcance provisional del piloto, puede simplificarse, posponerse o descartarse.
+  G funciona por ahora como instrumento de análisis y calibración, no como candado automático que
+  deba gobernar cada oración antes de que exista una escena de referencia aceptada.
 
-validado_por:
-  - Krashen, Stephen. The Input Hypothesis (1985)
-  - Análisis de casos del inventario COR002
-  - SRC-PEDAGOGICAL-FUNDAMENTOS
+razon_de_revision: >
+  Las iteraciones del generador mostraron que imponer de antemano demasiadas restricciones podía
+  resolver un problema y crear otro: escenas demasiado fragmentarias, artificiales o parecidas a
+  ejercicios de sustitución. El proyecto decidió invertir el orden de trabajo y aprender primero de
+  conversaciones concretas.
+
+no_se_concluye:
+  - que la complejidad gramatical deje de importar;
+  - que cualquier estructura sea adecuada para principiantes;
+  - que G1–G5 deba eliminarse;
+  - que la hipótesis de un techo gramatical no pueda recuperarse en un futuro generador.
+
+criterio_actual_piloto:
+  - producir y revisar una escena contextualmente plausible;
+  - analizar después sus estructuras y carga gramatical;
+  - contrastarla con la ventana experimental G1–G3;
+  - simplificar, posponer o descartar cuando la carga resulte incompatible;
+  - revisar el criterio con realizaciones de hablantes y aprendices reales.
+
+provenance:
+  - conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md
+  - conocimiento/decisiones/DEC-G-P-SEPARATION.md
 
 etiquetas:
   - pedagogia
-  - restricción_dura
-  - input_comprensible
+  - complejidad_gramatical
+  - hipótesis
+  - revisable
   - corpus
 ```
+
+## Nota histórica
+
+La versión del 7 de agosto de 2026 declaraba esta restricción como "dura no negociable" y la vinculaba directamente con la ejecución del generador. Esa implementación se conserva en el historial del repositorio, pero no gobierna el piloto de COR002 al cierre de agosto.
