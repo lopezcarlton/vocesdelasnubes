@@ -1,9 +1,9 @@
 # CORPUS
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.1  
+**Versión:** 1.2  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-08-19  
+**Fecha:** 2026-08-31  
 
 ---
 
@@ -15,8 +15,9 @@ Su función no es acumular frases ni producir un inventario temático exhaustivo
 
 - reconocer expresiones frecuentes;
 - comprender acciones comunicativas;
-- producir enunciados breves;
-- reutilizar patrones;
+- producir enunciados;
+- participar en intercambios de varios turnos;
+- reutilizar patrones y recursos funcionales;
 - ampliar progresivamente su capacidad de interacción;
 - relacionar lengua, contexto y uso.
 
@@ -30,25 +31,26 @@ El corpus constituye la base lingüística y dramatúrgica de los materiales de 
 
 ---
 
-# 2. Unidad de diseño
+# 2. Unidades de diseño y de uso pedagógico
 
 ## 2.1 La escena comunicativa
 
-La unidad inicial de diseño es la escena comunicativa.
+La unidad primaria de diseño de COR002 es la **escena conversacional completa**.
 
 Una escena representa una interacción reconocible dentro de la vida cotidiana y contiene:
 
 - un contexto;
 - uno o más participantes;
-- una necesidad;
-- un objetivo comunicativo;
-- una secuencia posible de turnos;
+- una relación entre los participantes;
+- una necesidad o situación;
+- uno o más objetivos comunicativos;
+- una secuencia plausible de turnos;
 - restricciones pragmáticas y culturales;
 - recursos lingüísticos necesarios.
 
-La escena no se convierte automáticamente en lección ni en bloque del corpus.
+La escena no se convierte automáticamente en lección. Debe analizarse en términos de funciones comunicativas, objetivos lingüísticos o pedagógicos, cobertura previa, naturalidad y pertinencia.
 
-Primero debe descomponerse en funciones comunicativas.
+Los fragmentos breves, microescenas, enunciados aislables y ejercicios se derivan después de la conversación completa cuando resultan útiles para escucha, repetición, recuperación o práctica focalizada.
 
 ## 2.2 La función comunicativa
 
@@ -61,20 +63,41 @@ Ejemplos:
 - presentarse;
 - preguntar por alguien;
 - pedir ayuda;
-- localizar un objeto;
-- expresar hambre, cansancio o dolor;
+- ofrecer;
+- aceptar o rechazar;
+- elegir;
+- localizar;
 - confirmar;
 - negar;
-- agradecer;
+- reparar un malentendido;
+- pedir repetición;
+- explicar;
+- reaccionar;
 - despedirse.
 
 Una misma escena puede contener varias funciones.
 
-Una misma función puede aparecer en distintas escenas.
+Una misma función debe poder reaparecer en distintas escenas cuando esa recurrencia sea natural y pedagógicamente útil.
 
-## 2.3 El patrón
+## 2.3 Objetivo lingüístico o pedagógico
 
-Un patrón es una estructura lingüística productiva.
+La situación y la función no agotan el diseño del material.
+
+Cada escena puede incorporar además uno o varios objetivos lingüísticos o pedagógicos, por ejemplo:
+
+- introducir o reforzar una estructura;
+- practicar una distinción de persona;
+- ampliar recursos de negación o interrogación;
+- reutilizar deixis, espacio, tiempo o cantidad;
+- reforzar una estrategia de reparación;
+- introducir una construcción documentada;
+- reciclar vocabulario ya conocido.
+
+Estos objetivos orientan la generación y selección del material, pero no autorizan a imponer desde el español una estructura que no esté documentada o validada en Didxazá.
+
+## 2.4 El patrón
+
+Un patrón es una estructura lingüística productiva suficientemente respaldada.
 
 No equivale a:
 
@@ -82,41 +105,38 @@ No equivale a:
 - un verbo;
 - un tema;
 - una frase superficialmente parecida;
-- una variación de dato dentro de la misma estructura.
+- una variación de dato dentro de la misma estructura;
+- una estructura proyectada únicamente desde el español.
 
-Por ejemplo, expresiones que comparten un verbo pueden representar patrones distintos si cambia su estructura sintáctica.
+Durante la generación de borradores puede existir un **objetivo de elicitación** formulado desde el español. Ese objetivo no debe confundirse con un patrón productivo del Didxazá hasta contar con evidencia suficiente.
 
-El corpus debe permitir que un patrón ya introducido aparezca en varios contextos.
+## 2.5 El enunciado
 
-## 2.4 El enunciado
-
-El enunciado es la unidad mínima concreta que se registra, transcribe, cataloga y utiliza en los materiales.
+El enunciado es la unidad mínima concreta que puede registrarse, transcribirse, catalogarse y reutilizarse en materiales derivados.
 
 Todo enunciado debe justificar su presencia mediante al menos uno de estos criterios:
 
-- introduce una función necesaria;
-- introduce un patrón productivo;
-- refuerza una estructura previa en un contexto nuevo;
+- realiza una función necesaria;
+- introduce o refuerza una estructura;
 - aporta una expresión de alta utilidad;
-- completa una microescena;
+- forma parte necesaria de una conversación natural;
 - representa una forma validada culturalmente;
 - permite producción oral;
-- resuelve un vacío detectado.
+- resuelve un vacío detectado;
+- aporta evidencia lingüística relevante.
 
-## 2.5 La microescena
+## 2.6 La microescena
 
-La microescena es una secuencia breve de turnos con suficiente contexto para que los enunciados no aparezcan como frases aisladas.
+La microescena se conserva como una secuencia breve de turnos con suficiente contexto para que los enunciados no aparezcan como frases aisladas.
 
-Debe conservar:
+Puede utilizarse como:
 
-- coherencia;
-- economía;
-- propósito;
-- naturalidad;
-- relación entre turnos;
-- progresión interna.
+- fragmento derivado de una conversación completa;
+- unidad de práctica;
+- estímulo breve de elicitación;
+- recorte para audio o ejercicio.
 
-No debe crecer mediante relleno ni cumplir una lista rígida de movimientos dramáticos.
+No constituye por sí sola la unidad primaria obligatoria de COR002 y no debe crecer mediante relleno ni cumplir una lista rígida de movimientos dramáticos.
 
 ---
 
@@ -124,9 +144,11 @@ No debe crecer mediante relleno ni cumplir una lista rígida de movimientos dram
 
 ## 3.1 COR001
 
-COR001 constituye el primer bloque de 107 frases trabajado y validado oralmente con hablantes, pero **no está cerrado como producto final**.
+COR001 constituye el primer bloque de **107 frases trabajado con Vicente Gutiérrez**, quien realizó las traducciones al Didxazá y la grabación del material.
 
-Su estado vigente es de consolidación final. Permanecen pendientes, entre otros aspectos:
+Otras personas conocieron el material, pero Vicente es hasta este momento el único colaborador que ha participado de manera activa y sostenida en la producción lingüística de COR001.
+
+COR001 **no está cerrado como producto final**. Su estado vigente es de consolidación. Permanecen pendientes, entre otros aspectos:
 
 - revisión ortográfica sistemática de las traducciones;
 - incorporación de correcciones derivadas de esa revisión;
@@ -134,57 +156,67 @@ Su estado vigente es de consolidación final. Permanecen pendientes, entre otros
 - normalización final del audio;
 - preparación y entrega de derivados para Anki y escucha.
 
-Por tanto, la expresión «validado» en COR001 describe principalmente el trabajo lingüístico y oral realizado hasta ahora; no significa que texto, ortografía, audio y distribución estén definitivamente cerrados.
+El estudio intensivo de COR001 mostró que el formato favorece familiaridad fonológica, vocabulario, memorización y un repertorio productivo inicial, pero también evidenció límites de cobertura, latencia de recuperación y capacidad de sostener conversación abierta.
 
-COR001 se conserva como base de referencia para:
-
-- detectar repeticiones;
-- identificar estructuras ya cubiertas;
-- medir novedades;
-- construir progresión;
-- conservar trazabilidad entre texto y audio.
-
-COR001 no debe ampliarse retroactivamente sin una razón documentada, pero sí puede corregirse, regrabarse o normalizarse mientras permanezca abierto.
+COR001 se conserva como antecedente pedagógico y como material en mantenimiento. No debe ampliarse retroactivamente sin una razón documentada, pero sí puede corregirse, regrabarse o normalizarse mientras permanezca abierto.
 
 ## 3.2 COR002
 
-El primer borrador de COR002, correspondiente a las frases 108–224, dejó de considerarse una continuación válida de COR001.
+El primer borrador de COR002, correspondiente a las frases 108–224, dejó de considerarse una continuación válida de COR001 por problemas de repetición, baja productividad, dependencia temática y falta de progresión suficiente.
 
-El bloque anterior presentaba:
+No existe todavía una versión definitiva de COR002 y **no se ha realizado ninguna grabación**.
 
-- repeticiones;
-- variantes sin ganancia pedagógica;
-- vocabulario aislado;
-- baja productividad de varios enunciados;
-- dependencia de categorías temáticas;
-- falta de progresión clara;
-- expresiones seleccionadas por valor poético o cultural sin suficiente función comunicativa.
+La arquitectura actual trabaja con un banco de **46 situaciones comunicativas**. Las situaciones "Ir al médico" y "Comprar medicina / ir a la farmacia" fueron retiradas del banco activo porque se consideró que, en el Juchitán contemporáneo, esas interacciones probablemente se desarrollarían principalmente en español y no constituyen prioridades adecuadas para el corpus inicial de uso del Didxazá.
 
-Las frases de ese borrador no están prohibidas de manera individual.
+Esta decisión establece un criterio general: una situación no se prioriza únicamente porque sea cotidiana. Debe considerarse también si constituye un dominio real de uso del Didxazá.
 
-Pueden recuperarse únicamente si superan una nueva revisión basada en:
+COR002 se construye actualmente mediante la combinación de:
 
-- función;
-- frecuencia;
-- productividad;
-- relación con COR001;
-- naturalidad;
-- validación comunitaria;
-- pertinencia pedagógica.
+- situación comunicativa;
+- funciones comunicativas;
+- objetivo lingüístico o pedagógico;
+- relación entre interlocutores;
+- progresión gramatical y pragmática como marco todavía evolutivo;
+- núcleo funcional de alta recurrencia;
+- léxico de escena y léxico reciclado;
+- naturalidad conversacional;
+- revisión y producción con hablantes.
 
-No existe todavía una versión definitiva de COR002.
+La conversación completa es la unidad primaria. Los fragmentos destinados al estudio se extraen posteriormente.
 
-Su diseño permanece en revisión profunda. Entre los factores que pueden modificarlo están:
+## 3.3 Núcleo funcional y léxico
 
-- la revisión pendiente con Vicente Gutiérrez;
-- una nueva revisión de situaciones comunicativas;
-- la revisión del sistema de complejidad gramatical y pragmática;
-- la incorporación de reglas gramaticales y ortográficas extraídas de la literatura disponible;
-- los resultados del trabajo de corrección ortográfica y análisis lingüístico actualmente en curso.
+El léxico cultural y situacional conserva valor, pero no gobierna por sí solo la progresión.
 
-No se ha realizado ninguna grabación de COR002.
+COR002 necesita reutilizar de forma transversal recursos como:
 
-## 3.3 Corpus posteriores
+- predicados básicos;
+- persona;
+- deixis;
+- espacio;
+- tiempo;
+- cantidad;
+- interrogación;
+- negación;
+- posesión;
+- reparación conversacional;
+- conectores;
+- relaciones entre participantes y objetos.
+
+El vocabulario específico de alimentos, lugares, objetos, actividades u otros campos funciona principalmente como **léxico de escena** y como recurso de variación y reciclaje.
+
+## 3.4 Distinciones funcionales recientes
+
+El diseño puede introducir temprano distinciones comunicativamente útiles sin asumir que equivalen al dominio de una construcción gramatical completa.
+
+Por ejemplo:
+
+- **elección o contraste funcional** (éste, ése, el otro, no éste) no equivale automáticamente al dominio de la comparación plena;
+- **condición instructiva básica** (una consecuencia inmediata dentro de una actividad) no equivale automáticamente al dominio completo del sistema condicional.
+
+Estas separaciones son decisiones pedagógicas de trabajo y permanecen abiertas a evidencia lingüística y validación con hablantes.
+
+## 3.5 Corpus posteriores
 
 Los corpus posteriores deben conservar continuidad con lo ya aprendido y ampliar capacidad comunicativa real.
 
@@ -196,70 +228,119 @@ No se estructuran como:
 - colecciones de frases traducidas;
 - secuencias arbitrarias de dificultad.
 
-Deben construirse mediante matrices que relacionen, cuando resulte útil:
+Deben relacionar, cuando resulte útil:
 
 - escena;
 - función;
-- patrón;
+- objetivo lingüístico/pedagógico;
+- patrón documentado;
 - cobertura previa;
 - novedad;
 - carga gramatical;
 - carga pragmática;
 - léxico;
 - participantes;
+- procedencia de la evidencia;
 - estado de validación.
-
-## 3.4 Arquitectura provisional para generación de borradores
-
-El sistema de generación automática de conversaciones en español ha trabajado con una arquitectura de tres capas: motor, datos y tarea.
-
-Esta arquitectura es **provisional y está sujeta a revisión**. No debe tratarse como diseño definitivo del generador mientras continúe la integración de nueva evidencia gramatical, ortográfica, metodológica y pedagógica.
-
-### Capa 1: Motor
-
-Contiene reglas sobre:
-
-- naturalidad;
-- gramática;
-- pragmática;
-- dramatización;
-- longitud;
-- ritmo;
-- formato;
-- prohibiciones.
-
-Las versiones históricas del prompt del generador conservan valor de trazabilidad, pero ninguna debe considerarse estable por el solo hecho de ser la versión más reciente.
-
-### Capa 2: Datos
-
-Puede contener bancos actualizables de:
-
-- situaciones;
-- niveles o etiquetas de complejidad;
-- léxico;
-- patrones;
-- personajes.
-
-Su estructura deberá revisarse a la luz de la evidencia lingüística acumulada.
-
-### Capa 3: Tarea
-
-Contiene decisiones concretas para cada conversación, como:
-
-- situación;
-- patrón;
-- léxico;
-- personajes;
-- presencia o ausencia de saludo;
-- restricciones particulares.
-
-La relación exacta entre estas capas y el futuro controlador externo sigue abierta.
 
 ---
 
-# 4. Cobertura comunicativa
+# 4. Vías complementarias para producir y comprobar material
 
-## 4.1 Cobertura por funciones
+La generación del corpus no depende de una sola vía de obtención de datos.
+
+A partir de la revisión de Bueno Holle (2019), se incorpora de manera complementaria una estrategia de triangulación que **no reemplaza** el diseño pedagógico existente.
+
+## 4.1 Escenas pedagógicamente diseñadas
+
+Se conserva la producción de conversaciones a partir de situaciones, funciones, objetivos pedagógicos, relaciones entre interlocutores y léxico controlado.
+
+Las propuestas en español pueden servir como puente semántico y como material de preparación, pero no deben funcionar como plantilla estructural obligatoria para el Didxazá.
+
+## 4.2 Habla espontánea o relativamente libre
+
+El proyecto incorporará progresivamente muestras de habla natural o de interacción con intervención mínima para observar:
+
+- estructuras que aparecen sin haber sido solicitadas desde el español;
+- formas de organizar turnos;
+- recursos para mantener conversación;
+- información implícita;
+- marcadores discursivos;
+- variación real;
+- estrategias de referencia, tópico, foco y reparación.
+
+Esta vía permite descubrir fenómenos que un corpus producido únicamente mediante traducción podría no mostrar.
+
+## 4.3 Elicitación dirigida mediante estímulos no lingüísticos
+
+Cuando una estructura o contraste resulte difícil de obtener espontáneamente, pueden utilizarse:
+
+- imágenes;
+- secuencias visuales;
+- videos breves;
+- objetos;
+- juegos estructurados;
+- situaciones representadas.
+
+El propósito es crear un contexto claro que haga relevante determinada acción lingüística sin proporcionar al hablante una oración española que deba reproducir estructuralmente.
+
+## 4.4 Juicios de hablantes
+
+Los juicios sobre ejemplos construidos o sobre contrastes observados constituyen otra fuente de evidencia.
+
+Permiten investigar si una forma:
+
+- es posible;
+- resulta natural;
+- cambia de significado;
+- depende del contexto;
+- representa una variante;
+- requiere reformulación.
+
+La ausencia de una forma en habla espontánea no basta para declararla imposible; algunas construcciones legítimas pueden ser poco frecuentes.
+
+## 4.5 Procedencia explícita
+
+Toda evidencia nueva debe conservar su modo de obtención.
+
+Como mínimo, debe poder distinguirse entre:
+
+- `SPONTANEOUS` — habla espontánea o naturalista;
+- `ELICITED_NONLINGUISTIC` — elicitación mediante estímulo no lingüístico;
+- `SPEAKER_JUDGMENT` — juicio explícito de hablante;
+- `TRANSLATION_REFORMULATION` — traducción o reformulación a partir de una propuesta;
+- `DOCUMENTARY` — evidencia procedente de fuente documental.
+
+Estas etiquetas describen procedencia, no una escala automática de verdad. Su valor depende de la pregunta que se intenta resolver.
+
+---
+
+# 5. Capas de representación del material oral
+
+La grabación primaria y las interpretaciones posteriores deben conservarse como capas diferentes.
+
+Cuando existan, pueden distinguirse:
+
+1. audio o video original;
+2. transcripción ortográfica;
+3. segmentación morfológica;
+4. glosa;
+5. traducción libre;
+6. análisis fonético o prosódico;
+7. análisis gramatical o pragmático;
+8. decisiones pedagógicas derivadas.
+
+Ninguna capa posterior debe sobrescribir la evidencia primaria.
+
+Una forma ortográfica de publicación tampoco debe confundirse con toda la información lingüística conocida sobre una forma. Una fuente puede omitir tono en la superficie escrita y conservarlo en una capa analítica separada.
+
+En el corpus oral independiente podrán registrarse límites de **unidad entonacional** cuando sean identificables y útiles para análisis. Bueno Holle muestra que estas unidades pueden aproximarse frecuentemente a una cláusula y estar delimitadas por señales prosódicas como pausa y alargamiento final. Por ahora esta unidad se adopta como **capa posible de anotación y análisis**, no como sustituto de la escena conversacional completa como unidad pedagógica de COR002.
+
+---
+
+# 6. Cobertura comunicativa
+
+## 6.1 Cobertura por funciones
 
 La cobertura principal debe medirse por funciones comunicativas.
 
@@ -271,43 +352,23 @@ El crecimiento del corpus debe responder:
 - qué funciones siguen ausentes;
 - qué funciones están sobrerrepresentadas.
 
-## 4.2 Cobertura por patrones
+## 6.2 Cobertura por patrones
 
-El corpus debe registrar:
+El corpus debe registrar patrones observados, analizados o validados sin confundirlos con objetivos proyectados desde el español.
 
-- patrones introducidos;
-- patrones reforzados;
-- contextos en los que aparecen;
-- dependencia de patrones anteriores;
-- frecuencia de reutilización;
-- patrones subrepresentados.
+La cobertura de patrones no puede deducirse únicamente por palabras compartidas ni por similitud de traducción.
 
-La cobertura de patrones no puede deducirse únicamente por palabras compartidas.
-
-## 4.3 Cobertura léxica
-
-El léxico se organiza como recurso rotativo.
-
-Debe distinguirse entre:
-
-- vocabulario de contenido;
-- marcadores conversacionales;
-- expresiones fijas;
-- palabras funcionales;
-- relaciones espaciales;
-- relaciones temporales;
-- estados físicos;
-- estados emocionales;
-- preguntas fundamentales.
+## 6.3 Cobertura léxica
 
 La repetición léxica debe ser suficiente para favorecer retención, pero no debe producir escenas mecánicas.
 
-## 4.4 Cobertura pragmática
+Debe distinguirse entre vocabulario de contenido y recursos funcionales o conversacionales de alta recurrencia.
+
+## 6.4 Cobertura pragmática
 
 El corpus debe representar variación en:
 
-- formas de iniciar;
-- formas de cerrar;
+- formas de iniciar y cerrar;
 - grados de confianza;
 - respuestas breves;
 - duda;
@@ -316,24 +377,17 @@ El corpus debe representar variación en:
 - rechazo;
 - cortesía;
 - asimetría entre interlocutores;
-- cambios naturales de turno.
+- cambios naturales de turno;
+- información ofrecida sin pregunta previa;
+- reparación;
+- información implícita;
+- continuidad y cambio de tema.
 
-Los saludos, agradecimientos y despedidas no deben aparecer como requisitos fijos en todas las escenas.
+## 6.5 Cobertura de género
 
-## 4.5 Cobertura de género
+El total de personajes debe tender a un balance 50/50 entre mujeres y hombres. El balance se evalúa sobre el conjunto acumulado, no rígidamente en cada escena.
 
-El total de personajes debe tender a un balance 50/50 entre mujeres y hombres.
-
-Las combinaciones por conversación son libres:
-
-- mujer–hombre;
-- mujer–mujer;
-- hombre–hombre;
-- grupos mixtos.
-
-El balance se evalúa sobre el conjunto acumulado, no de forma rígida en cada escena.
-
-## 4.6 Cobertura de situaciones
+## 6.6 Cobertura de situaciones y ecología de uso
 
 Las situaciones constituyen un inventario de origen, no una secuencia pedagógica definitiva.
 
@@ -341,6 +395,7 @@ Cada situación debe evaluarse según:
 
 - frecuencia;
 - pertinencia;
+- dominio real de uso del Didxazá;
 - variedad;
 - carga lingüística;
 - carga pragmática;
@@ -351,154 +406,38 @@ Cada situación debe evaluarse según:
 
 ---
 
-# 5. Criterios de selección
+# 7. Criterios de selección
 
-## 5.1 Utilidad comunicativa
+Se mantienen como criterios principales:
 
-Se priorizan enunciados que permiten realizar acciones frecuentes y transferibles.
+- utilidad comunicativa;
+- productividad respaldada;
+- frecuencia;
+- naturalidad;
+- producibilidad;
+- ganancia pedagógica;
+- pertinencia cultural;
+- trazabilidad.
 
-Se evita incluir expresiones únicamente porque:
+No se incorpora una unidad únicamente porque contenga vocabulario nuevo, complete una cuota o represente un tema.
 
-- son curiosas;
-- son poéticas;
-- representan un tema;
-- permiten completar una cuota;
-- contienen vocabulario nuevo;
-- aparecen en una fuente sin contexto de uso.
-
-## 5.2 Productividad
-
-Un enunciado tiene mayor valor cuando su estructura puede reutilizarse.
-
-Se priorizan materiales que permitan:
-
-- sustituir participantes;
-- cambiar objetos;
-- cambiar lugares;
-- cambiar tiempos;
-- cambiar polaridad;
-- formular respuestas;
-- ampliar una interacción.
-
-## 5.3 Frecuencia
-
-La frecuencia orienta, pero no decide por sí sola.
-
-Una expresión frecuente puede ser pedagógicamente compleja.
-
-Una expresión menos frecuente puede ser necesaria para completar una función básica.
-
-La frecuencia debe combinarse con:
-
-- dificultad;
-- productividad;
-- contexto;
-- relevancia;
-- posibilidad de validación.
-
-## 5.4 Naturalidad
-
-Todo material debe sonar plausible dentro de la situación.
-
-Se rechazan:
-
-- traducciones literales;
-- frases que nadie diría en ese contexto;
-- preguntas y respuestas simétricas de forma mecánica;
-- cadenas artificiales;
-- repeticiones visibles como ejercicio;
-- explicaciones impropias de la escena.
-
-## 5.5 Producibilidad
-
-Los enunciados deben poder ser intentados por el aprendiz.
-
-Se consideran:
-
-- longitud;
-- número de novedades;
-- estructura;
-- ritmo;
-- posibilidad de segmentación;
-- dependencia del contexto;
-- memoria necesaria.
-
-## 5.6 Ganancia pedagógica
-
-Cada nueva incorporación debe aportar algo identificable.
-
-No se incorpora una frase cuando únicamente:
-
-- cambia un número;
-- cambia un nombre;
-- cambia un objeto sin ampliar uso;
-- repite la misma función;
-- duplica un patrón sin contexto nuevo;
-- reformula superficialmente un enunciado previo.
-
-## 5.7 Pertinencia cultural
-
-La escena y los enunciados deben ser revisados para evitar:
-
-- usos ajenos a la vida local;
-- situaciones inventadas desde expectativas externas;
-- registros inadecuados;
-- relaciones sociales mal representadas;
-- generalizaciones culturales;
-- fórmulas sociales sobrerrepresentadas.
-
-## 5.8 Trazabilidad
-
-Todo enunciado debe conservar relación con:
-
-- corpus;
-- número;
-- escena;
-- fuente;
-- hablante;
-- toma de audio;
-- transcripción;
-- traducción;
-- validación;
-- estado.
+La naturalidad exige evitar traducciones literales, cadenas mecánicas de pregunta-respuesta, explicaciones impropias de la escena y repeticiones visibles como ejercicio.
 
 ---
 
-# 6. Organización interna
+# 8. Organización interna y trazabilidad
 
-## 6.1 Identificadores
+## 8.1 Identificadores y versiones
 
-Los elementos del corpus utilizan identificadores estables.
+Los elementos del corpus utilizan identificadores estables. Los cambios deben distinguir entre corrección ortográfica, traducción, segmentación, sustitución, cambio de hablante, nueva toma, cambio de contexto, función u objetivo.
 
-La numeración no debe depender del texto de la frase, porque:
+## 8.2 Relación con audio
 
-- la traducción puede corregirse;
-- la escritura puede cambiar;
-- la segmentación puede revisarse;
-- el título humano puede actualizarse.
+Cada elemento lingüístico debe relacionarse con su material de audio cuando exista y permitir reconstruir hablante, toma, versión y derivados.
 
-Los identificadores deben permanecer estables aunque cambie la representación.
+## 8.3 Estados
 
-## 6.2 Relación entre COR y AUD
-
-Cada elemento lingüístico debe relacionarse con su material de audio cuando exista.
-
-La relación debe permitir reconstruir:
-
-- qué texto corresponde a qué grabación;
-- qué hablante participa;
-- qué toma se utiliza;
-- qué versión está vigente;
-- qué derivados existen;
-- qué cambios se realizaron.
-
-El nombre técnico del archivo conserva el identificador.
-
-La frase puede añadirse como metadato de título.
-
-## 6.3 Estados
-
-Cada elemento del corpus debe poder marcarse como:
+Cada elemento debe poder marcarse como:
 
 - propuesto;
 - borrador;
@@ -509,65 +448,71 @@ Cada elemento del corpus debe poder marcarse como:
 - reemplazado;
 - descartado.
 
-Un elemento no debe presentarse como definitivo únicamente por haber sido grabado o validado oralmente.
+## 8.4 Metadatos mínimos
 
-## 6.4 Versiones
-
-Los cambios deben distinguir entre:
-
-- corrección ortográfica;
-- cambio de traducción;
-- cambio de segmentación;
-- sustitución del enunciado;
-- cambio de hablante;
-- nueva toma;
-- cambio de contexto;
-- cambio de función;
-- cambio de patrón.
-
-No todos los cambios requieren crear un nuevo identificador.
-
-Los cambios que alteran sustancialmente la unidad lingüística deben registrarse como nueva versión o nueva entrada, según corresponda.
-
-## 6.5 Metadatos mínimos
-
-Cada entrada debería registrar, como mínimo:
+Cada entrada debería registrar, según corresponda:
 
 - ID;
 - corpus;
-- número;
-- español de partida;
+- español de partida o traducción de referencia;
 - Didxazá;
 - sistema de escritura;
-- transcripción técnica cuando exista;
+- transcripción técnica;
+- situación;
 - función comunicativa;
-- patrón;
-- escena;
-- nivel o etiquetas de complejidad cuando correspondan;
+- objetivo lingüístico/pedagógico;
+- patrón o estado del patrón;
+- participantes y relación;
+- etiquetas de complejidad cuando correspondan;
 - hablante;
 - validador;
-- localidad o variante cuando sea pertinente;
+- localidad o variante;
+- procedencia de evidencia;
 - estado;
 - audio relacionado;
 - notas;
 - versión.
 
-## 6.6 Escritura
+## 8.5 Escritura
 
-La forma principal adoptada para los materiales es el Alfabeto Popular.
+La forma principal adoptada para los materiales sigue tomando como referencia el Alfabeto Popular, sujeta a la política ortográfica vigente y a revisión contemporánea.
 
-El AFI se utiliza como sistema técnico secundario cuando sea necesario.
-
-Las decisiones ortográficas permanecen sujetas a validación por hablantes, revisión especializada y al trabajo de corrección sistemática en curso.
-
-La escritura no debe reemplazar la referencia oral cuando exista incertidumbre.
+El tono, la fonación, la segmentación y otras representaciones lingüísticas pueden conservarse en capas técnicas separadas sin obligar a que toda esa información aparezca en la ortografía superficial del material pedagógico.
 
 ---
 
-# 7. Principio de evolución
+# 9. Generación de borradores
+
+El sistema de generación de conversaciones y estímulos continúa en evolución.
+
+Puede utilizar:
+
+- situaciones;
+- funciones comunicativas;
+- objetivos pedagógicos;
+- léxico;
+- relaciones entre interlocutores;
+- estructuras documentadas;
+- cobertura previa;
+- restricciones culturales;
+- información derivada del corpus espontáneo o elicitado.
+
+La generación de borradores no valida Didxazá ni declara productividad por sí sola.
+
+El nuevo enfoque de habla espontánea y elicitación no lingüística **complementa** la generación de escenas pedagógicas: sus resultados pueden revelar estructuras, estrategias conversacionales y restricciones que luego retroalimenten los nuevos borradores.
+
+---
+
+# 10. Principio de evolución
 
 Este documento describe una arquitectura de trabajo, no un sistema terminado.
 
-La evidencia procedente de hablantes, corrección ortográfica, bibliografía, pruebas del generador, validación pedagógica y trabajo de audio puede modificar sus categorías y relaciones.
+La evidencia procedente de hablantes, habla espontánea, elicitación dirigida, juicios, corrección ortográfica, bibliografía, pruebas del generador, validación pedagógica y trabajo de audio puede modificar sus categorías y relaciones.
 
 Toda modificación sustantiva debe seguir las reglas de actualización del Sistema de Conocimiento.
+
+## Cambio 2026-08-31 — Bueno Holle y triangulación empírica
+
+La lectura de Juan José Bueno Holle (2019), *Information structure in Isthmus Zapotec narrative and conversation*, aportó una fundamentación específica para combinar habla espontánea, elicitación controlada y juicios de hablantes, así como para conservar la grabación primaria y las anotaciones posteriores en capas diferenciadas.
+
+La incorporación de este enfoque es una **ampliación metodológica**. No invalida las escenas pedagógicamente diseñadas ni el trabajo de traducción/reformulación con hablantes; limita únicamente la pretensión de que una sola vía pueda descubrir y representar por sí misma el rango del uso real del Didxazá.
