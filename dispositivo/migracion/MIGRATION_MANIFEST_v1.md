@@ -34,6 +34,7 @@ COR001, COR002, corpus oral, trabajo con hablantes, investigación pedagógica, 
 - `SOURCE_COMPLETE_READY_TO_MIGRATE`: fuente completa disponible y lista para copia exacta.
 - `SOURCE_PARTIAL_DO_NOT_MIGRATE`: sólo existe contenido parcial o truncado.
 - `BINARY_TRANSFER_PENDING`: artefacto identificado cuya transferencia íntegra no es posible todavía con la herramienta disponible.
+- `FAILED_INCOMPLETE_TRANSFER`: intento de transporte que no produjo un artefacto íntegro ni verificable; sus residuos no deben tratarse como fuente.
 
 Ningún estado concede autoridad lingüística o pedagógica.
 
@@ -135,6 +136,8 @@ No se creó un sustituto textual ni una base reconstruida. Sigue pendiente una v
 **Estado:** `SOURCE_COMPLETE_READY_TO_MIGRATE`
 
 Fuente exacta localizada en el paquete del Analyzer y re-localizada en File Library durante la pasada del 2026-09-01. La interfaz disponible expone una vista parseada/truncada, no los bytes crudos completos; por ello no se reconstruye ni se copia parcialmente.
+
+El 2026-09-01 se intentó una transferencia exacta provisional mediante fragmentos base64 de un flujo comprimido. El fragmento 13 resultó malformado, fue retirado y el ensamblaje restante no superó la descompresión ni podía alcanzar la verificación de hash. Ese intento queda registrado como `FAILED_INCOMPLETE_TRANSFER`: no produjo `DIC_VERB_2385_v0_1.csv`, no modifica el estado del artefacto fuente y sus fragmentos, workflow temporal y archivo de prueba fueron retirados del árbol activo.
 
 ```text
 SHA256 = 2bdf4afd4b61234c54585cda17ad648bfb71194e9463d193eb04a5a06aa3183d
