@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-01 — identidad exacta del módulo runtime v0.2.2 restaurada y verificada
+**Última actualización:** 2026-09-01 — SQLite v2.20 transferida exactamente y estado ejecutable reconciliado
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -65,8 +65,12 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/validation/ValidationQueue_v0.jsonl` | cola de validación/desarrollo audio-first |
 | `dispositivo/analyzer/non_licensing_analyzer_orchestrator_v0_35.py` | Analyzer parcial no licenciante con contexto opcional |
 | `dispositivo/analyzer/DIC_VERB_2385_v0_1.csv` | inventario operacional exacto de 2,385 verbos; SHA-256 verificado; ruta por defecto del Analyzer v0.35 |
+| `dispositivo/runtime/v0_2_15_3/BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` | SQLite v2.20 transferida byte por byte; hash, integridad, claves foráneas y tablas críticas verificados |
 | `dispositivo/generator/generator_v0_5.py` | implementación más reciente del Generator_v0 localizada en paquete v0.36.2 |
+| `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador no normativo que instancia el subconjunto migrado desde una única ruta de inputs sin alterar la implementación histórica |
 | `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot de readiness más reciente localizado en paquete v0.36.2 |
+| `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md` | checkpoint que separa presencia, ejecutabilidad, snapshots no reproducibles y preguntas abiertas |
+| `dispositivo/migracion/test_migrated_state.py` | verificaciones mínimas de SQLite, DIC_VERB, Generator migrado y discrepancia conocida del release |
 | `dispositivo/tutor/tutor_v0_33.py` | Tutor renderer conservador: sólo explica análisis con binding exacto y licencia activa; no analiza/corrige/genera |
 | `dispositivo/generator/inputs/GenerationLicense_v0_33_c02_default_qui.jsonl` | licencias activas localizadas, incluida migración C02 a `quí` |
 | `dispositivo/generator/inputs/GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl` | átomos documentales/campo vinculados a las licencias v0.33 |
@@ -118,6 +122,8 @@ La copia discrepante permanece recuperable en el historial Git; no se conserva c
 
 La presencia de fuentes textuales del runtime no sustituye los binarios/datasets referenciados por el release.
 
+Después de transferir la SQLite v2.20, el árbol contiene 10 de los 75 payloads enumerados por el manifiesto original: 9 coinciden exactamente y uno presenta una discrepancia preservada. `DB_INTEGRITY_v0_2_15_3.json` tiene SHA-256 presente `bcd0cf4046eb0d949dce29f098bd5d5f5e9e657f2636ce592f76ddcbd082eae4`, distinto del hash de release `fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb`. No se reconstruyó ni sustituyó el archivo sin su fuente exacta.
+
 ### 3.2 `DIC_VERB_2385_v0_1.csv` transferido y verificado
 
 **Estado:** `MIGRATED`
@@ -139,19 +145,23 @@ UNIQUE_ENTRY_IDS = 2385
 
 La identidad coincide exactamente con el hash registrado antes de la transferencia. La ubicación coincide además con la resolución por defecto de `non_licensing_analyzer_orchestrator_v0_35.py`; no requiere pasar `--verb-inventory` para localizar este inventario. El intento provisional anterior mediante fragmentos base64 permanece documentado como `FAILED_INCOMPLETE_TRANSFER`: no produjo este archivo, no es su fuente y sus residuos fueron retirados del árbol activo.
 
-## 4. P0 localizado, todavía pendiente
+## 4. P0 localizado y transferencia binaria
 
 ### runtime lingüístico v0.2.15.3 — cierre de transferencia
 
-**Estado:** `RECOVERABLE_SOURCE_LOCATED` / `BINARY_TRANSFER_PENDING` para componentes no textuales.
+**Estado:** `RECOVERABLE_SOURCE_LOCATED` / transferencia todavía incompleta para componentes no presentes.
 
 El ZIP exacto está disponible y su hash coincide. La raíz contiene la genealogía del runtime y, además, bases SQLite y datasets. La transferencia textual puede continuar archivo por archivo, pero no debe usarse para fingir que los binarios están migrados.
 
 ### SQLite v2.20
 
-**Estado:** `BINARY_TRANSFER_PENDING`
+**Estado:** `MIGRATED`
 
-El ZIP exacto contiene:
+Los bytes completos quedaron disponibles y se transfirieron sin transformación a:
+
+`dispositivo/runtime/v0_2_15_3/BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite`
+
+La identidad coincide con el release:
 
 `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite`
 
@@ -161,9 +171,12 @@ Identidad verificada:
 SHA256 = 2379773426baf4e3eace87c61ec17f7a1e1b9164421e56cf736d35eb64a5ebed
 SQLITE_INTEGRITY_CHECK = ok
 FOREIGN_KEY_VIOLATIONS = 0
+canonical_state_v17 = 22 rows
+verb_lexeme_class_v023 = present
+person_possession_exact_v0214 = present
 ```
 
-No se creó un sustituto textual ni una base reconstruida. Sigue pendiente una vía de transferencia binaria íntegra. Deben preservarse también los schemas/tablas consumidos por Analyzer, en particular `verb_lexeme_class_v023` y `person_possession_exact_v0214`.
+No se creó un sustituto textual ni una base reconstruida. La copia del repositorio es byte por byte idéntica a la fuente raw recibida y a la identidad registrada por el release.
 
 ## 5. Generator_v0 — estado de reproducibilidad recuperado
 
@@ -183,6 +196,12 @@ OrthographicProfile_v1_DRAFT.json
 Junto con `ParadigmTable_v1.csv`, `ConstructionInventory_v1.jsonl` y `generator_v0_5.py` ya migrados, esto recupera el núcleo documental de la implementación Generator_v0 localizada.
 
 No se declara autonomía completa: `generator_v0_5.py` acepta un `canonical_analyzer` para el round-trip de recombinaciones novedosas y ese contrato debe seguir verificándose de forma explícita.
+
+La auditoría de ejecución encontró que la entrada por defecto de `generator_v0_5.py` mezcla el layout histórico `inputs_nc001/` con archivos ubicados junto al script y además espera `NovelRecombinationAttempt_v0_1.json`, ausente. El archivo histórico no se modificó. `generator_v0_5_migrated_adapter.py` fija explícitamente una sola ruta, `generator/inputs/`, y permite instanciar el subconjunto realmente presente.
+
+Ese subconjunto contiene seis licencias activas sólo para C01/C02 y bloqueadores explícitos para C03–C06. Por ello, `GENERATION_READINESS_MATRIX_v14.csv` se conserva como `MIGRATED_SNAPSHOT_NOT_REPRODUCIBLE_WITH_CURRENT_FILES`: sus capacidades C03/C05 no se degradaron retrospectivamente ni se atribuyen al ejecutable actual hasta recuperar sus dependencias exactas.
+
+`JUCHITAN_LINGUISTIC_CORE_v0_27.md` conserva además la frase histórica “benchmarks COR001”. No se modificó el core migrado, pero esa frase queda explícitamente subordinada a la política vigente `COR001 = ANALYSIS_TARGET_ONLY`; no autoriza gold, benchmark, regression ni descubrimiento de reglas.
 
 ## 6. Tutor_v0 — implementación y dependencias nuevas
 
@@ -304,7 +323,7 @@ SQLite table verb_lexeme_class_v023
 SQLite table person_possession_exact_v0214
 ```
 
-Los módulos críticos de runtime listados arriba están presentes y varios fueron verificados exactamente contra el ZIP. Dictionaria CSV, DIC_VERB y SQLite deben verificarse/migrarse por separado antes de declarar el Analyzer reproducible fuera del paquete original.
+Los módulos críticos de runtime listados arriba están presentes y varios fueron verificados exactamente contra el ZIP. `DIC_VERB` y la SQLite ya están migrados y verificados. Los tres CSV de Dictionaria siguen pendientes; el Analyzer no debe declararse reproducible fuera del paquete original hasta incorporarlos exactamente.
 
 ## 9. Otros artefactos localizados y pendientes
 
@@ -352,6 +371,10 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 05e996c2ce765aa98649978703032a443578a6e6  migrate Generator generation license v0.33
 96135569ccb08f0dcc2738bee8bdd2a23cd6b977  migrate Generator evidence atoms v0.33
 554ce87239d9aa7b4a7f04be1f9378ece7afde47  migrate Juchitán linguistic core v0.27
+294c1a17d15767e9d641dc882a048611fadfa482  retire failed DIC_VERB transport attempt
+7ab707cf33461438e832454685cbd5355f75b586  migrate exact DIC_VERB inventory
+6f92804d869fc8766f5b7e4bc782af813d5c4bb4  restore exact runtime v0.2.2 identity
+505f7125321c75238e90135e91667ae5544fa870  migrate exact SQLite v2.20
 ```
 
 `CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
@@ -361,8 +384,9 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 **P0 — conservar estado reproducible:**
 
 1. continuar la genealogía/identidad de los componentes restantes del runtime v0.2.15.3 cuyos archivos falten o no coincidan con el ZIP;
-2. transferir la SQLite v2.20 exacta por una vía binaria segura y preservar/exportar sus schemas sin sustituir el binario;
-3. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
+2. recuperar los tres CSV exactos de Dictionaria requeridos por el Analyzer v0.35;
+3. recuperar bindings/licencias exactas restantes del Tutor_v0.33;
+4. localizar la fuente exacta de `DB_INTEGRITY_v0_2_15_3.json` o conservar explícitamente la discrepancia actual sin reconstrucción.
 
 **P1 — reproducibilidad y límites:** guardrails, DevelopmentCorpusProtocol, reportes/tests/adapters y matrices BIB065.
 
@@ -383,6 +407,6 @@ Antes de incorporar una pieza:
 
 ## 14. Próxima acción
 
-**Siguiente P0 recomendado:** transferir `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` únicamente cuando estén disponibles sus bytes completos; verificar SHA-256, `PRAGMA integrity_check` y violaciones de claves foráneas antes de declararla migrada.
+**Siguiente P0 recomendado:** recuperar y transferir exactamente `DICTIONARIA_entries_v0_2_15_2.csv`, `DICTIONARIA_senses_v0_2_15_2.csv` y `DICTIONARIA_examples_v0_2_15_2.csv`. Verificar sus hashes contra el manifiesto del release antes de declarar reproducible el Analyzer v0.35.
 
-Mientras no exista acceso raw, mantenerla como `BINARY_TRANSFER_PENDING` y continuar con componentes textuales exactos del runtime sin reconstruir sustitutos.
+La reconciliación técnica no cambia reglas lingüísticas, no convierte la readiness histórica en política actual y no bloquea COR002, corpus oral ni trabajo con hablantes.

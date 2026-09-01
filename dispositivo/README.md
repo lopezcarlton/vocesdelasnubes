@@ -87,9 +87,9 @@ El español continúa siendo el puente semántico y de trabajo vigente del siste
 
 Los cuatro componentes deben consumir un núcleo lingüístico común para evitar que cada uno mantenga reglas propias incompatibles.
 
-Entre los artefactos desarrollados fuera del repositorio se encuentra `JUCHITAN_LINGUISTIC_CORE`, actualmente experimental, además de bases, runtimes, inventarios, pruebas y paquetes de migración.
+El núcleo experimental localizado está preservado en `core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`. Bases, runtimes, inventarios, pruebas y paquetes tienen grados distintos de transferencia y reproducibilidad.
 
-La incorporación de esta carpeta **no implica que todos esos artefactos hayan sido migrados ya al repositorio**. El estado exacto se registra en `ESTADO_ACTUAL_2026-08-31.md`.
+La incorporación de esta carpeta **no implica que todos esos artefactos hayan sido migrados ni que todo lo migrado sea ejecutable**. `ESTADO_ACTUAL_2026-08-31.md` conserva el snapshot previo a la migración; el inventario acumulado está en `migracion/MIGRATION_MANIFEST_v1.md` y el estado materializado más reciente en `migracion/CURRENT_EXECUTABLE_STATE_v1.md`.
 
 ## Discusión pedagógica derivada del dispositivo
 
