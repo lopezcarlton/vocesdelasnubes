@@ -1,7 +1,7 @@
 # BACKLOG
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.4  
+**Versión:** 1.5  
 **Última actualización:** 2026-08-31
 
 ---
@@ -22,6 +22,8 @@ Una tarea entra al backlog cuando:
 Una tarea no debe permanecer abierta únicamente porque sería conveniente añadir una referencia cruzada, mejorar una redacción o completar mantenimiento documental menor.
 
 El trabajo operativo —corpus, revisión ortográfica, audio, sesiones con hablantes, solicitudes, producción de materiales— puede continuar fuera del backlog. Solo entra aquí cuando revela una deuda estructural que deba resolverse de forma permanente.
+
+La existencia de una tarea abierta **no implica bloqueo automático**. Conforme a `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`, una pregunta estructural puede permanecer abierta mientras el proyecto continúa produciendo evidencia por vías suficientemente seguras y trazables.
 
 ---
 
@@ -192,6 +194,58 @@ Identificar el inventario léxico vigente que servirá como referencia para COR0
 
 ---
 
+### BL-021 — Investigar y formalizar los límites de la escala P
+
+**Estado:** Abierto  
+**Prioridad:** Media / investigación continua
+
+Conservar P como escala válida de complejidad pragmático-discursiva y estudiar de manera sistemática sus fronteras P1–P5, la ponderación de sus dimensiones internas y su relación con la experiencia real de aprendices.
+
+La investigación debe partir de la fundamentación pedagógica ya documentada, donde P fue concebida deliberadamente como una medida multidimensional que puede incluir riesgo social, negociación, densidad discursiva y marco reflexivo o metalingüístico.
+
+No se trata de decidir de nuevo si P existe, sino de determinar con evidencia:
+
+- qué distingue de manera reproducible P1, P2, P3, P4 y P5;
+- cómo resolver casos donde distintas dimensiones de P divergen;
+- si la escala necesita ejemplos de referencia o criterios más explícitos;
+- cómo debe relacionarse con futuras secuencias curriculares y generadores;
+- qué cambios, si alguno, resultan de pruebas con hablantes y aprendices.
+
+**No bloquea:** el piloto actual de COR002 ni la producción de nueva evidencia.
+
+**Dependencias útiles:** escenas aceptadas, realizaciones en Didxazá, corpus oral y validación futura con aprendices.
+
+**Criterio de cierre:** existe una formulación suficientemente reproducible de P1–P5, respaldada por ejemplos y evidencia, o una decisión documentada que sustituye esa formulación por otra arquitectura mejor sustentada.
+
+---
+
+### BL-022 — Implementar capas analíticas finas derivadas de BIB065
+
+**Estado:** Abierto  
+**Prioridad:** Media / dispositivo
+
+Convertir progresivamente las distinciones relevantes derivadas de BIB065/Bueno Holle en capacidades o anotaciones explícitas del dispositivo, sin convertirlas automáticamente en niveles pedagógicos.
+
+Entre las capas candidatas se encuentran:
+
+- introducción, mantenimiento y reintroducción de referentes;
+- continuidad y cambio de tópico;
+- tipos y posiciones de foco;
+- estado informativo e información compartida;
+- relaciones entre preguntas y respuestas;
+- unidades entonacionales y organización prosódica;
+- forma explícita, clítico u omisión según contexto.
+
+La primera implementación debe ser **descriptiva y trazable**. No debe asumir que estas propiedades pertenecen necesariamente a P, a G o a un tercer eje de dificultad.
+
+Una etapa posterior deberá investigar cuáles tienen efectos pedagógicos medibles y cómo se relacionan con las escalas existentes.
+
+**No bloquea:** COR002, el corpus oral, la lectura bibliográfica ni otras líneas de investigación.
+
+**Criterio de cierre:** las distinciones priorizadas pueden representarse y analizarse de forma trazable en el dispositivo, con procedencia explícita, sin haber sido convertidas indebidamente en reglas curriculares.
+
+---
+
 # Criterios de cierre
 
 Una tarea estructural se considera completada cuando:
@@ -220,3 +274,5 @@ Si mantener una entrada cuesta más trabajo que la deuda que representa, debe re
 El modo de trabajo del piloto COR002 quedó definido en `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md`. Ese flujo es trabajo operativo y metodológico vigente, no una nueva entrada de backlog.
 
 La validación del material COR002 continúa abierta por razones documentadas en `conocimiento/VALIDACION.md`: todavía deben producirse escenas de referencia aceptadas, realizarse con hablantes y probarse pedagógicamente. La existencia de una ruta de trabajo ya definida no equivale a que los materiales resultantes estén validados.
+
+La investigación de P y la implementación de capas BIB065 se registran como deudas estructurales, pero **no se convierten en candados para las líneas de investigación que ya pueden seguir produciendo evidencia**.
