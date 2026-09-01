@@ -1,7 +1,7 @@
 # PEDAGOGIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.2  
+**Versión:** 1.3  
 **Estado:** Borrador consolidado y evolutivo  
 **Fecha:** 2026-08-31
 
@@ -70,6 +70,10 @@ El proyecto trabaja actualmente con la hipótesis de separar dos dimensiones de 
 
 Esta separación sigue siendo una **arquitectura de trabajo, no un sistema terminado**.
 
+La escala P permanece vigente como instrumento de análisis. Su concepción pedagógica original fue deliberadamente multidimensional e incluyó factores como riesgo social, negociación, densidad discursiva y marco reflexivo o metalingüístico. La existencia de varias dimensiones dentro de P no se considera por sí misma un error.
+
+Lo que permanece en investigación son las fronteras exactas P1–P5, la ponderación entre esas dimensiones, su relación con la dificultad real del aprendiz y la forma en que deberían utilizarse en una futura secuenciación o generación automatizada.
+
 Para evitar una ambigüedad que produjo problemas en versiones anteriores del generador, se distinguen tres afirmaciones diferentes:
 
 1. **G/P sigue activo como instrumento de análisis, comparación y calibración pedagógica.** No se abandona la separación entre complejidad gramatical y pragmática.
@@ -83,6 +87,29 @@ Las etiquetas G1–G5 y P1–P5 deben seguir contrastándose con la evidencia gr
 La hipótesis operativa de que la restricción gramatical puede funcionar como límite más duro que la pragmática permanece como antecedente útil, pero no se convierte en regla universal. Un contenido socialmente complejo puede a veces expresarse con estructuras relativamente simples, mientras que una estructura gramatical avanzada no debería introducirse sólo porque el tema sea sencillo; la aplicación concreta debe probarse en escenas reales.
 
 Las propuestas anteriores de definiciones cerradas para G1–G5, P1–P5 o etapas curriculares se conservan como antecedentes de diseño, pero **no gobiernan automáticamente el piloto actual ni futuras generaciones de materiales**.
+
+#### 6.3.1 Capas analíticas finas derivadas de BIB065
+
+La investigación posterior a BIB065/Bueno Holle introduce distinciones más finas sobre organización de la información y del discurso, entre ellas:
+
+- introducción, mantenimiento y reintroducción de referentes;
+- continuidad y cambio de tópico;
+- tipos y posiciones de foco;
+- estado informativo e información compartida;
+- relaciones entre preguntas y respuestas;
+- unidades entonacionales y organización prosódica;
+- formas explícitas, clíticos y omisión según contexto.
+
+Estas propiedades **no se convierten automáticamente en subcomponentes de P, en niveles de G ni en un tercer eje pedagógico**.
+
+Por ahora deben tratarse primero como capas analíticas descriptivas que el dispositivo pueda reconocer y conservar. Posteriormente, escenas reales, corpus oral y pruebas con aprendices deberán mostrar:
+
+- cuáles ya quedan suficientemente representadas por G o P;
+- cuáles añaden una carga pedagógica independiente;
+- cuáles son útiles para Analyzer/Tutor pero no necesitan una escala curricular;
+- y si alguna combinación justifica en el futuro una descripción adicional de dificultad discursiva o referencial.
+
+La capacidad lingüística del dispositivo puede ser más fina que la taxonomía pedagógica vigente. Descubrir o modelar una distinción no obliga a convertirla inmediatamente en requisito de enseñanza.
 
 ### 6.4 Escenas
 
@@ -153,6 +180,8 @@ No puede documentarse todavía de forma definitiva:
 
 - una secuencia curricular completa;
 - definiciones consolidadas de G1–G5 y P1–P5;
+- ponderación definitiva de las dimensiones internas de P;
+- relación pedagógica final entre las capas finas de estructura informativa/discursiva y G/P;
 - número definitivo de etapas;
 - relación final entre complejidad gramatical y pragmática;
 - frontera definitiva del nivel principiante;
@@ -166,8 +195,14 @@ No puede documentarse todavía de forma definitiva:
 
 Este documento debe evolucionar junto con la evidencia lingüística, metodológica y pedagógica del proyecto. Las clasificaciones actuales son herramientas de trabajo y no deben convertirse en restricciones permanentes por inercia documental.
 
+La investigación pedagógica se rige además por `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`: el estado vigente organiza el trabajo presente, pero permanece revisable cuando nueva evidencia justifique cambios.
+
 ## Cambio 2026-08-31 — checkpoint metodológico del piloto COR002
 
 Se incorpora el flujo documentado en `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md`.
 
 El cambio resuelve una ambigüedad anterior: **G/P puede seguir siendo una pieza central del trabajo sin que sus definiciones actuales sean una teoría pedagógica cerrada**. El piloto utiliza una ventana provisional para limitar el trabajo inmediato, mientras conserva abierta la revisión del sistema general.
+
+## Cambio 2026-08-31 — P y capas finas BIB065
+
+Se aclara que P continúa siendo una escala válida de análisis cuya delimitación P1–P5 permanece como pregunta de investigación. Las distinciones finas de estructura informativa, referencia, discurso y prosodia derivadas de BIB065 se implementarán primero como capas analíticas descriptivas y no se asignan automáticamente a G, P ni a un tercer eje pedagógico.
