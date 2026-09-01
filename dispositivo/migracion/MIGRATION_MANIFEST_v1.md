@@ -421,6 +421,7 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 64a98385c92c4ab1d31e13c5f9e44c108366fd01  reconcile migrated executable state
 f533bf667b0a7aca94426fb24016000761502e10  migrate exact Dictionaria analyzer inputs
 6d4de82f9d0062b8adce3efcf1a3e54a40c8dab7  restore exact DB integrity release identity
+9d631d3db742afc6affbd1fb14179eb174c578da  make migrated Analyzer v0.35 reproducible
 ```
 
 `CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
