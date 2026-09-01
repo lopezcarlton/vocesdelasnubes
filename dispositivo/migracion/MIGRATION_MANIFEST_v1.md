@@ -375,6 +375,7 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 7ab707cf33461438e832454685cbd5355f75b586  migrate exact DIC_VERB inventory
 6f92804d869fc8766f5b7e4bc782af813d5c4bb4  restore exact runtime v0.2.2 identity
 505f7125321c75238e90135e91667ae5544fa870  migrate exact SQLite v2.20
+64a98385c92c4ab1d31e13c5f9e44c108366fd01  reconcile migrated executable state
 ```
 
 `CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
