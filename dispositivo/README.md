@@ -43,6 +43,10 @@ La arquitectura de trabajo distingue cuatro funciones que comparten un núcleo l
 
 Intenta reconocer estructura, morfología, persona, aspecto, referencia, procedencia y otras capas documentadas sin convertir automáticamente un análisis plausible en verdad.
 
+Su alcance requerido es multiescala: palabra o forma aislada, frase/enunciado, microescena, conversación completa y discurso continuo cuando exista. El contexto enriquece el análisis, pero no se convierte en requisito universal.
+
+Referencia: `ANALYZER_SCOPE_MULTIESCALA_2026-08-31.md`.
+
 ### CORRECTOR
 
 Busca distinguir entre:
@@ -63,6 +67,8 @@ Transforma conocimiento documentado en explicaciones pedagógicas por capas. Deb
 
 Ayuda a construir situaciones, escenas, estímulos y restricciones para el corpus. No debe usar el español como plantilla gramatical dominante ni tratar una propuesta generada como Didxazá validado.
 
+El español continúa siendo el puente semántico y de trabajo vigente del sistema. Al 2026-08-31 no existe una decisión de sustituirlo por una representación previa obligatoria. Cualquier arquitectura alternativa deberá discutirse y adoptarse explícitamente antes de modificar este principio.
+
 ## Núcleo compartido
 
 Los cuatro componentes deben consumir un núcleo lingüístico común para evitar que cada uno mantenga reglas propias incompatibles.
@@ -82,6 +88,22 @@ Actualmente contiene:
 - `pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` — discusión congelada posterior a la lectura intensiva de Bueno Holle 2019. Su estado interno es `FROZEN_DISCUSSION_INPUT_NOT_POLICY`.
 
 La función de esta subcarpeta es impedir que el razonamiento quede fuera del repositorio sin confundirlo con una decisión adoptada.
+
+Reglas de frontera útiles:
+
+```text
+ANALYZER_CAPABILITY != BEGINNER_REQUIREMENT
+GENERATION_LICENSE != TEACHING_PRIORITY
+PEDAGOGICAL_DISCUSSION != AUTOMATIC_POLICY
+```
+
+## Procedencia y migración
+
+La migración puede encontrar etiquetas históricas diferentes para métodos de obtención de evidencia.
+
+No se reescribirán silenciosamente. Se conservará la etiqueta original y, cuando sea posible, una equivalencia canónica separada.
+
+Referencia: `PROVENANCE_LABEL_CROSSWALK_v0_1.md`.
 
 ## Frontera con documentos institucionales
 
