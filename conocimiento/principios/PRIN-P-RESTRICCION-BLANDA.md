@@ -12,38 +12,57 @@ principio_original: >
   del aprendiz, siempre que la estructura gramatical permaneciera dentro del techo G asignado.
 
 estado_actual: >
-  El proyecto conserva la idea de que complejidad gramatical y complejidad pragmática no tienen por
-  qué avanzar juntas. No se conserva, en cambio, la regla automática según la cual un principiante
-  debe exponerse deliberadamente a alta densidad pragmática sólo porque pueda comprender socialmente
-  el contenido en español.
+  El proyecto conserva P como una escala válida de complejidad pragmático-discursiva y conserva la
+  idea de que complejidad gramatical y complejidad pragmática no tienen por qué avanzar juntas.
+
+  Lo que permanece en investigación son las fronteras exactas P1–P5, la ponderación de sus dimensiones
+  internas y la forma en que esas etiquetas deben intervenir en futuros generadores o secuencias
+  curriculares.
 
   Durante el piloto de COR002 se trabaja con una ventana provisional P1–P3 y P3 funciona como borde
   reversible. La densidad social, discursiva o contextual debe justificarse por la escena y por el
-  objetivo del principiante, no por una obligación del generador de explotar todo el rango P disponible.
+  objetivo del principiante, no por una obligación automática del generador de explotar todo el rango P.
 
-razon_de_revision: >
-  El piloto se redujo deliberadamente a interacciones cotidianas breves para principiantes. Además,
-  la revisión lingüística reciente sugiere que "dificultad pragmática" puede mezclar fenómenos distintos:
-  riesgo social, negociación, densidad discursiva, seguimiento referencial e información compartida.
-  Antes de convertir P en una regla productiva fuerte se necesita observar escenas reales y decidir
-  si todas esas cargas deben permanecer dentro de una sola escala.
+fundamento_multidimensional: >
+  La concepción pedagógica original de P fue deliberadamente multidimensional. Incluía, entre otros
+  factores, riesgo social, negociación, densidad discursiva y marco reflexivo o metalingüístico.
+  Por tanto, la presencia de varias dimensiones dentro de P no constituye por sí sola un error de diseño.
+
+  La pregunta pendiente es si una sola escala P1–P5 resume esas dimensiones de forma suficientemente
+  útil y reproducible para el proyecto.
+
+relacion_con_bib065: >
+  Las distinciones finas derivadas de BIB065/Bueno Holle —por ejemplo introducción, mantenimiento y
+  reintroducción de referentes, tópico/foco, estado informativo, unidades entonacionales y otras
+  relaciones de organización discursiva— no se incorporan automáticamente dentro de P.
+
+  Primero deben implementarse como propiedades analíticas descriptivas del dispositivo. La evidencia
+  futura deberá mostrar cuáles tienen consecuencias pedagógicas, cuáles ya quedan representadas por G
+  o P, cuáles requieren descripción separada y cuáles son simplemente propiedades lingüísticas sin
+  necesidad de una escala curricular propia.
 
 no_se_concluye:
   - que la dimensión pragmática deba eliminarse;
+  - que P1–P5 sea inválida;
+  - que sus límites actuales estén cerrados;
   - que un principiante sólo pueda escuchar contenido socialmente trivial;
-  - que P1–P5 deba sustituirse inmediatamente;
-  - que la exposición a contenido rico sea perjudicial por definición.
+  - que las capas finas de BIB065 constituyan un tercer eje pedagógico;
+  - que toda propiedad discursiva o referencial deba contarse dentro de P.
 
 criterio_actual_piloto:
-  - justificar la densidad pragmática por la función concreta de la escena;
+  - conservar P como instrumento de análisis y calibración;
   - analizar P después de revisar la plausibilidad conversacional;
-  - mantener P1–P3 como ventana experimental;
-  - retirar P3 si empieza a exigir negociación o carga incompatible con el objetivo del principiante;
-  - revisar posteriormente si carga discursiva/referencial necesita descripción separada.
+  - mantener P1–P3 como ventana experimental del piloto;
+  - revisar P3 si empieza a exigir negociación o carga incompatible con el objetivo del principiante;
+  - investigar posteriormente los límites P1–P5 con escenas, hablantes y aprendices reales;
+  - mantener las capas finas BIB065 descriptivas hasta contar con evidencia para relacionarlas con G/P.
 
 provenance:
+  - conocimiento/fuentes/razonamiento-pedagogico-sistema-niveles.md
+  - conocimiento/fuentes/SRC-PEDAGOGICAL-FUNDAMENTOS.md
   - conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md
   - conocimiento/decisiones/DEC-G-P-SEPARATION.md
+  - dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md
 
 etiquetas:
   - pedagogia
@@ -55,4 +74,6 @@ etiquetas:
 
 ## Nota histórica
 
-La versión del 7 de agosto de 2026 defendía explícitamente la exposición a contenido pragmáticamente denso como política del generador. Esa implementación permanece en el historial del repositorio, pero no gobierna el piloto principiante al cierre de agosto.
+La versión del 7 de agosto de 2026 defendía explícitamente la exposición a contenido pragmáticamente denso como política del generador. Esa implementación permanece en el historial del repositorio, pero no gobierna automáticamente el piloto principiante al cierre de agosto.
+
+La revisión del 31 de agosto no invalida P. Distingue entre la **vigencia de la escala como arquitectura de análisis** y la **investigación pendiente sobre sus fronteras e implementación**.
