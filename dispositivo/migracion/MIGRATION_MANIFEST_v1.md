@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-01 — JUCHITAN_LINGUISTIC_CORE v0.27 transferido desde fuente completa del chat  
+**Última actualización:** 2026-09-01 — checkpoints NC001 v3/v4 y contrato round-trip v0.2 recuperados desde paquete exacto local  
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
 
@@ -51,6 +51,9 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/core/NUCLEO_CONVERSACIONAL_001_SCOPE_v1.md` | scope exacto del vertical slice NC001 |
 | `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md` | fuente completa migrada desde el archivo adjunto del chat; `EXPERIMENTAL_CORE`, no autoridad lingüística definitiva |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` | estado post Generator_v0; hashes runtime/SQLite y ausencia del orquestador canónico en ese hito |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v3_POST_ROUNDTRIP_BRIDGE.md` | checkpoint histórico del primer bridge round-trip y primera recombinación novedosa licenciada; `ARCHIVE_ONLY` frente a estados posteriores |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v4_POST_ROUNDTRIP_STABILIZATION.md` | checkpoint histórico de estabilización del contrato round-trip v0.2 y gate de valencia; `ARCHIVE_ONLY` frente a estados posteriores |
+| `dispositivo/migracion/fuentes/ROUNDTRIP_CONTRACT_v0_2.md` | contrato estrecho estabilizado `STRUCTURAL_COMPATIBILITY_ONLY_NON_LICENSING`; histórico, no política actual |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v34_POST_C02_DEFAULT_QUI_MIGRATION.md` | transición C02 al default juchiteco `quí`; `qué` preservado como variante secundaria |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` | estado del grafo/priorizador v0.34; COR001 continúa `ANALYSIS_TARGET_ONLY` |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v36_POST_KNOWLEDGE_INGESTION_GUARDRAILS.md` | guardrails de degradación elegante y ruta literatura+audio |
@@ -131,14 +134,14 @@ No se creó un sustituto textual ni una base reconstruida. Sigue pendiente una v
 
 **Estado:** `SOURCE_COMPLETE_READY_TO_MIGRATE`
 
-Fuente exacta localizada en el paquete del Analyzer.
+Fuente exacta localizada en el paquete del Analyzer y re-localizada en File Library durante la pasada del 2026-09-01. La interfaz disponible expone una vista parseada/truncada, no los bytes crudos completos; por ello no se reconstruye ni se copia parcialmente.
 
 ```text
 SHA256 = 2bdf4afd4b61234c54585cda17ad648bfb71194e9463d193eb04a5a06aa3183d
 SIZE ≈ 767 KB
 ```
 
-Es dependencia local por defecto del Analyzer v0.35. Sigue pendiente por tamaño/transferencia; no debe reconstruirse.
+Es dependencia local por defecto del Analyzer v0.35. Sigue pendiente por transferencia exacta; no debe reconstruirse.
 
 ## 5. Generator_v0 — estado de reproducibilidad recuperado
 
@@ -218,6 +221,15 @@ GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl
 AuthorizedSlotFillers_v0_33.jsonl
 ```
 
+La fuente histórica exacta del checkpoint `generator_v0_2.py` está contenida en:
+
+```text
+PAQUETE_MIGRACION_DIDXAZA_ROUNDTRIP_CONTRACT_STABILIZED_v0_2.zip
+SHA256 = e5410545a103951fc035429e8de9834bc178bde249c0fbd5b8a0e751cd14947d
+```
+
+Ese paquete también contiene el bridge canónico v0.2, licencias/evidence atoms v0.2 y los estados NC001 v3/v4. Se preserva como genealogía histórica y no sustituye a `generator_v0_5.py`.
+
 ### Analyzer no licenciante
 
 ```text
@@ -239,9 +251,11 @@ Secuencia de estados localizada desde `CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.
 Checkpoints de alto valor ya preservados:
 
 ```text
-v2 -> v34 -> v35 -> v36 -> v37.1
+v2 -> v3 -> v4 -> v34 -> v35 -> v36 -> v37.1
 ```
 
+- v3: primer bridge round-trip compuesto sobre runtime canónico + schemas NC001; primera recombinación novedosa licenciada `Ma' beedabe`.
+- v4: contrato round-trip v0.2 estabilizado; separación `ANALYZED != GENERATION_LICENSED` y gate de compatibilidad de valencia.
 - v34: cambio del default C02 a `quí` sin invalidar `qué`.
 - v35: materialización/priorización de huecos del grafo de COR001, sin convertir COR001 en evidencia.
 - v36: congela la expansión técnica de COR001 y activa literatura + audio independiente.
@@ -280,6 +294,11 @@ Los módulos críticos de runtime listados arriba están presentes y varios fuer
 | `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `acffea79fe7d228a0b28f740094e5a15fd4ec0ba6d36b257cc3aaef918a83c54` |
 | `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / historical provisional | `f3308483c3135e43d49f2641f518aecd0dbf3c1fcbdc98f349511751ce86b295` |
 | `COR001_ANALYSIS_TARGET_PASS_REPORT_v0_24.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `b369215edec07a98b59b6ee22a87995b20614d7a45dd16541f0deb71b93fd0d3` |
+| `generator_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `SUPERSEDED` / `ARCHIVE_ONLY` | `54257f9a6dae12aba003e50e81b14bc25fba1d3e54e2eeecce009130c01fbacc` |
+| `canonical_analyzer_roundtrip_bridge_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `SUPERSEDED` / `ARCHIVE_ONLY` | `bf1c3604f59aa559f8c1e5a6e7cfd1c78b16315f0dbbd1c1218f4e0a09cd0436` |
+| `GenerationLicense_v0_2_roundtrip.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `SUPERSEDED` / `ARCHIVE_ONLY` | `0afb4d10fb96d8d0f264ad4ace18b2174b101aa86a593835b7530dfc57746861` |
+| `GenerationEvidenceAtoms_v0_2_roundtrip.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `SUPERSEDED` / `ARCHIVE_ONLY` | `eb12fd80cae634c3f66ba4003b6804bfd65a06f35d96726eef18d6d38635c191` |
+| `STABILIZATION_REPORT_v0_2.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `ARCHIVE_ONLY` | `76d2655f9cd95eec69c0d143a264a49aa51b67cf55e609fc882c9dffdd530447` |
 
 El backlog pedagógico v0.35 es provisional/histórico y no reemplaza el freeze pedagógico post-BIB065 ya migrado.
 
@@ -298,6 +317,9 @@ El reuse map mantiene en cuarentena para Generator_v0: near-match con `SequenceM
 ## 11. Commits de esta pasada
 
 ```text
+e921229d1ad7591fc73ea8cea3f3ecdbd3cc0e83  migrate NC001 post-roundtrip bridge state v3
+45dc013cc6558bbc3ba9d5d2a83466e97226660d  migrate NC001 roundtrip stabilization state v4
+8dcadfb4d5c37d6fa5a4ac31c84a14d1a7f0d867  migrate stabilized NC001 roundtrip contract v0.2
 f4f052dabb1eb94f6a6eda23cc33ed26c0b17e0c  migrate Tutor_v0.33 implementation
 399885d7b10d21fb0b858e2188245dfa193107b2  migrate Generator authorized slot fillers v0.33
 9d4325270f64dc213ca3f101796fc728e577cf30  migrate Generator integration blockers v0.1
@@ -340,6 +362,6 @@ Antes de incorporar una pieza:
 
 ## 14. Próxima acción
 
-**Siguiente P0 recomendado:** migrar íntegramente `DIC_VERB_2385_v0_1.csv` desde la fuente exacta ya localizada, porque es una dependencia directa y transferible del Analyzer v0.35.
+**Siguiente P0 recomendado:** transferir íntegramente `DIC_VERB_2385_v0_1.csv` desde la fuente exacta ya localizada. La fuente fue re-localizada en File Library en esta pasada, pero la interfaz disponible no expone los bytes completos; no reconstruir desde la vista parseada.
 
 En paralelo, cerrar el diff genealógico de `didxaza_runtime_v0_2_2_context_provenance.py` y mantener `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` como `BINARY_TRANSFER_PENDING` hasta contar con una vía binaria segura.
