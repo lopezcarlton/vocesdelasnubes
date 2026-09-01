@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-01 — primera pasada P0 desde paquete v0.36.2  
+**Última actualización:** 2026-09-01 — pasada P0 desde chat histórico v0.34 + recuperación runtime v0.2.15.3  
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
 
@@ -51,6 +51,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/core/NUCLEO_CONVERSACIONAL_001_SCOPE_v1.md` | scope exacto del vertical slice NC001 |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` | estado post Generator_v0; hashes runtime/SQLite y ausencia del orquestador canónico en ese hito |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v34_POST_C02_DEFAULT_QUI_MIGRATION.md` | transición C02 al default juchiteco `quí`; `qué` preservado como variante secundaria |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` | estado del grafo/priorizador v0.34; COR001 continúa `ANALYSIS_TARGET_ONLY` |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v36_POST_KNOWLEDGE_INGESTION_GUARDRAILS.md` | guardrails de degradación elegante y ruta literatura+audio |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md` | estado posterior al cierre BIB065; ruta activa más reciente localizada |
 | `dispositivo/generator/inputs/ConstructionInventory_v1.jsonl` | seis construcciones NC001 con alcance y abstenciones |
@@ -58,14 +59,46 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/validation/ValidationQueue_v0.jsonl` | cola de validación/desarrollo audio-first |
 | `dispositivo/analyzer/non_licensing_analyzer_orchestrator_v0_35.py` | Analyzer parcial no licenciante con contexto opcional |
 | `dispositivo/generator/generator_v0_5.py` | implementación más reciente del Generator_v0 localizada en paquete v0.36.2 |
-| `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot de readiness más reciente localizado en el paquete |
+| `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot de readiness más reciente localizado en paquete v0.36.2 |
+| `dispositivo/tutor/tutor_v0_33.py` | Tutor renderer conservador: sólo explica análisis con binding exacto y licencia activa; no analiza/corrige/genera |
+| `dispositivo/generator/inputs/GenerationLicense_v0_33_c02_default_qui.jsonl` | licencias activas localizadas, incluida migración C02 a `quí` |
+| `dispositivo/generator/inputs/GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl` | átomos documentales/campo vinculados a las licencias v0.33 |
+| `dispositivo/generator/inputs/AuthorizedSlotFillers_v0_33.jsonl` | fillers autorizados por slot, con `quí` default Juchitán y `qué` variante secundaria |
+| `dispositivo/generator/inputs/IntegrationBlockers_v0_1.jsonl` | bloqueadores explícitos C03–C06 del slice histórico |
+| `dispositivo/generator/inputs/OrthographicResolutions_v0_9.jsonl` | resoluciones ortográficas exactas por celda; no reglas globales |
+| `dispositivo/generator/inputs/AdoptionRecords_v1.jsonl` | guardas/adopciones ortográficas NC001 |
+| `dispositivo/generator/inputs/ConceptMapping_v1.jsonl` | mapping conceptual HABITUAL/COMPLETIVE sin proyección automática a superficie |
+| `dispositivo/generator/inputs/OrthographicProfile_v1_DRAFT.json` | vector ortográfico conservador, explícitamente no norma global |
 
-### 3.1 Verificación de fuentes migradas en esta pasada
+### 3.1 Runtime v0.2.15.3 localizado y presencia textual verificada
 
-- `non_licensing_analyzer_orchestrator_v0_35.py`: SHA-256 de fuente `9ff7965bd1c7304ed1527f14896d2539c45b5ba5733a7062f8433ae56a6f0735`; Git blob del repo coincide exactamente con el Git blob calculado sobre la fuente local.
-- `generator_v0_5.py`: SHA-256 de fuente `6db94a8cc73fa1cee6f73a4d1404adebb53bc3ec58133a073584ed5ed59a726c`; Git blob del repo coincide exactamente con el Git blob calculado sobre la fuente local.
-- `ParadigmTable_v1.csv`: SHA-256 del archivo fuente `ecef1339c9d8e7ad11689770efaa108dffa76866e34c24d85a5d0ee46aa05ed4`. Fue copiado como texto mediante Contents API; **no se afirma identidad binaria** del archivo transportado porque la fuente usa CRLF/BOM y el transporte textual puede normalizar bytes. La tabla fuente y su hash quedan registrados para auditoría posterior.
-- `GENERATION_READINESS_MATRIX_v14.csv`: SHA-256 de fuente `2735a757d625d478db2fbaab240b425839ed62fdc8d2a6da20cbc9c25d8f010b`.
+Fuente exacta localizada en este chat:
+
+`didxaza_v0_2_15_3_surface_semantics_resolution_integrity_CLOSED_PASS(1).zip`
+
+SHA-256 del ZIP:
+
+```text
+6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
+```
+
+Coincide con la identidad histórica ya registrada para el runtime v0.2.15.3.
+
+En el repositorio ya se localizaron bajo `dispositivo/runtime/v0_2_15_3/` el README del checkpoint, estado maestro del Corrector, manifiesto de release, DB integrity y módulos de runtime. Para varios módulos críticos se verificó identidad exacta por Git blob frente al archivo contenido en el ZIP:
+
+```text
+didxaza_runtime_v0_2_0_foundation.py      Git blob 734c3670f1a9edfbb3a6dddc270ab9e5b6df1901
+didxaza_runtime_v0_2_1_retrieval.py       Git blob 057c37460dcea9ddf383dbf69d63f85caf6bf7ce
+didxaza_runtime_v0_2_3_morphology_i.py    Git blob 00077c987fab1c49144c0f853e23226c82fac9e9
+didxaza_runtime_v0_2_4_bound.py           Git blob 183e02d73e83a34e3675548ccf8fbb51763f3390
+didxaza_runtime_v0_2_5_morphology_ii.py   Git blob 50e3a121d20d65b4f94b300fa34e2b80980b5c66
+README_v0_2_15_3.md                       Git blob 0dddbbf8ca1d0282b840e2c76e5aeb150db09575
+ESTADO_MAESTRO_CORRECTOR_DIDXAZA_v2_21.md Git blob 4707a4a8371eb072451f46d5cb6c2b2e98286353
+```
+
+`didxaza_runtime_v0_2_2_context_provenance.py` está presente en el repositorio pero **no se declaró identidad exacta** en esta pasada: el blob/size del repo no coincide con el archivo del ZIP y requiere diff de genealogía antes de sobrescribir.
+
+La presencia de fuentes textuales del runtime no sustituye los binarios/datasets referenciados por el release.
 
 ## 4. P0 localizado, todavía pendiente
 
@@ -73,30 +106,29 @@ Ningún estado concede autoridad lingüística o pedagógica.
 
 **Estado:** `RECOVERABLE_SOURCE_LOCATED`
 
-Fuente completa claramente identificada en File Library con encabezado `JUCHITAN_LINGUISTIC_CORE — v0.27`, estado `EXPERIMENTAL_CORE` y consumidores Analyzer/Corrector/Tutor/Generator. La interfaz disponible devuelve vistas truncadas del archivo largo. **No se migró desde fragmentos.**
+Fuente completa claramente identificada en File Library con encabezado `JUCHITAN_LINGUISTIC_CORE — v0.27`, estado `EXPERIMENTAL_CORE` y consumidores Analyzer/Corrector/Tutor/Generator. En esta interfaz sólo se obtuvieron vistas parciales/truncadas; no se migró desde fragmentos.
 
 Destino previsto:
 
 `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`
 
-### runtime lingüístico v0.2.15.3
+Los fixtures `JUCHITAN_LINGUISTIC_CORE_v0_27_BLIND_STRICT_FIXTURE*.md` son artefactos de prueba y **no sustituyen** el core de producción.
 
-**Estado:** `REFERENCED_BY_LOCATED_ARTIFACT`
+### runtime lingüístico v0.2.15.3 — cierre de transferencia
 
-`CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` verifica la identidad histórica:
+**Estado:** `RECOVERABLE_SOURCE_LOCATED` / `BINARY_TRANSFER_PENDING` para componentes no textuales.
 
-```text
-SHA256 = 6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
-MATCH_EXACT
-```
-
-La raíz fuente del runtime no apareció en el paquete v0.36.2. El Analyzer v0.35 añade dependencias explícitas sobre módulos de este runtime.
+El ZIP exacto está disponible y su hash coincide. La raíz contiene la genealogía del runtime y, además, bases SQLite y datasets. La transferencia textual puede continuar archivo por archivo, pero no debe usarse para fingir que los binarios están migrados.
 
 ### SQLite v2.20
 
-**Estado:** `REFERENCED_BY_LOCATED_ARTIFACT`
+**Estado:** `BINARY_TRANSFER_PENDING`
 
-Identidad verificada por el estado v2:
+El ZIP exacto contiene:
+
+`BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite`
+
+Identidad verificada:
 
 ```text
 SHA256 = 2379773426baf4e3eace87c61ec17f7a1e1b9164421e56cf736d35eb64a5ebed
@@ -104,41 +136,81 @@ SQLITE_INTEGRITY_CHECK = ok
 FOREIGN_KEY_VIOLATIONS = 0
 ```
 
-El binario `.sqlite/.db` no está presente en el paquete v0.36.2, por lo que no se creó un sustituto.
+No se creó un sustituto textual ni una base reconstruida. Sigue pendiente una vía de transferencia binaria íntegra. Deben preservarse también los schemas/tablas consumidos por Analyzer, en particular `verb_lexeme_class_v023` y `person_possession_exact_v0214`.
 
 ### `DIC_VERB_2385_v0_1.csv`
 
 **Estado:** `SOURCE_COMPLETE_READY_TO_MIGRATE`
 
-Fuente exacta presente en `analyzer_v0/` del paquete v0.36.2.
+Fuente exacta localizada en el paquete del Analyzer.
 
 ```text
 SHA256 = 2bdf4afd4b61234c54585cda17ad648bfb71194e9463d193eb04a5a06aa3183d
 SIZE ≈ 767 KB
 ```
 
-Es dependencia local por defecto del Analyzer v0.35. Sigue pendiente por tamaño/transferencia textual; no debe reconstruirse.
+Es dependencia local por defecto del Analyzer v0.35. Sigue pendiente por tamaño/transferencia; no debe reconstruirse.
 
-## 5. P0/P1: dependencias del Generator localizadas y pendientes
+## 5. Generator_v0 — estado de reproducibilidad recuperado
 
-El Generator migrado no se considera reproducible todavía hasta recuperar sus inputs exactos restantes.
+Los inputs que el manifiesto anterior marcaba como pendientes fueron recuperados y migrados en esta pasada:
 
-| Artefacto | Estado | SHA-256 fuente |
-|---|---|---|
-| `GenerationLicense_v0_33_c02_default_qui.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `c4d2b01ea183830a9abc41f4bd94ef3856226055a5b692754868163151c03cea` |
-| `GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `e0b2f12c38ef92e8fd7f0310acc0cb73187a5278835f2ee3f884eb83ae336a09` |
-| `AuthorizedSlotFillers_v0_33.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `f09df507b1a1d1b97dbdff35c0535eca19ef856531c878b3f1eabbb2d790c842` |
-| `IntegrationBlockers_v0_1.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `22cc7998d5fa572c66a72aafab578041a3753c75e5c7aa6fd20112af036f53ce` |
-| `OrthographicResolutions_v0_9.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `4be2110b0408f6a5cf72d8e65a95bf17381cfa3eaa0357fd35e6749fec7135bd` |
-| `AdoptionRecords_v1.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `107636011643c352750af44793ac1370967219042ad596e199362be19c5e3904` |
-| `ConceptMapping_v1.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `bfa8d3f4d384ff73fbcf0c5c5166c39c4df70762a6fededccc8e07e2df0ea9fe` |
-| `OrthographicProfile_v1_DRAFT.json` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `9f97928c88d529647dd027235a95b9219a4fffd45004dfa5b482f73a43772e70` |
+```text
+GenerationLicense_v0_33_c02_default_qui.jsonl
+GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl
+AuthorizedSlotFillers_v0_33.jsonl
+IntegrationBlockers_v0_1.jsonl
+OrthographicResolutions_v0_9.jsonl
+AdoptionRecords_v1.jsonl
+ConceptMapping_v1.jsonl
+OrthographicProfile_v1_DRAFT.json
+```
 
-## 6. Genealogías recuperadas
+Junto con `ParadigmTable_v1.csv`, `ConstructionInventory_v1.jsonl` y `generator_v0_5.py` ya migrados, esto recupera el núcleo documental de la implementación Generator_v0 localizada.
+
+No se declara autonomía completa: `generator_v0_5.py` acepta un `canonical_analyzer` para el round-trip de recombinaciones novedosas y ese contrato debe seguir verificándose de forma explícita.
+
+## 6. Tutor_v0 — implementación y dependencias nuevas
+
+`tutor_v0_33.py` fue recuperado directamente desde el paquete v0.34 y migrado sin reinterpretar su función.
+
+Dependencias exactas nuevas que expone y que todavía deben recuperarse/migrarse:
+
+```text
+TutorCaseLicenseBindings_v0_33.jsonl
+GenerationLicense_C03_v0_12.jsonl
+GenerationLicense_C05_v0_11.jsonl
+GenerationLicense_C05_Inherent_v0_14.jsonl
+GenerationLicense_C05_XHX_v0_15.jsonl
+GenerationLicense_C05_Morphophonology_v0_16.jsonl
+GenerationLicense_C05_Morphophonology_v0_17.jsonl
+GenerationLicense_C05_Morphophonology_v0_18.jsonl
+GenerationLicense_C05_Morphophonology_v0_19.jsonl
+```
+
+**Estado:** `SOURCE_COMPLETE_READY_TO_MIGRATE` cuando la fuente completa del paquete v0.34 esté disponible para la siguiente pasada.
+
+El Tutor preserva el contrato histórico:
+
+```text
+ANALYZED != GENERATION_LICENSED
+```
+
+y se abstiene si no existe binding exacto/licencia activa.
+
+## 7. Genealogías recuperadas
+
+### JUCHITAN_LINGUISTIC_CORE
+
+Se localizaron al menos:
+
+```text
+v0.1 -> ... -> v0.23 -> ... -> v0.27
+```
+
+`v0.27` es la versión de referencia más reciente verificable en este entorno. Los `BLIND_STRICT_FIXTURE` de v0.27 son derivados de evaluación y no una nueva baseline lingüística.
 
 ### Generator_v0
-
-El paquete contiene:
 
 ```text
 generator_v0.py
@@ -149,7 +221,7 @@ generator_v0.py
 -> generator_v0_5.py
 ```
 
-`generator_v0_5.py` es la versión más reciente localizada y cambia sus bindings activos de C02 a:
+`generator_v0_5.py` es la implementación más reciente localizada. Sus bindings activos de C02 usan:
 
 ```text
 GenerationLicense_v0_33_c02_default_qui.jsonl
@@ -157,31 +229,40 @@ GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl
 AuthorizedSlotFillers_v0_33.jsonl
 ```
 
-No se borraron ni se reinterpretaron versiones anteriores; quedan como genealogía histórica en el paquete fuente.
-
 ### Analyzer no licenciante
 
 ```text
 v0_25 -> v0_26 -> v0_35
 ```
 
-v0.35 añade un canal opcional `context_segments` sin volver contexto requisito del análisis local.
+v0.35 añade canal opcional `context_segments` sin convertir el contexto en requisito universal de análisis local.
+
+### Runtime lingüístico
+
+El ZIP v0.2.15.3 contiene módulos desde la foundation v0.2.0 y etapas sucesivas de retrieval, context/provenance, morphology I, BOUND, morphology II, evidence adjudication, decision simulation, surface evidence, documentary alignment, Pickett backfill/cross-source, resolution vectors, person/possession, evidence qualification/integrity y el cierre `v0.2.15.3_surface_semantics_resolution_integrity`.
+
+La genealogía exacta debe preservarse archivo por archivo; no se debe inferir que cada módulo anterior permaneció semánticamente idéntico en el wrapper final.
 
 ### NC001 state
 
-El paquete v0.36.2 contiene una secuencia de estados desde `CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` hasta `CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md`. Para la primera pasada se migraron cuatro checkpoints de alto valor: v2, v34, v36 y v37.1.
+Secuencia de estados localizada desde `CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` hasta `CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md`.
 
-- v34 documenta el cambio del default C02 a `quí` sin invalidar `qué`.
-- v36 congela la cola COR001 y activa literatura + audio independiente.
-- v37.1 cierra BIB065 para esa pasada y preserva el Analyzer de frase aislada.
+Checkpoints de alto valor ya preservados:
+
+```text
+v2 -> v34 -> v35 -> v36 -> v37.1
+```
+
+- v34: cambio del default C02 a `quí` sin invalidar `qué`.
+- v35: materialización/priorización de huecos del grafo de COR001, sin convertir COR001 en evidencia.
+- v36: congela la expansión técnica de COR001 y activa literatura + audio independiente.
+- v37.1: cierre de la pasada BIB065 y preservación del Analyzer de frase aislada.
 
 ### Readiness
 
-Se localizaron matrices `GENERATION_READINESS_MATRIX` sucesivas hasta `v14`; `v14` es la más reciente presente en el paquete y fue migrada.
+Se localizaron matrices `GENERATION_READINESS_MATRIX` sucesivas hasta `v14`; `v14` sigue siendo la más reciente localizada en los paquetes inspeccionados y está migrada.
 
-## 7. Dependencias nuevas explicitadas por esta recuperación
-
-### Analyzer v0.35
+## 8. Dependencias del Analyzer v0.35
 
 Requiere:
 
@@ -198,24 +279,9 @@ SQLite table verb_lexeme_class_v023
 SQLite table person_possession_exact_v0214
 ```
 
-### Generator v0_5
+Los módulos críticos de runtime listados arriba están presentes y varios fueron verificados exactamente contra el ZIP. Dictionaria CSV, DIC_VERB y SQLite deben verificarse/migrarse por separado antes de declarar el Analyzer reproducible fuera del paquete original.
 
-Requiere:
-
-```text
-ParadigmTable_v1.csv
-ConstructionInventory_v1.jsonl
-GenerationLicense_v0_33_c02_default_qui.jsonl
-IntegrationBlockers_v0_1.jsonl
-GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl
-AuthorizedSlotFillers_v0_33.jsonl
-AdoptionRecords_v1.jsonl
-OrthographicResolutions_v0_9.jsonl
-```
-
-Además acepta `canonical_analyzer` como callback para round-trip de recombinación novedosa. La existencia del Analyzer no licenciante v0.35 **no implica por sí sola** que satisfaga ese contrato de round-trip.
-
-## 8. Otros artefactos antes marcados como no localizados que sí aparecieron
+## 9. Otros artefactos localizados y pendientes
 
 | Artefacto | Estado actual | SHA-256 si aplica |
 |---|---|---|
@@ -228,7 +294,7 @@ Además acepta `canonical_analyzer` como callback para round-trip de recombinaci
 
 El backlog pedagógico v0.35 es provisional/histórico y no reemplaza el freeze pedagógico post-BIB065 ya migrado.
 
-## 9. Reuse map y artefactos históricos referenciados
+## 10. Reuse map y artefactos históricos referenciados
 
 | Artefacto | Estado | Nota |
 |---|---|---|
@@ -240,23 +306,39 @@ El backlog pedagógico v0.35 es provisional/histórico y no reemplaza el freeze 
 
 El reuse map mantiene en cuarentena para Generator_v0: near-match con `SequenceMatcher`, normalización destructiva de diacríticos, propuestas de superficie derivadas de paradigma, dependencia de COR001 como licencia, confidence legado, handlers particulares de COR001 y owner review como licencia de generación.
 
-## 10. Orden de recuperación restante
+## 11. Commits de esta pasada
+
+```text
+f4f052dabb1eb94f6a6eda23cc33ed26c0b17e0c  migrate Tutor_v0.33 implementation
+399885d7b10d21fb0b858e2188245dfa193107b2  migrate Generator authorized slot fillers v0.33
+9d4325270f64dc213ca3f101796fc728e577cf30  migrate Generator integration blockers v0.1
+65974208b0a288ebcee35af7326e4722c6f14550  migrate orthographic resolutions v0.9
+2dc6bdcad0154c122dc1c33afbc3a4da7541d1f4  migrate NC001 adoption records v1
+dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
+94d281f825755e0dd6168426140d4317cbc3b216  migrate NC001 orthographic profile draft
+05e996c2ce765aa98649978703032a443578a6e6  migrate Generator generation license v0.33
+96135569ccb08f0dcc2738bee8bdd2a23cd6b977  migrate Generator evidence atoms v0.33
+```
+
+`CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
+
+## 12. Orden de recuperación restante
 
 **P0 — conservar estado reproducible:**
 
-1. `JUCHITAN_LINGUISTIC_CORE_v0_27.md` completo, sin vista truncada;
-2. runtime v0.2.15.3 exacto;
-3. SQLite v2.20 exacta;
-4. `DIC_VERB_2385_v0_1.csv`;
-5. inputs restantes del Generator_v0_5.
+1. `JUCHITAN_LINGUISTIC_CORE_v0_27.md` completo, sin reconstrucción desde fragmentos;
+2. cerrar la genealogía/identidad de todo el runtime v0.2.15.3, especialmente cualquier archivo cuyo blob no coincida con el ZIP;
+3. transferir la SQLite v2.20 exacta por una vía binaria segura y preservar/exportar sus schemas sin sustituir el binario;
+4. migrar `DIC_VERB_2385_v0_1.csv` exacto;
+5. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
 
-**P1 — reproducibilidad y límites:** guardrails, DevelopmentCorpusProtocol, AdoptionRecords/OrthographicProfile, ConceptMapping, reportes y tests/adapters.
+**P1 — reproducibilidad y límites:** guardrails, DevelopmentCorpusProtocol, reportes/tests/adapters y matrices BIB065.
 
 **P2 — ejecutables útiles:** sólo después de conocer versión, dependencias y vigencia.
 
 **P3 — historia:** auditorías y versiones intermedias como `ARCHIVE_ONLY` cuando expliquen genealogía. No reconstruir toda la historia.
 
-## 11. Criterio de migración
+## 13. Criterio de migración
 
 Antes de incorporar una pieza:
 
@@ -267,8 +349,8 @@ Antes de incorporar una pieza:
 5. determinar si es estado, ejecutable o historia;
 6. impedir que su copia sea interpretada como nueva regla lingüística o pedagógica.
 
-## 12. Próxima acción
+## 14. Próxima acción
 
-**Siguiente P0 recomendado:** recuperar y transferir íntegramente `JUCHITAN_LINGUISTIC_CORE_v0_27.md` desde su fuente completa de File Library, sin reconstruirlo desde fragmentos.
+**Siguiente P0 recomendado:** recuperar y transferir íntegramente `JUCHITAN_LINGUISTIC_CORE_v0_27.md` desde la fuente completa ya localizada en File Library, sin reconstruirlo desde vistas parciales.
 
-En paralelo, localizar la raíz exacta del runtime `v0.2.15.3` y el binario SQLite `v2.20`, porque son los dos bloqueadores externos principales para ejecutar el Analyzer v0.35 ya migrado.
+Después: cerrar la transferencia binaria de `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` y el inventario `DIC_VERB_2385_v0_1.csv`, porque son dependencias directas para reproducir el Analyzer fuera de los paquetes históricos.
