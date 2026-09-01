@@ -26,11 +26,11 @@ TECHNICAL_CHECK != RESEARCH_CLOSURE
 
 ## 2. Runtime v0.2.15.3
 
-El manifiesto original enumera 75 payloads. En este checkpoint hay 10 payloads presentes:
+El manifiesto original enumera 75 payloads. En este checkpoint hay 13 payloads presentes:
 
-- 9 coinciden con el SHA-256 del release, incluida la SQLite v2.20;
-- `DB_INTEGRITY_v0_2_15_3.json` está presente pero no coincide con el hash del release;
-- 65 payloads del release todavía no están migrados.
+- los 13 coinciden con el SHA-256 del release;
+- los tres CSV de Dictionaria y la SQLite v2.20 están incluidos;
+- 62 payloads del release todavía no están migrados.
 
 La SQLite exacta está en:
 
@@ -47,16 +47,16 @@ verb_lexeme_class_v023 = present
 person_possession_exact_v0214 = present
 ```
 
-Discrepancia preservada, no corregida retrospectivamente:
+La fuente exacta de `DB_INTEGRITY_v0_2_15_3.json` se recuperó del ZIP canónico. La copia previa con salto de línea final permanece en la genealogía Git y fue sustituida por la identidad exacta:
 
 ```text
-DB_INTEGRITY expected = fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb
-DB_INTEGRITY present  = bcd0cf4046eb0d949dce29f098bd5d5f5e9e657f2636ce592f76ddcbd082eae4
+DB_INTEGRITY SHA256 = fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb
+STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
 ```
 
 ## 3. Analyzer v0.35
 
-Estado: `SOURCE_PRESENT / DEPENDENCIES_INCOMPLETE / NOT_REPRODUCIBLE_YET`.
+Estado: `REPRODUCIBLE_NON_LICENSING_PARTIAL_ANALYZER`.
 
 Presentes:
 
@@ -64,14 +64,26 @@ Presentes:
 - `DIC_VERB_2385_v0_1.csv` exacto;
 - módulos runtime v0.2.1, v0.2.3, v0.2.4 y v0.2.5;
 - SQLite v2.20 exacta con las tablas críticas verificadas.
+- `DICTIONARIA_entries_v0_2_15_2.csv`: 9,012 filas;
+- `DICTIONARIA_senses_v0_2_15_2.csv`: 9,046 filas;
+- `DICTIONARIA_examples_v0_2_15_2.csv`: 9,686 filas.
 
-Faltan:
+El adaptador ejecutable es:
 
-- `DICTIONARIA_entries_v0_2_15_2.csv`;
-- `DICTIONARIA_senses_v0_2_15_2.csv`;
-- `DICTIONARIA_examples_v0_2_15_2.csv`.
+`analyzer/analyzer_v0_35_migrated_adapter.py`
 
-No debe declararse reproducible hasta incorporar y verificar esos tres archivos.
+Pruebas de humo:
+
+```text
+"Quí rasé'" -> PARTIAL_ANALYSIS_NON_LICENSING
+forma deliberadamente inexistente -> ABSTAIN_NO_COMPONENT_EVIDENCE
+generation_license_assertion = false
+correction_assertion = false
+orthographic_authority_assertion = false
+rule_discovery_assertion = false
+```
+
+“Reproducible” describe la carga y el comportamiento del Analyzer parcial v0.35, no una cobertura completa del Didxazá ni autoridad sobre nuevas reglas.
 
 ## 4. Generator_v0.5
 

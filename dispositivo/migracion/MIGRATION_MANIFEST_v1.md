@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-01 — SQLite v2.20 transferida exactamente y estado ejecutable reconciliado
+**Última actualización:** 2026-09-01 — Analyzer v0.35 reproducible con Dictionaria exacta
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -64,13 +64,17 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/generator/inputs/ParadigmTable_v1.csv` | tabla de celdas TAM/persona y procedencia del slice |
 | `dispositivo/validation/ValidationQueue_v0.jsonl` | cola de validación/desarrollo audio-first |
 | `dispositivo/analyzer/non_licensing_analyzer_orchestrator_v0_35.py` | Analyzer parcial no licenciante con contexto opcional |
+| `dispositivo/analyzer/analyzer_v0_35_migrated_adapter.py` | adaptador no normativo que fija las rutas de las dependencias exactas migradas del Analyzer v0.35 |
 | `dispositivo/analyzer/DIC_VERB_2385_v0_1.csv` | inventario operacional exacto de 2,385 verbos; SHA-256 verificado; ruta por defecto del Analyzer v0.35 |
 | `dispositivo/runtime/v0_2_15_3/BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` | SQLite v2.20 transferida byte por byte; hash, integridad, claves foráneas y tablas críticas verificados |
+| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_entries_v0_2_15_2.csv` | inventario exacto de 9,012 entradas consumido por Analyzer v0.35 |
+| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_senses_v0_2_15_2.csv` | inventario exacto de 9,046 sentidos consumido por Analyzer v0.35 |
+| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_examples_v0_2_15_2.csv` | inventario exacto de 9,686 ejemplos consumido por Analyzer v0.35 |
 | `dispositivo/generator/generator_v0_5.py` | implementación más reciente del Generator_v0 localizada en paquete v0.36.2 |
 | `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador no normativo que instancia el subconjunto migrado desde una única ruta de inputs sin alterar la implementación histórica |
 | `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot de readiness más reciente localizado en paquete v0.36.2 |
 | `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md` | checkpoint que separa presencia, ejecutabilidad, snapshots no reproducibles y preguntas abiertas |
-| `dispositivo/migracion/test_migrated_state.py` | verificaciones mínimas de SQLite, DIC_VERB, Generator migrado y discrepancia conocida del release |
+| `dispositivo/migracion/test_migrated_state.py` | verificaciones de SQLite, DIC_VERB, Dictionaria, Analyzer, Generator y hashes presentes del release |
 | `dispositivo/tutor/tutor_v0_33.py` | Tutor renderer conservador: sólo explica análisis con binding exacto y licencia activa; no analiza/corrige/genera |
 | `dispositivo/generator/inputs/GenerationLicense_v0_33_c02_default_qui.jsonl` | licencias activas localizadas, incluida migración C02 a `quí` |
 | `dispositivo/generator/inputs/GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl` | átomos documentales/campo vinculados a las licencias v0.33 |
@@ -122,7 +126,14 @@ La copia discrepante permanece recuperable en el historial Git; no se conserva c
 
 La presencia de fuentes textuales del runtime no sustituye los binarios/datasets referenciados por el release.
 
-Después de transferir la SQLite v2.20, el árbol contiene 10 de los 75 payloads enumerados por el manifiesto original: 9 coinciden exactamente y uno presenta una discrepancia preservada. `DB_INTEGRITY_v0_2_15_3.json` tiene SHA-256 presente `bcd0cf4046eb0d949dce29f098bd5d5f5e9e657f2636ce592f76ddcbd082eae4`, distinto del hash de release `fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb`. No se reconstruyó ni sustituyó el archivo sin su fuente exacta.
+Después de transferir Dictionaria, el árbol contiene 13 de los 75 payloads enumerados por el manifiesto original y los 13 coinciden exactamente. La fuente raw de `DB_INTEGRITY_v0_2_15_3.json` confirmó que la copia previa difería sólo por un salto de línea final; la identidad exacta fue restaurada:
+
+```text
+SHA256 = fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb
+STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
+```
+
+La copia discrepante permanece recuperable en la genealogía Git.
 
 ### 3.2 `DIC_VERB_2385_v0_1.csv` transferido y verificado
 
@@ -144,6 +155,30 @@ UNIQUE_ENTRY_IDS = 2385
 ```
 
 La identidad coincide exactamente con el hash registrado antes de la transferencia. La ubicación coincide además con la resolución por defecto de `non_licensing_analyzer_orchestrator_v0_35.py`; no requiere pasar `--verb-inventory` para localizar este inventario. El intento provisional anterior mediante fragmentos base64 permanece documentado como `FAILED_INCOMPLETE_TRANSFER`: no produjo este archivo, no es su fuente y sus residuos fueron retirados del árbol activo.
+
+### 3.3 Dictionaria transferida y Analyzer v0.35 reproducible
+
+**Estado:** `MIGRATED / REPRODUCIBLE_NON_LICENSING_PARTIAL_ANALYZER`
+
+Los tres CSV fueron extraídos sin transformación del ZIP canónico y verificados contra `RELEASE_FILE_MANIFEST_v0_2_15_3.json`:
+
+```text
+DICTIONARIA_entries_v0_2_15_2.csv
+SHA256 = a093b8eb5087affb7d7d7f364bb0a423921c20e959d61fe7efcd85de62b249d0
+DATA_ROWS = 9012
+
+DICTIONARIA_senses_v0_2_15_2.csv
+SHA256 = 244769e4b3d724e5373feb3ccd26405c517340d05b70d962564ed4a4142d2afb
+DATA_ROWS = 9046
+
+DICTIONARIA_examples_v0_2_15_2.csv
+SHA256 = 2a6e906e8cc8dc43d69306a0a69332f257ae470b5caeb47d3aef72d17ba9af8b
+DATA_ROWS = 9686
+```
+
+`analyzer_v0_35_migrated_adapter.py` fija explícitamente las rutas a runtime, SQLite y `DIC_VERB` sin modificar el orquestador histórico. Las pruebas verifican carga completa, análisis parcial de una forma documentada y abstención ante una forma deliberadamente inexistente. En ambos casos permanecen en `false` las aserciones de licencia de generación, corrección, autoridad ortográfica y descubrimiento de reglas.
+
+La reproducibilidad declarada corresponde al Analyzer parcial no licenciante v0.35; no implica cobertura total, validación lingüística de sus salidas ni autoridad sobre COR001 o COR002.
 
 ## 4. P0 localizado y transferencia binaria
 
@@ -323,7 +358,15 @@ SQLite table verb_lexeme_class_v023
 SQLite table person_possession_exact_v0214
 ```
 
-Los módulos críticos de runtime listados arriba están presentes y varios fueron verificados exactamente contra el ZIP. `DIC_VERB` y la SQLite ya están migrados y verificados. Los tres CSV de Dictionaria siguen pendientes; el Analyzer no debe declararse reproducible fuera del paquete original hasta incorporarlos exactamente.
+Todas las dependencias enumeradas están presentes y verificadas. El Analyzer v0.35 puede instanciarse desde el repositorio mediante `analyzer_v0_35_migrated_adapter.py` y conserva su contrato `NON_LICENSING_PARTIAL_COMPONENT_ANALYSIS`.
+
+Smoke test documentado:
+
+```text
+"Quí rasé'" -> PARTIAL_ANALYSIS_NON_LICENSING
+forma deliberadamente inexistente -> ABSTAIN_NO_COMPONENT_EVIDENCE
+COR001 benchmark/gold/rule discovery -> false
+```
 
 ## 9. Otros artefactos localizados y pendientes
 
@@ -376,6 +419,8 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 6f92804d869fc8766f5b7e4bc782af813d5c4bb4  restore exact runtime v0.2.2 identity
 505f7125321c75238e90135e91667ae5544fa870  migrate exact SQLite v2.20
 64a98385c92c4ab1d31e13c5f9e44c108366fd01  reconcile migrated executable state
+f533bf667b0a7aca94426fb24016000761502e10  migrate exact Dictionaria analyzer inputs
+6d4de82f9d0062b8adce3efcf1a3e54a40c8dab7  restore exact DB integrity release identity
 ```
 
 `CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
@@ -385,9 +430,7 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 **P0 — conservar estado reproducible:**
 
 1. continuar la genealogía/identidad de los componentes restantes del runtime v0.2.15.3 cuyos archivos falten o no coincidan con el ZIP;
-2. recuperar los tres CSV exactos de Dictionaria requeridos por el Analyzer v0.35;
-3. recuperar bindings/licencias exactas restantes del Tutor_v0.33;
-4. localizar la fuente exacta de `DB_INTEGRITY_v0_2_15_3.json` o conservar explícitamente la discrepancia actual sin reconstrucción.
+2. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
 
 **P1 — reproducibilidad y límites:** guardrails, DevelopmentCorpusProtocol, reportes/tests/adapters y matrices BIB065.
 
@@ -408,6 +451,6 @@ Antes de incorporar una pieza:
 
 ## 14. Próxima acción
 
-**Siguiente P0 recomendado:** recuperar y transferir exactamente `DICTIONARIA_entries_v0_2_15_2.csv`, `DICTIONARIA_senses_v0_2_15_2.csv` y `DICTIONARIA_examples_v0_2_15_2.csv`. Verificar sus hashes contra el manifiesto del release antes de declarar reproducible el Analyzer v0.35.
+**Siguiente P0 recomendado:** continuar selectivamente la cadena textual del runtime disponible en el ZIP canónico, empezando por los módulos v0.2.6–v0.2.15.3 requeridos por el wrapper final y su prueba `test_surface_semantics_v0_2_15_3.py`. Verificar cada hash y dependencia antes de atribuir capacidad al Corrector/runtime final.
 
 La reconciliación técnica no cambia reglas lingüísticas, no convierte la readiness histórica en política actual y no bloquea COR002, corpus oral ni trabajo con hablantes.

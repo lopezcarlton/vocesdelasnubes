@@ -17,7 +17,12 @@ GENERATOR_DIR = ROOT / "dispositivo" / "generator"
 RUNTIME_DIR = ROOT / "dispositivo" / "runtime" / "v0_2_15_3"
 ANALYZER_DIR = ROOT / "dispositivo" / "analyzer"
 sys.path.insert(0, str(GENERATOR_DIR))
+sys.path.insert(0, str(ANALYZER_DIR))
 
+from analyzer_v0_35_migrated_adapter import (  # noqa: E402
+    build_migrated_analyzer,
+    migrated_execution_state as analyzer_execution_state,
+)
 from generator_v0_5_migrated_adapter import migrated_execution_state  # noqa: E402
 
 
@@ -66,6 +71,59 @@ class MigratedStateTests(unittest.TestCase):
         self.assertEqual(len(rows), 2385)
         self.assertEqual(len({row["entry_id"] for row in rows}), 2385)
 
+    def test_exact_dictionaria_inputs(self) -> None:
+        expected = {
+            "DICTIONARIA_entries_v0_2_15_2.csv": (
+                "a093b8eb5087affb7d7d7f364bb0a423921c20e959d61fe7efcd85de62b249d0",
+                9012,
+            ),
+            "DICTIONARIA_senses_v0_2_15_2.csv": (
+                "244769e4b3d724e5373feb3ccd26405c517340d05b70d962564ed4a4142d2afb",
+                9046,
+            ),
+            "DICTIONARIA_examples_v0_2_15_2.csv": (
+                "2a6e906e8cc8dc43d69306a0a69332f257ae470b5caeb47d3aef72d17ba9af8b",
+                9686,
+            ),
+        }
+        for name, (expected_hash, expected_rows) in expected.items():
+            path = RUNTIME_DIR / name
+            self.assertEqual(sha256(path), expected_hash)
+            with path.open(encoding="utf-8-sig", newline="") as source:
+                rows = list(csv.reader(source))
+            self.assertEqual(len(rows) - 1, expected_rows)
+
+    def test_analyzer_instantiates_and_preserves_non_licensing_limits(self) -> None:
+        state = analyzer_execution_state()
+        self.assertEqual(
+            state["status"],
+            "REPRODUCIBLE_NON_LICENSING_PARTIAL_ANALYZER",
+        )
+        self.assertEqual(state["dictionaria_entries"], 9012)
+        self.assertEqual(state["dictionaria_senses"], 9046)
+        self.assertEqual(state["dictionaria_examples"], 9686)
+        self.assertEqual(state["verb_inventory_rows"], 2385)
+        self.assertEqual(state["person_possession_exact_rows"], 100)
+        self.assertFalse(state["cor001_benchmark_allowed"])
+        self.assertFalse(state["research_authority_assertion"])
+
+        engine = build_migrated_analyzer()
+        try:
+            documented = engine.analyze("Quí rasé'", item_id="SMOKE-DOCUMENTED")
+            unknown = engine.analyze(
+                "FORMA_INEXISTENTE_SMOKE_20260901",
+                item_id="SMOKE-ABSTENTION",
+            )
+        finally:
+            engine.close()
+        self.assertEqual(documented["analysis_status"], "PARTIAL_ANALYSIS_NON_LICENSING")
+        self.assertEqual(unknown["analysis_status"], "ABSTAIN_NO_COMPONENT_EVIDENCE")
+        for result in (documented, unknown):
+            self.assertFalse(result["generation_license_assertion"])
+            self.assertFalse(result["correction_assertion"])
+            self.assertFalse(result["orthographic_authority_assertion"])
+            self.assertFalse(result["rule_discovery_assertion"])
+
     def test_generator_migrated_subset_instantiates(self) -> None:
         state = migrated_execution_state()
         self.assertEqual(state["status"], "MIGRATED_SUBSET_INSTANTIATES")
@@ -76,19 +134,24 @@ class MigratedStateTests(unittest.TestCase):
         self.assertEqual(sorted(state["integration_blockers"]), ["C03", "C04", "C05", "C06"])
         self.assertFalse(state["research_authority_assertion"])
 
-    def test_release_manifest_records_sqlite_and_known_integrity_mismatch(self) -> None:
+    def test_all_present_release_payloads_are_exact(self) -> None:
         manifest = json.loads(
             (RUNTIME_DIR / "RELEASE_FILE_MANIFEST_v0_2_15_3.json").read_text(encoding="utf-8")
         )
         expected = manifest["sha256"]
-        sqlite_name = "BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite"
-        integrity_name = "DB_INTEGRITY_v0_2_15_3.json"
-        self.assertEqual(sha256(RUNTIME_DIR / sqlite_name), expected[sqlite_name])
-        self.assertEqual(
-            sha256(RUNTIME_DIR / integrity_name),
-            "bcd0cf4046eb0d949dce29f098bd5d5f5e9e657f2636ce592f76ddcbd082eae4",
-        )
-        self.assertNotEqual(sha256(RUNTIME_DIR / integrity_name), expected[integrity_name])
+        present = {
+            name: sha256(RUNTIME_DIR / name)
+            for name in expected
+            if (RUNTIME_DIR / name).is_file()
+        }
+        mismatches = {
+            name: actual
+            for name, actual in present.items()
+            if actual != expected[name]
+        }
+        self.assertEqual(len(present), 13)
+        self.assertEqual(mismatches, {})
+        self.assertEqual(len(expected) - len(present), 62)
 
 
 if __name__ == "__main__":
