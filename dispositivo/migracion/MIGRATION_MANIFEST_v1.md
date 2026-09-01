@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-01 — checkpoints NC001 v3/v4 y contrato round-trip v0.2 recuperados desde paquete exacto local  
+**Última actualización:** 2026-09-01 — DIC_VERB_2385_v0_1.csv transferido íntegramente y verificado por hash
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
 
@@ -63,6 +63,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/generator/inputs/ParadigmTable_v1.csv` | tabla de celdas TAM/persona y procedencia del slice |
 | `dispositivo/validation/ValidationQueue_v0.jsonl` | cola de validación/desarrollo audio-first |
 | `dispositivo/analyzer/non_licensing_analyzer_orchestrator_v0_35.py` | Analyzer parcial no licenciante con contexto opcional |
+| `dispositivo/analyzer/DIC_VERB_2385_v0_1.csv` | inventario operacional exacto de 2,385 verbos; SHA-256 verificado; ruta por defecto del Analyzer v0.35 |
 | `dispositivo/generator/generator_v0_5.py` | implementación más reciente del Generator_v0 localizada en paquete v0.36.2 |
 | `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot de readiness más reciente localizado en paquete v0.36.2 |
 | `dispositivo/tutor/tutor_v0_33.py` | Tutor renderer conservador: sólo explica análisis con binding exacto y licencia activa; no analiza/corrige/genera |
@@ -105,6 +106,27 @@ ESTADO_MAESTRO_CORRECTOR_DIDXAZA_v2_21.md Git blob 4707a4a8371eb072451f46d5cb6c2
 
 La presencia de fuentes textuales del runtime no sustituye los binarios/datasets referenciados por el release.
 
+### 3.2 `DIC_VERB_2385_v0_1.csv` transferido y verificado
+
+**Estado:** `MIGRATED`
+
+El archivo raw completo quedó disponible el 2026-09-01 y fue transferido sin transformación a:
+
+`dispositivo/analyzer/DIC_VERB_2385_v0_1.csv`
+
+Verificación:
+
+```text
+SHA256 = 2bdf4afd4b61234c54585cda17ad648bfb71194e9463d193eb04a5a06aa3183d
+SIZE = 767310 bytes
+DATA_ROWS = 2385
+COLUMNS = 27
+RAGGED_ROWS = 0
+UNIQUE_ENTRY_IDS = 2385
+```
+
+La identidad coincide exactamente con el hash registrado antes de la transferencia. La ubicación coincide además con la resolución por defecto de `non_licensing_analyzer_orchestrator_v0_35.py`; no requiere pasar `--verb-inventory` para localizar este inventario. El intento provisional anterior mediante fragmentos base64 permanece documentado como `FAILED_INCOMPLETE_TRANSFER`: no produjo este archivo, no es su fuente y sus residuos fueron retirados del árbol activo.
+
 ## 4. P0 localizado, todavía pendiente
 
 ### runtime lingüístico v0.2.15.3 — cierre de transferencia
@@ -130,21 +152,6 @@ FOREIGN_KEY_VIOLATIONS = 0
 ```
 
 No se creó un sustituto textual ni una base reconstruida. Sigue pendiente una vía de transferencia binaria íntegra. Deben preservarse también los schemas/tablas consumidos por Analyzer, en particular `verb_lexeme_class_v023` y `person_possession_exact_v0214`.
-
-### `DIC_VERB_2385_v0_1.csv`
-
-**Estado:** `SOURCE_COMPLETE_READY_TO_MIGRATE`
-
-Fuente exacta localizada en el paquete del Analyzer y re-localizada en File Library durante la pasada del 2026-09-01. La interfaz disponible expone una vista parseada/truncada, no los bytes crudos completos; por ello no se reconstruye ni se copia parcialmente.
-
-El 2026-09-01 se intentó una transferencia exacta provisional mediante fragmentos base64 de un flujo comprimido. El fragmento 13 resultó malformado, fue retirado y el ensamblaje restante no superó la descompresión ni podía alcanzar la verificación de hash. Ese intento queda registrado como `FAILED_INCOMPLETE_TRANSFER`: no produjo `DIC_VERB_2385_v0_1.csv`, no modifica el estado del artefacto fuente y sus fragmentos, workflow temporal y archivo de prueba fueron retirados del árbol activo.
-
-```text
-SHA256 = 2bdf4afd4b61234c54585cda17ad648bfb71194e9463d193eb04a5a06aa3183d
-SIZE ≈ 767 KB
-```
-
-Es dependencia local por defecto del Analyzer v0.35. Sigue pendiente por transferencia exacta; no debe reconstruirse.
 
 ## 5. Generator_v0 — estado de reproducibilidad recuperado
 
@@ -343,8 +350,7 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 
 1. cerrar la genealogía/identidad de todo el runtime v0.2.15.3, especialmente cualquier archivo cuyo blob no coincida con el ZIP;
 2. transferir la SQLite v2.20 exacta por una vía binaria segura y preservar/exportar sus schemas sin sustituir el binario;
-3. migrar `DIC_VERB_2385_v0_1.csv` exacto;
-4. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
+3. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
 
 **P1 — reproducibilidad y límites:** guardrails, DevelopmentCorpusProtocol, reportes/tests/adapters y matrices BIB065.
 
@@ -365,6 +371,6 @@ Antes de incorporar una pieza:
 
 ## 14. Próxima acción
 
-**Siguiente P0 recomendado:** transferir íntegramente `DIC_VERB_2385_v0_1.csv` desde la fuente exacta ya localizada. La fuente fue re-localizada en File Library en esta pasada, pero la interfaz disponible no expone los bytes completos; no reconstruir desde la vista parseada.
+**Siguiente P0 recomendado:** cerrar el diff genealógico de `didxaza_runtime_v0_2_2_context_provenance.py` frente al ZIP exacto antes de sobrescribir o declarar identidad del módulo.
 
-En paralelo, cerrar el diff genealógico de `didxaza_runtime_v0_2_2_context_provenance.py` y mantener `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` como `BINARY_TRANSFER_PENDING` hasta contar con una vía binaria segura.
+Mantener `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` como `BINARY_TRANSFER_PENDING` hasta contar con acceso a sus bytes completos y una vía binaria segura.
