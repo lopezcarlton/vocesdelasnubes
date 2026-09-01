@@ -303,7 +303,7 @@ DEFAULT_SOURCE_PROFILES = (
     SourceProfile(
         source_id="BIB056_CUADERNO_2015",
         source_type="LITERACY_MATERIAL",
-        evidence_roles=("CONTEMPORARY_USAGE", "ORTHOGRAPHY_PEDAGOGICAL", "TONE_PEDAGOGY"),
+        evidence_roles=("CONTEMPORARY_USAGE", "ORTHOGRAPHY_PEDAGOGICAL", "TONE_PEDAGOGICAL"),
         historical_period="2015",
         communities=("LA_VENTOSA", "SANTA_MARIA_XADANI", "JUCHITAN"),
         dialect_scope=("MULTI_COMMUNITY",),

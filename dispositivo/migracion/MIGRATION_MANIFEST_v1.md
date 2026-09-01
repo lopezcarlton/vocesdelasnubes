@@ -2,7 +2,8 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-01 — DIC_VERB_2385_v0_1.csv transferido íntegramente y verificado por hash
+**Última actualización:** 2026-09-01 — identidad exacta del módulo runtime v0.2.2 restaurada y verificada
+
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
 
@@ -95,6 +96,7 @@ En el repositorio ya se localizaron bajo `dispositivo/runtime/v0_2_15_3/` el REA
 ```text
 didxaza_runtime_v0_2_0_foundation.py      Git blob 734c3670f1a9edfbb3a6dddc270ab9e5b6df1901
 didxaza_runtime_v0_2_1_retrieval.py       Git blob 057c37460dcea9ddf383dbf69d63f85caf6bf7ce
+didxaza_runtime_v0_2_2_context_provenance.py Git blob 14f7786c2f6fd5d79844750768878c7a75889f2c
 didxaza_runtime_v0_2_3_morphology_i.py    Git blob 00077c987fab1c49144c0f853e23226c82fac9e9
 didxaza_runtime_v0_2_4_bound.py           Git blob 183e02d73e83a34e3675548ccf8fbb51763f3390
 didxaza_runtime_v0_2_5_morphology_ii.py   Git blob 50e3a121d20d65b4f94b300fa34e2b80980b5c66
@@ -102,7 +104,17 @@ README_v0_2_15_3.md                       Git blob 0dddbbf8ca1d0282b840e2c76e5ae
 ESTADO_MAESTRO_CORRECTOR_DIDXAZA_v2_21.md Git blob 4707a4a8371eb072451f46d5cb6c2b2e98286353
 ```
 
-`didxaza_runtime_v0_2_2_context_provenance.py` está presente en el repositorio pero **no se declaró identidad exacta** en esta pasada: el blob/size del repo no coincide con el archivo del ZIP y requiere diff de genealogía antes de sobrescribir.
+`didxaza_runtime_v0_2_2_context_provenance.py` fue comparado con la fuente raw exacta del release. La copia inicialmente migrada tenía SHA-256 `8ce24975ad88bbbe352afcec6cd438d785fbe335bed12bd14c51a7551a5e8744` y difería en un único valor de `evidence_roles`: `TONE_PEDAGOGY` en vez de `TONE_PEDAGOGICAL`. El historial no registra esa variante como revisión posterior; entró con el commit inicial de migración.
+
+La fuente exacta compila, no tiene consumidores que dependan del valor discrepante y coincide con el manifiesto del release:
+
+```text
+SHA256 = 57fcc152333c7817046cec6004bb77832a0c0f34bb4ddf75b4f4444ecfe9b347
+GIT_BLOB = 14f7786c2f6fd5d79844750768878c7a75889f2c
+STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
+```
+
+La copia discrepante permanece recuperable en el historial Git; no se conserva como variante activa.
 
 La presencia de fuentes textuales del runtime no sustituye los binarios/datasets referenciados por el release.
 
@@ -348,7 +360,7 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 
 **P0 — conservar estado reproducible:**
 
-1. cerrar la genealogía/identidad de todo el runtime v0.2.15.3, especialmente cualquier archivo cuyo blob no coincida con el ZIP;
+1. continuar la genealogía/identidad de los componentes restantes del runtime v0.2.15.3 cuyos archivos falten o no coincidan con el ZIP;
 2. transferir la SQLite v2.20 exacta por una vía binaria segura y preservar/exportar sus schemas sin sustituir el binario;
 3. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
 
@@ -371,6 +383,6 @@ Antes de incorporar una pieza:
 
 ## 14. Próxima acción
 
-**Siguiente P0 recomendado:** cerrar el diff genealógico de `didxaza_runtime_v0_2_2_context_provenance.py` frente al ZIP exacto antes de sobrescribir o declarar identidad del módulo.
+**Siguiente P0 recomendado:** transferir `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` únicamente cuando estén disponibles sus bytes completos; verificar SHA-256, `PRAGMA integrity_check` y violaciones de claves foráneas antes de declararla migrada.
 
-Mantener `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` como `BINARY_TRANSFER_PENDING` hasta contar con acceso a sus bytes completos y una vía binaria segura.
+Mientras no exista acceso raw, mantenerla como `BINARY_TRANSFER_PENDING` y continuar con componentes textuales exactos del runtime sin reconstruir sustitutos.
