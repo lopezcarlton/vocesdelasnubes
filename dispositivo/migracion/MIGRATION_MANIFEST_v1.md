@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-01 — pasada P0 desde chat histórico v0.34 + recuperación runtime v0.2.15.3  
+**Última actualización:** 2026-09-01 — JUCHITAN_LINGUISTIC_CORE v0.27 transferido desde fuente completa del chat  
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
 
@@ -49,6 +49,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/migracion/fuentes/MVP_REUSE_MAP_v1.md` | mapa de reutilización/cuarentena del vertical slice |
 | `dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md` | protocolo de migración directa |
 | `dispositivo/core/NUCLEO_CONVERSACIONAL_001_SCOPE_v1.md` | scope exacto del vertical slice NC001 |
+| `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md` | fuente completa migrada desde el archivo adjunto del chat; `EXPERIMENTAL_CORE`, no autoridad lingüística definitiva |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` | estado post Generator_v0; hashes runtime/SQLite y ausencia del orquestador canónico en ese hito |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v34_POST_C02_DEFAULT_QUI_MIGRATION.md` | transición C02 al default juchiteco `quí`; `qué` preservado como variante secundaria |
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` | estado del grafo/priorizador v0.34; COR001 continúa `ANALYSIS_TARGET_ONLY` |
@@ -101,18 +102,6 @@ ESTADO_MAESTRO_CORRECTOR_DIDXAZA_v2_21.md Git blob 4707a4a8371eb072451f46d5cb6c2
 La presencia de fuentes textuales del runtime no sustituye los binarios/datasets referenciados por el release.
 
 ## 4. P0 localizado, todavía pendiente
-
-### `JUCHITAN_LINGUISTIC_CORE_v0_27.md`
-
-**Estado:** `RECOVERABLE_SOURCE_LOCATED`
-
-Fuente completa claramente identificada en File Library con encabezado `JUCHITAN_LINGUISTIC_CORE — v0.27`, estado `EXPERIMENTAL_CORE` y consumidores Analyzer/Corrector/Tutor/Generator. En esta interfaz sólo se obtuvieron vistas parciales/truncadas; no se migró desde fragmentos.
-
-Destino previsto:
-
-`dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`
-
-Los fixtures `JUCHITAN_LINGUISTIC_CORE_v0_27_BLIND_STRICT_FIXTURE*.md` son artefactos de prueba y **no sustituyen** el core de producción.
 
 ### runtime lingüístico v0.2.15.3 — cierre de transferencia
 
@@ -208,7 +197,7 @@ Se localizaron al menos:
 v0.1 -> ... -> v0.23 -> ... -> v0.27
 ```
 
-`v0.27` es la versión de referencia más reciente verificable en este entorno. Los `BLIND_STRICT_FIXTURE` de v0.27 son derivados de evaluación y no una nueva baseline lingüística.
+`v0.27` es la versión de referencia más reciente verificable en este entorno y quedó migrada íntegramente desde la fuente completa adjunta en este chat. Los `BLIND_STRICT_FIXTURE` de v0.27 son derivados de evaluación y no una nueva baseline lingüística.
 
 ### Generator_v0
 
@@ -318,6 +307,7 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 94d281f825755e0dd6168426140d4317cbc3b216  migrate NC001 orthographic profile draft
 05e996c2ce765aa98649978703032a443578a6e6  migrate Generator generation license v0.33
 96135569ccb08f0dcc2738bee8bdd2a23cd6b977  migrate Generator evidence atoms v0.33
+554ce87239d9aa7b4a7f04be1f9378ece7afde47  migrate Juchitán linguistic core v0.27
 ```
 
 `CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
@@ -326,11 +316,10 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 
 **P0 — conservar estado reproducible:**
 
-1. `JUCHITAN_LINGUISTIC_CORE_v0_27.md` completo, sin reconstrucción desde fragmentos;
-2. cerrar la genealogía/identidad de todo el runtime v0.2.15.3, especialmente cualquier archivo cuyo blob no coincida con el ZIP;
-3. transferir la SQLite v2.20 exacta por una vía binaria segura y preservar/exportar sus schemas sin sustituir el binario;
-4. migrar `DIC_VERB_2385_v0_1.csv` exacto;
-5. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
+1. cerrar la genealogía/identidad de todo el runtime v0.2.15.3, especialmente cualquier archivo cuyo blob no coincida con el ZIP;
+2. transferir la SQLite v2.20 exacta por una vía binaria segura y preservar/exportar sus schemas sin sustituir el binario;
+3. migrar `DIC_VERB_2385_v0_1.csv` exacto;
+4. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
 
 **P1 — reproducibilidad y límites:** guardrails, DevelopmentCorpusProtocol, reportes/tests/adapters y matrices BIB065.
 
@@ -351,6 +340,6 @@ Antes de incorporar una pieza:
 
 ## 14. Próxima acción
 
-**Siguiente P0 recomendado:** recuperar y transferir íntegramente `JUCHITAN_LINGUISTIC_CORE_v0_27.md` desde la fuente completa ya localizada en File Library, sin reconstruirlo desde vistas parciales.
+**Siguiente P0 recomendado:** migrar íntegramente `DIC_VERB_2385_v0_1.csv` desde la fuente exacta ya localizada, porque es una dependencia directa y transferible del Analyzer v0.35.
 
-Después: cerrar la transferencia binaria de `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` y el inventario `DIC_VERB_2385_v0_1.csv`, porque son dependencias directas para reproducir el Analyzer fuera de los paquetes históricos.
+En paralelo, cerrar el diff genealógico de `didxaza_runtime_v0_2_2_context_provenance.py` y mantener `BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` como `BINARY_TRANSFER_PENDING` hasta contar con una vía binaria segura.
