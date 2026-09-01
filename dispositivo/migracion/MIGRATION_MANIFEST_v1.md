@@ -11,11 +11,18 @@ La migración preserva conocimiento, procedencia y capacidad reproducible. **No 
 
 Se rige por `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`.
 
+Para migración directa desde chats históricos o activos del dispositivo se utiliza:
+
+`dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md`
+
+Ese protocolo establece que la unidad de migración es el artefacto o estado recuperable, no el chat completo, y permite que distintos chats contribuyan directamente al mismo manifiesto sin generar primero un Markdown monolítico por conversación.
+
 ```text
 MIGRATED_ARTIFACT != IMMUTABLE_RULE
 IMPLEMENTED_CAPABILITY != RESEARCH_AUTHORITY
 MIGRATION_STATUS != PEDAGOGICAL_PRIORITY
 MIGRATION_INCOMPLETE != RESEARCH_BLOCKED
+CHAT != MIGRATION_ARTIFACT
 ```
 
 COR001, COR002, corpus oral, trabajo con hablantes, investigación pedagógica, lectura bibliográfica y nuevas hipótesis pueden continuar durante la migración salvo dependencia técnica concreta.
@@ -29,6 +36,9 @@ COR001, COR002, corpus oral, trabajo con hablantes, investigación pedagógica, 
 - `NOT_LOCATED_IN_CURRENT_PASS`: no apareció en esta búsqueda; no equivale a perdido.
 - `SUPERSEDED`: antecedente que no representa el estado vigente.
 - `ARCHIVE_ONLY`: trazabilidad histórica, no pieza activa.
+- `SOURCE_COMPLETE_READY_TO_MIGRATE`: fuente completa disponible y lista para copia exacta.
+- `SOURCE_PARTIAL_DO_NOT_MIGRATE`: sólo existe contenido parcial o truncado.
+- `BINARY_TRANSFER_PENDING`: artefacto identificado cuya transferencia íntegra no es posible todavía con la herramienta disponible.
 
 Ningún estado concede autoridad lingüística o pedagógica.
 
@@ -42,6 +52,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/PROVENANCE_LABEL_CROSSWALK_v0_1.md` | equivalencias de procedencia |
 | `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` | discusión pedagógica no normativa |
 | `dispositivo/migracion/fuentes/MVP_REUSE_MAP_v1.md` | mapa de reutilización/cuarentena del vertical slice |
+| `dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md` | protocolo para migración directa desde chats históricos/activos |
 
 ## 4. P0 ya localizado, pendiente de migración íntegra
 
@@ -130,6 +141,29 @@ Antes de incorporar una pieza:
 5. determinar si es estado, ejecutable o historia;
 6. impedir que su copia sea interpretada como nueva regla lingüística o pedagógica.
 
-## 10. Próxima acción
+## 10. Migración distribuida entre chats
 
-Localizar el paquete o artefacto que permita recuperar **íntegramente** `JUCHITAN_LINGUISTIC_CORE_v0_27` y, en paralelo, los archivos posteriores de NC001/Generator_v0. No escribir ni reconstruir código hasta agotar recuperación documental y de paquetes existentes.
+Los chats históricos del dispositivo pueden ejecutar `MIGRATION_AGENT_PROTOCOL_v1.md` de manera independiente.
+
+Cada uno debe:
+
+1. leer este manifiesto en su versión más reciente;
+2. inspeccionar únicamente artefactos realmente accesibles en su propio contexto;
+3. migrar directamente fuentes completas y claramente identificadas;
+4. registrar referencias para archivos parciales, binarios o no transferibles;
+5. actualizar este manifiesto al terminar;
+6. no sobrescribir otra versión del mismo artefacto sin resolver genealogía.
+
+El manifiesto funciona como memoria compartida entre chats y evita depender de una extracción Markdown chat por chat.
+
+## 11. Próxima acción
+
+Ejecutar `MIGRATION_AGENT_PROTOCOL_v1.md` primero en el chat principal donde se desarrolló el dispositivo, con prioridad sobre:
+
+1. `JUCHITAN_LINGUISTIC_CORE_v0_27` completo;
+2. estado posterior de `NUCLEO_CONVERSACIONAL_001`;
+3. runtime v0.2.15.3 y SQLite v2.20;
+4. `Generator_v0`;
+5. inventarios, paradigmas y `ValidationQueue_v0`.
+
+No escribir ni reconstruir código hasta agotar recuperación documental y de paquetes existentes.
