@@ -16,7 +16,7 @@ Como mínimo debe admitir:
 
 1. **palabra o forma aislada**;
 2. **frase o enunciado aislado**;
-3. **microinteracción** — secuencia breve de varios turnos;
+3. **microescena** — secuencia breve de varios turnos;
 4. **conversación o escena completa**;
 5. **discurso de varios turnos o segmentos continuos** cuando exista contexto suficiente.
 
@@ -30,7 +30,7 @@ Por tanto:
 
 - una palabra aislada sigue siendo un objeto legítimo de análisis;
 - una frase aislada sigue siendo un objeto legítimo de análisis;
-- una microinteracción puede analizar relaciones entre turnos;
+- una microescena puede analizar relaciones entre turnos;
 - una conversación completa puede activar análisis discursivo más rico;
 - la ausencia de contexto debe producir límites explícitos o abstención cuando corresponda, no la falsa conclusión de que la unidad es inválida.
 
@@ -38,7 +38,7 @@ Por tanto:
 
 ## Relación con COR002
 
-COR002 utiliza la conversación completa como unidad primaria de diseño, pero puede contener o derivar también microinteracciones, frases sueltas y otras unidades pedagógicas.
+COR002 utiliza la conversación completa como unidad primaria de diseño, pero puede contener o derivar también microescenas, frases sueltas y otras unidades pedagógicas.
 
 La elección de una unidad pedagógica de COR002 no limita el alcance del Analyzer.
 
