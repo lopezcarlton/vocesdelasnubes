@@ -35,6 +35,20 @@ Cuando una prueba del dispositivo revele un hallazgo relevante, éste debe segui
 
 > evidencia → hallazgo → revisión → decisión → incorporación al Sistema de Conocimiento
 
+## Investigación abierta
+
+El dispositivo se rige por `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`.
+
+Su función es ampliar la capacidad de investigar, no cerrar la investigación. Una representación implementada puede ser provisional, quedar superseded, ser útil sólo para una prueba o necesitar revisión posterior.
+
+```text
+IMPLEMENTED_CAPABILITY != RESEARCH_AUTHORITY
+MIGRATED_ARTIFACT != IMMUTABLE_RULE
+CURRENT_RUNTIME != FINAL_ARCHITECTURE
+```
+
+La reproducibilidad exige saber qué se utilizó en una prueba concreta; no exige mantenerlo indefinidamente cuando nueva evidencia justifique cambiarlo.
+
 ## Relación con los cuatro componentes
 
 La arquitectura de trabajo distingue cuatro funciones que comparten un núcleo lingüístico:
@@ -104,6 +118,12 @@ La migración puede encontrar etiquetas históricas diferentes para métodos de 
 No se reescribirán silenciosamente. Se conservará la etiqueta original y, cuando sea posible, una equivalencia canónica separada.
 
 Referencia: `PROVENANCE_LABEL_CROSSWALK_v0_1.md`.
+
+La recuperación técnica se organiza en:
+
+`migracion/MIGRATION_MANIFEST_v1.md`
+
+Ese manifiesto clasifica artefactos por estado y prioridad. La migración es una línea de preservación paralela: **su incompletitud no bloquea automáticamente COR002, corpus oral, trabajo con hablantes, lectura bibliográfica ni nueva investigación lingüística o pedagógica**.
 
 ## Frontera con documentos institucionales
 
