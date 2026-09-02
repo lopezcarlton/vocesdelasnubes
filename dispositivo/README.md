@@ -1,39 +1,75 @@
-# DISPOSITIVO LINGÜÍSTICO — CAPA EXPERIMENTAL
+# DISPOSITIVO LINGÜÍSTICO — CAPA EXPERIMENTAL DERIVADA
 
 **Proyecto:** Voces de las Nubes  
-**Estado:** no canónico / experimental  
-**Fecha de creación:** 2026-08-31
+**Estado:** `DERIVED_SYSTEM / NON_CANONICAL / EXPERIMENTAL`  
+**Fecha de creación:** 2026-08-31  
+**Frontera de autoridad actualizada:** 2026-09-02
+
+## Reentrada técnica
+
+Para trabajo explícitamente técnico sobre Analyzer, Corrector, Tutor, Generator, runtime, tests, schemas o migración, iniciar en:
+
+`REENTRY_TECNICO.md`
+
+El punto de entrada general de Voces de las Nubes permanece en `../INICIAR_AQUI_CHAT_NUEVO.md` y **no carga esta capa por defecto**.
 
 ## Propósito
 
-Esta carpeta documenta el trabajo interno desarrollado en paralelo para convertir el conocimiento lingüístico del proyecto en capacidades operativas de:
+Esta carpeta conserva el trabajo interno desarrollado para convertir conocimiento aprobado del proyecto en capacidades operativas de:
 
 - análisis;
 - revisión y normalización;
 - explicación pedagógica;
-- generación controlada de estímulos y materiales.
+- producción controlada de estímulos y materiales.
 
-La carpeta existe para evitar que ese trabajo quede disperso entre chats, bases locales, scripts, paquetes de migración y documentos técnicos.
+También preserva genealogía, hipótesis ejecutables, estados históricos y capacidad reproducible de investigación técnica.
 
-## Regla fundamental
+## Regla fundamental de autoridad
 
-**`dispositivo/` no es una segunda fuente de verdad lingüística.**
+**`dispositivo/` no es una segunda fuente de verdad lingüística, pedagógica, metodológica ni comunitaria.**
 
-El Sistema de Conocimiento canónico permanece en `conocimiento/` y en los documentos constitucionales del repositorio.
+El Sistema de Conocimiento permanece en `conocimiento/` y en los documentos constitucionales del repositorio.
 
-El dispositivo:
+La decisión vigente es `conocimiento/decisiones/DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO.md`.
 
-- consume conocimiento documentado;
-- representa hipótesis de forma ejecutable;
-- prueba reglas y relaciones;
-- detecta vacíos o contradicciones;
-- puede producir candidatos de análisis o revisión.
+```text
+DEVICE_MAY_READ = true
+DEVICE_MAY_ANALYZE = true
+DEVICE_MAY_PROPOSE = true
+DEVICE_MAY_CHALLENGE = true
 
-El dispositivo **no puede modificar automáticamente el conocimiento canónico**.
+DEVICE_MAY_ADOPT_KNOWLEDGE = false
+DEVICE_MAY_PROMOTE_CANDIDATE = false
+DEVICE_MAY_WRITE_KNOWLEDGE = false
+```
 
-Cuando una prueba del dispositivo revele un hallazgo relevante, éste debe seguir el procedimiento normal del proyecto:
+La expresión **no puede escribir conocimiento** es más fuerte que “no puede modificar automáticamente”. Una persona o agente trabajando como desarrollador del dispositivo tampoco adquiere autoridad sobre `conocimiento/` por tener capacidad técnica para analizarlo.
 
-> evidencia → hallazgo → revisión → decisión → incorporación al Sistema de Conocimiento
+Los futuros desarrolladores del dispositivo **no tendrán por defecto permisos de escritura sobre el Sistema de Conocimiento**. Mientras ambas capas sigan materializadas en este repositorio, `.github/CODEOWNERS` documenta ownership; la protección efectiva de ramas/rulesets debe configurarse en GitHub y no se presume activa únicamente por existir ese archivo.
+
+## Flujo correcto de descubrimientos
+
+El dispositivo puede localizar un problema real. Eso no obliga a ignorarlo; obliga a devolverlo por la vía correcta.
+
+```text
+DISPOSITIVO_DETECTA_X
+-> identifica la fuente original o evidencia pertinente
+-> devuelve candidato / contradicción / requisito
+-> Voces de las Nubes registra la entidad correspondiente
+-> adjudica con autoridad pertinente
+-> adopta mediante DEC cuando corresponda
+-> actualiza las vistas canónicas
+-> el dispositivo consume después el nuevo estado aprobado
+```
+
+Nunca:
+
+```text
+DISPOSITIVO_DETECTA_X
+-> EDITA_DIRECTAMENTE_PEDAGOGIA_TEORIA_CORPUS_METODOLOGIA
+```
+
+Un resultado técnico puede ser evidencia válida sobre **el comportamiento del dispositivo**. No se convierte por ello en evidencia lingüística, pedagógica o comunitaria.
 
 ## Investigación abierta
 
@@ -75,13 +111,13 @@ Debe conservar siempre la forma original y abstenerse cuando la evidencia no sea
 
 ### TUTOR
 
-Transforma conocimiento documentado en explicaciones pedagógicas por capas. Debe distinguir con claridad qué parte de una explicación proviene de una fuente, qué parte es análisis y qué parte permanece incierta.
+Transforma conocimiento aprobado y análisis trazable en explicaciones por capas. Debe distinguir con claridad qué parte proviene de una fuente, qué parte es análisis y qué parte permanece incierta.
 
 ### GENERATOR
 
-Ayuda a construir situaciones, escenas, estímulos y restricciones para el corpus. No debe usar el español como plantilla gramatical dominante ni tratar una propuesta generada como Didxazá validado.
+Ayuda a explorar borradores, situaciones, escenas, estímulos y restricciones. No puede convertir una propuesta generada en Didxazá validado ni definir por sí mismo política pedagógica.
 
-El español continúa siendo el puente semántico y de trabajo vigente del sistema. Al 2026-08-31 no existe una decisión de sustituirlo por una representación previa obligatoria. Cualquier arquitectura alternativa deberá discutirse y adoptarse explícitamente antes de modificar este principio.
+Cualquier requisito futuro de generación debe derivarse de un estado aprobado del Sistema de Conocimiento y quedar identificado por versión/commit.
 
 ## Núcleo compartido
 
@@ -89,21 +125,19 @@ Los cuatro componentes deben consumir un núcleo lingüístico común para evita
 
 El núcleo experimental localizado está preservado en `core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`. Bases, runtimes, inventarios, pruebas y paquetes tienen grados distintos de transferencia y reproducibilidad.
 
-La incorporación de esta carpeta **no implica que todos esos artefactos hayan sido migrados ni que todo lo migrado sea ejecutable**. `ESTADO_ACTUAL_2026-08-31.md` conserva el snapshot previo a la migración; el inventario acumulado está en `migracion/MIGRATION_MANIFEST_v1.md` y el estado materializado más reciente en `migracion/CURRENT_EXECUTABLE_STATE_v1.md`.
+La incorporación de esta carpeta **no implica que todos esos artefactos hayan sido migrados ni que todo lo migrado sea ejecutable**. `ESTADO_ACTUAL_2026-08-31.md` conserva un snapshot histórico; el inventario acumulado está en `migracion/MIGRATION_MANIFEST_v1.md` y el estado materializado más reciente en `migracion/CURRENT_EXECUTABLE_STATE_v1.md`.
 
-## Discusión pedagógica derivada del dispositivo
+## Discusión pedagógica surgida durante trabajo técnico
 
-La subcarpeta `pedagogia/` conserva documentos de discusión producidos durante el trabajo del dispositivo cuando puedan afectar preguntas pedagógicas.
+La subcarpeta `pedagogia/` conserva documentos de discusión producidos durante trabajo técnico cuando puedan formular preguntas útiles para el proyecto.
 
-Estos documentos **no son política pedagógica** y no modifican automáticamente `conocimiento/PEDAGOGIA.md`, COR002 ni las reglas del Generator.
+Estos documentos son **candidatos o genealogía**, no política pedagógica, y no pueden utilizarse como `provenance` autoritativa de una entidad de `conocimiento/`.
 
 Actualmente contiene:
 
-- `pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` — discusión congelada posterior a la lectura intensiva de Bueno Holle 2019. Su estado interno es `FROZEN_DISCUSSION_INPUT_NOT_POLICY`.
+- `pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` — `FROZEN_DISCUSSION_INPUT_NOT_POLICY`.
 
-La función de esta subcarpeta es impedir que el razonamiento quede fuera del repositorio sin confundirlo con una decisión adoptada.
-
-Reglas de frontera útiles:
+Cuando un documento de este tipo sugiera una consecuencia válida, debe volver a la fuente original y al procedimiento de actualización de Voces de las Nubes.
 
 ```text
 ANALYZER_CAPABILITY != BEGINNER_REQUIREMENT
@@ -111,11 +145,18 @@ GENERATION_LICENSE != TEACHING_PRIORITY
 PEDAGOGICAL_DISCUSSION != AUTOMATIC_POLICY
 ```
 
+## Backlog técnico
+
+Las tareas propias de implementación viven en `BACKLOG_TECNICO.md` y no en el backlog estructural canónico `../02_BACKLOG.md`.
+
+```text
+TECHNICAL_BACKLOG != KNOWLEDGE_BACKLOG
+IMPLEMENTATION_TASK != PEDAGOGICAL_DECISION
+```
+
 ## Procedencia y migración
 
-La migración puede encontrar etiquetas históricas diferentes para métodos de obtención de evidencia.
-
-No se reescribirán silenciosamente. Se conservará la etiqueta original y, cuando sea posible, una equivalencia canónica separada.
+La migración puede encontrar etiquetas históricas diferentes para métodos de obtención de evidencia. No se reescribirán silenciosamente.
 
 Referencia: `PROVENANCE_LABEL_CROSSWALK_v0_1.md`.
 
@@ -123,22 +164,16 @@ La recuperación técnica se organiza en:
 
 `migracion/MIGRATION_MANIFEST_v1.md`
 
-Ese manifiesto clasifica artefactos por estado y prioridad. La migración es una línea de preservación paralela: **su incompletitud no bloquea automáticamente COR002, corpus oral, trabajo con hablantes, lectura bibliográfica ni nueva investigación lingüística o pedagógica**.
+La migración es una línea de preservación paralela. Su incompletitud no bloquea automáticamente corpus oral, trabajo con hablantes, lectura bibliográfica ni nueva investigación segura.
 
-## Frontera con documentos institucionales
+## Separación física futura
 
-Esta capa utiliza nombres funcionales internos para permitir trabajo técnico y trazable.
+La coexistencia actual de `conocimiento/` y `dispositivo/` en el mismo repositorio se conserva temporalmente por genealogía y reproducibilidad. No representa el diseño final de permisos.
 
-Los informes institucionales y documentos de cara al público describen sus resultados mediante expresiones como:
+La separación física futura debe seguir `migracion/DEVICE_REPOSITORY_SEPARATION_PLAN_v1.md` y preservar el replay y las identidades exactas antes de retirar el dispositivo activo de Voces de las Nubes.
 
-- sistema lingüístico documental;
-- herramientas internas de análisis y revisión;
-- apoyo pedagógico;
-- generación controlada de materiales;
-- documentación lingüística trazable.
-
-No es necesario describir en esos documentos los mecanismos tecnológicos internos.
+El contrato de consumo entre ambas capas se documenta en `KNOWLEDGE_CONSUMPTION_CONTRACT_v1.md`.
 
 ## Regla de publicación
 
-Los archivos de esta carpeta son documentación de trabajo. No deben citarse como norma del Didxazá ni como consenso comunitario.
+Los archivos de esta carpeta son documentación técnica de trabajo. No deben citarse como norma del Didxazá, decisión pedagógica vigente ni consenso comunitario.
