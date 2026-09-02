@@ -96,13 +96,15 @@ La carpeta `dispositivo/` conserva el estado de herramientas lingüísticas expe
 
 ### COR001
 
-**Abierto, en consolidación.**
+**Artefacto históricamente abierto; rol operativo actual: `ANALYSIS_TARGET_ONLY`.**
 
 COR001 contiene 107 frases. El trabajo lingüístico y la grabación fueron realizados con **Vicente Gutiérrez**, hasta ahora el único colaborador activo y sostenido en esta fase. Vicente realizó las traducciones al Didxazá y la grabación.
 
 El estudio intensivo del material mostró resultados claros en familiaridad auditiva, vocabulario y memorización, pero también límites de cobertura, velocidad de recuperación y capacidad de sostener una conversación abierta.
 
 Permanecen pendientes la revisión ortográfica, correcciones derivadas, algunas regrabaciones, normalización final del audio y productos finales de estudio.
+
+Estos pendientes describen el estado histórico del corpus y sus productos. **No constituyen una cola activa de resolución caso por caso ni autorizan usar COR001 como benchmark, gold, regresión o fuente de reglas.**
 
 ### COR002
 

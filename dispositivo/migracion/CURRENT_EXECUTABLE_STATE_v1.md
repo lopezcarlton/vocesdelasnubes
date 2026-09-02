@@ -26,15 +26,16 @@ TECHNICAL_CHECK != RESEARCH_CLOSURE
 
 ## 2. Runtime v0.2.15.3
 
-El manifiesto original enumera 75 payloads. En este checkpoint hay 38 payloads exactos presentes:
+El manifiesto original enumera 75 payloads. En este checkpoint hay 39 payloads exactos presentes:
 
-- los 38 coinciden con la identidad esperada del release o con la identidad exacta documentada para el artefacto reutilizado;
+- los 39 coinciden con la identidad esperada del release o con la identidad exacta documentada para el artefacto reutilizado;
 - los tres CSV de Dictionaria y la SQLite v2.20 están incluidos;
 - siete módulos exactos forman el cierre importable de la prueba unitaria final;
 - `test_surface_semantics_v0_2_15_3.py` está presente sin transformación;
 - la SQLite v2.19, tres pruebas v0.2.15.2 y cuatro resultados de replay almacenados completan la cadena histórica de 38 pruebas;
 - se restauraron además los módulos exactos v0.2.10, v0.2.11, v0.2.12 y v0.2.14, el input histórico COR001, el registry exacto de persona/posesión y `PICKETT_LEXICON_BACKFILL_v0_1.csv`;
-- 37 payloads del release todavía no están migrados.
+- `CLEAN_REPLAY_VERIFICATION_v0_2_15_3.json` está ahora materializado con identidad exacta del release y conserva los hashes semánticos históricos de referencia;
+- 36 payloads del release todavía no están migrados.
 
 La SQLite exacta está en:
 
@@ -80,7 +81,9 @@ Estado del replay end-to-end:
 
 `ISOLATED_REPLAY_REPRODUCED / TECHNICAL_REPRODUCIBILITY_PASS / NON_AUTHORITATIVE / COR001_ANALYSIS_TARGET_ONLY`.
 
-Evidencia: `migracion/ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`.
+Una segunda pasada ejecutada sobre un checkout sin mutación previa confirmó además: 17/17 módulos en la clausura recursiva de imports con SHA histórico exacto, 8/8 dependencias de datos exactas, hashes semánticos `details/metrics/summary` idénticos al clean replay histórico, `SUMMARY`/`METRICS` byte-idénticos y 38/38 pruebas `unittest` aprobadas. La diferencia byte a byte de `DETAILED` sigue limitada a IDs efímeros.
+
+Evidencia: `dispositivo/migracion/ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`.
 
 ### 2.2 Cadena histórica de 38 pruebas
 

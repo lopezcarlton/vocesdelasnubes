@@ -103,6 +103,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/runtime/v0_2_15_3/DICTIONARIA_senses_v0_2_15_2.csv` | 9,046 sentidos exactos |
 | `dispositivo/runtime/v0_2_15_3/DICTIONARIA_examples_v0_2_15_2.csv` | 9,686 ejemplos exactos |
 | `dispositivo/runtime/v0_2_15_3/run_cor001_replay_v0_2_15_3.py` | runner exacto del replay histórico; sólo reproducibilidad técnica |
+| `dispositivo/runtime/v0_2_15_3/CLEAN_REPLAY_VERIFICATION_v0_2_15_3.json` | verificación limpia histórica exacta; SHA-256 `0446768fa8ec1d6e76937688c62e8aa667e7503d211070988944c44253b36644`; referencia de hashes semánticos y 38/38 pruebas |
 | `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_10_documentary_alignment.py` | dependencia exacta del replay |
 | `dispositivo/runtime/v0_2_15_3/DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` | registry exacto |
 | `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_11_pickett_backfill.py` | dependencia exacta del replay |
@@ -133,7 +134,7 @@ didxaza_v0_2_15_3_surface_semantics_resolution_integrity_CLOSED_PASS(1).zip
 ZIP SHA256 = 6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
 ```
 
-`RELEASE_FILE_MANIFEST_v0_2_15_3.json` enumera 75 payloads. En este checkpoint hay **38/75 payloads exactos recuperados** y 37 ausentes.
+`RELEASE_FILE_MANIFEST_v0_2_15_3.json` enumera 75 payloads. En este checkpoint hay **39/75 payloads exactos recuperados** y 36 ausentes.
 
 SQLite:
 
@@ -148,6 +149,8 @@ person_possession_exact_v0214 = present
 ```
 
 El slice final de semántica de superficie y la cadena histórica de 38 pruebas permanecen reproducibles desde artefactos almacenados. El replay histórico v0.2.15.3 fue regenerado en un checkout aislado de GitHub Actions y obtuvo `TECHNICAL_REPRODUCIBILITY_PASS`: todas las dependencias directas verificadas coincidieron con el release y los outputs deterministas `SUMMARY` y `METRICS` reprodujeron exactamente sus SHA-256 históricos. Ver `ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`. Esto no concede autoridad lingüística a COR001.
+
+La segunda pasada fortaleció esa conclusión sobre un checkout sin mutación previa: verificó la clausura recursiva de 17 módulos, 8 dependencias de datos, los tres hashes semánticos históricos, los outputs deterministas y 38/38 pruebas. El primer cierre se conserva como genealogía de la reparación de transporte; la segunda pasada es la comprobación limpia del estado final materializado.
 
 `PICKETT_LEXICON_BACKFILL_v0_1.csv` conserva identidad exacta:
 
@@ -366,7 +369,7 @@ Con la consolidación de este manifiesto:
 - `INICIAR_AQUI_CHAT_NUEVO.md` es el punto de reentrada desde GitHub;
 - las rutas BIB065 del estado v37.1 apuntan al layout real del repositorio;
 - no hace falta volver por defecto a chats históricos;
-- el runtime sigue con 38/75 payloads exactos materializados;
+- el runtime sigue con 39/75 payloads exactos materializados;
 - el replay end-to-end v0.2.15.3 fue regenerado aisladamente y obtuvo `TECHNICAL_REPRODUCIBILITY_PASS`; `SUMMARY` y `METRICS` coinciden byte por byte con el release;
 - Tutor v0.33 sigue no instanciable por dependencias históricas faltantes;
 - ninguna de estas limitaciones bloquea literatura, corpus oral, COR002, trabajo con hablantes o investigación pedagógica.

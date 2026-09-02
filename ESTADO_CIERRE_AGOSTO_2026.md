@@ -3,6 +3,9 @@
 **Proyecto:** Voces de las Nubes  
 **Fecha de corte:** 2026-08-31  
 **Estado:** checkpoint operativo / vista de estado  
+**Vigencia actual:** `HISTORICAL_SNAPSHOT / SUPERSEDED_FOR_CURRENT_REENTRY`  
+
+Para el estado vigente de septiembre, usar `INICIAR_AQUI_CHAT_NUEVO.md`, `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md` y `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md`. El contenido siguiente se conserva como fotografía del cierre de agosto y no debe reinterpretarse como backlog actual.
 
 ## Función
 

@@ -5,7 +5,7 @@
 
 ## 1. Alcance
 
-Esta verificación reproduce el runner histórico `run_cor001_replay_v0_2_15_3.py` en un checkout limpio de GitHub Actions y compara las dependencias directas y los outputs deterministas contra `RELEASE_FILE_MANIFEST_v0_2_15_3.json`.
+Esta verificación documenta dos ejecuciones complementarias del runner histórico `run_cor001_replay_v0_2_15_3.py`. La primera detectó y reparó una normalización de transporte antes del replay; la segunda ejecutó el estado final de `main` desde un checkout sin mutación previa. Se comparan identidades de release, clausura recursiva de imports, hashes semánticos, outputs deterministas y pruebas históricas.
 
 No es una evaluación lingüística de COR001 y no modifica su rol:
 
@@ -17,7 +17,7 @@ COR001 != REGRESSION_AUTHORITY
 COR001 != RULE_DISCOVERY_SOURCE
 ```
 
-## 2. Ejecución de cierre
+## 2. Ejecución inicial de reparación y cierre
 
 GitHub Actions:
 
@@ -45,6 +45,34 @@ STATUS = PASS
 DIRECT_DEPENDENCIES_OK = true
 DETERMINISTIC_OUTPUTS_OK = true
 ```
+
+Esta ejecución partió de un checkout limpio, pero **reparó el registry de persona/posesión dentro del worktree antes de lanzar el replay** y luego publicó esa reparación. Por ello se conserva como cierre de reparación, no como la demostración más fuerte de un replay inmutable del `main` final.
+
+### 2.1 Segunda pasada limpia sobre el estado final
+
+```text
+workflow = second-pass-clean-replay-audit-v2
+run_id = 33682539100
+job_id = 100422262288
+head_sha = 4edf9dcde8ad86025b319b6e3a78e3fb3a173a9c
+runner = Ubuntu 24.04 / Python 3.12.3
+checkout_mutated_before_replay = false
+result = SUCCESS
+```
+
+La segunda pasada verificó:
+
+```text
+ENTRYPOINT_PATHS = 23/23
+RECURSIVE_IMPORT_CLOSURE = 17/17 exactos
+DATA_DEPENDENCIES = 8/8 exactas
+REPLAY_EXIT_CODE = 0
+SEMANTIC_HASHES_MATCH = true
+DETERMINISTIC_OUTPUTS_MATCH = true
+UNITTEST = 38/38 PASS
+```
+
+Esta segunda ejecución es la evidencia principal de reproducibilidad del estado final materializado.
 
 ## 3. Discrepancia de transporte detectada y reparada
 
@@ -93,6 +121,14 @@ El `COR001_REPLAY_DETAILED_v0_2_15_3.jsonl` no coincide byte por byte porque con
 details = eb68bb9a4a3d21e59fa889c5d214f6a7d108c54df228741a2920bec14f5d3d46
 metrics = 336db0939a8712b101766f28ebdd841936d8c539736820510c881cf1dbb47dec
 summary = adf75622ec8062b74826535a39ab50ced989e3390bf5e88ad19738d56bb13fa5
+```
+
+Estos tres valores coinciden exactamente con `CLEAN_REPLAY_VERIFICATION_v0_2_15_3.json`, ahora recuperado con identidad byte-exacta del release:
+
+```text
+SHA256 = 0446768fa8ec1d6e76937688c62e8aa667e7503d211070988944c44253b36644
+SEMANTIC_HASHES_MATCH = true
+TESTS = 38/38 PASS
 ```
 
 ## 5. Conclusión técnica

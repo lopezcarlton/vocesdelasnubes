@@ -43,7 +43,9 @@ Antes de migrar, leer:
 1. `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`;
 2. `dispositivo/README.md`;
 3. `dispositivo/migracion/MIGRATION_MANIFEST_v1.md`;
-4. `dispositivo/ESTADO_ACTUAL_2026-08-31.md`.
+4. `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md`;
+5. `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md`;
+6. `dispositivo/ESTADO_ACTUAL_2026-08-31.md` únicamente como snapshot histórico previo a la migración.
 
 La migración preserva estado; **no congela la investigación**.
 
@@ -73,7 +75,7 @@ Al recibir la instrucción de ejecutar este protocolo:
 
 ### Paso 1 — Leer el estado actual del repositorio
 
-Consultar los cuatro documentos listados arriba y cualquier archivo específico mencionado por el manifiesto como relacionado con este chat.
+Consultar los documentos vigentes listados arriba y cualquier archivo específico mencionado por el manifiesto como relacionado con este chat. `ESTADO_ACTUAL_2026-08-31.md` aporta genealogía histórica, pero no prevalece sobre `CURRENT_EXECUTABLE_STATE_v1.md` ni `REENTRY_CHECKPOINT_2026-09-02.md`.
 
 No asumir que el estado recordado por la conversación sigue vigente.
 

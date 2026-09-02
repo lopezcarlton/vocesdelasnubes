@@ -27,6 +27,8 @@ Consultar como fuentes técnicas vigentes:
 A este corte:
 
 - runtime v0.2.15.3: subconjunto exacto materializado; replay histórico aislado reproducido con `TECHNICAL_REPRODUCIBILITY_PASS` y outputs deterministas exactos;
+- segunda pasada limpia: checkout sin mutación previa, 17/17 módulos recursivos exactos, hashes semánticos completos coincidentes y 38/38 pruebas aprobadas;
+- `CLEAN_REPLAY_VERIFICATION_v0_2_15_3.json` recuperado con identidad exacta como referencia histórica de esos hashes semánticos;
 - Analyzer v0.35: subconjunto parcial no licenciante reproducible;
 - Generator v0.5: fuente histórica + adaptador al layout migrado;
 - Tutor v0.33: fuente presente, dependencias incompletas;
