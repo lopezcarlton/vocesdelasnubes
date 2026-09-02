@@ -440,6 +440,7 @@ f533bf667b0a7aca94426fb24016000761502e10  migrate exact Dictionaria analyzer inp
 6d4de82f9d0062b8adce3efcf1a3e54a40c8dab7  restore exact DB integrity release identity
 9d631d3db742afc6affbd1fb14179eb174c578da  make migrated Analyzer v0.35 reproducible
 1349a0be610d4020a698795925a8a70702a22f2d  migrate exact runtime surface semantics slice
+bf88660d93b043a5894cf283913c1a09436c9b85  verify migrated runtime surface semantics slice
 ```
 
 `CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
