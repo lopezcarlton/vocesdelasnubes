@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — payloads textuales exactos de MVP vertical slice v0.2 y revisión acústica v0.1 migrados; genealogía MVP v0.1→v0.2→v0.3 precisada; P0 Pickett backfill reconfirmado pero transferencia byte-exacta pendiente
+**Última actualización:** 2026-09-02 — reporte COR001 analysis-target v0.24 migrado sin otorgar autoridad de benchmark/regresión; dependencias auxiliares registradas como no localizadas; P0 Pickett backfill reconfirmado pero transferencia byte-exacta pendiente
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -82,6 +82,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/analyzer/non_licensing_analyzer_orchestrator_v0_35.py` | Analyzer parcial no licenciante |
 | `dispositivo/analyzer/analyzer_v0_35_migrated_adapter.py` | adaptador reproducible del Analyzer v0.35 |
 | `dispositivo/analyzer/DIC_VERB_2385_v0_1.csv` | inventario exacto de 2,385 verbos |
+| `dispositivo/analyzer/reports/COR001_ANALYSIS_TARGET_PASS_REPORT_v0_24.md` | reporte histórico exacto de observación; COR001 permanece `ANALYSIS_TARGET_ONLY`, sin autoridad de accuracy, benchmark, regresión ni descubrimiento de reglas |
 | `dispositivo/runtime/v0_2_15_3/BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` | SQLite v2.20 exacta, integridad verificada |
 | `dispositivo/runtime/v0_2_15_3/DICTIONARIA_entries_v0_2_15_2.csv` | 9,012 entradas exactas |
 | `dispositivo/runtime/v0_2_15_3/DICTIONARIA_senses_v0_2_15_2.csv` | 9,046 sentidos exactos |
@@ -557,7 +558,11 @@ El ZIP v0.1 completo está localizado en este chat y contiene `didxaza_vertical_
 | `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` | `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING` | `acffea79fe7d228a0b28f740094e5a15fd4ec0ba6d36b257cc3aaef918a83c54` |
 | `JUCHITAN_LINGUISTIC_CORE_v0_28.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE / ARCHIVE_ONLY / QUARANTINED_NOT_CURRENT_BASELINE` | `6766d25f38ecd39a01a1a0e0463776e85c518325f6653603b70583562910a12a` |
 | `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE / historical provisional` | `f3308483c3135e43d49f2641f518aecd0dbf3c1fcbdc98f349511751ce86b295` |
-| `COR001_ANALYSIS_TARGET_PASS_REPORT_v0_24.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `b369215edec07a98b59b6ee22a87995b20614d7a45dd16541f0deb71b93fd0d3` |
+| `COR001_ANALYSIS_TARGET_PASS_REPORT_v0_24.md` | `MIGRATED / ANALYSIS_TARGET_ONLY / NON_AUTHORITY` | `b369215edec07a98b59b6ee22a87995b20614d7a45dd16541f0deb71b93fd0d3` |
+| `COR001AnalysisObservations_v0_24.jsonl` | `REFERENCED_BY_LOCATED_ARTIFACT / NOT_LOCATED_IN_CURRENT_PASS` | referenced by migrated v0.24 report |
+| `COR001AnalysisObservationSummary_v0_24.json` | `REFERENCED_BY_LOCATED_ARTIFACT / NOT_LOCATED_IN_CURRENT_PASS` | referenced by migrated v0.24 report |
+| `COR001AnalysisHarnessCalibration_v0_24.json` | `REFERENCED_BY_LOCATED_ARTIFACT / NOT_LOCATED_IN_CURRENT_PASS` | referenced by migrated v0.24 report |
+| `run_cor001_analysis_target_pass_v0_24.py` | `REFERENCED_BY_LOCATED_ARTIFACT / NOT_LOCATED_IN_CURRENT_PASS` | referenced by migrated v0.24 report |
 | `generator_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE / SUPERSEDED / ARCHIVE_ONLY` | `54257f9a6dae12aba003e50e81b14bc25fba1d3e54e2eeecce009130c01fbacc` |
 | `canonical_analyzer_roundtrip_bridge_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE / SUPERSEDED / ARCHIVE_ONLY` | `bf1c3604f59aa559f8c1e5a6e7cfd1c78b16315f0dbbd1c1218f4e0a09cd0436` |
 | `GenerationLicense_v0_2_roundtrip.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE / SUPERSEDED / ARCHIVE_ONLY` | `0afb4d10fb96d8d0f264ad4ace18b2174b101aa86a593835b7530dfc57746861` |
@@ -661,6 +666,7 @@ b3300bb1c77c02c18b686616aad6478a079b2ad1  migrate exact v0.2.12 Pickett cross-so
 a4539d9eeab6ce197e5682afc1c0f2cd547ddcdd  migrate BIB065 ingestion matrix v0.36.1
 d5e91c92489d52ce24041479dc54b498c6bd61b0  migrate MVP vertical slice v0.2 source artifacts
 fc28f9b6808de641fc8487b12db0473533c4721e  migrate acoustic review artifacts for MVP vertical slice
+e935ebe330dc1a40c1efda9e879eac104bac0a78  migrate COR001 analysis-target pass report v0.24
 ```
 
 ## 13. Criterio de migración
@@ -688,7 +694,7 @@ Antes de incorporar una pieza:
 - `DevelopmentCorpusProtocol_v0_35.md`;
 - `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` (byte-exacto; el `.md` ya está migrado);
 - `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md` y otros reportes completos cuando su fuente exacta esté accesible;
-- pruebas/adapters adicionales completos y versionados.
+- pruebas/adapters adicionales completos y versionados, incluidos los cuatro artefactos de soporte v0.24 si aparecen como fuentes completas.
 
 ### P2 — ejecutables útiles
 
