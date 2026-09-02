@@ -1,0 +1,54 @@
+name: finalize replay docs v3
+
+on:
+  push:
+    paths:
+      - '.github/workflows/finalize-replay-docs-v3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch replay documentary state
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          def sub1(path, pattern, repl, flags=0):
+              p=Path(path); text=p.read_text(encoding='utf-8')
+              new,n=re.subn(pattern,repl,text,count=1,flags=flags)
+              if n != 1:
+                  raise SystemExit(f'{path}: pattern matched {n} times: {pattern[:120]!r}')
+              p.write_text(new,encoding='utf-8')
+
+          manifest='dispositivo/migracion/MIGRATION_MANIFEST_v1.md'
+          sub1(manifest,r'^\*\*Última actualización:\*\*.*$', '**Última actualización:** 2026-09-02 — consolidada la migración histórica y verificada la reproducibilidad técnica aislada del replay v0.2.15.3; COR001 permanece `ANALYSIS_TARGET_ONLY`.', re.M)
+          sub1(manifest,r'^(\| `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02\.md` \|[^\n]+)$',r'\1\n| `dispositivo/migracion/ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md` | evidencia del replay aislado; `TECHNICAL_REPRODUCIBILITY_PASS / NON_LINGUISTIC_AUTHORITY` |',re.M)
+          sub1(manifest,r'El slice final de semántica de superficie y la cadena histórica de 38 pruebas permanecen reproducibles desde artefactos almacenados\. Todas las dependencias directas conocidas del replay histórico están materializadas, pero el replay end-to-end todavía no se ha regenerado en un directorio aislado\.', 'El slice final de semántica de superficie y la cadena histórica de 38 pruebas permanecen reproducibles desde artefactos almacenados. El replay histórico v0.2.15.3 fue regenerado en un checkout aislado de GitHub Actions y obtuvo `TECHNICAL_REPRODUCIBILITY_PASS`: todas las dependencias directas verificadas coincidieron con el release y los outputs deterministas `SUMMARY` y `METRICS` reprodujeron exactamente sus SHA-256 históricos. Ver `ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`. Esto no concede autoridad lingüística a COR001.')
+          sub1(manifest,r'No queda ninguna dependencia directa conocida faltante para intentar la regeneración aislada del replay histórico\. Esa ejecución sólo puede probar reproducibilidad técnica; COR001 permanece `ANALYSIS_TARGET_ONLY`\.', 'No queda ninguna dependencia directa conocida faltante para el replay histórico y la regeneración aislada ya fue ejecutada con `PASS` técnico. Durante la verificación se restauró la representación byte-exacta histórica de `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv` (`UTF-8 BOM + CRLF + final newline`, SHA-256 `3f1e955a285c2ce9c66d3953def6b41fd993d6b8dd81567c5f95a28281d20bdb`), corrigiendo sólo una normalización de transporte. COR001 permanece `ANALYSIS_TARGET_ONLY`.')
+          sub1(manifest,r'### P0 — reproducibilidad técnica, no bloqueo de investigación\n\n.*?(?=### P1 — límites y genealogía)', '### P0 — reproducibilidad técnica, no bloqueo de investigación\n\n1. recuperar `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas sólo si aparecen como fuentes completas y si siguen siendo útiles para reproducir el Tutor histórico.\n\nEl replay histórico v0.2.15.3 ya no es un pendiente: su reproducibilidad técnica aislada fue verificada el 2026-09-02. Futuras ejecuciones son manuales y no constituyen una suite de regresión COR001.\n\n', re.S)
+          sub1(manifest,r'- el replay end-to-end todavía no se ha regenerado y no se declara `CLOSED_PASS` reproducido;', '- el replay end-to-end v0.2.15.3 fue regenerado aisladamente y obtuvo `TECHNICAL_REPRODUCIBILITY_PASS`; `SUMMARY` y `METRICS` coinciden byte por byte con el release;')
+          sub1(manifest,r'## 12\. Próxima acción\n.*\Z', '## 12. Próxima acción\n\nNo queda un replay P0 pendiente. La recuperación del Tutor v0.33 sólo debe continuar si aparecen sus dependencias exactas y sigue siendo útil para genealogía; no bloquea investigación.\n\nDesde el punto de vista de migración entre chats y reproducibilidad técnica del replay histórico, el repositorio está suficientemente cerrado para reentrada. La ruta sustantiva vuelve a literatura lingüística, corpus oral independiente de Juchitán y discusión pedagógica abierta de COR002.\n\nCOR001 permanece `ANALYSIS_TARGET_ONLY`: el `PASS` técnico no lo convierte en benchmark, gold, regresión ni fuente de reglas.\n', re.S)
+
+          state='dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md'
+          sub1(state,r'Esto reproduce el slice unitario de integridad de semántica de superficie\. La cadena histórica de 38 pruebas también es ejecutable conforme a la sección siguiente\. Los módulos v0\.2\.10, v0\.2\.11, v0\.2\.12 y v0\.2\.14 y todas las dependencias directas identificadas para el replay histórico están ahora materializados\. El replay de COR001 todavía no se ha regenerado ni se han recalculado de forma independiente los 26 criterios del `CLOSED_PASS`\.\n\nEstado del replay end-to-end:\n\n`DIRECT_DEPENDENCIES_COMPLETE / READY_FOR_ISOLATED_REPLAY_REGENERATION / NOT_YET_REGENERATED`\.', 'Esto reproduce el slice unitario de integridad de semántica de superficie. La cadena histórica de 38 pruebas también es ejecutable conforme a la sección siguiente. Los módulos v0.2.10, v0.2.11, v0.2.12 y v0.2.14 y todas las dependencias directas identificadas para el replay histórico están materializados. El replay histórico de COR001 fue además regenerado en un checkout aislado de GitHub Actions: runner `exit 0`, dependencias directas exactas y outputs deterministas `SUMMARY`/`METRICS` byte-idénticos al release. Esto verifica reproducibilidad técnica del runner, no los 26 criterios lingüísticos ni autoridad sobre COR001.\n\nEstado del replay end-to-end:\n\n`ISOLATED_REPLAY_REPRODUCED / TECHNICAL_REPRODUCIBILITY_PASS / NON_AUTHORITATIVE / COR001_ANALYSIS_TARGET_ONLY`.\n\nEvidencia: `migracion/ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`.')
+          sub1(state,r'Con esto no queda ninguna dependencia directa conocida faltante para intentar la regeneración aislada del replay histórico\. La presencia del input COR001 no cambia su rol: `ANALYSIS_TARGET_ONLY`\.', 'Con esto no queda ninguna dependencia directa conocida faltante para el replay histórico y la regeneración aislada ya fue ejecutada con `PASS` técnico. Durante esa verificación se restauró la representación byte-exacta histórica de `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv` (`UTF-8 BOM + CRLF + final newline`, SHA-256 `3f1e955a285c2ce9c66d3953def6b41fd993d6b8dd81567c5f95a28281d20bdb`), corrigiendo sólo una normalización de transporte. La presencia del input y el éxito técnico no cambian el rol de COR001: `ANALYSIS_TARGET_ONLY`.')
+
+          checkpoint='dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md'
+          sub1(checkpoint,r'^\*\*Estado:\*\* `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_CONSOLIDATED / NON_CANONICAL`$', '**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_CONSOLIDATED / REPLAY_TECHNICALLY_REPRODUCED / NON_CANONICAL`', re.M)
+          sub1(checkpoint,r'- runtime v0\.2\.15\.3: subconjunto exacto materializado, con dependencias directas conocidas para el replay histórico presentes;', '- runtime v0.2.15.3: subconjunto exacto materializado; replay histórico aislado reproducido con `TECHNICAL_REPRODUCIBILITY_PASS` y outputs deterministas exactos;')
+          sub1(checkpoint,r'- la regeneración técnica del replay v0\.2\.15\.3\.\n\nEl replay puede ejecutarse una sola vez desde el repositorio como prueba de reproducibilidad técnica\. Un `PASS` no concede autoridad lingüística a COR001\.', '- futuras reejecuciones manuales del replay v0.2.15.3, que ya obtuvo `PASS` técnico el 2026-09-02.\n\nLa evidencia del cierre está en `ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`. Un `PASS` no concede autoridad lingüística a COR001.')
+          PY
+
+          git config user.name 'lopezcarlton'
+          git config user.email 'lopezcarlton@gmail.com'
+          git add dispositivo/migracion/MIGRATION_MANIFEST_v1.md dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md
+          git commit -m 'close isolated replay reproducibility checkpoint'
+          git push origin HEAD:main
