@@ -26,8 +26,12 @@ Do NOT resume BIB065 at §5.2. The intensive pass is closed.
 - Generator uses only sufficiently licensed patterns.
 - Corrector requires the strongest evidence.
 
-## Canonical BIB065 artifacts
-- `literature/BH2019_READING_STATE_CLOSED_v0_36_1.md`
-- `literature/BH2019_SOURCE_PROVENANCE_v0_36_1.json`
-- `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md`
-- `inputs_nc001/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv`
+## Migrated BIB065 artifacts
+The original package-relative paths are preserved by Git history, but the materialized repository paths are:
+
+- `dispositivo/migracion/fuentes/BH2019_READING_STATE_CLOSED_v0_36_1.md`
+- `dispositivo/migracion/fuentes/BH2019_SOURCE_PROVENANCE_v0_36_1.json`
+- `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md`
+- `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv`
+
+For current reentry, use these repository paths rather than the historical package layout.
