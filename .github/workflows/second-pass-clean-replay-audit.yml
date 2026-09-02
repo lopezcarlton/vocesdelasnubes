@@ -1,0 +1,205 @@
+name: second-pass-clean-replay-audit
+
+on:
+  push:
+    paths:
+      - '.github/workflows/second-pass-clean-replay-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run clean second-pass audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import ast, hashlib, json, os, platform, re, shutil, subprocess, sys
+
+          repo = Path(os.environ['GITHUB_WORKSPACE'])
+          src = repo / 'dispositivo/runtime/v0_2_15_3'
+          work = Path(os.environ['RUNNER_TEMP']) / 'second_pass_replay_v0_2_15_3'
+          if work.exists():
+              shutil.rmtree(work)
+          shutil.copytree(src, work)
+
+          def sha(path):
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+          release = json.loads((src/'RELEASE_FILE_MANIFEST_v0_2_15_3.json').read_text(encoding='utf-8'))
+          expected = release['sha256']
+
+          entrypoint_paths = [
+              'README.md',
+              '00_ARQUITECTURA_DEL_CONOCIMIENTO.md',
+              '01_JERARQUIA_DE_VERDAD.md',
+              '02_BACKLOG.md',
+              '03_REGLAS_DE_ACTUALIZACIÓN.md',
+              'conocimiento/PEDAGOGIA.md',
+              'conocimiento/METODOLOGIA.md',
+              'conocimiento/CORPUS.md',
+              'conocimiento/VALIDACION.md',
+              'conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md',
+              'dispositivo/README.md',
+              'dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md',
+              'dispositivo/migracion/MIGRATION_MANIFEST_v1.md',
+              'dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md',
+              'dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md',
+              'dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md',
+              'dispositivo/migracion/fuentes/BH2019_READING_STATE_CLOSED_v0_36_1.md',
+              'dispositivo/migracion/fuentes/BH2019_SOURCE_PROVENANCE_v0_36_1.json',
+              'dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md',
+              'dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv',
+              'dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md',
+              'dispositivo/hardening/ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md',
+              'dispositivo/development_corpus/DevelopmentCorpusProtocol_v0_35.md',
+          ]
+          missing_entrypoint_paths = [p for p in entrypoint_paths if not (repo/p).exists()]
+
+          local_modules = {p.stem: p for p in src.glob('*.py')}
+          closure = set()
+          def visit_module(stem):
+              if stem in closure or stem not in local_modules:
+                  return
+              closure.add(stem)
+              tree = ast.parse(local_modules[stem].read_text(encoding='utf-8-sig'))
+              for node in ast.walk(tree):
+                  if isinstance(node, ast.Import):
+                      for alias in node.names:
+                          top = alias.name.split('.')[0]
+                          if top in local_modules:
+                              visit_module(top)
+                  elif isinstance(node, ast.ImportFrom) and node.module:
+                      top = node.module.split('.')[0]
+                      if top in local_modules:
+                          visit_module(top)
+
+          visit_module('run_cor001_replay_v0_2_15_3')
+          closure_files = sorted(local_modules[s].name for s in closure)
+          bad_closure_hashes = {
+              name: {'actual': sha(src/name), 'expected': expected.get(name)}
+              for name in closure_files
+              if expected.get(name) != sha(src/name)
+          }
+
+          data_dependencies = [
+              'COR001_REPLAY_INPUT_v0_2_15_2.csv',
+              'DICTIONARIA_entries_v0_2_15_2.csv',
+              'DICTIONARIA_senses_v0_2_15_2.csv',
+              'DICTIONARIA_examples_v0_2_15_2.csv',
+              'DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv',
+              'PICKETT_LEXICON_BACKFILL_v0_1.csv',
+              'PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv',
+              'BASE_CORRECTOR_DIDXAZA_EVIDENCE_INTEGRITY_v2_19.sqlite',
+          ]
+          bad_data_hashes = {}
+          for name in data_dependencies:
+              path = src/name
+              actual = sha(path) if path.exists() else None
+              exp = expected.get(name)
+              if actual != exp:
+                  bad_data_hashes[name] = {'actual': actual, 'expected': exp}
+
+          expected_semantic = {
+              'details': 'eb68bb9a4a3d21e59fa889c5d214f6a7d108c54df228741a2920bec14f5d3d46',
+              'metrics': '336db0939a8712b101766f28ebdd841936d8c539736820510c881cf1dbb47dec',
+              'summary': 'adf75622ec8062b74826535a39ab50ced989e3390bf5e88ad19738d56bb13fa5',
+          }
+
+          replay = subprocess.run(
+              [sys.executable, 'run_cor001_replay_v0_2_15_3.py'],
+              cwd=work, capture_output=True, text=True
+          )
+          (work/'SECOND_PASS_REPLAY_STDOUT.txt').write_text(replay.stdout, encoding='utf-8')
+          (work/'SECOND_PASS_REPLAY_STDERR.txt').write_text(replay.stderr, encoding='utf-8')
+
+          semantic_actual = {}
+          semantic_ok = False
+          deterministic = {}
+          deterministic_ok = False
+          detailed_exact = None
+          if replay.returncode == 0:
+              run_manifest = json.loads((work/'RUN_MANIFEST_COR001_v0_2_15_3.json').read_text(encoding='utf-8'))
+              semantic_actual = run_manifest.get('semantic_hashes', {})
+              semantic_ok = semantic_actual == expected_semantic
+              for name in ['COR001_REPLAY_SUMMARY_v0_2_15_3.csv','COR001_REPLAY_METRICS_v0_2_15_3.json']:
+                  deterministic[name] = {
+                      'actual': sha(work/name),
+                      'expected': expected[name],
+                      'match': sha(work/name) == expected[name],
+                  }
+              deterministic_ok = all(x['match'] for x in deterministic.values())
+              detailed_name = 'COR001_REPLAY_DETAILED_v0_2_15_3.jsonl'
+              detailed_exact = sha(work/detailed_name) == expected[detailed_name]
+
+          tests = subprocess.run(
+              [sys.executable, '-m', 'pytest', '-q'],
+              cwd=work, capture_output=True, text=True
+          )
+          (work/'SECOND_PASS_PYTEST_STDOUT.txt').write_text(tests.stdout, encoding='utf-8')
+          (work/'SECOND_PASS_PYTEST_STDERR.txt').write_text(tests.stderr, encoding='utf-8')
+          tests_38_pass = tests.returncode == 0 and re.search(r'\b38 passed\b', tests.stdout) is not None
+
+          status = (
+              not missing_entrypoint_paths
+              and not bad_closure_hashes
+              and not bad_data_hashes
+              and replay.returncode == 0
+              and semantic_ok
+              and deterministic_ok
+              and tests_38_pass
+          )
+
+          result = {
+              'status': 'PASS' if status else 'FAIL',
+              'cor001_policy': 'ANALYSIS_TARGET_ONLY',
+              'checkout_mutated_before_replay': False,
+              'runner_environment': {'python': sys.version, 'platform': platform.platform()},
+              'entrypoint_paths_checked': len(entrypoint_paths),
+              'missing_entrypoint_paths': missing_entrypoint_paths,
+              'recursive_import_closure_files': closure_files,
+              'recursive_import_closure_count': len(closure_files),
+              'bad_closure_hashes': bad_closure_hashes,
+              'bad_data_hashes': bad_data_hashes,
+              'replay_exit_code': replay.returncode,
+              'semantic_hashes_expected': expected_semantic,
+              'semantic_hashes_actual': semantic_actual,
+              'semantic_hashes_match': semantic_ok,
+              'deterministic_outputs': deterministic,
+              'deterministic_outputs_match': deterministic_ok,
+              'detailed_byte_exact_match': detailed_exact,
+              'detailed_byte_exact_required': False,
+              'pytest_exit_code': tests.returncode,
+              'pytest_stdout_tail': tests.stdout[-1000:],
+              'tests_38_pass': tests_38_pass,
+          }
+          (work/'SECOND_PASS_CLEAN_REPLAY_AUDIT_2026-09-02.json').write_text(
+              json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True), encoding='utf-8'
+          )
+          print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+          if not status:
+              sys.exit(1)
+          PY
+
+      - name: Upload second-pass audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: second-pass-clean-replay-audit-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/SECOND_PASS_CLEAN_REPLAY_AUDIT_2026-09-02.json
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/SECOND_PASS_REPLAY_STDOUT.txt
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/SECOND_PASS_REPLAY_STDERR.txt
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/SECOND_PASS_PYTEST_STDOUT.txt
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/SECOND_PASS_PYTEST_STDERR.txt
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/RUN_MANIFEST_COR001_v0_2_15_3.json
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/COR001_REPLAY_DETAILED_v0_2_15_3.jsonl
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/COR001_REPLAY_METRICS_v0_2_15_3.json
+            ${{ runner.temp }}/second_pass_replay_v0_2_15_3/COR001_REPLAY_SUMMARY_v0_2_15_3.csv
