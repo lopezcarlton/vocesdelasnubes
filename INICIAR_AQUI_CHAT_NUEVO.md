@@ -21,21 +21,18 @@ Lee, en este orden:
 11. `dispositivo/README.md`
 12. `dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md`
 13. `dispositivo/migracion/MIGRATION_MANIFEST_v1.md`
-14. `dispositivo/migracion/MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md`
-15. `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md`
-16. `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md`
-17. `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md`
-18. `dispositivo/migracion/fuentes/BH2019_READING_STATE_CLOSED_v0_36_1.md`
-19. `dispositivo/migracion/fuentes/BH2019_SOURCE_PROVENANCE_v0_36_1.json`
-20. `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md`
-21. `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv`
-22. `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md`
-23. `dispositivo/hardening/ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md`
-24. `dispositivo/development_corpus/DevelopmentCorpusProtocol_v0_35.md`
+14. `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md`
+15. `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md`
+16. `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md`
+17. `dispositivo/migracion/fuentes/BH2019_READING_STATE_CLOSED_v0_36_1.md`
+18. `dispositivo/migracion/fuentes/BH2019_SOURCE_PROVENANCE_v0_36_1.json`
+19. `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md`
+20. `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv`
+21. `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md`
+22. `dispositivo/hardening/ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md`
+23. `dispositivo/development_corpus/DevelopmentCorpusProtocol_v0_35.md`
 
 Si alguna ruta no existe, no la inventes ni sustituyas silenciosamente: registra la discrepancia y usa la jerarquía de verdad para determinar qué estado sí está materializado.
-
-Mientras el addendum no haya sido fusionado formalmente al manifiesto principal, úsalo únicamente para resolver el estado de migración de los artefactos que enumera.
 
 ## 2. Reglas de reentrada
 
