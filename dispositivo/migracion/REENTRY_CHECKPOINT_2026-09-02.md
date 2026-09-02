@@ -22,7 +22,9 @@ Consultar como fuentes técnicas vigentes:
 
 - `dispositivo/migracion/MIGRATION_MANIFEST_v1.md`
 - `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md`
-- `dispositivo/ESTADO_ACTUAL_2026-08-31.md`
+- `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md`
+
+`dispositivo/ESTADO_ACTUAL_2026-08-31.md` se conserva únicamente como snapshot histórico previo a la migración y no prevalece sobre los tres documentos anteriores.
 
 A este corte:
 
