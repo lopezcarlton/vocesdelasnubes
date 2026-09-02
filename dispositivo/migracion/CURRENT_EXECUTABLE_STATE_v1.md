@@ -26,14 +26,14 @@ TECHNICAL_CHECK != RESEARCH_CLOSURE
 
 ## 2. Runtime v0.2.15.3
 
-El manifiesto original enumera 75 payloads. En este checkpoint hay 29 payloads presentes:
+El manifiesto original enumera 75 payloads. En este checkpoint hay 34 payloads exactos presentes:
 
-- los 29 coinciden con el SHA-256 del release;
+- los 34 coinciden con el SHA-256 del release;
 - los tres CSV de Dictionaria y la SQLite v2.20 están incluidos;
 - siete módulos exactos forman el cierre importable de la prueba unitaria final;
 - `test_surface_semantics_v0_2_15_3.py` está presente sin transformación;
 - la SQLite v2.19, tres pruebas v0.2.15.2 y cuatro resultados de replay almacenados completan la cadena histórica de 38 pruebas;
-- 46 payloads del release todavía no están migrados.
+- 41 payloads del release todavía no están migrados.
 
 La SQLite exacta está en:
 
@@ -73,7 +73,7 @@ USER_VISIBLE_SUGGESTIONS_ENABLED = false
 ANALYSIS_ONLY_SURFACE_PROMOTION = false
 ```
 
-Esto reproduce el slice unitario de integridad de semántica de superficie. La cadena histórica de 38 pruebas también es ejecutable conforme a la sección siguiente, pero todavía no se regenera el replay de COR001 ni se recalculan de forma independiente los 26 criterios del `CLOSED_PASS`. Los módulos v0.2.10, v0.2.11, v0.2.12, v0.2.14 y v0.2.15 no forman parte del cierre de imports de esos 10 casos y permanecen sin migrar.
+Esto reproduce el slice unitario de integridad de semántica de superficie. La cadena histórica de 38 pruebas también es ejecutable conforme a la sección siguiente, pero todavía no se regenera el replay de COR001 ni se recalculan de forma independiente los 26 criterios del `CLOSED_PASS`. Los módulos v0.2.10 y v0.2.11 ya están migrados aunque no forman parte del cierre de imports de esos 10 casos. v0.2.12 y v0.2.14 siguen ausentes; el replay end-to-end continúa bloqueado además por `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`.
 
 ### 2.2 Cadena histórica de 38 pruebas
 
@@ -92,6 +92,19 @@ La cadena exacta ejecuta y supera:
 La SQLite v2.19 y los cuatro resultados v0.2.15.2 usados por esas pruebas conservan la identidad exacta del release. El CSV de resumen mantiene sus bytes y terminadores de línea históricos; no fue normalizado durante la migración.
 
 Las 12 pruebas de replay leen métricas, manifiesto, detalle y resumen ya almacenados. No ejecutan `run_cor001_replay_v0_2_15_2.py` ni `run_cor001_replay_v0_2_15_3.py`. Por ello demuestran consistencia del cierre histórico recuperado, no regeneración end-to-end ni validez lingüística de las salidas sobre COR001.
+
+### 2.3 Recuperación adicional del runner histórico
+
+Presentes y verificados contra el release:
+
+```text
+didxaza_runtime_v0_2_10_documentary_alignment.py
+DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv
+didxaza_runtime_v0_2_11_pickett_backfill.py
+COR001_REPLAY_INPUT_v0_2_15_2.csv
+```
+
+Esto reduce a cuatro las dependencias directas faltantes para regenerar el replay: v0.2.12, v0.2.14, `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`. La presencia del input COR001 no cambia su rol: `ANALYSIS_TARGET_ONLY`.
 
 ## 3. Analyzer v0.35
 
