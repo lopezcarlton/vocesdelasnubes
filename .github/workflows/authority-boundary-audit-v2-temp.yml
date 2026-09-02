@@ -1,0 +1,64 @@
+name: authority-boundary-audit-v2-temp
+
+on:
+  push:
+    paths:
+      - '.github/workflows/authority-boundary-audit-v2-temp.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify authority boundary after cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('.')
+          files=sorted((root/'conocimiento').rglob('*.md'))
+          device_refs=[]; prov=[]
+          for p in files:
+              lines=p.read_text(encoding='utf-8-sig').splitlines()
+              inprov=False
+              for i,line in enumerate(lines,1):
+                  if re.match(r'^\s*provenance\s*:',line): inprov=True
+                  elif inprov and line and not line.startswith((' ','\t','-')): inprov=False
+                  if 'dispositivo/' in line:
+                      device_refs.append((str(p),i,line.strip()))
+                      if inprov: prov.append((str(p),i,line.strip()))
+          allowed={'propuesto','vigente','en_revision','reformulado','retirado'}
+          states=[]
+          for p in sorted((root/'conocimiento/principios').glob('PRIN-*.md')):
+              text=p.read_text(encoding='utf-8-sig')
+              m=re.search(r'(?m)^estado:\s*(.+)$',text)
+              state=m.group(1).strip().strip('"\'') if m else ''
+              states.append((str(p),state,state in allowed,'SUSPENDED_PENDING_ENTITY_ADJUDICATION' in text))
+          out=['# AUDITORÍA POST-LIMPIEZA DE FRONTERA DE AUTORIDAD — 2026-09-02','',
+               '**Estado:** `AUDIT_REPORT / NON_NORMATIVE`','',
+               f'- Referencias `conocimiento/ -> dispositivo/`: **{len(device_refs)}**',
+               f'- Referencias `provenance -> dispositivo/`: **{len(prov)}**','',
+               '## Provenance invertida restante','']
+          out += [f'- `{p}:{i}` — `{line}`' for p,i,line in prov] or ['- Ninguna.']
+          out += ['','## Referencias directas restantes','']
+          out += [f'- `{p}:{i}` — `{line}`' for p,i,line in device_refs] or ['- Ninguna.']
+          out += ['','## Estados PRIN','', '| Archivo | estado permitido | cuarentena explícita |','|---|---:|---:|']
+          for p,s,ok,q in states: out.append(f'| `{p}` (`{s}`) | {"sí" if ok else "NO"} | {"sí" if q else "no"} |')
+          out += ['','## Interpretación','',
+                  'Una referencia directa restante no constituye automáticamente filtración: debe juzgarse con la regla `SUBORDINA = admisible / DEFIERE = filtración`. La condición dura previa a separación física es que no quede `provenance` autoritativa desde `conocimiento/` hacia `dispositivo/`.']
+          path=root/'informes/AUTHORITY_BOUNDARY_AUDIT_POST_CLEANUP_2026-09-02.md'
+          path.write_text('\n'.join(out)+'\n',encoding='utf-8')
+          print('\n'.join(out[:12]))
+          if prov:
+              raise SystemExit('provenance inversion remains')
+          PY
+          git config user.name lopezcarlton
+          git config user.email lopezcarlton@gmail.com
+          git add informes/AUTHORITY_BOUNDARY_AUDIT_POST_CLEANUP_2026-09-02.md
+          git commit -m 'verify knowledge-device authority boundary after cleanup'
+          git push origin HEAD:main
