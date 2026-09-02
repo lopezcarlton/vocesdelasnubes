@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — cadena histórica de 38 pruebas del runtime reproducible
+**Última actualización:** 2026-09-02 — migración del checkpoint inicial Generator_v0 / NC001 v1
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -22,6 +22,16 @@ CHAT != MIGRATION_ARTIFACT
 ```
 
 COR001, COR002, corpus oral, trabajo con hablantes, investigación pedagógica, lectura bibliográfica y nuevas hipótesis pueden continuar durante la migración salvo dependencia técnica concreta.
+
+COR001 mantiene exclusivamente:
+
+```text
+COR001 = ANALYSIS_TARGET_ONLY
+COR001 != GOLD_STANDARD
+COR001 != BENCHMARK
+COR001 != REGRESSION_AUTHORITY
+COR001 != RULE_DISCOVERY_SOURCE
+```
 
 ## 2. Estados
 
@@ -44,106 +54,91 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | Artefacto | Función / estado recuperado |
 |---|---|
 | `dispositivo/README.md` | arquitectura y frontera del dispositivo |
-| `dispositivo/ESTADO_ACTUAL_2026-08-31.md` | snapshot técnico previo a esta pasada |
+| `dispositivo/ESTADO_ACTUAL_2026-08-31.md` | snapshot técnico previo a la migración |
 | `dispositivo/ANALYZER_SCOPE_MULTIESCALA_2026-08-31.md` | alcance palabra → discurso |
 | `dispositivo/PROVENANCE_LABEL_CROSSWALK_v0_1.md` | equivalencias de procedencia |
 | `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` | discusión pedagógica no normativa |
 | `dispositivo/migracion/fuentes/MVP_REUSE_MAP_v1.md` | mapa de reutilización/cuarentena del vertical slice |
 | `dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md` | protocolo de migración directa |
 | `dispositivo/core/NUCLEO_CONVERSACIONAL_001_SCOPE_v1.md` | scope exacto del vertical slice NC001 |
-| `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md` | fuente completa migrada desde el archivo adjunto del chat; `EXPERIMENTAL_CORE`, no autoridad lingüística definitiva |
-| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` | estado post Generator_v0; hashes runtime/SQLite y ausencia del orquestador canónico en ese hito |
-| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v3_POST_ROUNDTRIP_BRIDGE.md` | checkpoint histórico del primer bridge round-trip y primera recombinación novedosa licenciada; `ARCHIVE_ONLY` frente a estados posteriores |
-| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v4_POST_ROUNDTRIP_STABILIZATION.md` | checkpoint histórico de estabilización del contrato round-trip v0.2 y gate de valencia; `ARCHIVE_ONLY` frente a estados posteriores |
-| `dispositivo/migracion/fuentes/ROUNDTRIP_CONTRACT_v0_2.md` | contrato estrecho estabilizado `STRUCTURAL_COMPATIBILITY_ONLY_NON_LICENSING`; histórico, no política actual |
-| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v34_POST_C02_DEFAULT_QUI_MIGRATION.md` | transición C02 al default juchiteco `quí`; `qué` preservado como variante secundaria |
-| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` | estado del grafo/priorizador v0.34; COR001 continúa `ANALYSIS_TARGET_ONLY` |
-| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v36_POST_KNOWLEDGE_INGESTION_GUARDRAILS.md` | guardrails de degradación elegante y ruta literatura+audio |
-| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md` | estado posterior al cierre BIB065; ruta activa más reciente localizada |
-| `dispositivo/generator/inputs/ConstructionInventory_v1.jsonl` | seis construcciones NC001 con alcance y abstenciones |
-| `dispositivo/generator/inputs/ParadigmTable_v1.csv` | tabla de celdas TAM/persona y procedencia del slice |
+| `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md` | fuente completa; `EXPERIMENTAL_CORE`, no autoridad definitiva |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v1.md` | checkpoint pre-Generator; `ARCHIVE_ONLY` frente a estados posteriores |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` | estado post Generator_v0 |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v3_POST_ROUNDTRIP_BRIDGE.md` | primer bridge round-trip y primera recombinación novedosa; `ARCHIVE_ONLY` |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v4_POST_ROUNDTRIP_STABILIZATION.md` | estabilización round-trip v0.2; `ARCHIVE_ONLY` |
+| `dispositivo/migracion/fuentes/ROUNDTRIP_CONTRACT_v0_2.md` | contrato histórico `STRUCTURAL_COMPATIBILITY_ONLY_NON_LICENSING` |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v34_POST_C02_DEFAULT_QUI_MIGRATION.md` | transición C02 a `quí`; `qué` queda variante secundaria |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` | priorizador de huecos; COR001 sigue analysis-only |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v36_POST_KNOWLEDGE_INGESTION_GUARDRAILS.md` | guardrails y ruta literatura+audio |
+| `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md` | ruta activa más reciente localizada |
+| `dispositivo/migracion/fuentes/SINTESIS_ADVERSARIAL_ARQUITECTURA_DIDXAZA_v1_1_CORREGIDA.md` | adjudicación arquitectónica histórica v1.1; `ARCHIVE_ONLY`, investigación revisable |
+| `dispositivo/migracion/fuentes/generator_v0_initial/ARCHITECTURE_FREEZE_v1_1.md` | freeze local del slice; `ARCHIVE_ONLY` frente a estados posteriores |
+| `dispositivo/generator/inputs/ConstructionInventory_v1.jsonl` | seis construcciones NC001 |
+| `dispositivo/generator/inputs/ParadigmTable_v1.csv` | 72 celdas TAM/persona con procedencia |
 | `dispositivo/validation/ValidationQueue_v0.jsonl` | cola de validación/desarrollo audio-first |
-| `dispositivo/analyzer/non_licensing_analyzer_orchestrator_v0_35.py` | Analyzer parcial no licenciante con contexto opcional |
-| `dispositivo/analyzer/analyzer_v0_35_migrated_adapter.py` | adaptador no normativo que fija las rutas de las dependencias exactas migradas del Analyzer v0.35 |
-| `dispositivo/analyzer/DIC_VERB_2385_v0_1.csv` | inventario operacional exacto de 2,385 verbos; SHA-256 verificado; ruta por defecto del Analyzer v0.35 |
-| `dispositivo/runtime/v0_2_15_3/BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` | SQLite v2.20 transferida byte por byte; hash, integridad, claves foráneas y tablas críticas verificados |
-| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_entries_v0_2_15_2.csv` | inventario exacto de 9,012 entradas consumido por Analyzer v0.35 |
-| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_senses_v0_2_15_2.csv` | inventario exacto de 9,046 sentidos consumido por Analyzer v0.35 |
-| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_examples_v0_2_15_2.csv` | inventario exacto de 9,686 ejemplos consumido por Analyzer v0.35 |
-| `dispositivo/generator/generator_v0_5.py` | implementación más reciente del Generator_v0 localizada en paquete v0.36.2 |
-| `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador no normativo que instancia el subconjunto migrado desde una única ruta de inputs sin alterar la implementación histórica |
-| `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot de readiness más reciente localizado en paquete v0.36.2 |
-| `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md` | checkpoint que separa presencia, ejecutabilidad, snapshots no reproducibles y preguntas abiertas |
-| `dispositivo/migracion/test_migrated_state.py` | verificaciones de SQLite, DIC_VERB, Dictionaria, Analyzer, Generator, cadena histórica de 38 pruebas y hashes presentes del release |
-| `dispositivo/tutor/tutor_v0_33.py` | Tutor renderer conservador: sólo explica análisis con binding exacto y licencia activa; no analiza/corrige/genera |
-| `dispositivo/generator/inputs/GenerationLicense_v0_33_c02_default_qui.jsonl` | licencias activas localizadas, incluida migración C02 a `quí` |
-| `dispositivo/generator/inputs/GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl` | átomos documentales/campo vinculados a las licencias v0.33 |
-| `dispositivo/generator/inputs/AuthorizedSlotFillers_v0_33.jsonl` | fillers autorizados por slot, con `quí` default Juchitán y `qué` variante secundaria |
-| `dispositivo/generator/inputs/IntegrationBlockers_v0_1.jsonl` | bloqueadores explícitos C03–C06 del slice histórico |
-| `dispositivo/generator/inputs/OrthographicResolutions_v0_9.jsonl` | resoluciones ortográficas exactas por celda; no reglas globales |
-| `dispositivo/generator/inputs/AdoptionRecords_v1.jsonl` | guardas/adopciones ortográficas NC001 |
-| `dispositivo/generator/inputs/ConceptMapping_v1.jsonl` | mapping conceptual HABITUAL/COMPLETIVE sin proyección automática a superficie |
-| `dispositivo/generator/inputs/OrthographicProfile_v1_DRAFT.json` | vector ortográfico conservador, explícitamente no norma global |
+| `dispositivo/analyzer/non_licensing_analyzer_orchestrator_v0_35.py` | Analyzer parcial no licenciante |
+| `dispositivo/analyzer/analyzer_v0_35_migrated_adapter.py` | adaptador reproducible del Analyzer v0.35 |
+| `dispositivo/analyzer/DIC_VERB_2385_v0_1.csv` | inventario exacto de 2,385 verbos |
+| `dispositivo/runtime/v0_2_15_3/BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite` | SQLite v2.20 exacta, integridad verificada |
+| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_entries_v0_2_15_2.csv` | 9,012 entradas exactas |
+| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_senses_v0_2_15_2.csv` | 9,046 sentidos exactos |
+| `dispositivo/runtime/v0_2_15_3/DICTIONARIA_examples_v0_2_15_2.csv` | 9,686 ejemplos exactos |
+| `dispositivo/generator/generator_v0_5.py` | implementación Generator más reciente localizada |
+| `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador al layout migrado |
+| `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot readiness más reciente localizado |
+| `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md` | checkpoint de presencia/ejecutabilidad/reproducibilidad |
+| `dispositivo/migracion/test_migrated_state.py` | verificaciones del estado migrado |
+| `dispositivo/tutor/tutor_v0_33.py` | Tutor renderer conservador; dependencias incompletas |
+| `dispositivo/generator/inputs/GenerationLicense_v0_33_c02_default_qui.jsonl` | licencias activas v0.33 |
+| `dispositivo/generator/inputs/GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl` | átomos de evidencia de licencias v0.33 |
+| `dispositivo/generator/inputs/AuthorizedSlotFillers_v0_33.jsonl` | fillers autorizados por slot |
+| `dispositivo/generator/inputs/IntegrationBlockers_v0_1.jsonl` | bloqueadores C03–C06 |
+| `dispositivo/generator/inputs/OrthographicResolutions_v0_9.jsonl` | resoluciones ortográficas exactas por celda |
+| `dispositivo/generator/inputs/AdoptionRecords_v1.jsonl` | guardas/adopciones NC001 |
+| `dispositivo/generator/inputs/ConceptMapping_v1.jsonl` | HABITUAL/COMPLETIVE, sin proyección automática a superficie |
+| `dispositivo/generator/inputs/OrthographicProfile_v1_DRAFT.json` | vector ortográfico conservador, no norma global |
+| `dispositivo/migracion/fuentes/generator_v0_initial/generator_v0.py` | fuente completa del primer scaffold Generator_v0; `ARCHIVE_ONLY / SUPERSEDED` por v0.1…v0.5 |
+| `dispositivo/migracion/fuentes/generator_v0_initial/GenerationLicense_v0.jsonl` | dos licencias `ZERO_NOVELTY_ATTESTED_ASSEMBLY`; `ARCHIVE_ONLY` |
+| `dispositivo/migracion/fuentes/generator_v0_initial/IntegrationBlockers_v0.jsonl` | blockers iniciales C03–C06; `ARCHIVE_ONLY` |
+| `dispositivo/migracion/fuentes/generator_v0_initial/runtime_reuse_adapter_v0.py` | adapter hash-gated a `generator_view` v0.2.6; histórico |
+| `dispositivo/migracion/fuentes/generator_v0_initial/mvp_review_candidate_adapter_v0.py` | ReviewCandidate histórico preservado como no licenciante |
+| `dispositivo/migracion/fuentes/generator_v0_initial/test_generator_v0.py` | suite exacta del scaffold inicial |
+| `dispositivo/migracion/fuentes/generator_v0_initial/test_runtime_reuse.py` | test exacto del reuse del runtime canónico |
+| `dispositivo/migracion/fuentes/generator_v0_initial/INTEGRATION_REPORT_GENERATOR_v0.md` | reporte de integración inicial |
+| `dispositivo/migracion/fuentes/generator_v0_initial/HASH_GATE_REPORT.md` | hashes canónicos runtime/SQLite y hashes observados MVP |
+| `dispositivo/migracion/fuentes/generator_v0_initial/TEST_RESULTS.txt` | reporte histórico 11/11 PASS |
 
-### 3.1 Runtime v0.2.15.3 localizado y presencia textual verificada
+### 3.1 Runtime v0.2.15.3
 
-Fuente exacta localizada en este chat:
+Fuente exacta localizada históricamente:
 
 `didxaza_v0_2_15_3_surface_semantics_resolution_integrity_CLOSED_PASS(1).zip`
 
-SHA-256 del ZIP:
-
 ```text
-6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
+ZIP SHA256 = 6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
+SQLite v2.20 SHA256 = 2379773426baf4e3eace87c61ec17f7a1e1b9164421e56cf736d35eb64a5ebed
 ```
 
-Coincide con la identidad histórica ya registrada para el runtime v0.2.15.3.
+El repositorio contiene 29 de los 75 payloads del manifiesto original; los 29 coinciden exactamente con el release. La SQLite v2.20 es byte por byte idéntica, `integrity_check=ok`, sin violaciones FK; están presentes `canonical_state_v17`, `verb_lexeme_class_v023` y `person_possession_exact_v0214`.
 
-En el repositorio ya se localizaron bajo `dispositivo/runtime/v0_2_15_3/` el README del checkpoint, estado maestro del Corrector, manifiesto de release, DB integrity y módulos de runtime. Para varios módulos críticos se verificó identidad exacta por Git blob frente al archivo contenido en el ZIP:
+La prueba exacta `test_surface_semantics_v0_2_15_3.py` pasa 10 casos y conserva desactivados autocorrección, sugerencias, edición y promoción visible. La cadena histórica recuperada ejecuta 38/38 pruebas, pero 12 de ellas leen resultados almacenados del replay; no equivalen a regeneración de COR001 ni a validación lingüística.
 
-```text
-didxaza_runtime_v0_2_0_foundation.py      Git blob 734c3670f1a9edfbb3a6dddc270ab9e5b6df1901
-didxaza_runtime_v0_2_1_retrieval.py       Git blob 057c37460dcea9ddf383dbf69d63f85caf6bf7ce
-didxaza_runtime_v0_2_2_context_provenance.py Git blob 14f7786c2f6fd5d79844750768878c7a75889f2c
-didxaza_runtime_v0_2_3_morphology_i.py    Git blob 00077c987fab1c49144c0f853e23226c82fac9e9
-didxaza_runtime_v0_2_4_bound.py           Git blob 183e02d73e83a34e3675548ccf8fbb51763f3390
-didxaza_runtime_v0_2_5_morphology_ii.py   Git blob 50e3a121d20d65b4f94b300fa34e2b80980b5c66
-README_v0_2_15_3.md                       Git blob 0dddbbf8ca1d0282b840e2c76e5aeb150db09575
-ESTADO_MAESTRO_CORRECTOR_DIDXAZA_v2_21.md Git blob 4707a4a8371eb072451f46d5cb6c2b2e98286353
-```
-
-`didxaza_runtime_v0_2_2_context_provenance.py` fue comparado con la fuente raw exacta del release. La copia inicialmente migrada tenía SHA-256 `8ce24975ad88bbbe352afcec6cd438d785fbe335bed12bd14c51a7551a5e8744` y difería en un único valor de `evidence_roles`: `TONE_PEDAGOGY` en vez de `TONE_PEDAGOGICAL`. El historial no registra esa variante como revisión posterior; entró con el commit inicial de migración.
-
-La fuente exacta compila, no tiene consumidores que dependan del valor discrepante y coincide con el manifiesto del release:
+La copia exacta de `didxaza_runtime_v0_2_2_context_provenance.py` fue restaurada frente a una copia de migración con `TONE_PEDAGOGY` en lugar de `TONE_PEDAGOGICAL`:
 
 ```text
-SHA256 = 57fcc152333c7817046cec6004bb77832a0c0f34bb4ddf75b4f4444ecfe9b347
-GIT_BLOB = 14f7786c2f6fd5d79844750768878c7a75889f2c
+SHA256 exacto = 57fcc152333c7817046cec6004bb77832a0c0f34bb4ddf75b4f4444ecfe9b347
 STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
 ```
 
-La copia discrepante permanece recuperable en el historial Git; no se conserva como variante activa.
-
-La presencia de fuentes textuales del runtime no sustituye los binarios/datasets referenciados por el release.
-
-Después de transferir los artefactos de la cadena histórica de pruebas, el árbol contiene 29 de los 75 payloads enumerados por el manifiesto original y los 29 coinciden exactamente. La fuente raw de `DB_INTEGRITY_v0_2_15_3.json` confirmó que la copia previa difería sólo por un salto de línea final; la identidad exacta fue restaurada:
+`DB_INTEGRITY_v0_2_15_3.json` también fue restaurado a identidad exacta:
 
 ```text
 SHA256 = fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb
-STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
 ```
 
-La copia discrepante permanece recuperable en la genealogía Git.
+### 3.2 Inventario verbal y Dictionaria
 
-### 3.2 `DIC_VERB_2385_v0_1.csv` transferido y verificado
-
-**Estado:** `MIGRATED`
-
-El archivo raw completo quedó disponible el 2026-09-01 y fue transferido sin transformación a:
-
-`dispositivo/analyzer/DIC_VERB_2385_v0_1.csv`
-
-Verificación:
+`DIC_VERB_2385_v0_1.csv`:
 
 ```text
 SHA256 = 2bdf4afd4b61234c54585cda17ad648bfb71194e9463d193eb04a5a06aa3183d
@@ -154,100 +149,105 @@ RAGGED_ROWS = 0
 UNIQUE_ENTRY_IDS = 2385
 ```
 
-La identidad coincide exactamente con el hash registrado antes de la transferencia. La ubicación coincide además con la resolución por defecto de `non_licensing_analyzer_orchestrator_v0_35.py`; no requiere pasar `--verb-inventory` para localizar este inventario. El intento provisional anterior mediante fragmentos base64 permanece documentado como `FAILED_INCOMPLETE_TRANSFER`: no produjo este archivo, no es su fuente y sus residuos fueron retirados del árbol activo.
-
-### 3.3 Dictionaria transferida y Analyzer v0.35 reproducible
-
-**Estado:** `MIGRATED / REPRODUCIBLE_NON_LICENSING_PARTIAL_ANALYZER`
-
-Los tres CSV fueron extraídos sin transformación del ZIP canónico y verificados contra `RELEASE_FILE_MANIFEST_v0_2_15_3.json`:
+Dictionaria exacta:
 
 ```text
+entries  SHA256 = a093b8eb5087affb7d7d7f364bb0a423921c20e959d61fe7efcd85de62b249d0  rows=9012
+senses   SHA256 = 244769e4b3d724e5373feb3ccd26405c517340d05b70d962564ed4a4142d2afb  rows=9046
+examples SHA256 = 2a6e906e8cc8dc43d69306a0a69332f257ae470b5caeb47d3aef72d17ba9af8b  rows=9686
+```
+
+### 3.3 Analyzer v0.35
+
+**Estado:** `MIGRATED / REPRODUCIBLE_NON_LICENSING_PARTIAL_ANALYZER`.
+
+Dependencias directas presentes:
+
+```text
+didxaza_runtime_v0_2_1_retrieval.py
+didxaza_runtime_v0_2_3_morphology_i.py
+didxaza_runtime_v0_2_4_bound.py
+didxaza_runtime_v0_2_5_morphology_ii.py
 DICTIONARIA_entries_v0_2_15_2.csv
-SHA256 = a093b8eb5087affb7d7d7f364bb0a423921c20e959d61fe7efcd85de62b249d0
-DATA_ROWS = 9012
-
 DICTIONARIA_senses_v0_2_15_2.csv
-SHA256 = 244769e4b3d724e5373feb3ccd26405c517340d05b70d962564ed4a4142d2afb
-DATA_ROWS = 9046
-
 DICTIONARIA_examples_v0_2_15_2.csv
-SHA256 = 2a6e906e8cc8dc43d69306a0a69332f257ae470b5caeb47d3aef72d17ba9af8b
-DATA_ROWS = 9686
+DIC_VERB_2385_v0_1.csv
+SQLite: verb_lexeme_class_v023
+SQLite: person_possession_exact_v0214
 ```
 
-`analyzer_v0_35_migrated_adapter.py` fija explícitamente las rutas a runtime, SQLite y `DIC_VERB` sin modificar el orquestador histórico. Las pruebas verifican carga completa, análisis parcial de una forma documentada y abstención ante una forma deliberadamente inexistente. En ambos casos permanecen en `false` las aserciones de licencia de generación, corrección, autoridad ortográfica y descubrimiento de reglas.
-
-La reproducibilidad declarada corresponde al Analyzer parcial no licenciante v0.35; no implica cobertura total, validación lingüística de sus salidas ni autoridad sobre COR001 o COR002.
-
-## 4. P0 localizado y transferencia binaria
-
-### runtime lingüístico v0.2.15.3 — transferencia selectiva
-
-**Estado:** `RECOVERABLE_SOURCE_LOCATED` / `REPRODUCIBLE_SURFACE_SEMANTICS_UNIT_SLICE` / `REPRODUCIBLE_STORED_ARTIFACT_TEST_CLOSURE` / transferencia todavía incompleta para componentes no presentes.
-
-El ZIP exacto está disponible y su hash coincide. La raíz contiene la genealogía del runtime y, además, bases SQLite y datasets. Se migraron sin transformación los siete módulos que forman el cierre importable de la prueba unitaria final, más la prueba exacta:
+`analyzer_v0_35_migrated_adapter.py` permite instanciar el Analyzer parcial. Smoke tests históricos:
 
 ```text
-didxaza_runtime_v0_2_6_evidence_adjudication.py
-didxaza_runtime_v0_2_7_decision_simulation.py
-didxaza_runtime_v0_2_7_1_integration_fixes.py
-didxaza_runtime_v0_2_9_surface_evidence_coverage.py
-didxaza_runtime_v0_2_13_resolution_vectors.py
-didxaza_runtime_v0_2_15_2_evidence_integrity.py
-didxaza_runtime_v0_2_15_3_surface_semantics_resolution_integrity.py
-test_surface_semantics_v0_2_15_3.py
+"Quí rasé'" -> PARTIAL_ANALYSIS_NON_LICENSING
+forma inexistente -> ABSTAIN_NO_COMPONENT_EVIDENCE
+generation_license_assertion = false
+correction_assertion = false
+orthographic_authority_assertion = false
+rule_discovery_assertion = false
 ```
 
-Sus SHA-256 coinciden con `RELEASE_FILE_MANIFEST_v0_2_15_3.json`. La prueba exacta ejecuta 10 casos y pasa desde el árbol migrado. El wrapper conserva desactivados autocorrección, sugerencias ortográficas, ejecución de ediciones y sugerencias visibles.
+## 4. Generator_v0 — genealogía y checkpoint inicial recuperado
 
-Para completar la cadena histórica de 38 pruebas se migraron además, sin transformación:
+Genealogía localizada:
 
 ```text
-BASE_CORRECTOR_DIDXAZA_EVIDENCE_INTEGRITY_v2_19.sqlite
-COR001_REPLAY_DETAILED_v0_2_15_2.jsonl
-COR001_REPLAY_METRICS_v0_2_15_2.json
-COR001_REPLAY_SUMMARY_v0_2_15_2.csv
-RUN_MANIFEST_COR001_v0_2_15_2.json
-test_adversarial_repairs_v0_2_15_2.py
-test_replay_v0_2_15_2.py
-test_schema_v0_2_15_2.py
+generator_v0.py
+-> generator_v0_1.py
+-> generator_v0_2.py
+-> generator_v0_3.py
+-> generator_v0_4.py
+-> generator_v0_5.py
 ```
 
-Los ocho SHA-256 coinciden con el manifiesto del release. La suite exacta pasa 38 de 38 casos: 5 adversariales, 12 sobre resultados almacenados del replay, 11 sobre schema/SQLite v2.19 y 10 sobre semántica de superficie. El CSV de resumen conserva sus terminadores de línea históricos; no se limpió para satisfacer verificadores de estilo.
+`generator_v0_5.py` es la implementación más reciente localizada. El scaffold inicial `generator_v0.py` se preserva ahora íntegramente bajo `dispositivo/migracion/fuentes/generator_v0_initial/` como antecedente `ARCHIVE_ONLY / SUPERSEDED`.
 
-Las 12 pruebas de replay no ejecutan nuevamente COR001: leen resultados v0.2.15.2 ya almacenados. Por tanto, el cierre de tests es reproducible, pero el replay end-to-end y los 26 criterios del reporte `SURFACE_SEMANTICS_PASS_FAIL_v0_2_15_3.csv` todavía no se recalculan desde sus fuentes. El nombre `CLOSED_PASS` describe el paquete histórico; no convierte el subconjunto actual en runtime completo ni concede autoridad lingüística. Los módulos v0.2.10, v0.2.11, v0.2.12, v0.2.14 y v0.2.15 tampoco son importados por la prueba final de 10 casos, por lo que su ausencia no impide esa prueba pero sí deja incompleta la genealogía funcional.
-
-La transferencia puede continuar archivo por archivo, pero la presencia de una fuente o reporte histórico no debe usarse para atribuir una capacidad que aún no se reprodujo.
-
-### SQLite v2.20
-
-**Estado:** `MIGRATED`
-
-Los bytes completos quedaron disponibles y se transfirieron sin transformación a:
-
-`dispositivo/runtime/v0_2_15_3/BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite`
-
-La identidad coincide con el release:
-
-`BASE_CORRECTOR_DIDXAZA_SURFACE_SEMANTICS_v2_20.sqlite`
-
-Identidad verificada:
+Identidades del checkpoint inicial transferido:
 
 ```text
-SHA256 = 2379773426baf4e3eace87c61ec17f7a1e1b9164421e56cf736d35eb64a5ebed
-SQLITE_INTEGRITY_CHECK = ok
-FOREIGN_KEY_VIOLATIONS = 0
-canonical_state_v17 = 22 rows
-verb_lexeme_class_v023 = present
-person_possession_exact_v0214 = present
+generator_v0.py SHA256 = 29631133f885409d16599a2d21e72d5c047f660aa6ce680563637c52a8cd8856
+GenerationLicense_v0.jsonl SHA256 = ec153dad5a40e360ae0815a909eaa8e57cba02697e0c44f8b0e40c93b1cb9461
+IntegrationBlockers_v0.jsonl SHA256 = 2481125d6ad1583c37169f862ae0c49aee872a0431ade77347d554b0ad9cfdbc
+runtime_reuse_adapter_v0.py SHA256 = 2755d7cbffa54089c8bfaff05543b620239787e51e5c892670fcac630e54cc9b
+mvp_review_candidate_adapter_v0.py SHA256 = 50283fd48216cbb56b6ab312635d2a80b526d47917930172ffb67970d499b5fc
+test_generator_v0.py SHA256 = e5be3ce4e9dc593d4d097f43d0a61dfe3b9614f6f4a5ce1c4867f480a17a82be
+test_runtime_reuse.py SHA256 = 64e488b95cfc91c3e17ebb333f081c51dae3892544b94b1d3bf1fc8e6d8e8b36
 ```
 
-No se creó un sustituto textual ni una base reconstruida. La copia del repositorio es byte por byte idéntica a la fuente raw recibida y a la identidad registrada por el release.
+El scaffold inicial sólo licencia:
 
-## 5. Generator_v0 — estado de reproducibilidad recuperado
+```text
+C01: Ma' + benda' -> Ma' benda'
+C02: Qué + reedabe + guirá' dxi -> Qué reedabe guirá' dxi
+novelty = ZERO_NOVELTY_ATTESTED_ASSEMBLY
+may_license_new_combinations = false
+```
 
-Los inputs que el manifiesto anterior marcaba como pendientes fueron recuperados y migrados en esta pasada:
+Y bloquea:
+
+```text
+C03 = MISSING_QUESTION_PATTERN
+C04 = INTERROGATIVE_DOMAIN_SCOPE_MISMATCH
+C05 = MISSING_NOUN_POSSESSION_LICENSE_SET
+C06 = DEPENDENT_POTENTIAL_OUT_OF_SCOPE
+```
+
+El test histórico reporta 11/11 PASS. `runtime_reuse_adapter_v0.py` reutiliza `generator_view` v0.2.6 sólo después de verificar los hashes canónicos del runtime/SQLite; `mvp_review_candidate_adapter_v0.py` mantiene `REVIEW_CANDIDATE` como estado no licenciante y no propaga `confidence` ni similarity.
+
+El ZIP fuente completo de este checkpoint sigue fuera del repositorio como binario:
+
+```text
+PAQUETE_MIGRACION_DIDXAZA_GENERATOR_V0_INTEGRATED_v1(1).zip
+SHA256 = 270dff08371f6b35bbb817d5440db85811ab87f11b2c7a96a9cf8f485ed76b9a
+STATUS = BINARY_TRANSFER_PENDING / ARCHIVE_ONLY
+MANIFEST_INTERNAL = verified
+```
+
+No se reconstruyó el ZIP dentro del repositorio; se migraron sólo fuentes textuales completas e identificadas.
+
+### 4.1 Generator_v0.5 materializado
+
+Los inputs activos localizados y migrados incluyen:
 
 ```text
 GenerationLicense_v0_33_c02_default_qui.jsonl
@@ -258,23 +258,27 @@ OrthographicResolutions_v0_9.jsonl
 AdoptionRecords_v1.jsonl
 ConceptMapping_v1.jsonl
 OrthographicProfile_v1_DRAFT.json
+ParadigmTable_v1.csv
+ConstructionInventory_v1.jsonl
 ```
 
-Junto con `ParadigmTable_v1.csv`, `ConstructionInventory_v1.jsonl` y `generator_v0_5.py` ya migrados, esto recupera el núcleo documental de la implementación Generator_v0 localizada.
+`generator_v0_5.py` acepta un `canonical_analyzer` para round-trip de recombinaciones novedosas. El archivo histórico mezcla dos layouts y espera `NovelRecombinationAttempt_v0_1.json`, ausente; no fue modificado. `generator_v0_5_migrated_adapter.py` fija `generator/inputs/` y permite instanciar el subconjunto realmente presente:
 
-No se declara autonomía completa: `generator_v0_5.py` acepta un `canonical_analyzer` para el round-trip de recombinaciones novedosas y ese contrato debe seguir verificándose de forma explícita.
+```text
+PARADIGM_CELLS = 72
+CONSTRUCTIONS = 6
+GENERATION_LICENSES = 6
+ACTIVE_LICENSE_CONSTRUCTIONS = C01, C02
+BLOCKED_BY_MIGRATED_INPUTS = C03, C04, C05, C06
+```
 
-La auditoría de ejecución encontró que la entrada por defecto de `generator_v0_5.py` mezcla el layout histórico `inputs_nc001/` con archivos ubicados junto al script y además espera `NovelRecombinationAttempt_v0_1.json`, ausente. El archivo histórico no se modificó. `generator_v0_5_migrated_adapter.py` fija explícitamente una sola ruta, `generator/inputs/`, y permite instanciar el subconjunto realmente presente.
+`GENERATION_READINESS_MATRIX_v14.csv` queda `MIGRATED_SNAPSHOT_NOT_REPRODUCIBLE_WITH_CURRENT_FILES` para capacidades C03/C05 cuyas dependencias exactas aún faltan.
 
-Ese subconjunto contiene seis licencias activas sólo para C01/C02 y bloqueadores explícitos para C03–C06. Por ello, `GENERATION_READINESS_MATRIX_v14.csv` se conserva como `MIGRATED_SNAPSHOT_NOT_REPRODUCIBLE_WITH_CURRENT_FILES`: sus capacidades C03/C05 no se degradaron retrospectivamente ni se atribuyen al ejecutable actual hasta recuperar sus dependencias exactas.
+## 5. Tutor_v0.33 — pendiente P0
 
-`JUCHITAN_LINGUISTIC_CORE_v0_27.md` conserva además la frase histórica “benchmarks COR001”. No se modificó el core migrado, pero esa frase queda explícitamente subordinada a la política vigente `COR001 = ANALYSIS_TARGET_ONLY`; no autoriza gold, benchmark, regression ni descubrimiento de reglas.
+`tutor_v0_33.py` está migrado pero no es instanciable todavía.
 
-## 6. Tutor_v0 — implementación y dependencias nuevas
-
-`tutor_v0_33.py` fue recuperado directamente desde el paquete v0.34 y migrado sin reinterpretar su función.
-
-Dependencias exactas nuevas que expone y que todavía deben recuperarse/migrarse:
+Dependencias exactas aún ausentes:
 
 ```text
 TutorCaseLicenseBindings_v0_33.jsonl
@@ -288,149 +292,118 @@ GenerationLicense_C05_Morphophonology_v0_18.jsonl
 GenerationLicense_C05_Morphophonology_v0_19.jsonl
 ```
 
-**Estado:** `SOURCE_COMPLETE_READY_TO_MIGRATE` cuando la fuente completa del paquete v0.34 esté disponible para la siguiente pasada.
-
 El Tutor preserva el contrato histórico:
 
 ```text
 ANALYZED != GENERATION_LICENSED
 ```
 
-y se abstiene si no existe binding exacto/licencia activa.
+y se abstiene sin binding/licencia exactos.
 
-## 7. Genealogías recuperadas
+## 6. Genealogías recuperadas
 
 ### JUCHITAN_LINGUISTIC_CORE
-
-Se localizaron al menos:
 
 ```text
 v0.1 -> ... -> v0.23 -> ... -> v0.27
 ```
 
-`v0.27` es la versión de referencia más reciente verificable en este entorno y quedó migrada íntegramente desde la fuente completa adjunta en este chat. Los `BLIND_STRICT_FIXTURE` de v0.27 son derivados de evaluación y no una nueva baseline lingüística.
+`v0.27` es la versión de referencia más reciente verificable y está migrada íntegramente. La presencia de formulaciones históricas sobre COR001 no altera la política posterior `ANALYSIS_TARGET_ONLY`.
 
-### Generator_v0
-
-```text
-generator_v0.py
--> generator_v0_1.py
--> generator_v0_2.py
--> generator_v0_3.py
--> generator_v0_4.py
--> generator_v0_5.py
-```
-
-`generator_v0_5.py` es la implementación más reciente localizada. Sus bindings activos de C02 usan:
+### NC001 state
 
 ```text
-GenerationLicense_v0_33_c02_default_qui.jsonl
-GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl
-AuthorizedSlotFillers_v0_33.jsonl
+v1 -> v2 -> v3 -> v4 -> ... -> v34 -> v35 -> v36 -> v37.1
 ```
 
-La fuente histórica exacta del checkpoint `generator_v0_2.py` está contenida en:
+- v1: foundations materialized, antes de montar runtime/Generator.
+- v2: Generator_v0 inicial.
+- v3: primer bridge round-trip y primera recombinación novedosa licenciada `Ma' beedabe`.
+- v4: contrato round-trip v0.2 estabilizado; `ANALYZED != GENERATION_LICENSED`.
+- v34: C02 adopta `quí` default Juchitán sin borrar `qué`.
+- v35: priorizador de huecos; COR001 sólo objeto de análisis.
+- v36: guardrails y giro a literatura + audio independiente.
+- v37.1: cierre de la pasada BIB065 y preservación del Analyzer de frase aislada.
 
-```text
-PAQUETE_MIGRACION_DIDXAZA_ROUNDTRIP_CONTRACT_STABILIZED_v0_2.zip
-SHA256 = e5410545a103951fc035429e8de9834bc178bde249c0fbd5b8a0e751cd14947d
-```
-
-Ese paquete también contiene el bridge canónico v0.2, licencias/evidence atoms v0.2 y los estados NC001 v3/v4. Se preserva como genealogía histórica y no sustituye a `generator_v0_5.py`.
-
-### Analyzer no licenciante
+### Analyzer
 
 ```text
 v0_25 -> v0_26 -> v0_35
 ```
 
-v0.35 añade canal opcional `context_segments` sin convertir el contexto en requisito universal de análisis local.
-
-### Runtime lingüístico
-
-El ZIP v0.2.15.3 contiene módulos desde la foundation v0.2.0 y etapas sucesivas de retrieval, context/provenance, morphology I, BOUND, morphology II, evidence adjudication, decision simulation, surface evidence, documentary alignment, Pickett backfill/cross-source, resolution vectors, person/possession, evidence qualification/integrity y el cierre `v0.2.15.3_surface_semantics_resolution_integrity`.
-
-La genealogía exacta debe preservarse archivo por archivo; no se debe inferir que cada módulo anterior permaneció semánticamente idéntico en el wrapper final.
-
-### NC001 state
-
-Secuencia de estados localizada desde `CURRENT_STATE_NC001_v2_POST_GENERATOR_V0.md` hasta `CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md`.
-
-Checkpoints de alto valor ya preservados:
-
-```text
-v2 -> v3 -> v4 -> v34 -> v35 -> v36 -> v37.1
-```
-
-- v3: primer bridge round-trip compuesto sobre runtime canónico + schemas NC001; primera recombinación novedosa licenciada `Ma' beedabe`.
-- v4: contrato round-trip v0.2 estabilizado; separación `ANALYZED != GENERATION_LICENSED` y gate de compatibilidad de valencia.
-- v34: cambio del default C02 a `quí` sin invalidar `qué`.
-- v35: materialización/priorización de huecos del grafo de COR001, sin convertir COR001 en evidencia.
-- v36: congela la expansión técnica de COR001 y activa literatura + audio independiente.
-- v37.1: cierre de la pasada BIB065 y preservación del Analyzer de frase aislada.
+v0.35 añade `context_segments` opcional sin hacer obligatorio el contexto para análisis local.
 
 ### Readiness
 
-Se localizaron matrices `GENERATION_READINESS_MATRIX` sucesivas hasta `v14`; `v14` sigue siendo la más reciente localizada en los paquetes inspeccionados y está migrada.
+Se localizaron matrices sucesivas hasta `GENERATION_READINESS_MATRIX_v14.csv`, la más reciente localizada.
 
-## 8. Dependencias del Analyzer v0.35
+### MVP_LINGUISTICO_001
 
-Requiere:
-
-```text
-didxaza_runtime_v0_2_1_retrieval.py
-didxaza_runtime_v0_2_4_bound.py
-didxaza_runtime_v0_2_5_morphology_ii.py
-didxaza_runtime_v0_2_3_morphology_i.py
-DICTIONARIA_entries_v0_2_15_2.csv
-DICTIONARIA_senses_v0_2_15_2.csv
-DICTIONARIA_examples_v0_2_15_2.csv
-DIC_VERB_2385_v0_1.csv
-SQLite table verb_lexeme_class_v023
-SQLite table person_possession_exact_v0214
-```
-
-Todas las dependencias enumeradas están presentes y verificadas. El Analyzer v0.35 puede instanciarse desde el repositorio mediante `analyzer_v0_35_migrated_adapter.py` y conserva su contrato `NON_LICENSING_PARTIAL_COMPONENT_ANALYSIS`.
-
-Smoke test documentado:
+Hashes históricos observados, no retroactivamente canónicos:
 
 ```text
-"Quí rasé'" -> PARTIAL_ANALYSIS_NON_LICENSING
-forma deliberadamente inexistente -> ABSTAIN_NO_COMPONENT_EVIDENCE
-COR001 benchmark/gold/rule discovery -> false
+MVP v0.1 ZIP = f4819f1525036742e6915a2a9cbaf6cd7417d8ea4bdb7914fafdff93f960c948
+MVP v0.2 ZIP = e6524d5d89ed42ff233f6216d29553de644de86e601af21e658627605a6185e2
 ```
 
-## 9. Otros artefactos localizados y pendientes
+`mvp_review_candidate_adapter_v0.py` ya fue recuperado en el checkpoint inicial Generator. `didxaza_vertical_slice_v0_1.py` y los dos ZIP MVP siguen sólo referenciados/localizados históricamente; no se inventan ni reconstruyen.
+
+## 7. Otros artefactos localizados y pendientes
 
 | Artefacto | Estado actual | SHA-256 si aplica |
 |---|---|---|
+| `PAQUETE_MIGRACION_DIDXAZA_GENERATOR_V0_INTEGRATED_v1(1).zip` | `BINARY_TRANSFER_PENDING / ARCHIVE_ONLY` | `270dff08371f6b35bbb817d5440db85811ab87f11b2c7a96a9cf8f485ed76b9a` |
+| `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_1.zip` | `REFERENCED_BY_LOCATED_ARTIFACT` | observed `f4819f...60c948` |
+| `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_2.zip` | `REFERENCED_BY_LOCATED_ARTIFACT` | observed `e6524d...6185e2` |
+| `didxaza_vertical_slice_v0_1.py` | `REFERENCED_BY_LOCATED_ARTIFACT` | — |
 | `ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `61fd21298c1260924fdc95b7e201b8d601dc83820f3d4f3686f508a74ae57c6a` |
 | `DevelopmentCorpusProtocol_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `563dc30977a1f6175e823c60a8f79f8c78f1ec81ff09b27ad0943ceaff5fd8ad` |
 | `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `3ea1d5b4598067f3fe51a03c6e3afa65131c5a543b16f8843b6f1727be094de7` |
 | `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `acffea79fe7d228a0b28f740094e5a15fd4ec0ba6d36b257cc3aaef918a83c54` |
-| `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / historical provisional | `f3308483c3135e43d49f2641f518aecd0dbf3c1fcbdc98f349511751ce86b295` |
+| `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE / historical provisional` | `f3308483c3135e43d49f2641f518aecd0dbf3c1fcbdc98f349511751ce86b295` |
 | `COR001_ANALYSIS_TARGET_PASS_REPORT_v0_24.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `b369215edec07a98b59b6ee22a87995b20614d7a45dd16541f0deb71b93fd0d3` |
-| `generator_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `SUPERSEDED` / `ARCHIVE_ONLY` | `54257f9a6dae12aba003e50e81b14bc25fba1d3e54e2eeecce009130c01fbacc` |
-| `canonical_analyzer_roundtrip_bridge_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `SUPERSEDED` / `ARCHIVE_ONLY` | `bf1c3604f59aa559f8c1e5a6e7cfd1c78b16315f0dbbd1c1218f4e0a09cd0436` |
-| `GenerationLicense_v0_2_roundtrip.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `SUPERSEDED` / `ARCHIVE_ONLY` | `0afb4d10fb96d8d0f264ad4ace18b2174b101aa86a593835b7530dfc57746861` |
-| `GenerationEvidenceAtoms_v0_2_roundtrip.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `SUPERSEDED` / `ARCHIVE_ONLY` | `eb12fd80cae634c3f66ba4003b6804bfd65a06f35d96726eef18d6d38635c191` |
-| `STABILIZATION_REPORT_v0_2.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` / `ARCHIVE_ONLY` | `76d2655f9cd95eec69c0d143a264a49aa51b67cf55e609fc882c9dffdd530447` |
+| `generator_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE / SUPERSEDED / ARCHIVE_ONLY` | `54257f9a6dae12aba003e50e81b14bc25fba1d3e54e2eeecce009130c01fbacc` |
+| `canonical_analyzer_roundtrip_bridge_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE / SUPERSEDED / ARCHIVE_ONLY` | `bf1c3604f59aa559f8c1e5a6e7cfd1c78b16315f0dbbd1c1218f4e0a09cd0436` |
+| `GenerationLicense_v0_2_roundtrip.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE / SUPERSEDED / ARCHIVE_ONLY` | `0afb4d10fb96d8d0f264ad4ace18b2174b101aa86a593835b7530dfc57746861` |
+| `GenerationEvidenceAtoms_v0_2_roundtrip.jsonl` | `SOURCE_COMPLETE_READY_TO_MIGRATE / SUPERSEDED / ARCHIVE_ONLY` | `eb12fd80cae634c3f66ba4003b6804bfd65a06f35d96726eef18d6d38635c191` |
+| `STABILIZATION_REPORT_v0_2.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE / ARCHIVE_ONLY` | `76d2655f9cd95eec69c0d143a264a49aa51b67cf55e609fc882c9dffdd530447` |
 
-El backlog pedagógico v0.35 es provisional/histórico y no reemplaza el freeze pedagógico post-BIB065 ya migrado.
+## 8. P0 localizado pero aún incompleto
 
-## 10. Reuse map y artefactos históricos referenciados
+### Runtime v0.2.15.3 — 46/75 payloads aún ausentes
 
-| Artefacto | Estado | Nota |
-|---|---|---|
-| `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_1.zip` | `REFERENCED_BY_LOCATED_ARTIFACT` | hash histórico observado, no retroactivamente canónico |
-| `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_2.zip` | `REFERENCED_BY_LOCATED_ARTIFACT` | hash histórico observado, no retroactivamente canónico |
-| `didxaza_vertical_slice_v0_1.py` | `REFERENCED_BY_LOCATED_ARTIFACT` | ReviewCandidate histórico; requiere inspección |
-| `mvp_review_candidate_adapter_v0.py` | `REFERENCED_BY_LOCATED_ARTIFACT` | conserva procedencia de candidatos |
-| `generator_view(claims)` v0.2.6 | `REFERENCED_BY_LOCATED_ARTIFACT` | reutilizado mediante adapter hash-gated |
+El runtime reproducible parcial y la cadena de 38 pruebas están preservados, pero la genealogía completa del release no.
 
-El reuse map mantiene en cuarentena para Generator_v0: near-match con `SequenceMatcher`, normalización destructiva de diacríticos, propuestas de superficie derivadas de paradigma, dependencia de COR001 como licencia, confidence legado, handlers particulares de COR001 y owner review como licencia de generación.
+Siguiente conjunto P0 del release: nueve dependencias directas necesarias para regenerar técnicamente el replay histórico de `run_cor001_replay_v0_2_15_3.py` en un directorio aislado:
 
-## 11. Commits de esta pasada
+- runner exacto;
+- módulos v0.2.10, v0.2.11, v0.2.12 y v0.2.14;
+- input COR001 usado históricamente;
+- tres registries/datasets auxiliares.
+
+La regeneración sólo verifica reproducibilidad técnica; **COR001 no se convierte en benchmark, gold ni fuente de reglas**.
+
+### Tutor_v0.33
+
+Faltan las nueve dependencias listadas en §5 para hacer instanciable el renderer histórico.
+
+## 9. Reuse map / cuarentenas
+
+El reuse map mantiene fuera de licencias de generación:
+
+```text
+SequenceMatcher / near-match
+normalización destructiva de diacríticos
+clean_paradigm_surface() -> surface
+COR001 como licencia
+confidence legado
+handlers particulares COR001
+owner review / PROBABLE_TRANSCRIPTION_CORRECTION como licencia
+```
+
+El checkpoint inicial Generator confirma esa cuarentena mediante fuente, adapter y tests exactos.
+
+## 10. Commits históricos de migración ya registrados
 
 ```text
 e921229d1ad7591fc73ea8cea3f3ecdbd3cc0e83  migrate NC001 post-roundtrip bridge state v3
@@ -460,20 +433,45 @@ bf88660d93b043a5894cf283913c1a09436c9b85  verify migrated runtime surface semant
 c9506439546f55fa4c6ca2417bb1693931a4d29e  verify historical runtime test closure
 ```
 
-`CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
+## 11. Commits de la pasada Generator_v0 inicial / NC001 v1
+
+```text
+4a940717302ebb92a5306a29354c88f393e93c76  migrate NC001 pre-Generator state v1
+630010a3f8b1341382b973a4f360b26df47ace4e  migrate initial Generator_v0 source checkpoint
+f3bac5fb21c100619be2aee27e6fd35894659948  migrate initial Generator_v0 zero-novelty licenses
+55a5596fa0005de085c413845fc8675a99d4001b  migrate initial Generator_v0 blockers
+4580df35a00d8f21dc2436918f8c4740554f3544  migrate initial Generator_v0 runtime reuse adapter
+4c7b28902c43a378d65d1e57d1d147a2729ca042  migrate MVP review-candidate non-licensing adapter
+b38480a7ed0c59518cf54d56bf27f5e914b7ff8a  migrate initial Generator_v0 integration report
+e3f5736442c2f889d85b2300ee5f3a6d57dca2db  migrate Generator_v0 hash gate report
+edf2de5e5e7c802985da530b096c1ef078b3d03e  migrate initial Generator_v0 test results
+f92fe107b6d68aa11fa22dd5c7308c135d684e5e  migrate NC001 architecture freeze v1.1
+f3edabe3463ccf9c2b267c9f198724f5ae0c3bf8  migrate NC001 adversarial architecture synthesis v1.1
+48ed349d8150a7caa8c7c6d9d61246f22bbbfd63  migrate initial Generator_v0 unit tests
+7fd7915cd7b0ef655239371d2b8d73692354625f  migrate initial Generator_v0 runtime reuse test
+```
 
 ## 12. Orden de recuperación restante
 
-**P0 — conservar estado reproducible:**
+### P0 — conservar estado reproducible
 
-1. migrar las nueve dependencias directas todavía ausentes del runner v0.2.15.3 y regenerar el replay en un directorio aislado para comparar hashes semánticos, sin convertir COR001 en benchmark ni fuente de reglas;
-2. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
+1. Recuperar del release v0.2.15.3 las nueve dependencias directas aún ausentes de `run_cor001_replay_v0_2_15_3.py` y regenerar el replay sólo como verificación técnica aislada.
+2. Recuperar `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas requeridas por `tutor_v0_33.py`.
 
-**P1 — reproducibilidad y límites:** guardrails, DevelopmentCorpusProtocol, reportes/tests/adapters y matrices BIB065.
+### P1 — reproducibilidad y límites
 
-**P2 — ejecutables útiles:** sólo después de conocer versión, dependencias y vigencia.
+- `ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md`;
+- `DevelopmentCorpusProtocol_v0_35.md`;
+- matrices/reportes BIB065;
+- pruebas/adapters adicionales completos y versionados.
 
-**P3 — historia:** auditorías y versiones intermedias como `ARCHIVE_ONLY` cuando expliquen genealogía. No reconstruir toda la historia.
+### P2 — ejecutables útiles
+
+Sólo después de identificar versión, dependencias y vigencia.
+
+### P3 — historia
+
+Auditorías y versiones intermedias como `ARCHIVE_ONLY` cuando expliquen genealogía. No reconstruir todo el historial.
 
 ## 13. Criterio de migración
 
@@ -488,6 +486,10 @@ Antes de incorporar una pieza:
 
 ## 14. Próxima acción
 
-**Siguiente P0 recomendado:** recuperar del ZIP las nueve dependencias directas aún ausentes de `run_cor001_replay_v0_2_15_3.py`: el runner, los módulos v0.2.10/v0.2.11/v0.2.12/v0.2.14, el input COR001 y los tres registries/datasets auxiliares. Ejecutar el replay sólo en un directorio aislado y comparar sus hashes semánticos con los artefactos históricos. COR001 permanece `ANALYSIS_TARGET_ONLY`: esta comparación verifica reproducibilidad técnica, nunca gold, benchmark o descubrimiento de reglas.
+**Siguiente P0 recomendado:** recuperar del ZIP/release canónico las nueve dependencias directas aún ausentes de `run_cor001_replay_v0_2_15_3.py`: runner, módulos v0.2.10/v0.2.11/v0.2.12/v0.2.14, input histórico COR001 y tres registries/datasets auxiliares.
 
-La reconciliación técnica no cambia reglas lingüísticas, no convierte la readiness histórica en política actual y no bloquea COR002, corpus oral ni trabajo con hablantes.
+Ejecutar cualquier replay sólo en un directorio aislado y comparar reproducibilidad técnica. COR001 permanece `ANALYSIS_TARGET_ONLY` y no puede licenciar reglas, correcciones ni generación.
+
+En paralelo, el siguiente conjunto P0 funcional es el paquete exacto de bindings/licencias del Tutor_v0.33.
+
+La reconciliación técnica no cambia reglas lingüísticas, no convierte readiness histórica en política actual y no bloquea COR002, corpus oral ni trabajo con hablantes.
