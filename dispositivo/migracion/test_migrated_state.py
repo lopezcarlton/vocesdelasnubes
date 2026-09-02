@@ -139,9 +139,18 @@ class MigratedStateTests(unittest.TestCase):
         self.assertEqual(sorted(state["integration_blockers"]), ["C03", "C04", "C05", "C06"])
         self.assertFalse(state["research_authority_assertion"])
 
-    def test_exact_surface_semantics_release_test_passes(self) -> None:
+    def test_exact_runtime_closure_tests_pass(self) -> None:
         completed = subprocess.run(
-            [sys.executable, "-m", "unittest", "-v", "test_surface_semantics_v0_2_15_3.py"],
+            [
+                sys.executable,
+                "-m",
+                "unittest",
+                "-v",
+                "test_adversarial_repairs_v0_2_15_2.py",
+                "test_replay_v0_2_15_2.py",
+                "test_schema_v0_2_15_2.py",
+                "test_surface_semantics_v0_2_15_3.py",
+            ],
             cwd=RUNTIME_DIR,
             check=False,
             capture_output=True,
@@ -149,7 +158,7 @@ class MigratedStateTests(unittest.TestCase):
         )
         output = completed.stdout + completed.stderr
         self.assertEqual(completed.returncode, 0, output)
-        self.assertIn("Ran 10 tests", output)
+        self.assertIn("Ran 38 tests", output)
         self.assertIn("OK", output)
 
         state = surface_semantics_status()
@@ -175,9 +184,9 @@ class MigratedStateTests(unittest.TestCase):
             for name, actual in present.items()
             if actual != expected[name]
         }
-        self.assertEqual(len(present), 21)
+        self.assertEqual(len(present), 29)
         self.assertEqual(mismatches, {})
-        self.assertEqual(len(expected) - len(present), 54)
+        self.assertEqual(len(expected) - len(present), 46)
 
 
 if __name__ == "__main__":
