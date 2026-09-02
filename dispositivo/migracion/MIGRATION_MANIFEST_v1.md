@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — migración del checkpoint inicial Generator_v0 / NC001 v1
+**Última actualización:** 2026-09-02 — runner exacto del replay v0.2.15.3 migrado
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -83,6 +83,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/runtime/v0_2_15_3/DICTIONARIA_entries_v0_2_15_2.csv` | 9,012 entradas exactas |
 | `dispositivo/runtime/v0_2_15_3/DICTIONARIA_senses_v0_2_15_2.csv` | 9,046 sentidos exactos |
 | `dispositivo/runtime/v0_2_15_3/DICTIONARIA_examples_v0_2_15_2.csv` | 9,686 ejemplos exactos |
+| `dispositivo/runtime/v0_2_15_3/run_cor001_replay_v0_2_15_3.py` | runner exacto del replay histórico v0.2.15.3; sólo reproducibilidad técnica, COR001 sigue `ANALYSIS_TARGET_ONLY` |
 | `dispositivo/generator/generator_v0_5.py` | implementación Generator más reciente localizada |
 | `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador al layout migrado |
 | `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot readiness más reciente localizado |
@@ -119,7 +120,7 @@ ZIP SHA256 = 6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
 SQLite v2.20 SHA256 = 2379773426baf4e3eace87c61ec17f7a1e1b9164421e56cf736d35eb64a5ebed
 ```
 
-El repositorio contiene 29 de los 75 payloads del manifiesto original; los 29 coinciden exactamente con el release. La SQLite v2.20 es byte por byte idéntica, `integrity_check=ok`, sin violaciones FK; están presentes `canonical_state_v17`, `verb_lexeme_class_v023` y `person_possession_exact_v0214`.
+El repositorio contiene 30 de los 75 payloads del manifiesto original; los 30 coinciden exactamente con el release. La SQLite v2.20 es byte por byte idéntica, `integrity_check=ok`, sin violaciones FK; están presentes `canonical_state_v17`, `verb_lexeme_class_v023` y `person_possession_exact_v0214`.
 
 La prueba exacta `test_surface_semantics_v0_2_15_3.py` pasa 10 casos y conserva desactivados autocorrección, sugerencias, edición y promoción visible. La cadena histórica recuperada ejecuta 38/38 pruebas, pero 12 de ellas leen resultados almacenados del replay; no equivalen a regeneración de COR001 ni a validación lingüística.
 
@@ -135,6 +136,16 @@ STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
 ```text
 SHA256 = fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb
 ```
+
+El runner recibido en esta pasada fue comparado con el hash del release y compila sin modificación:
+
+```text
+run_cor001_replay_v0_2_15_3.py
+SHA256 = 02a540651c7bb884638581f6be72e2133a3624df0cadd3eede95920b50178485
+STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
+```
+
+El runner no se ha ejecutado todavía porque faltan ocho dependencias directas. Su presencia no cambia el rol de COR001 ni atribuye validez lingüística a las salidas históricas.
 
 ### 3.2 Inventario verbal y Dictionaria
 
@@ -297,7 +308,6 @@ El Tutor preserva el contrato histórico:
 ```text
 ANALYZED != GENERATION_LICENSED
 ```
-
 y se abstiene sin binding/licencia exactos.
 
 ## 6. Genealogías recuperadas
@@ -370,18 +380,22 @@ MVP v0.2 ZIP = e6524d5d89ed42ff233f6216d29553de644de86e601af21e658627605a6185e2
 
 ## 8. P0 localizado pero aún incompleto
 
-### Runtime v0.2.15.3 — 46/75 payloads aún ausentes
+### Runtime v0.2.15.3 — 45/75 payloads aún ausentes
 
-El runtime reproducible parcial y la cadena de 38 pruebas están preservados, pero la genealogía completa del release no.
+El runner exacto ya fue recuperado. Para regenerar técnicamente el replay histórico siguen faltando ocho dependencias directas:
 
-Siguiente conjunto P0 del release: nueve dependencias directas necesarias para regenerar técnicamente el replay histórico de `run_cor001_replay_v0_2_15_3.py` en un directorio aislado:
+```text
+didxaza_runtime_v0_2_10_documentary_alignment.py
+didxaza_runtime_v0_2_11_pickett_backfill.py
+didxaza_runtime_v0_2_12_pickett_cross_source.py
+didxaza_runtime_v0_2_14_person_possession.py
+COR001_REPLAY_INPUT_v0_2_15_2.csv
+DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv
+PICKETT_LEXICON_BACKFILL_v0_1.csv
+PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv
+```
 
-- runner exacto;
-- módulos v0.2.10, v0.2.11, v0.2.12 y v0.2.14;
-- input COR001 usado históricamente;
-- tres registries/datasets auxiliares.
-
-La regeneración sólo verifica reproducibilidad técnica; **COR001 no se convierte en benchmark, gold ni fuente de reglas**.
+Sus identidades de release están registradas en `RELEASE_FILE_MANIFEST_v0_2_15_3.json`. La regeneración sólo verifica reproducibilidad técnica; **COR001 no se convierte en benchmark, gold ni fuente de reglas**.
 
 ### Tutor_v0.33
 
@@ -451,11 +465,19 @@ f3edabe3463ccf9c2b267c9f198724f5ae0c3bf8  migrate NC001 adversarial architecture
 7fd7915cd7b0ef655239371d2b8d73692354625f  migrate initial Generator_v0 runtime reuse test
 ```
 
-## 12. Orden de recuperación restante
+## 12. Pasada de recuperación del runner v0.2.15.3
+
+```text
+bdd2d9857bbaa647f239748aff3cf2af1e5bc567  migrate exact runtime v0.2.15.3 replay runner
+```
+
+Fuente recibida: `run_cor001_replay_v0_2_15_3(1).py`. Se migró con su nombre histórico sin sufijo de carga. SHA-256 `02a540651c7bb884638581f6be72e2133a3624df0cadd3eede95920b50178485`, idéntico al registrado por el release. Compila localmente. No se ejecutó el replay por faltar las ocho dependencias enumeradas en §8.
+
+## 13. Orden de recuperación restante
 
 ### P0 — conservar estado reproducible
 
-1. Recuperar del release v0.2.15.3 las nueve dependencias directas aún ausentes de `run_cor001_replay_v0_2_15_3.py` y regenerar el replay sólo como verificación técnica aislada.
+1. Recuperar las ocho dependencias directas restantes del runner v0.2.15.3 y regenerar el replay sólo como verificación técnica aislada.
 2. Recuperar `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas requeridas por `tutor_v0_33.py`.
 
 ### P1 — reproducibilidad y límites
@@ -473,7 +495,7 @@ Sólo después de identificar versión, dependencias y vigencia.
 
 Auditorías y versiones intermedias como `ARCHIVE_ONLY` cuando expliquen genealogía. No reconstruir todo el historial.
 
-## 13. Criterio de migración
+## 14. Criterio de migración
 
 Antes de incorporar una pieza:
 
@@ -484,9 +506,9 @@ Antes de incorporar una pieza:
 5. determinar si es estado, ejecutable o historia;
 6. impedir que su copia sea interpretada como nueva regla lingüística o pedagógica.
 
-## 14. Próxima acción
+## 15. Próxima acción
 
-**Siguiente P0 recomendado:** recuperar del ZIP/release canónico las nueve dependencias directas aún ausentes de `run_cor001_replay_v0_2_15_3.py`: runner, módulos v0.2.10/v0.2.11/v0.2.12/v0.2.14, input histórico COR001 y tres registries/datasets auxiliares.
+**Siguiente P0 recomendado:** recuperar del ZIP/release canónico las ocho dependencias directas restantes de `run_cor001_replay_v0_2_15_3.py`, empezando por los módulos v0.2.10/v0.2.11/v0.2.12/v0.2.14 y después el input histórico COR001 y los tres registries/datasets auxiliares.
 
 Ejecutar cualquier replay sólo en un directorio aislado y comparar reproducibilidad técnica. COR001 permanece `ANALYSIS_TARGET_ONLY` y no puede licenciar reglas, correcciones ni generación.
 
