@@ -7,10 +7,10 @@
 titulo: Arquitectura del Sistema de Conocimiento
 proyecto: Voces de las Nubes
 autor: Emiliano López Carlton
-version: 0.1
+version: 0.2
 estado: borrador_de_trabajo
 unidad_minima: hallazgo
-fecha: 05/08/2026
+fecha: 02/09/2026
 ---
 ```
 
@@ -176,6 +176,39 @@ Son documentos elaborados a partir del conocimiento registrado:
 * estado actual del proyecto.
 
 Estas vistas no constituyen la fuente primaria de verdad. Son representaciones organizadas del conocimiento vigente.
+
+## 3.5 Sistemas derivados y frontera de autoridad
+
+Las herramientas, implementaciones, repositorios técnicos y otros sistemas derivados **no constituyen una quinta capa del Sistema de Conocimiento** ni adquieren autoridad por consumirlo o procesarlo.
+
+Pueden:
+
+* leer conocimiento aprobado;
+* ejecutar análisis y pruebas;
+* detectar contradicciones o vacíos;
+* formular requisitos;
+* proponer candidatos de hallazgo, supuesto, interpretación o decisión.
+
+No pueden por sí mismos:
+
+* adoptar conocimiento;
+* promover un candidato a entidad vigente;
+* modificar una decisión, principio o vista canónica;
+* convertir una salida técnica en evidencia lingüística, pedagógica o comunitaria.
+
+Cuando una lectura o descubrimiento ocurra durante trabajo en un sistema derivado, debe volver a la fuente original y seguir el procedimiento de actualización de Voces de las Nubes antes de incorporarse. Un informe técnico puede documentar el comportamiento de la herramienta que lo produjo, pero no sustituye la autoridad pertinente sobre otros dominios.
+
+La relación es bidireccional en información y unidireccional en autoridad:
+
+```text
+VOCES -> conocimiento aprobado -> sistemas derivados
+sistemas derivados -> candidatos / contradicciones / requisitos -> VOCES
+VOCES -> adjudicación -> conocimiento aprobado
+```
+
+Los futuros desarrolladores de sistemas derivados no tendrán por defecto capacidad de escritura sobre el Sistema de Conocimiento. Los controles de acceso y, cuando sea viable, la separación física de repositorios deben reflejar esta regla.
+
+Referencia: `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO`.
 
 ---
 
@@ -1529,3 +1562,13 @@ Su función es conservar con precisión:
 * y las razones por las que cambió.
 
 La utilidad de esta arquitectura dependerá menos de la cantidad de información registrada que de la claridad con la que cada elemento conserve su origen, alcance, estado y relación con el resto del proyecto.
+
+
+---
+
+## Actualización v0.2 — 2026-09-02
+
+- Se formaliza la frontera de autoridad entre el Sistema de Conocimiento y sistemas derivados.
+- Se establece que los sistemas derivados pueden descubrir y proponer, pero no adoptar, promover ni escribir conocimiento.
+- Se establece que los permisos de desarrollo técnico no implican permisos de escritura sobre el Sistema de Conocimiento.
+- La actualización responde a `HALL-0008` y `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO`.

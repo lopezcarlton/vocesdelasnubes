@@ -3,7 +3,7 @@
 ```yaml
 id: PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL
 titulo: "La competencia comunicativa tiene dimensiones separables"
-estado: vigente_como_principio_general_aplicacion_revisable
+estado: en_revision
 fecha_revision: 2026-08-31
 
 principio: >
@@ -55,3 +55,12 @@ etiquetas:
 ## Nota de revisión
 
 La formulación anterior generalizaba que el aprendiz típico tendría competencia pragmática/sociocultural muy alta y presentaba la doble etiqueta G/P como la solución pedagógica precisa. Al cierre de agosto esas afirmaciones se restringen: la multidimensionalidad se conserva como principio, mientras que el perfil de aprendices y la arquitectura exacta de dificultad permanecen sujetos a evidencia.
+
+## Auditoría de esquema — 2026-09-02
+
+**Autoridad normativa temporal:** `SUSPENDED_PENDING_ENTITY_ADJUDICATION`
+
+Este archivo fue localizado con un estado y/o campos que no cumplen el esquema `PRIN` definido en `00_ARQUITECTURA_DEL_CONOCIMIENTO.md` §4.5. Se conserva íntegramente como antecedente, pero no debe utilizarse como principio vigente hasta decidir qué contenido corresponde realmente a principio, decisión, supuesto, aplicación teórica o historia de implementación.
+
+La suspensión no resuelve el fondo de G/P ni modifica sus preguntas de investigación.
+

@@ -3,7 +3,7 @@
 ```yaml
 id: PRIN-P-RESTRICCION-BLANDA
 titulo: "Hipótesis histórica sobre exposición pragmática"
-estado: provisional_not_automatic_generator_policy
+estado: en_revision
 fecha_revision: 2026-08-31
 
 principio_original: >
@@ -57,12 +57,13 @@ criterio_actual_piloto:
   - investigar posteriormente los límites P1–P5 con escenas, hablantes y aprendices reales;
   - mantener las capas finas BIB065 descriptivas hasta contar con evidencia para relacionarlas con G/P.
 
+provenance_status: "PENDING_REFOUNDATION_FROM_KNOWLEDGE_SOURCES; device provenance removed 2026-09-02"
+
 provenance:
   - conocimiento/fuentes/razonamiento-pedagogico-sistema-niveles.md
   - conocimiento/fuentes/SRC-PEDAGOGICAL-FUNDAMENTOS.md
   - conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md
   - conocimiento/decisiones/DEC-G-P-SEPARATION.md
-  - dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md
 
 etiquetas:
   - pedagogia
@@ -77,3 +78,12 @@ etiquetas:
 La versión del 7 de agosto de 2026 defendía explícitamente la exposición a contenido pragmáticamente denso como política del generador. Esa implementación permanece en el historial del repositorio, pero no gobierna automáticamente el piloto principiante al cierre de agosto.
 
 La revisión del 31 de agosto no invalida P. Distingue entre la **vigencia de la escala como arquitectura de análisis** y la **investigación pendiente sobre sus fronteras e implementación**.
+
+## Auditoría de esquema — 2026-09-02
+
+**Autoridad normativa temporal:** `SUSPENDED_PENDING_ENTITY_ADJUDICATION`
+
+Este archivo fue localizado con un estado y/o campos que no cumplen el esquema `PRIN` definido en `00_ARQUITECTURA_DEL_CONOCIMIENTO.md` §4.5. Se conserva íntegramente como antecedente, pero no debe utilizarse como principio vigente hasta decidir qué contenido corresponde realmente a principio, decisión, supuesto, aplicación teórica o historia de implementación.
+
+La suspensión no resuelve el fondo de G/P ni modifica sus preguntas de investigación.
+
