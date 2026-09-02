@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha:** 2026-09-02  
-**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_CONSOLIDATED / NON_CANONICAL`
+**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_CONSOLIDATED / REPLAY_TECHNICALLY_REPRODUCED / NON_CANONICAL`
 
 ## 1. Función
 
@@ -26,7 +26,7 @@ Consultar como fuentes técnicas vigentes:
 
 A este corte:
 
-- runtime v0.2.15.3: subconjunto exacto materializado, con dependencias directas conocidas para el replay histórico presentes;
+- runtime v0.2.15.3: subconjunto exacto materializado; replay histórico aislado reproducido con `TECHNICAL_REPRODUCIBILITY_PASS` y outputs deterministas exactos;
 - Analyzer v0.35: subconjunto parcial no licenciante reproducible;
 - Generator v0.5: fuente histórica + adaptador al layout migrado;
 - Tutor v0.33: fuente presente, dependencias incompletas;
@@ -93,9 +93,9 @@ Tampoco bloquean la reentrada:
 - ZIPs históricos completos cuyo contenido textual relevante ya fue migrado;
 - runners/reports COR001 históricos que sólo sirven a genealogía;
 - artefactos explícitamente `ARCHIVE_ONLY` o `SUPERSEDED`;
-- la regeneración técnica del replay v0.2.15.3.
+- futuras reejecuciones manuales del replay v0.2.15.3, que ya obtuvo `PASS` técnico el 2026-09-02.
 
-El replay puede ejecutarse una sola vez desde el repositorio como prueba de reproducibilidad técnica. Un `PASS` no concede autoridad lingüística a COR001.
+La evidencia del cierre está en `ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`. Un `PASS` no concede autoridad lingüística a COR001.
 
 ## 7. Cierre documental de reentrada
 

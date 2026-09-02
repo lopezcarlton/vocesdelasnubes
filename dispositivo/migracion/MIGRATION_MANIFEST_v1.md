@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — consolidado el cierre de migración histórica y reentrada desde GitHub; integrado `MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md`.
+**Última actualización:** 2026-09-02 — consolidada la migración histórica y verificada la reproducibilidad técnica aislada del replay v0.2.15.3; COR001 permanece `ANALYSIS_TARGET_ONLY`.
 
 **Estado:** `ACTIVE_INVENTORY / HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / NO_BLOCKING`  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -61,6 +61,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md` | protocolo de migración directa |
 | `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md` | checkpoint de presencia/ejecutabilidad/reproducibilidad |
 | `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md` | cierre de reentrada; `NON_CANONICAL` |
+| `dispositivo/migracion/ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md` | evidencia del replay aislado; `TECHNICAL_REPRODUCIBILITY_PASS / NON_LINGUISTIC_AUTHORITY` |
 | `dispositivo/migracion/test_migrated_state.py` | verificaciones del estado migrado |
 | `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` | discusión pedagógica no normativa |
 | `dispositivo/hardening/ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md` | `MIGRATED / EXACT_TEXT_IDENTITY_VERIFIED / P1`; frase aislada y contexto opcional protegidos |
@@ -146,7 +147,7 @@ verb_lexeme_class_v023 = present
 person_possession_exact_v0214 = present
 ```
 
-El slice final de semántica de superficie y la cadena histórica de 38 pruebas permanecen reproducibles desde artefactos almacenados. Todas las dependencias directas conocidas del replay histórico están materializadas, pero el replay end-to-end todavía no se ha regenerado en un directorio aislado.
+El slice final de semántica de superficie y la cadena histórica de 38 pruebas permanecen reproducibles desde artefactos almacenados. El replay histórico v0.2.15.3 fue regenerado en un checkout aislado de GitHub Actions y obtuvo `TECHNICAL_REPRODUCIBILITY_PASS`: todas las dependencias directas verificadas coincidieron con el release y los outputs deterministas `SUMMARY` y `METRICS` reprodujeron exactamente sus SHA-256 históricos. Ver `ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`. Esto no concede autoridad lingüística a COR001.
 
 `PICKETT_LEXICON_BACKFILL_v0_1.csv` conserva identidad exacta:
 
@@ -159,7 +160,7 @@ GIT_BLOB = 98b4e87282b996e837356f41ead2f859d53face1
 STATUS = MIGRATED / EXACT_BYTE_IDENTITY_VERIFIED
 ```
 
-No queda ninguna dependencia directa conocida faltante para intentar la regeneración aislada del replay histórico. Esa ejecución sólo puede probar reproducibilidad técnica; COR001 permanece `ANALYSIS_TARGET_ONLY`.
+No queda ninguna dependencia directa conocida faltante para el replay histórico y la regeneración aislada ya fue ejecutada con `PASS` técnico. Durante la verificación se restauró la representación byte-exacta histórica de `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv` (`UTF-8 BOM + CRLF + final newline`, SHA-256 `3f1e955a285c2ce9c66d3953def6b41fd993d6b8dd81567c5f95a28281d20bdb`), corrigiendo sólo una normalización de transporte. COR001 permanece `ANALYSIS_TARGET_ONLY`.
 
 ## 5. Analyzer, Generator y Tutor
 
@@ -342,8 +343,9 @@ La historia completa permanece en Git; esta lista resalta cierres relevantes par
 
 ### P0 — reproducibilidad técnica, no bloqueo de investigación
 
-1. regenerar el replay histórico v0.2.15.3 en directorio aislado y comparar únicamente reproducibilidad técnica;
-2. recuperar `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas sólo si aparecen como fuentes completas y si siguen siendo útiles para reproducir el Tutor histórico.
+1. recuperar `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas sólo si aparecen como fuentes completas y si siguen siendo útiles para reproducir el Tutor histórico.
+
+El replay histórico v0.2.15.3 ya no es un pendiente: su reproducibilidad técnica aislada fue verificada el 2026-09-02. Futuras ejecuciones son manuales y no constituyen una suite de regresión COR001.
 
 ### P1 — límites y genealogía
 
@@ -365,7 +367,7 @@ Con la consolidación de este manifiesto:
 - las rutas BIB065 del estado v37.1 apuntan al layout real del repositorio;
 - no hace falta volver por defecto a chats históricos;
 - el runtime sigue con 38/75 payloads exactos materializados;
-- el replay end-to-end todavía no se ha regenerado y no se declara `CLOSED_PASS` reproducido;
+- el replay end-to-end v0.2.15.3 fue regenerado aisladamente y obtuvo `TECHNICAL_REPRODUCIBILITY_PASS`; `SUMMARY` y `METRICS` coinciden byte por byte con el release;
 - Tutor v0.33 sigue no instanciable por dependencias históricas faltantes;
 - ninguna de estas limitaciones bloquea literatura, corpus oral, COR002, trabajo con hablantes o investigación pedagógica.
 
@@ -379,8 +381,8 @@ RESEARCH_BLOCKED = false
 
 ## 12. Próxima acción
 
-Si la prioridad es **reproducibilidad técnica histórica**, el siguiente P0 es regenerar aisladamente el replay v0.2.15.3 con las dependencias exactas materializadas.
+No queda un replay P0 pendiente. La recuperación del Tutor v0.33 sólo debe continuar si aparecen sus dependencias exactas y sigue siendo útil para genealogía; no bloquea investigación.
 
-Si la prioridad es **investigación activa**, puede continuarse directamente con la ruta vigente: nueva literatura lingüística + corpus oral independiente de Juchitán audio-first + discusión pedagógica abierta de COR002.
+Desde el punto de vista de migración entre chats y reproducibilidad técnica del replay histórico, el repositorio está suficientemente cerrado para reentrada. La ruta sustantiva vuelve a literatura lingüística, corpus oral independiente de Juchitán y discusión pedagógica abierta de COR002.
 
-Un `PASS` técnico del replay no convierte COR001 en benchmark, gold, regresión ni fuente de reglas.
+COR001 permanece `ANALYSIS_TARGET_ONLY`: el `PASS` técnico no lo convierte en benchmark, gold, regresión ni fuente de reglas.

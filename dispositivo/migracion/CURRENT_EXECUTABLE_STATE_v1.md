@@ -74,11 +74,13 @@ USER_VISIBLE_SUGGESTIONS_ENABLED = false
 ANALYSIS_ONLY_SURFACE_PROMOTION = false
 ```
 
-Esto reproduce el slice unitario de integridad de semántica de superficie. La cadena histórica de 38 pruebas también es ejecutable conforme a la sección siguiente. Los módulos v0.2.10, v0.2.11, v0.2.12 y v0.2.14 y todas las dependencias directas identificadas para el replay histórico están ahora materializados. El replay de COR001 todavía no se ha regenerado ni se han recalculado de forma independiente los 26 criterios del `CLOSED_PASS`.
+Esto reproduce el slice unitario de integridad de semántica de superficie. La cadena histórica de 38 pruebas también es ejecutable conforme a la sección siguiente. Los módulos v0.2.10, v0.2.11, v0.2.12 y v0.2.14 y todas las dependencias directas identificadas para el replay histórico están materializados. El replay histórico de COR001 fue además regenerado en un checkout aislado de GitHub Actions: runner `exit 0`, dependencias directas exactas y outputs deterministas `SUMMARY`/`METRICS` byte-idénticos al release. Esto verifica reproducibilidad técnica del runner, no los 26 criterios lingüísticos ni autoridad sobre COR001.
 
 Estado del replay end-to-end:
 
-`DIRECT_DEPENDENCIES_COMPLETE / READY_FOR_ISOLATED_REPLAY_REGENERATION / NOT_YET_REGENERATED`.
+`ISOLATED_REPLAY_REPRODUCED / TECHNICAL_REPRODUCIBILITY_PASS / NON_AUTHORITATIVE / COR001_ANALYSIS_TARGET_ONLY`.
+
+Evidencia: `migracion/ISOLATED_REPLAY_VERIFICATION_v0_2_15_3_2026-09-02.md`.
 
 ### 2.2 Cadena histórica de 38 pruebas
 
@@ -125,7 +127,7 @@ CRLF_LINES = 2535
 STATUS = EXACT_BYTE_IDENTITY_VERIFIED
 ```
 
-Con esto no queda ninguna dependencia directa conocida faltante para intentar la regeneración aislada del replay histórico. La presencia del input COR001 no cambia su rol: `ANALYSIS_TARGET_ONLY`.
+Con esto no queda ninguna dependencia directa conocida faltante para el replay histórico y la regeneración aislada ya fue ejecutada con `PASS` técnico. Durante esa verificación se restauró la representación byte-exacta histórica de `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv` (`UTF-8 BOM + CRLF + final newline`, SHA-256 `3f1e955a285c2ce9c66d3953def6b41fd993d6b8dd81567c5f95a28281d20bdb`), corrigiendo sólo una normalización de transporte. La presencia del input y el éxito técnico no cambian el rol de COR001: `ANALYSIS_TARGET_ONLY`.
 
 ## 3. Analyzer v0.35
 
