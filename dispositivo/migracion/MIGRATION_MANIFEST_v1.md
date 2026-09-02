@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — v0.2.11 Pickett backfill runtime + COR001 replay input exactos recuperados
+**Última actualización:** 2026-09-02 — v0.2.12 + v0.2.14 + person/possession registry exactos recuperados; replay histórico queda a una dependencia directa
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -87,7 +87,10 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_10_documentary_alignment.py` | módulo exacto v0.2.10 requerido por el runner v0.2.15.3 |
 | `dispositivo/runtime/v0_2_15_3/DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` | registry exacto reutilizado desde v0.2.10; SHA-256 y Git blob verificados |
 | `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_11_pickett_backfill.py` | módulo exacto v0.2.11 requerido por el runner v0.2.15.3 |
+| `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_12_pickett_cross_source.py` | módulo exacto v0.2.12 requerido por el runner v0.2.15.3 |
+| `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_14_person_possession.py` | módulo exacto v0.2.14 requerido por el runner v0.2.15.3 |
 | `dispositivo/runtime/v0_2_15_3/COR001_REPLAY_INPUT_v0_2_15_2.csv` | input histórico exacto; sólo reproducibilidad técnica, COR001 sigue `ANALYSIS_TARGET_ONLY` |
+| `dispositivo/runtime/v0_2_15_3/PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv` | registry exacto GP person/possession requerido por el replay |
 | `dispositivo/generator/generator_v0_5.py` | implementación Generator más reciente localizada |
 | `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador al layout migrado |
 | `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot readiness más reciente localizado |
@@ -122,7 +125,7 @@ didxaza_v0_2_15_3_surface_semantics_resolution_integrity_CLOSED_PASS(1).zip
 ZIP SHA256 = 6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
 ```
 
-`RELEASE_FILE_MANIFEST_v0_2_15_3.json` enumera 75 payloads. En este checkpoint hay **34/75 payloads exactos recuperados** y 41 aún ausentes.
+`RELEASE_FILE_MANIFEST_v0_2_15_3.json` enumera 75 payloads. En este checkpoint hay **37/75 payloads exactos recuperados** y 38 aún ausentes.
 
 La SQLite v2.20 es byte por byte idéntica al release:
 
@@ -182,7 +185,7 @@ SHA256 = 02a540651c7bb884638581f6be72e2133a3624df0cadd3eede95920b50178485
 STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
 ```
 
-No se ha ejecutado todavía porque faltan dependencias directas.
+No se ha ejecutado todavía porque falta una dependencia directa: `PICKETT_LEXICON_BACKFILL_v0_1.csv`.
 
 ### 4.3 Documentary Alignment v0.2.10
 
@@ -219,7 +222,6 @@ SHA256 = a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf
 
 Por tanto la evidencia disponible demuestra continuidad byte a byte del contenido del registry entre el nombre histórico v0.2.10 y el nombre de release v0.2.15.2. El archivo fue transferido al árbol sin normalización ni reconstrucción. Conserva BOM UTF-8 y terminadores CRLF. Verificación: `SHA256 = a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf`; `GIT_BLOB = 127c48ddfdac41f34359f3871f65e6aa4e759452`; `STATUS = EXACT_RELEASE_IDENTITY_VERIFIED`.
 
-
 ### 4.4 Pickett Lexical Backfill v0.2.11
 
 Fuente completa localizada en este chat:
@@ -234,6 +236,29 @@ STATUS = IDENTICAL_DUPLICATE_UPLOADS / RECOVERABLE_SOURCE_LOCATED
 El paquete contiene el módulo exacto v0.2.11 y `PICKETT_LEXICON_BACKFILL_v0_1.csv` con 2,534 registros (1,949 entradas principales + 585 subentradas). El módulo fue migrado y verificado contra el release. El CSV conserva SHA-256 `56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723` y sigue `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING`; no se reconstruye ni normaliza.
 
 El mismo paquete contiene `COR001_REGRESSION_INPUT_v0_2_11.csv`, byte-idéntico al `COR001_REPLAY_INPUT_v0_2_15_2.csv` del release (SHA-256 `045b3abc83ec2035f6d20895d4584f5c028b7855f0cfb198b366b24d0ea5a8e9`); se migró bajo el nombre esperado por v0.2.15.3 exclusivamente para reproducibilidad técnica.
+
+### 4.5 Pickett cross-source v0.2.12 y person/possession v0.2.14
+
+Fuentes exactas disponibles en el release histórico de este chat y migradas sin modificación:
+
+```text
+didxaza_runtime_v0_2_12_pickett_cross_source.py
+SHA256 = ac27a5b08f8fff78ef95db5c70e0ae4418c65f258f37c808e9d65344a552e16e
+GIT_BLOB = 333e13a5ffb10c1cca53cdb78aa84d75fc0b0bc2
+STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
+
+didxaza_runtime_v0_2_14_person_possession.py
+SHA256 = f86df6f055c83d6b74ae22647091c2b39df1b071e457170bded108cd61817ca9
+GIT_BLOB = 762e66bd6b3233d02494e1be713401646e9551a6
+STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
+
+PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv
+SHA256 = 3f1e955a285c2ce9c66d3953def6b41fd993d6b8dd81567c5f95a28281d20bdb
+GIT_BLOB = 3ce56a39c33b6ebcd89018540fbe450872aceaf0
+STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
+```
+
+Estos tres artefactos cierran tres de las cuatro dependencias directas que todavía bloqueaban el replay histórico.
 
 ## 5. Inventario verbal, Dictionaria y Analyzer
 
@@ -252,7 +277,7 @@ Dictionaria exacta:
 
 ```text
 DICTIONARIA_entries_v0_2_15_2.csv
-SHA256 = a093b8eb5087affb7d7d7f364bb0a423921c20e959d61fe7efcd85de62b249d0
+SHA256 = a093b8eb5087affb7d7f364bb0a423921c20e959d61fe7efcd85de62b249d0
 DATA_ROWS = 9012
 
 DICTIONARIA_senses_v0_2_15_2.csv
@@ -510,18 +535,23 @@ MVP v0.2 ZIP = e6524d5d89ed42ff233f6216d29553de644de86e601af21e658627605a6185e2
 
 ## 10. P0 localizado pero aún incompleto
 
-### Runtime v0.2.15.3 — 43/75 payloads aún ausentes
+### Runtime v0.2.15.3 — 38/75 payloads aún ausentes
 
-Con el runner, v0.2.10, v0.2.11 y el input histórico COR001 exactos ya recuperados, para regenerar técnicamente el replay histórico siguen faltando **cuatro dependencias directas**:
+Para regenerar técnicamente el replay histórico queda una sola dependencia directa sin migrar:
 
 ```text
-didxaza_runtime_v0_2_12_pickett_cross_source.py
-didxaza_runtime_v0_2_14_person_possession.py
 PICKETT_LEXICON_BACKFILL_v0_1.csv
-PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv
 ```
 
-El `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` ya está transferido y verificado byte-exacto.
+La fuente exacta está localizada en este chat y en el release histórico; conserva:
+
+```text
+SHA256 = 56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723
+SIZE = 940709 bytes
+STATUS = SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING
+```
+
+La herramienta GitHub disponible en esta pasada no ofrece transferencia directa de archivo local y el payload textual excede una transferencia razonable por el wrapper de contenido. No se reconstruye, fragmenta ni normaliza.
 
 La regeneración del replay sólo verificaría reproducibilidad técnica; **COR001 no se convierte en benchmark, gold, regression authority ni fuente de reglas**.
 
@@ -590,6 +620,10 @@ bdd2d9857bbaa647f239748aff3cf2af1e5bc567  migrate exact runtime v0.2.15.3 replay
 9b33c78673b5de5bcb56c351e612c6cc4a09ef39  migrate exact runtime v0.2.10 documentary alignment
 1e0a31eb1f583abad07beda41c3e8fbb41a537a1  migrate exact documentary alignment registry v0.2.15.2
 821e9bd6cb6dc38bcbeb378c5c8b66f4f5429902  remove temporary exact registry migration helper
+b3300bb1c77c02c18b686616aad6478a079b2ad1  migrate exact v0.2.12 Pickett cross-source runtime
+5d05b77327b35c3964f63f258cbe06e19ec6d003  migrate exact v0.2.14 person-possession runtime
+3f9b0fab8a13cb66c20e89a76799f97d1537aa65  migrate exact person-possession registry v0.2.15.2
+20cffa99d41e271c662cbbb603989822e951352b  update executable state after restoring v0.2.12 and v0.2.14 deps
 ```
 
 ## 13. Criterio de migración
@@ -607,11 +641,9 @@ Antes de incorporar una pieza:
 
 ### P0 — conservar estado reproducible
 
-1. recuperar `didxaza_runtime_v0_2_11_pickett_backfill.py` y su fuente completa;
-2. recuperar v0.2.12 y v0.2.14;
-3. recuperar `COR001_REPLAY_INPUT_v0_2_15_2.csv`, `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`;
-4. sólo entonces regenerar el replay en directorio aislado para verificar reproducibilidad técnica;
-5. recuperar en paralelo `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas del Tutor.
+1. transferir byte-exacto `PICKETT_LEXICON_BACKFILL_v0_1.csv`;
+2. regenerar el replay en directorio aislado para verificar reproducibilidad técnica;
+3. recuperar en paralelo `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas del Tutor si aparecen como fuentes completas.
 
 ### P1 — reproducibilidad y límites
 
@@ -630,7 +662,7 @@ Auditorías y versiones intermedias como `ARCHIVE_ONLY` cuando expliquen genealo
 
 ## 15. Próxima acción
 
-**Siguiente P0 imprescindible:** `PICKETT_LEXICON_BACKFILL_v0_1.csv` (fuente exacta localizada, transferencia byte-exacta aún pendiente). Después: v0.2.12, v0.2.14 y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`.
+**Siguiente P0 imprescindible:** `PICKETT_LEXICON_BACKFILL_v0_1.csv` (fuente exacta localizada, transferencia byte-exacta aún pendiente).
 
 Ejecutar cualquier replay sólo en un directorio aislado y comparar reproducibilidad técnica. COR001 permanece `ANALYSIS_TARGET_ONLY` y no puede licenciar reglas, correcciones ni generación.
 
