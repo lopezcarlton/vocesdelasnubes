@@ -6,11 +6,17 @@ Corpus lingüístico digital del Didxazá (zapoteco del Istmo) y herramienta de 
 
 ## Reentrada desde GitHub
 
-Para continuar el proyecto en un chat nuevo sin depender de memoria de conversaciones ni de paquetes ZIP, leer primero:
+Para continuar **Voces de las Nubes** en un chat nuevo sin depender de memoria de conversaciones ni de paquetes ZIP, leer primero:
 
 `INICIAR_AQUI_CHAT_NUEVO.md`
 
-Ese archivo define el orden de reconstrucción del estado vigente y obliga a distinguir conocimiento canónico, dispositivo experimental, snapshots históricos y pendientes de migración.
+Ese archivo reconstruye por defecto el **Sistema de Conocimiento**: arquitectura, fuentes, hallazgos, decisiones, teoría, metodología, pedagogía, corpus y validación.
+
+El trabajo explícitamente técnico sobre Analyzer, Corrector, Tutor, Generator, runtime, pruebas o migración tiene un punto de entrada separado:
+
+`dispositivo/REENTRY_TECNICO.md`
+
+La separación de reentrada evita que una conversación pedagógica o bibliográfica cargue por defecto el estado de implementación y evita que el dispositivo adquiera autoridad por proximidad documental.
 
 ---
 
@@ -29,7 +35,7 @@ Construir materiales de aprendizaje auditivo del Didxazá a partir de situacione
 - funciones comunicativas y conversación contextualizada;
 - documentación lingüística trazable;
 - procedimientos de validación con hablantes y especialistas;
-- herramientas internas de análisis, revisión, apoyo pedagógico y generación controlada de materiales.
+- herramientas internas subordinadas al Sistema de Conocimiento para análisis, revisión, apoyo pedagógico y producción controlada de materiales.
 
 ---
 
@@ -50,6 +56,7 @@ Esta arquitectura está vigente como marco de trabajo, pero **no se considera te
 ```text
 vocesdelasnubes/
 ├── README.md
+├── INICIAR_AQUI_CHAT_NUEVO.md             # reentrada del Sistema de Conocimiento
 ├── 00_ARQUITECTURA_DEL_CONOCIMIENTO.md
 ├── 01_JERARQUIA_DE_VERDAD.md
 ├── 02_BACKLOG.md
@@ -67,8 +74,9 @@ vocesdelasnubes/
 │   ├── principios/
 │   ├── hallazgos/
 │   └── fuentes/
-├── dispositivo/                         # capa experimental no canónica
-├── informes/                            # borradores y productos institucionales
+├── dispositivo/                           # sistema derivado, experimental, no canónico
+│   └── REENTRY_TECNICO.md                 # reentrada técnica separada
+├── informes/
 ├── contexto-para-reconstruir-base-de-conocimientos/
 └── prompts/
 ```
@@ -85,10 +93,11 @@ Reglas centrales:
 2. **Las contradicciones se documentan, no se ocultan.**
 3. **Toda afirmación relevante debe ser trazable** hasta su fuente, justificación, fecha y alcance.
 4. **Ninguna modificación silenciosa.** Los cambios sustantivos se registran mediante control de versiones.
+5. **Los sistemas derivados no adoptan conocimiento.** Pueden leer, analizar, detectar problemas y proponer candidatos; la incorporación requiere adjudicación dentro de Voces de las Nubes.
 
-`01_JERARQUIA_DE_VERDAD.md` establece qué fuente prevalece según el tipo de pregunta. Para el uso contemporáneo de la lengua, la evidencia oral registrada y la validación comunitaria tienen precedencia sobre la bibliografía.
+`01_JERARQUIA_DE_VERDAD.md` establece qué autoridad prevalece según el tipo de pregunta y cómo se relacionan `SRC`, `HALL`, `VAL`, `SUP`, `TEO`, `DEC`, `PRIN`, procedimientos y vistas documentales.
 
-La carpeta `dispositivo/` conserva el estado de herramientas lingüísticas experimentales que consumen el conocimiento del proyecto. **No constituye una segunda fuente de verdad.** Ningún resultado de esa capa modifica automáticamente `conocimiento/`.
+La carpeta `dispositivo/` conserva temporalmente el estado de herramientas lingüísticas experimentales que consumen conocimiento del proyecto. **No constituye una segunda fuente de verdad y no tiene autoridad para escribir, adoptar o promover conocimiento.** La regla vigente se documenta en `conocimiento/decisiones/DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO.md`.
 
 ---
 
@@ -136,9 +145,9 @@ A partir de la revisión de Juan José Bueno Holle (2019), el proyecto incorpor�
 
 Esta ampliación **no reemplaza** las escenas pedagógicamente diseñadas ni la traducción/reformulación con hablantes. Añade fuentes independientes de evidencia y reduce la dependencia de estructuras proyectadas desde el español.
 
-### Sistema lingüístico documental
+### Sistema derivado de apoyo
 
-Durante agosto avanzó en paralelo un sistema interno compartido por funciones de análisis, revisión, explicación pedagógica y generación controlada. Esta capa se documenta en `dispositivo/` y permanece explícitamente separada del Sistema de Conocimiento canónico.
+Durante agosto avanzó en paralelo una capa experimental para análisis, revisión, explicación y producción controlada. Se conserva bajo `dispositivo/` por genealogía y reproducibilidad técnica, pero su autoridad está subordinada al Sistema de Conocimiento. Los descubrimientos que surjan durante su desarrollo deben volver a las fuentes originales y al procedimiento de actualización antes de modificar teoría, pedagogía, metodología o corpus.
 
 ### ELDP
 
