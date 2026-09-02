@@ -457,6 +457,7 @@ f533bf667b0a7aca94426fb24016000761502e10  migrate exact Dictionaria analyzer inp
 1349a0be610d4020a698795925a8a70702a22f2d  migrate exact runtime surface semantics slice
 bf88660d93b043a5894cf283913c1a09436c9b85  verify migrated runtime surface semantics slice
 5c1e7a8c1be8492ecb04ca35fff1fc21a58e887d  migrate exact runtime closure test artifacts
+c9506439546f55fa4c6ca2417bb1693931a4d29e  verify historical runtime test closure
 ```
 
 `CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
