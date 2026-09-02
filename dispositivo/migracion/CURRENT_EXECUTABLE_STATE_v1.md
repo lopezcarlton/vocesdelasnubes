@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes
 
-**Fecha:** 2026-09-01
+**Fecha:** 2026-09-02
 
 **Estado:** `CURRENT_MIGRATION_CHECKPOINT / NON_CANONICAL / REVISABLE`
 
@@ -26,11 +26,13 @@ TECHNICAL_CHECK != RESEARCH_CLOSURE
 
 ## 2. Runtime v0.2.15.3
 
-El manifiesto original enumera 75 payloads. En este checkpoint hay 13 payloads presentes:
+El manifiesto original enumera 75 payloads. En este checkpoint hay 21 payloads presentes:
 
-- los 13 coinciden con el SHA-256 del release;
+- los 21 coinciden con el SHA-256 del release;
 - los tres CSV de Dictionaria y la SQLite v2.20 están incluidos;
-- 62 payloads del release todavía no están migrados.
+- siete módulos exactos forman el cierre importable de la prueba unitaria final;
+- `test_surface_semantics_v0_2_15_3.py` está presente sin transformación;
+- 54 payloads del release todavía no están migrados.
 
 La SQLite exacta está en:
 
@@ -53,6 +55,24 @@ La fuente exacta de `DB_INTEGRITY_v0_2_15_3.json` se recuperó del ZIP canónico
 DB_INTEGRITY SHA256 = fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb
 STATUS = EXACT_RELEASE_IDENTITY_VERIFIED
 ```
+
+### 2.1 Slice unitario de semántica de superficie
+
+Estado: `REPRODUCIBLE_SURFACE_SEMANTICS_UNIT_SLICE / NON_LICENSING / NON_AUTHORITATIVE`.
+
+La prueba exacta `test_surface_semantics_v0_2_15_3.py` ejecuta 10 casos desde el árbol migrado y pasa. Su cierre de imports incluye los módulos exactos v0.2.6, v0.2.7, v0.2.7.1, v0.2.9, v0.2.13, v0.2.15.2 y el wrapper v0.2.15.3, además de módulos anteriores ya presentes.
+
+El wrapper declara y las pruebas preservan:
+
+```text
+AUTO_CORRECT_ENABLED = false
+ORTHOGRAPHIC_SUGGESTIONS_ENABLED = false
+EDIT_EXECUTION_ENABLED = false
+USER_VISIBLE_SUGGESTIONS_ENABLED = false
+ANALYSIS_ONLY_SURFACE_PROMOTION = false
+```
+
+Esto reproduce un slice unitario de integridad de semántica de superficie; no reproduce todavía el reporte histórico completo de 38 pruebas, el replay de COR001 ni los 26 criterios del `CLOSED_PASS`. Los módulos v0.2.10, v0.2.11, v0.2.12, v0.2.14 y v0.2.15 no forman parte del cierre de imports de esos 10 casos y permanecen sin migrar.
 
 ## 3. Analyzer v0.35
 
@@ -131,6 +151,6 @@ La frase histórica no se reescribió dentro del core experimental para no alter
 
 ## 7. Interpretación
 
-Este checkpoint no decide si C03, C05, la escala P, las capas BIB065 u otra hipótesis deben mantenerse o cambiar. Sólo evita atribuir al repositorio capacidades que sus archivos actuales no pueden reproducir.
+Este checkpoint no decide si C03, C05, la escala P, las capas BIB065 u otra hipótesis deben mantenerse o cambiar. Tampoco interpreta un `PASS` técnico como validación lingüística. Sólo evita atribuir al repositorio capacidades que sus archivos actuales no pueden reproducir.
 
 Las líneas de investigación, COR002, el trabajo con hablantes y la incorporación de nueva evidencia continúan abiertas conforme a `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`.

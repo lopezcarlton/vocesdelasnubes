@@ -7,6 +7,7 @@ import csv
 import hashlib
 import json
 import sqlite3
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -18,12 +19,16 @@ RUNTIME_DIR = ROOT / "dispositivo" / "runtime" / "v0_2_15_3"
 ANALYZER_DIR = ROOT / "dispositivo" / "analyzer"
 sys.path.insert(0, str(GENERATOR_DIR))
 sys.path.insert(0, str(ANALYZER_DIR))
+sys.path.insert(0, str(RUNTIME_DIR))
 
 from analyzer_v0_35_migrated_adapter import (  # noqa: E402
     build_migrated_analyzer,
     migrated_execution_state as analyzer_execution_state,
 )
 from generator_v0_5_migrated_adapter import migrated_execution_state  # noqa: E402
+from didxaza_runtime_v0_2_15_3_surface_semantics_resolution_integrity import (  # noqa: E402
+    status as surface_semantics_status,
+)
 
 
 def sha256(path: Path) -> str:
@@ -134,6 +139,27 @@ class MigratedStateTests(unittest.TestCase):
         self.assertEqual(sorted(state["integration_blockers"]), ["C03", "C04", "C05", "C06"])
         self.assertFalse(state["research_authority_assertion"])
 
+    def test_exact_surface_semantics_release_test_passes(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, "-m", "unittest", "-v", "test_surface_semantics_v0_2_15_3.py"],
+            cwd=RUNTIME_DIR,
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        output = completed.stdout + completed.stderr
+        self.assertEqual(completed.returncode, 0, output)
+        self.assertIn("Ran 10 tests", output)
+        self.assertIn("OK", output)
+
+        state = surface_semantics_status()
+        self.assertEqual(state["runtime_version"], "0.2.15.3")
+        self.assertFalse(state["analysis_only_surface_promotion"])
+        self.assertFalse(state["auto_correct_enabled"])
+        self.assertFalse(state["orthographic_suggestions_enabled"])
+        self.assertFalse(state["edit_execution_enabled"])
+        self.assertFalse(state["user_visible_suggestions_enabled"])
+
     def test_all_present_release_payloads_are_exact(self) -> None:
         manifest = json.loads(
             (RUNTIME_DIR / "RELEASE_FILE_MANIFEST_v0_2_15_3.json").read_text(encoding="utf-8")
@@ -149,9 +175,9 @@ class MigratedStateTests(unittest.TestCase):
             for name, actual in present.items()
             if actual != expected[name]
         }
-        self.assertEqual(len(present), 13)
+        self.assertEqual(len(present), 21)
         self.assertEqual(mismatches, {})
-        self.assertEqual(len(expected) - len(present), 62)
+        self.assertEqual(len(expected) - len(present), 54)
 
 
 if __name__ == "__main__":

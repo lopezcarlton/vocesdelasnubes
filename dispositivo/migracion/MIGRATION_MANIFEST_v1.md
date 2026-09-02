@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-01 — Analyzer v0.35 reproducible con Dictionaria exacta
+**Última actualización:** 2026-09-02 — slice unitario de semántica de superficie v0.2.15.3 reproducible
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -74,7 +74,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador no normativo que instancia el subconjunto migrado desde una única ruta de inputs sin alterar la implementación histórica |
 | `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot de readiness más reciente localizado en paquete v0.36.2 |
 | `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md` | checkpoint que separa presencia, ejecutabilidad, snapshots no reproducibles y preguntas abiertas |
-| `dispositivo/migracion/test_migrated_state.py` | verificaciones de SQLite, DIC_VERB, Dictionaria, Analyzer, Generator y hashes presentes del release |
+| `dispositivo/migracion/test_migrated_state.py` | verificaciones de SQLite, DIC_VERB, Dictionaria, Analyzer, Generator, slice unitario de semántica de superficie y hashes presentes del release |
 | `dispositivo/tutor/tutor_v0_33.py` | Tutor renderer conservador: sólo explica análisis con binding exacto y licencia activa; no analiza/corrige/genera |
 | `dispositivo/generator/inputs/GenerationLicense_v0_33_c02_default_qui.jsonl` | licencias activas localizadas, incluida migración C02 a `quí` |
 | `dispositivo/generator/inputs/GenerationEvidenceAtoms_v0_33_c02_default_qui.jsonl` | átomos documentales/campo vinculados a las licencias v0.33 |
@@ -126,7 +126,7 @@ La copia discrepante permanece recuperable en el historial Git; no se conserva c
 
 La presencia de fuentes textuales del runtime no sustituye los binarios/datasets referenciados por el release.
 
-Después de transferir Dictionaria, el árbol contiene 13 de los 75 payloads enumerados por el manifiesto original y los 13 coinciden exactamente. La fuente raw de `DB_INTEGRITY_v0_2_15_3.json` confirmó que la copia previa difería sólo por un salto de línea final; la identidad exacta fue restaurada:
+Después de transferir el slice unitario de semántica de superficie, el árbol contiene 21 de los 75 payloads enumerados por el manifiesto original y los 21 coinciden exactamente. La fuente raw de `DB_INTEGRITY_v0_2_15_3.json` confirmó que la copia previa difería sólo por un salto de línea final; la identidad exacta fue restaurada:
 
 ```text
 SHA256 = fa2b88c95b8d567b4165b49636f67cdf8c00fa1a036cf8c162d03a6bceb193bb
@@ -182,11 +182,28 @@ La reproducibilidad declarada corresponde al Analyzer parcial no licenciante v0.
 
 ## 4. P0 localizado y transferencia binaria
 
-### runtime lingüístico v0.2.15.3 — cierre de transferencia
+### runtime lingüístico v0.2.15.3 — transferencia selectiva
 
-**Estado:** `RECOVERABLE_SOURCE_LOCATED` / transferencia todavía incompleta para componentes no presentes.
+**Estado:** `RECOVERABLE_SOURCE_LOCATED` / `REPRODUCIBLE_SURFACE_SEMANTICS_UNIT_SLICE` / transferencia todavía incompleta para componentes no presentes.
 
-El ZIP exacto está disponible y su hash coincide. La raíz contiene la genealogía del runtime y, además, bases SQLite y datasets. La transferencia textual puede continuar archivo por archivo, pero no debe usarse para fingir que los binarios están migrados.
+El ZIP exacto está disponible y su hash coincide. La raíz contiene la genealogía del runtime y, además, bases SQLite y datasets. Se migraron sin transformación los siete módulos que forman el cierre importable de la prueba unitaria final, más la prueba exacta:
+
+```text
+didxaza_runtime_v0_2_6_evidence_adjudication.py
+didxaza_runtime_v0_2_7_decision_simulation.py
+didxaza_runtime_v0_2_7_1_integration_fixes.py
+didxaza_runtime_v0_2_9_surface_evidence_coverage.py
+didxaza_runtime_v0_2_13_resolution_vectors.py
+didxaza_runtime_v0_2_15_2_evidence_integrity.py
+didxaza_runtime_v0_2_15_3_surface_semantics_resolution_integrity.py
+test_surface_semantics_v0_2_15_3.py
+```
+
+Sus SHA-256 coinciden con `RELEASE_FILE_MANIFEST_v0_2_15_3.json`. La prueba exacta ejecuta 10 casos y pasa desde el árbol migrado. El wrapper conserva desactivados autocorrección, sugerencias ortográficas, ejecución de ediciones y sugerencias visibles.
+
+Este resultado no reproduce todavía la clausura histórica de 38 pruebas, el replay de COR001 ni los 26 criterios del reporte `SURFACE_SEMANTICS_PASS_FAIL_v0_2_15_3.csv`. El nombre `CLOSED_PASS` describe el paquete histórico; no convierte el subconjunto actual en runtime completo ni concede autoridad lingüística. Los módulos v0.2.10, v0.2.11, v0.2.12, v0.2.14 y v0.2.15 tampoco son importados por esta prueba final, por lo que su ausencia no impide los 10 casos pero sí deja incompleta la genealogía funcional.
+
+La transferencia puede continuar archivo por archivo, pero la presencia de una fuente o reporte histórico no debe usarse para atribuir una capacidad que aún no se reprodujo.
 
 ### SQLite v2.20
 
@@ -422,6 +439,7 @@ dc8ce13ad56b848d1b329ec2e2cb2a75fb395459  migrate NC001 concept mapping v1
 f533bf667b0a7aca94426fb24016000761502e10  migrate exact Dictionaria analyzer inputs
 6d4de82f9d0062b8adce3efcf1a3e54a40c8dab7  restore exact DB integrity release identity
 9d631d3db742afc6affbd1fb14179eb174c578da  make migrated Analyzer v0.35 reproducible
+1349a0be610d4020a698795925a8a70702a22f2d  migrate exact runtime surface semantics slice
 ```
 
 `CURRENT_STATE_NC001_v35_POST_EVIDENCE_GAP_PRIORITIZER.md` y varios archivos textuales del runtime ya estaban presentes al verificarlos; no se les atribuye un commit nuevo de esta pasada.
@@ -430,7 +448,7 @@ f533bf667b0a7aca94426fb24016000761502e10  migrate exact Dictionaria analyzer inp
 
 **P0 — conservar estado reproducible:**
 
-1. continuar la genealogía/identidad de los componentes restantes del runtime v0.2.15.3 cuyos archivos falten o no coincidan con el ZIP;
+1. trazar y migrar el conjunto mínimo necesario para reproducir la clausura histórica de 38 pruebas de v0.2.15.3, sin convertir el replay de COR001 en benchmark ni fuente de reglas;
 2. recuperar bindings/licencias exactas restantes del Tutor_v0.33.
 
 **P1 — reproducibilidad y límites:** guardrails, DevelopmentCorpusProtocol, reportes/tests/adapters y matrices BIB065.
@@ -452,6 +470,6 @@ Antes de incorporar una pieza:
 
 ## 14. Próxima acción
 
-**Siguiente P0 recomendado:** continuar selectivamente la cadena textual del runtime disponible en el ZIP canónico, empezando por los módulos v0.2.6–v0.2.15.3 requeridos por el wrapper final y su prueba `test_surface_semantics_v0_2_15_3.py`. Verificar cada hash y dependencia antes de atribuir capacidad al Corrector/runtime final.
+**Siguiente P0 recomendado:** inspeccionar la clausura histórica de 38 pruebas y migrar sólo sus dependencias directas todavía ausentes —tests v0.2.15.2, schemas/registries y runner estrictamente necesarios— para distinguir qué parte del `CLOSED_PASS` completo puede reproducirse. COR001 debe permanecer `ANALYSIS_TARGET_ONLY`: el replay puede verificar estabilidad técnica, nunca funcionar como gold, benchmark o fuente de reglas.
 
 La reconciliación técnica no cambia reglas lingüísticas, no convierte la readiness histórica en política actual y no bloquea COR002, corpus oral ni trabajo con hablantes.
