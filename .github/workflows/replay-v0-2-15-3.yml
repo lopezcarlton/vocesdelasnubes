@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   replay:
@@ -17,7 +17,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run isolated replay and diagnose byte identity
+      - name: Restore exact historical registry bytes when safe
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+
+          p = Path('dispositivo/runtime/v0_2_15_3/PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv')
+          expected = '3f1e955a285c2ce9c66d3953def6b41fd993d6b8dd81567c5f95a28281d20bdb'
+          known_lf_migration = '4eb026a6e6b713dec9eeee804a376d3e75884addbfb10096e3fc881adbc85ac7'
+          raw = p.read_bytes()
+          actual = hashlib.sha256(raw).hexdigest()
+          if actual == expected:
+              print('registry already byte-exact')
+          elif actual == known_lf_migration:
+              if not raw.startswith(b'\xef\xbb\xbf'):
+                  raise SystemExit('known migrated hash lacks expected UTF-8 BOM')
+              text = raw[3:].decode('utf-8').replace('\r\n','\n').replace('\r','\n').rstrip('\n')
+              repaired = b'\xef\xbb\xbf' + (text.replace('\n','\r\n') + '\r\n').encode('utf-8')
+              repaired_sha = hashlib.sha256(repaired).hexdigest()
+              if repaired_sha != expected:
+                  raise SystemExit(f'encoding-only reconstruction did not reach expected hash: {repaired_sha}')
+              p.write_bytes(repaired)
+              print(f'restored exact historical bytes: {repaired_sha}')
+          else:
+              raise SystemExit(f'unrecognized registry state: {actual}; refusing automatic repair')
+          PY
+
+      - name: Run isolated replay
         shell: bash
         run: |
           set -euo pipefail
@@ -33,44 +62,11 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           import hashlib, json, sys
-
           root = Path('.')
           release = json.loads((root/'RELEASE_FILE_MANIFEST_v0_2_15_3.json').read_text(encoding='utf-8'))
           expected = release['sha256']
-
-          def sha_bytes(data):
-              return hashlib.sha256(data).hexdigest()
           def sha(path):
-              return sha_bytes(Path(path).read_bytes())
-
-          person_name = 'PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv'
-          raw = (root/person_name).read_bytes()
-          expected_person = expected[person_name]
-          bom = raw.startswith(b'\xef\xbb\xbf')
-          payload = raw[3:] if bom else raw
-          text = payload.decode('utf-8')
-          normalized = text.replace('\r\n','\n').replace('\r','\n')
-          core = normalized.rstrip('\n')
-          variants = {}
-          for newline_name, newline in [('LF','\n'),('CRLF','\r\n')]:
-              converted = core.replace('\n', newline)
-              for final in [False, True]:
-                  body = converted + (newline if final else '')
-                  for with_bom in [False, True]:
-                      data = (b'\xef\xbb\xbf' if with_bom else b'') + body.encode('utf-8')
-                      key = f'{newline_name}|bom={with_bom}|final_newline={final}'
-                      variants[key] = sha_bytes(data)
-          matching_variants = [k for k,v in variants.items() if v == expected_person]
-          encoding_diagnostic = {
-              'raw_sha256': sha_bytes(raw),
-              'expected_sha256': expected_person,
-              'raw_size': len(raw),
-              'raw_bom': bom,
-              'raw_crlf_count': raw.count(b'\r\n'),
-              'raw_lf_count': raw.count(b'\n'),
-              'matching_encoding_variants': matching_variants,
-              'variant_hashes': variants,
-          }
+              return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
           direct_dependencies = [
               'COR001_REPLAY_INPUT_v0_2_15_2.csv',
@@ -79,7 +75,7 @@ jobs:
               'DICTIONARIA_examples_v0_2_15_2.csv',
               'DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv',
               'PICKETT_LEXICON_BACKFILL_v0_1.csv',
-              person_name,
+              'PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv',
               'BASE_CORRECTOR_DIDXAZA_EVIDENCE_INTEGRITY_v2_19.sqlite',
               'didxaza_runtime_v0_2_0_foundation.py',
               'didxaza_runtime_v0_2_1_retrieval.py',
@@ -97,55 +93,63 @@ jobs:
               'didxaza_runtime_v0_2_15_3_surface_semantics_resolution_integrity.py',
               'run_cor001_replay_v0_2_15_3.py',
           ]
-
-          dep_results = {}
+          deps = {}
           dep_ok = True
           for name in direct_dependencies:
-              if not (root/name).exists():
-                  dep_results[name] = {'status':'MISSING'}
-                  dep_ok = False
-                  continue
-              actual = sha(root/name)
+              actual = sha(root/name) if (root/name).exists() else None
               exp = expected.get(name)
-              match = (exp == actual) if exp else None
-              dep_results[name] = {'actual_sha256':actual,'expected_sha256':exp,'match':match}
-              if exp and not match:
-                  dep_ok = False
+              match = actual == exp
+              deps[name] = {'actual_sha256':actual,'expected_sha256':exp,'match':match}
+              dep_ok &= match
 
           outputs = {}
-          output_ok = True
-          for name in [
-              'COR001_REPLAY_SUMMARY_v0_2_15_3.csv',
-              'COR001_REPLAY_METRICS_v0_2_15_3.json',
-              'COR001_REPLAY_DETAILED_v0_2_15_3.jsonl',
-          ]:
-              actual = sha(root/name)
-              exp = expected[name]
-              match = actual == exp
+          deterministic_ok = True
+          for name in ['COR001_REPLAY_SUMMARY_v0_2_15_3.csv','COR001_REPLAY_METRICS_v0_2_15_3.json']:
+              actual = sha(root/name); exp = expected[name]; match = actual == exp
               outputs[name] = {'actual_sha256':actual,'expected_sha256':exp,'exact_match':match}
-              if name != 'COR001_REPLAY_DETAILED_v0_2_15_3.jsonl' and not match:
-                  output_ok = False
-
-          run_manifest = json.loads((root/'RUN_MANIFEST_COR001_v0_2_15_3.json').read_text(encoding='utf-8'))
-          result = {
-              'status': 'PASS' if dep_ok and output_ok else 'FAIL',
-              'criterion': 'runner_exit_0 + direct_dependency_hashes + deterministic_output_hashes',
-              'cor001_policy': 'ANALYSIS_TARGET_ONLY',
-              'direct_dependencies_ok': dep_ok,
-              'deterministic_outputs_ok': output_ok,
-              'person_registry_encoding_diagnostic': encoding_diagnostic,
-              'dependencies': dep_results,
-              'outputs': outputs,
-              'generated_semantic_hashes': run_manifest.get('semantic_hashes', {}),
-              'generated_environment': run_manifest.get('environment', {}),
-              'note_detailed_hash': 'Informational only: detailed output contains ephemeral UUID-bearing IDs; semantic hash is the stable comparison channel.',
+              deterministic_ok &= match
+          detailed = 'COR001_REPLAY_DETAILED_v0_2_15_3.jsonl'
+          outputs[detailed] = {
+              'actual_sha256': sha(root/detailed),
+              'expected_sha256': expected[detailed],
+              'exact_match': sha(root/detailed) == expected[detailed],
+              'comparison_role': 'informational_only_ephemeral_uuid_ids',
           }
-          (root/'ISOLATED_REPLAY_VERIFICATION_2026-09-02.json').write_text(
-              json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True), encoding='utf-8')
-          print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
-          if result['status'] != 'PASS':
-              sys.exit(1)
+          rm = json.loads((root/'RUN_MANIFEST_COR001_v0_2_15_3.json').read_text(encoding='utf-8'))
+          result = {
+              'status':'PASS' if dep_ok and deterministic_ok else 'FAIL',
+              'criterion':'runner_exit_0 + exact_direct_dependencies + exact_deterministic_outputs',
+              'cor001_policy':'ANALYSIS_TARGET_ONLY',
+              'direct_dependencies_ok':dep_ok,
+              'deterministic_outputs_ok':deterministic_ok,
+              'dependencies':deps,
+              'outputs':outputs,
+              'generated_semantic_hashes':rm.get('semantic_hashes',{}),
+              'environment':rm.get('environment',{}),
+          }
+          (root/'ISOLATED_REPLAY_VERIFICATION_2026-09-02.json').write_text(json.dumps(result,ensure_ascii=False,indent=2,sort_keys=True),encoding='utf-8')
+          print(json.dumps(result,ensure_ascii=False,indent=2,sort_keys=True))
+          if result['status'] != 'PASS': sys.exit(1)
           PY
+
+      - name: Commit exact registry transport repair
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          FILE='dispositivo/runtime/v0_2_15_3/PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv'
+          if git diff --quiet -- "$FILE"; then
+            echo 'No registry commit needed.'
+            exit 0
+          fi
+          git config user.name 'lopezcarlton'
+          git config user.email 'lopezcarlton@gmail.com'
+          git add -- "$FILE"
+          git commit -m 'restore exact person-possession registry bytes v0.2.15.2'
+          git push origin HEAD:main
+          REMOTE_SHA=$(git show HEAD:"$FILE" | sha256sum | awk '{print $1}')
+          test "$REMOTE_SHA" = '3f1e955a285c2ce9c66d3953def6b41fd993d6b8dd81567c5f95a28281d20bdb'
+          echo "Committed exact registry SHA256=$REMOTE_SHA"
 
       - name: Upload replay evidence
         if: always()
