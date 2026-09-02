@@ -1,0 +1,132 @@
+name: replay-v0-2-15-3-reproducibility
+
+on:
+  push:
+    paths:
+      - '.github/workflows/replay-v0-2-15-3.yml'
+      - 'dispositivo/runtime/v0_2_15_3/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run isolated replay
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC="$GITHUB_WORKSPACE/dispositivo/runtime/v0_2_15_3"
+          WORK="$RUNNER_TEMP/replay_v0_2_15_3"
+          rm -rf "$WORK"
+          mkdir -p "$WORK"
+          cp -a "$SRC/." "$WORK/"
+          cd "$WORK"
+          python -V
+          python run_cor001_replay_v0_2_15_3.py > REPLAY_STDOUT_2026-09-02.txt
+
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json, sys
+
+          root = Path('.')
+          release = json.loads((root/'RELEASE_FILE_MANIFEST_v0_2_15_3.json').read_text(encoding='utf-8'))
+          expected = release['sha256']
+
+          def sha(path):
+              h = hashlib.sha256()
+              with Path(path).open('rb') as f:
+                  for chunk in iter(lambda: f.read(1024*1024), b''):
+                      h.update(chunk)
+              return h.hexdigest()
+
+          direct_dependencies = [
+              'COR001_REPLAY_INPUT_v0_2_15_2.csv',
+              'DICTIONARIA_entries_v0_2_15_2.csv',
+              'DICTIONARIA_senses_v0_2_15_2.csv',
+              'DICTIONARIA_examples_v0_2_15_2.csv',
+              'DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv',
+              'PICKETT_LEXICON_BACKFILL_v0_1.csv',
+              'PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv',
+              'BASE_CORRECTOR_DIDXAZA_EVIDENCE_INTEGRITY_v2_19.sqlite',
+              'didxaza_runtime_v0_2_0_foundation.py',
+              'didxaza_runtime_v0_2_1_retrieval.py',
+              'didxaza_runtime_v0_2_3_morphology_i.py',
+              'didxaza_runtime_v0_2_4_bound.py',
+              'didxaza_runtime_v0_2_5_morphology_ii.py',
+              'didxaza_runtime_v0_2_6_evidence_adjudication.py',
+              'didxaza_runtime_v0_2_7_decision_simulation.py',
+              'didxaza_runtime_v0_2_9_surface_evidence_coverage.py',
+              'didxaza_runtime_v0_2_10_documentary_alignment.py',
+              'didxaza_runtime_v0_2_11_pickett_backfill.py',
+              'didxaza_runtime_v0_2_12_pickett_cross_source.py',
+              'didxaza_runtime_v0_2_14_person_possession.py',
+              'didxaza_runtime_v0_2_15_2_evidence_integrity.py',
+              'didxaza_runtime_v0_2_15_3_surface_semantics_resolution_integrity.py',
+              'run_cor001_replay_v0_2_15_3.py',
+          ]
+
+          dep_results = {}
+          dep_ok = True
+          for name in direct_dependencies:
+              if not (root/name).exists():
+                  dep_results[name] = {'status':'MISSING'}
+                  dep_ok = False
+                  continue
+              actual = sha(root/name)
+              exp = expected.get(name)
+              match = (exp == actual) if exp else None
+              dep_results[name] = {'actual_sha256':actual,'expected_sha256':exp,'match':match}
+              if exp and not match:
+                  dep_ok = False
+
+          outputs = {}
+          output_ok = True
+          for name in [
+              'COR001_REPLAY_SUMMARY_v0_2_15_3.csv',
+              'COR001_REPLAY_METRICS_v0_2_15_3.json',
+              'COR001_REPLAY_DETAILED_v0_2_15_3.jsonl',
+          ]:
+              actual = sha(root/name)
+              exp = expected[name]
+              match = actual == exp
+              outputs[name] = {'actual_sha256':actual,'expected_sha256':exp,'exact_match':match}
+              if name != 'COR001_REPLAY_DETAILED_v0_2_15_3.jsonl' and not match:
+                  output_ok = False
+
+          run_manifest = json.loads((root/'RUN_MANIFEST_COR001_v0_2_15_3.json').read_text(encoding='utf-8'))
+          result = {
+              'status': 'PASS' if dep_ok and output_ok else 'FAIL',
+              'criterion': 'runner_exit_0 + direct_dependency_hashes + deterministic_output_hashes',
+              'cor001_policy': 'ANALYSIS_TARGET_ONLY',
+              'direct_dependencies_ok': dep_ok,
+              'deterministic_outputs_ok': output_ok,
+              'dependencies': dep_results,
+              'outputs': outputs,
+              'generated_semantic_hashes': run_manifest.get('semantic_hashes', {}),
+              'generated_environment': run_manifest.get('environment', {}),
+              'note_detailed_hash': 'Informational only: detailed output contains ephemeral UUID-bearing IDs; semantic hash is the stable comparison channel.',
+          }
+          (root/'ISOLATED_REPLAY_VERIFICATION_2026-09-02.json').write_text(
+              json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True), encoding='utf-8')
+          print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+          if result['status'] != 'PASS':
+              sys.exit(1)
+          PY
+
+      - name: Upload replay evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: replay-v0-2-15-3-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/replay_v0_2_15_3/ISOLATED_REPLAY_VERIFICATION_2026-09-02.json
+            ${{ runner.temp }}/replay_v0_2_15_3/REPLAY_STDOUT_2026-09-02.txt
+            ${{ runner.temp }}/replay_v0_2_15_3/RUN_MANIFEST_COR001_v0_2_15_3.json
+            ${{ runner.temp }}/replay_v0_2_15_3/COR001_REPLAY_METRICS_v0_2_15_3.json
+            ${{ runner.temp }}/replay_v0_2_15_3/COR001_REPLAY_SUMMARY_v0_2_15_3.csv
