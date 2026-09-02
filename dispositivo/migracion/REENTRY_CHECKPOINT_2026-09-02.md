@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha:** 2026-09-02  
-**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_RECONCILIATION_NONBLOCKING / NON_CANONICAL`
+**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_CONSOLIDATED / NON_CANONICAL`
 
 ## 1. Función
 
@@ -21,7 +21,6 @@ TECHNICAL_REPLAY != LINGUISTIC_VALIDATION
 Consultar como fuentes técnicas vigentes:
 
 - `dispositivo/migracion/MIGRATION_MANIFEST_v1.md`
-- `dispositivo/migracion/MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md`
 - `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md`
 - `dispositivo/ESTADO_ACTUAL_2026-08-31.md`
 
@@ -50,7 +49,7 @@ Artefactos disponibles en el repositorio:
 - `dispositivo/migracion/fuentes/BH2019_SOURCE_PROVENANCE_v0_36_1.json`
 - `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md`
 
-La matriz CSV conserva identidad exacta verificada en GitHub. Ver `MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md`.
+La matriz CSV conserva identidad exacta verificada en GitHub y su estado ya está integrado en `MIGRATION_MANIFEST_v1.md`.
 
 ## 4. Guardrails recuperados
 
@@ -100,20 +99,17 @@ El replay puede ejecutarse una sola vez desde el repositorio como prueba de repr
 
 ## 7. Cierre documental de reentrada
 
-La reentrada desde GitHub está operativa:
+La reentrada desde GitHub está consolidada:
 
 - `INICIAR_AQUI_CHAT_NUEVO.md` existe en la raíz y define el orden de lectura;
 - `README.md` enlaza explícitamente ese entrypoint;
-- se verificaron las rutas canónicas principales usadas por el entrypoint;
-- las rutas BIB065 de `CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md` fueron corregidas al layout real del repositorio;
+- se verificaron las rutas principales usadas por el entrypoint;
+- las rutas BIB065 del estado v37.1 apuntan al layout real del repositorio;
 - cierre, provenance, matriz Markdown/CSV y guardrails post-BIB065 están materializados;
-- `MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md` reconcilia los cambios todavía no fusionados dentro del manifiesto principal.
+- `MIGRATION_MANIFEST_v1.md` incorpora los artefactos que estaban temporalmente registrados en el addendum;
+- el addendum deja de formar parte del estado operativo de reentrada.
 
-Único mantenimiento documental restante:
-
-`MERGE MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md -> MIGRATION_MANIFEST_v1.md`
-
-Esa fusión es deseable para simplificar la documentación, pero **no bloquea un chat nuevo ni exige volver a chats históricos**. Hasta que se haga, `INICIAR_AQUI_CHAT_NUEVO.md` obliga a leer ambos documentos.
+No queda mantenimiento documental que obligue a volver a chats históricos.
 
 ## 8. Ruta de investigación activa
 
