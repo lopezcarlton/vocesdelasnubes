@@ -26,14 +26,15 @@ TECHNICAL_CHECK != RESEARCH_CLOSURE
 
 ## 2. Runtime v0.2.15.3
 
-El manifiesto original enumera 75 payloads. En este checkpoint hay 34 payloads exactos presentes:
+El manifiesto original enumera 75 payloads. En este checkpoint hay 37 payloads exactos presentes:
 
-- los 34 coinciden con el SHA-256 del release;
+- los 37 coinciden con el SHA-256 del release;
 - los tres CSV de Dictionaria y la SQLite v2.20 están incluidos;
 - siete módulos exactos forman el cierre importable de la prueba unitaria final;
 - `test_surface_semantics_v0_2_15_3.py` está presente sin transformación;
 - la SQLite v2.19, tres pruebas v0.2.15.2 y cuatro resultados de replay almacenados completan la cadena histórica de 38 pruebas;
-- 41 payloads del release todavía no están migrados.
+- se restauraron además los módulos exactos v0.2.10, v0.2.11, v0.2.12 y v0.2.14, el input histórico COR001 y el registry exacto de persona/posesión;
+- 38 payloads del release todavía no están migrados.
 
 La SQLite exacta está en:
 
@@ -73,7 +74,7 @@ USER_VISIBLE_SUGGESTIONS_ENABLED = false
 ANALYSIS_ONLY_SURFACE_PROMOTION = false
 ```
 
-Esto reproduce el slice unitario de integridad de semántica de superficie. La cadena histórica de 38 pruebas también es ejecutable conforme a la sección siguiente, pero todavía no se regenera el replay de COR001 ni se recalculan de forma independiente los 26 criterios del `CLOSED_PASS`. Los módulos v0.2.10 y v0.2.11 ya están migrados aunque no forman parte del cierre de imports de esos 10 casos. v0.2.12 y v0.2.14 siguen ausentes; el replay end-to-end continúa bloqueado además por `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`.
+Esto reproduce el slice unitario de integridad de semántica de superficie. La cadena histórica de 38 pruebas también es ejecutable conforme a la sección siguiente, pero todavía no se regenera el replay de COR001 ni se recalculan de forma independiente los 26 criterios del `CLOSED_PASS`. Los módulos v0.2.10, v0.2.11, v0.2.12 y v0.2.14 ya están migrados. Del conjunto de dependencias directas identificadas para el replay histórico sólo falta transferir `PICKETT_LEXICON_BACKFILL_v0_1.csv`.
 
 ### 2.2 Cadena histórica de 38 pruebas
 
@@ -101,10 +102,19 @@ Presentes y verificados contra el release:
 didxaza_runtime_v0_2_10_documentary_alignment.py
 DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv
 didxaza_runtime_v0_2_11_pickett_backfill.py
+didxaza_runtime_v0_2_12_pickett_cross_source.py
+didxaza_runtime_v0_2_14_person_possession.py
 COR001_REPLAY_INPUT_v0_2_15_2.csv
+PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv
 ```
 
-Esto reduce a cuatro las dependencias directas faltantes para regenerar el replay: v0.2.12, v0.2.14, `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`. La presencia del input COR001 no cambia su rol: `ANALYSIS_TARGET_ONLY`.
+Esto reduce a una sola dependencia directa faltante para regenerar el replay:
+
+```text
+PICKETT_LEXICON_BACKFILL_v0_1.csv
+```
+
+La presencia del input COR001 no cambia su rol: `ANALYSIS_TARGET_ONLY`.
 
 ## 3. Analyzer v0.35
 
