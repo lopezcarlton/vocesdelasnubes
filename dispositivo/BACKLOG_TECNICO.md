@@ -34,6 +34,29 @@ Candidatos históricos incluyen referencia, tópico/foco, estado informativo, re
 
 La selección final debe consumir una versión aprobada del conocimiento, no el artefacto técnico BIB065 como autoridad.
 
+## DT-003 — Separar físicamente el repositorio técnico y hacer efectiva la frontera de permisos
+
+**Estado:** Pendiente por acción de infraestructura  
+**Prioridad:** Antes de incorporar desarrolladores externos
+
+Ejecutar `migracion/DEVICE_REPOSITORY_SEPARATION_PLAN_v1.md`.
+
+La tarea incluye:
+
+- crear el repositorio técnico separado;
+- migrar el árbol activo del dispositivo preservando genealogía e identidades relevantes;
+- registrar `KNOWLEDGE_SOURCE_COMMIT`;
+- reproducir replay y 38/38 pruebas en el repositorio destino;
+- configurar permisos para que desarrolladores técnicos tengan lectura —no escritura por defecto— sobre `vocesdelasnubes`;
+- activar protección/ruleset de `main` y revisión de ownership adecuada para el Sistema de Conocimiento;
+- sólo después retirar el dispositivo activo del repositorio canónico.
+
+`.github/CODEOWNERS` ya documenta ownership, pero **no debe considerarse una garantía de permisos por sí solo**. La integración usada durante la limpieza no tuvo acceso para inspeccionar/modificar la protección de rama (`403`), por lo que esa parte requiere configuración de GitHub fuera de esta automatización.
+
+**No bloquea:** captura de Irma como fuente cruda ni trabajo humano de documentación.
+
+**Sí bloquea:** considerar completada la garantía física de que futuros desarrolladores del dispositivo no pueden escribir en el Sistema de Conocimiento.
+
 ## Regla
 
 ```text
