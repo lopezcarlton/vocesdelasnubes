@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha:** 2026-09-02  
-**Estado:** `TEMPORARY_RECONCILIATION_ADDENDUM / MERGE_INTO_MIGRATION_MANIFEST_v1_PENDING`
+**Estado:** `TEMPORARY_RECONCILIATION_ADDENDUM / REENTRY_NAVIGATION_VERIFIED / MERGE_INTO_MIGRATION_MANIFEST_v1_PENDING`
 
 ## Función
 
@@ -21,12 +21,34 @@ Hasta que el manifiesto principal sea reconciliado, este archivo prevalece **ún
 | `dispositivo/migracion/fuentes/PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md` | `MIGRATED / EXACT_TEXT_IDENTITY_VERIFIED / ARCHIVE_ONLY / SUPERSEDED_FOR_CURRENT_PLANNING` | `f3308483c3135e43d49f2641f518aecd0dbf3c1fcbdc98f349511751ce86b295` | `e2e84d656df77f43eba5accfc9f96d52ffa4c511` | `b7c2655fed6bc5a24aadfd3513958bac228247c2` |
 | `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` | `MIGRATED / EXACT_BYTE_IDENTITY_VERIFIED / P1` | `acffea79fe7d228a0b28f740094e5a15fd4ec0ba6d36b257cc3aaef918a83c54` | `70aecf65cad99e5f88adc95b981b9edfcf14a6dd` | `c063fb591e5034070ad703b077bb63b174477414` |
 
-## Artefactos de reentrada añadidos
+## Artefactos de reentrada añadidos o reparados
 
-Estos documentos son nuevos artefactos documentales de navegación y no fuentes lingüísticas:
+Estos documentos son artefactos documentales de navegación/estado y no fuentes lingüísticas:
 
-- `INICIAR_AQUI_CHAT_NUEVO.md`
-- `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md`
+- `INICIAR_AQUI_CHAT_NUEVO.md` — entrypoint autocontenido desde GitHub;
+- `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md` — checkpoint de suficiencia de migración histórica;
+- `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md` — rutas BIB065 reparadas al layout real del repositorio; commit `7f5eaf327016eb0a3904d551037fb4ba691fee19`;
+- `README.md` — enlaza explícitamente el entrypoint de reentrada; commit `153fbeb99a265ebb6521e9f3b3a234dcb5ef3b10`.
+
+## Verificación de navegación
+
+Se verificó que el entrypoint apunte a rutas existentes para los documentos canónicos principales y los artefactos recientes de reentrada:
+
+- `README.md`;
+- `00_ARQUITECTURA_DEL_CONOCIMIENTO.md`;
+- `01_JERARQUIA_DE_VERDAD.md`;
+- `02_BACKLOG.md`;
+- `03_REGLAS_DE_ACTUALIZACIÓN.md`;
+- `conocimiento/PEDAGOGIA.md`;
+- `conocimiento/METODOLOGIA.md`;
+- `conocimiento/CORPUS.md`;
+- `conocimiento/VALIDACION.md`;
+- `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`;
+- `dispositivo/migracion/MIGRATION_MANIFEST_v1.md`;
+- este addendum;
+- `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md`;
+- `dispositivo/migracion/REENTRY_CHECKPOINT_2026-09-02.md`;
+- artefactos BIB065/guardrails enumerados en `INICIAR_AQUI_CHAT_NUEVO.md`.
 
 ## Efecto sobre pendientes anteriores
 
@@ -41,4 +63,4 @@ También quedan materializados el cierre de lectura y provenance v0.36.1 de BH20
 
 ## Pendiente de cierre
 
-Queda únicamente reconciliar estas entradas dentro de `MIGRATION_MANIFEST_v1.md` y revisar referencias de navegación. Esa reconciliación es mantenimiento documental y no requiere volver a chats históricos.
+Queda únicamente fusionar estas entradas dentro de `MIGRATION_MANIFEST_v1.md` cuando se haga mantenimiento integral del manifiesto principal. Esa operación no bloquea reentrada, investigación ni desarrollo y no requiere volver a chats históricos.
