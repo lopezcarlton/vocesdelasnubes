@@ -1,9 +1,9 @@
 # PEDAGOGIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.3  
+**Versión:** 1.4  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-08-31
+**Fecha:** 2026-09-02
 
 ## 1. Objetivo pedagógico
 
@@ -206,3 +206,9 @@ El cambio resuelve una ambigüedad anterior: **G/P puede seguir siendo una pieza
 ## Cambio 2026-08-31 — P y capas finas BIB065
 
 Se aclara que P continúa siendo una escala válida de análisis cuya delimitación P1–P5 permanece como pregunta de investigación. Las distinciones finas de estructura informativa, referencia, discurso y prosodia derivadas de BIB065 se conservarán primero como capas analíticas descriptivas y no se asignan automáticamente a G, P ni a un tercer eje pedagógico.
+
+## Cambio 2026-09-02 — frontera de autoridad
+
+Se retiran formulaciones que deferían decisiones pedagógicas a una implementación técnica. Las líneas técnicas pueden producir preguntas o hallazgos candidatos, pero sólo participan en esta vista después de ser adjudicadas dentro del Sistema de Conocimiento conforme a `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO`.
+
+La actualización es arquitectónica: **no redefine G/P, no cierra P1–P5 y no incorpora todavía ninguna decisión de la reunión con Irma Pineda.**
