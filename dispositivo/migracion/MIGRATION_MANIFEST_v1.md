@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — BIB065 v0.36.1 MD migrada; JLC v0.28 posterior localizado y cuarentenado; P0 Pickett backfill reconfirmado pero transferencia byte-exacta pendiente
+**Última actualización:** 2026-09-02 — payloads textuales exactos de MVP vertical slice v0.2 y revisión acústica v0.1 migrados; genealogía MVP v0.1→v0.2→v0.3 precisada; P0 Pickett backfill reconfirmado pero transferencia byte-exacta pendiente
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -60,6 +60,8 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` | discusión pedagógica no normativa |
 | `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md` | matriz bibliográfica reparada; fuente documental P1, no promoción automática a runtime/política |
 | `dispositivo/migracion/fuentes/MVP_REUSE_MAP_v1.md` | mapa de reutilización/cuarentena del vertical slice |
+| `dispositivo/migracion/fuentes/mvp_vertical_slice_v0_2/` | ocho payloads textuales exactos del patch/adjudicación MVP v0.2; `ARCHIVE_ONLY / NON_AUTHORITY` |
+| `dispositivo/migracion/fuentes/mvp_audio_review_v0_1/` | siete payloads textuales exactos de revisión acústica; `ARCHIVE_ONLY / NON_AUTHORITY`; binarios de audio/figuras quedan pendientes |
 | `dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md` | protocolo de migración directa |
 | `dispositivo/core/NUCLEO_CONVERSACIONAL_001_SCOPE_v1.md` | scope exacto del vertical slice NC001 |
 | `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md` | fuente completa; `EXPERIMENTAL_CORE`, no autoridad definitiva |
@@ -522,9 +524,20 @@ Hashes históricos observados, no retroactivamente canónicos:
 ```text
 MVP v0.1 ZIP = f4819f1525036742e6915a2a9cbaf6cd7417d8ea4bdb7914fafdff93f960c948
 MVP v0.2 ZIP = e6524d5d89ed42ff233f6216d29553de644de86e601af21e658627605a6185e2
+AUDIO REVIEW v0.1 ZIP = 52b648aa2739b36cb78e5efcef0b037de8a0681c47bbc76d04bc8731b9e6272b
 ```
 
-`mvp_review_candidate_adapter_v0.py` ya fue recuperado. `didxaza_vertical_slice_v0_1.py` y ambos ZIP MVP siguen sólo referenciados/localizados históricamente; no se reconstruyen.
+Genealogía documental ahora verificada desde artefactos completos disponibles en este chat:
+
+```text
+MVP vertical slice v0.1
+-> v0.2 adjudicación/review provenance
+-> v0.3 actualización acústica (dentro de MVP_LINGUISTICO_001_AUDIO_REVIEW_v0_1)
+```
+
+Los ocho payloads textuales del ZIP v0.2 fueron migrados íntegramente a `dispositivo/migracion/fuentes/mvp_vertical_slice_v0_2/`. Los siete payloads textuales de la revisión acústica fueron migrados íntegramente a `dispositivo/migracion/fuentes/mvp_audio_review_v0_1/`. Estos artefactos preservan historia de análisis/review y no otorgan a COR001 autoridad de benchmark, regresión o descubrimiento de reglas.
+
+El ZIP v0.1 completo está localizado en este chat y contiene `didxaza_vertical_slice_v0_1.py`; por tanto deja de estar meramente referenciado. Su transferencia exacta, así como la de los ZIP/binarios de audio, permanece pendiente por limitaciones del canal de escritura. `mvp_review_candidate_adapter_v0.py` ya estaba migrado y sigue siendo la pieza histórica reutilizada bajo cuarentena no licenciante.
 
 ## 9. Otros artefactos localizados y pendientes
 
@@ -533,9 +546,11 @@ MVP v0.2 ZIP = e6524d5d89ed42ff233f6216d29553de644de86e601af21e658627605a6185e2
 | `didxaza_v0_2_10_documentary_alignment_CLOSED_PASS(1).zip` | `RECOVERABLE_SOURCE_LOCATED / ARCHIVE_ONLY` | `1b767731e26c744c695c90d7e753509254140dae1cac04e508c83e850790dbdf` |
 | `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_10.csv` → release name `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` | `MIGRATED / EXACT_RELEASE_IDENTITY_VERIFIED` | `a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf` |
 | `PAQUETE_MIGRACION_DIDXAZA_GENERATOR_V0_INTEGRATED_v1(1).zip` | `BINARY_TRANSFER_PENDING / ARCHIVE_ONLY` | `270dff08371f6b35bbb817d5440db85811ab87f11b2c7a96a9cf8f485ed76b9a` |
-| `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_1.zip` | `REFERENCED_BY_LOCATED_ARTIFACT` | observed `f4819f...60c948` |
-| `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_2.zip` | `REFERENCED_BY_LOCATED_ARTIFACT` | observed `e6524d...6185e2` |
-| `didxaza_vertical_slice_v0_1.py` | `REFERENCED_BY_LOCATED_ARTIFACT` | — |
+| `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_1.zip` | `SOURCE_COMPLETE_READY_TO_MIGRATE / BINARY_TRANSFER_PENDING / ARCHIVE_ONLY` | observed `f4819f...60c948` |
+| `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_2.zip` | `BINARY_TRANSFER_PENDING / TEXTUAL_PAYLOADS_MIGRATED / ARCHIVE_ONLY` | observed `e6524d...6185e2` |
+| `didxaza_vertical_slice_v0_1.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_SOURCE_INSIDE_v0_1_ZIP / ARCHIVE_ONLY` | contained in exact v0.1 ZIP |
+| `MVP_LINGUISTICO_001_AUDIO_REVIEW_v0_1.zip` | `BINARY_TRANSFER_PENDING / TEXTUAL_PAYLOADS_MIGRATED / ARCHIVE_ONLY` | `52b648aa2739b36cb78e5efcef0b037de8a0681c47bbc76d04bc8731b9e6272b` |
+| `AUD019/062/076/079/099-VG.aif` + blind clips/figures | `BINARY_TRANSFER_PENDING / ARCHIVE_ONLY`; identities preserved in migrated `SOURCE_HASHES_SHA256.txt` | source hashes recorded |
 | `ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `61fd21298c1260924fdc95b7e201b8d601dc83820f3d4f3686f508a74ae57c6a` |
 | `DevelopmentCorpusProtocol_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `563dc30977a1f6175e823c60a8f79f8c78f1ec81ff09b27ad0943ceaff5fd8ad` |
 | `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md` | `MIGRATED` | source hash recorded historically `3ea1d5b4598067f3fe51a03c6e3afa65131c5a543b16f8843b6f1727be094de7`; Git blob `77ef38e088e2a6a7fb8f847fa349bd77229d6a4e` |
@@ -644,6 +659,8 @@ b3300bb1c77c02c18b686616aad6478a079b2ad1  migrate exact v0.2.12 Pickett cross-so
 3f9b0fab8a13cb66c20e89a76799f97d1537aa65  migrate exact person-possession registry v0.2.15.2
 20cffa99d41e271c662cbbb603989822e951352b  update executable state after restoring v0.2.12 and v0.2.14 deps
 a4539d9eeab6ce197e5682afc1c0f2cd547ddcdd  migrate BIB065 ingestion matrix v0.36.1
+d5e91c92489d52ce24041479dc54b498c6bd61b0  migrate MVP vertical slice v0.2 source artifacts
+fc28f9b6808de641fc8487b12db0473533c4721e  migrate acoustic review artifacts for MVP vertical slice
 ```
 
 ## 13. Criterio de migración
