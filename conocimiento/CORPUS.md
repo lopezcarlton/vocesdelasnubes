@@ -529,7 +529,7 @@ El tono, la fonación, la segmentación y otras representaciones lingüísticas 
 
 El sistema general de generación de conversaciones y estímulos continúa en evolución, pero **no constituye el motor activo del piloto actual de COR002**.
 
-Las versiones v7 y v8.x del generador se conservan como antecedentes experimentales. Permitieron descubrir problemas reales —longitud rígida, activación sin CORE, exceso de trama, ritmo de entrevista, artificialidad por repetición y regresiones entre reglas—, pero ninguna se considera actualmente un generador general aprobado.
+Iteraciones anteriores de producción asistida de borradores se conservan como antecedentes experimentales. Permitieron detectar problemas reales —longitud rígida, exceso de trama, ritmo de entrevista, artificialidad por repetición y regresiones entre restricciones—, pero ninguna de esas implementaciones gobierna actualmente COR002.
 
 Durante el piloto:
 
@@ -537,7 +537,7 @@ Durante el piloto:
 - no se exige una nueva versión general del prompt;
 - la generación se limita a propuestas de pocas escenas concretas;
 - esas escenas se revisan manualmente antes del análisis pedagógico y del trabajo con hablantes;
-- sólo después de contar con escenas aceptadas se decidirá qué reglas o capacidades debe recuperar un futuro generador.
+- sólo después de contar con escenas aceptadas se decidirán los requisitos de cualquier futura herramienta de apoyo a la producción de borradores.
 
 Cuando vuelva a escalar, el sistema podrá utilizar:
 
@@ -561,7 +561,7 @@ El enfoque de habla espontánea y elicitación no lingüística **complementa** 
 
 Este documento describe una arquitectura de trabajo, no un sistema terminado.
 
-La evidencia procedente de hablantes, habla espontánea, elicitación dirigida, juicios, corrección ortográfica, bibliografía, pruebas del dispositivo, validación pedagógica y trabajo de audio puede modificar sus categorías y relaciones.
+La evidencia procedente de hablantes, habla espontánea, elicitación dirigida, juicios, corrección ortográfica, bibliografía, validación pedagógica y trabajo de audio puede modificar sus categorías y relaciones. Los resultados de líneas técnicas sólo participan después de ser adjudicados dentro del Sistema de Conocimiento.
 
 Toda modificación sustantiva debe seguir las reglas de actualización del Sistema de Conocimiento.
 

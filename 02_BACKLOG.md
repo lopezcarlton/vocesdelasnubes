@@ -141,18 +141,14 @@ No es una tarea inmediata. Requiere materiales suficientemente maduros y acuerdo
 
 ---
 
-### BL-017 — Evaluación futura del generador de borradores
+### BL-017 — Tarea técnica transferida fuera del backlog canónico
 
-**Estado:** Abierto  
-**Prioridad:** Posterior al piloto de escenas de referencia
+**Estado:** Superado como tarea del Sistema de Conocimiento  
+**Fecha:** 2026-09-02
 
-Evaluar el desempeño de un generador de borradores en español: aceptación por hablantes, artificialidad, errores, cobertura y utilidad real.
+La evaluación de herramientas de producción de borradores es una tarea técnica/operativa y no una deuda estructural del Sistema de Conocimiento. Su genealogía se conserva y su continuación pasa a `dispositivo/BACKLOG_TECNICO.md` como `DT-001`.
 
-**Actualización 2026-08-31:** El generador v7 y las iteraciones v8.x se conservan como antecedentes experimentales, pero no constituyen el motor activo de COR002. El piloto actual suspende la generación masiva y prioriza obtener primero unas pocas escenas de referencia aceptadas mediante revisión manual y trabajo con hablantes.
-
-Esta tarea se reactivará cuando exista suficiente evidencia concreta para decidir qué debe hacer un generador nuevo o reducido. No se considera necesario evaluar v7 “a escala” como requisito previo.
-
-**Responsable:** Emiliano
+Las preguntas pedagógicas sobre aceptabilidad, artificialidad, cobertura y utilidad siguen perteneciendo a las vistas y validaciones humanas correspondientes; ninguna herramienta define esos criterios por sí misma.
 
 ---
 
@@ -208,7 +204,7 @@ No se trata de decidir de nuevo si P existe, sino de determinar con evidencia:
 - qué distingue de manera reproducible P1, P2, P3, P4 y P5;
 - cómo resolver casos donde distintas dimensiones de P divergen;
 - si la escala necesita ejemplos de referencia o criterios más explícitos;
-- cómo debe relacionarse con futuras secuencias curriculares y generadores;
+- cómo debe relacionarse con futuras secuencias curriculares y usos operativos;
 - qué cambios, si alguno, resultan de pruebas con hablantes y aprendices.
 
 **No bloquea:** el piloto actual de COR002 ni la producción de nueva evidencia.
@@ -219,12 +215,12 @@ No se trata de decidir de nuevo si P existe, sino de determinar con evidencia:
 
 ---
 
-### BL-022 — Implementar capas analíticas finas derivadas de BIB065
+### BL-022 — Investigar la relevancia pedagógica de capas analíticas finas derivadas de BIB065
 
 **Estado:** Abierto  
-**Prioridad:** Media / dispositivo
+**Prioridad:** Media / investigación continua
 
-Convertir progresivamente las distinciones relevantes derivadas de BIB065/Bueno Holle en capacidades o anotaciones explícitas del dispositivo, sin convertirlas automáticamente en niveles pedagógicos.
+Determinar cuáles de las distinciones descriptivas derivadas de BIB065/Bueno Holle tienen consecuencias pedagógicas reales, cuáles ya quedan suficientemente representadas por G o P, cuáles requieren una descripción adicional y cuáles son únicamente propiedades lingüísticas sin necesidad de convertirse en escala curricular.
 
 Entre las capas candidatas se encuentran:
 
@@ -236,13 +232,13 @@ Entre las capas candidatas se encuentran:
 - unidades entonacionales y organización prosódica;
 - forma explícita, clítico u omisión según contexto.
 
-La primera implementación debe ser **descriptiva y trazable**. No debe asumir que estas propiedades pertenecen necesariamente a P, a G o a un tercer eje de dificultad.
+La investigación debe volver a la fuente bibliográfica original y contrastarse con escenas, corpus oral, hablantes y aprendices. Los artefactos técnicos pueden ayudar a localizar preguntas, pero no constituyen la autoridad de esta tarea.
 
-Una etapa posterior deberá investigar cuáles tienen efectos pedagógicos medibles y cómo se relacionan con las escalas existentes.
+**No bloquea:** COR002, el corpus oral ni otras líneas de investigación.
 
-**No bloquea:** COR002, el corpus oral, la lectura bibliográfica ni otras líneas de investigación.
+**Criterio de cierre:** existe una decisión documentada sobre qué relevancia pedagógica tienen las capas priorizadas, o se determina explícitamente que deben permanecer sólo como descripción lingüística.
 
-**Criterio de cierre:** las distinciones priorizadas pueden representarse y analizarse de forma trazable en el dispositivo, con procedencia explícita, sin haber sido convertidas indebidamente en reglas curriculares.
+**Componente técnico transferido:** la eventual representación computacional de capas ya adjudicadas pasa a `dispositivo/BACKLOG_TECNICO.md` como `DT-002`.
 
 ---
 
@@ -275,4 +271,4 @@ El modo de trabajo del piloto COR002 quedó definido en `conocimiento/fuentes/CO
 
 La validación del material COR002 continúa abierta por razones documentadas en `conocimiento/VALIDACION.md`: todavía deben producirse escenas de referencia aceptadas, realizarse con hablantes y probarse pedagógicamente. La existencia de una ruta de trabajo ya definida no equivale a que los materiales resultantes estén validados.
 
-La investigación de P y la implementación de capas BIB065 se registran como deudas estructurales, pero **no se convierten en candados para las líneas de investigación que ya pueden seguir produciendo evidencia**.
+La investigación de P y la relevancia pedagógica de capas BIB065 se registran como deudas estructurales, pero **no se convierten en candados para las líneas de investigación que ya pueden seguir produciendo evidencia**.

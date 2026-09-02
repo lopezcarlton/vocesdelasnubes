@@ -72,9 +72,9 @@ Esta separación sigue siendo una **arquitectura de trabajo, no un sistema termi
 
 La escala P permanece vigente como instrumento de análisis. Su concepción pedagógica original fue deliberadamente multidimensional e incluyó factores como riesgo social, negociación, densidad discursiva y marco reflexivo o metalingüístico. La existencia de varias dimensiones dentro de P no se considera por sí misma un error.
 
-Lo que permanece en investigación son las fronteras exactas P1–P5, la ponderación entre esas dimensiones, su relación con la dificultad real del aprendiz y la forma en que deberían utilizarse en una futura secuenciación o generación automatizada.
+Lo que permanece en investigación son las fronteras exactas P1–P5, la ponderación entre esas dimensiones, su relación con la dificultad real del aprendiz y la forma en que deberían utilizarse en una futura secuenciación o aplicación operativa.
 
-Para evitar una ambigüedad que produjo problemas en versiones anteriores del generador, se distinguen tres afirmaciones diferentes:
+Para evitar una ambigüedad detectada durante aplicaciones operativas anteriores, se distinguen tres afirmaciones diferentes:
 
 1. **G/P sigue activo como instrumento de análisis, comparación y calibración pedagógica.** No se abandona la separación entre complejidad gramatical y pragmática.
 2. **Las definiciones exactas de G1–G5 y P1–P5 no constituyen todavía una taxonomía definitiva ni una secuencia curricular aprobada.** Sus límites, contenidos y relaciones pueden cambiar con nueva evidencia.
@@ -82,7 +82,7 @@ Para evitar una ambigüedad que produjo problemas en versiones anteriores del ge
 
 La consecuencia metodológica es que, durante el piloto, G/P no se utiliza como sustituto del juicio sobre una conversación. Primero se revisa si la escena es contextual y conversacionalmente plausible; después se analiza qué G/P, patrones y cargas contiene y si son compatibles con el alcance del piloto.
 
-Las etiquetas G1–G5 y P1–P5 deben seguir contrastándose con la evidencia gramatical extraída de la literatura disponible, observaciones de hablantes, comportamiento real de COR001 y COR002, resultados de la corrección ortográfica y análisis lingüístico en curso, pruebas del dispositivo y futura validación con aprendices.
+Las etiquetas G1–G5 y P1–P5 deben seguir contrastándose con la evidencia gramatical extraída de la literatura disponible, observaciones de hablantes, comportamiento real de COR001 y COR002, resultados de la corrección ortográfica y análisis lingüístico en curso, hallazgos adjudicados procedentes de líneas técnicas y futura validación con aprendices.
 
 La hipótesis operativa de que la restricción gramatical puede funcionar como límite más duro que la pragmática permanece como antecedente útil, pero no se convierte en regla universal. Un contenido socialmente complejo puede a veces expresarse con estructuras relativamente simples, mientras que una estructura gramatical avanzada no debería introducirse sólo porque el tema sea sencillo; la aplicación concreta debe probarse en escenas reales.
 
@@ -102,14 +102,14 @@ La investigación posterior a BIB065/Bueno Holle introduce distinciones más fin
 
 Estas propiedades **no se convierten automáticamente en subcomponentes de P, en niveles de G ni en un tercer eje pedagógico**.
 
-Por ahora deben tratarse primero como capas analíticas descriptivas que el dispositivo pueda reconocer y conservar. Posteriormente, escenas reales, corpus oral y pruebas con aprendices deberán mostrar:
+Por ahora deben tratarse primero como capas analíticas descriptivas del conocimiento lingüístico. Posteriormente, escenas reales, corpus oral y pruebas con aprendices deberán mostrar:
 
 - cuáles ya quedan suficientemente representadas por G o P;
 - cuáles añaden una carga pedagógica independiente;
-- cuáles son útiles para Analyzer/Tutor pero no necesitan una escala curricular;
+- cuáles son útiles para análisis y explicación pero no necesitan una escala curricular;
 - y si alguna combinación justifica en el futuro una descripción adicional de dificultad discursiva o referencial.
 
-La capacidad lingüística del dispositivo puede ser más fina que la taxonomía pedagógica vigente. Descubrir o modelar una distinción no obliga a convertirla inmediatamente en requisito de enseñanza.
+La descripción lingüística puede ser más fina que la taxonomía pedagógica vigente. Descubrir o modelar una distinción no obliga a convertirla inmediatamente en requisito de enseñanza.
 
 ### 6.4 Escenas
 
@@ -148,11 +148,11 @@ Al cierre de agosto de 2026 queda congelado, como flujo de trabajo provisional, 
 5. corregir la escena antes de imponer análisis pedagógico adicional;
 6. analizar después G/P, patrones, complejidad y posibilidades de reuso;
 7. llevar al hablante únicamente escenas fuente suficientemente aceptables;
-8. aprender de la realización en Didxazá antes de volver a escalar la automatización.
+8. aprender de la realización en Didxazá antes de escalar la producción de materiales.
 
 Este flujo no convierte sus parámetros provisionales en teoría permanente. En particular, no fija de manera definitiva G1–G3/P1–P3, longitud, número de repeticiones, cantidad de léxico nuevo ni número ideal de escenas.
 
-El generador masivo permanece fuera del flujo activo mientras no existan escenas de referencia aprobadas suficientes para calibrarlo.
+La producción masiva de borradores permanece fuera del flujo activo mientras no existan escenas de referencia aprobadas suficientes para calibrar sus requisitos.
 
 ## 7. Papel del error
 
@@ -205,4 +205,4 @@ El cambio resuelve una ambigüedad anterior: **G/P puede seguir siendo una pieza
 
 ## Cambio 2026-08-31 — P y capas finas BIB065
 
-Se aclara que P continúa siendo una escala válida de análisis cuya delimitación P1–P5 permanece como pregunta de investigación. Las distinciones finas de estructura informativa, referencia, discurso y prosodia derivadas de BIB065 se implementarán primero como capas analíticas descriptivas y no se asignan automáticamente a G, P ni a un tercer eje pedagógico.
+Se aclara que P continúa siendo una escala válida de análisis cuya delimitación P1–P5 permanece como pregunta de investigación. Las distinciones finas de estructura informativa, referencia, discurso y prosodia derivadas de BIB065 se conservarán primero como capas analíticas descriptivas y no se asignan automáticamente a G, P ni a un tercer eje pedagógico.
