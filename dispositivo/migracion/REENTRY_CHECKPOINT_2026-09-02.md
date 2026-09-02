@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha:** 2026-09-02  
-**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_RECONCILIATION_PENDING / NON_CANONICAL`
+**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_RECONCILIATION_NONBLOCKING / NON_CANONICAL`
 
 ## 1. Función
 
@@ -18,7 +18,7 @@ TECHNICAL_REPLAY != LINGUISTIC_VALIDATION
 
 ## 2. Estado técnico materializado
 
-Consultar como fuente técnica vigente:
+Consultar como fuentes técnicas vigentes:
 
 - `dispositivo/migracion/MIGRATION_MANIFEST_v1.md`
 - `dispositivo/migracion/MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md`
@@ -98,17 +98,22 @@ Tampoco bloquean la reentrada:
 
 El replay puede ejecutarse una sola vez desde el repositorio como prueba de reproducibilidad técnica. Un `PASS` no concede autoridad lingüística a COR001.
 
-## 7. Cierre documental pendiente
+## 7. Cierre documental de reentrada
 
-El repositorio ya dispone de un entrypoint autocontenido en `INICIAR_AQUI_CHAT_NUEVO.md` y de los artefactos BIB065/guardrails necesarios para reentrada.
+La reentrada desde GitHub está operativa:
 
-Queda mantenimiento documental no bloqueante:
+- `INICIAR_AQUI_CHAT_NUEVO.md` existe en la raíz y define el orden de lectura;
+- `README.md` enlaza explícitamente ese entrypoint;
+- se verificaron las rutas canónicas principales usadas por el entrypoint;
+- las rutas BIB065 de `CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md` fueron corregidas al layout real del repositorio;
+- cierre, provenance, matriz Markdown/CSV y guardrails post-BIB065 están materializados;
+- `MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md` reconcilia los cambios todavía no fusionados dentro del manifiesto principal.
 
-1. integrar `MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md` dentro de `MIGRATION_MANIFEST_v1.md`;
-2. comprobar periódicamente que ningún estado vigente apunte a rutas inexistentes;
-3. enlazar el entrypoint desde el README o navegación principal si se considera útil.
+Único mantenimiento documental restante:
 
-Esto no requiere volver a chats históricos.
+`MERGE MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md -> MIGRATION_MANIFEST_v1.md`
+
+Esa fusión es deseable para simplificar la documentación, pero **no bloquea un chat nuevo ni exige volver a chats históricos**. Hasta que se haga, `INICIAR_AQUI_CHAT_NUEVO.md` obliga a leer ambos documentos.
 
 ## 8. Ruta de investigación activa
 
