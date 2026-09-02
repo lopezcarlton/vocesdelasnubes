@@ -4,6 +4,16 @@ Corpus lingüístico digital del Didxazá (zapoteco del Istmo) y herramienta de 
 
 ---
 
+## Reentrada desde GitHub
+
+Para continuar el proyecto en un chat nuevo sin depender de memoria de conversaciones ni de paquetes ZIP, leer primero:
+
+`INICIAR_AQUI_CHAT_NUEVO.md`
+
+Ese archivo define el orden de reconstrucción del estado vigente y obliga a distinguir conocimiento canónico, dispositivo experimental, snapshots históricos y pendientes de migración.
+
+---
+
 ## Descripción
 
 **Voces de las Nubes** es un proyecto de documentación, aprendizaje y revitalización del Didxazá, la lengua zapoteca del Istmo de Tehuantepec, Oaxaca. Se desarrolla en Casa de las Ciencias de Oaxaca, institución pública dedicada a acompañar a docentes con herramientas pedagógicas y didácticas, bajo el principio de que el conocimiento indígena y el conocimiento científico deben sostener un diálogo en igualdad de condiciones.
