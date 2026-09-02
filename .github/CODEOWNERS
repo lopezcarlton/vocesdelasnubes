@@ -1,0 +1,17 @@
+# Voces de las Nubes — ownership boundary
+# This file documents review ownership. Repository/ruleset protection must enforce it separately.
+
+* @lopezcarlton
+
+# Constitutional documents
+/00_ARQUITECTURA_DEL_CONOCIMIENTO.md @lopezcarlton
+/01_JERARQUIA_DE_VERDAD.md @lopezcarlton
+/02_BACKLOG.md @lopezcarlton
+/03_REGLAS_DE_ACTUALIZACIÓN.md @lopezcarlton
+/INICIAR_AQUI_CHAT_NUEVO.md @lopezcarlton
+
+# Canonical knowledge system
+/conocimiento/ @lopezcarlton
+
+# Technical layer may be developed separately but does not own canonical knowledge
+/dispositivo/ @lopezcarlton
