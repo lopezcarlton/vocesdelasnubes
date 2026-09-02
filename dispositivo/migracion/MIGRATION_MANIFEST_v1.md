@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — v0.2.12 + v0.2.14 + person/possession registry exactos recuperados; replay histórico queda a una dependencia directa
+**Última actualización:** 2026-09-02 — BIB065 v0.36.1 MD migrada; JLC v0.28 posterior localizado y cuarentenado; P0 Pickett backfill reconfirmado pero transferencia byte-exacta pendiente
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -58,6 +58,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/ANALYZER_SCOPE_MULTIESCALA_2026-08-31.md` | alcance palabra → discurso |
 | `dispositivo/PROVENANCE_LABEL_CROSSWALK_v0_1.md` | equivalencias de procedencia |
 | `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md` | discusión pedagógica no normativa |
+| `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md` | matriz bibliográfica reparada; fuente documental P1, no promoción automática a runtime/política |
 | `dispositivo/migracion/fuentes/MVP_REUSE_MAP_v1.md` | mapa de reutilización/cuarentena del vertical slice |
 | `dispositivo/migracion/MIGRATION_AGENT_PROTOCOL_v1.md` | protocolo de migración directa |
 | `dispositivo/core/NUCLEO_CONVERSACIONAL_001_SCOPE_v1.md` | scope exacto del vertical slice NC001 |
@@ -224,7 +225,7 @@ Por tanto la evidencia disponible demuestra continuidad byte a byte del contenid
 
 ### 4.4 Pickett Lexical Backfill v0.2.11
 
-Fuente completa localizada en este chat:
+Fuente completa localizada y reconfirmada en los archivos de este chat:
 
 ```text
 didxaza_v0_2_11_pickett_backfill_CLOSED_PASS(1).zip
@@ -235,7 +236,7 @@ STATUS = IDENTICAL_DUPLICATE_UPLOADS / RECOVERABLE_SOURCE_LOCATED
 
 El paquete contiene el módulo exacto v0.2.11 y `PICKETT_LEXICON_BACKFILL_v0_1.csv` con 2,534 registros (1,949 entradas principales + 585 subentradas). El módulo fue migrado y verificado contra el release. El CSV conserva SHA-256 `56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723` y sigue `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING`; no se reconstruye ni normaliza.
 
-El mismo paquete contiene `COR001_REGRESSION_INPUT_v0_2_11.csv`, byte-idéntico al `COR001_REPLAY_INPUT_v0_2_15_2.csv` del release (SHA-256 `045b3abc83ec2035f6d20895d4584f5c028b7855f0cfb198b366b24d0ea5a8e9`); se migró bajo el nombre esperado por v0.2.15.3 exclusivamente para reproducibilidad técnica.
+El mismo paquete contiene `COR001_REGRESSION_INPUT_v0_2_11.csv`, byte-idéntico al `COR001_REPLAY_INPUT_v0_2_15_2.csv` del release (SHA-256 `045b3abc83ec2035f6d20895d4584f5c028b7855f0cfb198b366b24d0ea5a8e9`); se migró bajo el nombre esperado por v0.2.15.3 exclusivamente para reproducibilidad técnica. La etiqueta histórica `REGRESSION_INPUT` no concede a COR001 autoridad de regresión bajo la política vigente.
 
 ### 4.5 Pickett cross-source v0.2.12 y person/possession v0.2.14
 
@@ -425,15 +426,29 @@ El contrato histórico permanece:
 ANALYZED != GENERATION_LICENSED
 ```
 
+En esta pasada no apareció fuente completa adicional de esas nueve dependencias.
+
 ## 8. Genealogías recuperadas
 
 ### JUCHITAN_LINGUISTIC_CORE
 
 ```text
 v0.1 -> ... -> v0.23 -> ... -> v0.27
+                              \\-> v0.28 [QUARANTINED / NOT_CURRENT_BASELINE]
 ```
 
-`v0.27` es la versión de referencia más reciente verificable y está migrada íntegramente. La presencia de formulaciones históricas sobre COR001 no altera la política posterior `ANALYSIS_TARGET_ONLY`.
+`v0.27` permanece la versión de referencia más reciente verificable y está migrada íntegramente. La presencia de formulaciones históricas sobre COR001 no altera la política posterior `ANALYSIS_TARGET_ONLY`.
+
+En este chat se localizó además una fuente completa `JUCHITAN_LINGUISTIC_CORE_v0_28.md`:
+
+```text
+SHA256 = 6766d25f38ecd39a01a1a0e0463776e85c518325f6653603b70583562910a12a
+SOURCE = complete local artifact in this chat
+RELATION_TO_v0_27 = v0.27 body preserved + 138-line COR001 post-grammar patch; title bumped to v0.28
+STATUS = SOURCE_COMPLETE_READY_TO_MIGRATE / ARCHIVE_ONLY / QUARANTINED_NOT_CURRENT_BASELINE
+```
+
+El propio patch declara que deriva de una re-evaluación COR001 y contiene formulaciones `BENCHMARK_GOVERNANCE_RULE` y evidencia FB/audio. La conversación posteriormente lo puso en cuarentena al detectar contaminación metodológica. No sustituye `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, no se promueve a conocimiento vigente y no modifica la política `COR001 = ANALYSIS_TARGET_ONLY`.
 
 ### NC001 state
 
@@ -523,8 +538,9 @@ MVP v0.2 ZIP = e6524d5d89ed42ff233f6216d29553de644de86e601af21e658627605a6185e2
 | `didxaza_vertical_slice_v0_1.py` | `REFERENCED_BY_LOCATED_ARTIFACT` | — |
 | `ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `61fd21298c1260924fdc95b7e201b8d601dc83820f3d4f3686f508a74ae57c6a` |
 | `DevelopmentCorpusProtocol_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `563dc30977a1f6175e823c60a8f79f8c78f1ec81ff09b27ad0943ceaff5fd8ad` |
-| `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `3ea1d5b4598067f3fe51a03c6e3afa65131c5a543b16f8843b6f1727be094de7` |
-| `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `acffea79fe7d228a0b28f740094e5a15fd4ec0ba6d36b257cc3aaef918a83c54` |
+| `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md` | `MIGRATED` | source hash recorded historically `3ea1d5b4598067f3fe51a03c6e3afa65131c5a543b16f8843b6f1727be094de7`; Git blob `77ef38e088e2a6a7fb8f847fa349bd77229d6a4e` |
+| `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` | `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING` | `acffea79fe7d228a0b28f740094e5a15fd4ec0ba6d36b257cc3aaef918a83c54` |
+| `JUCHITAN_LINGUISTIC_CORE_v0_28.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE / ARCHIVE_ONLY / QUARANTINED_NOT_CURRENT_BASELINE` | `6766d25f38ecd39a01a1a0e0463776e85c518325f6653603b70583562910a12a` |
 | `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE / historical provisional` | `f3308483c3135e43d49f2641f518aecd0dbf3c1fcbdc98f349511751ce86b295` |
 | `COR001_ANALYSIS_TARGET_PASS_REPORT_v0_24.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` | `b369215edec07a98b59b6ee22a87995b20614d7a45dd16541f0deb71b93fd0d3` |
 | `generator_v0_2.py` | `SOURCE_COMPLETE_READY_TO_MIGRATE / SUPERSEDED / ARCHIVE_ONLY` | `54257f9a6dae12aba003e50e81b14bc25fba1d3e54e2eeecce009130c01fbacc` |
@@ -543,21 +559,22 @@ Para regenerar técnicamente el replay histórico queda una sola dependencia dir
 PICKETT_LEXICON_BACKFILL_v0_1.csv
 ```
 
-La fuente exacta está localizada en este chat y en el release histórico; conserva:
+La fuente exacta está localizada y fue reconfirmada como archivo accesible en este chat; conserva:
 
 ```text
 SHA256 = 56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723
 SIZE = 940709 bytes
+DATA_ROWS = 2534
 STATUS = SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING
 ```
 
-La herramienta GitHub disponible en esta pasada no ofrece transferencia directa de archivo local y el payload textual excede una transferencia razonable por el wrapper de contenido. No se reconstruye, fragmenta ni normaliza.
+La herramienta GitHub disponible en esta pasada no ofrece transferencia directa del archivo de `file_search` como bytes y la representación parseada/truncada no es sustituto de la fuente. No se reconstruye, fragmenta ni normaliza.
 
 La regeneración del replay sólo verificaría reproducibilidad técnica; **COR001 no se convierte en benchmark, gold, regression authority ni fuente de reglas**.
 
 ### Tutor_v0.33
 
-Faltan las nueve dependencias listadas en §7 para hacer instanciable el renderer histórico.
+Faltan las nueve dependencias listadas en §7 para hacer instanciable el renderer histórico. En esta pasada no apareció ninguna de ellas como fuente completa.
 
 ## 11. Reuse map / cuarentenas
 
@@ -574,6 +591,8 @@ owner review / PROBABLE_TRANSCRIPTION_CORRECTION como licencia
 ```
 
 El checkpoint inicial Generator confirma esa cuarentena mediante fuente, adapter y tests exactos.
+
+Los artefactos `COR001_BLIND_BASELINE_v1*`, `BENCHMARK_ISOLATION_PROTOCOL_v1.md` y derivados generados en este chat no se migran como autoridad de benchmark/regresión: son historia metodológica incompatible con la política vigente en lo que otorgaba a COR001 función de benchmark o regression suite. Pueden conservarse fuera del estado técnico activo como antecedente histórico, pero `COR001 = ANALYSIS_TARGET_ONLY` prevalece.
 
 ## 12. Commits históricos de migración registrados
 
@@ -624,6 +643,7 @@ b3300bb1c77c02c18b686616aad6478a079b2ad1  migrate exact v0.2.12 Pickett cross-so
 5d05b77327b35c3964f63f258cbe06e19ec6d003  migrate exact v0.2.14 person-possession runtime
 3f9b0fab8a13cb66c20e89a76799f97d1537aa65  migrate exact person-possession registry v0.2.15.2
 20cffa99d41e271c662cbbb603989822e951352b  update executable state after restoring v0.2.12 and v0.2.14 deps
+a4539d9eeab6ce197e5682afc1c0f2cd547ddcdd  migrate BIB065 ingestion matrix v0.36.1
 ```
 
 ## 13. Criterio de migración
@@ -649,7 +669,8 @@ Antes de incorporar una pieza:
 
 - `ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md`;
 - `DevelopmentCorpusProtocol_v0_35.md`;
-- matrices/reportes BIB065;
+- `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` (byte-exacto; el `.md` ya está migrado);
+- `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md` y otros reportes completos cuando su fuente exacta esté accesible;
 - pruebas/adapters adicionales completos y versionados.
 
 ### P2 — ejecutables útiles
@@ -658,12 +679,12 @@ Sólo después de identificar versión, dependencias y vigencia.
 
 ### P3 — historia
 
-Auditorías y versiones intermedias como `ARCHIVE_ONLY` cuando expliquen genealogía. No reconstruir todo el historial.
+`JUCHITAN_LINGUISTIC_CORE_v0_28.md` queda como genealogía `ARCHIVE_ONLY / QUARANTINED_NOT_CURRENT_BASELINE`; no es requisito para reproducir el estado actual. Auditorías y versiones intermedias se preservan sólo cuando expliquen una genealogía necesaria. No reconstruir todo el historial.
 
 ## 15. Próxima acción
 
-**Siguiente P0 imprescindible:** `PICKETT_LEXICON_BACKFILL_v0_1.csv` (fuente exacta localizada, transferencia byte-exacta aún pendiente).
+**Siguiente P0 imprescindible:** `PICKETT_LEXICON_BACKFILL_v0_1.csv` (fuente exacta localizada y reconfirmada en este chat, transferencia byte-exacta aún pendiente).
 
-Ejecutar cualquier replay sólo en un directorio aislado y comparar reproducibilidad técnica. COR001 permanece `ANALYSIS_TARGET_ONLY` y no puede licenciar reglas, correcciones ni generación.
+Ejecutar cualquier replay sólo en un directorio aislado y comparar reproducibilidad técnica. COR001 permanece `ANALYSIS_TARGET_ONLY` y no puede licenciar reglas, correcciones, generación, benchmarks ni regresión.
 
 La reconciliación técnica no cambia reglas lingüísticas, no convierte readiness histórica en política actual y no bloquea COR002, corpus oral ni trabajo con hablantes.
