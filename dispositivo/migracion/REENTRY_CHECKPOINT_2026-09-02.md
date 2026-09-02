@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha:** 2026-09-02  
-**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / FINAL_REENTRY_CLOSURE_PENDING / NON_CANONICAL`
+**Estado:** `HISTORICAL_CHAT_MIGRATION_SUFFICIENT / REENTRY_READY / MANIFEST_RECONCILIATION_PENDING / NON_CANONICAL`
 
 ## 1. Función
 
@@ -21,6 +21,7 @@ TECHNICAL_REPLAY != LINGUISTIC_VALIDATION
 Consultar como fuente técnica vigente:
 
 - `dispositivo/migracion/MIGRATION_MANIFEST_v1.md`
+- `dispositivo/migracion/MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md`
 - `dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md`
 - `dispositivo/ESTADO_ACTUAL_2026-08-31.md`
 
@@ -44,11 +45,12 @@ Estado:
 Artefactos disponibles en el repositorio:
 
 - `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md`
+- `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv`
 - `dispositivo/migracion/fuentes/BH2019_READING_STATE_CLOSED_v0_36_1.md`
 - `dispositivo/migracion/fuentes/BH2019_SOURCE_PROVENANCE_v0_36_1.json`
 - `dispositivo/pedagogia/PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md`
 
-La matriz CSV exacta puede permanecer como pendiente de transporte hasta que su identidad byte a byte quede verificada en GitHub.
+La matriz CSV conserva identidad exacta verificada en GitHub. Ver `MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md`.
 
 ## 4. Guardrails recuperados
 
@@ -98,14 +100,15 @@ El replay puede ejecutarse una sola vez desde el repositorio como prueba de repr
 
 ## 7. Cierre documental pendiente
 
-Antes de declarar el repositorio como punto de reentrada completamente autocontenido conviene:
+El repositorio ya dispone de un entrypoint autocontenido en `INICIAR_AQUI_CHAT_NUEVO.md` y de los artefactos BIB065/guardrails necesarios para reentrada.
 
-1. verificar/migrar la matriz CSV exacta BIB065;
-2. reconciliar `MIGRATION_MANIFEST_v1.md` con los artefactos recuperados en la última pasada;
-3. comprobar que ningún estado vigente apunte a rutas inexistentes;
-4. enlazar el entrypoint de reentrada desde el README o desde la navegación principal si se considera útil.
+Queda mantenimiento documental no bloqueante:
 
-Estos son pendientes documentales, no recuperación histórica P0.
+1. integrar `MIGRATION_MANIFEST_ADDENDUM_2026-09-02.md` dentro de `MIGRATION_MANIFEST_v1.md`;
+2. comprobar periódicamente que ningún estado vigente apunte a rutas inexistentes;
+3. enlazar el entrypoint desde el README o navegación principal si se considera útil.
+
+Esto no requiere volver a chats históricos.
 
 ## 8. Ruta de investigación activa
 
