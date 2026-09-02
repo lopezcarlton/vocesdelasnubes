@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — `PICKETT_LEXICON_BACKFILL_v0_1.csv` migrado con identidad byte a byte verificada; todas las dependencias directas conocidas del replay histórico v0.2.15.3 están materializadas; siguiente paso técnico: regeneración aislada del replay.
+**Última actualización:** 2026-09-02 — recuperados tres protocolos P1 de corpus/holdout y archivado `BENCHMARK_ISOLATION_PROTOCOL_v1.md` como artefacto histórico incompatible con la política vigente de COR001; no cambia el estado ejecutable.
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -76,6 +76,10 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/migracion/fuentes/CURRENT_STATE_NC001_v37_1_POST_BIB065_REPAIR.md` | ruta activa más reciente localizada |
 | `dispositivo/migracion/fuentes/SINTESIS_ADVERSARIAL_ARQUITECTURA_DIDXAZA_v1_1_CORREGIDA.md` | adjudicación arquitectónica histórica; `ARCHIVE_ONLY` |
 | `dispositivo/migracion/fuentes/generator_v0_initial/` | scaffold inicial Generator_v0, licencias, blockers, adapters, tests y reportes; `ARCHIVE_ONLY / SUPERSEDED` |
+| `dispositivo/development_corpus/HOLDOUT_CONVERSATIONAL_001_PROTOCOL_v1.md` | protocolo sellado previo a adquisición; COR001 separado como `ANALYSIS_TARGET_ONLY`; no contiene datos del holdout |
+| `dispositivo/development_corpus/DEV_CORPUS_AUDIO_FIRST_PROTOCOL_v1.md` | protocolo P1 para adquisición de corpus de desarrollo audio-first y separación estricta del holdout |
+| `dispositivo/development_corpus/HOLDOUT_GENERALIZATION_REQUIREMENTS_v0_1.md` | requisitos mínimos P1 para evaluación fresca de generalización |
+| `dispositivo/migracion/fuentes/BENCHMARK_ISOLATION_PROTOCOL_v1.md` | artefacto histórico exacto; `ARCHIVE_ONLY / SUPERSEDED_BY_CURRENT_COR001_POLICY`; conserva semántica antigua de desarrollo/regresión y no rige ejecución |
 | `dispositivo/generator/inputs/ConstructionInventory_v1.jsonl` | seis construcciones NC001 |
 | `dispositivo/generator/inputs/ParadigmTable_v1.csv` | 72 celdas TAM/persona con procedencia |
 | `dispositivo/validation/ValidationQueue_v0.jsonl` | cola de validación/desarrollo audio-first |
@@ -277,6 +281,8 @@ v0.2.0 foundation
 | `COR001AnalysisHarnessCalibration_v0_24.json` | `REFERENCED_BY_LOCATED_ARTIFACT / NOT_LOCATED_IN_CURRENT_PASS` | idem |
 | `run_cor001_analysis_target_pass_v0_24.py` | `REFERENCED_BY_LOCATED_ARTIFACT / NOT_LOCATED_IN_CURRENT_PASS` | idem |
 | `JUCHITAN_LINGUISTIC_CORE_v0_28.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE / ARCHIVE_ONLY / QUARANTINED_NOT_CURRENT_BASELINE` | `6766d25f38ecd39a01a1a0e0463776e85c518325f6653603b70583562910a12a` |
+| `verify_cor001_blind_fixture_v1.py` | `REFERENCED_BY_LOCATED_ARTIFACT / NOT_LOCATED_IN_CURRENT_PASS / HISTORICAL` | referenced by archived `BENCHMARK_ISOLATION_PROTOCOL_v1.md`; no exact source located in this pass |
+| `HOLDOUT_CONVERSATIONAL_001_PROTOCOL_v1.sha256` | `REFERENCED_BY_LOCATED_ARTIFACT / NOT_LOCATED_IN_CURRENT_PASS` | protocol explicitly requires sidecar; sidecar itself not located |
 | `PAQUETE_MIGRACION_DIDXAZA_GENERATOR_V0_INTEGRATED_v1(1).zip` | `BINARY_TRANSFER_PENDING / ARCHIVE_ONLY` | `270dff08371f6b35bbb817d5440db85811ab87f11b2c7a96a9cf8f485ed76b9a` |
 | `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_1.zip` | `SOURCE_COMPLETE_READY_TO_MIGRATE / BINARY_TRANSFER_PENDING / ARCHIVE_ONLY` | observed `f4819f...60c948` |
 | `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_2.zip` | `BINARY_TRANSFER_PENDING / TEXTUAL_PAYLOADS_MIGRATED / ARCHIVE_ONLY` | observed `e6524d...6185e2` |
@@ -315,6 +321,8 @@ owner review / PROBABLE_TRANSCRIPTION_CORRECTION como licencia
 
 Los artefactos históricos que trataban COR001 como benchmark/regression no se promueven al estado técnico activo. `COR001 = ANALYSIS_TARGET_ONLY` prevalece.
 
+`BENCHMARK_ISOLATION_PROTOCOL_v1.md` se preserva exclusivamente en `migracion/fuentes/`: su afirmación histórica `regression suite: SÍ` queda superseded por la política vigente y no debe interpretarse como permiso de regresión.
+
 ## 9. Commits históricos de migración registrados
 
 Se preserva la genealogía Git previa, entre otros:
@@ -339,6 +347,12 @@ e935ebe330dc1a40c1efda9e879eac104bac0a78  migrate COR001 analysis-target pass re
 0c5314eeee400d0bd8e8e5fdbcc93522bf26f108  update migration manifest after COR001 analysis-target report
 b9612c85debe59f115c54972c1b9adc78c7988db  migrate exact Pickett lexicon backfill v0.1
 ae233cff1e98fec56e98e525dbfab3f3be390162  update executable state after exact Pickett backfill migration
+1787682d21a6e00e54e94dbb8e0a59dc7b2ad4c8  temporary placement of historical benchmark protocol in hardening
+b67bb0708ea47deb2f7d767a43acace79a66834d  archive historical benchmark isolation protocol v1
+6053b2c8b48c6a3f1b95bb86fcdfe759c48cd291  remove superseded benchmark protocol from active hardening
+ a00df054d9c0e6b2150a47fbc15227eb788ecacf  migrate sealed conversational holdout protocol v1
+395912cd694e04c4df345adf1b01597cba70356d  migrate audio-first development corpus protocol v1
+deb1e45057a4b1a96d52c8b007bdbd0a80df435f  migrate holdout generalization requirements v0.1
 ```
 
 La historia completa permanece en Git; esta lista resalta cierres relevantes para el estado materializado.
@@ -356,6 +370,7 @@ La historia completa permanece en Git; esta lista resalta cierres relevantes par
 - `DevelopmentCorpusProtocol_v0_35.md`;
 - `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` byte-exacto;
 - `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md`;
+- sidecar `HOLDOUT_CONVERSATIONAL_001_PROTOCOL_v1.sha256` si aparece como fuente exacta;
 - paquetes corrector/Pickett de §7.1 cuando exista canal de transferencia binaria exacta;
 - soportes v0.24 de COR001 si aparecen como fuentes completas.
 
@@ -365,13 +380,15 @@ Sólo artefactos ejecutables útiles o historia necesaria para genealogía. `JUC
 
 ## 11. Resultado de esta pasada
 
+- Se migraron tres protocolos P1 completos para adquisición/evaluación independiente: `HOLDOUT_CONVERSATIONAL_001_PROTOCOL_v1.md`, `DEV_CORPUS_AUDIO_FIRST_PROTOCOL_v1.md` y `HOLDOUT_GENERALIZATION_REQUIREMENTS_v0_1.md`.
+- Se preservó `BENCHMARK_ISOLATION_PROTOCOL_v1.md` únicamente como `ARCHIVE_ONLY`; su permiso histórico de regression/development para COR001 no se promueve y queda superseded por `COR001 = ANALYSIS_TARGET_ONLY`.
 - No se volvió a migrar ningún artefacto ya `MIGRATED`.
 - `JUCHITAN_LINGUISTIC_CORE_v0_27`, NC001, Analyzer, Generator, Tutor renderer, SQLite, Dictionaria, inventario verbal, ParadigmTable y ValidationQueue permanecen sin modificación.
-- `PICKETT_LEXICON_BACKFILL_v0_1.csv` quedó migrado y verificado byte a byte: SHA-256 local y Git blob coinciden con la identidad esperada.
-- El runtime histórico pasa de 37/75 a 38/75 payloads exactos materializados; **ya no falta ninguna dependencia directa conocida para intentar la regeneración del replay**.
+- `JUCHITAN_LINGUISTIC_CORE_v0_28.md` se verificó como rama posterior en cuarentena, no como sucesor activo de v0.27.
+- El runtime sigue con 38/75 payloads exactos materializados y sin dependencias directas conocidas faltantes para intentar la regeneración del replay.
 - El replay end-to-end todavía no se ha regenerado, así que no se declara `CLOSED_PASS` reproducido.
-- COR001 permanece `ANALYSIS_TARGET_ONLY`; la regeneración sólo puede usarse como comprobación técnica de reproducibilidad.
 - Tutor v0.33 sigue no instanciable por sus nueve dependencias faltantes.
+- `CURRENT_EXECUTABLE_STATE_v1.md` no se modifica: esta pasada añadió documentación/guardrails y genealogía, no nueva capacidad ejecutable.
 
 ## 12. Próxima acción
 
