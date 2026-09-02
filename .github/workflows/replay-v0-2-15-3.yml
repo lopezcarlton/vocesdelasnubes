@@ -17,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run isolated replay
+      - name: Run isolated replay and diagnose byte identity
         shell: bash
         run: |
           set -euo pipefail
@@ -38,12 +38,39 @@ jobs:
           release = json.loads((root/'RELEASE_FILE_MANIFEST_v0_2_15_3.json').read_text(encoding='utf-8'))
           expected = release['sha256']
 
+          def sha_bytes(data):
+              return hashlib.sha256(data).hexdigest()
           def sha(path):
-              h = hashlib.sha256()
-              with Path(path).open('rb') as f:
-                  for chunk in iter(lambda: f.read(1024*1024), b''):
-                      h.update(chunk)
-              return h.hexdigest()
+              return sha_bytes(Path(path).read_bytes())
+
+          person_name = 'PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv'
+          raw = (root/person_name).read_bytes()
+          expected_person = expected[person_name]
+          bom = raw.startswith(b'\xef\xbb\xbf')
+          payload = raw[3:] if bom else raw
+          text = payload.decode('utf-8')
+          normalized = text.replace('\r\n','\n').replace('\r','\n')
+          core = normalized.rstrip('\n')
+          variants = {}
+          for newline_name, newline in [('LF','\n'),('CRLF','\r\n')]:
+              converted = core.replace('\n', newline)
+              for final in [False, True]:
+                  body = converted + (newline if final else '')
+                  for with_bom in [False, True]:
+                      data = (b'\xef\xbb\xbf' if with_bom else b'') + body.encode('utf-8')
+                      key = f'{newline_name}|bom={with_bom}|final_newline={final}'
+                      variants[key] = sha_bytes(data)
+          matching_variants = [k for k,v in variants.items() if v == expected_person]
+          encoding_diagnostic = {
+              'raw_sha256': sha_bytes(raw),
+              'expected_sha256': expected_person,
+              'raw_size': len(raw),
+              'raw_bom': bom,
+              'raw_crlf_count': raw.count(b'\r\n'),
+              'raw_lf_count': raw.count(b'\n'),
+              'matching_encoding_variants': matching_variants,
+              'variant_hashes': variants,
+          }
 
           direct_dependencies = [
               'COR001_REPLAY_INPUT_v0_2_15_2.csv',
@@ -52,7 +79,7 @@ jobs:
               'DICTIONARIA_examples_v0_2_15_2.csv',
               'DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv',
               'PICKETT_LEXICON_BACKFILL_v0_1.csv',
-              'PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv',
+              person_name,
               'BASE_CORRECTOR_DIDXAZA_EVIDENCE_INTEGRITY_v2_19.sqlite',
               'didxaza_runtime_v0_2_0_foundation.py',
               'didxaza_runtime_v0_2_1_retrieval.py',
@@ -106,6 +133,7 @@ jobs:
               'cor001_policy': 'ANALYSIS_TARGET_ONLY',
               'direct_dependencies_ok': dep_ok,
               'deterministic_outputs_ok': output_ok,
+              'person_registry_encoding_diagnostic': encoding_diagnostic,
               'dependencies': dep_results,
               'outputs': outputs,
               'generated_semantic_hashes': run_manifest.get('semantic_hashes', {}),
