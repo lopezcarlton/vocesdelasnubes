@@ -1,6 +1,6 @@
 # 01_JERARQUÍA_DE_VERDAD
 
-Versión: 1.0
+Versión: 1.1
 Estado: Vigente
 
 ---
@@ -139,6 +139,58 @@ Nunca ocurrirá el proceso inverso.
 
 ---
 
+# Autoridad de las entidades del Sistema de Conocimiento
+
+La precedencia documental anterior no sustituye la función de las entidades definidas por `00_ARQUITECTURA_DEL_CONOCIMIENTO.md`.
+
+Las entidades no forman una sola escala lineal. Su autoridad depende de su función:
+
+- **SRC — Fuente:** conserva evidencia. No adopta por sí sola una política, principio o interpretación del proyecto.
+- **HALL — Hallazgo:** registra una afirmación extraída o derivada de evidencia con estado y alcance. Puede obligar a revisar una decisión, pero no la reemplaza automáticamente.
+- **SUP — Supuesto:** orienta trabajo bajo incertidumbre. No tiene autoridad normativa.
+- **VAL — Validación:** tiene autoridad únicamente dentro del objeto, alcance y tipo de autoridad documentados.
+- **TEO — Aplicación teórica:** registra una interpretación del proyecto sobre bibliografía. No sustituye evidencia ni decisión vigente.
+- **DEC — Decisión:** es el mecanismo mediante el cual el proyecto adopta una elección. Una `DEC` marcada `vigente` o `vigente_con_reservas` gobierna las vistas, procedimientos y productos dentro de su alcance, siempre subordinada a los documentos constitucionales y a los principios válidos del proyecto.
+- **PRIN — Principio:** orienta decisiones recurrentes de manera general. Sólo ejerce autoridad cuando cumple el esquema de principio y utiliza uno de los estados permitidos por la Arquitectura.
+- **PROC — Procedimiento:** operacionaliza decisiones y principios; no puede reemplazarlos.
+- **Vistas documentales** —por ejemplo `PEDAGOGIA.md`, `TEORIA.md`, `CORPUS.md`, `METODOLOGIA.md`— sintetizan el conocimiento vigente. No crean por proximidad una autoridad superior a las entidades que deben representar.
+
+## Conflicto entre una DEC y una vista documental
+
+Cuando una decisión vigente y una vista documental diverjan sobre la misma materia:
+
+1. verificar que la decisión sea válida, esté vigente y pertenezca al mismo alcance;
+2. si es así, actualizar la vista para representar la decisión;
+3. si existe nueva evidencia que cuestiona la decisión, registrar primero el hallazgo o validación correspondiente y abrir revisión de la decisión;
+4. no modificar silenciosamente la decisión desde la vista.
+
+```text
+VIEW != ADOPTION_MECHANISM
+SOURCE != POLICY
+FINDING != AUTOMATIC_DECISION
+VALID_DECISION -> GOVERNS_VIEW_WITHIN_SCOPE
+```
+
+## Entidades inválidas o fuera de esquema
+
+Un archivo cuyo identificador declare un tipo de entidad pero incumpla los estados o campos mínimos definidos por la Arquitectura **no adquiere autoridad normativa por su nombre, ubicación o proximidad**.
+
+Debe marcarse para revisión y corregirse, reformularse, reclasificarse o retirarse antes de utilizarlo como autoridad.
+
+---
+
+# Sistemas y repositorios derivados
+
+Los resultados de herramientas, sistemas o repositorios derivados pueden constituir evidencia sobre el comportamiento técnico de esos sistemas, detectar contradicciones o producir propuestas.
+
+No pueden adoptar, promover o modificar por sí mismos el Sistema de Conocimiento.
+
+La incorporación de cualquier propuesta derivada requiere el procedimiento de actualización de Voces de las Nubes y la autoridad pertinente.
+
+Esta regla se desarrolla en `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO` y `03_REGLAS_DE_ACTUALIZACIÓN.md`.
+
+---
+
 # Precedencia temporal
 
 Entre dos versiones de una misma decisión:
@@ -228,9 +280,17 @@ Toda modificación deberá registrarse explícitamente.
 No se modificará este documento para resolver un caso aislado.
 
 Los casos particulares deberán resolverse mediante decisiones del proyecto, no modificando la constitución del sistema.
+
 ---
 
 ## Historial
+
+### v1.1 — 2026-09-02
+
+- Se corrige el hueco de precedencia que omitía `SRC`, `HALL`, `SUP`, `VAL`, `TEO` y `DEC`.
+- Se establece que una `DEC` vigente gobierna las vistas dentro de su alcance, subordinada a la constitución y a principios válidos.
+- Se establece que entidades fuera de esquema no adquieren autoridad por nombre o ubicación.
+- Se formaliza que sistemas derivados pueden proponer, pero no adoptar ni modificar conocimiento.
 
 ### v1.0 — 2026-08-05
 
