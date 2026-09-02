@@ -1,0 +1,58 @@
+name: finalize v0.2.11 migration once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/finalize-v0211-migration.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify exact migrated payloads and update migration state
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '8a0daa37feffc1d21c5c3e1fc53ac207911d7b8b72b9cb8048f2a6543da8e95a  dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_11_pickett_backfill.py' | sha256sum -c -
+          echo '045b3abc83ec2035f6d20895d4584f5c028b7855f0cfb198b366b24d0ea5a8e9  dispositivo/runtime/v0_2_15_3/COR001_REPLAY_INPUT_v0_2_15_2.csv' | sha256sum -c -
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          m=Path('dispositivo/migracion/MIGRATION_MANIFEST_v1.md')
+          s=m.read_text(encoding='utf-8')
+          s=s.replace('**Última actualización:** 2026-09-02 — documentary alignment registry v0.2.15.2 transferido byte-exacto','**Última actualización:** 2026-09-02 — v0.2.11 Pickett backfill runtime + COR001 replay input exactos recuperados')
+          s=s.replace('| `dispositivo/runtime/v0_2_15_3/DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` | registry exacto reutilizado desde v0.2.10; SHA-256 y Git blob verificados |','| `dispositivo/runtime/v0_2_15_3/DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` | registry exacto reutilizado desde v0.2.10; SHA-256 y Git blob verificados |\n| `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_11_pickett_backfill.py` | módulo exacto v0.2.11 requerido por el runner v0.2.15.3 |\n| `dispositivo/runtime/v0_2_15_3/COR001_REPLAY_INPUT_v0_2_15_2.csv` | input histórico exacto; sólo reproducibilidad técnica, COR001 sigue `ANALYSIS_TARGET_ONLY` |')
+          s=re.sub(r'En este checkpoint hay \*\*\d+/75 payloads exactos recuperados\*\* y \d+ aún ausentes\.', 'En este checkpoint hay **34/75 payloads exactos recuperados** y 41 aún ausentes.', s, count=1)
+          old='''Con el runner y v0.2.10 exactos ya recuperados, para regenerar técnicamente el replay histórico siguen faltando **seis dependencias directas**:\n\n```text\ndidxaza_runtime_v0_2_11_pickett_backfill.py\ndidxaza_runtime_v0_2_12_pickett_cross_source.py\ndidxaza_runtime_v0_2_14_person_possession.py\nCOR001_REPLAY_INPUT_v0_2_15_2.csv\nPICKETT_LEXICON_BACKFILL_v0_1.csv\nPERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv\n```'''
+          new='''Con el runner, v0.2.10, v0.2.11 y el input histórico COR001 exactos ya recuperados, para regenerar técnicamente el replay histórico siguen faltando **cuatro dependencias directas**:\n\n```text\ndidxaza_runtime_v0_2_12_pickett_cross_source.py\ndidxaza_runtime_v0_2_14_person_possession.py\nPICKETT_LEXICON_BACKFILL_v0_1.csv\nPERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv\n```'''
+          s=s.replace(old,new)
+          s=s.replace('**Siguiente P0 recomendado:** recuperar el paquete/fuente de `didxaza_runtime_v0_2_11_pickett_backfill.py`.','**Siguiente P0 imprescindible:** `PICKETT_LEXICON_BACKFILL_v0_1.csv` (fuente exacta localizada, transferencia byte-exacta aún pendiente). Después: v0.2.12, v0.2.14 y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`.')
+          if 'didxaza_v0_2_11_pickett_backfill_CLOSED_PASS(2).zip' not in s:
+              insert='''\n### 4.4 Pickett Lexical Backfill v0.2.11\n\nFuente completa localizada en este chat:\n\n```text\ndidxaza_v0_2_11_pickett_backfill_CLOSED_PASS(1).zip\ndidxaza_v0_2_11_pickett_backfill_CLOSED_PASS(2).zip\nSHA256 (ambos) = 8d7da40dc0c9559f922a0a9a523bc389547997571a7276a8f5230b978a322773\nSTATUS = IDENTICAL_DUPLICATE_UPLOADS / RECOVERABLE_SOURCE_LOCATED\n```\n\nEl paquete contiene el módulo exacto v0.2.11 y `PICKETT_LEXICON_BACKFILL_v0_1.csv` con 2,534 registros (1,949 entradas principales + 585 subentradas). El módulo fue migrado y verificado contra el release. El CSV conserva SHA-256 `56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723` y sigue `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING`; no se reconstruye ni normaliza.\n\nEl mismo paquete contiene `COR001_REGRESSION_INPUT_v0_2_11.csv`, byte-idéntico al `COR001_REPLAY_INPUT_v0_2_15_2.csv` del release (SHA-256 `045b3abc83ec2035f6d20895d4584f5c028b7855f0cfb198b366b24d0ea5a8e9`); se migró bajo el nombre esperado por v0.2.15.3 exclusivamente para reproducibilidad técnica.\n'''
+              s=s.replace('## 5. Inventario verbal, Dictionaria y Analyzer',insert+'\n## 5. Inventario verbal, Dictionaria y Analyzer')
+          m.write_text(s,encoding='utf-8')
+
+          c=Path('dispositivo/migracion/CURRENT_EXECUTABLE_STATE_v1.md')
+          t=c.read_text(encoding='utf-8')
+          t=t.replace('En este checkpoint hay 29 payloads presentes:', 'En este checkpoint hay 34 payloads exactos presentes:')
+          t=t.replace('- los 29 coinciden con el SHA-256 del release;', '- los 34 coinciden con el SHA-256 del release;')
+          t=t.replace('- 46 payloads del release todavía no están migrados.', '- 41 payloads del release todavía no están migrados.')
+          t=t.replace('Los módulos v0.2.10, v0.2.11, v0.2.12, v0.2.14 y v0.2.15 no forman parte del cierre de imports de esos 10 casos y permanecen sin migrar.', 'Los módulos v0.2.10 y v0.2.11 ya están migrados aunque no forman parte del cierre de imports de esos 10 casos. v0.2.12 y v0.2.14 siguen ausentes; el replay end-to-end continúa bloqueado además por `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`.')
+          if 'COR001_REPLAY_INPUT_v0_2_15_2.csv' not in t:
+              t=t.replace('## 3. Analyzer v0.35','### 2.3 Recuperación adicional del runner histórico\n\nPresentes y verificados contra el release:\n\n```text\ndidxaza_runtime_v0_2_10_documentary_alignment.py\nDOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv\ndidxaza_runtime_v0_2_11_pickett_backfill.py\nCOR001_REPLAY_INPUT_v0_2_15_2.csv\n```\n\nEsto reduce a cuatro las dependencias directas faltantes para regenerar el replay: v0.2.12, v0.2.14, `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`. La presencia del input COR001 no cambia su rol: `ANALYSIS_TARGET_ONLY`.\n\n## 3. Analyzer v0.35')
+          c.write_text(t,encoding='utf-8')
+          PY
+          rm -f .github/workflows/finalize-v0211-migration.yml
+          git config user.name 'lopezcarlton'
+          git config user.email 'lopezcarlton@gmail.com'
+          git add -A
+          git commit -m 'finalize recovered v0.2.11 migration state'
+          git push
