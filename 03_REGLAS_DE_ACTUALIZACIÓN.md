@@ -1,10 +1,10 @@
 # 03_REGLAS_DE_ACTUALIZACIÓN
 
-**Versión:** 1.1
+**Versión:** 1.2
 
 **Estado:** APROBADO
 
-**Fecha:** 2026-08-19
+**Fecha:** 2026-09-02
 
 ---
 
@@ -62,6 +62,10 @@ La relación con la candidatura al Small Grant se regula en `04_RELACION_CON_ELD
 
 Las decisiones propias de ELDP no modifican este Sistema de Conocimiento salvo adopción explícita dentro de Voces de las Nubes.
 
+Los sistemas, herramientas y repositorios derivados pueden consumir conocimiento aprobado y devolver análisis, contradicciones, requisitos o propuestas. **No pueden adoptar, promover ni escribir conocimiento por sí mismos.**
+
+La frontera se rige por `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO`.
+
 ---
 
 # Eventos que requieren actualización
@@ -89,9 +93,48 @@ Toda actualización seguirá el siguiente flujo:
 2. Determinar qué documentos resultan afectados.
 3. Verificar la Jerarquía de Verdad vigente.
 4. Verificar, cuando corresponda, qué repositorio tiene autoridad sobre la materia.
-5. Actualizar únicamente los documentos necesarios.
-6. Revisar la consistencia del sistema.
-7. Registrar el cambio mediante control de versiones.
+5. Identificar la fuente original cuando la propuesta haya surgido durante trabajo realizado en un sistema derivado.
+6. Registrar el hallazgo, validación, supuesto o propuesta pertinente dentro de Voces de las Nubes antes de promover cambios de estado.
+7. Adoptar mediante `DEC` cuando el cambio requiera una decisión del proyecto.
+8. Actualizar únicamente los documentos necesarios.
+9. Revisar la consistencia del sistema.
+10. Registrar el cambio mediante control de versiones.
+
+## Regla de retorno desde sistemas derivados
+
+Cuando una lectura, análisis o prueba realizada durante el desarrollo de una herramienta sugiera una consecuencia lingüística, pedagógica, metodológica o teórica:
+
+```text
+RESULTADO_DERIVADO
+-> IDENTIFICAR_FUENTE_ORIGINAL
+-> REGISTRAR_CANDIDATO_EN_VOCES
+-> ADJUDICAR_CON_AUTORIDAD_PERTINENTE
+-> ADOPTAR_SI_CORRESPONDE
+-> ACTUALIZAR_VISTAS
+```
+
+Nunca:
+
+```text
+RESULTADO_DERIVADO
+-> MODIFICAR_DIRECTAMENTE_PEDAGOGIA_TEORIA_CORPUS_METODOLOGIA
+```
+
+Un informe técnico puede ser fuente válida para afirmar qué hizo o no hizo una herramienta. No se convierte por ello en fuente lingüística, pedagógica o comunitaria.
+
+---
+
+# Regla de procedencia entre repositorios
+
+Una entidad del Sistema de Conocimiento no debe depender como única o principal procedencia de un artefacto de un sistema derivado cuando la afirmación sea lingüística, pedagógica, metodológica o teórica.
+
+Si una afirmación nació durante trabajo técnico, deberá:
+
+1. volver a la fuente bibliográfica, oral, documental o empírica original cuando exista;
+2. registrar la interpretación del proyecto con su tipo correcto (`HALL`, `TEO`, `SUP`, `DEC`, etc.);
+3. conservar el artefacto técnico únicamente como genealogía o evidencia del proceso que detectó el asunto.
+
+Si no puede reconstruirse una fundamentación independiente suficiente, la afirmación deberá quedar en revisión, degradarse a supuesto o retirarse según corresponda.
 
 ---
 
@@ -148,13 +191,22 @@ Nunca se eliminará información únicamente para eliminar una contradicción.
 
 ---
 
-# Relación con repositorios externos
+# Relación con repositorios externos y derivados
 
 El repositorio `lopezcarlton/ELDP` puede utilizar información de Voces de las Nubes para desarrollar una candidatura, pero no constituye fuente autoritativa sobre el estado del proyecto lingüístico.
 
 Cuando una afirmación de ELDP sobre COR001, COR002, metodología, pedagogía, teoría, audio, validación u otro componente permanente contradiga este repositorio, deberá corregirse ELDP.
 
 Cuando una regla o decisión corresponda exclusivamente a la candidatura, este repositorio no debe absorberla automáticamente.
+
+La misma regla general se aplica al dispositivo y a futuros repositorios derivados:
+
+```text
+VOCES_DE_LAS_NUBES = AUTHORITY_FOR_KNOWLEDGE
+DERIVED_REPOSITORY = CONSUMER_AND_CANDIDATE_PRODUCER
+```
+
+Los desarrolladores de sistemas derivados no tendrán por defecto permisos de escritura sobre el Sistema de Conocimiento. Cuando existan repositorios físicamente separados, los controles de acceso deberán reflejar esta frontera. Mientras una capa técnica permanezca dentro del mismo repositorio, las revisiones y reglas de ownership deben impedir que la ubicación compartida se interprete como autoridad compartida.
 
 ---
 
@@ -203,6 +255,13 @@ Los casos particulares deberán resolverse mediante decisiones del proyecto o ac
 ---
 
 # Historial
+
+## v1.2 — 2026-09-02
+
+* Se formaliza la frontera unidireccional de autoridad con sistemas derivados.
+* Se exige volver a la fuente original antes de promover resultados surgidos durante desarrollo técnico.
+* Se prohíbe que una entidad de conocimiento dependa como autoridad principal de un artefacto derivado en materias lingüísticas, pedagógicas, metodológicas o teóricas.
+* Se establece que los desarrolladores de sistemas derivados no tienen por defecto permisos de escritura sobre el Sistema de Conocimiento.
 
 ## v1.1 — 2026-08-19
 
