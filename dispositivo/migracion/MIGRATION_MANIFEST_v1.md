@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — pasada dirigida sobre artefactos realmente disponibles en el chat del corrector/Pickett; se reconfirmó el P0 `PICKETT_LEXICON_BACKFILL_v0_1.csv`, se registraron paquetes completos de investigación ortográfica/corrector como transferencia binaria pendiente y no se modificó el estado ejecutable.
+**Última actualización:** 2026-09-02 — `PICKETT_LEXICON_BACKFILL_v0_1.csv` migrado con identidad byte a byte verificada; todas las dependencias directas conocidas del replay histórico v0.2.15.3 están materializadas; siguiente paso técnico: regeneración aislada del replay.
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -95,6 +95,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_14_person_possession.py` | módulo exacto requerido por el replay |
 | `dispositivo/runtime/v0_2_15_3/COR001_REPLAY_INPUT_v0_2_15_2.csv` | input histórico exacto; `ANALYSIS_TARGET_ONLY` |
 | `dispositivo/runtime/v0_2_15_3/PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv` | registry exacto GP persona/posesión |
+| `dispositivo/runtime/v0_2_15_3/PICKETT_LEXICON_BACKFILL_v0_1.csv` | 2,534 registros; identidad byte a byte verificada contra fuente local; dependencia directa del replay histórico |
 | `dispositivo/generator/generator_v0_5.py` | implementación Generator más reciente localizada |
 | `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador al layout migrado |
 | `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot readiness más reciente localizado |
@@ -119,7 +120,7 @@ didxaza_v0_2_15_3_surface_semantics_resolution_integrity_CLOSED_PASS(1).zip
 ZIP SHA256 = 6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
 ```
 
-`RELEASE_FILE_MANIFEST_v0_2_15_3.json` enumera 75 payloads. Permanecen **37/75 payloads exactos recuperados** y 38 ausentes.
+`RELEASE_FILE_MANIFEST_v0_2_15_3.json` enumera 75 payloads. En este checkpoint hay **38/75 payloads exactos recuperados** y 37 ausentes.
 
 SQLite:
 
@@ -133,29 +134,33 @@ verb_lexeme_class_v023 = present
 person_possession_exact_v0214 = present
 ```
 
-El slice final de semántica de superficie y la cadena histórica de 38 pruebas permanecen reproducibles desde artefactos almacenados. El replay end-to-end histórico todavía no se regenera porque falta una dependencia directa.
+El slice final de semántica de superficie y la cadena histórica de 38 pruebas permanecen reproducibles desde artefactos almacenados. Todas las dependencias directas conocidas del replay histórico están ahora materializadas, pero el replay end-to-end todavía no se ha regenerado en un directorio aislado.
 
-### 4.1 P0 — Pickett Lexical Backfill
+### 4.1 P0 — Pickett Lexical Backfill cerrado
 
-Fuente completa localizada y reconfirmada en los archivos de este chat:
+`PICKETT_LEXICON_BACKFILL_v0_1.csv` fue subido directamente a `main` desde la fuente local y se verificó sin reserialización:
 
 ```text
-PICKETT_LEXICON_BACKFILL_v0_1.csv
-SHA256 = 56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723
+PATH = dispositivo/runtime/v0_2_15_3/PICKETT_LEXICON_BACKFILL_v0_1.csv
 SIZE = 940709 bytes
 DATA_ROWS = 2534
-STATUS = SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING
+COLUMNS = 23
+RAGGED_ROWS = 0
+SHA256 = 56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723
+LOCAL_GIT_BLOB = 98b4e87282b996e837356f41ead2f859d53face1
+GITHUB_GIT_BLOB = 98b4e87282b996e837356f41ead2f859d53face1
+BOM_UTF8 = present
+CRLF_LINES = 2535
+STATUS = MIGRATED / EXACT_BYTE_IDENTITY_VERIFIED
 ```
 
-También están identificados dos uploads históricos idénticos del paquete v0.2.11:
+Commit de subida manual:
 
 ```text
-didxaza_v0_2_11_pickett_backfill_CLOSED_PASS(1).zip
-didxaza_v0_2_11_pickett_backfill_CLOSED_PASS(2).zip
-SHA256 = 8d7da40dc0c9559f922a0a9a523bc389547997571a7276a8f5230b978a322773
+b9612c85debe59f115c54972c1b9adc78c7988db  migrate exact Pickett lexicon backfill v0.1
 ```
 
-El CSV es **la única dependencia directa faltante** para regenerar el replay histórico v0.2.15.3. La herramienta disponible en esta pasada no puede transportar byte-exactamente el archivo referenciado por `file_search`; no se reconstruye desde snippets, tablas parseadas ni otra extracción de Pickett.
+Con esta incorporación **no queda ninguna dependencia directa conocida faltante** para intentar la regeneración del replay histórico v0.2.15.3. La regeneración sólo verificará reproducibilidad técnica; COR001 permanece `ANALYSIS_TARGET_ONLY`.
 
 ## 5. Analyzer, Generator y Tutor
 
@@ -215,7 +220,7 @@ No apareció fuente completa adicional de esas dependencias en esta pasada.
 
 ```text
 v0.1 -> ... -> v0.23 -> ... -> v0.27
-                              \-> v0.28 [QUARANTINED / NOT_CURRENT_BASELINE]
+                              \\-> v0.28 [QUARANTINED / NOT_CURRENT_BASELINE]
 ```
 
 `v0.27` permanece la referencia verificable migrada. En este chat existe fuente completa de `JUCHITAN_LINGUISTIC_CORE_v0_28.md`:
@@ -263,7 +268,6 @@ v0.2.0 foundation
 
 | Artefacto | Estado actual | SHA-256 / evidencia |
 |---|---|---|
-| `PICKETT_LEXICON_BACKFILL_v0_1.csv` | `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING / P0` | `56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723`; 940709 bytes; 2534 filas |
 | `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.csv` | `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING / P1` | `acffea79fe7d228a0b28f740094e5a15fd4ec0ba6d36b257cc3aaef918a83c54` |
 | `ANALYSIS_CAPABILITY_GUARDRAILS_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` acumulado; fuente independiente no recuperada en esta pasada | hash histórico `61fd21298c1260924fdc95b7e201b8d601dc83820f3d4f3686f508a74ae57c6a` |
 | `DevelopmentCorpusProtocol_v0_35.md` | `SOURCE_COMPLETE_READY_TO_MIGRATE` acumulado; fuente independiente no recuperada en esta pasada | hash histórico `563dc30977a1f6175e823c60a8f79f8c78f1ec81ff09b27ad0943ceaff5fd8ad` |
@@ -289,7 +293,7 @@ Estos paquetes existen como archivos ZIP completos en el runtime local de este c
 | `cierre de fase 4.zip` | extractor final y léxico estructurado Pickett: `PICKETT_LEXICO_MASTER.csv`, revisión, cobertura, métricas y cierre | `SOURCE_COMPLETE_READY_TO_MIGRATE / BINARY_TRANSFER_PENDING / NON_CANONICAL_CORRECTOR_RESEARCH_SOURCE` | `205bab2db28f9fbc9639fabde959b6d0c6164772d1fd026a5adc500d871320ec` |
 | `fase 5.zip` | auditoría de COR001 contra Pickett, falsos positivos, no resueltos, métricas y conclusiones | `SOURCE_COMPLETE_READY_TO_MIGRATE / BINARY_TRANSFER_PENDING / COR001_ANALYSIS_TARGET_ONLY / NON_AUTHORITY` | `293b66233d3febe2f5e715356b3d859a7e5c9ed15e031ab766e3ad32545353a1` |
 
-`cierre de fase 4.zip` documenta un léxico de investigación de 6,431 registros (2,780 Z→E + 3,651 E→Z). **No es identidad ni sustituto** de `PICKETT_LEXICON_BACKFILL_v0_1.csv` (2,534 registros, schema y procedencia diferentes) y por tanto no cierra el P0 del replay.
+`cierre de fase 4.zip` documenta un léxico de investigación de 6,431 registros (2,780 Z→E + 3,651 E→Z). **No es identidad ni sustituto** de `PICKETT_LEXICON_BACKFILL_v0_1.csv` (2,534 registros, schema y procedencia diferentes).
 
 `fase 5.zip` conserva una auditoría histórica sobre COR001. Su migración futura sólo puede hacerse bajo `ANALYSIS_TARGET_ONLY / NON_AUTHORITY`; no puede usarse como benchmark, regresión, gold ni fuente de reglas.
 
@@ -333,6 +337,8 @@ d5e91c92489d52ce24041479dc54b498c6bd61b0  migrate MVP vertical slice v0.2 source
 fc28f9b6808de641fc8487b12db0473533c4721e  migrate acoustic review artifacts for MVP vertical slice
 e935ebe330dc1a40c1efda9e879eac104bac0a78  migrate COR001 analysis-target pass report v0.24
 0c5314eeee400d0bd8e8e5fdbcc93522bf26f108  update migration manifest after COR001 analysis-target report
+b9612c85debe59f115c54972c1b9adc78c7988db  migrate exact Pickett lexicon backfill v0.1
+ae233cff1e98fec56e98e525dbfab3f3be390162  update executable state after exact Pickett backfill migration
 ```
 
 La historia completa permanece en Git; esta lista resalta cierres relevantes para el estado materializado.
@@ -341,9 +347,8 @@ La historia completa permanece en Git; esta lista resalta cierres relevantes par
 
 ### P0 — conservar estado reproducible
 
-1. transferir byte-exacto `PICKETT_LEXICON_BACKFILL_v0_1.csv`;
-2. regenerar el replay en directorio aislado para verificar reproducibilidad técnica;
-3. recuperar `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas del Tutor sólo si aparecen como fuentes completas.
+1. regenerar el replay histórico v0.2.15.3 en directorio aislado y comparar únicamente reproducibilidad técnica;
+2. recuperar `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas del Tutor sólo si aparecen como fuentes completas.
 
 ### P1 — reproducibilidad y límites
 
@@ -361,16 +366,17 @@ Sólo artefactos ejecutables útiles o historia necesaria para genealogía. `JUC
 ## 11. Resultado de esta pasada
 
 - No se volvió a migrar ningún artefacto ya `MIGRATED`.
-- `JUCHITAN_LINGUISTIC_CORE_v0_27`, NC001, Analyzer, Generator, Tutor renderer, SQLite, Dictionaria, inventario verbal, ParadigmTable y ValidationQueue fueron verificados contra el inventario actual sin modificación.
-- Se reconfirmó como fuente completa el P0 `PICKETT_LEXICON_BACKFILL_v0_1.csv`, pero el canal disponible no permite su transferencia byte-exacta desde la referencia de archivo de este chat.
-- Se localizaron cuatro paquetes completos de trabajo ortográfico/corrector y se registraron con hashes, límites y estado de transferencia pendiente; ninguno se promovió a conocimiento canónico ni a capacidad ejecutable.
-- No apareció ninguna de las nueve dependencias faltantes del Tutor ni los cuatro soportes v0.24 de COR001.
-- `CURRENT_EXECUTABLE_STATE_v1.md` no se modifica porque **no cambió el estado materializado ni ejecutable**.
+- `JUCHITAN_LINGUISTIC_CORE_v0_27`, NC001, Analyzer, Generator, Tutor renderer, SQLite, Dictionaria, inventario verbal, ParadigmTable y ValidationQueue permanecen sin modificación.
+- `PICKETT_LEXICON_BACKFILL_v0_1.csv` quedó migrado y verificado byte a byte: SHA-256 local y Git blob coinciden con la identidad esperada.
+- El runtime histórico pasa de 37/75 a 38/75 payloads exactos materializados; **ya no falta ninguna dependencia directa conocida para intentar la regeneración del replay**.
+- El replay end-to-end todavía no se ha regenerado, así que no se declara `CLOSED_PASS` reproducido.
+- COR001 permanece `ANALYSIS_TARGET_ONLY`; la regeneración sólo puede usarse como comprobación técnica de reproducibilidad.
+- Tutor v0.33 sigue no instanciable por sus nueve dependencias faltantes.
 
 ## 12. Próxima acción
 
-**Siguiente P0 imprescindible para reproducir el estado:** `PICKETT_LEXICON_BACKFILL_v0_1.csv`.
+**Siguiente P0 imprescindible para reproducir el estado:** regenerar el replay histórico v0.2.15.3 en un directorio aislado usando las dependencias exactas ahora materializadas.
 
-Su transferencia exacta es la única dependencia directa todavía ausente para regenerar el replay histórico v0.2.15.3. Ejecutar cualquier replay sólo en un directorio aislado y comparar reproducibilidad técnica. COR001 permanece `ANALYSIS_TARGET_ONLY` y no puede licenciar reglas, correcciones, generación, benchmarks ni regresión.
+El objetivo es comparar reproducibilidad técnica con los artefactos de cierre almacenados, no convertir COR001 en benchmark, gold, regresión ni fuente de reglas.
 
-Desde el punto de vista de migración entre chats, esta pasada deja documentado el último estado técnicamente recuperable de este chat. La ausencia del P0 impide afirmar reproducción end-to-end del replay, pero no exige seguir excavando archivo histórico antes de continuar la investigación.
+Desde el punto de vista de migración entre chats, este chat ya puede considerarse suficientemente migrado. La investigación lingüística y pedagógica puede continuar sin esperar al replay técnico.
