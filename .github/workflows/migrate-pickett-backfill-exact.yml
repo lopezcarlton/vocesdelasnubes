@@ -1,0 +1,38 @@
+name: migrate Pickett backfill exact once
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/migrate-pickett-backfill-exact.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reconstruct and verify exact CSV
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p dispositivo/runtime/v0_2_15_3
+          cat .migration_tmp/pickett_v011_xz_b64_*.txt | base64 -d > /tmp/pickett.xz
+          xz -dc /tmp/pickett.xz > dispositivo/runtime/v0_2_15_3/PICKETT_LEXICON_BACKFILL_v0_1.csv
+          echo '56e2372566cec9d7758b7e45b8de4e320a92eb2ee5c51b2a5e444e8165875723  dispositivo/runtime/v0_2_15_3/PICKETT_LEXICON_BACKFILL_v0_1.csv' | sha256sum -c -
+          test "$(git hash-object dispositivo/runtime/v0_2_15_3/PICKETT_LEXICON_BACKFILL_v0_1.csv)" = '98b4e87282b996e837356f41ead2f859d53face1'
+      - name: Commit exact payload and remove transport scaffolding
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .migration_tmp
+          rm -f .github/workflows/migrate-pickett-backfill-exact.yml
+          git config user.name 'lopezcarlton'
+          git config user.email 'lopezcarlton@gmail.com'
+          git add -A
+          git commit -m 'migrate exact Pickett lexical backfill v0.1'
+          git push
