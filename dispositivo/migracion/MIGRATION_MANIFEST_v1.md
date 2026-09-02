@@ -2,7 +2,7 @@
 
 **Proyecto:** Voces de las Nubes  
 **Fecha de inicio:** 2026-08-31  
-**Última actualización:** 2026-09-02 — runtime v0.2.10 documentary alignment recuperado
+**Última actualización:** 2026-09-02 — documentary alignment registry v0.2.15.2 transferido byte-exacto
 
 **Estado:** ACTIVE_INVENTORY / NO_BLOCKING  
 **Alcance:** recuperación selectiva del estado técnico y documental del dispositivo
@@ -85,6 +85,7 @@ Ningún estado concede autoridad lingüística o pedagógica.
 | `dispositivo/runtime/v0_2_15_3/DICTIONARIA_examples_v0_2_15_2.csv` | 9,686 ejemplos exactos |
 | `dispositivo/runtime/v0_2_15_3/run_cor001_replay_v0_2_15_3.py` | runner exacto del replay histórico v0.2.15.3; sólo reproducibilidad técnica |
 | `dispositivo/runtime/v0_2_15_3/didxaza_runtime_v0_2_10_documentary_alignment.py` | módulo exacto v0.2.10 requerido por el runner v0.2.15.3 |
+| `dispositivo/runtime/v0_2_15_3/DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` | registry exacto reutilizado desde v0.2.10; SHA-256 y Git blob verificados |
 | `dispositivo/generator/generator_v0_5.py` | implementación Generator más reciente localizada |
 | `dispositivo/generator/generator_v0_5_migrated_adapter.py` | adaptador al layout migrado |
 | `dispositivo/generator/GENERATION_READINESS_MATRIX_v14.csv` | snapshot readiness más reciente localizado |
@@ -119,7 +120,7 @@ didxaza_v0_2_15_3_surface_semantics_resolution_integrity_CLOSED_PASS(1).zip
 ZIP SHA256 = 6e5c3e8ee9bb5dbd04666537dc423724eb4bc402440e670e5be81cfa54b5d7e5
 ```
 
-`RELEASE_FILE_MANIFEST_v0_2_15_3.json` enumera 75 payloads. En este checkpoint hay **31/75 payloads exactos recuperados** y 44 aún ausentes.
+`RELEASE_FILE_MANIFEST_v0_2_15_3.json` enumera 75 payloads. En este checkpoint hay **32/75 payloads exactos recuperados** y 43 aún ausentes.
 
 La SQLite v2.20 es byte por byte idéntica al release:
 
@@ -211,11 +212,10 @@ SHA256 = a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf
 Ese SHA-256 es **idéntico** al registrado en el release v0.2.15.3 para:
 
 ```text
-DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv
 SHA256 = a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf
 ```
 
-Por tanto la evidencia disponible demuestra continuidad byte a byte del contenido del registry entre el nombre histórico v0.2.10 y el nombre de release v0.2.15.2. La fuente completa está localizada, pero **todavía no se migró al árbol** porque conserva BOM UTF-8 y terminadores CRLF y la vía de escritura disponible no garantiza transferencia byte-exacta del CSV. No se normalizó ni reconstruyó.
+Por tanto la evidencia disponible demuestra continuidad byte a byte del contenido del registry entre el nombre histórico v0.2.10 y el nombre de release v0.2.15.2. El archivo fue transferido al árbol sin normalización ni reconstrucción. Conserva BOM UTF-8 y terminadores CRLF. Verificación: `SHA256 = a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf`; `GIT_BLOB = 127c48ddfdac41f34359f3871f65e6aa4e759452`; `STATUS = EXACT_RELEASE_IDENTITY_VERIFIED`.
 
 ## 5. Inventario verbal, Dictionaria y Analyzer
 
@@ -448,7 +448,6 @@ La fuente recuperada demuestra:
 DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_10.csv
 SHA256 a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf
 =
-DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv
 SHA256 a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf
 ```
 
@@ -474,7 +473,7 @@ MVP v0.2 ZIP = e6524d5d89ed42ff233f6216d29553de644de86e601af21e658627605a6185e2
 | Artefacto | Estado actual | SHA-256 si aplica |
 |---|---|---|
 | `didxaza_v0_2_10_documentary_alignment_CLOSED_PASS(1).zip` | `RECOVERABLE_SOURCE_LOCATED / ARCHIVE_ONLY` | `1b767731e26c744c695c90d7e753509254140dae1cac04e508c83e850790dbdf` |
-| `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_10.csv` → release name `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` | `SOURCE_COMPLETE_READY_TO_MIGRATE / EXACT_BYTE_TRANSFER_PENDING` | `a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf` |
+| `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_10.csv` → release name `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` | `MIGRATED / EXACT_RELEASE_IDENTITY_VERIFIED` | `a4103fa943d6a5770d441c8b6db82b79fd98020de4d185d0cc8b725cf58d92cf` |
 | `PAQUETE_MIGRACION_DIDXAZA_GENERATOR_V0_INTEGRATED_v1(1).zip` | `BINARY_TRANSFER_PENDING / ARCHIVE_ONLY` | `270dff08371f6b35bbb817d5440db85811ab87f11b2c7a96a9cf8f485ed76b9a` |
 | `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_1.zip` | `REFERENCED_BY_LOCATED_ARTIFACT` | observed `f4819f...60c948` |
 | `MVP_LINGUISTICO_001_VERTICAL_SLICE_v0_2.zip` | `REFERENCED_BY_LOCATED_ARTIFACT` | observed `e6524d...6185e2` |
@@ -493,21 +492,20 @@ MVP v0.2 ZIP = e6524d5d89ed42ff233f6216d29553de644de86e601af21e658627605a6185e2
 
 ## 10. P0 localizado pero aún incompleto
 
-### Runtime v0.2.15.3 — 44/75 payloads aún ausentes
+### Runtime v0.2.15.3 — 43/75 payloads aún ausentes
 
-Con el runner y v0.2.10 exactos ya recuperados, para regenerar técnicamente el replay histórico siguen faltando **siete dependencias directas**:
+Con el runner y v0.2.10 exactos ya recuperados, para regenerar técnicamente el replay histórico siguen faltando **seis dependencias directas**:
 
 ```text
 didxaza_runtime_v0_2_11_pickett_backfill.py
 didxaza_runtime_v0_2_12_pickett_cross_source.py
 didxaza_runtime_v0_2_14_person_possession.py
 COR001_REPLAY_INPUT_v0_2_15_2.csv
-DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv
 PICKETT_LEXICON_BACKFILL_v0_1.csv
 PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv
 ```
 
-La fuente exacta del `DOCUMENTARY_ALIGNMENT_REGISTRY` ya está localizada dentro del paquete v0.2.10 y coincide por SHA con la identidad del release; sólo falta transferencia byte-exacta al árbol.
+El `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` ya está transferido y verificado byte-exacto.
 
 La regeneración del replay sólo verificaría reproducibilidad técnica; **COR001 no se convierte en benchmark, gold, regression authority ni fuente de reglas**.
 
@@ -574,6 +572,8 @@ f3edabe3463ccf9c2b267c9f198724f5ae0c3bf8  migrate NC001 adversarial architecture
 7fd7915cd7b0ef655239371d2b8d73692354625f  migrate initial Generator_v0 runtime reuse test
 bdd2d9857bbaa647f239748aff3cf2af1e5bc567  migrate exact runtime v0.2.15.3 replay runner
 9b33c78673b5de5bcb56c351e612c6cc4a09ef39  migrate exact runtime v0.2.10 documentary alignment
+1e0a31eb1f583abad07beda41c3e8fbb41a537a1  migrate exact documentary alignment registry v0.2.15.2
+821e9bd6cb6dc38bcbeb378c5c8b66f4f5429902  remove temporary exact registry migration helper
 ```
 
 ## 13. Criterio de migración
@@ -591,12 +591,11 @@ Antes de incorporar una pieza:
 
 ### P0 — conservar estado reproducible
 
-1. transferir byte-exacto `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv` desde la fuente ya localizada;
-2. recuperar `didxaza_runtime_v0_2_11_pickett_backfill.py` y su fuente completa;
-3. recuperar v0.2.12 y v0.2.14;
-4. recuperar `COR001_REPLAY_INPUT_v0_2_15_2.csv`, `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`;
-5. sólo entonces regenerar el replay en directorio aislado para verificar reproducibilidad técnica;
-6. recuperar en paralelo `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas del Tutor.
+1. recuperar `didxaza_runtime_v0_2_11_pickett_backfill.py` y su fuente completa;
+2. recuperar v0.2.12 y v0.2.14;
+3. recuperar `COR001_REPLAY_INPUT_v0_2_15_2.csv`, `PICKETT_LEXICON_BACKFILL_v0_1.csv` y `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`;
+4. sólo entonces regenerar el replay en directorio aislado para verificar reproducibilidad técnica;
+5. recuperar en paralelo `TutorCaseLicenseBindings_v0_33.jsonl` y las licencias C03/C05 exactas del Tutor.
 
 ### P1 — reproducibilidad y límites
 
@@ -615,7 +614,7 @@ Auditorías y versiones intermedias como `ARCHIVE_ONLY` cuando expliquen genealo
 
 ## 15. Próxima acción
 
-**Siguiente P0 recomendado:** transferir byte-exacto el registry ya localizado y, después, recuperar el paquete/fuente de `didxaza_runtime_v0_2_11_pickett_backfill.py`.
+**Siguiente P0 recomendado:** recuperar el paquete/fuente de `didxaza_runtime_v0_2_11_pickett_backfill.py`.
 
 Ejecutar cualquier replay sólo en un directorio aislado y comparar reproducibilidad técnica. COR001 permanece `ANALYSIS_TARGET_ONLY` y no puede licenciar reglas, correcciones ni generación.
 
