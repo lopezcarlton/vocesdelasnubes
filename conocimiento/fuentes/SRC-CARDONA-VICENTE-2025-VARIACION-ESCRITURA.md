@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-CARDONA-VICENTE-2025-VARIACION-ESCRITURA
 tipo: fuente_bibliografica
+bib_id: BIB064
 titulo: "Implicaciones de la variación dialectal en la escritura del zapoteco del Istmo"
 autor_o_participantes:
   - Pedro David Cardona Fuentes
@@ -24,6 +25,8 @@ disponibilidad: acceso_abierto_en_repositorio
 licencia_registrada_en_repositorio: CC_BY_NC_SA_4_0
 estado_de_acceso: disponible
 ```
+
+`BIB064` está atestiguado para este capítulo en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
 
 ## Evidencia relevante
 
