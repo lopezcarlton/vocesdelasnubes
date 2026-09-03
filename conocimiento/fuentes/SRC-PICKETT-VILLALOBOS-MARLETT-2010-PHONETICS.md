@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS
 tipo: fuente_bibliografica
+bib_id: BIB061
 titulo: "Isthmus (Juchitán) Zapotec"
 autor_o_participantes:
   - Velma B. Pickett
@@ -20,9 +21,14 @@ nivel_de_fuente: primaria
 estado_de_acceso: disponible_en_web
 ```
 
-## Nota bibliográfica
+## Identidad bibliográfica
 
-`conocimiento/BIBLIOGRAFIA.md` conserva una entrada histórica `BIB016` para Pickett, Villalobos y Marlett con fecha distinta. No se modifica esa asignación hasta reconciliar la hoja bibliográfica maestra mediante `BL-026`.
+El snapshot bibliográfico BIB001–BIB084 distingue correctamente dos objetos relacionados:
+
+- `BIB016`: versión española/ilustración fonética registrada con fecha 2009;
+- `BIB061`: publicación JIPA de 2010 descrita aquí.
+
+La reconciliación completa de la hoja maestra sigue gobernada por `BL-026`; esta ficha corresponde específicamente a `BIB061`.
 
 ## Relación con el dispositivo
 
