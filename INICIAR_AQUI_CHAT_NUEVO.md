@@ -18,24 +18,24 @@ Leer, en este orden:
 4. `03_REGLAS_DE_ACTUALIZACIÓN.md`
 5. `02_BACKLOG.md`
 6. `conocimiento/decisiones/DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO.md`
-7. `conocimiento/PEDAGOGIA.md`
-8. `conocimiento/METODOLOGIA.md`
-9. `conocimiento/CORPUS.md`
-10. `conocimiento/VALIDACION.md`
-11. `conocimiento/TEORIA.md`
-12. `conocimiento/BIBLIOGRAFIA.md`
-13. `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`
-14. `PRE_IRMA_POST_MIGRATION_CHECKPOINT_2026-09-02.md`
+7. `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`
+8. `conocimiento/PEDAGOGIA.md`
+9. `conocimiento/METODOLOGIA.md`
+10. `conocimiento/CORPUS.md`
+11. `conocimiento/VALIDACION.md`
+12. `conocimiento/TEORIA.md`
+13. `conocimiento/BIBLIOGRAFIA.md`
+14. `POST_IRMA_INTAKE_CHECKPOINT_2026-09-02.md`
 
-Leer después las `SRC`, `HALL`, `DEC`, `VAL`, `TEO` u otras entidades que correspondan a la pregunta concreta.
+Para reconstruir específicamente el estado anterior a Irma, usar después `PRE_IRMA_POST_MIGRATION_CHECKPOINT_2026-09-02.md` y la rama congelada indicada allí.
 
-Si una ruta no existe, no inventarla ni sustituirla silenciosamente.
+Leer las `SRC`, `HALL`, `DEC`, `VAL`, `TEO` u otras entidades pertinentes a la pregunta concreta. Si una ruta no existe, no inventarla ni sustituirla silenciosamente.
 
 ## 2. Fuente de autoridad
 
 `conocimiento/` y los documentos constitucionales contienen el Sistema de Conocimiento de Voces de las Nubes.
 
-Las vistas documentales —`PEDAGOGIA.md`, `TEORIA.md`, `CORPUS.md`, `METODOLOGIA.md`, etc.— sintetizan conocimiento vigente; no sustituyen las fuentes, hallazgos, validaciones y decisiones que deben sustentar sus afirmaciones.
+Las vistas —`PEDAGOGIA.md`, `TEORIA.md`, `CORPUS.md`, `METODOLOGIA.md`, etc.— sintetizan conocimiento vigente; no sustituyen las fuentes, hallazgos, validaciones y decisiones que deben sustentar sus afirmaciones.
 
 Una `DEC` vigente gobierna las vistas dentro de su alcance, subordinada a la Arquitectura, la Jerarquía de Verdad, las Reglas de Actualización y los principios válidos.
 
@@ -85,21 +85,80 @@ No reanudar por defecto la resolución caso por caso de huecos de COR001.
 
 G/P continúa como arquitectura de trabajo revisable.
 
-Las fronteras exactas G1–G5 y P1–P5 no están cerradas. No derivar una tabla definitiva de P a partir de una bibliografía general sin una adjudicación explícita del proyecto.
+Las fronteras exactas G1–G5 y P1–P5 no están cerradas. No derivar una tabla definitiva de P a partir de bibliografía general sin adjudicación explícita.
 
 La idea de COR002 como material básico para principiantes sigue siendo una hipótesis de trabajo fuerte para discusión, no una especificación irrevocable.
 
-## 6. BIB065 / Bueno Holle
+## 6. Públicos escolares — cambio vigente post-Irma
 
-La investigación realizada alrededor de Bueno Holle produjo hallazgos útiles y también mostró el riesgo de que conocimiento descubierto durante desarrollo técnico se incorpore sin una frontera suficientemente clara.
+Desde el 2 de septiembre de 2026 existe una decisión nueva y vigente:
+
+`conocimiento/decisiones/DEC-PUBLICOS-ESCOLARES-MULTIETARIOS.md`
+
+Voces de las Nubes debe diseñarse para **públicos escolares diferenciados**, además de personas con transmisión intergeneracional interrumpida.
+
+La educación secundaria técnica es el primer anclaje institucional prioritario por la relación real de Casa de las Ciencias de Oaxaca con ese nivel, pero no es público exclusivo.
+
+```text
+AGE_GROUP != LANGUAGE_LEVEL
+SCHOOL_GRADE != G_LEVEL
+SCHOOL_GRADE != P_LEVEL
+```
+
+Las bandas concretas de edad, perfiles escolares y metodologías permanecen abiertas en `BL-023`.
+
+## 7. Reunión con Irma Pineda
+
+La reconstrucción disponible está en:
+
+`conocimiento/fuentes/SRC-IRMA-PINEDA-REUNION-2026-09-02.md`
+
+Es memoria posterior de Emiliano, no transcripción literal.
+
+```text
+MEMORIA_POSTERIOR != CITA_LITERAL
+SUGERENCIA_DE_IRMA != DECISION_AUTOMATICA
+IDEA_DE_EMILIANO != AFIRMACION_DE_IRMA
+```
+
+La lista exacta de palabras y ejemplos lingüísticos de la reunión sigue pendiente.
+
+Hasta ahora sólo se promovió la decisión de públicos escolares. Las demás líneas —Alfabeto Popular y escritores contemporáneos, `qui/qué`, El Espinal, corpus espontáneo, co-diseño, progresión auditiva e instituciones— permanecen en distintos estados de investigación o candidatura según `POST_IRMA_INTAKE_CHECKPOINT_2026-09-02.md`.
+
+## 8. BIB065 / Bueno Holle
 
 La fuente registrada dentro del Sistema de Conocimiento es `conocimiento/fuentes/SRC-BUENO-HOLLE-2019.md`.
 
-Los artefactos BIB065 que existan bajo `dispositivo/` pueden utilizarse para reconstruir genealogía y candidatos, pero **no deben promoverse automáticamente** a pedagogía, teoría o metodología. Cuando sea necesario incorporar resultados posteriores de la lectura, volver a la obra original y adjudicarlos dentro de Voces de las Nubes.
+Los artefactos BIB065 bajo `dispositivo/` pueden reconstruir genealogía y candidatos, pero **no deben promoverse automáticamente** a pedagogía, teoría o metodología. Cuando sea necesario incorporar resultados posteriores de la lectura, volver a la obra original y adjudicarlos dentro de Voces de las Nubes.
 
-## 7. Estado pre-Irma
+`BL-022` conserva abierta la investigación sobre relevancia pedagógica de sus capas analíticas finas.
 
-El estado anterior a cualquier incorporación de la reunión con Irma Pineda está congelado en:
+## 9. Ortografía post-Irma
+
+`BL-024` investiga la versión vigente del Alfabeto Popular y el posible uso de literatura contemporánea como nueva capa de evidencia ortográfica.
+
+No asumir:
+
+```text
+CONTEMPORARY_AUTHOR_TEXT -> AUTOMATIC_CORRECTION_RULE
+qui == qué -> GLOBAL_EXECUTABLE_RULE
+```
+
+Primero localizar fuentes, conservar variedad/género/edición/procedencia y adjudicar.
+
+## 10. Variedades
+
+El foco vigente no se ha cambiado silenciosamente:
+
+```text
+CURRENT_FOCUS = JUCHITAN
+ESPINAL_EXPANSION = CANDIDATE_RESEARCH_LINE
+MULTIVARIETAL_ARCHITECTURE = NOT_YET_ADOPTED
+```
+
+No mezclar formas de Juchitán, El Espinal, Unión Hidalgo u otras localidades sin metadatos y decisión explícita.
+
+## 11. Estado pre-Irma congelado
 
 ```text
 branch = checkpoint/pre-irma-post-migration-2026-09-02
@@ -108,18 +167,19 @@ commit = e1f9f4ef2852b9e0453ef757a291816e1faa10e2
 
 Ver `PRE_IRMA_POST_MIGRATION_CHECKPOINT_2026-09-02.md`.
 
-Cuando se aporte el contenido de la reunión, registrarlo primero como `SRC` crudo o evidencia claramente identificada. No modificar de inmediato `PEDAGOGIA.md`, `CORPUS.md`, `TEORIA.md`, `METODOLOGIA.md` ni decisiones vigentes.
+Esa referencia sirve para comparar cambios y no debe confundirse con política vigente.
 
-## 8. Ruta inmediata
+## 12. Ruta inmediata
 
-1. completar la limpieza de la frontera de autoridad pre-Irma;
-2. capturar la reunión con Irma como fuente sin adjudicar cuando esté disponible;
-3. adjudicar después sus hallazgos con la autoridad pertinente;
-4. actualizar únicamente entonces las decisiones y vistas afectadas;
-5. publicar un nuevo estado aprobado de conocimiento;
-6. hacer que el dispositivo consuma ese estado sin adquirir autoridad de escritura sobre él.
+1. completar la captura de la reunión cuando Emiliano aporte la lista de palabras/ejemplos;
+2. investigar `BL-023` con docentes, estudiantes y bibliografía antes de fijar bandas escolares;
+3. localizar el documento contemporáneo de escritura y adjudicar `BL-024` antes de modificar el Corrector;
+4. evaluar modelo de co-diseño y relación corpus natural → adaptación pedagógica sin promoverlos por defecto;
+5. mantener abierta la investigación de dificultad auditiva, P y BIB065;
+6. publicar estados aprobados mediante commits identificables;
+7. permitir que el dispositivo consuma sólo conocimiento adjudicado mediante `KNOWLEDGE_SOURCE_COMMIT`.
 
-## 9. Trabajo técnico
+## 13. Trabajo técnico
 
 No cargar por defecto el estado técnico para conversaciones sobre bibliografía, pedagogía, corpus o metodología humana.
 
