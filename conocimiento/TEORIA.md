@@ -1,7 +1,7 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.2  
+**Versión:** 1.3  
 **Estado:** Borrador consolidado y evolutivo  
 **Fecha:** 2026-09-03  
 
@@ -277,17 +277,21 @@ La Gramática Popular §6.1 documenta que la comparación en didxazá usa estruc
 
 **Decisión de trabajo dentro de la taxonomía provisional:** "Comparar opciones" fue reclasificada de nivel_gramatical 5 a nivel_gramatical 3 porque la evidencia descriptiva mostró una estructura menos compleja de lo supuesto inicialmente. Esta reclasificación es válida como antecedente y decisión operativa dentro del modelo G/P actualmente utilizado, pero **no convierte G3 ni G5 en categorías curriculares definitivas**. En el mismo modelo de trabajo, "Regatear" (Vender en el mercado) permaneció en nivel_gramatical 5 por combinar recursos lingüísticos con una exigencia pragmática mayor; esta ubicación también queda abierta a revisión.
 
-## 10.5 Sistema vigesimal: decisión explícita
+## 10.5 Sistema vigesimal
 
 La Gramática Popular §6.3.1 documenta que el sistema numérico vigesimal completo (decenas y centenas) en didxazá **es actualmente de uso mayormente generacional/pasivo** — lo usan hablantes mayores, pero los más jóvenes tienden a recurrir a préstamos del español.
 
-**Decisión explícita del proyecto:** Mantener el sistema vigesimal completo como contenido pedagógico obligatorio independientemente de su frecuencia de uso real.
+La política pedagógica correspondiente ya no se adopta desde esta vista teórica. Se encuentra formalizada en:
 
-**Justificación:** Prioridad pedagógica/identitaria sobre frecuencia estadística. El aprendiz zapoteco tiene derecho a acceder al sistema numérico nativo completo. Los hablantes mayores (con mayor dominio) sí lo usan, así que es acceso potencial a registro más rico de la lengua.
+`conocimiento/decisiones/DEC-SISTEMA-VIGESIMAL-CONTENIDO-PEDAGOGICO.md`
 
-**Implicación:** No se crea ruta alterna simplificada. El corpus enseña el sistema completo; el aprendiz decide después cómo lo usa.
+La decisión vigente mantiene el sistema vigesimal completo como compromiso de cobertura pedagógica y acceso al sistema numérico nativo, pero **no obliga a introducirlo completo en COR002 principiante ni fija de antemano su ubicación en G/P o en una etapa curricular**.
 
-Esta decisión sobre contenido no fija por sí misma su ubicación en una etapa o nivel G/P determinado.
+```text
+VIGESIMAL_SYSTEM = PEDAGOGICAL_COVERAGE_COMMITMENT
+VIGESIMAL_SYSTEM != COR002_BEGINNER_REQUIREMENT
+VIGESIMAL_SYSTEM != FIXED_G_OR_P_LEVEL
+```
 
 ## 10.6 Marcadores de incertidumbre y preferencia
 
@@ -307,6 +311,6 @@ El siguiente contenido está documentado en la Gramática Popular y el Vocabular
 - Campo semántico de cocción
 - Léxico textil del huipil
 - Adverbios de tiempo del día
-- Registro narrativo tradicional (Gramática Popular cap. 15, tradición de Terán, Toledo, Cata)
+- Registro narrativo tradicional (Gramática Popular cap. 15, tradición de Terán, Toledo, etc.)
 
-Estos vacíos son candidatos para expansión futura del corpus y deben verificarse nuevamente conforme COR002 sea revisado.
+Estos vacíos no obligan a abrir de inmediato situaciones nuevas dentro del piloto principiante. Deben considerarse dentro de la cobertura progresiva del proyecto y contrastarse con prioridades de uso, corpus oral, hablantes y corpus posteriores.
