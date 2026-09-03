@@ -23,12 +23,14 @@ estado_de_acceso: disponible_en_web
 
 ## Identidad bibliográfica
 
-El snapshot bibliográfico BIB001–BIB084 distingue correctamente dos objetos relacionados:
+La hoja bibliográfica maestra reconciliada el 2026-09-03 distingue correctamente dos objetos relacionados:
 
 - `BIB016`: versión española/ilustración fonética registrada con fecha 2009;
 - `BIB061`: publicación JIPA de 2010 descrita aquí.
 
-La reconciliación completa de la hoja maestra sigue gobernada por `BL-026`; esta ficha corresponde específicamente a `BIB061`.
+```text
+BIB016 != BIB061
+```
 
 ## Relación con el dispositivo
 
