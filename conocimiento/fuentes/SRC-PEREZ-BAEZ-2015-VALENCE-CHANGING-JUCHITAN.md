@@ -21,7 +21,7 @@ estado_de_acceso: referencia_editorial_localizada
 
 ## Identidad bibliográfica
 
-`BIB060` está atestiguado para este capítulo en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
+`BIB060` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03.
 
 ## Relación con el dispositivo
 
