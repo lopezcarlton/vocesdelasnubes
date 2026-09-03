@@ -1,0 +1,90 @@
+name: post-irma-scope-memorization-sync-temp
+
+on:
+  push:
+    paths:
+      - '.github/workflows/post-irma-scope-memorization-sync-temp.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync canonical post-Irma scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          def patch(path, reps):
+              p=Path(path); s=p.read_text(encoding='utf-8')
+              for old,new in reps:
+                  if old not in s:
+                      raise SystemExit(f'missing anchor in {path}: {old!r}')
+                  s=s.replace(old,new,1)
+              p.write_text(s,encoding='utf-8')
+
+          # PEDAGOGIA
+          p=Path('conocimiento/PEDAGOGIA.md'); s=p.read_text(encoding='utf-8')
+          s=s.replace('**Versión:** 1.4','**Versión:** 1.5',1)
+          s=s.replace('**Fecha:** 2026-09-02','**Fecha:** 2026-09-03',1)
+          s=s.replace('- alfabetización y capacidad lectora;\n','',1)
+          anchor='La decisión de segmentar está vigente; las bandas concretas y sus metodologías permanecen abiertas a trabajo con docentes, especialistas y estudiantes.\n'
+          add='''\nDurante la fase activa definida en `DEC-ALCANCE-ACTIVO-PRINCIPIANTES-ESCUCHA-JUCHITAN`, esta investigación se restringe a **materiales de escucha para principiantes**. Las edades pueden variar, pero no se abre todavía una línea de lectoescritura ni se intenta resolver simultáneamente perfiles avanzados.\n\n```text\nCURRENT_PROFILE_RESEARCH = BEGINNER_LISTENING_BY_AGE\nLITERACY_TRACK = OUTSIDE_ACTIVE_SCOPE\n```\n'''
+          if add.strip() not in s:
+              if anchor not in s: raise SystemExit('PEDAGOGIA age anchor missing')
+              s=s.replace(anchor,anchor+add,1)
+          anchor='### 2.5 Aprendizaje sin presión\n\nEl material debe reducir el temor al error y permitir repetición privada. La producción se plantea como ensayo, no como examen inmediato.\n'
+          add='''\n### 2.6 Memoria como componente central bajo justificación explícita\n\nLa memorización forma parte deliberada del método actual: el aprendiz necesita conservar expresiones y recuperarlas con suficiente rapidez para producirlas oralmente. Sin embargo, el proyecto **no da por demostrada** la equivalencia entre memorizar y aprender una lengua ni considera suficiente la repetición mecánica.\n\n`BL-025` debe fundamentar con bibliografía y pruebas de aprendizaje qué papel cumplen la recuperación activa, el espaciamiento, las secuencias formulaicas, la reutilización y la transferencia, y cómo se evita el tedio señalado por docentes de orientación constructivista.\n\n```text\nMEMORY = CENTRAL_COMPONENT\nROTE_REPETITION = NOT_SUFFICIENT\nCONSTRUCTIVIST_COMPATIBILITY = OPEN_FOR_JUSTIFICATION\n```\n'''
+          if '### 2.6 Memoria como componente central bajo justificación explícita' not in s:
+              if anchor not in s: raise SystemExit('PEDAGOGIA memory anchor missing')
+              s=s.replace(anchor,anchor+add,1)
+          p.write_text(s,encoding='utf-8')
+
+          # CORPUS
+          p=Path('conocimiento/CORPUS.md'); s=p.read_text(encoding='utf-8')
+          s=s.replace('**Versión:** 1.4','**Versión:** 1.5',1)
+          s=s.replace('**Fecha:** 2026-09-02','**Fecha:** 2026-09-03',1)
+          anchor='La segmentación por edad no se convierte automáticamente en nivel lingüístico, G o P.\n'
+          add='''\n\nEn la fase activa todos los materiales nuevos se diseñan dentro de un **alcance principiante y auditivo**, aunque puedan existir versiones distintas para edades diferentes. Necesidades de alfabetización o fortalecimiento de escritura detectadas en otros estudios se conservan como contexto de investigación, pero no gobiernan COR002 en esta fase.\n\nEl baseline lingüístico activo sigue siendo Juchitán. Una futura línea de El Espinal u otra variedad deberá mantenerse identificable y no mezclarse con el corpus juchiteco sin decisión explícita.\n'''
+          if 'En la fase activa todos los materiales nuevos se diseñan dentro de un **alcance principiante y auditivo**' not in s:
+              if anchor not in s: raise SystemExit('CORPUS profile anchor missing')
+              s=s.replace(anchor,anchor+add,1)
+          p.write_text(s,encoding='utf-8')
+
+          # BACKLOG
+          p=Path('02_BACKLOG.md'); s=p.read_text(encoding='utf-8')
+          s=s.replace('**Versión:** 1.6','**Versión:** 1.7',1)
+          s=s.replace('**Última actualización:** 2026-09-02','**Última actualización:** 2026-09-03',1)
+          old='Desarrollar una arquitectura de públicos que permita adaptar materiales sin equiparar edad, grado escolar y competencia lingüística.\n'
+          new='Desarrollar una arquitectura de públicos escolares **dentro del alcance activo de principiantes y escucha**, sin equiparar edad, grado escolar y competencia lingüística. La lectoescritura y los perfiles avanzados quedan fuera del alcance de esta fase.\n'
+          if old in s: s=s.replace(old,new,1)
+          old='### BL-024 — Identificar la versión vigente del Alfabeto Popular y adjudicar nuevas fuentes ortográficas contemporáneas\n'
+          new='### BL-024 — Localizar e ingerir la Norma de escritura de 2016 y adjudicar fuentes ortográficas contemporáneas\n'
+          if old in s: s=s.replace(old,new,1)
+          old='Localizar documentalmente la versión más reciente del Alfabeto Popular mencionada en `SRC-IRMA-PINEDA-REUNION-2026-09-02` y determinar qué textos contemporáneos pueden incorporarse como evidencia ortográfica, con qué alcance y con qué peso.\n'
+          new='La referencia ya fue identificada: Emiliano confirmó que Irma se refería a la **`Norma del sistema de escritura de la lengua zapoteca` de 2016** (`HALL-0021`). La deuda actual es localizar el texto completo, documentar su procedencia y determinar qué textos contemporáneos pueden incorporarse como evidencia ortográfica, con qué alcance y con qué peso.\n'
+          if old in s: s=s.replace(old,new,1)
+          marker='\n# Criterios de cierre\n'
+          block='''\n### BL-025 — Justificar pedagógicamente la memorización y delimitar su función en Voces de las Nubes\n\n**Estado:** Abierto  \n**Prioridad:** Alta / pedagógica e institucional\n\nVoces de las Nubes utiliza memoria y repetición como componentes centrales del aprendizaje, mientras que el entorno docente de Casa de las Ciencias se identifica con principios constructivistas y cuestiona el tedio y la pasividad asociados con la memorización mecánica.\n\nLa tarea no es defender toda memorización. Debe distinguir con evidencia:\n\n- repetición pasiva o masiva;\n- recuperación activa;\n- práctica espaciada;\n- memorización de secuencias formulaicas y frases con función comunicativa;\n- automatización útil para producción oral;\n- reutilización, variación y transferencia;\n- carga y tedio según edad y formato.\n\nDebe además explicar qué papel ocupa la memoria dentro de una pedagogía más amplia y comprobar con aprendices que recordar material no se reduzca a recitarlo literalmente.\n\n**Mapa inicial:** `informes/MEMORIZATION_PEDAGOGICAL_JUSTIFICATION_RESEARCH_MAP_v0_1.md`.\n\n**Criterio de cierre:** existe una justificación pedagógica trazable, comprensible para docentes de Casa de las Ciencias y contrastada con pruebas de aprendices, o una reformulación documentada del método si la evidencia muestra límites relevantes.\n\n---\n'''
+          if '### BL-025 —' not in s:
+              if marker not in s: raise SystemExit('BACKLOG close marker missing')
+              s=s.replace(marker,'\n'+block+marker,1)
+          p.write_text(s,encoding='utf-8')
+
+          # Institutional verification: Alma Rosa identity now confirmed by Emiliano.
+          p=Path('informes/VERIFICACION_INSTITUCIONAL_POST_IRMA_2026-09-02.md'); s=p.read_text(encoding='utf-8')
+          old='La reconstrucción de Emiliano sólo conservaba “Alma Rosa”. La coincidencia nominal e institucional es fuerte, pero este informe **no afirma** que sea necesariamente la misma persona conocida previamente por Emiliano hasta que él lo confirme.'
+          new='La reconstrucción inicial de Emiliano sólo conservaba “Alma Rosa”. El 2026-09-03 Emiliano confirmó que **Alma Rosa Espíndola Galicia es la persona correcta** a la que se refería.'
+          if old in s: s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+          PY
+          git config user.name lopezcarlton
+          git config user.email lopezcarlton@gmail.com
+          git add conocimiento/PEDAGOGIA.md conocimiento/CORPUS.md 02_BACKLOG.md informes/VERIFICACION_INSTITUCIONAL_POST_IRMA_2026-09-02.md
+          git commit -m 'adopt beginner listening Juchitan scope and open memorization justification'
+          git push origin HEAD:main
