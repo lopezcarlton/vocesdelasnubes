@@ -192,10 +192,11 @@ Emiliano confirmó que la Norma 2016 es el documento al que Irma se refería com
 
 Fuentes actuales:
 
+- `SRC-CATA-ETAL-2016-NORMA-ESCRITURA`
 - `SRC-DICTIONARIA-NORMA-ESCRITURA-2016-REFERENCE`
 - `SRC-INALI-INFORME-LOGROS-2016-NORMA-PLANICIE-COSTERA`
 
-La referencia está identificada; el manuscrito completo todavía debe localizarse (`BL-024`). No reconstruir una supuesta norma completa a partir de citas secundarias.
+La identidad documental está resuelta; el manuscrito completo todavía debe localizarse (`BL-024`). No reconstruir una supuesta norma completa a partir de citas secundarias.
 
 ## 11. Fuentes lingüísticas centrales accesibles sin dispositivo
 
@@ -203,18 +204,30 @@ Entre las fuentes ya resolubles directamente desde Voces están:
 
 - `SRC-PICKETT-BLACK-MARCIAL-2001-GRAMATICA-POPULAR`
 - `SRC-PICKETT-2007-VOCABULARIO-ZAPOTECO-ISTMO`
+- `SRC-PICKETT-VILLALOBOS-MARLETT-2009-ZAPOTECO-ISTMO-JUCHITAN`
+- `SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS`
 - `SRC-DICTIONARIA-DIDXAZA-SPANISH-ENGLISH-DICTIONARY`
 - `SRC-BUENO-HOLLE-2019`
 - `SRC-PEREZ-BAEZ-CATA-BUENO-HOLLE-2015-XNEZA`
 - `SRC-PEREZ-BAEZ-2015-VALENCE-CHANGING-JUCHITAN`
 - `SRC-PEREZ-BAEZ-KAUFMAN-2016-VERB-CLASSES`
-- `SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS`
 
 Los derivados históricos que aparezcan en `dispositivo/` pueden utilizarse para localizar material, pero no sustituyen estas fuentes.
 
 ## 12. Estado bibliográfico
 
-La hoja bibliográfica maestra sigue siendo el registro operativo de asignación de `BIB###`. No inventar IDs BIB para fuentes nuevas. `BL-026` permanece abierto hasta reconciliar la hoja con los `SRC-*` actuales.
+La hoja bibliográfica maestra es el registro operativo de asignación de `BIB###`.
+
+La reconciliación estructural quedó cerrada el 2026-09-03 mediante `BL-026`. Después de la sincronización y segunda pasada:
+
+```text
+MASTER_BIB_RANGE = BIB001-BIB091
+BIB_ID_GAPS = 0
+BIB_ID_DUPLICATES = 0
+BL-026 = CLOSED
+```
+
+No inventar IDs BIB para fuentes nuevas. Toda nueva asignación se incorpora primero a la hoja maestra y después se refleja en los `SRC-*` pertinentes.
 
 ## 13. Qué sigue
 
