@@ -64,14 +64,19 @@ La revisión del core y del runtime muestra que las fuentes externas centrales m
 
 Registros canónicos principales:
 
+- `SRC-ALFABETO-POPULAR-1956` — `BIB015`, antecedente histórico ortográfico;
+- `SRC-PICKETT-VILLALOBOS-MARLETT-2009-ZAPOTECO-ISTMO-JUCHITAN` — `BIB016`, ilustración fonética en español con audio;
 - `SRC-PICKETT-BLACK-MARCIAL-2001-GRAMATICA-POPULAR` — Gramática Popular / `BIB004`;
 - `SRC-PICKETT-2007-VOCABULARIO-ZAPOTECO-ISTMO` — Vocabulario / `BIB003`;
-- `SRC-DICTIONARIA-DIDXAZA-SPANISH-ENGLISH-DICTIONARY` — fuente de los inventarios Dictionaria y `DIC_VERB_2385`;
-- `SRC-BUENO-HOLLE-2019` — monografía, ubicación pública, DOI, licencia y hash de la copia de trabajo;
-- `SRC-PEREZ-BAEZ-CATA-BUENO-HOLLE-2015-XNEZA` — ortografía/palabra gráfica;
-- `SRC-PEREZ-BAEZ-2015-VALENCE-CHANGING-JUCHITAN` — cambio de valencia/causatividad;
-- `SRC-PEREZ-BAEZ-KAUFMAN-2016-VERB-CLASSES` — clases verbales usadas por la capa PBK;
-- `SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS` — descripción fonética de Juchitán.
+- `SRC-DICTIONARIA-DIDXAZA-SPANISH-ENGLISH-DICTIONARY` — `BIB054`, fuente de los inventarios Dictionaria y `DIC_VERB_2385`;
+- `SRC-CATA-ETAL-2016-NORMA-ESCRITURA` — `BIB058`, identidad resuelta; manuscrito todavía por conseguir;
+- `SRC-PEREZ-BAEZ-KAUFMAN-2016-VERB-CLASSES` — `BIB059`, clases verbales usadas por la capa PBK;
+- `SRC-PEREZ-BAEZ-2015-VALENCE-CHANGING-JUCHITAN` — `BIB060`, cambio de valencia/causatividad;
+- `SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS` — `BIB061`, publicación JIPA;
+- `SRC-CARDONA-2020-DIALECTOLOGIA-ZAPOTECO-ISTMO` — `BIB063`;
+- `SRC-CARDONA-VICENTE-2025-VARIACION-ESCRITURA` — `BIB064`;
+- `SRC-BUENO-HOLLE-2019` — `BIB065`, monografía, ubicación pública, DOI, licencia y hash de la copia de trabajo;
+- `SRC-PEREZ-BAEZ-CATA-BUENO-HOLLE-2015-XNEZA` — `BIB017`, ortografía/palabra gráfica.
 
 Comprobaciones de las capas técnicas recuperadas:
 
@@ -82,7 +87,9 @@ Comprobaciones de las capas técnicas recuperadas:
 - el backfill Pickett permanece derivado técnico del Vocabulario;
 - `JUCHITAN_LINGUISTIC_CORE_v0_27` permanece compilación experimental y no fuente.
 
-Los aliases históricos `BIB054`, `BIB059`, `BIB060` usados dentro del dispositivo **no deben promoverse ni corregirse por inferencia en Voces** hasta reconciliar la hoja bibliográfica maestra mediante `BL-026`. Los `SRC-*` bastan para resolver la identidad documental durante el corte.
+Un snapshot bibliográfico BIB001–BIB084 recuperado del archivo de trabajo del proyecto confirma expresamente las asignaciones `BIB054`, `BIB058`, `BIB059`, `BIB060`, `BIB061`, `BIB063`, `BIB064` y `BIB065`, además de `BIB015`–`BIB017`. Esto permite usar esos IDs en los registros `SRC` sin inferirlos desde los aliases técnicos.
+
+`BL-026` permanece abierto porque el snapshot no sustituye la reconciliación con la hoja bibliográfica maestra vigente y existen fuentes posteriores que todavía pueden requerir asignación o corrección de metadatos.
 
 No es requisito reingerir de golpe todo el contenido de estas obras. La lectura/adjudicación se hará incrementalmente cuando una pregunta de investigación lo requiera.
 
@@ -127,7 +134,7 @@ En el repositorio técnico separado:
 4. comprobar reentry técnico;
 5. comprobar `KNOWLEDGE_SOURCE_COMMIT`;
 6. comprobar que las fuentes documentales críticas pueden resolverse desde Voces sin depender del repo técnico;
-7. comprobar que ninguna instrucción técnica concede autoridad de escritura sobre Voces.
+7. comprobar que ninguna instrucción técnica conceda autoridad de escritura sobre Voces.
 
 **No retirar el dispositivo activo de Voces hasta que esta fase pase.**
 
