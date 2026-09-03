@@ -23,7 +23,7 @@ estado_de_acceso: copia_disponible_fuera_del_repositorio_publico
 
 ## Identidad documental
 
-El catálogo bibliográfico BIB001–BIB084 del proyecto registra esta obra como `BIB015`.
+La hoja bibliográfica maestra reconciliada el 2026-09-03 registra esta obra como `BIB015`.
 
 El registro de Smithsonian Libraries and Archives describe un facsímil de la edición original de 1956, publicada en México, D.F. por la Sociedad Pro-Planeación Integral del Istmo, el Consejo de Lenguas Indígenas y el Instituto Lingüístico de Verano. El registro señala además que el alfabeto fue aprobado en una mesa redonda celebrada del 6 al 10 de febrero de 1956 y describe el objeto como un folleto de 17 páginas.
 
