@@ -22,7 +22,7 @@ nivel_de_fuente: primaria
 estado_de_acceso: disponible_abierto
 ```
 
-`BIB065` está atestiguado para esta monografía en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
+`BIB065` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03.
 
 ## Secciones explotadas en el cierre de agosto 2026
 
@@ -64,6 +64,18 @@ En el análisis posterior de discurso, Bueno Holle utiliza unidades entonacional
 ## Relación con artefactos técnicos históricos
 
 Las matrices y estados de lectura conservados históricamente bajo `dispositivo/migracion/fuentes/` pueden utilizarse para localizar pasajes o reconstruir qué se estudió, pero no sustituyen esta fuente original ni constituyen autoridad independiente.
+
+### Disciplina de uso de la matriz BIB065
+
+`BIB065_BUENO_HOLLE_INGESTION_MATRIX` contiene también afirmaciones interpretativas, no sólo referencias. Por ello su uso correcto como auxiliar de relectura se limita a **coordenadas de recuperación** —capítulo, página, ejemplo o tramo pertinente—. No debe leerse su resumen de una afirmación para establecer de antemano qué dice Bueno Holle.
+
+```text
+BIB065_MATRIX_AS_COORDINATES = allowed
+BIB065_MATRIX_AS_CLAIM_SUMMARY = not_authoritative
+SOURCE_PASSAGE_MUST_BE_OPENED_BEFORE_ADJUDICATION = true
+```
+
+Si una afirmación de la matriz se conoce antes de abrir el libro, debe tratarse como candidato y comprobarse directamente contra el pasaje original antes de usarla como evidencia.
 
 ## Aplicaciones actuales
 
