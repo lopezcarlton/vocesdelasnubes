@@ -50,7 +50,7 @@ La existencia e identidad de la obra están respaldadas actualmente por:
 
 - `SRC-DICTIONARIA-NORMA-ESCRITURA-2016-REFERENCE`;
 - `SRC-INALI-INFORME-LOGROS-2016-NORMA-PLANICIE-COSTERA`;
-- el snapshot bibliográfico BIB001–BIB084, donde figura como `BIB058`;
+- la hoja bibliográfica maestra reconciliada el 2026-09-03, donde figura como `BIB058`;
 - la confirmación de Emiliano de que es el documento referido por Irma Pineda.
 
 ## Regla de uso mientras no esté el manuscrito
