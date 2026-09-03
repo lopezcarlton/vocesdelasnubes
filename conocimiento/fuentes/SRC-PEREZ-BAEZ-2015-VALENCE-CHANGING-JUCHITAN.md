@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-PEREZ-BAEZ-2015-VALENCE-CHANGING-JUCHITAN
 tipo: fuente_bibliografica
+bib_id: BIB060
 titulo: "Morphological valence-changing processes in Juchitán Zapotec"
 autor_o_participantes:
   - Gabriela Pérez Báez
@@ -18,9 +19,13 @@ nivel_de_fuente: primaria
 estado_de_acceso: referencia_editorial_localizada
 ```
 
+## Identidad bibliográfica
+
+`BIB060` está atestiguado para este capítulo en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
+
 ## Relación con el dispositivo
 
-`JUCHITAN_LINGUISTIC_CORE_v0_27` cita explícitamente este trabajo al describir la arquitectura de derivación y estrategias causativas.
+`JUCHITAN_LINGUISTIC_CORE_v0_27` y Morphology II citan explícitamente este trabajo al describir la arquitectura de derivación y estrategias causativas; el alias técnico histórico es `BIB060_PB2015`.
 
 ```text
 TECHNICAL_CAUSATIVE_RULE != SOURCE
