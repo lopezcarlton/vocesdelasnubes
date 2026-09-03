@@ -25,7 +25,7 @@ estado_de_acceso: disponible_en_web
 
 ## Identidad bibliográfica
 
-`BIB054` está atestiguado para esta contribución en el snapshot bibliográfico BIB001–BIB084 conservado por el proyecto. La reconciliación completa de la hoja maestra sigue gobernada por `BL-026`.
+`BIB054` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03.
 
 ## Datos documentales relevantes
 
