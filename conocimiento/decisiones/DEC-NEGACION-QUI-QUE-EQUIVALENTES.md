@@ -5,8 +5,8 @@ id: DEC-NEGACION-QUI-QUE-EQUIVALENTES
 titulo: "Tratar qui / qué como equivalentes en negación"
 decision: >
   Voces de las Nubes adopta como decisión vigente que `qui`/`quí` y `qué` pueden
-  representar formas equivalentes de negación dentro del alcance documentado por las
-  consultas actuales. Ninguna de las dos debe marcarse como incorrecta únicamente por
+  representar formas equivalentes de negación dentro del alcance documentado actualmente
+  para Juchitán y El Espinal. Ninguna de las dos debe marcarse como incorrecta únicamente por
   diferir de la otra. Las preferencias de hablantes por `qui`/`quí` o `qué` se conservan
   como información de uso y escritura, no como prueba de diferencia semántica.
 estado: vigente
@@ -27,10 +27,10 @@ justificacion: >
   formas y, en tres casos, en su equivalencia explícita. Las diferencias observadas
   corresponden a preferencias y posibles distribuciones locales que deben conservarse
   sin convertirlas en oposición de significado.
+alcance: "Equivalencia semántico-funcional documentada actualmente en consultas de Juchitán y El Espinal; no establece distribución ni frecuencia fuera de ese alcance."
 impacta_a:
   - "política lingüística de negación"
-  - "futuras reglas de revisión ortográfica"
-  - "futuro dispositivo cuando consuma un estado aprobado que incluya esta decisión"
+  - "futuras reglas de revisión ortográfica derivadas"
 reemplaza: null
 reemplazada_por: null
 condiciones_de_revision:

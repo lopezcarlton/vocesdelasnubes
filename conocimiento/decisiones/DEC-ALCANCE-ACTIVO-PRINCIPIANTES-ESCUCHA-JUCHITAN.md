@@ -15,8 +15,9 @@ responsable: Emiliano López Carlton
 validadores:
   - Emiliano López Carlton
 hallazgos_que_la_sustentan:
-  - HALL-0020
   - HALL-0009
+fuentes_directas:
+  - SRC-EMILIANO-DECISIONES-ALCANCE-2026-09-03
 principios_relacionados:
   - PRIN-INVESTIGACION-ABIERTA
 supuestos_implicados:
@@ -35,7 +36,7 @@ impacta_a:
   - conocimiento/CORPUS.md
   - conocimiento/AUDIO.md
   - 02_BACKLOG.md
-  - POST_IRMA_INTAKE_CHECKPOINT_2026-09-02.md
+  - archivo/checkpoints/2026-09-02_ingesta_reunion_irma.md
 reemplaza: null
 reemplazada_por: null
 condiciones_de_revision:

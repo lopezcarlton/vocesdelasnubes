@@ -1,9 +1,9 @@
 # BIBLIOGRAFIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.1  
+**Versión:** 1.2  
 **Estado:** Borrador consolidado  
-**Fecha:** 2026-08-14  
+**Fecha:** 2026-09-03  
 
 ---
 
@@ -55,9 +55,9 @@ El formato `B###` no debe usarse en documentos nuevos ni en referencias nuevas.
 
 La numeración es secuencial y continua. No existe límite superior ni rango reservado.
 
-La numeración alcanza `BIB055` a la fecha de esta versión. Las entradas siguientes continúan a partir del último identificador asignado en la hoja de cálculo, que es el registro operativo de la bibliografía.
+La **hoja de cálculo bibliográfica es el registro operativo de asignación de IDs**. Este Markdown no declara cuál es el último `BIB###`, porque puede quedar desactualizado entre revisiones. La presencia de una fuente `SRC-*` en el repositorio no autoriza inventar o asignar un `BIB###` sin consultar ese registro.
 
-Este documento no se actualiza cada vez que se añade una fuente. Solo se actualiza cuando cambian las reglas del sistema.
+Hasta reconciliar la hoja maestra con las fuentes incorporadas recientemente, las nuevas fuentes pueden conservarse con su `SRC-*` estable sin recibir un identificador BIB provisional.
 
 ## 2.4 Reglas permanentes
 
@@ -194,11 +194,9 @@ Las ediciones distintas pueden registrarse por separado o aclararse mediante añ
 
 # 10. Estado de revisión
 
-Doce fuentes están registradas como revisadas a profundidad. Se enumeran en la sección 3.
+La sección 3 es una **fotografía histórica parcial** de fuentes que habían sido registradas como revisadas a profundidad; no debe utilizarse para inferir el número total actual de fuentes o el último identificador BIB.
 
-Otras fuentes están registradas y parcialmente consultadas.
-
-El estado de revisión de cada entrada se administra en la hoja de cálculo, no en este documento.
+El estado de revisión y la asignación completa de IDs se administran en la hoja de cálculo bibliográfica. Hasta reconciliarla con los `SRC-*` recientes, este documento evita afirmar conteos globales.
 
 ---
 
@@ -255,3 +253,18 @@ Las entradas nuevas continúan la numeración secuencial vigente conforme a la s
 La hoja de cálculo de administración bibliográfica utiliza los identificadores vigentes en todas sus entradas.
 
 Los identificadores con formato `B###` que aparezcan en documentos o notas anteriores al cambio de prefijo corresponden a la misma fuente que el identificador `BIB###` con igual número.
+
+
+---
+
+# 13. Reconciliación pendiente del registro bibliográfico
+
+Al 2026-09-03 existen fuentes `SRC-*` incorporadas después de la última sincronización documentada de la hoja bibliográfica. No deben recibir IDs BIB por inferencia.
+
+`BL-026` gobierna la reconciliación. Hasta cerrarlo:
+
+```text
+SRC_ID = VALID_SOURCE_ID
+BIB_ID = ASSIGN_ONLY_FROM_MASTER_SPREADSHEET
+NO_GUESSED_BIB_IDS = true
+```

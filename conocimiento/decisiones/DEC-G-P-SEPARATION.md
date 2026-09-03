@@ -9,8 +9,8 @@ decision: >
   analizar, comparar y calibrar materiales de COR002.
 
   Esta decisión NO establece que las definiciones actuales G1–G5 y P1–P5 sean una taxonomía
-  definitiva, ni que deban funcionar como secuencia curricular cerrada, ni que un generador deba
-  aplicarlas automáticamente antes de construir una escena.
+  definitiva, ni que deban funcionar como secuencia curricular cerrada, ni que deban
+  aplicarse automáticamente antes de construir una escena.
 
   Durante el piloto principiante de COR002, el orden operativo es:
 
@@ -54,7 +54,6 @@ impacta_a:
   - CORPUS.md
   - PEDAGOGIA.md
   - METODOLOGIA.md
-  - futuros generadores, cuando vuelvan a activarse
 
 implementacion_anterior_ya_no_vigente: >
   La formulación original interpretaba G como restricción dura no negociable de generación y P como
@@ -71,7 +70,7 @@ reemplazada_por: null
 condiciones_de_revision:
   - Revisar las fronteras G1–G5 y P1–P5 a partir de escenas aceptadas y realizaciones en Didxazá.
   - Revisar si la carga discursiva/referencial queda suficientemente representada dentro de P o necesita otra descripción.
-  - Revisar si alguna forma de restricción previa resulta útil cuando vuelva a existir un generador general.
+  - Revisar si alguna forma de restricción previa resulta pedagógicamente útil al diseñar materiales futuros.
   - Revisar con aprendices reales qué complejidad resulta comprensible, producible y transferible.
 
 provenance:

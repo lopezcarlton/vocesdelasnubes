@@ -313,6 +313,19 @@ Debe además explicar qué papel ocupa la memoria dentro de una pedagogía más 
 
 ---
 
+### BL-026 — Reconciliar la hoja bibliográfica maestra con las fuentes SRC actuales
+
+**Estado:** Abierto  
+**Prioridad:** Alta / documental
+
+La hoja de cálculo bibliográfica es el registro operativo de asignación de `BIB###`, pero el repositorio contiene fuentes incorporadas después de la última sincronización documentada y `BIBLIOGRAFIA.md` había quedado congelado en un máximo obsoleto.
+
+No asignar nuevos IDs BIB por inferencia. Reconciliar la hoja maestra con los `SRC-*` actuales, confirmar específicamente la identidad de `BIB065`/Bueno Holle y asignar IDs sólo a las fuentes que todavía no los tengan.
+
+**Criterio de cierre:** hoja maestra y repositorio coinciden; ningún `SRC` bibliográfico relevante tiene un BIB ambiguo, duplicado o inventado.
+
+---
+
 # Criterios de cierre
 
 Una tarea estructural se considera completada cuando:

@@ -56,32 +56,23 @@ Esta arquitectura está vigente como marco de trabajo, pero **no se considera te
 ```text
 vocesdelasnubes/
 ├── README.md
-├── INICIAR_AQUI_CHAT_NUEVO.md             # reentrada del Sistema de Conocimiento
+├── INICIAR_AQUI_CHAT_NUEVO.md
 ├── 00_ARQUITECTURA_DEL_CONOCIMIENTO.md
 ├── 01_JERARQUIA_DE_VERDAD.md
 ├── 02_BACKLOG.md
 ├── 03_REGLAS_DE_ACTUALIZACIÓN.md
 ├── 04_RELACION_CON_ELDP.md
-├── conocimiento/
-│   ├── METODOLOGIA.md
-│   ├── CORPUS.md
-│   ├── AUDIO.md
-│   ├── PEDAGOGIA.md
-│   ├── TEORIA.md
-│   ├── VALIDACION.md
-│   ├── BIBLIOGRAFIA.md
-│   ├── decisiones/
-│   ├── principios/
-│   ├── hallazgos/
-│   └── fuentes/
-├── dispositivo/                           # sistema derivado, experimental, no canónico
-│   └── REENTRY_TECNICO.md                 # reentrada técnica separada
-├── informes/
-├── contexto-para-reconstruir-base-de-conocimientos/
-└── prompts/
+├── conocimiento/        # Sistema de Conocimiento y vistas canónicas
+├── informes/            # investigación/auditorías no normativas
+├── archivo/             # historia, checkpoints y contextos
+├── dispositivo/         # sistema derivado temporal, pendiente de separación
+└── .github/
 ```
 
+La raíz se mantiene deliberadamente pequeña. Los checkpoints fechados y contextos históricos no viven en la raíz y no gobiernan el estado vigente.
+
 ---
+
 
 ## Sistema de Conocimiento
 

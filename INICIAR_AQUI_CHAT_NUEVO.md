@@ -25,11 +25,11 @@ Leer, en este orden:
 11. `conocimiento/VALIDACION.md`
 12. `conocimiento/TEORIA.md`
 13. `conocimiento/BIBLIOGRAFIA.md`
-14. `POST_IRMA_ADJUDICATION_CHECKPOINT_2026-09-03.md`
+14. `archivo/checkpoints/2026-09-03_estado_adjudicado.md`
 
-Para reconstruir la primera captura post-Irma usar `POST_IRMA_INTAKE_CHECKPOINT_2026-09-02.md`.
+Para reconstruir la primera captura post-Irma usar `archivo/checkpoints/2026-09-02_ingesta_reunion_irma.md`.
 
-Para reconstruir específicamente el estado anterior a Irma, usar `PRE_IRMA_POST_MIGRATION_CHECKPOINT_2026-09-02.md` y la rama congelada indicada allí.
+Para reconstruir específicamente el estado anterior a Irma, usar `archivo/checkpoints/2026-09-02_pre_irma.md` y la rama congelada indicada allí.
 
 Leer las `SRC`, `HALL`, `DEC`, `VAL`, `TEO` u otras entidades pertinentes a la pregunta concreta. Si una ruta no existe, no inventarla ni sustituirla silenciosamente.
 
@@ -243,7 +243,7 @@ branch = checkpoint/pre-irma-post-migration-2026-09-02
 commit = e1f9f4ef2852b9e0453ef757a291816e1faa10e2
 ```
 
-Ver `PRE_IRMA_POST_MIGRATION_CHECKPOINT_2026-09-02.md`.
+Ver `archivo/checkpoints/2026-09-02_pre_irma.md`.
 
 Esa referencia sirve para comparar cambios y no debe confundirse con política vigente.
 

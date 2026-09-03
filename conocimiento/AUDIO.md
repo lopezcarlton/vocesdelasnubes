@@ -1,9 +1,9 @@
 # AUDIO
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.2  
+**Versión:** 1.3  
 **Estado:** Borrador consolidado  
-**Fecha:** 2026-08-31
+**Fecha:** 2026-09-03
 
 ---
 
@@ -12,6 +12,19 @@
 El componente de audio constituye la fuente primaria para el aprendizaje y la referencia lingüística del proyecto. Su función es registrar producciones orales de alta calidad que permitan comprensión, comparación y producción por parte del aprendiz, además de conservar evidencia oral útil para análisis y documentación.
 
 Este documento describe únicamente el proceso de producción de audio. No documenta la metodología general, el diseño del corpus, la teoría pedagógica ni la bibliografía.
+
+## 1.1 Alcance activo de fase
+
+La decisión `DEC-ALCANCE-ACTIVO-PRINCIPIANTES-ESCUCHA-JUCHITAN` fija actualmente:
+
+```text
+ACTIVE_LANGUAGE_LEVEL = BEGINNER
+ACTIVE_PRIMARY_MODALITY = LISTENING
+ACTIVE_BASELINE_VARIETY = JUCHITAN
+ACTIVE_LITERACY_TRACK = false
+```
+
+Para AUDIO esto significa priorizar materiales auditivos técnicamente claros y adecuados a principiantes de Juchitán. **No fija por sí mismo una velocidad, un patrón de repetición ni una secuencia única de audio**; esas decisiones requieren justificación pedagógica y pruebas específicas.
 
 ---
 

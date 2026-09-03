@@ -36,10 +36,10 @@ relacion_con_bib065: >
   reintroducción de referentes, tópico/foco, estado informativo, unidades entonacionales y otras
   relaciones de organización discursiva— no se incorporan automáticamente dentro de P.
 
-  Primero deben implementarse como propiedades analíticas descriptivas del dispositivo. La evidencia
-  futura deberá mostrar cuáles tienen consecuencias pedagógicas, cuáles ya quedan representadas por G
-  o P, cuáles requieren descripción separada y cuáles son simplemente propiedades lingüísticas sin
-  necesidad de una escala curricular propia.
+  Primero deben mantenerse como propiedades descriptivas de investigación, sin convertirlas
+  automáticamente en requisitos curriculares. La evidencia futura deberá mostrar cuáles tienen
+  consecuencias pedagógicas, cuáles ya quedan representadas por G o P, cuáles requieren descripción
+  separada y cuáles son simplemente propiedades lingüísticas sin necesidad de una escala curricular propia.
 
 no_se_concluye:
   - que la dimensión pragmática deba eliminarse;

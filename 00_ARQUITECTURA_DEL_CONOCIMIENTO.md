@@ -7,10 +7,10 @@
 titulo: Arquitectura del Sistema de Conocimiento
 proyecto: Voces de las Nubes
 autor: Emiliano López Carlton
-version: 0.2
-estado: borrador_de_trabajo
+version: 0.3
+estado: vigente
 unidad_minima: hallazgo
-fecha: 02/09/2026
+fecha: 03/09/2026
 ---
 ```
 
@@ -326,7 +326,9 @@ Una afirmación inferida debe estar marcada como tal. No puede redactarse como o
 
 Una decisión registra una elección vigente o histórica que orienta el proyecto.
 
-Una decisión no es equivalente a un hallazgo. Surge como respuesta a uno o varios hallazgos, necesidades, principios o restricciones.
+Una decisión no es equivalente a un hallazgo. Normalmente surge como respuesta a uno o varios hallazgos, necesidades, principios o restricciones.
+
+**Decisiones directas de coordinación o alcance.** Cuando la persona responsable adopta explícitamente una decisión de coordinación, alcance o prioridad, no debe fabricarse un `HALL` espejo únicamente para satisfacer el esquema. En esos casos `hallazgos_que_la_sustentan` puede ser una lista vacía y la decisión debe identificar la fuente directa mediante `fuentes_directas` y explicar su justificación. Esta excepción no permite usar una DEC para presentar como hecho empírico algo que no ha sido observado o validado.
 
 Campos mínimos:
 
@@ -1248,65 +1250,36 @@ ELDP debe ser una vista del proyecto, no la estructura dominante de todo el repo
 
 ---
 
-# 14. Organización propuesta del repositorio
+# 14. Organización física vigente del repositorio
+
+Esta sección **describe la organización real vigente**; no prescribe un árbol ideal independiente del repositorio. Si la organización física cambia por una decisión adoptada, esta sección debe actualizarse. No se debe reestructurar el repositorio sólo para obedecer un diagrama histórico.
 
 ```text
 /
-├── 00_SISTEMA/
-│   ├── 00_ARQUITECTURA_DEL_CONOCIMIENTO.md
-│   ├── 01_TAXONOMIA_Y_ESTADOS.md
-│   ├── 02_REGLAS_DE_TRAZABILIDAD.md
-│   └── 03_FLUJO_DE_ACTUALIZACION.md
-│
-├── 01_FUENTES/
-│   ├── CONTEXTOS_CHAT/
-│   ├── SESIONES/
-│   ├── BIBLIOGRAFIA/
-│   ├── INSTITUCIONAL/
-│   └── CORPUS_Y_AUDIO/
-│
-├── 02_CONOCIMIENTO/
-│   ├── HALLAZGOS/
-│   ├── DECISIONES/
-│   ├── SUPUESTOS/
-│   ├── PRINCIPIOS/
-│   ├── VALIDACIONES/
-│   ├── TEORIA_APLICADA/
-│   ├── PROCEDIMIENTOS/
-│   ├── CRITERIOS/
-│   ├── RIESGOS/
-│   ├── PREGUNTAS_ABIERTAS/
-│   ├── LECCIONES/
-│   └── CAMBIOS_DE_POSICION/
-│
-├── 03_VISTAS/
-│   ├── TEORIA.md
-│   ├── METODOLOGIA.md
-│   ├── PEDAGOGIA.md
-│   ├── CORPUS.md
-│   ├── AUDIO.md
-│   ├── ETICA_Y_GOBERNANZA.md
-│   ├── DOCUMENTACION_LINGUISTICA.md
-│   └── ELDP.md
-│
-├── 04_PRODUCTOS/
-│   ├── CORPUS/
-│   ├── AUDIO/
-│   ├── ANKI/
-│   ├── INFORMES/
-│   └── SOLICITUDES/
-│
-└── 05_PROMPTS/
-    ├── EXTRACCION/
-    ├── CONSOLIDACION/
-    ├── AUDITORIA/
-    ├── ACTUALIZACION/
-    └── GENERACION_DE_VISTAS/
+├── README.md
+├── INICIAR_AQUI_CHAT_NUEVO.md
+├── 00_ARQUITECTURA_DEL_CONOCIMIENTO.md
+├── 01_JERARQUIA_DE_VERDAD.md
+├── 02_BACKLOG.md
+├── 03_REGLAS_DE_ACTUALIZACIÓN.md
+├── 04_RELACION_CON_ELDP.md
+├── conocimiento/        # Sistema de Conocimiento canónico + vistas
+├── informes/            # análisis y auditorías no normativos
+├── archivo/             # checkpoints, contextos y herramientas históricas
+├── dispositivo/         # sistema derivado temporal; pendiente de separación física
+└── .github/             # control técnico del repositorio
 ```
 
-Esta organización es conceptual. Puede simplificarse si el número de archivos individuales vuelve difícil el mantenimiento.
+Reglas de ubicación:
+
+- `conocimiento/` contiene fuentes registradas, hallazgos, decisiones, principios válidos y vistas canónicas.
+- `informes/` puede orientar investigación, pero no adopta conocimiento.
+- `archivo/` preserva historia y contexto; no gobierna el presente.
+- `dispositivo/` es un sistema derivado y no forma parte del Sistema de Conocimiento. Su presencia actual es transitoria hasta completar la separación física verificada.
+- Los materiales fuente compartidos se adjudican por naturaleza y derechos, no por el lugar donde una herramienta los haya ingerido primero.
 
 ---
+
 
 # 15. Regla de fuente única de verdad
 
@@ -1507,42 +1480,11 @@ Este ejemplo muestra que un mismo hallazgo puede producir una decisión provisio
 
 ---
 
-# 22. Decisiones arquitectónicas iniciales
+# 22. Estado arquitectónico actual
 
-La versión 0.1 adopta provisionalmente las siguientes decisiones:
+La arquitectura vigente ya define los tipos principales de entidad, sus estados, la autoridad de las decisiones, la función de las vistas y la frontera con sistemas derivados. Las cuestiones abiertas deben registrarse en el backlog o mediante entidades del tipo correspondiente; no deben mantenerse como una lista especulativa dentro de la Constitución.
 
-1. El hallazgo será la unidad mínima del conocimiento.
-2. Las fuentes se conservarán separadas de los hallazgos.
-3. Las decisiones serán entidades derivadas, no el átomo del sistema.
-4. Todo conocimiento derivado deberá rastrearse hasta uno o varios hallazgos.
-5. Estado, confianza y vigencia se registrarán por separado.
-6. Las validaciones tendrán alcance y tipo de autoridad explícitos.
-7. Los documentos temáticos serán vistas, no fuentes independientes de verdad.
-8. Las entidades reemplazadas no se eliminarán.
-9. Las contradicciones se documentarán en lugar de resolverse artificialmente.
-10. Los contextos Markdown se tratarán como fuentes secundarias.
-11. Las sugerencias generadas por IA no se considerarán decisiones mientras no sean adoptadas explícitamente.
-12. Los identificadores serán permanentes y no dependerán del nombre de los archivos.
-
----
-
-# 23. Aspectos que deben definirse en la siguiente versión
-
-La arquitectura todavía necesita resolver:
-
-* si cada entidad ocupará un archivo propio o si se agruparán varias por archivo;
-* qué campos serán obligatorios para cada tipo;
-* cómo se numerarán los IDs sin provocar conflictos;
-* quién puede cambiar el estado de una decisión;
-* qué diferencias habrá entre validación y aprobación;
-* cómo se registrarán citas textuales y paráfrasis;
-* cómo se representarán personas, instituciones y bibliografía;
-* cómo se automatizará la detección de duplicados;
-* qué vistas se regenerarán automáticamente;
-* qué cambios requerirán revisión manual;
-* cómo se documentará el consentimiento y el nivel de acceso;
-* qué información será pública, interna, restringida o sensible;
-* cómo se evitará que una IA reescriba silenciosamente conocimiento validado.
+La evolución histórica permanece disponible en Git y en `archivo/`.
 
 ---
 
@@ -1572,3 +1514,13 @@ La utilidad de esta arquitectura dependerá menos de la cantidad de información
 - Se establece que los sistemas derivados pueden descubrir y proponer, pero no adoptar, promover ni escribir conocimiento.
 - Se establece que los permisos de desarrollo técnico no implican permisos de escritura sobre el Sistema de Conocimiento.
 - La actualización responde a `HALL-0008` y `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO`.
+
+
+---
+
+## Actualización v0.3 — 2026-09-03
+
+- Se reemplaza el árbol conceptual obsoleto por la organización física vigente y se aclara que el diagrama no prescribe una reestructuración.
+- Se formaliza que decisiones directas de coordinación o alcance pueden sustentarse en una fuente directa sin fabricar un `HALL` espejo.
+- Se clasifican `informes/`, `archivo/` y `dispositivo/` por función y autoridad.
+- Se retira de la Constitución la lista histórica de cuestiones "para la siguiente versión"; las deudas actuales pertenecen al backlog.
