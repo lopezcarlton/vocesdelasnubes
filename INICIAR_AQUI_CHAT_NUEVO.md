@@ -95,15 +95,23 @@ Nunca modificar `conocimiento/` directamente desde el resultado técnico.
 
 ## 4. COR001
 
+COR001 conserva dos estados distintos que no deben confundirse:
+
 ```text
-COR001 = ANALYSIS_TARGET_ONLY
+COR001_DEVICE_ROLE = ANALYSIS_TARGET_ONLY
+COR001_PROJECT_STATUS = OPEN_MAINTENANCE
+
 COR001 != GOLD_STANDARD
 COR001 != BENCHMARK
 COR001 != REGRESSION_AUTHORITY
 COR001 != RULE_DISCOVERY_SOURCE
 ```
 
-No reanudar por defecto la resolución caso por caso de huecos de COR001.
+`ANALYSIS_TARGET_ONLY` describe exclusivamente el papel de COR001 frente al dispositivo y la investigación técnica: no puede convertirse en gold, benchmark, regresión ni fuente automática de reglas.
+
+Dentro de **Voces de las Nubes**, COR001 sigue abierto como corpus y producto en mantenimiento. Pueden continuar la revisión ortográfica, las correcciones derivadas, regrabaciones necesarias, normalización final de audio y preparación de derivados pedagógicos. Estos trabajos no autorizan a promover COR001 a fuente de reglas del dispositivo.
+
+No reanudar por defecto una resolución técnica caso por caso de COR001 como si su objetivo fuera estabilizar el dispositivo. Sí continuar su mantenimiento cuando el frente de corpus/audio lo requiera.
 
 ## 5. Alcance activo de COR002 y materiales nuevos
 
@@ -245,7 +253,7 @@ No inventar IDs BIB para fuentes nuevas. Toda nueva asignación se incorpora pri
 
 ## 13. Qué sigue
 
-Mientras la arquitectura permanece congelada, las líneas sustantivas activas son:
+Mientras no exista una decisión explícita que modifique la arquitectura vigente, las líneas sustantivas activas son:
 
 - localizar y estudiar la Norma 2016;
 - justificar pedagógicamente la memoria y su relación con recuperación, espaciamiento, transferencia y tedio;
