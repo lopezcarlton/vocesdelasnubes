@@ -69,18 +69,32 @@ Se abrió:
 
 `BL-024 — Identificar la versión vigente del Alfabeto Popular y adjudicar nuevas fuentes ortográficas contemporáneas`.
 
-Investigación externa inicial verificó:
+Investigación documental ya verificó:
 
 - la edición histórica de 1956 y su reedición conmemorativa INALI 2006/2007;
 - que `Xneza diidxazá` (2015) documenta uso del Alfabeto Popular entre escritores contemporáneos y problemas de homologación;
-- que la página actual de INALI informa sobre reuniones de hablantes para actualizar el documento de uso estandarizado de la escritura del diidxazá;
-- que el documento actualizado/final todavía no fue localizado en esta pasada.
+- que Dictionaria declara que sus headwords siguen un manuscrito de 2016, `Norma del sistema de escritura de la lengua zapoteca` (`Cata et al. 2016 ms`), basado en el Alfabeto Popular;
+- que la referencia de Dictionaria enumera entre los participantes a Víctor Cata, Vicente Marcial Cerqueda, Irma Pineda, Víctor Terán, Natalia Toledo y otras personas;
+- que el informe institucional `INALI — Logros 2016` registra una reunión para revisar la traducción del **documento final de la norma del sistema de escritura del zapoteco de la Planicie Costera**;
+- que la página actual de INALI vuelve a referirse a reuniones para actualizar el documento de uso estandarizado de la escritura del diidxazá;
+- que el texto completo/final de esa Norma 2016 todavía no ha sido localizado por el proyecto.
+
+Entidades nuevas:
+
+- `conocimiento/fuentes/SRC-DICTIONARIA-NORMA-ESCRITURA-2016-REFERENCE.md`
+- `conocimiento/fuentes/SRC-INALI-INFORME-LOGROS-2016-NORMA-PLANICIE-COSTERA.md`
+- `conocimiento/hallazgos/HALL-0010.md`
+
+La Norma 2016 es ahora el candidato documental prioritario para aclarar qué quiso decir Irma con “última versión del Alfabeto Popular”, pero **esa identidad no está todavía demostrada**.
 
 Plan no normativo:
 
 `informes/ORTHOGRAPHIC_SOURCE_EXPANSION_PLAN_POST_IRMA_v0_1.md`.
 
 ```text
+NORMA_2016_REFERENCE_LOCATED = true
+NORMA_2016_FULL_TEXT_LOCATED = false
+NORMA_2016 == IRMA_LATEST_VERSION = UNRESOLVED
 NEW_WRITTEN_ATTESTATION != AUTOMATIC_CORRECTION_RULE
 ```
 
@@ -143,6 +157,10 @@ No convertir esta secuencia en política hasta adjudicarla.
 
 La propuesta de progresar de habla clara/controlada hacia habla natural es una hipótesis pedagógica de alta prioridad, pero **no es actualmente un nuevo eje ni parte de P**.
 
+Marco no normativo:
+
+`informes/LISTENING_DIFFICULTY_RESEARCH_FRAME_v0_1.md`.
+
 ## 9. Variedades
 
 El baseline vigente no se ha cambiado silenciosamente.
@@ -181,7 +199,8 @@ IRMA_RAW_SOURCE_CAPTURED = true
 AGE_SCHOOL_SCOPE_ADOPTED = true
 AGE_BANDS_DEFINED = false
 ORTHOGRAPHIC_SOURCE_EXPANSION_POLICY_ADOPTED = false
-LATEST_POPULAR_ALPHABET_DOCUMENT_LOCATED = false
+NORMA_2016_REFERENCE_LOCATED = true
+NORMA_2016_FULL_TEXT_LOCATED = false
 ESPINAL_BASELINE_ADOPTED = false
 LISTENING_DIFFICULTY_AXIS_ADOPTED = false
 TEACHER_CODESIGN_PROTOCOL_ADOPTED = false
