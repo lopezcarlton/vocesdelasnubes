@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-INALI-INFORME-LOGROS-2016-NORMA-PLANICIE-COSTERA
 tipo: fuente_institucional
+bib_id: BIB090
 titulo: "Programa Institucional del Instituto Nacional de Lenguas Indígenas — Logros 2016"
 autor_o_participantes:
   - Instituto Nacional de Lenguas Indígenas (INALI)
@@ -16,6 +17,8 @@ descripcion: >
 nivel_de_fuente: primaria
 estado_de_acceso: disponible_en_web
 ```
+
+`BIB090` fue asignado al sincronizar la hoja bibliográfica maestra el 2026-09-03.
 
 ## Evidencia relevante
 
