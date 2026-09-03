@@ -1,7 +1,7 @@
 # DEVICE_REPOSITORY_SEPARATION_PLAN_v1
 
-**Estado:** `SOURCE_IDENTITY_PASS_COMPLETE / WAITING_FOR_DEVICE_REPOSITORY`  
-**Versión interna:** 1.2  
+**Estado:** `PRE_CUT_PASS_COMPLETE / WAITING_FOR_DEVICE_REPOSITORY`  
+**Versión interna:** 1.3  
 **Fecha:** 2026-09-03
 
 ## Objetivo
@@ -31,6 +31,8 @@ SRC_RECORD = CANONICAL_SOURCE_IDENTITY
 EXECUTABLE_DERIVATIVE = DEVICE
 ```
 
+La decisión `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO` v1.1 añade además la obligación de reconstruibilidad: el conocimiento canónico de Voces debe poder justificarse sin ejecutar ni depender epistemológicamente del dispositivo.
+
 ## Baseline que debe preservarse
 
 ```text
@@ -58,7 +60,7 @@ Antes del corte, el nuevo repositorio técnico debe reproducir el cierre ya demo
 - `KNOWLEDGE_CONSUMPTION_CONTRACT_v1.md` activo;
 - raíz del repositorio simplificada y sistemas derivados clasificados.
 
-## Fase 1 — identidad de fuentes críticas — realizada 2026-09-03
+## Fase 1 — identidad y trazabilidad de fuentes críticas — realizada 2026-09-03
 
 La revisión del core y del runtime muestra que las fuentes externas centrales materializadas o citadas por el dispositivo ya pueden resolverse desde Voces sin ejecutar el runtime.
 
@@ -87,9 +89,9 @@ Comprobaciones de las capas técnicas recuperadas:
 - el backfill Pickett permanece derivado técnico del Vocabulario;
 - `JUCHITAN_LINGUISTIC_CORE_v0_27` permanece compilación experimental y no fuente.
 
-Un snapshot bibliográfico BIB001–BIB084 recuperado del archivo de trabajo del proyecto confirma expresamente las asignaciones `BIB054`, `BIB058`, `BIB059`, `BIB060`, `BIB061`, `BIB063`, `BIB064` y `BIB065`, además de `BIB015`–`BIB017`. Esto permite usar esos IDs en los registros `SRC` sin inferirlos desde los aliases técnicos.
+La hoja bibliográfica maestra fue reconciliada el 2026-09-03. La serie quedó continua hasta `BIB091`, sin huecos ni duplicados. `BL-026` quedó cerrado. Esto sustituye el uso provisional del snapshot BIB001–BIB084 como respaldo de asignaciones.
 
-`BL-026` permanece abierto porque el snapshot no sustituye la reconciliación con la hoja bibliográfica maestra vigente y existen fuentes posteriores que todavía pueden requerir asignación o corrección de metadatos.
+En el caso de Bueno Holle, las matrices técnicas históricas pueden usarse como coordenadas de recuperación, no como resumen autoritativo de lo que dice la fuente. Toda adjudicación debe volver al pasaje original.
 
 No es requisito reingerir de golpe todo el contenido de estas obras. La lectura/adjudicación se hará incrementalmente cuando una pregunta de investigación lo requiera.
 
