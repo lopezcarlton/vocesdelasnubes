@@ -21,11 +21,28 @@ decision: >
 estado: vigente
 fecha: 2026-08-31
 responsable: Emiliano López Carlton
+validadores:
+  - Emiliano López Carlton
+hallazgos_que_la_sustentan:
+  - HALL-0006
+principios_relacionados:
+  - PRIN-INVESTIGACION-ABIERTA
+supuestos_implicados: []
+alternativas_consideradas:
+  - "exigir que el corpus principiante represente de inmediato toda la complejidad conocida del proyecto"
+  - "restringir la aspiración global del proyecto a la cobertura del piloto principiante"
+justificacion: >
+  El piloto necesita un alcance controlado sin convertir ese recorte temporal en límite de lo que
+  Voces de las Nubes puede investigar y cubrir posteriormente. Separar ambas escalas evita tanto
+  sobrecargar COR002 como empobrecer la aspiración global del proyecto.
 impacta_a:
   - CORPUS.md
   - PEDAGOGIA.md
   - futuros corpus y niveles
   - selección pedagógica de capacidades del dispositivo
+
+reemplaza: null
+reemplazada_por: null
 
 principio_de_separacion: >
   WHAT_THE_PROJECT_CAN_EVENTUALLY_COVER != WHAT_COR002_BEGINNER_MUST_INCLUDE_NOW

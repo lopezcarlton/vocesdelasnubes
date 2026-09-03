@@ -22,7 +22,9 @@ decision: >
   La ventana actual G1–G3 / P1–P3 es experimental y reversible. P3 funciona como borde de prueba.
   Este corte no redefine el sistema general G/P.
 
-estado: vigente_como_separacion_de_dimensiones
+estado: vigente
+estado_descriptivo_anterior: vigente_como_separacion_de_dimensiones
+fecha: 2026-08-07
 fecha_decision_original: 2026-08-07
 fecha_revision: 2026-08-31
 responsable: Emiliano López Carlton
@@ -34,6 +36,16 @@ principios_relacionados:
   - PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL
   - PRIN-G-RESTRICCION-DURA
   - PRIN-P-RESTRICCION-BLANDA
+
+supuestos_implicados: []
+alternativas_consideradas:
+  - "mantener un único eje de dificultad que comprima complejidad gramatical y pragmática"
+  - "mantener G/P como restricciones automáticas previas a la construcción de escenas"
+justificacion: >
+  HALL-0006 documentó que un único nivel comprimía dimensiones que pueden divergir.
+  La revisión posterior mostró además que aplicar G/P como restricciones automáticas antes
+  de disponer de escenas aceptables producía una arquitectura demasiado rígida. La decisión
+  conserva la separación analítica y retira esa implementación fuerte.
 
 validadores:
   - Emiliano López Carlton
@@ -52,6 +64,9 @@ implementacion_anterior_ya_no_vigente: >
   Al 2026-08-31 queda suspendida como regla automática del generador durante el piloto.
   Se conserva como hipótesis histórica que podrá reevaluarse con escenas reales, realizaciones de
   hablantes y pruebas con aprendices.
+
+reemplaza: null
+reemplazada_por: null
 
 condiciones_de_revision:
   - Revisar las fronteras G1–G5 y P1–P5 a partir de escenas aceptadas y realizaciones en Didxazá.

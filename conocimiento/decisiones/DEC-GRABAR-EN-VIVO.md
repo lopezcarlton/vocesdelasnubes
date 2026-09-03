@@ -16,7 +16,9 @@ decision: >
   Voces de las Nubes utilizará diferentes formatos de audio según nivel, actividad,
   objetivo pedagógico y naturaleza del material. Un formato útil en una etapa no
   se convierte automáticamente en plantilla permanente.
-estado: vigente_revisado
+estado: vigente
+estado_descriptivo_anterior: vigente_revisado
+fecha: 2026-08-05
 fecha_decision_original: 2026-08-05
 fecha_revision: 2026-08-31
 responsable: Emiliano López Carlton
@@ -24,6 +26,10 @@ validadores:
   - pendiente de validación operativa cuando vuelva a utilizarse una secuencia compuesta comparable
 hallazgos_que_la_sustentan:
   - HALL-0002
+principios_relacionados: []
+supuestos_implicados: []
+alternativas_consideradas:
+  - "grabar por separado los componentes de una secuencia y ensamblarlos después"
 justificacion: >
   La experiencia de COR001 mostró que el ensamble posterior de partes grabadas
   separadamente consume tiempo de edición artesanal y puede comprometer la
@@ -35,6 +41,7 @@ impacta_a:
 reemplaza: >
   La formulación del 2026-08-05 que convertía una secuencia específica en formato
   obligatorio "para COR002 en adelante".
+reemplazada_por: null
 condiciones_de_revision:
   - Si los hablantes reportan dificultad para producir la secuencia completa
   - Si aparece evidencia de que la naturalidad no mejora

@@ -17,6 +17,12 @@ validadores:
   - "adopción metodológica de coordinación; su funcionamiento deberá probarse con hablantes"
 hallazgos_que_la_sustentan:
   - HALL-0007
+principios_relacionados:
+  - PRIN-INVESTIGACION-ABIERTA
+supuestos_implicados: []
+alternativas_consideradas:
+  - "usar traducción/reformulación desde español como única vía de producción de evidencia"
+  - "depender únicamente de habla espontánea para fenómenos infrecuentes"
 justificacion: >
   Las vías existentes siguen siendo útiles, pero no resuelven por sí solas dos problemas:
   descubrir recursos del Didxazá que no aparecen cuando el español determina demasiado
@@ -29,6 +35,7 @@ impacta_a:
   - corpus oral independiente
   - dispositivo lingüístico
 reemplaza: null
+reemplazada_por: null
 conflictua_con:
   - "uso de traducción lineal desde el español como única arquitectura de descubrimiento lingüístico"
 no_reemplaza:

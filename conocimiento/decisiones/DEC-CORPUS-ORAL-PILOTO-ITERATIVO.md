@@ -17,14 +17,38 @@ decision: >
 
   La vía podrá repetirse, modificarse, suspenderse temporalmente o retomarse más
   adelante según la evidencia acumulada.
-estado: vigente_como_linea_experimental
+estado: vigente_con_reservas
+estado_descriptivo_anterior: vigente_como_linea_experimental
 fecha: 2026-08-31
 responsable: Emiliano López Carlton
+validadores:
+  - Emiliano López Carlton
+hallazgos_que_la_sustentan:
+  - HALL-0007
+principios_relacionados:
+  - PRIN-INVESTIGACION-ABIERTA
+supuestos_implicados:
+  - "la utilidad de una vía naturalista depende de participantes, tema, contexto y condiciones de grabación"
+alternativas_consideradas:
+  - "descartar la vía naturalista después de una sola prueba débil"
+  - "trabajar únicamente con escenas pedagógicamente diseñadas"
+justificacion: >
+  La conversación naturalista puede aportar evidencia que no aparece en traducción o escenas
+  controladas, pero una sola sesión no permite separar el valor del método de las condiciones
+  particulares de esa sesión. Por ello se adopta como línea experimental revisable.
 impacta_a:
   - METODOLOGIA.md
   - AUDIO.md
   - CORPUS.md
   - diseño futuro del corpus oral independiente
+
+reemplaza: null
+reemplazada_por: null
+condiciones_de_revision:
+  - "evidencia acumulada de varias sesiones naturalistas"
+  - "calidad lingüística y conversacional del material"
+  - "utilidad documental, analítica o pedagógica posterior"
+  - "cambios relevantes en condiciones de grabación o participantes"
 
 no_implica:
   - que toda sesión futura deba incluir habla naturalista
