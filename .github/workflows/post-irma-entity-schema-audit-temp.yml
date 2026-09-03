@@ -56,12 +56,13 @@ jobs:
               ('grado_de_respaldo: convergente_alto_para_existencia_no_para_texto_completo','participantes:\n  - Instituto Nacional de Lenguas Indígenas\n  - equipo Dictionaria Didxazá\ngrado_de_respaldo: múltiple')])
           patch('conocimiento/hallazgos/HALL-0011.md', [
               ('tipo: hallazgo_documental','tipo: hallazgo_bibliografico'),
+              ('fecha_de_registro: 2026-09-02','fecha_del_hecho: "2020-2025"\nfecha_de_registro: 2026-09-02'),
               ('grado_de_respaldo: convergente_alto_dentro_del_alcance_de_las_fuentes','participantes:\n  - Pedro David Cardona Fuentes\n  - David Eduardo Vicente Jiménez\ngrado_de_respaldo: múltiple')])
           patch('conocimiento/hallazgos/HALL-0012.md', [
               ('tipo: hallazgo_documental','tipo: hallazgo_bibliografico'),
+              ('fecha_de_registro: 2026-09-02','fecha_del_hecho: "2019-2022"\nfecha_de_registro: 2026-09-02'),
               ('grado_de_respaldo: convergente_en_contexto_escolar_localizado','participantes:\n  - Nancy Coronado Cisneros\n  - Tania Mirelle De Anda Trejo\n  - estudiantes bilingües de Rancho El Llano\ngrado_de_respaldo: múltiple')])
 
-          # Audit all entity files without auto-fixing historical debt.
           required = {
             'SRC': ['id','tipo','titulo','autor_o_participantes','fecha','ubicacion','descripcion','nivel_de_fuente','estado_de_acceso'],
             'HALL':['id','titulo','afirmacion','tipo','estado','fecha_del_hecho','fecha_de_registro','fuentes','participantes','grado_de_respaldo','alcance','etiquetas','relaciones'],
@@ -74,11 +75,9 @@ jobs:
           allowed_source_levels={'primaria','secundaria','terciaria'}
 
           def top_fields(text):
-              # capture keys that begin at column 0 inside yaml-ish blocks
-              return {m.group(1): m.group(2).strip() for m in re.finditer(r'(?m)^([A-Za-z_áéíóúÁÉÍÓÚñÑ0-9_-]+):\s*(.*)$', text)}
+              return {m.group(1): m.group(2).strip().strip('"\'') for m in re.finditer(r'(?m)^([A-Za-z_áéíóúÁÉÍÓÚñÑ0-9_-]+):\s*(.*)$', text)}
 
           rows=[]
-          paths=[]
           for kind,folder,prefix in [('SRC','conocimiento/fuentes','SRC-'),('HALL','conocimiento/hallazgos','HALL-'),('DEC','conocimiento/decisiones','DEC-')]:
               for p in sorted(Path(folder).glob(prefix+'*.md')):
                   fields=top_fields(p.read_text(encoding='utf-8-sig'))
@@ -107,6 +106,10 @@ jobs:
           }
           newbad=[r for r in rows if r[1] in newset and (r[2] or r[3])]
           historical=[r for r in rows if r[1] not in newset and (r[2] or r[3])]
+
+          for r in newbad:
+              print('NEWBAD',r)
+          print('AUDIT_COUNTS',{'entities':len(rows),'newbad':len(newbad),'historical':len(historical)})
 
           out=['# AUDITORÍA DE ESQUEMAS DE ENTIDADES — POST-IRMA — 2026-09-02','',
                '**Estado:** `AUDIT_REPORT / NON_NORMATIVE`','',
