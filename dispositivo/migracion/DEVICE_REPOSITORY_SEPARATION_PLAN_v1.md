@@ -1,7 +1,7 @@
 # DEVICE_REPOSITORY_SEPARATION_PLAN_v1
 
-**Estado:** `PRE_CUT_PASS_COMPLETE / WAITING_FOR_DEVICE_REPOSITORY`  
-**Versión interna:** 1.3  
+**Estado:** `RECOVERY_INDEX_COMPLETE / WAITING_FOR_DEVICE_REPOSITORY`  
+**Versión interna:** 1.4  
 **Fecha:** 2026-09-03
 
 ## Objetivo
@@ -95,6 +95,41 @@ En el caso de Bueno Holle, las matrices técnicas históricas pueden usarse como
 
 No es requisito reingerir de golpe todo el contenido de estas obras. La lectura/adjudicación se hará incrementalmente cuando una pregunta de investigación lo requiera.
 
+## Fase 1.5 — índice de recuperación pre-split — realizada 2026-09-03
+
+Se creó:
+
+`informes/KNOWLEDGE_RECOVERY_INDEX_PRE_SPLIT_2026-09-03.md`
+
+El índice es deliberadamente **no normativo**. No adjudica, no promueve afirmaciones del dispositivo, no modifica `TEORIA.md` y no reabre `BL-016`.
+
+Su función es preservar un mapa de recuperación de los principales artefactos técnicos que contienen formulaciones lingüísticas, pedagógicas u ortográficas que todavía pueden requerir relectura futura contra sus fuentes originales.
+
+Cobertura principal:
+
+- `JUCHITAN_LINGUISTIC_CORE_v0_27.md` completo;
+- `BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md`, 28 filas;
+- `PEDAGOGICAL_DISCUSSION_FREEZE_POST_BIB065_v0_36_2.md`;
+- `SINTESIS_ADVERSARIAL_ARQUITECTURA_DIDXAZA_v1_1_CORREGIDA.md`;
+- `NUCLEO_CONVERSACIONAL_001_SCOPE_v1.md`;
+- `PEDAGOGICAL_BACKLOG_BH2019_PARTIAL_v0_35.md`;
+- `PERSON_POSSESSION_EXACT_REGISTRY_v0_2_15_2.csv`;
+- `DOCUMENTARY_ALIGNMENT_REGISTRY_v0_2_15_2.csv`;
+- `AdoptionRecords_v1.jsonl`, añadido durante la revisión porque conserva decisiones ortográficas técnicas históricas que no deben confundirse con `DEC` canónicas;
+- datasets grandes Pickett/Dictionaria inventariados sólo de forma agregada y enlazados a sus `SRC`.
+
+Regla de uso:
+
+```text
+RECOVERY_INDEX_AS_COORDINATES = allowed
+RECOVERY_INDEX_AS_CLAIM_SUMMARY = not_authoritative
+SOURCE_PASSAGE_MUST_BE_READ_BEFORE_ADJUDICATION = true
+```
+
+Para la matriz BIB065 se preservan literalmente sus `epistemic_status` y `promotion_status` como **etiquetas declaradas por el artefacto**. Para JLC y otros artefactos que no se auto-clasifican, las etiquetas del índice están marcadas como **asignadas por el inventario**, por lo que no deben confundirse con una clasificación de la fuente original.
+
+Esta fase **no es una compuerta de adjudicación masiva**. Una formulación que vive sólo en el dispositivo y que Voces nunca ha adoptado se revisará contra su fuente original cuando una pregunta activa del proyecto la necesite. La separación física no exige convertirla previamente en HALL/TEO/DEC.
+
 ## Fase 2 — crear el repositorio técnico separado — bloqueada por infraestructura
 
 Crear un repositorio técnico separado bajo el control de Emiliano y mover el árbol activo de `dispositivo/`, preservando en la medida posible historia y referencias al repo/commit de origen.
@@ -136,7 +171,8 @@ En el repositorio técnico separado:
 4. comprobar reentry técnico;
 5. comprobar `KNOWLEDGE_SOURCE_COMMIT`;
 6. comprobar que las fuentes documentales críticas pueden resolverse desde Voces sin depender del repo técnico;
-7. comprobar que ninguna instrucción técnica conceda autoridad de escritura sobre Voces.
+7. comprobar que ninguna instrucción técnica conceda autoridad de escritura sobre Voces;
+8. comprobar que el índice de recuperación pre-split permanezca accesible desde Voces como mapa histórico no normativo.
 
 **No retirar el dispositivo activo de Voces hasta que esta fase pase.**
 
@@ -158,6 +194,8 @@ DEVICE_REPO_REPLAY = PASS
 DEVICE_REPO_TECHNICAL_TESTS = PASS
 KNOWLEDGE_SOURCE_COMMIT = EXPLICIT
 CRITICAL_SOURCE_IDENTITY_UNRESOLVED = 0
+RECOVERY_INDEX_AVAILABLE_FROM_VOCES = true
+MASS_ADJUDICATION_REQUIRED_BEFORE_SPLIT = false
 DEVICE_DEVELOPER_CANONICAL_WRITE_BY_DEFAULT = false
 VOCES_REENTRY_DOES_NOT_REQUIRE_DEVICE_REPO = true
 VOCES_CAN_RESOLVE_SHARED_SOURCES_WITHOUT_DEVICE_REPO = true
@@ -170,4 +208,5 @@ VOCES_CAN_RESOLVE_SHARED_SOURCES_WITHOUT_DEVICE_REPO = true
 - no publica materiales con derechos no verificados;
 - no convierte el runtime histórico en arquitectura futura;
 - no borra genealogía para simplificar el repositorio;
-- no corta el dispositivo antes de verificar replay y pruebas.
+- no corta el dispositivo antes de verificar replay y pruebas;
+- no obliga a adjudicar antes del split conocimiento potencial que Voces todavía no sostiene.
