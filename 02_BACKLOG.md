@@ -1,7 +1,7 @@
 # BACKLOG
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.9  
+**Versión:** 2.0  
 **Última actualización:** 2026-09-03
 
 ---
@@ -15,7 +15,7 @@ No es un planificador general del proyecto y no debe intentar representar todas 
 Una tarea entra al backlog cuando:
 
 - existe una laguna documentada en el Sistema de Conocimiento;
-- esa laguna obstaculiza decisiones posteriores;
+- esa laguna obstaculiza decisiones posteriores o requiere una resolución estructural reutilizable;
 - requiere investigación, análisis o formulación no trivial;
 - su resolución debe quedar integrada de forma permanente en el sistema.
 
@@ -25,84 +25,40 @@ El trabajo operativo —corpus, revisión ortográfica, audio, sesiones con habl
 
 La existencia de una tarea abierta **no implica bloqueo automático**. Conforme a `conocimiento/principios/PRIN-INVESTIGACION-ABIERTA.md`, una pregunta estructural puede permanecer abierta mientras el proyecto continúa produciendo evidencia por vías suficientemente seguras y trazables.
 
+## Relación con el repositorio técnico
+
+Voces de las Nubes puede consultar, citar y usar como coordenadas de recuperación artefactos del repositorio `lopezcarlton/didxaza-dispositivo`.
+
+```text
+VOCES_MAY_CONSULT_DEVICE = true
+DEVICE_MAY_PROVIDE_TECHNICAL_STATE = true
+DEVICE_RESULT_AS_AUTOMATIC_KNOWLEDGE_AUTHORITY = false
+```
+
+Una tarea técnica transferida puede conservar aquí una referencia al backlog técnico para mantener genealogía, sin volver a convertirse por ello en deuda activa del Sistema de Conocimiento.
+
 ---
 
-# Tareas completadas o superadas
+# Registro compacto de tareas cerradas o superadas
 
-### BL-001 — Establecer la Jerarquía de Verdad
-- **Estado:** Completado
-- **Documento:** `01_JERARQUIA_DE_VERDAD.md`
-- **Fecha:** 2026-06-15
+Los detalles completos permanecen reconstruibles en el historial de Git. Este registro conserva IDs y resultado sin convertir el backlog en archivo histórico extenso.
 
-### BL-002 — Definir la Arquitectura del Conocimiento
-- **Estado:** Completado
-- **Documento:** `00_ARQUITECTURA_DEL_CONOCIMIENTO.md`
-- **Fecha:** 2026-06-20
-
-### BL-003 — Formulación de Metodología
-- **Estado:** Completado como base operativa; documento evolutivo
-- **Documento:** `conocimiento/METODOLOGIA.md`
-- **Fecha:** 2026-07-30
-
-### BL-004 — Definición de Corpus
-- **Estado:** Completado como arquitectura inicial; documento evolutivo
-- **Documento:** `conocimiento/CORPUS.md`
-- **Fecha:** 2026-07-15
-
-### BL-005 — Establecer pautas de validación
-- **Estado:** Completado como base operativa; documento evolutivo
-- **Documento:** `conocimiento/VALIDACION.md`
-- **Fecha:** 2026-07-20
-
-### BL-006 — Documentar procedimientos de audio
-- **Estado:** Completado como base operativa; sujeto a actualización por trabajo real
-- **Documento:** `conocimiento/AUDIO.md`
-- **Fecha:** 2026-07-25
-
-### BL-007 — Fundamentación pedagógica
-- **Estado:** Completado como base operativa; documento evolutivo
-- **Documento:** `conocimiento/PEDAGOGIA.md`
-- **Fecha:** 2026-07-22
-
-### BL-008 — Compilar y organizar bibliografía
-- **Estado:** Completado como sistema; la bibliografía continúa creciendo
-- **Documento:** `conocimiento/BIBLIOGRAFIA.md`
-- **Fecha:** 2026-08-01
-
-### BL-009 — Documentar la preparación de materiales para sesiones con hablantes
-- **Estado:** Completado
-- **Documento:** `conocimiento/METODOLOGIA.md`, sección 12
-- **Fecha:** 2026-08-05
-
-### BL-010 — Vincular CORPUS.md con el procedimiento de sesión de validación
-- **Estado:** Superado como tarea independiente
-- **Fecha:** 2026-08-19
-- **Razón:** La tarea describía una referencia cruzada entre documentos, no una deuda metodológica real. El procedimiento vive en `METODOLOGIA.md` y la arquitectura de validación en `CORPUS.md`. La ausencia de un enlace explícito no justifica mantener una tarea activa que obstaculiza la lectura del estado del proyecto. La referencia puede añadirse durante mantenimiento ordinario si resulta útil.
-
-### BL-011 — Actualizar VALIDACION.md con puntos específicos de la sesión
-- **Estado:** Superado como tarea independiente
-- **Fecha:** 2026-08-19
-- **Razón:** Los detalles surgidos de sesiones con hablantes deben incorporarse a `VALIDACION.md` cuando constituyan reglas estables y suficientemente generalizables. No existe actualmente una deuda estructural claramente formulada que justifique mantener este identificador abierto.
-
-### BL-016 — Documentación de teoría del aprendizaje vigente
-- **Estado:** Cerrado
-- **Documento:** `conocimiento/TEORIA.md`
-- **Fecha de cierre original:** 2026-08-19
-- **Cierre confirmado:** 2026-09-03
-- **Razón:** `TEORIA.md` ya proporciona una base teórica operativa suficiente para que el proyecto continúe trabajando. El cierre no significa que la teoría esté terminada o sea inmutable: su evolución normal continúa dentro de `TEORIA.md`, mientras las deudas concretas que sí requieren investigación estructurada tienen entradas propias, entre ellas `BL-021`, `BL-022`, `BL-023` y `BL-025`.
-
-### BL-017 — Tarea técnica transferida fuera del backlog canónico
-- **Estado:** Superado como tarea del Sistema de Conocimiento
-- **Fecha:** 2026-09-02
-- **Razón:** La evaluación de herramientas de producción de borradores es una tarea técnica/operativa y no una deuda estructural del Sistema de Conocimiento. Su genealogía se conserva y su continuación pasa a `dispositivo/BACKLOG_TECNICO.md` como `DT-001`.
-- **Límite:** Las preguntas pedagógicas sobre aceptabilidad, artificialidad, cobertura y utilidad siguen perteneciendo a las vistas y validaciones humanas correspondientes; ninguna herramienta define esos criterios por sí misma.
-
-### BL-026 — Reconciliar la hoja bibliográfica maestra con las fuentes SRC actuales
-- **Estado:** Completado
-- **Fecha de cierre:** 2026-09-03
-- **Documento:** `conocimiento/BIBLIOGRAFIA.md`
-- **Resultado:** La hoja maestra proporcionada por Emiliano fue verificada como serie continua `BIB001–BIB088`, sin huecos ni duplicados. La sincronización con los `SRC-*` vigentes añadió `BIB089` (Coronado), `BIB090` (INALI Logros 2016) y `BIB091` (catálogo SIL México), y vinculó `SRC-DE-ANDA-2023-ESCRITURA-SONIDOS-DIIDXAZA-NINOS` con la entrada preexistente `BIB084`. Una segunda pasada confirmó que la serie `BIB001–BIB091` permanece continua y sin IDs duplicados.
-- **Regla permanente:** Los nuevos `BIB###` se asignan únicamente en la hoja maestra; un `SRC-*` no autoriza inferir un ID.
+| ID | Estado | Resultado / destino |
+|---|---|---|
+| BL-001 | Completado | `01_JERARQUIA_DE_VERDAD.md` |
+| BL-002 | Completado | `00_ARQUITECTURA_DEL_CONOCIMIENTO.md` |
+| BL-003 | Completado como base operativa | `conocimiento/METODOLOGIA.md` |
+| BL-004 | Completado como arquitectura inicial | `conocimiento/CORPUS.md` |
+| BL-005 | Completado como base operativa | `conocimiento/VALIDACION.md` |
+| BL-006 | Completado como base operativa | `conocimiento/AUDIO.md` |
+| BL-007 | Completado como base operativa | `conocimiento/PEDAGOGIA.md` |
+| BL-008 | Completado como sistema | `conocimiento/BIBLIOGRAFIA.md` |
+| BL-009 | Completado | Preparación de sesiones integrada en `conocimiento/METODOLOGIA.md` |
+| BL-010 | Superado como tarea independiente | Referencia cruzada, no deuda estructural |
+| BL-011 | Superado como tarea independiente | Incorporar sólo reglas generalizables de validación cuando aparezcan |
+| BL-016 | Cerrado | `conocimiento/TEORIA.md` proporciona base operativa evolutiva |
+| BL-017 | Transferido | Tarea técnica en `lopezcarlton/didxaza-dispositivo` → `dispositivo/BACKLOG_TECNICO.md` → `DT-001` |
+| BL-026 | Completado | Reconciliación bibliográfica BIB001–BIB091 cerrada; nuevas asignaciones sólo desde hoja maestra |
 
 ---
 
@@ -235,13 +191,13 @@ Entre las capas candidatas se encuentran:
 - unidades entonacionales y organización prosódica;
 - forma explícita, clítico u omisión según contexto.
 
-La investigación debe volver a la fuente bibliográfica original y contrastarse con escenas, corpus oral, hablantes y aprendices. Los artefactos técnicos pueden ayudar a localizar preguntas, pero no constituyen la autoridad de esta tarea.
+La investigación debe volver a la fuente bibliográfica original y contrastarse con escenas, corpus oral, hablantes y aprendices. Voces puede consultar los artefactos correspondientes del dispositivo para localizar estado técnico o preguntas, pero esos artefactos no constituyen la autoridad de esta tarea.
 
 **No bloquea:** COR002, el corpus oral ni otras líneas de investigación.
 
 **Criterio de cierre:** existe una decisión documentada sobre qué relevancia pedagógica tienen las capas priorizadas, o se determina explícitamente que deben permanecer sólo como descripción lingüística.
 
-**Componente técnico transferido:** la eventual representación computacional de capas ya adjudicadas pasa a `dispositivo/BACKLOG_TECNICO.md` como `DT-002`.
+**Componente técnico relacionado:** la eventual representación computacional de capas ya adjudicadas se sigue en `lopezcarlton/didxaza-dispositivo` → `dispositivo/BACKLOG_TECNICO.md` → `DT-002`.
 
 ---
 
@@ -337,10 +293,10 @@ Si mantener una entrada cuesta más trabajo que la deuda que representa, debe re
 
 ---
 
-# Nota de estado 2026-08-31
+# Estado operativo relacionado con COR002
 
-El modo de trabajo del piloto COR002 quedó definido en `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md`. Ese flujo es trabajo operativo y metodológico vigente, no una nueva entrada de backlog.
+El modo de trabajo del piloto COR002 está documentado en `conocimiento/fuentes/COR002_CHECKPOINT_METODOLOGICO_PILOTO_PRINCIPIANTES_v1.md`. Ese flujo es trabajo operativo y metodológico vigente, no una entrada adicional de backlog.
 
-La validación del material COR002 continúa abierta por razones documentadas en `conocimiento/VALIDACION.md`: todavía deben producirse escenas de referencia aceptadas, realizarse con hablantes y probarse pedagógicamente. La existencia de una ruta de trabajo ya definida no equivale a que los materiales resultantes estén validados.
+La validación del material COR002 continúa abierta: todavía deben producirse escenas de referencia aceptadas, realizarse con hablantes y probarse pedagógicamente. La existencia de una ruta de trabajo definida no equivale a que los materiales resultantes estén validados.
 
-La investigación de P y la relevancia pedagógica de capas BIB065 se registran como deudas estructurales, pero **no se convierten en candados para las líneas de investigación que ya pueden seguir produciendo evidencia**.
+La investigación de P, las capas BIB065, la segmentación de públicos y la justificación de la memorización son deudas estructurales, pero **no se convierten en candados para las líneas de investigación que ya pueden seguir produciendo evidencia**.
