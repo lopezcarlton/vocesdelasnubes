@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-CARDONA-2020-DIALECTOLOGIA-ZAPOTECO-ISTMO
 tipo: fuente_bibliografica
+bib_id: BIB063
 titulo: "Dialectología del zapoteco del istmo"
 autor_o_participantes:
   - Pedro David Cardona Fuentes
@@ -20,6 +21,8 @@ disponibilidad: acceso_abierto
 licencia_registrada_en_repositorio: CC_BY_NC_ND_4_0
 estado_de_acceso: disponible
 ```
+
+`BIB063` está atestiguado para esta tesis en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
 
 ## Resultado central documentado por el repositorio UAQ
 
