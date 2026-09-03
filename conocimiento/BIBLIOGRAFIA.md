@@ -1,7 +1,7 @@
 # BIBLIOGRAFIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.3  
+**Versión:** 1.4  
 **Estado:** Borrador consolidado  
 **Fecha:** 2026-09-03  
 
@@ -55,7 +55,7 @@ El formato `B###` no debe usarse en documentos nuevos ni en referencias nuevas.
 
 La numeración es secuencial y continua. No existe límite superior ni rango reservado.
 
-La **hoja de cálculo bibliográfica es el registro operativo de asignación de IDs**. La hoja maestra proporcionada por Emiliano el 2026-09-03 fue reconciliada con los `SRC-*` vigentes y actualizada durante esta pasada.
+La **hoja de cálculo bibliográfica es el registro operativo de asignación de IDs**. La hoja maestra proporcionada por Emiliano el 2026-09-03 fue reconciliada con los `SRC-*` vigentes y sometida a una segunda pasada de consistencia.
 
 Estado después de la sincronización:
 
@@ -86,7 +86,7 @@ La presencia futura de una fuente `SRC-*` en el repositorio no autoriza inventar
 
 # 3. Bibliografía fundamental
 
-Las fuentes registradas como revisadas a profundidad son:
+Las fuentes registradas como revisadas a profundidad incluyen:
 
 - BIB001 — Manzo (2009).
 - BIB002 — Rafael-Pérez et al. (2024).
@@ -100,8 +100,9 @@ Las fuentes registradas como revisadas a profundidad son:
 - BIB044 — Swain (1985).
 - BIB046 — Austin y Sallabank (2012).
 - BIB052 — Calderón Corona (2021).
+- BIB065 — Bueno Holle (2019).
 
-El estado de revisión de cada entrada se registra en la hoja de cálculo. Esta sección refleja el estado a la fecha de la versión del documento y no se actualiza entrada por entrada.
+El campo `Revisado` de la hoja de cálculo es la fuente operativa de verdad para el estado de lectura. Esta lista sólo destaca fuentes ya utilizadas intensivamente por el proyecto y no pretende sustituir la hoja.
 
 ---
 
@@ -114,7 +115,7 @@ Los documentos de contexto mencionan como relevantes:
 - Sallabank.
 - McCarty y Lee.
 
-No se dispone en las fuentes de fichas completas suficientes para consolidar sus referencias exactas.
+No se dispone en las fuentes de fichas completas suficientes para consolidar todas sus referencias exactas.
 
 ---
 
@@ -126,6 +127,7 @@ Se identifican como centrales:
 - Vocabulario zapoteco del Istmo.
 - Descripción fonética de Pickett, Villalobos y Marlett.
 - Pérez Báez, Cata y Bueno Holle.
+- Bueno Holle 2019.
 - Fuentes sobre ortografía, fonología, tonos y transcripción del Didxazá.
 
 ---
@@ -156,8 +158,8 @@ ALAI (1978) se utiliza para contextualizar críticamente la actividad del ILV.
 
 ## Año
 
-- Cuatro dígitos.
-- Dos ediciones: formato compuesto.
+- Cuatro dígitos cuando la fuente lo permite.
+- Dos ediciones: formato compuesto cuando corresponda.
 - Sin fecha: `s.f.` con explicación.
 
 ## Título
@@ -168,7 +170,7 @@ ALAI (1978) se utiliza para contextualizar críticamente la actividad del ILV.
 
 ## Disponibilidad
 
-Valores utilizados:
+La hoja no usa un vocabulario cerrado. Valores frecuentes incluyen:
 
 - Digital descargable.
 - Digital, acceso abierto.
@@ -176,25 +178,34 @@ Valores utilizados:
 - Físico.
 - Por conseguir.
 
+Cuando una fuente tiene más de una condición real de acceso, pueden combinarse descripciones mediante `/` o una nota suficientemente clara. No normalizar una condición específica a otra distinta sólo para forzar un catálogo corto de valores.
+
 ## Pertinencia
+
+Valores habituales:
 
 - Alta.
 - Media.
 - Baja.
+- `(pendiente)` cuando todavía no existe evaluación suficiente.
 
 ## Revisado
 
-- `sí`: leído y evaluado por Emiliano.
-- `no`: registrado pero pendiente.
+La hoja maestra utiliza actualmente tres estados:
+
+- `si`: leído y evaluado con profundidad suficiente para considerarlo revisado;
+- `no`: registrado pero pendiente de revisión suficiente;
 - `superficialmente`: identidad y relevancia comprobadas sin lectura integral suficiente para marcarlo como revisado a profundidad.
+
+El literal `si` se conserva sin acento porque es el valor operativo de la hoja; semánticamente equivale a “sí”.
 
 ---
 
 # 8. Criterios de deduplicación
 
-Antes de agregar una entrada se verifica autoría y año.
+Antes de agregar una entrada se verifica la identidad bibliográfica completa: autoría, año, título, obra contenedora/edición y naturaleza del objeto.
 
-Las ediciones distintas pueden registrarse por separado o aclararse mediante año compuesto y notas.
+Las ediciones, traducciones o publicaciones relacionadas pueden conservar IDs separados cuando son objetos bibliográficos distintos.
 
 Objetos bibliográficos relacionados pero distintos conservan IDs separados. En particular:
 
@@ -203,6 +214,8 @@ BIB016 = Pickett, Villalobos y Marlett, versión española/ilustración fonétic
 BIB061 = Pickett, Villalobos y Marlett, publicación JIPA de 2010
 BIB016 != BIB061
 ```
+
+Un título idéntico tampoco prueba duplicidad. La segunda pasada confirmó títulos repetidos legítimos —por ejemplo, *Orthography development* y *Clases verbales en el zapoteco del Istmo*— correspondientes a autores/años u objetos distintos. No fusionar entradas sólo por coincidencia exacta de título.
 
 ---
 
@@ -219,7 +232,7 @@ BIB016 != BIB061
 
 # 10. Estado de revisión
 
-La sección 3 es una **fotografía histórica parcial** de fuentes que habían sido registradas como revisadas a profundidad; no debe utilizarse para inferir el número total actual de fuentes.
+La sección 3 es una selección de fuentes ya trabajadas intensivamente; no debe utilizarse para inferir el número total actual de fuentes.
 
 La asignación completa de IDs se administra en la hoja maestra, actualmente sincronizada hasta `BIB091`. El campo `Revisado` de cada fila sigue siendo la fuente de verdad para el estado de lectura.
 
@@ -282,7 +295,7 @@ Los identificadores con formato `B###` que aparezcan en documentos o notas anter
 
 # 13. Reconciliación del registro bibliográfico
 
-La reconciliación estructural pendiente en `BL-026` se completó el 2026-09-03 usando la hoja maestra proporcionada por Emiliano y los `SRC-*` actualmente materializados en `conocimiento/fuentes/`.
+`BL-026` quedó cerrado el 2026-09-03 usando la hoja maestra proporcionada por Emiliano y los `SRC-*` actualmente materializados en `conocimiento/fuentes/`.
 
 Se confirmó, entre otras, la identidad de:
 
@@ -303,6 +316,8 @@ Se confirmó, entre otras, la identidad de:
 - `BIB089` — Coronado 2019;
 - `BIB090` — INALI Logros 2016;
 - `BIB091` — catálogo SIL México.
+
+La segunda pasada confirmó además que la serie `BIB001–BIB091` permanece continua y sin IDs duplicados.
 
 La regla permanente queda:
 
