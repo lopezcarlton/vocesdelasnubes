@@ -1,7 +1,7 @@
 # BACKLOG
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.8  
+**Versión:** 1.9  
 **Última actualización:** 2026-09-03
 
 ---
@@ -85,16 +85,23 @@ La existencia de una tarea abierta **no implica bloqueo automático**. Conforme 
 - **Razón:** Los detalles surgidos de sesiones con hablantes deben incorporarse a `VALIDACION.md` cuando constituyan reglas estables y suficientemente generalizables. No existe actualmente una deuda estructural claramente formulada que justifique mantener este identificador abierto.
 
 ### BL-016 — Documentación de teoría del aprendizaje vigente
-- **Estado:** Completado como base operativa
+- **Estado:** Cerrado
 - **Documento:** `conocimiento/TEORIA.md`
-- **Fecha de cierre:** 2026-08-19
-- **Razón:** La descripción anterior decía incorrectamente que `TEORIA.md` permanecía vacío. El documento ya contiene marcos de adquisición, revitalización, estructura del Didxazá y decisiones pedagógicas. La teoría seguirá evolucionando, pero esa evolución normal no constituye por sí misma una tarea abierta de backlog.
+- **Fecha de cierre original:** 2026-08-19
+- **Cierre confirmado:** 2026-09-03
+- **Razón:** `TEORIA.md` ya proporciona una base teórica operativa suficiente para que el proyecto continúe trabajando. El cierre no significa que la teoría esté terminada o sea inmutable: su evolución normal continúa dentro de `TEORIA.md`, mientras las deudas concretas que sí requieren investigación estructurada tienen entradas propias, entre ellas `BL-021`, `BL-022`, `BL-023` y `BL-025`.
+
+### BL-017 — Tarea técnica transferida fuera del backlog canónico
+- **Estado:** Superado como tarea del Sistema de Conocimiento
+- **Fecha:** 2026-09-02
+- **Razón:** La evaluación de herramientas de producción de borradores es una tarea técnica/operativa y no una deuda estructural del Sistema de Conocimiento. Su genealogía se conserva y su continuación pasa a `dispositivo/BACKLOG_TECNICO.md` como `DT-001`.
+- **Límite:** Las preguntas pedagógicas sobre aceptabilidad, artificialidad, cobertura y utilidad siguen perteneciendo a las vistas y validaciones humanas correspondientes; ninguna herramienta define esos criterios por sí misma.
 
 ### BL-026 — Reconciliar la hoja bibliográfica maestra con las fuentes SRC actuales
 - **Estado:** Completado
 - **Fecha de cierre:** 2026-09-03
 - **Documento:** `conocimiento/BIBLIOGRAFIA.md`
-- **Resultado:** La hoja maestra proporcionada por Emiliano fue verificada como serie continua `BIB001–BIB088`, sin huecos ni duplicados. La sincronización con los `SRC-*` vigentes añadió `BIB089` (Coronado), `BIB090` (INALI Logros 2016) y `BIB091` (catálogo SIL México), y vinculó `SRC-DE-ANDA-2023-ESCRITURA-SONIDOS-DIIDXAZA-NINOS` con la entrada preexistente `BIB084`.
+- **Resultado:** La hoja maestra proporcionada por Emiliano fue verificada como serie continua `BIB001–BIB088`, sin huecos ni duplicados. La sincronización con los `SRC-*` vigentes añadió `BIB089` (Coronado), `BIB090` (INALI Logros 2016) y `BIB091` (catálogo SIL México), y vinculó `SRC-DE-ANDA-2023-ESCRITURA-SONIDOS-DIIDXAZA-NINOS` con la entrada preexistente `BIB084`. Una segunda pasada confirmó que la serie `BIB001–BIB091` permanece continua y sin IDs duplicados.
 - **Regla permanente:** Los nuevos `BIB###` se asignan únicamente en la hoja maestra; un `SRC-*` no autoriza inferir un ID.
 
 ---
@@ -145,17 +152,6 @@ Realizar pruebas con aprendices reales para validar comprensibilidad, pausas, di
 No es una tarea inmediata. Requiere materiales suficientemente maduros y acuerdos de participación.
 
 **Responsable:** Emiliano + apoyo especializado cuando corresponda.
-
----
-
-### BL-017 — Tarea técnica transferida fuera del backlog canónico
-
-**Estado:** Superado como tarea del Sistema de Conocimiento  
-**Fecha:** 2026-09-02
-
-La evaluación de herramientas de producción de borradores es una tarea técnica/operativa y no una deuda estructural del Sistema de Conocimiento. Su genealogía se conserva y su continuación pasa a `dispositivo/BACKLOG_TECNICO.md` como `DT-001`.
-
-Las preguntas pedagógicas sobre aceptabilidad, artificialidad, cobertura y utilidad siguen perteneciendo a las vistas y validaciones humanas correspondientes; ninguna herramienta define esos criterios por sí misma.
 
 ---
 
