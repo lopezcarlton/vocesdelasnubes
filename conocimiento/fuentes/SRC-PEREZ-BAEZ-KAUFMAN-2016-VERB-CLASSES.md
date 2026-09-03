@@ -3,7 +3,8 @@
 ```yaml
 id: SRC-PEREZ-BAEZ-KAUFMAN-2016-VERB-CLASSES
 tipo: fuente_bibliografica
-titulo: "Verbal classification in Juchitán Zapotec"
+bib_id: BIB059
+titulo: "Verb Classes in Juchitán Zapotec"
 autor_o_participantes:
   - Gabriela Pérez Báez
   - Terrence Kaufman
@@ -19,9 +20,13 @@ nivel_de_fuente: primaria
 estado_de_acceso: disponible_en_repositorio_smithsonian
 ```
 
+## Identidad bibliográfica
+
+`BIB059` está atestiguado para esta obra en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
+
 ## Relación con Dictionaria y el dispositivo
 
-La contribución Dictionaria de Didxazá documenta 2,385 verbos y señala que la morfología de clases verbales se basa en Pérez Báez y Kaufman (2016). El dispositivo conserva `DIC_VERB_2385_v0_1.csv` como inventario técnico exacto.
+La contribución Dictionaria de Didxazá documenta 2,385 verbos y señala que la morfología de clases verbales se basa en Pérez Báez y Kaufman (2016). El dispositivo conserva `DIC_VERB_2385_v0_1.csv` como inventario técnico exacto y sus módulos históricos usan el alias `BIB059_PBK2016`.
 
 ```text
 PEREZ_BAEZ_KAUFMAN_2016 = SOURCE_FOR_VERB_CLASS_ANALYSIS
