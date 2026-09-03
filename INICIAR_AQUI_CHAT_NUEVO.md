@@ -6,7 +6,7 @@ Este archivo es el punto de reentrada general para continuar **Voces de las Nube
 
 Este reentry reconstruye **el Sistema de Conocimiento**. No carga por defecto el runtime ni el estado técnico del dispositivo.
 
-Para trabajo explícitamente técnico usar `dispositivo/REENTRY_TECNICO.md`.
+Para trabajo explícitamente técnico usar `dispositivo/REENTRY_TECNICO.md` mientras la separación física siga pendiente.
 
 ## 1. Reconstrucción obligatoria antes de trabajar
 
@@ -24,14 +24,13 @@ Leer, en este orden:
 10. `conocimiento/CORPUS.md`
 11. `conocimiento/VALIDACION.md`
 12. `conocimiento/TEORIA.md`
-13. `conocimiento/BIBLIOGRAFIA.md`
-14. `archivo/checkpoints/2026-09-03_estado_adjudicado.md`
+13. `conocimiento/AUDIO.md`
+14. `conocimiento/BIBLIOGRAFIA.md`
+15. `conocimiento/fuentes/README.md`
 
-Para reconstruir la primera captura post-Irma usar `archivo/checkpoints/2026-09-02_ingesta_reunion_irma.md`.
+Después, leer las `SRC`, `HALL`, `DEC`, `VAL`, `TEO` u otras entidades pertinentes a la pregunta concreta. Si una ruta no existe, no inventarla ni sustituirla silenciosamente.
 
-Para reconstruir específicamente el estado anterior a Irma, usar `archivo/checkpoints/2026-09-02_pre_irma.md` y la rama congelada indicada allí.
-
-Leer las `SRC`, `HALL`, `DEC`, `VAL`, `TEO` u otras entidades pertinentes a la pregunta concreta. Si una ruta no existe, no inventarla ni sustituirla silenciosamente.
+Los checkpoints de `archivo/checkpoints/` son **históricos y opcionales**. Se consultan sólo para reconstruir un estado anterior o comparar cambios; no forman parte de la lectura obligatoria del estado vigente.
 
 ## 2. Fuente de autoridad
 
@@ -40,6 +39,17 @@ Leer las `SRC`, `HALL`, `DEC`, `VAL`, `TEO` u otras entidades pertinentes a la p
 Las vistas —`PEDAGOGIA.md`, `TEORIA.md`, `CORPUS.md`, `METODOLOGIA.md`, etc.— sintetizan conocimiento vigente; no sustituyen las fuentes, hallazgos, validaciones y decisiones que deben sustentar sus afirmaciones.
 
 Una `DEC` vigente gobierna las vistas dentro de su alcance, subordinada a la Arquitectura, la Jerarquía de Verdad, las Reglas de Actualización y los principios válidos.
+
+### Acceso a fuentes
+
+`conocimiento/fuentes/` es la puerta canónica de acceso a gramáticas, vocabularios, artículos, corpus, diccionarios, normas, sesiones y otras fuentes.
+
+Una fuente puede estar registrada mediante `SRC-*` aunque el archivo original viva fuera del repositorio público por derechos, tamaño o condiciones de acceso. El `SRC` debe permitir identificar y localizar el original sin ejecutar el dispositivo.
+
+```text
+VOCES_CAN_RESOLVE_SOURCE_WITHOUT_DEVICE = true
+DEVICE_OUTPUT != SOURCE
+```
 
 ## 3. Frontera con sistemas derivados
 
@@ -56,14 +66,12 @@ DERIVED_SYSTEM_MAY_PROMOTE_CANDIDATE = false
 DERIVED_SYSTEM_MAY_WRITE_KNOWLEDGE = false
 ```
 
-Una mención a una herramienta es admisible cuando la subordina al Sistema de Conocimiento. Existe filtración cuando una vista pedagógica, lingüística o metodológica defiere a la herramienta la decisión sobre qué debe considerarse conocimiento.
-
-Si un descubrimiento ocurre durante trabajo técnico:
+Una herramienta puede servir como localizador, comparador o detector de contradicciones. Una salida técnica no se convierte por ello en evidencia. Si un descubrimiento ocurre durante trabajo técnico:
 
 ```text
-hallazgo_candidato
+resultado técnico / candidato
 -> volver a la fuente original
--> registrar en Voces
+-> registrar o localizar SRC en Voces
 -> adjudicar con autoridad pertinente
 -> adoptar si corresponde
 -> actualizar vistas
@@ -178,89 +186,45 @@ HISTORICAL_RELATION = OPEN
 PROJECT_EDITORIAL_DEFAULT = NOT_DECIDED_HERE
 ```
 
-No reabrir la equivalencia por defecto. Sí pueden seguir investigándose distribución, frecuencia, historia y preferencia editorial.
+## 10. Norma de escritura 2016
 
-## 10. Norma de escritura de 2016 y ortografía contemporánea
+Emiliano confirmó que la Norma 2016 es el documento al que Irma se refería como la versión más reciente del Alfabeto Popular usada por autores contemporáneos.
 
-Emiliano confirmó que la **`Norma del sistema de escritura de la lengua zapoteca` de 2016** es el documento al que Irma se refería como versión reciente del sistema de escritura utilizada por autores contemporáneos.
+Fuentes actuales:
 
-```text
-NORMA_2016_IDENTIFIED_AS_IRMA_REFERENCE = true
-NORMA_2016_FULL_TEXT_IN_PROJECT = false
-```
-
-Entidades principales:
-
-- `HALL-0010`
-- `HALL-0021`
 - `SRC-DICTIONARIA-NORMA-ESCRITURA-2016-REFERENCE`
 - `SRC-INALI-INFORME-LOGROS-2016-NORMA-PLANICIE-COSTERA`
 
-`BL-024` ya no pregunta qué documento es: debe **localizar e ingerir el texto completo de la Norma 2016**, reconstruir su procedencia y adjudicar cómo modifica la política de fuentes ortográficas contemporáneas.
+La referencia está identificada; el manuscrito completo todavía debe localizarse (`BL-024`). No reconstruir una supuesta norma completa a partir de citas secundarias.
 
-El **Alfabeto Popular de 1956** queda como antecedente histórico fundamental. Emiliano ya descargó una copia, todavía no incorporada al repositorio.
+## 11. Fuentes lingüísticas centrales accesibles sin dispositivo
 
-No asumir:
+Entre las fuentes ya resolubles directamente desde Voces están:
 
-```text
-CONTEMPORARY_AUTHOR_TEXT -> AUTOMATIC_CORRECTION_RULE
-NORMA_REFERENCE -> FULL_NORM_CONTENT_KNOWN
-```
+- `SRC-PICKETT-BLACK-MARCIAL-2001-GRAMATICA-POPULAR`
+- `SRC-PICKETT-2007-VOCABULARIO-ZAPOTECO-ISTMO`
+- `SRC-DICTIONARIA-DIDXAZA-SPANISH-ENGLISH-DICTIONARY`
+- `SRC-BUENO-HOLLE-2019`
+- `SRC-PEREZ-BAEZ-CATA-BUENO-HOLLE-2015-XNEZA`
+- `SRC-PEREZ-BAEZ-2015-VALENCE-CHANGING-JUCHITAN`
+- `SRC-PEREZ-BAEZ-KAUFMAN-2016-VERB-CLASSES`
+- `SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS`
 
-## 11. Variedades
+Los derivados históricos que aparezcan en `dispositivo/` pueden utilizarse para localizar material, pero no sustituyen estas fuentes.
 
-El baseline activo queda reafirmado:
+## 12. Estado bibliográfico
 
-```text
-CURRENT_BASELINE = JUCHITAN
-ESPINAL_RESEARCH = ALLOWED
-MULTIVARIETAL_MERGE = false
-```
+La hoja bibliográfica maestra sigue siendo el registro operativo de asignación de `BIB###`. No inventar IDs BIB para fuentes nuevas. `BL-026` permanece abierto hasta reconciliar la hoja con los `SRC-*` actuales.
 
-La investigación dialectológica sobre El Espinal y otras localidades puede continuar, pero no debe mezclar formas con el corpus juchiteco sin metadatos y decisión explícita.
+## 13. Qué sigue
 
-## 12. Bibliografía SIL / ILV
+Mientras la arquitectura permanece congelada, las líneas sustantivas activas son:
 
-La página de publicaciones de SIL México para zapoteco del Istmo ya fue cartografiada en:
+- localizar y estudiar la Norma 2016;
+- justificar pedagógicamente la memoria y su relación con recuperación, espaciamiento, transferencia y tedio;
+- definir segmentación por edades dentro de principiantes + escucha;
+- continuar literatura lingüística y corpus oral de Juchitán;
+- corroborar selectivamente las nuevas atestaciones de Irma;
+- completar la separación física del dispositivo cuando exista el repositorio técnico destino.
 
-- `conocimiento/fuentes/SRC-SIL-MEXICO-CATALOGO-ZAPOTECO-ISTMO-2026-09-03.md`
-- `informes/SIL_ISTHMUS_ZAPOTEC_BIBLIOGRAPHY_SCAN_v0_1.md`
-
-Antes de asignar nuevos `BIB###`, deduplicar contra la hoja bibliográfica operativa. El catálogo sirve para localizar fuentes; no confiere el mismo peso epistemológico a todas ellas.
-
-## 13. BIB065 / Bueno Holle
-
-La fuente registrada dentro del Sistema de Conocimiento es `conocimiento/fuentes/SRC-BUENO-HOLLE-2019.md`.
-
-Los artefactos BIB065 bajo `dispositivo/` pueden reconstruir genealogía y candidatos, pero **no deben promoverse automáticamente** a pedagogía, teoría o metodología. Cuando sea necesario incorporar resultados posteriores de la lectura, volver a la obra original y adjudicarlos dentro de Voces de las Nubes.
-
-`BL-022` conserva abierta la investigación sobre relevancia pedagógica de sus capas analíticas finas.
-
-## 14. Estado pre-Irma congelado
-
-```text
-branch = checkpoint/pre-irma-post-migration-2026-09-02
-commit = e1f9f4ef2852b9e0453ef757a291816e1faa10e2
-```
-
-Ver `archivo/checkpoints/2026-09-02_pre_irma.md`.
-
-Esa referencia sirve para comparar cambios y no debe confundirse con política vigente.
-
-## 15. Ruta inmediata
-
-1. profundizar `BL-025` hasta formular una justificación pedagógica de la memoria que pueda discutirse con docentes;
-2. investigar `BL-023` dentro de principiantes + escucha antes de fijar bandas escolares;
-3. localizar el texto completo de la Norma 2016 y adjudicar `BL-024` antes de cambiar reglas ortográficas del Corrector;
-4. corroborar selectivamente las notas lingüísticas de Irma que siguen en `pendiente_de_validacion`;
-5. continuar investigación de corpus natural, co-diseño, dificultad auditiva, P y BIB065 sin convertir hipótesis en políticas;
-6. publicar estados aprobados mediante commits identificables;
-7. permitir que el dispositivo consuma sólo conocimiento adjudicado mediante `KNOWLEDGE_SOURCE_COMMIT`.
-
-## 16. Trabajo técnico
-
-No cargar por defecto el estado técnico para conversaciones sobre bibliografía, pedagogía, corpus o metodología humana.
-
-Cuando la tarea sea desarrollar Analyzer, Corrector, Tutor, Generator, runtime, pruebas o migración, cambiar explícitamente al punto de entrada:
-
-`dispositivo/REENTRY_TECNICO.md`
+No crear nuevas capas arquitectónicas por defecto. Una deuda nueva debe resolverse dentro de la arquitectura vigente siempre que ésta ya tenga un lugar apropiado.
