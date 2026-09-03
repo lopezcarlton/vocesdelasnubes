@@ -24,7 +24,7 @@ La separación de reentrada evita que una conversación pedagógica o bibliográ
 
 **Voces de las Nubes** es un proyecto de documentación, aprendizaje y revitalización del Didxazá, la lengua zapoteca del Istmo de Tehuantepec, Oaxaca. Se desarrolla en Casa de las Ciencias de Oaxaca, institución pública dedicada a acompañar a docentes con herramientas pedagógicas y didácticas, bajo el principio de que el conocimiento indígena y el conocimiento científico deben sostener un diálogo en igualdad de condiciones.
 
-El proyecto está dirigido especialmente a personas que tienen la lengua en su historia familiar pero no la recibieron y que hoy carecen de una ruta clara para desarrollar comprensión auditiva y capacidad de conversación.
+El proyecto incluye a personas que tienen la lengua en su historia familiar pero no la recibieron y, desde septiembre de 2026, adopta además como requisito explícito el diseño para **públicos escolares diferenciados por edad y trayectoria lingüística**. La educación secundaria técnica constituye el primer anclaje institucional prioritario por la relación de Casa de las Ciencias de Oaxaca con ese nivel, sin convertirse en público exclusivo.
 
 ### Objetivo
 

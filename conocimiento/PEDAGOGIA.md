@@ -11,6 +11,33 @@ Voces de las Nubes busca favorecer el aprendizaje inicial del Didxazá mediante 
 
 El sistema no se organiza como curso gramatical ni como colección de vocabulario temático. Su propósito es ayudar a que una persona reconozca y produzca funciones comunicativas reales mediante materiales breves, contextualizados y progresivos.
 
+## 1.1 Públicos escolares y segmentación por edad
+
+Desde el 2 de septiembre de 2026 el proyecto adopta como requisito que los materiales puedan dirigirse a **públicos escolares diferenciados**, además de personas con transmisión intergeneracional interrumpida u otros aprendices.
+
+La educación secundaria técnica constituye el primer anclaje institucional prioritario por la relación real de Casa de las Ciencias de Oaxaca con ese nivel y con su base de docentes, pero **no es el público exclusivo**. El proyecto debe investigar también materiales adecuados para estudiantes más pequeños y otros perfiles.
+
+La segmentación todavía no está resuelta. Debe investigarse qué diferencias requieren adaptación pedagógica, entre ellas potencialmente:
+
+- edad y etapa escolar;
+- trayectoria lingüística familiar;
+- competencia previa en didxazá;
+- alfabetización y capacidad lectora;
+- longitud y estructura de las escenas;
+- velocidad y claridad del habla;
+- soporte visual, juego, explicación y producción;
+- formas apropiadas de evaluación y práctica.
+
+No se equiparan automáticamente estas dimensiones:
+
+```text
+AGE_GROUP != LANGUAGE_LEVEL
+SCHOOL_GRADE != G_LEVEL
+SCHOOL_GRADE != P_LEVEL
+```
+
+La decisión de segmentar está vigente; las bandas concretas y sus metodologías permanecen abiertas a trabajo con docentes, especialistas y estudiantes.
+
 ## 2. Principios de adquisición
 
 ### 2.1 Comprensión antes de explicación exhaustiva

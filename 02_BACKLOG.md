@@ -1,8 +1,8 @@
 # BACKLOG
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.5  
-**Última actualización:** 2026-08-31
+**Versión:** 1.6  
+**Última actualización:** 2026-09-02
 
 ---
 
@@ -239,6 +239,51 @@ La investigación debe volver a la fuente bibliográfica original y contrastarse
 **Criterio de cierre:** existe una decisión documentada sobre qué relevancia pedagógica tienen las capas priorizadas, o se determina explícitamente que deben permanecer sólo como descripción lingüística.
 
 **Componente técnico transferido:** la eventual representación computacional de capas ya adjudicadas pasa a `dispositivo/BACKLOG_TECNICO.md` como `DT-002`.
+
+---
+
+
+### BL-023 — Definir la segmentación de públicos escolares y perfiles de aprendizaje
+
+**Estado:** Abierto  
+**Prioridad:** Alta / estructural
+
+Desarrollar una arquitectura de públicos que permita adaptar materiales sin equiparar edad, grado escolar y competencia lingüística.
+
+Debe determinarse con evidencia:
+
+- qué tramos de edad o etapas educativas resultan pedagógicamente útiles;
+- qué cambia realmente entre esos segmentos;
+- qué papel tiene la trayectoria lingüística familiar;
+- qué dimensiones pueden mantenerse comunes;
+- cómo probar comprensibilidad, participación y progresión con docentes y estudiantes.
+
+La educación secundaria técnica es el primer anclaje institucional prioritario, pero no cierra el alcance del proyecto.
+
+**Sustento:** `HALL-0009`, `DEC-PUBLICOS-ESCOLARES-MULTIETARIOS`.
+
+**Criterio de cierre:** existe una segmentación suficientemente justificada y revisable, con criterios de adaptación y una ruta de validación escolar.
+
+---
+
+### BL-024 — Identificar la versión vigente del Alfabeto Popular y adjudicar nuevas fuentes ortográficas contemporáneas
+
+**Estado:** Abierto  
+**Prioridad:** Alta / lingüística y documental
+
+Localizar documentalmente la versión más reciente del Alfabeto Popular mencionada en `SRC-IRMA-PINEDA-REUNION-2026-09-02` y determinar qué textos contemporáneos pueden incorporarse como evidencia ortográfica, con qué alcance y con qué peso.
+
+La tarea debe distinguir:
+
+- versión y procedencia exacta del alfabeto;
+- autor, edición, fecha y variedad de cada texto;
+- prosa, poesía y otros géneros;
+- convención ortográfica compartida frente a decisiones autorales o editoriales;
+- variación legítima frente a error suficientemente documentado.
+
+La afirmación atribuida a Irma sobre autores contemporáneos se conserva como evidencia experta recordada, pero **no se convierte todavía en licencia automática de corrección**.
+
+**Criterio de cierre:** existe una política de fuentes ortográficas contemporáneas trazable, vinculada a una versión identificable del Alfabeto Popular y compatible con la variación documentada.
 
 ---
 

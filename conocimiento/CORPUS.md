@@ -1,9 +1,9 @@
 # CORPUS
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.3  
+**Versión:** 1.4  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-08-31  
+**Fecha:** 2026-09-02  
 
 ---
 
@@ -137,6 +137,15 @@ Puede utilizarse como:
 - recorte para audio o ejercicio.
 
 No constituye por sí sola la unidad primaria obligatoria de COR002 y no debe crecer mediante relleno ni cumplir una lista rígida de movimientos dramáticos.
+
+
+## 2.7 Perfil de destinatario
+
+A partir de `DEC-PUBLICOS-ESCOLARES-MULTIETARIOS`, una escena o material no debe asumirse como universal para todos los aprendices. Durante su diseño y validación debe poder identificarse el **perfil de destinatario** relevante, aunque el esquema definitivo de metadatos todavía no esté cerrado.
+
+El perfil puede incluir edad o etapa escolar, experiencia previa con la lengua, contexto de uso y otras variables pedagógicamente pertinentes. La misma función comunicativa puede requerir realizaciones, longitudes, ritmos o apoyos diferentes para públicos distintos.
+
+La segmentación por edad no se convierte automáticamente en nivel lingüístico, G o P.
 
 ---
 
