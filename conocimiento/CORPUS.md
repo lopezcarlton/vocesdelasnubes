@@ -1,9 +1,9 @@
 # CORPUS
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.4  
+**Versión:** 1.5  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-09-02  
+**Fecha:** 2026-09-03  
 
 ---
 
@@ -146,6 +146,11 @@ A partir de `DEC-PUBLICOS-ESCOLARES-MULTIETARIOS`, una escena o material no debe
 El perfil puede incluir edad o etapa escolar, experiencia previa con la lengua, contexto de uso y otras variables pedagógicamente pertinentes. La misma función comunicativa puede requerir realizaciones, longitudes, ritmos o apoyos diferentes para públicos distintos.
 
 La segmentación por edad no se convierte automáticamente en nivel lingüístico, G o P.
+
+
+En la fase activa todos los materiales nuevos se diseñan dentro de un **alcance principiante y auditivo**, aunque puedan existir versiones distintas para edades diferentes. Necesidades de alfabetización o fortalecimiento de escritura detectadas en otros estudios se conservan como contexto de investigación, pero no gobiernan COR002 en esta fase.
+
+El baseline lingüístico activo sigue siendo Juchitán. Una futura línea de El Espinal u otra variedad deberá mantenerse identificable y no mezclarse con el corpus juchiteco sin decisión explícita.
 
 ---
 

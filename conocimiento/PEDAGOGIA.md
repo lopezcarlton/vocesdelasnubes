@@ -1,9 +1,9 @@
 # PEDAGOGIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.4  
+**Versión:** 1.5  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-09-02
+**Fecha:** 2026-09-03
 
 ## 1. Objetivo pedagógico
 
@@ -22,7 +22,6 @@ La segmentación todavía no está resuelta. Debe investigarse qué diferencias 
 - edad y etapa escolar;
 - trayectoria lingüística familiar;
 - competencia previa en didxazá;
-- alfabetización y capacidad lectora;
 - longitud y estructura de las escenas;
 - velocidad y claridad del habla;
 - soporte visual, juego, explicación y producción;
@@ -37,6 +36,13 @@ SCHOOL_GRADE != P_LEVEL
 ```
 
 La decisión de segmentar está vigente; las bandas concretas y sus metodologías permanecen abiertas a trabajo con docentes, especialistas y estudiantes.
+
+Durante la fase activa definida en `DEC-ALCANCE-ACTIVO-PRINCIPIANTES-ESCUCHA-JUCHITAN`, esta investigación se restringe a **materiales de escucha para principiantes**. Las edades pueden variar, pero no se abre todavía una línea de lectoescritura ni se intenta resolver simultáneamente perfiles avanzados.
+
+```text
+CURRENT_PROFILE_RESEARCH = BEGINNER_LISTENING_BY_AGE
+LITERACY_TRACK = OUTSIDE_ACTIVE_SCOPE
+```
 
 ## 2. Principios de adquisición
 
@@ -59,6 +65,18 @@ El aprendiz debe intentar producir la expresión antes de escuchar el modelo com
 ### 2.5 Aprendizaje sin presión
 
 El material debe reducir el temor al error y permitir repetición privada. La producción se plantea como ensayo, no como examen inmediato.
+
+### 2.6 Memoria como componente central bajo justificación explícita
+
+La memorización forma parte deliberada del método actual: el aprendiz necesita conservar expresiones y recuperarlas con suficiente rapidez para producirlas oralmente. Sin embargo, el proyecto **no da por demostrada** la equivalencia entre memorizar y aprender una lengua ni considera suficiente la repetición mecánica.
+
+`BL-025` debe fundamentar con bibliografía y pruebas de aprendizaje qué papel cumplen la recuperación activa, el espaciamiento, las secuencias formulaicas, la reutilización y la transferencia, y cómo se evita el tedio señalado por docentes de orientación constructivista.
+
+```text
+MEMORY = CENTRAL_COMPONENT
+ROTE_REPETITION = NOT_SUFFICIENT
+CONSTRUCTIVIST_COMPATIBILITY = OPEN_FOR_JUSTIFICATION
+```
 
 ## 3. Papel del input
 

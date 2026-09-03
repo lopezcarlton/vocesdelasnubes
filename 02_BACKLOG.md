@@ -1,8 +1,8 @@
 # BACKLOG
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.6  
-**Última actualización:** 2026-09-02
+**Versión:** 1.7  
+**Última actualización:** 2026-09-03
 
 ---
 
@@ -248,7 +248,7 @@ La investigación debe volver a la fuente bibliográfica original y contrastarse
 **Estado:** Abierto  
 **Prioridad:** Alta / estructural
 
-Desarrollar una arquitectura de públicos que permita adaptar materiales sin equiparar edad, grado escolar y competencia lingüística.
+Desarrollar una arquitectura de públicos escolares **dentro del alcance activo de principiantes y escucha**, sin equiparar edad, grado escolar y competencia lingüística. La lectoescritura y los perfiles avanzados quedan fuera del alcance de esta fase.
 
 Debe determinarse con evidencia:
 
@@ -266,12 +266,12 @@ La educación secundaria técnica es el primer anclaje institucional prioritario
 
 ---
 
-### BL-024 — Identificar la versión vigente del Alfabeto Popular y adjudicar nuevas fuentes ortográficas contemporáneas
+### BL-024 — Localizar e ingerir la Norma de escritura de 2016 y adjudicar fuentes ortográficas contemporáneas
 
 **Estado:** Abierto  
 **Prioridad:** Alta / lingüística y documental
 
-Localizar documentalmente la versión más reciente del Alfabeto Popular mencionada en `SRC-IRMA-PINEDA-REUNION-2026-09-02` y determinar qué textos contemporáneos pueden incorporarse como evidencia ortográfica, con qué alcance y con qué peso.
+La referencia ya fue identificada: Emiliano confirmó que Irma se refería a la **`Norma del sistema de escritura de la lengua zapoteca` de 2016** (`HALL-0021`). La deuda actual es localizar el texto completo, documentar su procedencia y determinar qué textos contemporáneos pueden incorporarse como evidencia ortográfica, con qué alcance y con qué peso.
 
 La tarea debe distinguir:
 
@@ -284,6 +284,32 @@ La tarea debe distinguir:
 La afirmación atribuida a Irma sobre autores contemporáneos se conserva como evidencia experta recordada, pero **no se convierte todavía en licencia automática de corrección**.
 
 **Criterio de cierre:** existe una política de fuentes ortográficas contemporáneas trazable, vinculada a una versión identificable del Alfabeto Popular y compatible con la variación documentada.
+
+---
+
+
+### BL-025 — Justificar pedagógicamente la memorización y delimitar su función en Voces de las Nubes
+
+**Estado:** Abierto  
+**Prioridad:** Alta / pedagógica e institucional
+
+Voces de las Nubes utiliza memoria y repetición como componentes centrales del aprendizaje, mientras que el entorno docente de Casa de las Ciencias se identifica con principios constructivistas y cuestiona el tedio y la pasividad asociados con la memorización mecánica.
+
+La tarea no es defender toda memorización. Debe distinguir con evidencia:
+
+- repetición pasiva o masiva;
+- recuperación activa;
+- práctica espaciada;
+- memorización de secuencias formulaicas y frases con función comunicativa;
+- automatización útil para producción oral;
+- reutilización, variación y transferencia;
+- carga y tedio según edad y formato.
+
+Debe además explicar qué papel ocupa la memoria dentro de una pedagogía más amplia y comprobar con aprendices que recordar material no se reduzca a recitarlo literalmente.
+
+**Mapa inicial:** `informes/MEMORIZATION_PEDAGOGICAL_JUSTIFICATION_RESEARCH_MAP_v0_1.md`.
+
+**Criterio de cierre:** existe una justificación pedagógica trazable, comprensible para docentes de Casa de las Ciencias y contrastada con pruebas de aprendices, o una reformulación documentada del método si la evidencia muestra límites relevantes.
 
 ---
 

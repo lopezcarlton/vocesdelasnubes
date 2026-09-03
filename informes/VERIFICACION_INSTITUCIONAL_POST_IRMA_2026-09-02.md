@@ -24,7 +24,7 @@ Fuentes consultadas:
 
 El directorio oficial de INALI registra además a **Alma Rosa Espíndola Galicia** como **Coordinadora General de Concertación**.
 
-La reconstrucción de Emiliano sólo conservaba “Alma Rosa”. La coincidencia nominal e institucional es fuerte, pero este informe **no afirma** que sea necesariamente la misma persona conocida previamente por Emiliano hasta que él lo confirme.
+La reconstrucción inicial de Emiliano sólo conservaba “Alma Rosa”. El 2026-09-03 Emiliano confirmó que **Alma Rosa Espíndola Galicia es la persona correcta** a la que se refería.
 
 ## 3. Acervo de Lenguas Indígenas Nacionales (ALIN)
 
