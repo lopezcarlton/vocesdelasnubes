@@ -14,7 +14,7 @@ Ese archivo reconstruye por defecto el **Sistema de Conocimiento**: arquitectura
 
 El trabajo explícitamente técnico sobre Analyzer, Corrector, Tutor, Generator, runtime, pruebas o migración tiene un punto de entrada separado:
 
-`dispositivo/REENTRY_TECNICO.md`
+`lopezcarlton/didxaza-dispositivo` → `REENTRY_TECNICO.md`
 
 La separación de reentrada evita que una conversación pedagógica o bibliográfica cargue por defecto el estado de implementación y evita que el dispositivo adquiera autoridad por proximidad documental.
 
@@ -65,8 +65,7 @@ vocesdelasnubes/
 ├── conocimiento/        # Sistema de Conocimiento y vistas canónicas
 ├── informes/            # investigación/auditorías no normativas
 ├── archivo/             # historia, checkpoints y contextos
-├── dispositivo/         # sistema derivado temporal, pendiente de separación
-└── .github/
+└── .github/             # control técnico de este repositorio
 ```
 
 La raíz se mantiene deliberadamente pequeña. Los checkpoints fechados y contextos históricos no viven en la raíz y no gobiernan el estado vigente.
@@ -88,7 +87,7 @@ Reglas centrales:
 
 `01_JERARQUIA_DE_VERDAD.md` establece qué autoridad prevalece según el tipo de pregunta y cómo se relacionan `SRC`, `HALL`, `VAL`, `SUP`, `TEO`, `DEC`, `PRIN`, procedimientos y vistas documentales.
 
-La carpeta `dispositivo/` conserva temporalmente el estado de herramientas lingüísticas experimentales que consumen conocimiento del proyecto. **No constituye una segunda fuente de verdad y no tiene autoridad para escribir, adoptar o promover conocimiento.** La regla vigente se documenta en `conocimiento/decisiones/DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO.md`.
+El dispositivo técnico vive físicamente en `lopezcarlton/didxaza-dispositivo`. **No constituye una segunda fuente de verdad y no tiene autoridad para escribir, adoptar o promover conocimiento.** La regla vigente se documenta en `conocimiento/decisiones/DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO.md`.
 
 ---
 
@@ -138,7 +137,7 @@ Esta ampliación **no reemplaza** las escenas pedagógicamente diseñadas ni la 
 
 ### Sistema derivado de apoyo
 
-Durante agosto avanzó en paralelo una capa experimental para análisis, revisión, explicación y producción controlada. Se conserva bajo `dispositivo/` por genealogía y reproducibilidad técnica, pero su autoridad está subordinada al Sistema de Conocimiento. Los descubrimientos que surjan durante su desarrollo deben volver a las fuentes originales y al procedimiento de actualización antes de modificar teoría, pedagogía, metodología o corpus.
+Durante agosto avanzó en paralelo una capa experimental para análisis, revisión, explicación y producción controlada. Desde el 3 de septiembre de 2026 se conserva en el repositorio técnico separado `lopezcarlton/didxaza-dispositivo`; su autoridad permanece subordinada al Sistema de Conocimiento. Los descubrimientos que surjan durante su desarrollo deben volver a las fuentes originales y al procedimiento de actualización antes de modificar teoría, pedagogía, metodología o corpus.
 
 ### ELDP
 

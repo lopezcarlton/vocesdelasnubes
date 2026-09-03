@@ -6,7 +6,7 @@ Este archivo es el punto de reentrada general para continuar **Voces de las Nube
 
 Este reentry reconstruye **el Sistema de Conocimiento**. No carga por defecto el runtime ni el estado técnico del dispositivo.
 
-Para trabajo explícitamente técnico usar `dispositivo/REENTRY_TECNICO.md` mientras la separación física siga pendiente.
+Para trabajo explícitamente técnico usar el repositorio separado `lopezcarlton/didxaza-dispositivo`, comenzando por su `REENTRY_TECNICO.md`. La copia activa del dispositivo ya no vive en este repositorio.
 
 ## 1. Reconstrucción obligatoria antes de trabajar
 
@@ -226,7 +226,7 @@ Entre las fuentes ya resolubles directamente desde Voces están:
 - `SRC-PEREZ-BAEZ-2015-VALENCE-CHANGING-JUCHITAN`
 - `SRC-PEREZ-BAEZ-KAUFMAN-2016-VERB-CLASSES`
 
-Los derivados históricos que aparezcan en `dispositivo/` pueden utilizarse para localizar material, pero no sustituyen estas fuentes.
+Los derivados históricos preservados en `lopezcarlton/didxaza-dispositivo` pueden utilizarse para localizar material, pero no sustituyen estas fuentes.
 
 ## 12. Estado bibliográfico
 
@@ -252,6 +252,6 @@ Mientras la arquitectura permanece congelada, las líneas sustantivas activas so
 - definir segmentación por edades dentro de principiantes + escucha;
 - continuar literatura lingüística y corpus oral de Juchitán;
 - corroborar selectivamente las nuevas atestaciones de Irma;
-- completar la separación física del dispositivo cuando exista el repositorio técnico destino.
+- continuar el desarrollo técnico del dispositivo en `lopezcarlton/didxaza-dispositivo` sin devolver autoridad al repositorio de Voces.
 
 No crear nuevas capas arquitectónicas por defecto. Una deuda nueva debe resolverse dentro de la arquitectura vigente siempre que ésta ya tenga un lugar apropiado.

@@ -1266,7 +1266,6 @@ Esta sección **describe la organización real vigente**; no prescribe un árbol
 ├── conocimiento/        # Sistema de Conocimiento canónico + vistas
 ├── informes/            # análisis y auditorías no normativos
 ├── archivo/             # checkpoints, contextos y herramientas históricas
-├── dispositivo/         # sistema derivado temporal; pendiente de separación física
 └── .github/             # control técnico del repositorio
 ```
 
@@ -1275,7 +1274,7 @@ Reglas de ubicación:
 - `conocimiento/` contiene fuentes registradas, hallazgos, decisiones, principios válidos y vistas canónicas.
 - `informes/` puede orientar investigación, pero no adopta conocimiento.
 - `archivo/` preserva historia y contexto; no gobierna el presente.
-- `dispositivo/` es un sistema derivado y no forma parte del Sistema de Conocimiento. Su presencia actual es transitoria hasta completar la separación física verificada.
+- El dispositivo es un sistema derivado y no forma parte del Sistema de Conocimiento. Desde 2026-09-03 vive físicamente en `lopezcarlton/didxaza-dispositivo`; este repositorio conserva únicamente la autoridad de conocimiento y el índice histórico de recuperación pertinente.
 - Los materiales fuente compartidos se adjudican por naturaleza y derechos, no por el lugar donde una herramienta los haya ingerido primero.
 
 ---
@@ -1522,5 +1521,5 @@ La utilidad de esta arquitectura dependerá menos de la cantidad de información
 
 - Se reemplaza el árbol conceptual obsoleto por la organización física vigente y se aclara que el diagrama no prescribe una reestructuración.
 - Se formaliza que decisiones directas de coordinación o alcance pueden sustentarse en una fuente directa sin fabricar un `HALL` espejo.
-- Se clasifican `informes/`, `archivo/` y `dispositivo/` por función y autoridad.
+- Se clasifican `informes/`, `archivo/` y los sistemas derivados por función y autoridad; la separación física del dispositivo quedó ejecutada el 2026-09-03.
 - Se retira de la Constitución la lista histórica de cuestiones "para la siguiente versión"; las deudas actuales pertenecen al backlog.
