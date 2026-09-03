@@ -22,7 +22,7 @@ estado_de_acceso: disponible_en_repositorio_smithsonian
 
 ## Identidad bibliográfica
 
-`BIB059` está atestiguado para esta obra en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
+`BIB059` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03.
 
 ## Relación con Dictionaria y el dispositivo
 
