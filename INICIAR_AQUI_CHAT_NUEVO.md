@@ -51,6 +51,20 @@ VOCES_CAN_RESOLVE_SOURCE_WITHOUT_DEVICE = true
 DEVICE_OUTPUT != SOURCE
 ```
 
+### Recuperación de material técnico histórico no adjudicado
+
+Si una pregunta futura requiere saber qué temas lingüísticos, pedagógicos u ortográficos quedaron registrados históricamente dentro del dispositivo antes de su separación, consultar de forma **opcional**:
+
+`informes/KNOWLEDGE_RECOVERY_INDEX_PRE_SPLIT_2026-09-03.md`
+
+Ese archivo es un `NON_AUTHORITATIVE_RECOVERY_INDEX`: sirve para localizar IDs, temas y coordenadas de recuperación en las fuentes originales. **No forma parte de la lectura obligatoria de reentrada, no es evidencia y no sustituye una fuente.**
+
+```text
+RECOVERY_INDEX_AS_COORDINATES = allowed
+RECOVERY_INDEX_AS_CLAIM_SUMMARY = not_authoritative
+SOURCE_PASSAGE_MUST_BE_READ_BEFORE_ADJUDICATION = true
+```
+
 ## 3. Frontera con sistemas derivados
 
 El dispositivo y cualquier futura herramienta o repositorio técnico son **sistemas derivados**.
