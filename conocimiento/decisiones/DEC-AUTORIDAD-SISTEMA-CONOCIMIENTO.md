@@ -2,6 +2,7 @@
 
 ```yaml
 id: DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO
+version: 1.1
 titulo: "Los sistemas derivados no modifican ni promueven conocimiento por sí mismos"
 decision: >
   Voces de las Nubes conserva autoridad exclusiva sobre la adopción, promoción y
@@ -15,6 +16,12 @@ decision: >
   actualización de Voces de las Nubes, conservar su procedencia y ser adjudicada con la
   autoridad pertinente antes de incorporarse.
 
+  Además, toda afirmación, regla o decisión de Voces que requiera justificación debe
+  poder reconstruirse desde fuentes y artefactos canónicos accesibles al propio Sistema
+  de Conocimiento, sin ejecutar ni depender epistemológicamente del dispositivo o de
+  otro sistema derivado. Un artefacto técnico puede ayudar a localizar la fuente, pero
+  no puede ser la única justificación de conocimiento canónico.
+
   Los futuros desarrolladores de sistemas derivados no tendrán por defecto permisos de
   escritura sobre el Sistema de Conocimiento. La implementación técnica de esta frontera
   deberá usar controles de acceso suficientes; la separación física en repositorios es
@@ -22,6 +29,7 @@ decision: >
   depende de que esa separación ya haya ocurrido.
 estado: vigente
 fecha: 2026-09-02
+fecha_actualizacion: 2026-09-03
 responsable: Emiliano López Carlton
 validadores:
   - Emiliano López Carlton
@@ -39,7 +47,9 @@ justificacion: >
   implementación. Una frontera únicamente conceptual no garantiza que futuros
   desarrolladores carezcan de capacidad de modificación. La separación entre capacidad
   de descubrir/proponer y autoridad de adoptar permite mantener intercambio de
-  información sin invertir la jerarquía epistemológica.
+  información sin invertir la jerarquía epistemológica. La reconstruibilidad añade la
+  garantía complementaria de que Voces siga siendo investigable y justificable aunque
+  el sistema derivado desaparezca.
 impacta_a:
   - 00_ARQUITECTURA_DEL_CONOCIMIENTO.md
   - 01_JERARQUIA_DE_VERDAD.md
@@ -66,6 +76,8 @@ DERIVED_SYSTEM_MAY_CHALLENGE = true
 DERIVED_SYSTEM_MAY_ADOPT_KNOWLEDGE = false
 DERIVED_SYSTEM_MAY_PROMOTE_CANDIDATE = false
 DERIVED_SYSTEM_MAY_WRITE_KNOWLEDGE = false
+
+KNOWLEDGE_JUSTIFICATION_MUST_BE_RECONSTRUCTIBLE_WITHOUT_DERIVED_SYSTEM = true
 ```
 
 Un resultado técnico puede constituir evidencia sobre el comportamiento de la herramienta que lo produjo. No adquiere por ello autoridad lingüística, pedagógica, comunitaria o metodológica sobre Voces de las Nubes.
