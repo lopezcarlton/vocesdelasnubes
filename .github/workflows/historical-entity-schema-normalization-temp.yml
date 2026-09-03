@@ -1,0 +1,131 @@
+name: historical-entity-schema-normalization-temp
+
+on:
+  push:
+    paths:
+      - '.github/workflows/historical-entity-schema-normalization-temp.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Normalize historical entity schemas and audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          def patch(path, old, new):
+              p=Path(path); s=p.read_text(encoding='utf-8')
+              if old not in s:
+                  raise SystemExit(f'missing anchor {path}: {old!r}')
+              p.write_text(s.replace(old,new,1),encoding='utf-8')
+
+          # HALL-0006: first formalized in Git on 2026-08-08.
+          patch('conocimiento/hallazgos/HALL-0006.md',
+                'estado: registrado\ngrado_de_respaldo: directo',
+                'estado: registrado\nfecha_del_hecho: 2026-08-08\nfecha_de_registro: 2026-08-08\nnota_fecha: "Fecha de primera formalización localizable en Git; el razonamiento antecedente puede ser anterior."\ngrado_de_respaldo: directo')
+
+          # HALL-0007: bibliographic fact is the 2019 source; registered 2026-08-31.
+          patch('conocimiento/hallazgos/HALL-0007.md',
+                'estado: registrado\ngrado_de_respaldo: directo',
+                'estado: registrado\nfecha_del_hecho: 2019\nfecha_de_registro: 2026-08-31\ngrado_de_respaldo: directo')
+
+          # DEC-G-P-SEPARATION: normalize status and required fields from existing history.
+          patch('conocimiento/decisiones/DEC-G-P-SEPARATION.md',
+                'estado: vigente_como_separacion_de_dimensiones\nfecha_decision_original: 2026-08-07',
+                'estado: vigente\nestado_descriptivo_anterior: vigente_como_separacion_de_dimensiones\nfecha: 2026-08-07\nfecha_decision_original: 2026-08-07')
+          patch('conocimiento/decisiones/DEC-G-P-SEPARATION.md',
+                'principios_relacionados:\n  - PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL\n  - PRIN-G-RESTRICCION-DURA\n  - PRIN-P-RESTRICCION-BLANDA\n\nvalidadores:',
+                'principios_relacionados:\n  - PRIN-COMPETENCIA-COMUNICATIVA-MULTIDIMENSIONAL\n  - PRIN-G-RESTRICCION-DURA\n  - PRIN-P-RESTRICCION-BLANDA\n\nsupuestos_implicados: []\nalternativas_consideradas:\n  - "mantener un único eje de dificultad que comprima complejidad gramatical y pragmática"\n  - "mantener G/P como restricciones automáticas previas a la construcción de escenas"\njustificacion: >\n  HALL-0006 documentó que un único nivel comprimía dimensiones que pueden divergir.\n  La revisión posterior mostró además que aplicar G/P como restricciones automáticas antes\n  de disponer de escenas aceptables producía una arquitectura demasiado rígida. La decisión\n  conserva la separación analítica y retira esa implementación fuerte.\n\nvalidadores:')
+          patch('conocimiento/decisiones/DEC-G-P-SEPARATION.md',
+                'condiciones_de_revision:\n',
+                'reemplaza: null\nreemplazada_por: null\n\ncondiciones_de_revision:\n')
+
+          # DEC-GRABAR-EN-VIVO.
+          patch('conocimiento/decisiones/DEC-GRABAR-EN-VIVO.md',
+                'estado: vigente_revisado\nfecha_decision_original: 2026-08-05',
+                'estado: vigente\nestado_descriptivo_anterior: vigente_revisado\nfecha: 2026-08-05\nfecha_decision_original: 2026-08-05')
+          patch('conocimiento/decisiones/DEC-GRABAR-EN-VIVO.md',
+                'hallazgos_que_la_sustentan:\n  - HALL-0002\njustificacion:',
+                'hallazgos_que_la_sustentan:\n  - HALL-0002\nprincipios_relacionados: []\nsupuestos_implicados: []\nalternativas_consideradas:\n  - "grabar por separado los componentes de una secuencia y ensamblarlos después"\njustificacion:')
+          patch('conocimiento/decisiones/DEC-GRABAR-EN-VIVO.md',
+                'condiciones_de_revision:\n',
+                'reemplazada_por: null\ncondiciones_de_revision:\n')
+
+          # DEC-TRIANGULACION-EMPIRICA.
+          patch('conocimiento/decisiones/DEC-TRIANGULACION-EMPIRICA.md',
+                'hallazgos_que_la_sustentan:\n  - HALL-0007\njustificacion:',
+                'hallazgos_que_la_sustentan:\n  - HALL-0007\nprincipios_relacionados:\n  - PRIN-INVESTIGACION-ABIERTA\nsupuestos_implicados: []\nalternativas_consideradas:\n  - "usar traducción/reformulación desde español como única vía de producción de evidencia"\n  - "depender únicamente de habla espontánea para fenómenos infrecuentes"\njustificacion:')
+          patch('conocimiento/decisiones/DEC-TRIANGULACION-EMPIRICA.md',
+                'conflictua_con:\n',
+                'reemplazada_por: null\nconflictua_con:\n')
+
+          # DEC-CORPUS-ORAL-PILOTO-ITERATIVO.
+          patch('conocimiento/decisiones/DEC-CORPUS-ORAL-PILOTO-ITERATIVO.md',
+                'estado: vigente_como_linea_experimental\nfecha: 2026-08-31\nresponsable: Emiliano López Carlton\nimpacta_a:',
+                'estado: vigente_con_reservas\nestado_descriptivo_anterior: vigente_como_linea_experimental\nfecha: 2026-08-31\nresponsable: Emiliano López Carlton\nvalidadores:\n  - Emiliano López Carlton\nhallazgos_que_la_sustentan:\n  - HALL-0007\nprincipios_relacionados:\n  - PRIN-INVESTIGACION-ABIERTA\nsupuestos_implicados:\n  - "la utilidad de una vía naturalista depende de participantes, tema, contexto y condiciones de grabación"\nalternativas_consideradas:\n  - "descartar la vía naturalista después de una sola prueba débil"\n  - "trabajar únicamente con escenas pedagógicamente diseñadas"\njustificacion: >\n  La conversación naturalista puede aportar evidencia que no aparece en traducción o escenas\n  controladas, pero una sola sesión no permite separar el valor del método de las condiciones\n  particulares de esa sesión. Por ello se adopta como línea experimental revisable.\nimpacta_a:')
+          patch('conocimiento/decisiones/DEC-CORPUS-ORAL-PILOTO-ITERATIVO.md',
+                'no_implica:\n',
+                'reemplaza: null\nreemplazada_por: null\ncondiciones_de_revision:\n  - "evidencia acumulada de varias sesiones naturalistas"\n  - "calidad lingüística y conversacional del material"\n  - "utilidad documental, analítica o pedagógica posterior"\n  - "cambios relevantes en condiciones de grabación o participantes"\n\nno_implica:\n')
+
+          # DEC-COBERTURA-CORPUS-PROGRESIVA.
+          patch('conocimiento/decisiones/DEC-COBERTURA-CORPUS-PROGRESIVA.md',
+                'responsable: Emiliano López Carlton\nimpacta_a:',
+                'responsable: Emiliano López Carlton\nvalidadores:\n  - Emiliano López Carlton\nhallazgos_que_la_sustentan:\n  - HALL-0006\nprincipios_relacionados:\n  - PRIN-INVESTIGACION-ABIERTA\nsupuestos_implicados: []\nalternativas_consideradas:\n  - "exigir que el corpus principiante represente de inmediato toda la complejidad conocida del proyecto"\n  - "restringir la aspiración global del proyecto a la cobertura del piloto principiante"\njustificacion: >\n  El piloto necesita un alcance controlado sin convertir ese recorte temporal en límite de lo que\n  Voces de las Nubes puede investigar y cubrir posteriormente. Separar ambas escalas evita tanto\n  sobrecargar COR002 como empobrecer la aspiración global del proyecto.\nimpacta_a:')
+          patch('conocimiento/decisiones/DEC-COBERTURA-CORPUS-PROGRESIVA.md',
+                'principio_de_separacion: >',
+                'reemplaza: null\nreemplazada_por: null\n\nprincipio_de_separacion: >')
+
+          # Full schema audit.
+          required={
+            'SRC':['id','tipo','titulo','autor_o_participantes','fecha','ubicacion','descripcion','nivel_de_fuente','estado_de_acceso'],
+            'HALL':['id','titulo','afirmacion','tipo','estado','fecha_del_hecho','fecha_de_registro','fuentes','participantes','grado_de_respaldo','alcance','etiquetas','relaciones'],
+            'DEC':['id','titulo','decision','estado','fecha','responsable','validadores','hallazgos_que_la_sustentan','principios_relacionados','supuestos_implicados','alternativas_consideradas','justificacion','impacta_a','reemplaza','reemplazada_por','condiciones_de_revision']}
+          allowed_hall_types={'observacion','declaracion','resultado','patron','contradiccion','limitacion','necesidad','oportunidad','cambio','interpretacion','hallazgo_bibliografico','hallazgo_institucional'}
+          allowed_hall_states={'registrado','corroborado','cuestionado','contradicho','reemplazado','descartado','pendiente_de_revision','pendiente_de_validacion'}
+          allowed_support={'directo','múltiple','parcial','inferido','débil','sin_respaldo'}
+          allowed_dec_states={'propuesta','en_validacion','vigente','vigente_con_reservas','suspendida','reemplazada','revocada','descartada'}
+          allowed_source_levels={'primaria','secundaria','terciaria'}
+          def fields(text):
+              return {m.group(1):m.group(2).strip().strip('"\'') for m in re.finditer(r'(?m)^([A-Za-z_áéíóúÁÉÍÓÚñÑ0-9_-]+):\s*(.*)$',text)}
+          bad=[]; total=0
+          for kind,folder,prefix in [('SRC','conocimiento/fuentes','SRC-'),('HALL','conocimiento/hallazgos','HALL-'),('DEC','conocimiento/decisiones','DEC-')]:
+              for p in sorted(Path(folder).glob(prefix+'*.md')):
+                  total+=1; f=fields(p.read_text(encoding='utf-8-sig'))
+                  missing=[x for x in required[kind] if x not in f]; vocab=[]
+                  if kind=='SRC' and f.get('nivel_de_fuente') and f['nivel_de_fuente'] not in allowed_source_levels: vocab.append('nivel='+f['nivel_de_fuente'])
+                  if kind=='HALL':
+                      if f.get('tipo') and f['tipo'] not in allowed_hall_types: vocab.append('tipo='+f['tipo'])
+                      if f.get('estado') and f['estado'] not in allowed_hall_states: vocab.append('estado='+f['estado'])
+                      if f.get('grado_de_respaldo') and f['grado_de_respaldo'] not in allowed_support: vocab.append('grado='+f['grado_de_respaldo'])
+                  if kind=='DEC' and f.get('estado') and f['estado'] not in allowed_dec_states: vocab.append('estado='+f['estado'])
+                  if missing or vocab: bad.append((kind,str(p),missing,vocab))
+          print('FULL_ENTITY_AUDIT',{'total':total,'bad':len(bad)})
+          for x in bad: print('BAD',x)
+          out=['# NORMALIZACIÓN DE ESQUEMAS HISTÓRICOS — 2026-09-03','',
+               '**Estado:** `SCHEMA_NORMALIZATION_REPORT / NON_NORMATIVE`','',
+               'Se completaron campos obligatorios faltantes en siete entidades preexistentes usando únicamente información ya presente en los documentos, sus historiales o sus primeros commits.','',
+               'Los estados descriptivos no canónicos se conservaron en `estado_descriptivo_anterior` cuando fue necesario mapearlos al vocabulario constitucional.','',
+               f'Entidades SRC/HALL/DEC auditadas después de la normalización: **{total}**.','',
+               f'Incumplimientos restantes de campos/vocabularios controlados: **{len(bad)}**.','']
+          if bad:
+              for x in bad: out.append(f'- `{x[1]}` — missing={x[2]}; vocab={x[3]}')
+          else:
+              out.append('**PASS:** no quedan incumplimientos detectados por este control en SRC/HALL/DEC.')
+          out += ['','## Límite','',
+                  'La normalización de esquema no convierte en más verdadera una decisión ni elimina sus condiciones de revisión. Sólo hace que su representación cumpla el contrato documental vigente.']
+          Path('informes/HISTORICAL_ENTITY_SCHEMA_NORMALIZATION_2026-09-03.md').write_text('\n'.join(out)+'\n',encoding='utf-8')
+          if bad: raise SystemExit('schema debt remains')
+          PY
+          git config user.name lopezcarlton
+          git config user.email lopezcarlton@gmail.com
+          git add conocimiento/hallazgos conocimiento/decisiones informes/HISTORICAL_ENTITY_SCHEMA_NORMALIZATION_2026-09-03.md
+          git commit -m 'normalize historical entity schemas'
+          git push origin HEAD:main
