@@ -23,7 +23,7 @@ estado_de_acceso: disponible_en_web
 
 ## Evidencia de identidad
 
-El snapshot bibliográfico BIB001–BIB084 registra esta obra como `BIB016`. La ficha archivística del SIL identifica una ilustración fonética en español, con 11 páginas y 124 archivos WAV, y enlaza la versión en inglés de 2010 como traducción relacionada.
+La hoja bibliográfica maestra reconciliada el 2026-09-03 registra esta obra como `BIB016`. La ficha archivística del SIL identifica una ilustración fonética en español, con 11 páginas y 124 archivos WAV, y enlaza la versión en inglés de 2010 como traducción relacionada.
 
 ## Distinción bibliográfica
 
