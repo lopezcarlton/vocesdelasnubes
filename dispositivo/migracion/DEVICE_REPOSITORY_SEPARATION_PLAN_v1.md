@@ -1,7 +1,7 @@
 # DEVICE_REPOSITORY_SEPARATION_PLAN_v1
 
-**Estado:** `PLANNED / NON_DESTRUCTIVE / NOT_YET_EXECUTED`  
-**Versión interna:** 1.1  
+**Estado:** `SOURCE_IDENTITY_PASS_COMPLETE / WAITING_FOR_DEVICE_REPOSITORY`  
+**Versión interna:** 1.2  
 **Fecha:** 2026-09-03
 
 ## Objetivo
@@ -19,11 +19,11 @@ VOCES DE LAS NUBES = conocimiento + fuentes + decisiones
 DISPOSITIVO = implementación derivada
 ```
 
-No se crea un tercer "sistema de acervo".
+No se crea un tercer sistema de acervo.
 
-Las gramáticas, vocabularios, corpus, diccionarios, datasets documentales, normas y bibliografía se identifican desde `conocimiento/fuentes/` mediante `SRC-*`. El payload puede vivir en el repositorio o en una ubicación externa/restringida según derechos y acceso.
+Las gramáticas, vocabularios, corpus, diccionarios, normas y bibliografía se identifican desde `conocimiento/fuentes/` mediante `SRC-*`. El payload puede vivir en el repositorio o en una ubicación externa/restringida según derechos y acceso.
 
-El dispositivo conserva únicamente sus representaciones técnicas y los fixtures exactos necesarios para reproducibilidad.
+El dispositivo conserva sus representaciones técnicas y los fixtures exactos necesarios para reproducibilidad.
 
 ```text
 SOURCE_USED_BY_DEVICE != DEVICE_OWNED_KNOWLEDGE
@@ -48,7 +48,7 @@ Antes del corte, el nuevo repositorio técnico debe reproducir el cierre ya demo
 - 38/38 pruebas históricas;
 - `COR001 = ANALYSIS_TARGET_ONLY`.
 
-## Fase 0 — Ya realizada
+## Fase 0 — realizada
 
 - frontera constitucional formalizada;
 - `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO` vigente;
@@ -58,35 +58,37 @@ Antes del corte, el nuevo repositorio técnico debe reproducir el cierre ya demo
 - `KNOWLEDGE_CONSUMPTION_CONTRACT_v1.md` activo;
 - raíz del repositorio simplificada y sistemas derivados clasificados.
 
-## Fase 1 — Resolver fuentes que hoy están atrapadas dentro de `dispositivo/`
+## Fase 1 — identidad de fuentes críticas — realizada 2026-09-03
 
-Antes del corte, revisar únicamente los materiales que el dispositivo contiene y que podrían ser fuente documental o derivado neutral.
+La revisión del core y del runtime muestra que las fuentes externas centrales materializadas o citadas por el dispositivo ya pueden resolverse desde Voces sin ejecutar el runtime.
 
-Para cada caso hay que responder:
+Registros canónicos principales:
 
-1. ¿Existe ya un `SRC-*` en Voces?
-2. ¿Cuál es la fuente original, edición o versión?
-3. ¿Dónde vive el payload accesible al proyecto?
-4. ¿Puede redistribuirse públicamente?
-5. ¿Qué archivo del dispositivo es sólo una transformación técnica o fixture histórico?
+- `SRC-PICKETT-BLACK-MARCIAL-2001-GRAMATICA-POPULAR` — Gramática Popular / `BIB004`;
+- `SRC-PICKETT-2007-VOCABULARIO-ZAPOTECO-ISTMO` — Vocabulario / `BIB003`;
+- `SRC-DICTIONARIA-DIDXAZA-SPANISH-ENGLISH-DICTIONARY` — fuente de los inventarios Dictionaria y `DIC_VERB_2385`;
+- `SRC-BUENO-HOLLE-2019` — monografía, ubicación pública, DOI, licencia y hash de la copia de trabajo;
+- `SRC-PEREZ-BAEZ-CATA-BUENO-HOLLE-2015-XNEZA` — ortografía/palabra gráfica;
+- `SRC-PEREZ-BAEZ-2015-VALENCE-CHANGING-JUCHITAN` — cambio de valencia/causatividad;
+- `SRC-PEREZ-BAEZ-KAUFMAN-2016-VERB-CLASSES` — clases verbales usadas por la capa PBK;
+- `SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS` — descripción fonética de Juchitán.
 
-Casos prioritarios:
+Comprobaciones de las capas técnicas recuperadas:
 
-- Gramática Popular / Pickett–Black–Marcial;
-- Vocabulario zapoteco del Istmo;
-- Bueno Holle / BIB065;
-- Dictionaria;
-- fuentes fonéticas y morfológicas;
-- datasets léxicos de Pickett;
-- corpus externos utilizados por el dispositivo.
+- `BOUND` cita `BIB004_GRAMATICA_POPULAR` y `BIB054_DICTIONARIA`;
+- Morphology I cita `BIB059_PBK2016`, correspondiente al trabajo de Pérez Báez y Kaufman sobre clasificación verbal;
+- Morphology II cita Dictionaria, PBK2016 y Pérez Báez 2015;
+- `PERSON_POSSESSION_EXACT_REGISTRY` vuelve a `BIB004_GRAMATICA_POPULAR` con secciones/cuadros exactos;
+- el backfill Pickett permanece derivado técnico del Vocabulario;
+- `JUCHITAN_LINGUISTIC_CORE_v0_27` permanece compilación experimental y no fuente.
 
-Cuando el original sea restringido, basta con que el `SRC` conserve identidad, ubicación, acceso, hash cuando exista y restricciones conocidas. **No hay que copiar el archivo al repositorio público para que Voces sea dueño epistemológico de la fuente.**
+Los aliases históricos `BIB054`, `BIB059`, `BIB060` usados dentro del dispositivo **no deben promoverse ni corregirse por inferencia en Voces** hasta reconciliar la hoja bibliográfica maestra mediante `BL-026`. Los `SRC-*` bastan para resolver la identidad documental durante el corte.
 
-No retirar de `dispositivo/` la única copia identificable de un material hasta que su fuente quede resuelta en Voces.
+No es requisito reingerir de golpe todo el contenido de estas obras. La lectura/adjudicación se hará incrementalmente cuando una pregunta de investigación lo requiera.
 
-## Fase 2 — Crear el repositorio técnico separado
+## Fase 2 — crear el repositorio técnico separado — bloqueada por infraestructura
 
-Mover el árbol activo de `dispositivo/` preservando, en la medida posible, historia y referencias al repo/commit de origen.
+Crear un repositorio técnico separado bajo el control de Emiliano y mover el árbol activo de `dispositivo/`, preservando en la medida posible historia y referencias al repo/commit de origen.
 
 Debe contener como mínimo:
 
@@ -97,11 +99,14 @@ Debe contener como mínimo:
 - `REENTRY_TECNICO.md`;
 - `BACKLOG_TECNICO.md`;
 - `KNOWLEDGE_CONSUMPTION_CONTRACT_v1.md`;
-- workflow manual del replay histórico.
+- workflow manual del replay histórico;
+- prompts técnicos históricos.
 
-Los prompts técnicos históricos ya están bajo `dispositivo/prompts/` y deben viajar con esta capa.
+**Bloqueo actual:** las herramientas disponibles en esta sesión permiten escribir dentro de repositorios existentes pero no crear un repositorio GitHub nuevo. No existe aún un repositorio técnico destino bajo `lopezcarlton`.
 
-## Fase 3 — Vincular el estado de Voces
+No utilizar `lopezcarlton/ELDP` como destino.
+
+## Fase 3 — vincular el estado de Voces
 
 Toda versión reproducible del dispositivo debe registrar:
 
@@ -112,9 +117,7 @@ KNOWLEDGE_SOURCE_COMMIT = <commit exacto>
 
 Cuando una compilación dependa de fuentes concretas, puede registrar además sus `SRC-*` correspondientes.
 
-No hace falta otro manifiesto de autoridad si la procedencia puede reconstruirse desde esos `SRC` y el commit de conocimiento.
-
-## Fase 4 — Verificar antes del corte
+## Fase 4 — verificar antes del corte
 
 En el repositorio técnico separado:
 
@@ -128,7 +131,7 @@ En el repositorio técnico separado:
 
 **No retirar el dispositivo activo de Voces hasta que esta fase pase.**
 
-## Fase 5 — Retirar la copia activa de Voces y aplicar permisos
+## Fase 5 — retirar la copia activa de Voces y aplicar permisos
 
 Después de la verificación:
 
