@@ -25,9 +25,11 @@ Leer, en este orden:
 11. `conocimiento/VALIDACION.md`
 12. `conocimiento/TEORIA.md`
 13. `conocimiento/BIBLIOGRAFIA.md`
-14. `POST_IRMA_INTAKE_CHECKPOINT_2026-09-02.md`
+14. `POST_IRMA_ADJUDICATION_CHECKPOINT_2026-09-03.md`
 
-Para reconstruir específicamente el estado anterior a Irma, usar después `PRE_IRMA_POST_MIGRATION_CHECKPOINT_2026-09-02.md` y la rama congelada indicada allí.
+Para reconstruir la primera captura post-Irma usar `POST_IRMA_INTAKE_CHECKPOINT_2026-09-02.md`.
+
+Para reconstruir específicamente el estado anterior a Irma, usar `PRE_IRMA_POST_MIGRATION_CHECKPOINT_2026-09-02.md` y la rama congelada indicada allí.
 
 Leer las `SRC`, `HALL`, `DEC`, `VAL`, `TEO` u otras entidades pertinentes a la pregunta concreta. Si una ruta no existe, no inventarla ni sustituirla silenciosamente.
 
@@ -81,39 +83,74 @@ COR001 != RULE_DISCOVERY_SOURCE
 
 No reanudar por defecto la resolución caso por caso de huecos de COR001.
 
-## 5. G/P y COR002
+## 5. Alcance activo de COR002 y materiales nuevos
 
-G/P continúa como arquitectura de trabajo revisable.
+Existe una decisión vigente desde el 3 de septiembre de 2026:
 
-Las fronteras exactas G1–G5 y P1–P5 no están cerradas. No derivar una tabla definitiva de P a partir de bibliografía general sin adjudicación explícita.
+`conocimiento/decisiones/DEC-ALCANCE-ACTIVO-PRINCIPIANTES-ESCUCHA-JUCHITAN.md`
 
-La idea de COR002 como material básico para principiantes sigue siendo una hipótesis de trabajo fuerte para discusión, no una especificación irrevocable.
+```text
+ACTIVE_LANGUAGE_LEVEL = BEGINNER
+ACTIVE_PRIMARY_MODALITY = LISTENING
+ACTIVE_BASELINE_VARIETY = JUCHITAN
+ACTIVE_LITERACY_TRACK = false
+```
 
-## 6. Públicos escolares — cambio vigente post-Irma
+Por tanto, la fase actual desarrolla **materiales de escucha para principiantes en la variante de Juchitán**.
 
-Desde el 2 de septiembre de 2026 existe una decisión nueva y vigente:
+Esto no niega futuras líneas de lectoescritura, niveles avanzados o trabajo multivarietal; simplemente las mantiene fuera del alcance activo actual.
+
+G/P continúa como arquitectura de trabajo revisable. Las fronteras exactas P1–P5 no están cerradas y `BL-021` permanece abierto. No derivar una tabla definitiva de P a partir de bibliografía general sin adjudicación explícita.
+
+## 6. Públicos escolares
+
+Sigue vigente:
 
 `conocimiento/decisiones/DEC-PUBLICOS-ESCOLARES-MULTIETARIOS.md`
 
-Voces de las Nubes debe diseñarse para **públicos escolares diferenciados**, además de personas con transmisión intergeneracional interrumpida.
+Voces de las Nubes debe diseñarse para **públicos escolares diferenciados**, además de otros aprendices. La educación secundaria técnica es el primer anclaje institucional prioritario por la relación real de Casa de las Ciencias de Oaxaca con ese nivel, pero no es público exclusivo.
 
-La educación secundaria técnica es el primer anclaje institucional prioritario por la relación real de Casa de las Ciencias de Oaxaca con ese nivel, pero no es público exclusivo.
+Durante la fase actual, la segmentación escolar se investiga dentro del alcance común de **principiantes + escucha + Juchitán**.
 
 ```text
 AGE_GROUP != LANGUAGE_LEVEL
 SCHOOL_GRADE != G_LEVEL
 SCHOOL_GRADE != P_LEVEL
+BEGINNER_LISTENING != ONE_AGE_GROUP
 ```
 
-Las bandas concretas de edad, perfiles escolares y metodologías permanecen abiertas en `BL-023`.
+Las bandas concretas de edad y adaptaciones permanecen abiertas en `BL-023`.
 
-## 7. Reunión con Irma Pineda
+## 7. Memorización — deuda pedagógica prioritaria
 
-La reconstrucción disponible está en:
+La memoria y la recuperación de expresiones forman parte deliberada del método actual, pero el proyecto no considera suficiente la repetición mecánica.
 
-`conocimiento/fuentes/SRC-IRMA-PINEDA-REUNION-2026-09-02.md`
+`BL-025` debe justificar pedagógicamente la función de la memorización frente a la crítica al tedio y la pasividad presente en el entorno docente constructivista de Casa de las Ciencias.
 
-Es memoria posterior de Emiliano, no transcripción literal.
+Mapa inicial:
+
+`informes/MEMORIZATION_PEDAGOGICAL_JUSTIFICATION_RESEARCH_MAP_v0_1.md`
+
+Distinciones vigentes de investigación:
+
+```text
+ROTE_RESTUDY != RETRIEVAL_PRACTICE
+RETRIEVAL_PRACTICE != SPACED_PRACTICE
+MEMORIZATION != COMPLETE_PEDAGOGY
+RETENTION_EFFECT != LEARNER_ENGAGEMENT
+```
+
+No presentar todavía como resuelta la compatibilidad con el constructivismo. Debe fundamentarse con bibliografía, diseño real del método y pruebas con aprendices.
+
+## 8. Reunión con Irma Pineda
+
+Las fuentes disponibles son:
+
+- `conocimiento/fuentes/SRC-IRMA-PINEDA-REUNION-2026-09-02.md`
+- `conocimiento/fuentes/SRC-IRMA-PINEDA-NOTAS-LINGUISTICAS-2026-09-03.md`
+- `conocimiento/fuentes/SRC-EMILIANO-DECISIONES-ALCANCE-2026-09-03.md`
+
+Las dos primeras son reconstrucciones posteriores de la reunión, no transcripción literal.
 
 ```text
 MEMORIA_POSTERIOR != CITA_LITERAL
@@ -121,11 +158,77 @@ SUGERENCIA_DE_IRMA != DECISION_AUTOMATICA
 IDEA_DE_EMILIANO != AFIRMACION_DE_IRMA
 ```
 
-La lista exacta de palabras y ejemplos lingüísticos de la reunión sigue pendiente.
+La lista de palabras y observaciones lingüísticas de Irma **ya fue capturada**. Incluye materiales sobre trato social, `Lia`/`dxe`, `bitaagu'`/`biseegu'`, `ñaa`/`la'dxi`, el neologismo `bichuga le` y `qui`/`qué`.
 
-Hasta ahora sólo se promovió la decisión de públicos escolares. Las demás líneas —Alfabeto Popular y escritores contemporáneos, `qui/qué`, El Espinal, corpus espontáneo, co-diseño, progresión auditiva e instituciones— permanecen en distintos estados de investigación o candidatura según `POST_IRMA_INTAKE_CHECKPOINT_2026-09-02.md`.
+No todas esas notas tienen el mismo estado. Ver `HALL-0013` a `HALL-0019`.
 
-## 8. BIB065 / Bueno Holle
+## 9. Negación `qui` / `qué` — equivalencia cerrada
+
+La equivalencia queda adoptada mediante:
+
+- `SRC-NEGACION-QUI-QUE-ATESTACIONES-2026-09-03`
+- `HALL-0019`
+- `DEC-NEGACION-QUI-QUE-EQUIVALENTES`
+
+```text
+QUI_QUE_NEGATION_EQUIVALENT = true
+MARK_OTHER_FORM_AS_INCORRECT_BY_VARIANT_ALONE = false
+DIALECT_DISTRIBUTION = OPEN
+HISTORICAL_RELATION = OPEN
+PROJECT_EDITORIAL_DEFAULT = NOT_DECIDED_HERE
+```
+
+No reabrir la equivalencia por defecto. Sí pueden seguir investigándose distribución, frecuencia, historia y preferencia editorial.
+
+## 10. Norma de escritura de 2016 y ortografía contemporánea
+
+Emiliano confirmó que la **`Norma del sistema de escritura de la lengua zapoteca` de 2016** es el documento al que Irma se refería como versión reciente del sistema de escritura utilizada por autores contemporáneos.
+
+```text
+NORMA_2016_IDENTIFIED_AS_IRMA_REFERENCE = true
+NORMA_2016_FULL_TEXT_IN_PROJECT = false
+```
+
+Entidades principales:
+
+- `HALL-0010`
+- `HALL-0021`
+- `SRC-DICTIONARIA-NORMA-ESCRITURA-2016-REFERENCE`
+- `SRC-INALI-INFORME-LOGROS-2016-NORMA-PLANICIE-COSTERA`
+
+`BL-024` ya no pregunta qué documento es: debe **localizar e ingerir el texto completo de la Norma 2016**, reconstruir su procedencia y adjudicar cómo modifica la política de fuentes ortográficas contemporáneas.
+
+El **Alfabeto Popular de 1956** queda como antecedente histórico fundamental. Emiliano ya descargó una copia, todavía no incorporada al repositorio.
+
+No asumir:
+
+```text
+CONTEMPORARY_AUTHOR_TEXT -> AUTOMATIC_CORRECTION_RULE
+NORMA_REFERENCE -> FULL_NORM_CONTENT_KNOWN
+```
+
+## 11. Variedades
+
+El baseline activo queda reafirmado:
+
+```text
+CURRENT_BASELINE = JUCHITAN
+ESPINAL_RESEARCH = ALLOWED
+MULTIVARIETAL_MERGE = false
+```
+
+La investigación dialectológica sobre El Espinal y otras localidades puede continuar, pero no debe mezclar formas con el corpus juchiteco sin metadatos y decisión explícita.
+
+## 12. Bibliografía SIL / ILV
+
+La página de publicaciones de SIL México para zapoteco del Istmo ya fue cartografiada en:
+
+- `conocimiento/fuentes/SRC-SIL-MEXICO-CATALOGO-ZAPOTECO-ISTMO-2026-09-03.md`
+- `informes/SIL_ISTHMUS_ZAPOTEC_BIBLIOGRAPHY_SCAN_v0_1.md`
+
+Antes de asignar nuevos `BIB###`, deduplicar contra la hoja bibliográfica operativa. El catálogo sirve para localizar fuentes; no confiere el mismo peso epistemológico a todas ellas.
+
+## 13. BIB065 / Bueno Holle
 
 La fuente registrada dentro del Sistema de Conocimiento es `conocimiento/fuentes/SRC-BUENO-HOLLE-2019.md`.
 
@@ -133,32 +236,7 @@ Los artefactos BIB065 bajo `dispositivo/` pueden reconstruir genealogía y candi
 
 `BL-022` conserva abierta la investigación sobre relevancia pedagógica de sus capas analíticas finas.
 
-## 9. Ortografía post-Irma
-
-`BL-024` investiga la versión vigente del Alfabeto Popular y el posible uso de literatura contemporánea como nueva capa de evidencia ortográfica.
-
-No asumir:
-
-```text
-CONTEMPORARY_AUTHOR_TEXT -> AUTOMATIC_CORRECTION_RULE
-qui == qué -> GLOBAL_EXECUTABLE_RULE
-```
-
-Primero localizar fuentes, conservar variedad/género/edición/procedencia y adjudicar.
-
-## 10. Variedades
-
-El foco vigente no se ha cambiado silenciosamente:
-
-```text
-CURRENT_FOCUS = JUCHITAN
-ESPINAL_EXPANSION = CANDIDATE_RESEARCH_LINE
-MULTIVARIETAL_ARCHITECTURE = NOT_YET_ADOPTED
-```
-
-No mezclar formas de Juchitán, El Espinal, Unión Hidalgo u otras localidades sin metadatos y decisión explícita.
-
-## 11. Estado pre-Irma congelado
+## 14. Estado pre-Irma congelado
 
 ```text
 branch = checkpoint/pre-irma-post-migration-2026-09-02
@@ -169,17 +247,17 @@ Ver `PRE_IRMA_POST_MIGRATION_CHECKPOINT_2026-09-02.md`.
 
 Esa referencia sirve para comparar cambios y no debe confundirse con política vigente.
 
-## 12. Ruta inmediata
+## 15. Ruta inmediata
 
-1. completar la captura de la reunión cuando Emiliano aporte la lista de palabras/ejemplos;
-2. investigar `BL-023` con docentes, estudiantes y bibliografía antes de fijar bandas escolares;
-3. localizar el documento contemporáneo de escritura y adjudicar `BL-024` antes de modificar el Corrector;
-4. evaluar modelo de co-diseño y relación corpus natural → adaptación pedagógica sin promoverlos por defecto;
-5. mantener abierta la investigación de dificultad auditiva, P y BIB065;
+1. profundizar `BL-025` hasta formular una justificación pedagógica de la memoria que pueda discutirse con docentes;
+2. investigar `BL-023` dentro de principiantes + escucha antes de fijar bandas escolares;
+3. localizar el texto completo de la Norma 2016 y adjudicar `BL-024` antes de cambiar reglas ortográficas del Corrector;
+4. corroborar selectivamente las notas lingüísticas de Irma que siguen en `pendiente_de_validacion`;
+5. continuar investigación de corpus natural, co-diseño, dificultad auditiva, P y BIB065 sin convertir hipótesis en políticas;
 6. publicar estados aprobados mediante commits identificables;
 7. permitir que el dispositivo consuma sólo conocimiento adjudicado mediante `KNOWLEDGE_SOURCE_COMMIT`.
 
-## 13. Trabajo técnico
+## 16. Trabajo técnico
 
 No cargar por defecto el estado técnico para conversaciones sobre bibliografía, pedagogía, corpus o metodología humana.
 
