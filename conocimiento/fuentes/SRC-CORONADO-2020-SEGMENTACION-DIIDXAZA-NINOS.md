@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-CORONADO-2020-SEGMENTACION-DIIDXAZA-NINOS
 tipo: fuente_bibliografica
+bib_id: BIB089
 titulo: "Análisis de la segmentación de palabras en textos escritos en Di'dxazá (lengua zapoteca) por niños bilingües de quinto grado de primaria"
 autor_o_participantes:
   - Nancy Coronado Cisneros
@@ -21,6 +22,8 @@ descripcion: >
 nivel_de_fuente: primaria
 estado_de_acceso: disponible
 ```
+
+`BIB089` fue asignado al sincronizar la hoja bibliográfica maestra el 2026-09-03. El identificador estable `SRC-CORONADO-2020...` conserva la fecha de publicación del repositorio; la ficha bibliográfica usa 2019, año indicado en la tesis.
 
 ## Relevancia
 
