@@ -1,9 +1,9 @@
 # METODOLOGIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.1  
+**Versión:** 1.2  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-08-31  
+**Fecha:** 2026-09-03  
 
 ---
 
@@ -940,12 +940,14 @@ Permanecen pendientes de consolidación o prueba:
 - sistema completo de evaluación con aprendices;
 - procedimiento uniforme de consentimiento, reconocimiento y uso;
 - controlador externo de cobertura;
-- validación a escala del generador vigente;
+- evaluación futura de herramientas de producción de borradores después de disponer de escenas de referencia aceptadas suficientes;
 - formalización del criterio exacto de secuenciación entre funciones;
 - pruebas de transferencia y retención;
 - protocolo operativo del corpus oral independiente;
 - protocolo de estímulos no lingüísticos;
 - criterios de segmentación y anotación prosódica del nuevo corpus oral.
+
+No existe actualmente un "generador vigente" cuya validación a escala sea requisito del trabajo metodológico de Voces. La evaluación técnica de herramientas concretas pertenece al repositorio `lopezcarlton/didxaza-dispositivo`; sus consecuencias pedagógicas sólo vuelven a Voces mediante adjudicación.
 
 ---
 
