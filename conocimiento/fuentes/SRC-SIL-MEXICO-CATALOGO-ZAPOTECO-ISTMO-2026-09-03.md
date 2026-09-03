@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-SIL-MEXICO-CATALOGO-ZAPOTECO-ISTMO-2026-09-03
 tipo: catalogo_bibliografico_web
+bib_id: BIB091
 titulo: "SIL México — Zapoteco del Istmo y publicaciones relacionadas"
 autor_o_participantes:
   - SIL México / Instituto Lingüístico de Verano
@@ -16,6 +17,8 @@ descripcion: >
 nivel_de_fuente: secundaria
 estado_de_acceso: acceso_web
 ```
+
+`BIB091` fue asignado al sincronizar la hoja bibliográfica maestra el 2026-09-03.
 
 ## Materiales confirmados en la pasada del 2026-09-03
 
