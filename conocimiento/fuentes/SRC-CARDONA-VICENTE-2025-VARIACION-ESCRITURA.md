@@ -26,7 +26,7 @@ licencia_registrada_en_repositorio: CC_BY_NC_SA_4_0
 estado_de_acceso: disponible
 ```
 
-`BIB064` está atestiguado para este capítulo en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
+`BIB064` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03.
 
 ## Evidencia relevante
 
