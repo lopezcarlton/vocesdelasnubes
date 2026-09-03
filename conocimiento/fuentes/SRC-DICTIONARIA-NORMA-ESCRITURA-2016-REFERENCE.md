@@ -6,13 +6,14 @@ tipo: fuente_digital_documental
 titulo: "Dictionaria — Didxazá general: phonology and orthographic representations"
 autor_o_participantes:
   - "Dictionaria / Diidxazá general contribution"
+fecha: 2016
 fecha_de_consulta: 2026-09-02
 ubicacion: "https://dictionaria.clld.org/contributions/didxazageneral"
 descripcion: >
   Página de documentación del diccionario Didxazá que declara explícitamente que sus
   headwords siguen las pautas de un borrador de 2016 de la Norma del sistema de escritura
   de la lengua zapoteca (Cata et al. 2016 ms), basada a su vez en el Alfabeto Popular de 1956.
-nivel_de_fuente: secundaria_para_existencia_y_uso_de_la_norma
+nivel_de_fuente: secundaria
 estado_de_acceso: disponible_en_web
 ```
 

@@ -19,7 +19,7 @@ ubicacion: "Repositorio Institucional UAQ — handle 123456789/13070; copia de c
 descripcion: >
   Capítulo arbitrado sobre las consecuencias de la variación dialectal del zapoteco del
   Istmo para el diseño de la escritura, apoyado en la dialectología de Cardona (2020).
-nivel_de_fuente: secundaria_analitica_con_base_empirica_previa
+nivel_de_fuente: secundaria
 disponibilidad: acceso_abierto_en_repositorio
 licencia_registrada_en_repositorio: CC_BY_NC_SA_4_0
 estado_de_acceso: disponible

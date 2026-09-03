@@ -13,7 +13,7 @@ descripcion: >
   Informe institucional de actividades de INALI. En la estrategia de normalización de
   lenguas indígenas registra una reunión para revisar la traducción del documento final
   de la norma del sistema de escritura del zapoteco de la Planicie Costera.
-nivel_de_fuente: primaria_institucional
+nivel_de_fuente: primaria
 estado_de_acceso: disponible_en_web
 ```
 

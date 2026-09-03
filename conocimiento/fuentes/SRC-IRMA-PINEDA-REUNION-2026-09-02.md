@@ -13,7 +13,7 @@ descripcion: >
   Reconstrucción posterior dictada por Emiliano López Carlton de una conversación con Irma Pineda
   sobre públicos escolares, variantes del didxazá, construcción del corpus, trabajo de campo,
   articulación institucional, fonotecas y criterios posibles para ampliar las fuentes ortográficas.
-nivel_de_fuente: memoria_posterior
+nivel_de_fuente: secundaria
 estado_de_acceso: disponible_en_reconstruccion
 ```
 

@@ -15,7 +15,7 @@ descripcion: >
   Tesis doctoral dedicada a definir zonas dialectales del zapoteco del Istmo mediante
   documentación en nueve municipios, análisis de isoglosas fonológicas y léxicas y
   análisis dialectométrico.
-nivel_de_fuente: primaria_de_investigacion
+nivel_de_fuente: primaria
 disponibilidad: acceso_abierto
 licencia_registrada_en_repositorio: CC_BY_NC_ND_4_0
 estado_de_acceso: disponible

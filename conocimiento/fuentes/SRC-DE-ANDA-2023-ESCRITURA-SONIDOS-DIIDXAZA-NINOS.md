@@ -6,6 +6,7 @@ tipo: fuente_bibliografica
 titulo: "Análisis de la producción escrita de sonidos distintivos fricativos y africados del Di´dxazá en niños bilingües alfabetizados en español"
 autor_o_participantes:
   - Tania Mirelle De Anda Trejo
+fecha: 2022
 fecha_de_publicacion_repositorio: 2023-02-01
 fecha_indicada_en_tesis: 2022
 institucion: "Universidad Autónoma de Querétaro"
@@ -18,7 +19,7 @@ descripcion: >
   del diidxazá por 27 niños bilingües zapoteco-español de 10 a 12 años de Rancho El Llano,
   alfabetizados en español. Incluye tareas de escritura espontánea, reconocimiento gráfico,
   perfil de dominancia bilingüe y entrevistas.
-nivel_de_fuente: primaria_de_investigacion
+nivel_de_fuente: primaria
 estado_de_acceso: disponible
 ```
 

@@ -6,6 +6,7 @@ tipo: fuente_bibliografica
 titulo: "Análisis de la segmentación de palabras en textos escritos en Di'dxazá (lengua zapoteca) por niños bilingües de quinto grado de primaria"
 autor_o_participantes:
   - Nancy Coronado Cisneros
+fecha: 2019
 fecha_de_publicacion_repositorio: 2020-01-13
 fecha_indicada_en_tesis: 2019
 institucion: "Universidad Autónoma de Querétaro"
@@ -17,7 +18,7 @@ descripcion: >
   Tesis sobre segmentación gráfica en producciones escritas por niños bilingües
   zapoteco-español de quinto y sexto grado, alfabetizados inicialmente en español,
   en una primaria bilingüe de Rancho El Llano, San Blas Atempa, Oaxaca.
-nivel_de_fuente: primaria_de_investigacion
+nivel_de_fuente: primaria
 estado_de_acceso: disponible
 ```
 
