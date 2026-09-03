@@ -1,7 +1,7 @@
 # DEVICE_REPOSITORY_SEPARATION_PLAN_v1
 
 **Estado:** `PLANNED / NON_DESTRUCTIVE / NOT_YET_EXECUTED`  
-**Fecha:** 2026-09-02
+**Fecha:** 2026-09-03
 
 ## Objetivo
 
@@ -43,6 +43,56 @@ Antes del corte, el repositorio técnico nuevo debe reproducir al menos el cierr
 - cero referencias `provenance` desde `conocimiento/` hacia `dispositivo/` en la auditoría post-limpieza;
 - contrato de consumo definido en `dispositivo/KNOWLEDGE_CONSUMPTION_CONTRACT_v1.md`.
 
+## Fase 0.5 — Reubicar conceptualmente el acervo compartido antes del corte
+
+**Esta fase es obligatoria y precede a la creación del repositorio técnico definitivo.**
+
+La migración histórica dejó dentro de `dispositivo/` materiales que no son propiedad epistemológica del dispositivo: fuentes bibliográficas, datasets documentales, extracciones y derivados utilizados para construir el runtime.
+
+Antes de separar físicamente repositorios debe ejecutarse la pasada definida en:
+
+`informes/SOURCE_LIBRARY_REHOMING_PLAN_v0_1.md`
+
+Cada artefacto fuente o fuente-derivado relevante debe clasificarse como:
+
+```text
+VOCES_SOURCE
+VOCES_NEUTRAL_DERIVATIVE
+VOCES_KNOWLEDGE_ENTITY
+DEVICE_TECHNICAL_DERIVATIVE
+DEVICE_HISTORICAL_FIXTURE
+RESTRICTED_EXTERNAL_SOURCE
+UNRESOLVED
+```
+
+La regla es:
+
+```text
+SOURCE_USED_BY_DEVICE != DEVICE_OWNED_KNOWLEDGE
+```
+
+Casos prioritarios mínimos:
+
+- Gramática Popular / Pickett-Black-Marcial;
+- Vocabulario zapoteco del Istmo;
+- Bueno Holle / BIB065;
+- Dictionaria;
+- fuentes fonéticas y morfológicas usadas por el dispositivo;
+- datasets léxicos de Pickett;
+- cualquier corpus externo o archivo documental usado para construir registries o bases.
+
+### Condición de seguridad
+
+No mover automáticamente un payload al repositorio público de Voces. Antes deben registrarse licencia, derecho de redistribución, versión, hash, ubicación y condiciones de acceso.
+
+Cuando un original no pueda publicarse, el Sistema de Conocimiento debe conservar su `SRC`, identidad exacta, referencia, hash cuando exista y ubicación controlada. El payload puede vivir en un acervo privado o almacenamiento restringido gobernado por Voces sin convertirse por ello en una tercera autoridad.
+
+### Condición de corte
+
+No eliminar ni retirar de `dispositivo/` la única copia identificable de una fuente o derivado documental necesario mientras su clasificación siga `UNRESOLVED`.
+
+El resultado de esta fase debe permitir que un chat o investigador de Voces estudie las fuentes relevantes sin tener que entrar al repositorio técnico para descubrir qué documentos alimentaron el sistema.
+
 ## Fase 1 — Crear repositorio técnico
 
 Crear un repositorio técnico separado bajo el control de Emiliano. El nombre no se fija en este plan para no convertir una decisión de nomenclatura aún no tomada en arquitectura.
@@ -62,7 +112,7 @@ Debe contener como mínimo:
 - `KNOWLEDGE_CONSUMPTION_CONTRACT_v1.md`;
 - workflow manual del replay histórico.
 
-## Fase 2 — Vincular conocimiento aprobado
+## Fase 2 — Vincular conocimiento y acervo aprobados
 
 El repositorio técnico no debe copiar silenciosamente el estado canónico de Voces como una segunda autoridad.
 
@@ -71,9 +121,10 @@ Cada versión técnica deberá registrar:
 ```text
 KNOWLEDGE_SOURCE_REPOSITORY = lopezcarlton/vocesdelasnubes
 KNOWLEDGE_SOURCE_COMMIT = <commit aprobado consumido>
+SOURCE_LIBRARY_MANIFEST_VERSION = <versión/commit del acervo utilizado>
 ```
 
-Puede existir un snapshot técnico derivado por razones de ejecución, pero deberá identificarse como copia/compilación derivada y conservar la procedencia al commit canónico.
+Puede existir un snapshot técnico derivado por razones de ejecución, pero deberá identificarse como copia/compilación derivada y conservar la procedencia al commit canónico y al manifiesto de fuentes.
 
 ## Fase 3 — Verificación antes del corte
 
@@ -84,7 +135,8 @@ En el repositorio técnico separado:
 3. ejecutar la cadena de 38 pruebas;
 4. comprobar rutas del reentry técnico;
 5. comprobar que ninguna instrucción técnica conceda autoridad de escritura sobre Voces;
-6. producir un `SEPARATION_VERIFICATION` con los commits de origen y destino.
+6. comprobar que toda fuente documental requerida tenga owner/clasificación resuelta;
+7. producir un `SEPARATION_VERIFICATION` con los commits de origen y destino.
 
 **No retirar el dispositivo activo de Voces hasta que esta fase pase.**
 
@@ -94,7 +146,7 @@ Después de la verificación:
 
 - retirar de `main` la copia activa del dispositivo o sustituirla por una referencia/archivo mínimo según convenga;
 - conservar en Git la historia previa y el branch pre-Irma;
-- dejar en Voces únicamente la interfaz de autoridad necesaria para indicar dónde vive el sistema derivado;
+- dejar en Voces la interfaz de autoridad y el acervo/manifiesto necesarios para identificar las fuentes compartidas;
 - actualizar `README.md`, `INICIAR_AQUI_CHAT_NUEVO.md` y documentos constitucionales sólo si la ubicación física exige ajustar enlaces;
 - no trasladar documentos técnicos a `conocimiento/` para “no perderlos”.
 
@@ -106,6 +158,10 @@ Objetivo de permisos:
 vocesdelasnubes:
   knowledge curators = write
   device developers = read only by default
+
+source vault privado, si existe:
+  knowledge/source curators = write
+  device developers = read only cuando sea necesario
 
 technical device repository:
   approved device developers = write
@@ -121,17 +177,21 @@ La separación se considera terminada cuando:
 DEVICE_REPO_REPLAY = PASS
 DEVICE_REPO_TECHNICAL_TESTS = PASS
 KNOWLEDGE_SOURCE_COMMIT = EXPLICIT
+SOURCE_LIBRARY_MANIFEST_VERSION = EXPLICIT
+SOURCE_OWNERSHIP_UNRESOLVED_CRITICAL = 0
 CANONICAL_PROVENANCE_TO_DEVICE = 0
 DEVICE_DEVELOPER_CANONICAL_WRITE_BY_DEFAULT = false
 VOCES_REENTRY_DOES_NOT_REQUIRE_DEVICE_REPO = true
 DEVICE_REENTRY_CAN_RESOLVE_APPROVED_KNOWLEDGE = true
+VOCES_CAN_RESOLVE_SHARED_SOURCES_WITHOUT_DEVICE_REPO = true
 ```
 
 ## Lo que este plan no autoriza
 
 - no cambia P1–P5;
-- no adjudica BIB065;
-- no incorpora la reunión con Irma;
+- no adjudica automáticamente BIB065;
+- no convierte un dataset técnico en fuente canónica por proximidad;
 - no convierte el runtime histórico en arquitectura futura;
+- no permite publicar materiales con derechos no verificados;
 - no permite borrar genealogía sólo para simplificar el repositorio;
-- no autoriza un corte físico sin replay/verificación previa.
+- no autoriza un corte físico sin replay, verificación y pasada de source ownership previas.
