@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-DE-ANDA-2023-ESCRITURA-SONIDOS-DIIDXAZA-NINOS
 tipo: fuente_bibliografica
+bib_id: BIB084
 titulo: "Análisis de la producción escrita de sonidos distintivos fricativos y africados del Di´dxazá en niños bilingües alfabetizados en español"
 autor_o_participantes:
   - Tania Mirelle De Anda Trejo
@@ -22,6 +23,8 @@ descripcion: >
 nivel_de_fuente: primaria
 estado_de_acceso: disponible
 ```
+
+`BIB084` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03. El identificador estable `SRC-DE-ANDA-2023...` conserva la fecha de publicación en el repositorio; la ficha bibliográfica usa 2022, año indicado en la tesis.
 
 ## Hallazgos reportados en el resumen institucional
 
