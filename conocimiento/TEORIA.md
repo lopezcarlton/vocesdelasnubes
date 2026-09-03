@@ -1,9 +1,9 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.1  
+**Versión:** 1.2  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-08-21  
+**Fecha:** 2026-09-03  
 
 ---
 
@@ -34,12 +34,14 @@ Se retoma la hipótesis del output.
 
 La producción obliga al aprendiz a notar vacíos entre lo que quiere decir y lo que puede construir.
 
-Esta aplicación fundamenta:
+Como aplicación de trabajo del proyecto, este marco ha contribuido a explorar:
 
 - pausas de producción;
 - recuperación activa;
 - diseño de enunciados producibles;
 - comparación con un modelo.
+
+La eficacia y combinación concreta de estas prácticas dentro de Voces debe seguir evaluándose con bibliografía específica y aprendices; no se atribuye a Swain una receta didáctica cerrada para el proyecto.
 
 ## 2.3 Keren Rice, Leanne Hinton, Julia Sallabank y enfoques de revitalización
 
@@ -99,7 +101,7 @@ El proyecto adopta una postura crítica:
 # 3. Conceptos adoptados
 
 - Input comprensible.
-- Producción como mecanismo de aprendizaje.
+- Producción como mecanismo relevante de aprendizaje.
 - Noticing derivado del intento de producción.
 - Filtro afectivo y aprendizaje de baja presión.
 - Reutilización de patrones.
@@ -129,11 +131,11 @@ Se descarta como proceso central de creación.
 
 ## 4.4 Exposición pasiva como método suficiente
 
-Se descarta porque la producción cumple una función específica.
+Se descarta porque la producción y la recuperación cumplen funciones que deben evaluarse dentro de una pedagogía más amplia.
 
 ## 4.5 Fuente bibliográfica como autoridad absoluta
 
-Se descarta para usos contemporáneos cuando contradice evidencia comunitaria.
+Se descarta para usos contemporáneos cuando contradice evidencia comunitaria de autoridad pertinente.
 
 ## 4.6 Herramientas automáticas como evidencia
 
@@ -146,8 +148,8 @@ Se descarta considerar sus resultados como validación lingüística o teórica.
 Los marcos teóricos influyen en:
 
 - prioridad de escucha;
-- creación de pausas;
-- diseño para producción;
+- exploración de pausas y producción;
+- diseño de enunciados producibles;
 - selección de situaciones reales;
 - reconocimiento de hablantes como coautores;
 - uso crítico de bibliografía;
@@ -157,27 +159,40 @@ Los marcos teóricos influyen en:
 
 # 6. Influencia sobre el corpus
 
-La teoría contribuyó a reemplazar:
+La evolución teórica y metodológica contribuyó a reemplazar:
 
-- frases aisladas por microescenas;
-- temas por funciones;
-- cantidad por productividad;
-- traducción por elicitación;
-- repetición superficial por reutilización estructural.
+- frases aisladas como unidad principal por **escenas conversacionales completas**;
+- temas como único organizador por funciones comunicativas y objetivos;
+- cantidad por productividad y reutilización;
+- traducción lineal como molde por elicitación y co-diseño sensibles al Didxazá;
+- repetición superficial como único criterio por reutilización estructural y recuperación contextualizada.
+
+Las **microescenas** permanecen disponibles como fragmentos derivados, unidades de práctica o estímulos breves cuando resultan útiles. No son la unidad primaria obligatoria de COR002; esa función corresponde actualmente a la conversación completa conforme a `CORPUS.md`.
 
 ---
 
 # 7. Influencia sobre la pedagogía
 
-La pedagogía vigente se apoya en:
+La pedagogía vigente trabaja con una combinación revisable de:
 
 - comprensión progresiva;
-- recuperación activa;
-- repetición espaciada;
-- baja presión;
-- producción;
-- transferencia de patrones;
-- contexto comunicativo.
+- escucha de baja presión;
+- producción oral;
+- recuperación de expresiones y patrones;
+- reutilización y transferencia;
+- contexto comunicativo;
+- repetición y espaciamiento cuando estén pedagógicamente justificados para la tarea y el público.
+
+No se considera cerrado todavía el papel exacto de la memorización, la recuperación activa o el espaciamiento dentro de Voces. `BL-025` debe distinguir repetición mecánica, recuperación, práctica espaciada, secuencias formulaicas, automatización, transferencia y tedio, y contrastar esas decisiones con bibliografía y aprendices reales.
+
+Por tanto:
+
+```text
+MEMORIZATION = ACTIVE_METHOD_COMPONENT
+MEMORIZATION != COMPLETE_PEDAGOGY
+SPACING_EFFECT_IN_VOCES = TO_BE_VALIDATED
+RETENTION != ENGAGEMENT
+```
 
 ---
 
@@ -187,8 +202,9 @@ La pedagogía vigente se apoya en:
 - Relación entre aprendizaje de segunda lengua y revitalización.
 - Papel de la variación dialectal en la progresión.
 - Equilibrio entre ortografía, fonología y escucha.
-- Evaluación empírica del sistema.
-- Alcance real de la herramienta en transmisión intergeneracional.
+- Justificación y límites pedagógicos de memoria, recuperación y espaciamiento (`BL-025`).
+- Evaluación empírica de materiales y metodología con aprendices.
+- Alcance real de los materiales y la metodología del proyecto en procesos de transmisión intergeneracional.
 
 ---
 
@@ -198,11 +214,13 @@ No puede documentarse todavía:
 
 - referencias bibliográficas completas para todos los autores mencionados;
 - citas textuales;
-- páginas específicas;
+- páginas específicas para todas las afirmaciones;
 - comparación sistemática entre autores;
 - revisión exhaustiva de literatura;
 - posición final sobre adquisición de segundas lenguas frente a revitalización;
 - resultados empíricos que confirmen la aplicación de los marcos.
+
+El cierre de `BL-016` significa que existe una **base teórica operativa suficiente para trabajar**, no que la teoría esté terminada o sea inmutable. Las deudas concretas siguen registrándose en tareas específicas como `BL-021`, `BL-022`, `BL-023` y `BL-025`.
 
 ---
 
@@ -211,7 +229,7 @@ No puede documentarse todavía:
 Esta sección distingue entre dos niveles de afirmación:
 
 - **evidencia lingüística documentada**, proveniente de gramáticas, vocabularios y otras fuentes descriptivas;
-- **decisiones o hipótesis pedagógicas de trabajo**, que organizan el diseño actual pero pueden cambiar conforme avance la revisión lingüística, la validación con hablantes, el análisis de COR001 y COR002 y las pruebas con aprendices.
+- **decisiones o hipótesis pedagógicas de trabajo**, que organizan el diseño actual pero pueden cambiar conforme avance la revisión lingüística, la validación con hablantes, el análisis de materiales y las pruebas con aprendices.
 
 Las referencias a niveles G1–G5, P1–P5 o etapas curriculares deben leerse de acuerdo con `PEDAGOGIA.md`: son herramientas provisionales de diseño, no una secuencia curricular validada ni una taxonomía cerrada.
 
