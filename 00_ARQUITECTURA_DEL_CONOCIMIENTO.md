@@ -7,7 +7,7 @@
 titulo: Arquitectura del Sistema de Conocimiento
 proyecto: Voces de las Nubes
 autor: Emiliano López Carlton
-version: 0.3
+version: 0.3.1
 estado: vigente
 unidad_minima: hallazgo
 fecha: 03/09/2026
@@ -1523,3 +1523,10 @@ La utilidad de esta arquitectura dependerá menos de la cantidad de información
 - Se formaliza que decisiones directas de coordinación o alcance pueden sustentarse en una fuente directa sin fabricar un `HALL` espejo.
 - Se clasifican `informes/`, `archivo/` y los sistemas derivados por función y autoridad; la separación física del dispositivo quedó ejecutada el 2026-09-03.
 - Se retira de la Constitución la lista histórica de cuestiones "para la siguiente versión"; las deudas actuales pertenecen al backlog.
+
+---
+
+## Actualización v0.3.1 — 2026-09-03
+
+- Se registra la separación física ya ejecutada de `lopezcarlton/didxaza-dispositivo`.
+- No cambia la arquitectura de autoridad ni añade capas, entidades o reglas nuevas; es un parche de correspondencia entre la Constitución y la organización física vigente.
