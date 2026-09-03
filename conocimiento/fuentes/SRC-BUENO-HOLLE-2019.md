@@ -7,13 +7,18 @@ titulo: "Information structure in Isthmus Zapotec narrative and conversation"
 autor_o_participantes:
   - Juan José Bueno Holle
 fecha: 2019
-ubicacion: "archivo digital de trabajo del proyecto"
+ubicacion: "https://langsci-press.org/catalog/book/219"
+doi: "10.5281/zenodo.2538324"
+licencia: "CC BY 4.0"
+ubicacion_copia_trabajo: "archivo digital de trabajo del proyecto"
+sha256_copia_trabajo: "fd3f5a8705d63a5a1b2849870ff51b16978e6307eb7d935af9d9573be2f4aff5"
 descripcion: >
-  Monografía sobre estructura informativa en zapoteco del Istmo basada en trabajo
-  de campo en Juchitán. Relevante para metodología de corpus, discurso, prosodia,
-  tópico/foco, elicitación y análisis de conversación.
+  Monografía de acceso abierto sobre estructura informativa en zapoteco del Istmo,
+  basada en trabajo de campo en Juchitán. Relevante para metodología de corpus,
+  discurso, prosodia, tópico/foco, elicitación y análisis de conversación.
+  La fuente puede localizarse y leerse directamente desde Voces sin ejecutar el dispositivo.
 nivel_de_fuente: primaria
-estado_de_acceso: disponible
+estado_de_acceso: disponible_abierto
 ```
 
 ## Secciones explotadas en el cierre de agosto 2026
@@ -53,19 +58,22 @@ En el análisis posterior de discurso, Bueno Holle utiliza unidades entonacional
 
 **Estado en Voces:** candidato de anotación para el corpus oral independiente; no sustituye la conversación completa como unidad pedagógica de COR002.
 
+## Relación con artefactos técnicos históricos
+
+Las matrices y estados de lectura conservados históricamente bajo `dispositivo/migracion/fuentes/` pueden utilizarse para localizar pasajes o reconstruir qué se estudió, pero no sustituyen esta fuente original ni constituyen autoridad independiente.
+
 ## Aplicaciones actuales
 
 Esta fuente sustenta:
 
 - `HALL-0007`;
 - `DEC-TRIANGULACION-EMPIRICA`;
-- `conocimiento/METODOLOGIA.md` v1.1;
-- `conocimiento/CORPUS.md` v1.2;
-- el diseño inicial del corpus oral independiente;
-- requisitos de procedencia para la capa `dispositivo/`.
+- `conocimiento/METODOLOGIA.md`;
+- `conocimiento/CORPUS.md`;
+- el diseño inicial del corpus oral independiente.
 
 ## Límites
 
 - Las observaciones de Bueno Holle no se convierten automáticamente en norma pedagógica.
 - Las afirmaciones sociolingüísticas o de uso contemporáneo requieren comprobarse dentro de su alcance y, cuando corresponda, con hablantes actuales.
-- Las partes del libro no revisadas todavía no deben citarse como si ya hubieran sido incorporadas al proyecto.
+- Una matriz técnica anterior puede orientar la búsqueda, pero toda afirmación promovida por Voces debe poder volver al libro.
