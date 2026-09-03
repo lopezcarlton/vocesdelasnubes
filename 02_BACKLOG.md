@@ -1,7 +1,7 @@
 # BACKLOG
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.7  
+**Versión:** 1.8  
 **Última actualización:** 2026-09-03
 
 ---
@@ -89,6 +89,13 @@ La existencia de una tarea abierta **no implica bloqueo automático**. Conforme 
 - **Documento:** `conocimiento/TEORIA.md`
 - **Fecha de cierre:** 2026-08-19
 - **Razón:** La descripción anterior decía incorrectamente que `TEORIA.md` permanecía vacío. El documento ya contiene marcos de adquisición, revitalización, estructura del Didxazá y decisiones pedagógicas. La teoría seguirá evolucionando, pero esa evolución normal no constituye por sí misma una tarea abierta de backlog.
+
+### BL-026 — Reconciliar la hoja bibliográfica maestra con las fuentes SRC actuales
+- **Estado:** Completado
+- **Fecha de cierre:** 2026-09-03
+- **Documento:** `conocimiento/BIBLIOGRAFIA.md`
+- **Resultado:** La hoja maestra proporcionada por Emiliano fue verificada como serie continua `BIB001–BIB088`, sin huecos ni duplicados. La sincronización con los `SRC-*` vigentes añadió `BIB089` (Coronado), `BIB090` (INALI Logros 2016) y `BIB091` (catálogo SIL México), y vinculó `SRC-DE-ANDA-2023-ESCRITURA-SONIDOS-DIIDXAZA-NINOS` con la entrada preexistente `BIB084`.
+- **Regla permanente:** Los nuevos `BIB###` se asignan únicamente en la hoja maestra; un `SRC-*` no autoriza inferir un ID.
 
 ---
 
@@ -242,7 +249,6 @@ La investigación debe volver a la fuente bibliográfica original y contrastarse
 
 ---
 
-
 ### BL-023 — Definir la segmentación de públicos escolares y perfiles de aprendizaje
 
 **Estado:** Abierto  
@@ -287,7 +293,6 @@ La afirmación atribuida a Irma sobre autores contemporáneos se conserva como e
 
 ---
 
-
 ### BL-025 — Justificar pedagógicamente la memorización y delimitar su función en Voces de las Nubes
 
 **Estado:** Abierto  
@@ -310,19 +315,6 @@ Debe además explicar qué papel ocupa la memoria dentro de una pedagogía más 
 **Mapa inicial:** `informes/MEMORIZATION_PEDAGOGICAL_JUSTIFICATION_RESEARCH_MAP_v0_1.md`.
 
 **Criterio de cierre:** existe una justificación pedagógica trazable, comprensible para docentes de Casa de las Ciencias y contrastada con pruebas de aprendices, o una reformulación documentada del método si la evidencia muestra límites relevantes.
-
----
-
-### BL-026 — Reconciliar la hoja bibliográfica maestra con las fuentes SRC actuales
-
-**Estado:** Abierto  
-**Prioridad:** Alta / documental
-
-La hoja de cálculo bibliográfica es el registro operativo de asignación de `BIB###`, pero el repositorio contiene fuentes incorporadas después de la última sincronización documentada y `BIBLIOGRAFIA.md` había quedado congelado en un máximo obsoleto.
-
-No asignar nuevos IDs BIB por inferencia. Reconciliar la hoja maestra con los `SRC-*` actuales, confirmar específicamente la identidad de `BIB065`/Bueno Holle y asignar IDs sólo a las fuentes que todavía no los tengan.
-
-**Criterio de cierre:** hoja maestra y repositorio coinciden; ningún `SRC` bibliográfico relevante tiene un BIB ambiguo, duplicado o inventado.
 
 ---
 
