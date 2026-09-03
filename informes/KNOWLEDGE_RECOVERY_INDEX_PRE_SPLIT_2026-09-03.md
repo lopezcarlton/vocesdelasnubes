@@ -2,7 +2,7 @@
 
 **Estado:** `NON_AUTHORITATIVE_RECOVERY_INDEX`  
 **Fecha:** 2026-09-03  
-**Snapshot inventariado:** `e669397d08ac8c3c266faa4045a4cbf63702ca68` (`main`)  
+**Snapshot pre-index (commit):** `e669397d08ac8c3c266faa4045a4cbf63702ca68`  
 **Función:** índice de recuperación para localizar material histórico que permanece en compilaciones técnicas antes de la separación física del dispositivo.
 
 ## 1. Regla de uso
@@ -56,7 +56,7 @@ No existe columna de «destino futuro». La investigación futura decide qué pr
 | `dispositivo/generator/inputs/AdoptionRecords_v1.jsonl` | `e79fbaf80bf2986a5e18703a44d9fc9dc42f3cec` | 8089 B | todos los registros `AR-NC001-ORTH-001..011` |
 | `dispositivo/migracion/fuentes/BIB065_BUENO_HOLLE_INGESTION_MATRIX_v0_36_1.md` | `77ef38e088e2a6a7fb8f847fa349bd77229d6a4e` | 10286 B | las 28 filas de la matriz |
 
-`dispositivo/inputs_nc001/AdoptionRecords_v1.jsonl` es una copia con el **mismo blob SHA** que `dispositivo/generator/inputs/AdoptionRecords_v1.jsonl`; se inventaría una sola vez para no duplicar entradas.
+`dispositivo/inputs_nc001/AdoptionRecords_v1.jsonl` es una copia con el **mismo blob SHA** que `dispositivo/generator/inputs/AdoptionRecords_v1.jsonl`; se inventarió una sola vez para no duplicar entradas.
 
 ### 3.2 Datasets grandes inventariados sólo como conjunto
 
@@ -68,11 +68,11 @@ No existe columna de «destino futuro». La investigación futura decide qué pr
 | `DICTIONARIA_senses_v0_2_15_2.csv` | `2c59e20f1438c532eb624042875f62272ae2883f` | 1328363 B | `SRC-DICTIONARIA-DIDXAZA-SPANISH-ENGLISH-DICTIONARY` / `BIB054` |
 | `DICTIONARIA_examples_v0_2_15_2.csv` | `0f0a9bc301f64534eeaaafebf3930de2b44b7270` | 1148451 B | `SRC-DICTIONARIA-DIDXAZA-SPANISH-ENGLISH-DICTIONARY` / `BIB054` |
 
-No se inventarían fila por fila porque son datasets/derivados ejecutables y el objetivo pre-split es preservar la ruta hacia la fuente, no convertir inventarios técnicos en entidades del conocimiento.
+No se inventariaron fila por fila porque son datasets/derivados ejecutables y el objetivo pre-split es preservar la ruta hacia la fuente, no convertir inventarios técnicos en entidades del conocimiento.
 
 ### 3.3 Exclusiones explícitas
 
-No se inventarían de forma exhaustiva:
+No se inventariaron de forma exhaustiva:
 
 - código Python del Analyzer/Corrector/Tutor/Generator/runtime;
 - tests y workflows;
