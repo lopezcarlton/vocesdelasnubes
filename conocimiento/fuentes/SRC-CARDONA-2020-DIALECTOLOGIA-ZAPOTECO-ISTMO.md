@@ -22,7 +22,7 @@ licencia_registrada_en_repositorio: CC_BY_NC_ND_4_0
 estado_de_acceso: disponible
 ```
 
-`BIB063` está atestiguado para esta tesis en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
+`BIB063` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03.
 
 ## Resultado central documentado por el repositorio UAQ
 
