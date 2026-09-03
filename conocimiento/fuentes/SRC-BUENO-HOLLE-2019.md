@@ -3,6 +3,7 @@
 ```yaml
 id: SRC-BUENO-HOLLE-2019
 tipo: fuente_bibliografica
+bib_id: BIB065
 titulo: "Information structure in Isthmus Zapotec narrative and conversation"
 autor_o_participantes:
   - Juan José Bueno Holle
@@ -20,6 +21,8 @@ descripcion: >
 nivel_de_fuente: primaria
 estado_de_acceso: disponible_abierto
 ```
+
+`BIB065` está atestiguado para esta monografía en el snapshot bibliográfico BIB001–BIB084. La reconciliación completa del catálogo sigue abierta en `BL-026`.
 
 ## Secciones explotadas en el cierre de agosto 2026
 
