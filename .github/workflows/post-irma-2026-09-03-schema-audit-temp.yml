@@ -1,0 +1,104 @@
+name: post-irma-2026-09-03-schema-audit-temp
+
+on:
+  push:
+    paths:
+      - '.github/workflows/post-irma-2026-09-03-schema-audit-temp.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit new post-Irma entities
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          required = {
+            'SRC': ['id','tipo','titulo','autor_o_participantes','fecha','ubicacion','descripcion','nivel_de_fuente','estado_de_acceso'],
+            'HALL':['id','titulo','afirmacion','tipo','estado','fecha_del_hecho','fecha_de_registro','fuentes','participantes','grado_de_respaldo','alcance','etiquetas','relaciones'],
+            'DEC':['id','titulo','decision','estado','fecha','responsable','validadores','hallazgos_que_la_sustentan','principios_relacionados','supuestos_implicados','alternativas_consideradas','justificacion','impacta_a','reemplaza','reemplazada_por','condiciones_de_revision'],
+          }
+          allowed_hall_types={'observacion','declaracion','resultado','patron','contradiccion','limitacion','necesidad','oportunidad','cambio','interpretacion','hallazgo_bibliografico','hallazgo_institucional'}
+          allowed_hall_states={'registrado','corroborado','cuestionado','contradicho','reemplazado','descartado','pendiente_de_revision','pendiente_de_validacion'}
+          allowed_support={'directo','múltiple','parcial','inferido','débil','sin_respaldo'}
+          allowed_dec_states={'propuesta','en_validacion','vigente','vigente_con_reservas','suspendida','reemplazada','revocada','descartada'}
+          allowed_source_levels={'primaria','secundaria','terciaria'}
+
+          def fields(text):
+              return {m.group(1): m.group(2).strip().strip('"\'') for m in re.finditer(r'(?m)^([A-Za-z_áéíóúÁÉÍÓÚñÑ0-9_-]+):\s*(.*)$',text)}
+
+          rows=[]
+          for kind,folder,prefix in [('SRC','conocimiento/fuentes','SRC-'),('HALL','conocimiento/hallazgos','HALL-'),('DEC','conocimiento/decisiones','DEC-')]:
+              for p in sorted(Path(folder).glob(prefix+'*.md')):
+                  f=fields(p.read_text(encoding='utf-8-sig'))
+                  missing=[x for x in required[kind] if x not in f]
+                  vocab=[]
+                  if kind=='SRC' and f.get('nivel_de_fuente') and f['nivel_de_fuente'] not in allowed_source_levels:
+                      vocab.append('nivel_de_fuente='+f['nivel_de_fuente'])
+                  elif kind=='HALL':
+                      if f.get('tipo') and f['tipo'] not in allowed_hall_types: vocab.append('tipo='+f['tipo'])
+                      if f.get('estado') and f['estado'] not in allowed_hall_states: vocab.append('estado='+f['estado'])
+                      if f.get('grado_de_respaldo') and f['grado_de_respaldo'] not in allowed_support: vocab.append('grado='+f['grado_de_respaldo'])
+                  elif kind=='DEC' and f.get('estado') and f['estado'] not in allowed_dec_states:
+                      vocab.append('estado='+f['estado'])
+                  rows.append((kind,str(p),missing,vocab))
+
+          newset={
+            'conocimiento/fuentes/SRC-IRMA-PINEDA-NOTAS-LINGUISTICAS-2026-09-03.md',
+            'conocimiento/fuentes/SRC-EMILIANO-DECISIONES-ALCANCE-2026-09-03.md',
+            'conocimiento/fuentes/SRC-NEGACION-QUI-QUE-ATESTACIONES-2026-09-03.md',
+            'conocimiento/fuentes/SRC-SIL-MEXICO-CATALOGO-ZAPOTECO-ISTMO-2026-09-03.md',
+            'conocimiento/hallazgos/HALL-0013.md','conocimiento/hallazgos/HALL-0014.md',
+            'conocimiento/hallazgos/HALL-0015.md','conocimiento/hallazgos/HALL-0016.md',
+            'conocimiento/hallazgos/HALL-0017.md','conocimiento/hallazgos/HALL-0018.md',
+            'conocimiento/hallazgos/HALL-0019.md','conocimiento/hallazgos/HALL-0020.md',
+            'conocimiento/hallazgos/HALL-0021.md',
+            'conocimiento/decisiones/DEC-NEGACION-QUI-QUE-EQUIVALENTES.md',
+            'conocimiento/decisiones/DEC-ALCANCE-ACTIVO-PRINCIPIANTES-ESCUCHA-JUCHITAN.md'
+          }
+          newrows=[r for r in rows if r[1] in newset]
+          missing_paths=sorted(newset-{r[1] for r in newrows})
+          bad=[r for r in newrows if r[2] or r[3]]
+          historical=[r for r in rows if r[1] not in newset and (r[2] or r[3])]
+
+          print('AUDIT_COUNTS', {'all_entities':len(rows),'new_expected':len(newset),'new_found':len(newrows),'new_bad':len(bad),'missing_paths':len(missing_paths),'historical_debt':len(historical)})
+          for r in bad: print('NEW_BAD',r)
+          for p in missing_paths: print('MISSING_NEW_PATH',p)
+
+          out=['# AUDITORÍA DE ESQUEMAS — SEGUNDA TANDA POST-IRMA — 2026-09-03','',
+               '**Estado:** `AUDIT_REPORT / NON_NORMATIVE`','',
+               f'- Entidades totales SRC/HALL/DEC auditadas: **{len(rows)}**',
+               f'- Entidades esperadas en esta tanda: **{len(newset)}**',
+               f'- Entidades encontradas en esta tanda: **{len(newrows)}**',
+               f'- Incumplimientos en entidades nuevas: **{len(bad)}**',
+               f'- Rutas nuevas faltantes: **{len(missing_paths)}**',
+               f'- Deuda histórica/preexistente detectada por el mismo control: **{len(historical)}**','',
+               '## Resultado de la tanda nueva','']
+          if not bad and not missing_paths:
+              out.append('- **PASS:** todas las entidades nuevas del 2026-09-03 cumplen los campos mínimos y vocabularios controlados auditados.')
+          else:
+              for kind,p,missing,vocab in bad:
+                  out.append(f'- **FAIL** `{p}` — missing={missing}; vocab={vocab}')
+              for p in missing_paths:
+                  out.append(f'- **MISSING** `{p}`')
+          out += ['','## Deuda preexistente','']
+          for kind,p,missing,vocab in historical:
+              out.append(f'- `{p}` — missing={missing or "—"}; vocab={vocab or "—"}')
+          out += ['','La deuda preexistente no se corrige automáticamente mediante esta auditoría.']
+          Path('informes/ENTITY_SCHEMA_AUDIT_POST_IRMA_2026-09-03.md').write_text('\n'.join(out)+'\n',encoding='utf-8')
+          if bad or missing_paths:
+              raise SystemExit('second post-Irma batch fails schema audit')
+          PY
+          git config user.name lopezcarlton
+          git config user.email lopezcarlton@gmail.com
+          git add informes/ENTITY_SCHEMA_AUDIT_POST_IRMA_2026-09-03.md
+          git commit -m 'record second post-Irma entity schema audit'
+          git push origin HEAD:main
