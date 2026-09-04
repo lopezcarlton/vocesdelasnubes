@@ -158,6 +158,27 @@ CAUSATIVE_FORMATION = LEXEME/PARADIGM_SENSITIVE
 BLIND_CAUSATIVE_GENERATION = forbidden_without_lexeme_or_paradigm_evidence
 ```
 
+### Imperativos y movimiento — bloque dirigido §7.5–§7.6
+
+Se reabrieron las páginas impresas 66–69 para cerrar construcciones con impacto directo en tutor, analizador y generador.
+
+Hallazgos promovidos:
+
+- el imperativo singular usa la forma completiva sin pronombre y el plural usa `la-` + potencial → `HALL-0106`;
+- `ir` y `venir` tienen una conjugación progresiva especial, con `ca-` documentado para plural y un progresivo especial con `z-` → `HALL-0107`;
+- en `venir`, progresivo y futuro pueden compartir la misma forma segmental y distinguirse por tono → `HALL-0108`;
+- `ir` y `venir` funcionan como auxiliares aspectualmente flexionados con verbo principal en potencial para expresar movimiento con intención; un pequeño conjunto léxico se conjuga sólo con estos auxiliares → `HALL-0109`.
+
+Límites conservados:
+
+```text
+IMPERATIVE != SINGLE_UNIVERSAL_SURFACE_TEMPLATE
+GO_COME_PROGRESSIVE != ORDINARY_VERB_PROGRESSIVE
+SAME_SEGMENTAL_FORM != SAME_VERBAL_ANALYSIS
+STRIP_TONE_BEFORE_ANALYSIS = unsafe
+MOVEMENT_AUXILIARY_PATTERN != UNIVERSAL_FOR_ALL_VERBS
+```
+
 ## Relación con el dispositivo
 
 `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, registries de persona/posesión, paradigmas y otras compilaciones técnicas contienen conocimiento derivado de esta obra.
@@ -172,4 +193,4 @@ Las compilaciones técnicas pueden servir para localizar temas o ejemplos; cualq
 
 ## Deuda restante
 
-El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y cierra cuatro bloques prioritarios —sistema verbal/aspectual, persona pronominal, posesión y causatividad/valencia—, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
+El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y cierra cinco bloques prioritarios —sistema verbal/aspectual, persona pronominal, posesión, causatividad/valencia e imperativos/movimiento—, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
