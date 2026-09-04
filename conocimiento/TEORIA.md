@@ -1,7 +1,7 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.7  
+**Versión:** 1.8  
 **Estado:** Borrador consolidado y evolutivo  
 **Fecha:** 2026-09-04  
 
@@ -432,18 +432,22 @@ Consecuencia para generación: partir de la relación semántica y del verbo rec
 
 ## 10.10 Forma ortográfica, prosodia y superficie fonética contextual
 
-El Apéndice para lingüistas de la Gramática Popular aporta evidencia técnica que obliga a separar representación ortográfica y realización fonética (`HALL-0122`–`HALL-0124`).
+El Apéndice para lingüistas de la Gramática Popular aporta evidencia técnica que obliga a separar representación ortográfica y realización fonética (`HALL-0122`–`HALL-0124`). La comparación con Pickett, Villalobos y Marlett (2010) muestra además que una parte de esa descripción debe conservarse como contradicción bibliográfica abierta (`HALL-0150`), no como regla única.
 
 - La oposición fuerte/débil no se reduce a sordo/sonoro: las fuertes son más fuertes y sordas en la descripción; las débiles son generalmente sonoras, pero aun ensordecidas siguen siendo menos fuertes (`HALL-0122`).
-- Las fuertes pueden alargarse después de sílaba tónica; `b/d/g` no presentan la fricativización intervocálica castellana; `n` puede velarizarse ante `g/c` y al final de palabra. Son realizaciones fonéticas, no instrucciones ortográficas (`HALL-0123`).
+- Las fuertes pueden alargarse después de sílaba tónica. La Gramática Popular afirma que `b/d/g` débiles no presentan entre vocales la característica fricativa de sus equivalentes del español (`HALL-0123`); PVM2010, en cambio, documenta que las lenis /b, d, g/ son comúnmente fricativas o aproximantes en posición intervocálica, especialmente después de vocales modales (`HALL-0150`). No se elige una de estas formulaciones como regla universal mientras la discrepancia siga abierta.
+- `n` puede velarizarse ante `g/c` y al final de palabra en la descripción de la Gramática Popular. Es una realización fonética, no una instrucción ortográfica (`HALL-0123`).
 - En compuestos o frases estrechas, una sílaba que pierde el acento principal puede neutralizar una vocal cortada o quebrada a vocal sencilla; otras frases conservan los rasgos tónicos de ambas palabras (`HALL-0124`).
 
 ```text
 FORTIS_LENIS != VOICE_ONLY
+INTERVOCALIC_b_d_g_DESCRIPTION = OPEN_BIBLIOGRAPHIC_DISCREPANCY
+CHOOSE_ONE_AS_UNIVERSAL_CURRENT_RULE = forbidden
+ALLOPHONE_TO_SPELLING_CORRECTION = forbidden
 CONTEXTUAL_PHONETICS != SPELLING_CHANGE
 CITATION_FORM != CONTEXTUAL_PHONETIC_SURFACE
 PHONETIC_NEUTRALIZATION != ORTHOGRAPHIC_DELETION
 AUDIO_SURFACE -> SPELLING_CORRECTION = forbidden_without_independent_orthographic_evidence
 ```
 
-Esta distinción es estructural para corrector, tutor y audio: una reducción o neutralización escuchada no basta para declarar incorrecta la forma ortográfica documentada, y la ausencia acústica de un rasgo en contexto no equivale automáticamente a ausencia morfológica u ortográfica.
+Esta distinción es estructural para corrector, tutor y audio: una reducción, fricación, aproximación o neutralización escuchada no basta para declarar incorrecta la forma ortográfica documentada, y la ausencia o presencia acústica de un rasgo en contexto no equivale automáticamente a una instrucción ortográfica.
