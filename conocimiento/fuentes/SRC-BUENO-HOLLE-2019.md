@@ -20,6 +20,7 @@ descripcion: >
   La fuente puede localizarse y leerse directamente desde Voces sin ejecutar el dispositivo.
 nivel_de_fuente: primaria
 estado_de_acceso: disponible_abierto
+estado_de_ingesta: parcial_con_backfill_prioritario_2026-09-04
 ```
 
 `BIB065` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03.
@@ -28,9 +29,25 @@ estado_de_acceso: disponible_abierto
 
 ### Convenciones ortográficas
 
-La obra utiliza la ortografía escrita basada en el Alfabeto Popular y no marca tono en la línea ortográfica principal. La información tonal subyacente se conserva en la representación analítica.
+La obra utiliza la ortografía escrita basada en el **Alfabeto Popular de 1956** como ortografía estándar de ZAI y no marca tono en la línea ortográfica principal. La información tonal subyacente se conserva en la representación analítica.
 
-**Uso para el proyecto:** distinguir superficie ortográfica de representación fonológica o tonal interna.
+Además, explicita que `x` ante consonantes sordas se pronuncia con el valor [ʃ] que en otros contextos representa `xh`, y señala su uso frecuente como morfema posesivo.
+
+**Uso para el proyecto:** distinguir superficie ortográfica de representación fonológica o tonal interna y conservar la regla contextual `xh/x`.
+
+→ `HALL-0068`.
+
+### Sistema tonal — backfill 2026-09-04
+
+En §2.1.2 Bueno Holle formula explícitamente **tres tonos fonémicos**:
+
+- high `H`;
+- rising `LH`;
+- low `L`.
+
+La obra distingue este inventario de tonos subyacentes de patrones superficiales, tonos flotantes y otras combinaciones tonales.
+
+→ `HALL-0067`.
 
 ### §1.4 — Methods
 
@@ -79,16 +96,19 @@ Si una afirmación de la matriz se conoce antes de abrir el libro, debe tratarse
 
 ## Aplicaciones actuales
 
-Esta fuente sustenta:
+Esta fuente sustenta, entre otros:
 
 - `HALL-0007`;
+- `HALL-0067`;
+- `HALL-0068`;
 - `DEC-TRIANGULACION-EMPIRICA`;
 - `conocimiento/METODOLOGIA.md`;
 - `conocimiento/CORPUS.md`;
 - el diseño inicial del corpus oral independiente.
 
-## Límites
+## Límites y deuda restante
 
 - Las observaciones de Bueno Holle no se convierten automáticamente en norma pedagógica.
 - Las afirmaciones sociolingüísticas o de uso contemporáneo requieren comprobarse dentro de su alcance y, cuando corresponda, con hablantes actuales.
 - Una matriz técnica anterior puede orientar la búsqueda, pero toda afirmación promovida por Voces debe poder volver al libro.
+- El backfill de tono y `xh/x` corrige huecos concretos detectados el 2026-09-04; no sustituye una reingesta semántica sistemática del resto de la monografía.
