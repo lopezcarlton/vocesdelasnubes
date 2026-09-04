@@ -13,7 +13,9 @@ archivo_snapshot: "diccionario biyubi(1).xlsx"
 sha256_snapshot: "53a01c4661e465930289ff042a2def58627ab8fc26d0b812feb65b47714e3b75"
 tamano_bytes: 782774
 hoja: "Hoja 1"
-filas_no_vacias: 23893
+filas_con_datos: 23601
+elementos_de_fila_en_hoja: 23893
+filas_vacias_formateadas_finales: 292
 estructura_observada:
   - "columna A: forma/entrada en Didxazá"
   - "columna B: glosa o traducción en español"
@@ -57,7 +59,9 @@ EXACT_ATTESTATION != FULL_MORPHOLOGICAL_ANALYSIS
 
 ## Snapshot materializado el 2026-09-03
 
-La copia disponible para el proyecto contiene 23,893 filas no vacías y dos columnas observadas. El archivo no incluye una fila de encabezado separada: la primera fila ya contiene el par `A nja'` / `Así, si, cierto, es cierto, es verdad (interjección)`.
+La copia disponible para el proyecto contiene **23,601 filas con datos** en las columnas A/B. La hoja contiene además 292 elementos de fila vacíos/formateados al final (filas 23,602–23,893), por lo que el XML de la hoja contiene 23,893 elementos de fila en total. El conteo operativo del diccionario es 23,601 pares.
+
+El archivo no incluye una fila de encabezado separada: la primera fila ya contiene el par `A nja'` / `Así, si, cierto, es cierto, es verdad (interjección)`. La última fila con datos es la 23,601: `Zuzuubalu' diidxa` / `Obedecerás, aceptarás disciplinadamente órdenes, aceptarás órdenes`.
 
 El hash SHA-256 identifica esta copia concreta. Un archivo Biyubi posterior con hash distinto debe registrarse como nuevo snapshot o revisión; no debe sustituirse silenciosamente.
 
