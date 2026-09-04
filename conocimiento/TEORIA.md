@@ -1,7 +1,7 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.4  
+**Versión:** 1.5  
 **Estado:** Borrador consolidado y evolutivo  
 **Fecha:** 2026-09-04  
 
@@ -273,21 +273,45 @@ GP_GAME_1A_1B_1C_2 != PBK2016_CLASS_A_B_C_D_BY_DEFAULT
 SOURCE_HYPOTHESIS != CERTAIN_RULE
 ```
 
-## 10.2 Posesión: tres mecanismos
+## 10.2 Posesión: tres estrategias y morfofonología
 
-La Gramática Popular documenta tres mecanismos distintos:
+La Gramática Popular §4.2 documenta **tres estrategias distintas** de posesión (`HALL-0097`):
 
-1. **Prefijo xh-/x-:** Marca de posesión directa en ciertos sustantivos.
-2. **Sustantivos siempre poseídos:** Palabras que en didxazá siempre llevan marca de posesión (ej. términos de parentesco, partes del cuerpo).
-3. **Frase nominal posesiva con xti':** Construcción más explícita que permite mayor flexibilidad.
+1. **Prefijo `xh-/x-`:** `xh-` ante vocal y `x-` ante consonante. La forma poseída puede implicar alternancias de la consonante inicial y, en algunos lemas, pérdida de `bi-`; por tanto no debe modelarse como simple concatenación sobre una forma superficial invariable (`HALL-0068`, `HALL-0098`).
+2. **Sustantivos siempre poseídos:** incluyen partes del cuerpo, términos de parentesco y otras palabras. La Gramática indica que **no aceptan `xh-/x-`**, sino que aparecen directamente con el poseedor; el Vocabulario los presenta en tercera persona singular indefinida (`HALL-0099`).
+3. **Frase nominal posesiva con `xti'`:** el poseedor puede ser un pronombre dependiente o una frase nominal y la construcción permite cadenas posesivas (`HALL-0100`). Las formas `xti'` + pronombre dependiente no concuerdan con género ni número del objeto poseído (`HALL-0101`).
 
-**Hipótesis pedagógica de trabajo:** Se ha propuesto una progresión que introduce primero sustantivos siempre poseídos en fórmulas de alta frecuencia, después prefijos posesivos en contextos simples y posteriormente construcciones con `xti'` de mayor flexibilidad. En versiones anteriores de la arquitectura, esta progresión se vinculó a Etapas 1/2/3+ y la llamada "posesión completa" se ubicó en nivel_gramatical 5. Esas ubicaciones se conservan como antecedentes de diseño y **no deben interpretarse como niveles o etapas definitivamente aprobados**.
+```text
+POSSESSION != SINGLE_UNIVERSAL_TEMPLATE
+POSSESSED_SURFACE != BLIND_PREFIX_CONCATENATION
+INHERENTLY_POSSESSED_NOUN + xh/x = NOT_THE_DOCUMENTED_STRATEGY
+```
 
-## 10.3 Inclusivo/Exclusivo en primera persona plural
+**Hipótesis pedagógica de trabajo:** Se ha propuesto una progresión que introduce primero sustantivos siempre poseídos en fórmulas de alta frecuencia, después posesión con `xh-/x-` en contextos simples y posteriormente construcciones con `xti'` de mayor flexibilidad. En versiones anteriores de la arquitectura, esta progresión se vinculó a Etapas 1/2/3+ y la llamada “posesión completa” se ubicó en nivel_gramatical 5. Esas ubicaciones se conservan como antecedentes de diseño y **no deben interpretarse como niveles o etapas definitivamente aprobados**.
 
-La Gramática Popular §5.1.1 documenta que la distinción inclusivo/exclusivo en primera persona plural (laanu "nosotros incluyendo al oyente" vs. laadu "nosotros excluyendo al oyente") **es una categoría gramatical real y obligatoria del idioma, no una elección estilística.**
+## 10.3 Persona: inclusivo/exclusivo y formas dependientes
 
-En español, "nosotros" es ambiguo. En didxazá, el hablante está obligado a especificar.
+La Gramática Popular §5.1 documenta una distinción de primera persona plural entre:
+
+- `laanu` / `nu`: **inclusivo**, que incluye a las personas con quienes se habla;
+- `laadu` / `du`: **exclusivo**, que no las incluye (`HALL-0096`).
+
+La fuente documenta el contraste tanto en pronombres independientes como dependientes. Esto establece una distinción gramatical real dentro del paradigma descrito, pero no se formula aquí una afirmación más fuerte sobre obligatoriedad fuera de los contextos y formas documentados.
+
+La misma sección muestra además que (`HALL-0090`–`HALL-0095`):
+
+- los pronombres independientes pueden funcionar como complementos, términos preposicionales, respuestas o énfasis del sujeto;
+- los pronombres dependientes no pueden pronunciarse solos y su hospedaje no se limita al verbo;
+- la tercera persona puede carecer de marca segmental cuando el referente es recuperable por contexto;
+- 2SG tiene `-lu'` y `-u'`, con alternancias de raíz asociadas a `-u'`;
+- 1SG tiene `-ya'` y `-a'`, con fusiones vocálicas dependientes de la raíz;
+- la tercera persona distingue persona, animal y cosa, no masculino y femenino.
+
+```text
+PERSON != FIXED_SUFFIX_STRING
+UNMARKED_3RD_PERSON != ERROR
+INCLUSIVE_EXCLUSIVE_CONTRAST = SOURCE_DOCUMENTED
+```
 
 **Clasificación pedagógica provisional:** En versiones de trabajo de la escala G/P, el uso correcto de inclusivo/exclusivo en contextos donde la distinción resulta funcionalmente relevante (por ejemplo, proponer algo a alguien) se ubicó en nivel_gramatical 5. Esa ubicación sigue sujeta a revisión y no constituye una definición formal vigente de G5.
 
