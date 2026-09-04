@@ -94,6 +94,49 @@ POTENTIAL != CAPACITY_OR_POSSIBILITY_ONLY
 STATIVE != PRESENT_TENSE
 ```
 
+### Persona pronominal — bloque dirigido §5.1–5.1.2
+
+Se reabrieron sólo las páginas y cuadros pertinentes de §5.1. La lectura confirma que persona no debe reducirse a una cadena fija añadida al verbo.
+
+Hallazgos promovidos:
+
+- los pronombres independientes son formas separables usadas como complementos, términos preposicionales, respuestas y énfasis del sujeto → `HALL-0090`;
+- los pronombres dependientes no pueden pronunciarse solos y pueden apoyarse en distintos elementos de la frase, no sólo en el verbo → `HALL-0091`;
+- la tercera persona puede aparecer sin marca segmental cuando el referente se recupera del contexto; en plural existe la forma indefinida con `ca'` → `HALL-0092`;
+- la 2SG tiene `-lu'` y `-u'`, y `-u'` provoca cambios/fusiones en la raíz → `HALL-0093`;
+- la 1SG tiene `-ya'` y `-a'`, con fusiones vocálicas dependientes de la raíz y patrones tonales documentados → `HALL-0094`;
+- la tercera persona distingue persona/animal/cosa, no masculino/femenino → `HALL-0095`;
+- la primera persona plural distingue inclusivo (`laanu`/`nu`) y exclusivo (`laadu`/`du`) → `HALL-0096`.
+
+Límites conservados:
+
+```text
+PERSON != FIXED_SUFFIX_STRING
+UNMARKED_3RD_PERSON != ERROR
+INDEPENDENT_PRONOUN != REQUIRED_SUBJECT_WORD
+SOURCE_DOCUMENTED_INCLUSIVE_EXCLUSIVE_CONTRAST != FIXED_PEDAGOGICAL_LEVEL
+```
+
+### Posesión — bloque dirigido §4.2 y §6.6
+
+La fuente separa tres estrategias y documenta alternancias internas que impiden tratarlas como una única plantilla.
+
+Hallazgos promovidos:
+
+- tres estrategias: `xh-/x-`, clase de sustantivos siempre poseídos y frase posesiva con `xti'` → `HALL-0097`;
+- `x-` participa en alternancias iniciales y, en algunos lemas, en pérdida de `bi-` → `HALL-0098`;
+- los sustantivos siempre poseídos no aceptan `xh-/x-` y aparecen directamente con poseedor → `HALL-0099`;
+- la frase con `xti'` admite poseedor pronominal dependiente o frase nominal y permite encadenamiento posesivo → `HALL-0100`;
+- `xti'` + pronombre dependiente no concuerda con género ni número del objeto poseído → `HALL-0101`.
+
+Límites conservados:
+
+```text
+POSSESSION != SINGLE_UNIVERSAL_TEMPLATE
+POSSESSED_SURFACE != BLIND_PREFIX_CONCATENATION
+INHERENTLY_POSSESSED_NOUN + xh/x = NOT_THE_DOCUMENTED_STRATEGY
+```
+
 ## Relación con el dispositivo
 
 `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, registries de persona/posesión, paradigmas y otras compilaciones técnicas contienen conocimiento derivado de esta obra.
@@ -108,4 +151,4 @@ Las compilaciones técnicas pueden servir para localizar temas o ejemplos; cualq
 
 ## Deuda restante
 
-El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y cierra un primer bloque verbal/aspectual prioritario, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
+El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y cierra tres bloques prioritarios —sistema verbal/aspectual, persona pronominal y posesión—, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
