@@ -1,6 +1,6 @@
 # SEMANTIC_BACKFILL_CHECKPOINT_2026-09-04
 
-**Estado:** `ACTIVE / PBK2016_PILOT_COMPLETED / BROADER_BACKFILL_PENDING`  
+**Estado:** `ACTIVE / PBK2016_PILOT_COMPLETED / GRAMATICA_POPULAR_BACKFILL_IN_PROGRESS`  
 **Repositorio autoritativo:** `lopezcarlton/vocesdelasnubes`
 
 ## 1. Diagnóstico
@@ -172,3 +172,63 @@ Voces se corrige primero. Después de cada bloque suficientemente estable, el di
 VOCES = AUTHORITY_FOR_KNOWLEDGE
 DEVICE = DERIVED_IMPLEMENTATION
 ```
+
+## 9. P0-A Gramática Popular — checkpoint intermedio 2026-09-04
+
+La ejecución dirigida confirmó que `JUCHITAN_LINGUISTIC_CORE_v0_27` era útil como índice de recuperación, pero no suficientemente fiable como autoridad: contenía simplificaciones antiguas, grados de certeza desalineados y al menos una atribución de sección incorrecta. Cada promoción nueva se verificó contra el pasaje original pertinente de la Gramática Popular.
+
+Bloques cerrados hasta este checkpoint:
+
+1. **Sistema verbal/aspectual §7.2–§7.3** → `HALL-0077`–`HALL-0089`.
+   - perfecto corregido: acción repetida a lo largo del tiempo + uso negativo de intervalo;
+   - habitual/completivo/progresivo/estativo no se equiparan mecánicamente a tiempos del español;
+   - potencial = construcción sensible, no sólo capacidad/posibilidad;
+   - Juego 1C: la fuente afirma explícitamente potencial sin prefijo;
+   - `u` del Juego 2 como vocal temática causativa permanece hipótesis de la fuente;
+   - Juego 1A/1B/1C/2 de GP no se iguala automáticamente a A/B/C/D de PBK2016.
+2. **Persona §5.1–§5.1.2** → `HALL-0090`–`HALL-0096`.
+   - independientes y dependientes conservados como tipos funcionales distintos;
+   - 3P puede quedar sin marca segmental si el contexto recupera el referente;
+   - 1SG/2SG incluyen fusiones y alternancias de raíz;
+   - inclusivo/exclusivo documentado sin convertirlo en nivel pedagógico fijo.
+3. **Posesión §4.2 y §6.6** → `HALL-0097`–`HALL-0101`.
+   - tres estrategias distintas;
+   - alternancias bajo `xh-/x-`;
+   - sustantivos siempre poseídos no aceptan `xh-/x-`;
+   - `xti'` admite poseedor dependiente o nominal y no concuerda con género/número de lo poseído.
+4. **Causatividad/valencia §7.1 y §7.4** → `HALL-0102`–`HALL-0105`.
+   - causatividad incrementa valencia;
+   - `si-` es la forma más común, no la única;
+   - otros prefijos, alternancias y excepciones requieren evidencia por lema/paradigma;
+   - no generar causativos ciegamente por analogía.
+5. **Imperativos/movimiento §7.5–§7.6** → `HALL-0106`–`HALL-0109`.
+   - singular y plural imperativo tienen construcciones distintas;
+   - `ir/venir` tienen progresivo especial;
+   - tono puede distinguir progresivo y futuro de `venir` aun con la misma forma segmental;
+   - auxiliares de movimiento seleccionan verbo principal en potencial para movimiento con intención.
+
+Entidades/vistas actualizadas sin crear capas nuevas:
+
+```text
+SRC-PICKETT-BLACK-MARCIAL-2001-GRAMATICA-POPULAR = UPDATED_READING_MEMORY
+HALL-0077..HALL-0109 = CANONICAL_ADJUDICATED_KNOWLEDGE
+TEORIA.md = v1.6
+NEW_CONCEPTUAL_LAYER = false
+```
+
+Reglas de seguridad reforzadas:
+
+```text
+UNMARKED_3RD_PERSON != ERROR
+UNRESOLVED != INCORRECT
+STRIP_TONE_BEFORE_ANALYSIS = unsafe
+BLIND_SUFFIX_OR_PREFIX_STRIPPING = unsafe
+BLIND_CAUSATIVE_GENERATION = forbidden_without_lexeme_or_paradigm_evidence
+COR001 = ANALYSIS_TARGET_ONLY
+```
+
+### Próximo bloque dirigido dentro de P0-A
+
+Continuar por **negación, partículas dependientes y orden/interrogación** (cap. 8 y cap. 13), porque tienen impacto directo en Analyzer/Corrector/Tutor y el índice técnico histórico contiene reglas resumidas que deben verificarse contra la fuente. Después, cubrir subordinación/relativas y sólo entonces los géneros textuales/apéndice técnico que sigan pendientes de promoción semántica.
+
+P0-A permanece `IN_PROGRESS`; no se declara completa la Gramática Popular ni se relee linealmente el libro.
