@@ -137,6 +137,27 @@ POSSESSED_SURFACE != BLIND_PREFIX_CONCATENATION
 INHERENTLY_POSSESSED_NOUN + xh/x = NOT_THE_DOCUMENTED_STRATEGY
 ```
 
+### Causatividad y valencia — bloque dirigido §7.1 y §7.4
+
+Se corrigió la atribución histórica y se reabrieron exclusivamente las secciones que la fuente dedica al significado/valencia del causativo y a sus variantes formales.
+
+Hallazgos promovidos:
+
+- la causativización incrementa la valencia: intransitiva sencilla → causativa transitiva con objeto directo; transitiva sencilla → causativa con dos complementos → `HALL-0102`;
+- `si-` es el marcador causativo más común y sigue al marcador de aspecto, pero no es la única estrategia → `HALL-0103`;
+- la fuente documenta además prefijos `g-`, `z-`, `s-`, `ch-` y cambios en la consonante inicial; la mayoría de los causativos usan Juego 2, no todos → `HALL-0104`;
+- existen grupos limitados con dos prefijos causativos, dos formas causativas o causativo sin prefijo causativo → `HALL-0105`.
+
+Límites conservados:
+
+```text
+CAUSATIVE_SEMANTICS != CAUSATIVE_SURFACE_FORM
+CAUSATIVE != si_ONLY
+MOST_CAUSATIVES_GAME2 != ALL_CAUSATIVES_GAME2
+CAUSATIVE_FORMATION = LEXEME/PARADIGM_SENSITIVE
+BLIND_CAUSATIVE_GENERATION = forbidden_without_lexeme_or_paradigm_evidence
+```
+
 ## Relación con el dispositivo
 
 `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, registries de persona/posesión, paradigmas y otras compilaciones técnicas contienen conocimiento derivado de esta obra.
@@ -151,4 +172,4 @@ Las compilaciones técnicas pueden servir para localizar temas o ejemplos; cualq
 
 ## Deuda restante
 
-El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y cierra tres bloques prioritarios —sistema verbal/aspectual, persona pronominal y posesión—, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
+El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y cierra cuatro bloques prioritarios —sistema verbal/aspectual, persona pronominal, posesión y causatividad/valencia—, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
