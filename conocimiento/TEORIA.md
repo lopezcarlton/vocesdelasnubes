@@ -1,7 +1,7 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.6  
+**Versión:** 1.7  
 **Estado:** Borrador consolidado y evolutivo  
 **Fecha:** 2026-09-04  
 
@@ -390,3 +390,60 @@ El siguiente contenido está documentado en la Gramática Popular y el Vocabular
 - Registro narrativo tradicional (Gramática Popular cap. 15, tradición de Terán, Toledo, etc.)
 
 Estos vacíos no obligan a abrir de inmediato situaciones nuevas dentro del piloto principiante. Deben considerarse dentro de la cobertura progresiva del proyecto y contrastarse con prioridades de uso, corpus oral, hablantes y corpus posteriores.
+
+## 10.8 Negación, partículas dependientes y preguntas
+
+La Gramática Popular §§8.4–8.6 y 13.1–13.3 documenta que negación, partículas y orden de constituyentes interactúan. Los hallazgos `HALL-0110`–`HALL-0114` registran esta evidencia sin convertir la descripción bibliográfica de `qué` en norma contemporánea.
+
+En particular, `guiruti'` “nadie” y `gasti'` “nada” presentan restricciones de posición según la construcción: cuando son el único negativo o aparecen con `di'`, la Gramática los coloca al principio; con `qué`, pueden permanecer postverbales o frontalizarse por énfasis, pero no se colocan entre `qué` y el verbo. `cadi` se describe como negador de una palabra o frase y no aparece junto con `qué` en la descripción de GP2001 (`HALL-0114`).
+
+Las preguntas sí/no conservan el orden declarativo y usan `la?` final en la descripción de la obra; las preguntas de información frontalizan la palabra o frase interrogativa correspondiente (`HALL-0113`).
+
+```text
+GP2001_NEGATION_DESCRIPTION = BIBLIOGRAPHIC_EVIDENCE
+GP2001_NEGATION_DESCRIPTION != CONTEMPORARY_NORMATIVE_ADJUDICATION
+NEGATION_ANALYSIS_REQUIRES_CONSTRUCTION = true
+CONTENT_QUESTION != YES_NO_QUESTION
+```
+
+## 10.9 Combinación de oraciones
+
+El capítulo 14 distingue construcciones que no deben colapsarse bajo una sola etiqueta de “oración compleja” (`HALL-0115`–`HALL-0121`):
+
+- **coordinación:** `ne` es una estrategia común, pero también se documentan secuencias coordinadas sin conjunción para acciones sinonímicas o sucesivas;
+- **complemento oracional:** una oración puede funcionar como complemento directo sin una conjunción equivalente al español `que`;
+- **selección por verbo rector:** verbos distintos imponen restricciones distintas sobre correferencia y forma del complemento;
+- **pregunta indirecta:** funciona como complemento de verbos como `anna'` “saber” o `rinabadiidxa'` “preguntar”;
+- **subordinada adverbial:** expresa relaciones como tiempo, lugar, modo, propósito, causa, concesión, condición o comparación; una subordinada inicial puede terminar con `la?` como frontera;
+- **relativa:** `ni` participa en relativas que modifican frases nominales y el papel interno del antecedente se resuelve por estructura y valencia;
+- **relativa sin antecedente expreso:** puede funcionar nominalmente como sujeto u objeto con interpretación indefinida.
+
+```text
+VERB_SEQUENCE != AUTOMATIC_SUBORDINATION
+SPANISH_que != UNIVERSAL_DIDXAZA_COMPLEMENTIZER
+RECTOR_LEMMA_MATTERS_FOR_CLAUSAL_COMPLEMENTS = true
+DIRECT_QUESTION != INDIRECT_QUESTION
+ADVERBIAL_RELATION_FIRST = true
+ni != FIXED_SPANISH_RELATIVE_TRANSLATION
+HEADLESS_RELATIVE_DOES_NOT_REQUIRE_INSERTED_GENERIC_NOUN = true
+```
+
+Consecuencia para generación: partir de la relación semántica y del verbo rector antes de seleccionar una construcción superficial; el español puede servir como puente de significado, no como plantilla sintáctica obligatoria.
+
+## 10.10 Forma ortográfica, prosodia y superficie fonética contextual
+
+El Apéndice para lingüistas de la Gramática Popular aporta evidencia técnica que obliga a separar representación ortográfica y realización fonética (`HALL-0122`–`HALL-0124`).
+
+- La oposición fuerte/débil no se reduce a sordo/sonoro: las fuertes son más fuertes y sordas en la descripción; las débiles son generalmente sonoras, pero aun ensordecidas siguen siendo menos fuertes (`HALL-0122`).
+- Las fuertes pueden alargarse después de sílaba tónica; `b/d/g` no presentan la fricativización intervocálica castellana; `n` puede velarizarse ante `g/c` y al final de palabra. Son realizaciones fonéticas, no instrucciones ortográficas (`HALL-0123`).
+- En compuestos o frases estrechas, una sílaba que pierde el acento principal puede neutralizar una vocal cortada o quebrada a vocal sencilla; otras frases conservan los rasgos tónicos de ambas palabras (`HALL-0124`).
+
+```text
+FORTIS_LENIS != VOICE_ONLY
+CONTEXTUAL_PHONETICS != SPELLING_CHANGE
+CITATION_FORM != CONTEXTUAL_PHONETIC_SURFACE
+PHONETIC_NEUTRALIZATION != ORTHOGRAPHIC_DELETION
+AUDIO_SURFACE -> SPELLING_CORRECTION = forbidden_without_independent_orthographic_evidence
+```
+
+Esta distinción es estructural para corrector, tutor y audio: una reducción o neutralización escuchada no basta para declarar incorrecta la forma ortográfica documentada, y la ausencia acústica de un rasgo en contexto no equivale automáticamente a ausencia morfológica u ortográfica.
