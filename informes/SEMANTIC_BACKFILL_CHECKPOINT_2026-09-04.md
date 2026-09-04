@@ -1,6 +1,6 @@
 # SEMANTIC_BACKFILL_CHECKPOINT_2026-09-04
 
-**Estado:** `SYSTEMATIC_BACKFILL_PASS_COMPLETE_TO_AVAILABLE_SOURCES / NORMA_2016_BLOCKED_BY_ACCESS`  
+**Estado:** `SYSTEMATIC_BACKFILL_PASS_COMPLETE_TO_AVAILABLE_SOURCES / ALFABETO_1956_REVIEW_COMPLETE / NORMA_2016_BLOCKED_BY_ACCESS`  
 **Repositorio autoritativo:** `lopezcarlton/vocesdelasnubes`  
 **Método:** `LAZY_TARGETED_LOADING`
 
@@ -242,17 +242,15 @@ CONTRADICTION != CHOOSE_LATEST_AUTOMATICALLY
 UNRESOLVED != INCORRECT
 ```
 
-## 12. Deuda de consistencia de vista
+## 12. Consistencia de vista — RESUELTA
 
-`conocimiento/TEORIA.md` todavía debe representar explícitamente `HALL-0150` en vez de dejar una sola formulación heredada de GP2001.
+`conocimiento/TEORIA.md` fue actualizado a v1.8 para representar explícitamente `HALL-0150`. La vista ya no presenta como única regla la formulación heredada de GP2001 sobre `b/d/g` intervocálicas; conserva la discrepancia con PVM2010 como abierta.
 
 ```text
-TEORIA_VIEW_b_d_g_CONFLICT_SYNC = PENDING
+TEORIA_VIEW_b_d_g_CONFLICT_SYNC = COMPLETE
 CANONICAL_HALL_CONFLICT_ALREADY_REGISTERED = true
 VIEW_MUST_NOT_SILENTLY_RESOLVE_CONFLICT = true
 ```
-
-La deuda es de vista, no de conocimiento canónico.
 
 ## 13. Estado del systematic semantic backfill
 
@@ -291,3 +289,31 @@ NORMAL_VOCES_QUERY_DOES_NOT_LOAD_DEVICE = true
 ```
 
 Los `SRC` actualizados funcionan como memoria persistente de lectura y permiten responder consultas generales desde Voces sin reconstruir el dispositivo ni releer fuentes completas.
+
+## 16. Alfabeto Popular 1956 — REVISIÓN INTEGRAL Y CONJUNTA CERRADA
+
+`SRC-ALFABETO-POPULAR-1956` quedó actualizado a:
+
+```text
+estado_de_lectura = lectura_integral_y_revision_conjunta_completadas_2026-09-04
+ALFABETO_1956_REVIEW = COMPLETE
+```
+
+Se revisaron las 21 páginas de la copia PDF, correspondientes a cubierta/preliminares y 17 páginas numeradas del folleto. La sección final de poesía, páginas PDF 18–21 / impresas 14–17, quedó documentada mediante:
+
+- `HALL-0184`: dos poemas de autoría explícita y sus traducciones españolas;
+- `HALL-0185`: las traducciones literarias no constituyen glosas interlineales.
+
+Datos documentales finales de alto valor:
+
+- `GUENDA RIBANA'` — Enrique Liekens — traducción española `NOSTALGIA`, marcada `semi-literal`;
+- `TI GUEELA' NACAHUIDO'` — Pancho Nacar — traducción española `LA NOCHE OBSCURA`.
+
+```text
+AUTHORED_LITERARY_EXAMPLE != SPONTANEOUS_CORPUS
+AUTHORED_LITERARY_EXAMPLE != LOCALITY_PROVENANCE
+SEMI_LITERAL_TRANSLATION != INTERLINEAR_GLOSS
+LITERARY_EXAMPLE != UNIVERSAL_ORTHOGRAPHIC_RULE
+```
+
+No se incorporó al repositorio el payload completo de los poemas ni se derivó una nueva regla técnica del dispositivo únicamente de estos textos. El valor añadido de la sección final es documental, histórico, literario y de demostración del sistema gráfico de 1956.
