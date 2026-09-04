@@ -24,13 +24,16 @@ nivel_de_fuente: secundaria
 disponibilidad: acceso_abierto_en_repositorio
 licencia_registrada_en_repositorio: CC_BY_NC_SA_4_0
 estado_de_acceso: disponible
+estado_de_ingesta: semantic_backfill_p1_variation_writing_sufficient_2026-09-04
 ```
 
 `BIB064` está confirmado por la hoja bibliográfica maestra reconciliada el 2026-09-03.
 
-## Evidencia relevante
+## Memoria persistente de lectura — P1 2026-09-04
 
-El capítulo reporta documentación en nueve municipios:
+### Cobertura y zonas amplias
+
+El capítulo trabaja con nueve municipios documentados por el proyecto dialectológico:
 
 - Juchitán de Zaragoza;
 - Santa María Xadani;
@@ -42,26 +45,86 @@ El capítulo reporta documentación en nueve municipios:
 - San Pedro Comitancillo;
 - Ixtepec.
 
-Resume la distribución dialectal de Cardona (2020) en tres zonas:
+`HALL-0180` registra la síntesis zonal usada en 2025:
 
 - sur: San Blas Atempa / Tehuantepec;
 - centro: Juchitán / Xadani / Unión Hidalgo / El Espinal;
 - norte: Comitancillo / Ixtaltepec / Ixtepec.
 
-El texto argumenta que la variación fonológica y dialectal puede tener consecuencias para la representación escrita. Caracteriza el Alfabeto Popular como una solución históricamente centrada en Juchitán y discute la necesidad de que una escritura de alcance regional sea sensible a diferencias dialectales y extralingüísticas.
+Esta clasificación amplia no elimina el carácter transicional que Cardona 2020 reporta para El Espinal, Unión Hidalgo y Comitancillo.
 
-Entre los temas específicos discutidos se encuentran las diferencias de realización de fonaciones laringizadas y la posibilidad de soluciones de representación multilectal para ciertos fenómenos.
+```text
+BROAD_DIALECT_ZONE != LOCALITY
+BROAD_ZONE_LABEL != ERASE_TRANSITION_STATUS
+```
 
-## Relevancia inmediata para Voces
+### Fonación y variación regional
 
-La fuente aporta evidencia independiente y reciente para dos problemas abiertos por la reunión con Irma:
+`HALL-0181`:
 
-1. El Espinal no debe tratarse simplemente como “Juchitán con otras palabras”, aunque ambos formen parte de una zona dialectal central en esta clasificación.
-2. Una política ortográfica que aspire a cubrir varias localidades debe distinguir entre una convención basada en Juchitán y fenómenos regionales que pueden requerir otra representación o una gestión explícita de variantes.
+En los fenómenos discutidos, las realizaciones rearticuladas se asocian especialmente con la zona sur, mientras realizaciones laringizadas/creaky tienen amplia difusión en zonas central y norte. La diferencia puede importar para la transparencia oral–escritura.
+
+```text
+SAME_MACRO_PHENOMENON != SAME_LOCAL_PHONETIC_REALIZATION
+DIALECT_TENDENCY != ABSOLUTE_LEXEME_RULE
+```
+
+### Alcance histórico del Alfabeto Popular
+
+`HALL-0182`:
+
+Los autores caracterizan el Alfabeto Popular como una solución históricamente centrada en el habla de Juchitán para su discusión del problema regional. Esa caracterización no invalida el Alfabeto ni adopta por sí misma una norma diferente dentro de Voces.
+
+```text
+JUCHITAN_CENTERED_REFERENCE != PAN_ISTHMUS_PHONETIC_IDENTITY
+ACADEMIC_CRITIQUE != ADOPTED_PROJECT_NORM
+```
+
+### Propuesta multilectal
+
+`HALL-0183`:
+
+El capítulo propone considerar un enfoque multilectal para una futura norma regional. En ciertos fenómenos, más de una representación podría ser compatible con realizaciones dialectales distintas; la propuesta se extiende a algunas alternancias segmentales y elisiones.
+
+```text
+MULTILECTAL_ORTHOGRAPHY = ACADEMIC_PROPOSAL
+MULTILECTAL_PROPOSAL != CURRENT_ADOPTED_PROJECT_NORM
+MULTILECTAL_PROPOSAL != FREE_VARIANT_INTERCHANGEABILITY
+VARIANT_LOCALITY_METADATA = REQUIRED_FOR_SAFE_USE
+```
+
+### Otras deudas que el capítulo identifica
+
+La discusión final señala que una normalización regional tendría que considerar además:
+
+- marcación de tonos;
+- segmentación gráfica entre palabras;
+- puntuación y organización de enunciados complejos.
+
+Estas menciones no resuelven esos problemas ni sustituyen Xneza 2015, la Norma 2016 o futuras decisiones del proyecto.
+
+## Relevancia para Voces
+
+```text
+JUCHITAN = PRIORITY_VARIETY
+OTHER_LOCALITY_FORM != INCORRECT
+EL_ESPINAL != JUCHITAN_ALIAS
+GENERATOR_TARGET_VARIETY_MUST_BE_EXPLICIT_FOR_CROSS_LOCALITY_USE = true
+CORRECTOR_MAY_RETURN_VARIANT_BY_LOCALITY = true
+```
+
+Una arquitectura multilectal no se adopta automáticamente. El proyecto puede seguir priorizando Juchitán mientras conserva evidencia de otras localidades y evita sobrecorregir variación legítima.
 
 ## Límites
 
-- El capítulo formula un análisis/propuesta académica; no constituye por sí mismo una norma ortográfica adoptada por comunidades o instituciones.
-- Una arquitectura multilectal propuesta en la literatura no se convierte automáticamente en arquitectura de Voces de las Nubes.
-- La clasificación dialectal no sustituye la metadata local de cada hablante, texto o grabación.
-- Esta fuente no reemplaza la necesidad de localizar el texto completo de la Norma de escritura de 2016.
+- El capítulo es análisis/propuesta académica, no norma adoptada.
+- No sustituye metadata local por una sola etiqueta regional.
+- No reemplaza la necesidad de leer la Norma de escritura 2016 directamente.
+
+## Estado
+
+```text
+CARDONA_VICENTE_2025_P1_VARIATION_WRITING_BACKFILL = SUFFICIENT
+EXHAUSTIVE_ISOGLOSS_INGESTA = false
+REOPEN_FOR = TARGETED_ORTHOGRAPHIC_VARIANT | DIALECT_COMPARISON | EXACT_ISOGLOSS | NORM_DESIGN_QUESTION
+```
