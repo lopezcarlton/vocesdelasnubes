@@ -23,7 +23,7 @@ descripcion: >
   la totalidad de la norma contemporánea.
 nivel_de_fuente: primaria
 estado_de_acceso: copia_disponible_fuera_del_repositorio_publico
-estado_de_lectura: lectura_integral_realizada_2026-09-04_revision_conjunta_en_curso
+estado_de_lectura: lectura_integral_y_revision_conjunta_completadas_2026-09-04
 ```
 
 ## Identidad documental
@@ -57,6 +57,29 @@ La Norma de escritura de 2016 es un documento posterior cuya identidad ya fue lo
 NORMA_ESCRITURA_2016 = LATER_NORMATIVE_DOCUMENT_PENDING_DIRECT_READING
 ```
 
+## Cobertura de lectura cerrada — 2026-09-04
+
+La copia completa fue revisada visualmente y de manera conjunta. La cobertura quedó distribuida así:
+
+- páginas impresas 1–2: introducción, alcance y justificación histórica;
+- páginas impresas 3–10: conclusiones de la Mesa Redonda, descripción fonética, principios de escritura, alfabeto, problema especial, aplicación a otros idiomas y recomendaciones;
+- página impresa 11: expresiones comunes didxazá–español;
+- páginas impresas 12–13: tres narraciones breves con traducciones españolas;
+- páginas impresas 14–17: sección `UNOS POEMAS`, con dos poemas de autoría explícita y sus traducciones españolas.
+
+No se conserva en el repositorio una reproducción integral de los textos literarios. Se registran identidad, coordenadas, títulos, autorías, hechos parafraseados y límites de interpretación suficientes para recuperar el conocimiento sin redistribuir innecesariamente el payload fuente.
+
+### Sección literaria final
+
+En las páginas impresas 14–17 / PDF 18–21 aparecen:
+
+- `GUENDA RIBANA'`, de **Enrique Liekens**, seguida de la traducción española `NOSTALGIA`, introducida como `Traducción al español; semi-literal:`;
+- `TI GUEELA' NACAHUIDO'`, de **Pancho Nacar**, seguida de la traducción española `LA NOCHE OBSCURA`, introducida como `Traducido al español --`.
+
+→ `HALL-0184`, `HALL-0185`.
+
+La fuente no proporciona en estas páginas una localidad de procedencia para cada poema. La autoría no debe convertirse automáticamente en provenance dialectal. Tampoco las traducciones constituyen glosas interlineales.
+
 ## Uso en Voces
 
 Esta fuente puede utilizarse para:
@@ -65,13 +88,14 @@ Esta fuente puede utilizarse para:
 - verificar convenciones expresamente propuestas en 1956;
 - reconocer reglas que continúan documentadas en Gramática Popular, Vocabulario, Xneza, Bueno Holle u otras fuentes posteriores;
 - comparar la práctica de autores y materiales posteriores;
-- estudiar qué cambió, se mantuvo o fue reinterpretado en desarrollos posteriores.
+- estudiar qué cambió, se mantuvo o fue reinterpretado en desarrollos posteriores;
+- recuperar ejemplos históricos de aplicación del alfabeto en expresiones, prosa y poesía, conservando género, autoría y límites de provenance.
 
 No debe utilizarse **aisladamente** para declarar cuál es la única grafía contemporánea correcta en 2026. Pero tampoco debe tratarse como una fuente histórica desconectada de la tradición ortográfica viva: su continuidad debe comprobarse regla por regla.
 
 ## Regla de ingesta 2026-09-04
 
-La lectura integral de la copia no implica adopción automática de sus propuestas. Durante la revisión conjunta deben separarse explícitamente:
+La lectura integral de la copia no implica adopción automática de sus propuestas. Durante la revisión conjunta se separaron explícitamente:
 
 - conocimiento lingüístico potencialmente reutilizable;
 - convención ortográfica histórica;
@@ -83,3 +107,11 @@ La lectura integral de la copia no implica adopción automática de sus propuest
 Además, antes de marcar como `abierta` una cuestión lingüística surgida de la fuente de 1956, debe comprobarse si ya fue resuelta por fuentes posteriores que el proyecto haya estudiado. La revisión del 2026-09-04 mostró que varios hechos —tres tonos, ausencia de oposición `tú/usted`, regla contextual `xh/x` y distribución de `r` débil/fuerte— ya estaban documentados y habían quedado incompletamente promovidos a Voces durante la migración.
 
 Las grafías de 1956 se conservan tal como aparecen en la fuente. Cualquier correspondencia con una forma contemporánea deberá registrarse como relación explícita y nunca como sustitución silenciosa.
+
+```text
+ALFABETO_1956_REVIEW = COMPLETE
+FULL_SOURCE_REREAD_FOR_ROUTINE_QUERY = false
+SOURCE_PASSAGE_REREAD_FOR_NEW_ADJUDICATION = true
+LITERARY_EXAMPLE != UNIVERSAL_RULE
+TRANSLATION != AUTOMATIC_GLOSS
+```
