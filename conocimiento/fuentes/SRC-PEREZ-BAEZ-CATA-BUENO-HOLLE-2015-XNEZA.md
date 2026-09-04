@@ -20,57 +20,107 @@ descripcion: >
   Es fuente central para el trabajo ortográfico del proyecto.
 nivel_de_fuente: primaria
 estado_de_acceso: disponible_en_web
-estado_de_ingesta: parcial_con_backfill_prioritario_2026-09-04
+estado_de_ingesta: semantic_backfill_p0_sufficient_2026-09-04
 ```
 
-## Backfill semántico confirmado — 2026-09-04
+## Identidad y alcance
 
-La ficha anterior retenía principalmente el problema de palabra ortográfica. La relectura directa mostró que la fuente también es central para otros hechos ya trabajados por el proyecto.
+El artículo aparece en el volumen 20 de *Tlalocan* con año editorial 2015 y publicación web en enero de 2016. Se conserva `2015` como identidad bibliográfica del volumen/DOI del proyecto.
 
-### Continuidad del Alfabeto Popular
+El texto `Teria` y su versión española son obras de Víctor Cata incluidas en el artículo. La versión española no debe tratarse como traducción literal automática: los autores advierten que funciona también como obra literaria propia.
 
-El artículo presenta el Alfabeto Popular como sistema en uso desde 1956, lo adopta expresamente para el propio trabajo por estar en uso en la comunidad de habla y describe su utilización en talleres, literatura y escritura contemporánea. También documenta que, al momento del artículo, se trabajaba en normas ortográficas actualizadas.
+## Memoria persistente de lectura — backfill P0 2026-09-04
 
-Esto sustenta la continuidad histórica del Alfabeto Popular sin identificarlo mecánicamente con la posterior Norma de 2016.
+### Continuidad del Alfabeto Popular y fonología ya recuperada
 
-→ `HALL-0072`.
+El artículo adopta el Alfabeto Popular por su uso comunitario y tradición desde 1956 y documenta procesos posteriores de normalización sin identificarlos mecánicamente con la Norma 2016.
 
-### Tres tonos
+- continuidad histórica del Alfabeto Popular → `HALL-0072`;
+- tres tonos y tres tipos vocálicos; tono no representado sistemáticamente por el Alfabeto Popular descrito → `HALL-0067`;
+- coexistencia de análisis fortis/lenis y sencilla/geminada debe conservarse por nivel analítico.
 
-En su sección de características fonológicas declara que el diidxazá cuenta con tres tonos:
+### Palabra fonológica
 
-- bajo (o falta de tono);
-- alto;
-- ascendente.
+`HALL-0151`:
 
-También distingue tres tipos de vocales: modal `V`, cortada `V'` y rearticulada `VV`, y señala que el Alfabeto Popular representa la voz vocálica pero no el tono.
+- palabra fonológica analizada alrededor de la raíz léxica;
+- mínimo de una sílaba abierta;
+- ausencia de codas consonánticas en el sistema descrito;
+- restricción fuerte contra inicio vocálico, con debilitamiento/omisión opcional de /g/ inicial;
+- acento de raíces bisilábicas relacionado con raíz y composición morfológica.
 
-→ `HALL-0067`.
+### Palabra gramatical, compuestos y colocaciones
 
-### Consonantes fuertes/débiles y análisis
+- compuestos como palabras gramaticales diagnosticables mediante contigüidad, argumentos externos y hospedaje de clíticos al final de la unidad → `HALL-0152`;
+- debilitamiento prosódico, orden fijo o significado convencional no bastan por sí solos para diagnosticar compuesto → `HALL-0153`;
+- colocaciones pueden tener significado convencional sin constituir una sola palabra gramatical y pueden permitir material argumental/persona dentro de la secuencia → `HALL-0157`.
 
-El artículo contrasta dos tradiciones de análisis del sistema consonántico:
+```text
+COMPOUND != COLLOCATION
+PROSODIC_WEAKENING != COMPOUND_PROOF
+CONVENTIONAL_MEANING != SINGLE_GRAMMATICAL_WORD_PROOF
+```
 
-- descripción fonética fortis/lenis;
-- análisis morfofonológico de consonantes sencillas/geminadas.
+### Palabra ortográfica
 
-La coexistencia de estas descripciones debe conservarse por nivel analítico y no reducirse a equivalencias terminológicas automáticas.
+`HALL-0154` establece el principio central del artículo:
 
-### Norma actualizada en preparación
+```text
+PHONOLOGICAL_WORD != GRAMMATICAL_WORD != ORTHOGRAPHIC_WORD_BY_DEFAULT
+ORTHOGRAPHIC_WORD = CONVENTIONAL_ADJUDICATION_PROBLEM
+LINGUISTIC_ANALYSIS != PRESCRIPTIVE_NORM
+```
 
-La fuente señala que conocedores y activistas, en colaboración con INALI, estaban preparando normas ortográficas actualizadas que contemplaban diacríticos para tonos alto y ascendente, dejando bajo sin marcar. Este dato es antecedente documental de la normalización posterior, no sustituto del manuscrito de la Norma 2016.
+Los autores proponen criterios de análisis para facilitar homologación, pero concluyen explícitamente que no pretenden establecer normas prescriptivas.
 
-## Relación con el dispositivo
+### Clíticos
 
-El artículo fue utilizado durante el desarrollo técnico para razonamiento sobre composición, palabra ortográfica y representación de formas. Cualquier regla técnica derivada debe poder volver a este artículo y distinguir con claridad:
+`HALL-0155`:
 
-- el texto de Víctor Cata;
-- el análisis de los autores;
-- decisiones posteriores propias de Voces;
-- transformaciones específicas del dispositivo.
+- un clítico no es palabra fonológica independiente por defecto;
+- `má=` puede portar acento prosódico en ciertos contextos;
+- `ca'` puede funcionar como enclítico verbal o proclítico nominal;
+- hospedaje del clítico y espacio ortográfico son problemas relacionados pero no idénticos.
 
-La versión del dispositivo no sustituye la fuente publicada.
+### Superficie fonética vs representación de compuestos
 
-## Deuda restante
+`HALL-0156`:
 
-Este backfill corrige huecos visibles durante la lectura del Alfabeto de 1956. Sigue pendiente una reingesta semántica sistemática del artículo completo para asegurar que sus análisis de palabra fonológica, gramatical, clíticos, compuestos, colocaciones y decisiones ortográficas estén representados en Voces sin depender de artefactos técnicos históricos.
+La fuente documenta la elección abierta entre representar cambios fonéticos contextuales de compuestos o conservar mayor transparencia de los componentes. Usa la coexistencia `didxazá` / `diidxazá` como ejemplo de prácticas observadas y no prescribe una solución universal.
+
+### Acento prosódico vs tilde española
+
+`HALL-0158`:
+
+Los autores consideran innecesario representar ortográficamente el acento prosódico predecible en el análisis presentado y critican la aplicación mecánica de las reglas españolas de aguda/grave/esdrújula al diidxazá.
+
+```text
+PROSODIC_STRESS != TONE
+PROSODIC_STRESS != SPANISH_TILDE_RULES
+SPANISH_STRESS_ORTHOGRAPHY_AS_TEMPLATE = unsafe
+XNEZA_STRESS_PROPOSAL != AUTOMATIC_CURRENT_NORM
+```
+
+## Consecuencias para el dispositivo
+
+```text
+TOKEN_BOUNDARY != PHONOLOGICAL_BOUNDARY_BY_DEFAULT
+TOKEN_BOUNDARY != GRAMMATICAL_WORD_BOUNDARY_BY_DEFAULT
+AUDIO_PAUSE != ORTHOGRAPHIC_SPACE_BY_DEFAULT
+ROOT_RECOGNITION != AUTOMATIC_TOKEN_SPLIT
+CLITIC_HOSTING != AUTOMATIC_SPACING_POLICY
+PHONETIC_REDUCTION != AUTOMATIC_SPELLING_NORMALIZATION
+```
+
+Analyzer debe poder mantener simultáneamente capas fonológica, morfológica/gramatical y ortográfica. Corrector sólo puede imponer una convención de espacio/unión cuando exista una decisión ortográfica autorizada adicional.
+
+## Estado
+
+```text
+XNEZA2015_P0_STRUCTURAL_BACKFILL = SUFFICIENT
+XNEZA2015_EXHAUSTIVE_EXAMPLE_INGESTA = false
+FULL_LINEAR_REREAD_REQUIRED = false
+REOPEN_FOR = TARGETED_ORTHOGRAPHIC_QUERY | EXACT_EXAMPLE | CONTRADICTION | IMPLEMENTATION_GRANULARITY
+```
+
+Los ejemplos individuales de `Teria` permanecen disponibles como evidencia contextual y literaria, no como estilo conversacional neutral por defecto.
