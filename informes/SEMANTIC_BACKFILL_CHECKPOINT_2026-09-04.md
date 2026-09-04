@@ -1,6 +1,6 @@
 # SEMANTIC_BACKFILL_CHECKPOINT_2026-09-04
 
-**Estado:** `ACTIVE / PBK2016_PILOT_COMPLETED / GRAMATICA_POPULAR_BACKFILL_IN_PROGRESS`  
+**Estado:** `ACTIVE / PBK2016_PILOT_COMPLETED / GRAMATICA_POPULAR_P0_STRUCTURAL_SUFFICIENT / NEXT_P0_PVM_2009_2010`  
 **Repositorio autoritativo:** `lopezcarlton/vocesdelasnubes`
 
 ## 1. Diagnóstico
@@ -116,9 +116,7 @@ La reparación puntual y el piloto PBK2016 no sustituyen el backfill de las otra
 
 `SRC-PICKETT-BLACK-MARCIAL-2001-GRAMATICA-POPULAR`
 
-Objetivo: recorrer el conocimiento históricamente compilado en `JUCHITAN_LINGUISTIC_CORE_v0_27` únicamente como índice de recuperación, verificar por bloques los pasajes necesarios y promover a Voces reglas, paradigmas, excepciones y límites todavía ausentes.
-
-No releer el libro linealmente desde cero si las coordenadas de ingesta histórica permiten una revisión dirigida.
+Estado actual: `P0_STRUCTURAL_SUFFICIENT / NON_EXHAUSTIVE`.
 
 ### P0-B — Pickett–Villalobos–Marlett 2009/2010 + corrigendum
 
@@ -205,17 +203,11 @@ BLIND_CAUSATIVE_GENERATION = forbidden_without_lexeme_or_paradigm_evidence
 COR001 = ANALYSIS_TARGET_ONLY
 ```
 
-P0-A permanece `IN_PROGRESS`; no se declara completa la Gramática Popular ni se relee linealmente el libro.
-
 ## 10. P0-A Gramática Popular — avance dirigido posterior
-
-Después del checkpoint anterior se cerraron tres bloques adicionales, todos verificados directamente contra los pasajes pertinentes del PDF original y sin usar el JLC como autoridad.
 
 ### 10.1 Negación, partículas dependientes y preguntas
 
 `HALL-0110`–`HALL-0114`.
-
-Resultados de alto valor:
 
 - distribución diferenciada de negadores y partículas dependientes;
 - preguntas sí/no y preguntas de información con patrones de orden distintos;
@@ -223,30 +215,22 @@ Resultados de alto valor:
 - con `qué`, el pronombre negativo puede quedar postverbal o frontalizarse, pero no intervenir entre `qué` y el verbo;
 - `cadi` niega palabra/frase y no aparece junto con `qué` en la descripción de GP2001.
 
-Límite:
-
 ```text
 GP2001_NEGATION_DESCRIPTION != CONTEMPORARY_NORMATIVE_ADJUDICATION
 ```
-
-La presencia de `qué` en la Gramática no reemplaza evidencia comunitaria posterior sobre preferencia o uso contemporáneo.
 
 ### 10.2 Combinación de oraciones — capítulo 14
 
 `HALL-0115`–`HALL-0121`.
 
-Se distinguieron:
-
 - coordinación con `ne` y coordinación sin conjunción;
 - complementos oracionales sin conjunción equivalente a español `que`;
 - restricciones de correferencia y selección según verbo rector;
-- preguntas indirectas como subtipo propio;
+- preguntas indirectas;
 - subordinadas adverbiales por relación semántica;
-- `la?` como frontera posible en subordinadas iniciales;
+- `la?` como frontera posible;
 - relativas con `ni`;
-- relativas sin antecedente expreso con función nominal.
-
-Reglas reforzadas:
+- relativas sin antecedente expreso.
 
 ```text
 VERB_SEQUENCE != AUTOMATIC_SUBORDINATION
@@ -261,12 +245,10 @@ HEADLESS_RELATIVE_DOES_NOT_REQUIRE_INSERTED_GENERIC_NOUN = true
 
 `HALL-0122`–`HALL-0124`.
 
-Resultados de alto valor para corrector/audio:
-
 - fuerte/débil no equivale simplemente a sordo/sonoro;
 - alargamiento postónico de fuertes, ausencia de fricativización castellana en `b/d/g` y velarización contextual de `n` son realizaciones fonéticas, no reglas ortográficas;
 - vocales cortadas/quebradas pueden neutralizarse fonéticamente al perder el acento principal en compuestos/frases estrechas;
-- otras frases conservan rasgos tónicos de ambas palabras, por lo que no toda adyacencia produce neutralización.
+- otras frases conservan rasgos tónicos de ambas palabras.
 
 ```text
 CITATION_FORM != CONTEXTUAL_PHONETIC_SURFACE
@@ -274,15 +256,40 @@ PHONETIC_NEUTRALIZATION != ORTHOGRAPHIC_DELETION
 AUDIO_SURFACE -> SPELLING_CORRECTION = forbidden_without_independent_orthographic_evidence
 ```
 
-Estado después de este avance:
+## 11. Cierre P0-A Gramática Popular — suficiencia estructural
+
+El barrido final dirigido promovió los huecos estructurales restantes con impacto real en Analyzer/Corrector/Tutor/Generator:
+
+- frase nominal, determinación, demostrativos, interrogativos e intensidad → `HALL-0125`–`HALL-0129`;
+- preposiciones corporales, `runi`, `ne` y préstamos → `HALL-0130`–`HALL-0131`;
+- valencia, orden básico, predicación nominal/cópulas, `nuu`, posicionales y meteorología impersonal → `HALL-0132`–`HALL-0135`;
+- verbos compuestos y frases verbales → `HALL-0136`–`HALL-0137`;
+- conjunciones, interjecciones con restricciones y conectores narrativos → `HALL-0138`–`HALL-0140`.
+
+El `SRC` de Gramática Popular quedó actualizado como memoria persistente hasta `HALL-0140`.
+
+Criterio de cierre:
 
 ```text
-HALL-0077..HALL-0124 = CANONICAL_ADJUDICATED_GP_BACKFILL
-SRC_GP_READING_MEMORY = UPDATED_THROUGH_APPENDIX_HIGH_VALUE_BLOCKS
-TEORIA.md = v1.7
-GRAMATICA_POPULAR_P0_A = IN_PROGRESS
+GRAMATICA_POPULAR_P0_STRUCTURAL_BACKFILL = SUFFICIENT
+GRAMATICA_POPULAR_EXHAUSTIVE_SEMANTIC_INGESTA = false
+FULL_LINEAR_REREAD_REQUIRED = false
+REOPEN_ONLY_FOR_TARGETED_QUERY_CONTRADICTION_OR_MISSING_GRANULARITY = true
 ```
 
-### Próximo bloque dirigido dentro de P0-A
+Lo restante en la obra es principalmente:
 
-No volver a capítulos ya adjudicados. El siguiente barrido debe localizar **huecos estructurales todavía sin HALL canónico** en los capítulos nominales/adjetivales, preposiciones y oración básica, priorizando sólo aquello con impacto real en Analyzer/Corrector/Tutor/Generator. Los textos del capítulo 15 deben tratarse por género y no convertirse en estilo conversacional neutro por defecto.
+- inventario léxico fino;
+- ejemplos adicionales de paradigmas ya representados;
+- explotación por género del capítulo 15;
+- granularidad adicional requerida por consultas o implementaciones concretas.
+
+No se considera que esos residuales bloqueen el siguiente P0.
+
+### Próximo P0
+
+```text
+NEXT_P0 = PICKETT_VILLALOBOS_MARLETT_2009_2010_PLUS_CORRIGENDUM
+```
+
+Objetivo inmediato: formalizar desde la fuente original inventario segmental/tonal, fortis-lenis, vibrantes, fonación, acento y realizaciones contextuales, distinguiendo explícitamente fonema, alófono, convención ortográfica y dato acústico.
