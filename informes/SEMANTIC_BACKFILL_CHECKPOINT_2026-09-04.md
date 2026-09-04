@@ -1,6 +1,6 @@
 # SEMANTIC_BACKFILL_CHECKPOINT_2026-09-04
 
-**Estado:** `ACTIVE / PBK2016_DONE / GP_P0_DONE / PVM_P0_DONE / XNEZA_P0_DONE / NEXT_P0_BUENO_HOLLE_2019`  
+**Estado:** `ACTIVE / PBK2016_DONE / GP_P0_DONE / PVM_P0_DONE / XNEZA_P0_DONE / BUENO_HOLLE_P0_DONE / NEXT_P1_PICKETT_VOCABULARIO`  
 **Repositorio autoritativo:** `lopezcarlton/vocesdelasnubes`  
 **Método:** `LAZY_TARGETED_LOADING`
 
@@ -91,52 +91,36 @@ Cobertura estructural adjudicada:
 - verbos compuestos y frases verbales;
 - conjunciones, interjecciones y cohesión narrativa.
 
-Correcciones de alto impacto:
-
-```text
-GP_PERFECT != GENERIC_PRESENT_RESULT_PERFECT
-SPANISH_TENSE != DIDXAZA_ASPECT_BY_DEFAULT
-POTENTIAL != CAPACITY_ONLY
-UNMARKED_3RD_PERSON != ERROR
-POSSESSION != SINGLE_TEMPLATE
-CAUSATIVE != si_ONLY
-SPANISH_SER_ESTAR != SINGLE_DIDXAZA_COPULA
-SPANISH_PREPOSITION_GLOSS != UNIQUE_DIDXAZA_FORM
-```
-
-Estado:
-
 ```text
 GRAMATICA_POPULAR_P0_STRUCTURAL_BACKFILL = SUFFICIENT
 GRAMATICA_POPULAR_EXHAUSTIVE_SEMANTIC_INGESTA = false
-REOPEN_ONLY_FOR_TARGETED_QUERY_CONTRADICTION_OR_MISSING_GRANULARITY = true
 ```
 
 ## 5. P0-B Pickett–Villalobos–Marlett 2009/2010 + corrigendum — SUFICIENTE
 
 Fuentes conservadas por separado:
 
-- `SRC-PICKETT-VILLALOBOS-MARLETT-2009-ZAPOTECO-ISTMO-JUCHITAN` = BIB016, versión española;
-- `SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS` = BIB061, publicación JIPA;
-- corrigendum JIPA 2011, DOI `10.1017/S0025100311000053`, vinculado a BIB061.
+- `SRC-PICKETT-VILLALOBOS-MARLETT-2009-ZAPOTECO-ISTMO-JUCHITAN` = BIB016;
+- `SRC-PICKETT-VILLALOBOS-MARLETT-2010-PHONETICS` = BIB061;
+- corrigendum JIPA 2011, DOI `10.1017/S0025100311000053`.
 
 Promovido: `HALL-0141`–`HALL-0150`.
 
 Cobertura:
 
-- inventario segmental juchiteco;
-- fortis/lenis como oposición multirrasgo;
-- trill/tap y rareza léxica de la trill;
-- cinco vocales + fonación modal/cortada/laringizada;
-- tres tonos fonémicos vs propuesta tentativa de cinco melodías de raíz nominal;
-- acento, peso y clíticos;
-- alofonía contextual;
-- separación fonema/alófono/grafía;
-- alcance exacto del corrigendum.
+- inventario segmental;
+- fortis/lenis multirrasgo;
+- vibrantes;
+- fonación;
+- tono y melodías de raíz;
+- acento;
+- alofonía;
+- capas fonema/alófono/grafía;
+- alcance del corrigendum.
 
 Discrepancia abierta:
 
-`HALL-0150` registra que GP2001 niega la fricativización intervocálica de `b/d/g` al estilo español, mientras PVM2010 documenta realizaciones lenis frecuentemente fricativas o aproximantes intervocálicamente.
+`HALL-0150` conserva el desacuerdo GP2001/PVM2010 sobre `b/d/g` intervocálicas.
 
 ```text
 BIBLIOGRAPHIC_DISCREPANCY_b_d_g = OPEN
@@ -153,17 +137,14 @@ Promovido: `HALL-0151`–`HALL-0158`.
 
 Cobertura:
 
-- palabra fonológica centrada en raíz y propiedades segmentales/prosódicas;
+- palabra fonológica;
 - palabra gramatical;
-- pruebas de compuestos por contigüidad, argumentos y hospedaje de clíticos;
-- distinción compuesto/colocación;
-- límites de orden fijo, prosodia y significado convencional como diagnósticos;
-- palabra ortográfica como problema de convención, no consecuencia automática de otra capa;
-- clíticos `má=` y `ca'` como casos que rompen reglas simples de espaciado;
-- superficie fonética vs transparencia morfológica en compuestos;
-- crítica a usar las reglas españolas de tilde para representar el acento prosódico del diidxazá.
-
-Regla central:
+- compuestos y colocaciones;
+- clíticos;
+- palabra ortográfica;
+- límites de prosodia/significado como diagnóstico de unión;
+- superficie fonética vs transparencia morfológica;
+- acento prosódico vs reglas españolas de tilde.
 
 ```text
 PHONOLOGICAL_WORD != GRAMMATICAL_WORD != ORTHOGRAPHIC_WORD_BY_DEFAULT
@@ -173,38 +154,76 @@ PHONETIC_REDUCTION != AUTOMATIC_SPELLING_NORMALIZATION
 LINGUISTIC_ANALYSIS != PRESCRIPTIVE_NORM
 ```
 
-Estado:
-
-```text
-XNEZA2015_P0_STRUCTURAL_BACKFILL = SUFFICIENT
-XNEZA2015_EXHAUSTIVE_EXAMPLE_INGESTA = false
-REOPEN_FOR = TARGETED_ORTHOGRAPHIC_QUERY | EXACT_EXAMPLE | CONTRADICTION | IMPLEMENTATION_GRANULARITY
-```
-
-## 7. Siguiente P0 — Bueno Holle 2019
+## 7. P0-D Bueno Holle 2019 — SUFICIENCIA ESTRUCTURAL
 
 `SRC-BUENO-HOLLE-2019`
 
+La metodología básica ya estaba promovida en `HALL-0007`; el backfill dirigido añadió `HALL-0159`–`HALL-0167`.
+
+Cobertura:
+
+- forma referencial sensible a saliencia/accesibilidad → `HALL-0159`;
+- tercera persona explícita/cero condicionada por sintaxis y organización discursiva → `HALL-0160`;
+- foco de predicado/oración vs foco de argumento → `HALL-0161`;
+- `nga` y lectura exhaustiva en foco de argumento → `HALL-0162`;
+- tópico-comentario no marcado verbo-inicial → `HALL-0163`;
+- `la` como recurso de common ground / try-marking → `HALL-0164`;
+- unidad entonacional como capa prosódica con fuerte solapamiento con cláusula simple → `HALL-0165`;
+- secuencia quiasmática foco de predicado + foco de argumento y manejo del turno → `HALL-0166`;
+- tópicos pronominales marcados en IU previa y fuerte coocurrencia con `la` en la muestra estudiada → `HALL-0167`.
+
+```text
+REFERENCE_FORM_SELECTION = DISCOURSE_SENSITIVE
+OVERT_3RD != ZERO_3RD_FREE_VARIATION
+FOCUS != GENERIC_EMPHASIS
+TOPIC != FOCUS
+TOPIC != SIMPLY_PREVERBAL_NP
+nga != GENERIC_EMPHASIS_PARTICLE_BY_DEFAULT
+la != SIMPLE_COMMA
+IU != ORTHOGRAPHIC_SENTENCE_BY_DEFAULT
+IU != COR002_PEDAGOGICAL_CONVERSATION_UNIT
+CORPUS_TENDENCY != CATEGORICAL_GENERATION_RULE
+```
+
+Estado:
+
+```text
+BUENO_HOLLE_2019_P0_STRUCTURAL_BACKFILL = SUFFICIENT
+BUENO_HOLLE_EXHAUSTIVE_EXAMPLE_INGESTA = false
+REOPEN_FOR = TARGETED_DISCOURSE_QUERY | EXACT_EXAMPLE | CONTRADICTION | IMPLEMENTATION_GRANULARITY
+```
+
+## 8. Deuda de consistencia de vista
+
+`conocimiento/TEORIA.md` conserva todavía una formulación heredada del Apéndice de GP2001 según la cual `b/d/g` no presentan fricativización intervocálica al estilo español. Desde el backfill PVM existe `HALL-0150`, que documenta la discrepancia con PVM2010.
+
+La vista deberá actualizarse para representar **la discrepancia abierta**, no para escoger una de las dos descripciones.
+
+```text
+TEORIA_VIEW_b_d_g_CONFLICT_SYNC = PENDING
+CANONICAL_HALL_CONFLICT_ALREADY_REGISTERED = true
+VIEW_MUST_NOT_SILENTLY_RESOLVE_CONFLICT = true
+```
+
+Esta deuda de vista no bloquea el siguiente backfill porque el conocimiento canónico y su estado de incertidumbre ya están correctamente registrados.
+
+## 9. Siguiente frente — P1 Vocabulario Pickett
+
+`SRC-PICKETT-2007-VOCABULARIO-ZAPOTECO-ISTMO`
+
 Objetivo dirigido:
 
-- fonología/prosodia sólo donde aporte algo no cubierto o contradiga PVM/Xneza;
-- metodología y naturaleza del corpus;
-- referencia y seguimiento discursivo;
-- tópico/foco y estructura informativa;
-- clíticos/realización cuando cambien análisis;
-- consecuencias reales para Analyzer, Tutor y Generator.
+- promover notas gramaticales y ortográficas reutilizables que actualmente sobrevivan principalmente como backfills técnicos o notas lexicográficas;
+- priorizar excepciones, variantes, restricciones de uso y convenciones que cambien Analyzer/Corrector/Tutor/Generator;
+- no copiar el vocabulario completo a HALL;
+- no convertir una entrada lexicográfica aislada en regla productiva.
 
-No releer linealmente la obra si el `SRC` y los índices permiten localizar los bloques pertinentes.
+Después:
 
-## 8. Fuentes posteriores
-
-Después de Bueno Holle 2019:
-
-- P1 Vocabulario Pickett — notas gramaticales/ortográficas reutilizables;
 - P1 Cardona 2020 + Cardona–Vicente 2025 — variación dialectal y escritura;
-- P0 Norma 2016 — bloqueado hasta tener acceso al texto completo; no reconstruir desde citas indirectas.
+- Norma 2016 — sigue bloqueada hasta acceso al texto completo; no reconstruir desde citas indirectas.
 
-## 9. Invariantes
+## 10. Invariantes
 
 ```text
 VOCES = AUTHORITY_FOR_KNOWLEDGE
@@ -216,9 +235,7 @@ UNRESOLVED != INCORRECT
 NEW_CONCEPTUAL_LAYER = false
 ```
 
-## 10. Estado de rendimiento
-
-El objetivo del backfill es que consultas generales puedan responderse desde Voces con pocos archivos:
+## 11. Estado de rendimiento
 
 ```text
 READ_EVERYTHING_BY_DEFAULT = false
