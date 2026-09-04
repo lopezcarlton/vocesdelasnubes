@@ -64,6 +64,27 @@ La Gramática caracteriza la `r` fuerte como **muy rara en palabras nativas**, m
 
 → `HALL-0069`.
 
+### Sistema verbal y aspectos — bloque dirigido §7.2–7.3
+
+Se reabrieron directamente los pasajes impresos 51–61 (PDF pp. 60–70) para verificar un bloque de alto valor señalado por los índices históricos. La adjudicación no usa el JLC como autoridad.
+
+Hallazgos promovidos:
+
+- §7.2 distingue los marcadores principalmente como aspectos/tipos de acción y señala que sólo el futuro puede definirse como tiempo → `HALL-0077`;
+- §7.2.4 define el perfecto `hua-` como acción repetida a lo largo del tiempo, con restricción de experiencia previa y uso negativo de intervalo → `HALL-0078`;
+- §7.2.3 documenta `cana-` como progresivo ambulativo, con movimiento durante la acción → `HALL-0079`;
+- §7.3 organiza variantes aspectuales en Juego 1 y Juego 2, subdividiendo Juego 1 en 1A/1B/1C → `HALL-0080`;
+- §7.3 afirma explícitamente que el potencial de Juego 1C no lleva prefijo y el cuadro 26 presenta `sa'` → `HALL-0081`;
+- §7.3 formula sólo como posibilidad el análisis de `u` de Juego 2 como vocal temática asociada al causativo → `HALL-0082`.
+
+Límites conservados:
+
+```text
+GP_GAME_SYSTEM != PBK2016_A_B_C_D_BY_DEFAULT
+SOURCE_HYPOTHESIS != CERTAIN_RULE
+SPANISH_TENSE != DIDXAZA_ASPECT_BY_DEFAULT
+```
+
 ## Relación con el dispositivo
 
 `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, registries de persona/posesión, paradigmas y otras compilaciones técnicas contienen conocimiento derivado de esta obra.
@@ -78,4 +99,4 @@ Las compilaciones técnicas pueden servir para localizar temas o ejemplos; cualq
 
 ## Deuda restante
 
-El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe revisarse sistemáticamente contra las reglas históricamente compiladas en el dispositivo para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
+El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y el primer bloque verbal/aspectual prioritario, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
