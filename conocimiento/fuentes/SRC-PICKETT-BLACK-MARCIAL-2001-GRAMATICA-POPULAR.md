@@ -75,7 +75,14 @@ Hallazgos promovidos:
 - §7.2.3 documenta `cana-` como progresivo ambulativo, con movimiento durante la acción → `HALL-0079`;
 - §7.3 organiza variantes aspectuales en Juego 1 y Juego 2, subdividiendo Juego 1 en 1A/1B/1C → `HALL-0080`;
 - §7.3 afirma explícitamente que el potencial de Juego 1C no lleva prefijo y el cuadro 26 presenta `sa'` → `HALL-0081`;
-- §7.3 formula sólo como posibilidad el análisis de `u` de Juego 2 como vocal temática asociada al causativo → `HALL-0082`.
+- §7.3 formula sólo como posibilidad el análisis de `u` de Juego 2 como vocal temática asociada al causativo → `HALL-0082`;
+- §7.2.1 describe el habitual como acción repetida/acostumbrada en contexto pasado o presente y excluye su uso en contexto futuro → `HALL-0083`;
+- §7.2.2 define el completivo por acción ya terminada, no por pasado, y admite contexto futuro con punto de referencia posterior → `HALL-0084`;
+- §7.2.3 define el progresivo por acción continuada y permite lectura presente, pasada o futura según contexto → `HALL-0085`;
+- §7.2.5 muestra que el potencial es seleccionado por múltiples construcciones y no se reduce a capacidad o posibilidad → `HALL-0086`;
+- §7.2.6 caracteriza el irrealizado como contrario a la verdad y documenta, entre otros usos, acciones pasadas negadas que no ocurrieron → `HALL-0087`;
+- §7.2.7 documenta el estativo `na-`, su distribución limitada y su posible localización pasada o futura por contexto → `HALL-0088`;
+- §7.2.8 documenta el futuro con `z-` como restringido a contexto futuro → `HALL-0089`.
 
 Límites conservados:
 
@@ -83,6 +90,8 @@ Límites conservados:
 GP_GAME_SYSTEM != PBK2016_A_B_C_D_BY_DEFAULT
 SOURCE_HYPOTHESIS != CERTAIN_RULE
 SPANISH_TENSE != DIDXAZA_ASPECT_BY_DEFAULT
+POTENTIAL != CAPACITY_OR_POSSIBILITY_ONLY
+STATIVE != PRESENT_TENSE
 ```
 
 ## Relación con el dispositivo
@@ -99,4 +108,4 @@ Las compilaciones técnicas pueden servir para localizar temas o ejemplos; cualq
 
 ## Deuda restante
 
-El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y el primer bloque verbal/aspectual prioritario, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
+El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y cierra un primer bloque verbal/aspectual prioritario, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
