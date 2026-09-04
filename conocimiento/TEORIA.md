@@ -1,9 +1,9 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.3  
+**Versión:** 1.4  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-09-03  
+**Fecha:** 2026-09-04  
 
 ---
 
@@ -233,20 +233,45 @@ Esta sección distingue entre dos niveles de afirmación:
 
 Las referencias a niveles G1–G5, P1–P5 o etapas curriculares deben leerse de acuerdo con `PEDAGOGIA.md`: son herramientas provisionales de diseño, no una secuencia curricular validada ni una taxonomía cerrada.
 
-## 10.1 Sistema de marcadores TAM
+## 10.1 Sistema verbal: aspecto, tiempo y distribución de los marcadores
 
-La Gramática Popular documenta 8 marcadores de TAM (Tiempo-Aspecto-Modo) en didxazá:
+La Gramática Popular §7.2 presenta ocho marcadores verbales y los describe principalmente en términos de **aspecto o tipo de acción**. La propia obra señala que **sólo el futuro puede definirse como tiempo**; los demás no corresponden de manera exacta a los tiempos verbales del español (`HALL-0077`).
 
-1. **Habitual:** Acciones que se repiten regularmente.
-2. **Completivo:** Acciones completadas puntualmente.
-3. **Progresivo:** Acciones en desarrollo.
-4. **Perfecto:** Acciones cuyo resultado persiste en presente.
-5. **Potencial:** Capacidad o posibilidad.
-6. **Irrealizado/Contrafactual:** Situaciones contrarias a los hechos.
-7. **Estativo:** Estados o condiciones.
-8. **Futuro:** Acciones venideras.
+1. **Habitual:** acción repetida o acostumbrada. Puede recibir lectura pasada o presente según el contexto y la Gramática indica que no se usa en contexto futuro (`HALL-0083`).
+2. **Completivo:** acción presentada como ya terminada. Aunque aparece normalmente en contextos pasados, no equivale a “pasado” y puede aparecer en un contexto futuro cuando la acción estará terminada para ese punto de referencia (`HALL-0084`).
+3. **Progresivo:** acción continuada o en desarrollo; puede situarse en presente, pasado o futuro según el contexto. La obra documenta además `cana-` como **progresivo ambulativo**, con movimiento durante la acción (`HALL-0085`, `HALL-0079`).
+4. **Perfecto:** la Gramática lo describe con `hua-` para acción repetida a lo largo del tiempo; no se usa si la acción nunca se ha realizado antes y aparece comúnmente en construcciones negativas para indicar que la acción no sucede durante el intervalo indicado (`HALL-0078`). No debe resumirse como “resultado pasado que persiste en el presente”.
+5. **Potencial:** puede situar una acción como futura respecto del momento de habla o del tiempo de otro verbo, pero su distribución es fuertemente dependiente de la construcción. La Gramática lo documenta, entre otros contextos, con auxiliares de movimiento, `poder`, `querer` y `gustar`, en propósito, después de expresiones equivalentes a “todavía no” y “casi”, con `zándaca` para incertidumbre y en varios imperativos (`HALL-0086`). Por tanto, no equivale simplemente a “capacidad o posibilidad”.
+6. **Irrealizado:** la Gramática considera más adecuada la caracterización de **aspecto contrario a la verdad** que una equivalencia simple con el subjuntivo pasado español. Documenta usos contrafactuales o casi realizados y, con negación, acciones pasadas que no sucedieron (`HALL-0087`).
+7. **Estativo:** `na-` expresa estado con distribución más limitada que los marcadores activos; aparece con aproximadamente la mitad de los verbos, con adjetivos sin forma verbal y con algunos sustantivos. El contexto puede situar el estado en pasado o futuro, por lo que tampoco equivale a tiempo presente (`HALL-0088`).
+8. **Futuro:** marcador con inicial `z-`, usado únicamente en contexto futuro dentro de la descripción de la Gramática Popular (`HALL-0089`).
 
-**Observación pedagógica de trabajo:** El aspecto Perfecto no tiene representación actualmente identificada en el corpus. Esto señala un posible vacío de cobertura para funciones que dependan de él (por ejemplo, expresar experiencia acumulada o resultado presente de acciones pasadas). Su tratamiento curricular sigue pendiente de resolución.
+```text
+SPANISH_TENSE != DIDXAZA_ASPECT_BY_DEFAULT
+COMPLETIVE != PAST_TENSE
+PROGRESSIVE != PRESENT_TENSE
+STATIVE != PRESENT_TENSE
+POTENTIAL != CAPACITY_OR_POSSIBILITY_ONLY
+GP_PERFECT != GENERIC_PRESENT_RESULT_PERFECT
+```
+
+**Observación pedagógica de trabajo:** El perfecto sigue sin tener representación actualmente identificada en el corpus, pero el posible vacío debe formularse ahora en los términos que realmente documenta la Gramática —repetición/experiencia a lo largo de un intervalo y usos negativos de intervalo— y no como “resultado presente de una acción pasada”. Su tratamiento curricular sigue pendiente de resolución.
+
+### 10.1.1 Juegos de variantes aspectuales en la Gramática Popular
+
+La Gramática Popular §7.3 organiza las variantes de los prefijos aspectuales en **Juego 1** y **Juego 2**, y subdivide el Juego 1 en **1A, 1B y 1C** (`HALL-0080`). Dentro de esa descripción:
+
+- 1A se distingue de 1B/1C por la forma del completivo;
+- 1C se distingue de 1A/1B por el potencial;
+- la obra afirma explícitamente que **1C no tiene prefijo para el potencial** y el cuadro 26 presenta `sa'` como forma potencial del verbo ejemplificado (`HALL-0081`);
+- para el Juego 2, la obra observa `u` en la mayoría de los aspectos y que la mayoría de los verbos de ese juego son causativos, pero presenta **sólo como posibilidad** que `u` sea una vocal temática vinculada a la indicación del causativo (`HALL-0082`).
+
+Este sistema descriptivo no debe confundirse por similitud de etiquetas con las cuatro clases **A–D** de Pérez Báez y Kaufman (2016), que se diagnostican principalmente mediante potencial y completivo (`HALL-0073`, `HALL-0074`). No se adopta ninguna equivalencia automática entre ambos sistemas.
+
+```text
+GP_GAME_1A_1B_1C_2 != PBK2016_CLASS_A_B_C_D_BY_DEFAULT
+SOURCE_HYPOTHESIS != CERTAIN_RULE
+```
 
 ## 10.2 Posesión: tres mecanismos
 
