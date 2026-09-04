@@ -223,6 +223,27 @@ ni != FIXED_SPANISH_RELATIVE_TRANSLATION
 HEADLESS_RELATIVE_DOES_NOT_REQUIRE_INSERTED_GENERIC_NOUN = true
 ```
 
+### Apéndice para lingüistas — bloque técnico dirigido pp. 123–125
+
+El Apéndice fue reabierto directamente porque tiene impacto P0 sobre corrector/audio y era una coordenada histórica ya localizada.
+
+Hallazgos promovidos:
+
+- la oposición consonántica fuerte/débil no se reduce a sordo/sonoro → `HALL-0122`;
+- las consonantes fuertes pueden alargarse postónicamente, `b/d/g` no siguen la fricativización intervocálica castellana y `n` se velariza ante `g/c` y al final de palabra; son realizaciones fonéticas, no cambios ortográficos → `HALL-0123`;
+- en frases estrechas o compuestos, perder el acento principal puede neutralizar vocales cortadas/quebradas a vocal sencilla; otras frases conservan los rasgos tónicos de ambas palabras → `HALL-0124`.
+
+Límites conservados:
+
+```text
+FORTIS_LENIS != VOICE_ONLY
+CONTEXTUAL_PHONETICS != SPELLING_CHANGE
+CITATION_FORM != CONTEXTUAL_PHONETIC_SURFACE
+PHONETIC_NEUTRALIZATION != ORTHOGRAPHIC_DELETION
+AUDIO_SURFACE -> SPELLING_CORRECTION = forbidden_without_independent_orthographic_evidence
+NOT_ALL_WORD_ADJACENCY_NEUTRALIZES = true
+```
+
 ## Relación con el dispositivo
 
 `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, registries de persona/posesión, paradigmas y otras compilaciones técnicas contienen conocimiento derivado de esta obra.
@@ -237,6 +258,6 @@ Las compilaciones técnicas pueden servir para localizar temas o ejemplos; cualq
 
 ## Deuda restante
 
-El backfill ya cierra bloques prioritarios de sistema verbal/aspectual, persona, posesión, causatividad/valencia, imperativos/movimiento, negación/partículas/preguntas y combinación de oraciones. **No equivale todavía a una reingesta semántica exhaustiva de toda la Gramática Popular.**
+El backfill ya cierra bloques prioritarios de sistema verbal/aspectual, persona, posesión, causatividad/valencia, imperativos/movimiento, negación/partículas/preguntas, combinación de oraciones y el Apéndice técnico. **No equivale todavía a una reingesta semántica exhaustiva de toda la Gramática Popular.**
 
 El siguiente trabajo debe seguir siendo dirigido por coordenadas de alto valor y por huecos reales detectados contra los índices históricos. Debe evitar reabrir capítulos ya adjudicados salvo contradicción, nueva evidencia o necesidad de mayor granularidad.
