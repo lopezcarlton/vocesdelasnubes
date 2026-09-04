@@ -1,7 +1,7 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.5  
+**Versión:** 1.6  
 **Estado:** Borrador consolidado y evolutivo  
 **Fecha:** 2026-09-04  
 
@@ -271,6 +271,33 @@ Este sistema descriptivo no debe confundirse por similitud de etiquetas con las 
 ```text
 GP_GAME_1A_1B_1C_2 != PBK2016_CLASS_A_B_C_D_BY_DEFAULT
 SOURCE_HYPOTHESIS != CERTAIN_RULE
+```
+
+### 10.1.2 Causatividad: valencia y realización morfológica
+
+La Gramática Popular separa el efecto sintáctico del causativo (§7.1) de sus variantes formales (§7.4). Una forma sencilla intransitiva pasa a una causativa transitiva con complemento directo; una forma sencilla transitiva pasa a una causativa con dos complementos (`HALL-0102`).
+
+Formalmente, `si-` es el marcador causativo más común y sigue al marcador de aspecto (`HALL-0103`), pero no constituye una plantilla universal. La obra documenta también prefijos `g-`, `z-`, `s-` y `ch-`, alternancias de consonante inicial y paradigmas irregulares; la mayoría de las formas causativas usan aspectos del Juego 2, pero no todas (`HALL-0104`). Existen además grupos limitados con dos prefijos causativos, dos formas causativas distintas o causatividad sin prefijo causativo explícito (`HALL-0105`).
+
+```text
+CAUSATIVE_SEMANTICS != CAUSATIVE_SURFACE_FORM
+CAUSATIVE != si_ONLY
+CAUSATIVE_FORMATION = LEXEME/PARADIGM_SENSITIVE
+BLIND_CAUSATIVE_GENERATION = forbidden_without_lexeme_or_paradigm_evidence
+```
+
+### 10.1.3 Imperativos y verbos de movimiento
+
+La Gramática Popular §7.5 distingue morfológicamente el imperativo singular del plural: el singular usa la forma completiva sin pronombre; el plural usa `la-` seguido por una forma potencial (`HALL-0106`).
+
+En §7.6, `ir` y `venir` reciben un tratamiento especial. Su progresivo no sigue simplemente el paradigma ordinario: `ca-` se documenta para plural y existe un progresivo especial con `z-` (`HALL-0107`). Para `venir`, una forma progresiva puede ser segmentalmente igual a la futura y distinguirse por tono, lo que impide resolver el análisis después de borrar información tonal (`HALL-0108`). Los mismos verbos funcionan como auxiliares con un verbo principal en potencial para expresar movimiento con intención, con paradigmas aspectuales propios y un conjunto léxico limitado de verbos que se conjugan sólo mediante esos auxiliares (`HALL-0109`).
+
+```text
+IMPERATIVE != SINGLE_UNIVERSAL_SURFACE_TEMPLATE
+GO_COME_PROGRESSIVE != ORDINARY_VERB_PROGRESSIVE
+SAME_SEGMENTAL_FORM != SAME_VERBAL_ANALYSIS
+STRIP_TONE_BEFORE_ANALYSIS = unsafe
+MOVEMENT_AUXILIARY_PATTERN != UNIVERSAL_FOR_ALL_VERBS
 ```
 
 ## 10.2 Posesión: tres estrategias y morfofonología
