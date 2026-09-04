@@ -20,7 +20,7 @@ descripcion: >
   a esta obra para adjudicar esas afirmaciones; el core no sustituye la fuente.
 nivel_de_fuente: primaria
 estado_de_acceso: disponible_en_web
-estado_de_ingesta: parcial_con_backfill_prioritario_2026-09-04
+estado_de_ingesta: semantic_backfill_structural_p0_sufficient_2026-09-04
 ```
 
 ## Identidad y alcance
@@ -32,7 +32,7 @@ estado_de_ingesta: parcial_con_backfill_prioritario_2026-09-04
 
 ## Backfill semántico confirmado — 2026-09-04
 
-La migración había preservado la identidad de la fuente y parte de sus derivados técnicos, pero no había promovido a Voces varios hechos ya estudiados. Se reabrieron los pasajes originales y quedaron formalizados al menos los siguientes puntos:
+La migración había preservado la identidad de la fuente y parte de sus derivados técnicos, pero no había promovido a Voces varios hechos ya estudiados. Se reabrieron únicamente pasajes originales pertinentes y se formalizaron los bloques siguientes.
 
 ### Segunda persona singular
 
@@ -54,37 +54,33 @@ La escritura ordinaria no necesita marcarlos, pero el aprendiz debe aprenderlos.
 
 ### `xh-/x-` ante consonante
 
-La morfología posesiva documenta `xh-` ante vocal y `x-` ante consonante, con alternancias condicionadas de la raíz. Esta información ya había sido compilada técnicamente en `JLC-POS-003` y reglas relacionadas, pero faltaba promover su condición de conocimiento canónico de Voces.
+La morfología posesiva documenta `xh-` ante vocal y `x-` ante consonante, con alternancias condicionadas de la raíz.
 
 → `HALL-0068`.
 
 ### `r` débil / `r` fuerte
 
-La Gramática caracteriza la `r` fuerte como **muy rara en palabras nativas**, más frecuente en préstamos del español, y llama a la `r` débil **lo normal**. Algunas grafías de préstamos siguen la convención española (`r` inicial/final, `rr` intervocálica).
+La Gramática caracteriza la `r` fuerte como **muy rara en palabras nativas**, más frecuente en préstamos del español, y llama a la `r` débil **lo normal**.
 
 → `HALL-0069`.
 
-### Sistema verbal y aspectos — bloque dirigido §7.2–7.3
-
-Se reabrieron directamente los pasajes impresos 51–61 (PDF pp. 60–70) para verificar un bloque de alto valor señalado por los índices históricos. La adjudicación no usa el JLC como autoridad.
+### Sistema verbal y aspectos — §7.2–§7.3
 
 Hallazgos promovidos:
 
-- §7.2 distingue los marcadores principalmente como aspectos/tipos de acción y señala que sólo el futuro puede definirse como tiempo → `HALL-0077`;
-- §7.2.4 define el perfecto `hua-` como acción repetida a lo largo del tiempo, con restricción de experiencia previa y uso negativo de intervalo → `HALL-0078`;
-- §7.2.3 documenta `cana-` como progresivo ambulativo, con movimiento durante la acción → `HALL-0079`;
-- §7.3 organiza variantes aspectuales en Juego 1 y Juego 2, subdividiendo Juego 1 en 1A/1B/1C → `HALL-0080`;
-- §7.3 afirma explícitamente que el potencial de Juego 1C no lleva prefijo y el cuadro 26 presenta `sa'` → `HALL-0081`;
-- §7.3 formula sólo como posibilidad el análisis de `u` de Juego 2 como vocal temática asociada al causativo → `HALL-0082`;
-- §7.2.1 describe el habitual como acción repetida/acostumbrada en contexto pasado o presente y excluye su uso en contexto futuro → `HALL-0083`;
-- §7.2.2 define el completivo por acción ya terminada, no por pasado, y admite contexto futuro con punto de referencia posterior → `HALL-0084`;
-- §7.2.3 define el progresivo por acción continuada y permite lectura presente, pasada o futura según contexto → `HALL-0085`;
-- §7.2.5 muestra que el potencial es seleccionado por múltiples construcciones y no se reduce a capacidad o posibilidad → `HALL-0086`;
-- §7.2.6 caracteriza el irrealizado como contrario a la verdad y documenta, entre otros usos, acciones pasadas negadas que no ocurrieron → `HALL-0087`;
-- §7.2.7 documenta el estativo `na-`, su distribución limitada y su posible localización pasada o futura por contexto → `HALL-0088`;
-- §7.2.8 documenta el futuro con `z-` como restringido a contexto futuro → `HALL-0089`.
-
-Límites conservados:
+- marcadores principalmente aspectuales; sólo el futuro puede definirse como tiempo → `HALL-0077`;
+- perfecto `hua-` como acción repetida a lo largo del tiempo, con restricción de experiencia previa y uso negativo de intervalo → `HALL-0078`;
+- progresivo ambulativo `cana-` → `HALL-0079`;
+- Juego 1 / Juego 2, con 1A/1B/1C → `HALL-0080`;
+- potencial de 1C sin prefijo en la descripción de la obra → `HALL-0081`;
+- `u` de Juego 2 como hipótesis de vocal temática causativa, no regla cierta → `HALL-0082`;
+- habitual pasado/presente y no futuro → `HALL-0083`;
+- completivo como acción terminada, no simple pasado → `HALL-0084`;
+- progresivo presente/pasado/futuro por contexto → `HALL-0085`;
+- potencial seleccionado por múltiples construcciones → `HALL-0086`;
+- irrealizado como contrario a la verdad en los contextos documentados → `HALL-0087`;
+- estativo `na-` con distribución limitada y tiempo contextual → `HALL-0088`;
+- futuro `z-` restringido a contexto futuro → `HALL-0089`.
 
 ```text
 GP_GAME_SYSTEM != PBK2016_A_B_C_D_BY_DEFAULT
@@ -94,21 +90,15 @@ POTENTIAL != CAPACITY_OR_POSSIBILITY_ONLY
 STATIVE != PRESENT_TENSE
 ```
 
-### Persona pronominal — bloque dirigido §5.1–5.1.2
+### Persona pronominal — §5.1–§5.1.2
 
-Se reabrieron sólo las páginas y cuadros pertinentes de §5.1. La lectura confirma que persona no debe reducirse a una cadena fija añadida al verbo.
-
-Hallazgos promovidos:
-
-- los pronombres independientes son formas separables usadas como complementos, términos preposicionales, respuestas y énfasis del sujeto → `HALL-0090`;
-- los pronombres dependientes no pueden pronunciarse solos y pueden apoyarse en distintos elementos de la frase, no sólo en el verbo → `HALL-0091`;
-- la tercera persona puede aparecer sin marca segmental cuando el referente se recupera del contexto; en plural existe la forma indefinida con `ca'` → `HALL-0092`;
-- la 2SG tiene `-lu'` y `-u'`, y `-u'` provoca cambios/fusiones en la raíz → `HALL-0093`;
-- la 1SG tiene `-ya'` y `-a'`, con fusiones vocálicas dependientes de la raíz y patrones tonales documentados → `HALL-0094`;
-- la tercera persona distingue persona/animal/cosa, no masculino/femenino → `HALL-0095`;
-- la primera persona plural distingue inclusivo (`laanu`/`nu`) y exclusivo (`laadu`/`du`) → `HALL-0096`.
-
-Límites conservados:
+- pronombres independientes separables y con funciones de complemento/respuesta/énfasis → `HALL-0090`;
+- pronombres dependientes no autónomos y con distintos huéspedes → `HALL-0091`;
+- tercera persona recuperable sin marca segmental y plural indefinido con `ca'` → `HALL-0092`;
+- 2SG `-lu'/-u'` con alternancias → `HALL-0093`;
+- 1SG `-ya'/-a'` con fusiones → `HALL-0094`;
+- tercera persona persona/animal/cosa → `HALL-0095`;
+- inclusivo `laanu/nu` vs exclusivo `laadu/du` → `HALL-0096`.
 
 ```text
 PERSON != FIXED_SUFFIX_STRING
@@ -117,19 +107,13 @@ INDEPENDENT_PRONOUN != REQUIRED_SUBJECT_WORD
 SOURCE_DOCUMENTED_INCLUSIVE_EXCLUSIVE_CONTRAST != FIXED_PEDAGOGICAL_LEVEL
 ```
 
-### Posesión — bloque dirigido §4.2 y §6.6
+### Posesión — §4.2 y §6.6
 
-La fuente separa tres estrategias y documenta alternancias internas que impiden tratarlas como una única plantilla.
-
-Hallazgos promovidos:
-
-- tres estrategias: `xh-/x-`, clase de sustantivos siempre poseídos y frase posesiva con `xti'` → `HALL-0097`;
-- `x-` participa en alternancias iniciales y, en algunos lemas, en pérdida de `bi-` → `HALL-0098`;
-- los sustantivos siempre poseídos no aceptan `xh-/x-` y aparecen directamente con poseedor → `HALL-0099`;
-- la frase con `xti'` admite poseedor pronominal dependiente o frase nominal y permite encadenamiento posesivo → `HALL-0100`;
-- `xti'` + pronombre dependiente no concuerda con género ni número del objeto poseído → `HALL-0101`.
-
-Límites conservados:
+- tres estrategias: `xh-/x-`, sustantivos siempre poseídos y `xti'` → `HALL-0097`;
+- alternancias iniciales y pérdida de `bi-` en ciertos lemas → `HALL-0098`;
+- sustantivos siempre poseídos no aceptan `xh-/x-` → `HALL-0099`;
+- `xti'` con pronombre dependiente o frase nominal y cadenas posesivas → `HALL-0100`;
+- `xti'` + pronombre dependiente sin concordancia con género/número del objeto poseído → `HALL-0101`.
 
 ```text
 POSSESSION != SINGLE_UNIVERSAL_TEMPLATE
@@ -137,18 +121,12 @@ POSSESSED_SURFACE != BLIND_PREFIX_CONCATENATION
 INHERENTLY_POSSESSED_NOUN + xh/x = NOT_THE_DOCUMENTED_STRATEGY
 ```
 
-### Causatividad y valencia — bloque dirigido §7.1 y §7.4
+### Causatividad y valencia — §7.1 y §7.4
 
-Se corrigió la atribución histórica y se reabrieron exclusivamente las secciones que la fuente dedica al significado/valencia del causativo y a sus variantes formales.
-
-Hallazgos promovidos:
-
-- la causativización incrementa la valencia: intransitiva sencilla → causativa transitiva con objeto directo; transitiva sencilla → causativa con dos complementos → `HALL-0102`;
-- `si-` es el marcador causativo más común y sigue al marcador de aspecto, pero no es la única estrategia → `HALL-0103`;
-- la fuente documenta además prefijos `g-`, `z-`, `s-`, `ch-` y cambios en la consonante inicial; la mayoría de los causativos usan Juego 2, no todos → `HALL-0104`;
-- existen grupos limitados con dos prefijos causativos, dos formas causativas o causativo sin prefijo causativo → `HALL-0105`.
-
-Límites conservados:
+- aumento de valencia causativa → `HALL-0102`;
+- `si-` como marcador más común, no único → `HALL-0103`;
+- otros prefijos/cambios iniciales y Juego 2 mayoritario, no universal → `HALL-0104`;
+- grupos limitados con dos prefijos, dos causativos o causativo sin prefijo → `HALL-0105`.
 
 ```text
 CAUSATIVE_SEMANTICS != CAUSATIVE_SURFACE_FORM
@@ -158,18 +136,12 @@ CAUSATIVE_FORMATION = LEXEME/PARADIGM_SENSITIVE
 BLIND_CAUSATIVE_GENERATION = forbidden_without_lexeme_or_paradigm_evidence
 ```
 
-### Imperativos y movimiento — bloque dirigido §7.5–§7.6
+### Imperativos y movimiento — §7.5–§7.6
 
-Se reabrieron las páginas impresas 66–69 para cerrar construcciones con impacto directo en tutor, analizador y generador.
-
-Hallazgos promovidos:
-
-- el imperativo singular usa la forma completiva sin pronombre y el plural usa `la-` + potencial → `HALL-0106`;
-- `ir` y `venir` tienen una conjugación progresiva especial, con `ca-` documentado para plural y un progresivo especial con `z-` → `HALL-0107`;
-- en `venir`, progresivo y futuro pueden compartir la misma forma segmental y distinguirse por tono → `HALL-0108`;
-- `ir` y `venir` funcionan como auxiliares aspectualmente flexionados con verbo principal en potencial para expresar movimiento con intención; un pequeño conjunto léxico se conjuga sólo con estos auxiliares → `HALL-0109`.
-
-Límites conservados:
+- imperativo singular = completivo sin pronombre; plural = `la-` + potencial → `HALL-0106`;
+- progresivo especial de `ir/venir` → `HALL-0107`;
+- progresivo/futuro de `venir` pueden compartir segmentos y distinguirse por tono → `HALL-0108`;
+- auxiliares de movimiento + potencial para movimiento con intención y conjunto léxico restringido → `HALL-0109`.
 
 ```text
 IMPERATIVE != SINGLE_UNIVERSAL_SURFACE_TEMPLATE
@@ -179,39 +151,25 @@ STRIP_TONE_BEFORE_ANALYSIS = unsafe
 MOVEMENT_AUXILIARY_PATTERN != UNIVERSAL_FOR_ALL_VERBS
 ```
 
-### Negación, partículas y preguntas — bloque dirigido §§8.4–8.6 y 13.1–13.3
+### Negación, partículas y preguntas — §§8.4–8.6 y 13.1–13.3
 
-Se reabrieron sólo las secciones necesarias para resolver distribución de negadores, partículas dependientes y cambios de orden interrogativos.
-
-Hallazgos promovidos antes de este tramo:
-
-- `HALL-0110`–`HALL-0113` registran negación/partículas/orden e interrogación recuperados directamente de los pasajes correspondientes;
-- §13.3 añade que `guiruti'`/`gasti'` deben frontalizarse cuando son el único negativo o aparecen con `di'`; con `qué`, pueden permanecer postverbales o frontalizarse, pero no intervenir entre `qué` y el verbo; `cadi` no aparece con `qué` y encabeza la palabra o frase que niega → `HALL-0114`.
-
-Límite de autoridad:
+- `HALL-0110`–`HALL-0113` registran negadores, partículas dependientes, énfasis y preguntas;
+- `guiruti'`/`gasti'` cambian de posición según la construcción negativa; con `qué` no pueden intervenir entre negador y verbo; `cadi` no aparece con `qué` en la descripción de la obra → `HALL-0114`.
 
 ```text
 GP2001_NEGATION_DESCRIPTION = BIBLIOGRAPHIC_EVIDENCE
 GP2001_NEGATION_DESCRIPTION != CONTEMPORARY_NORMATIVE_ADJUDICATION
 ```
 
-La distribución de `qué` descrita por la Gramática no reemplaza evidencia comunitaria posterior sobre uso o preferencia contemporánea.
+### Combinación de oraciones — capítulo 14
 
-### Combinación de oraciones — bloque dirigido capítulo 14
-
-Se reabrieron exclusivamente las pp. impresas 102–110 (PDF pp. 111–119).
-
-Hallazgos promovidos:
-
-- coordinación con `ne` y coordinación sin conjunción para acciones sinonímicas o secuenciales; en algunas secuencias el sujeto aparece sólo en uno de los verbos → `HALL-0115`;
-- los complementos oracionales no requieren una conjunción equivalente al español `que` y siguen al sujeto u objeto indirecto del verbo principal → `HALL-0116`;
-- distintos verbos rectores imponen restricciones diferentes sobre el complemento y la correferencia de sujeto → `HALL-0117`;
-- las preguntas indirectas se describen como complementos de `anna'` “saber” o `rinabadiidxa'` “preguntar” → `HALL-0118`;
-- las subordinadas adverbiales codifican tiempo, lugar, modo, propósito, causa, concesión, condición o comparación; si aparecen al inicio pueden terminar en `la?` como frontera → `HALL-0119`;
-- las relativas con `ni` modifican frases nominales y el rol interno del antecedente debe recuperarse por estructura/valencia, no por una glosa fija → `HALL-0120`;
-- una relativa puede carecer de antecedente nominal expreso y funcionar como sujeto u objeto con interpretación indefinida → `HALL-0121`.
-
-Límites conservados:
+- coordinación con `ne` y sin conjunción → `HALL-0115`;
+- complementos oracionales sin equivalente obligatorio de español `que` → `HALL-0116`;
+- restricciones distintas según verbo rector → `HALL-0117`;
+- preguntas indirectas → `HALL-0118`;
+- subordinadas adverbiales por relación semántica y `la?` como frontera posible → `HALL-0119`;
+- relativas con `ni` y recuperación de rol por estructura/valencia → `HALL-0120`;
+- relativas sin antecedente nominal expreso → `HALL-0121`.
 
 ```text
 VERB_SEQUENCE != AUTOMATIC_SUBORDINATION
@@ -223,17 +181,11 @@ ni != FIXED_SPANISH_RELATIVE_TRANSLATION
 HEADLESS_RELATIVE_DOES_NOT_REQUIRE_INSERTED_GENERIC_NOUN = true
 ```
 
-### Apéndice para lingüistas — bloque técnico dirigido pp. 123–125
+### Apéndice para lingüistas — pp. 123–125
 
-El Apéndice fue reabierto directamente porque tiene impacto P0 sobre corrector/audio y era una coordenada histórica ya localizada.
-
-Hallazgos promovidos:
-
-- la oposición consonántica fuerte/débil no se reduce a sordo/sonoro → `HALL-0122`;
-- las consonantes fuertes pueden alargarse postónicamente, `b/d/g` no siguen la fricativización intervocálica castellana y `n` se velariza ante `g/c` y al final de palabra; son realizaciones fonéticas, no cambios ortográficos → `HALL-0123`;
-- en frases estrechas o compuestos, perder el acento principal puede neutralizar vocales cortadas/quebradas a vocal sencilla; otras frases conservan los rasgos tónicos de ambas palabras → `HALL-0124`.
-
-Límites conservados:
+- fuerte/débil no equivale a sordo/sonoro → `HALL-0122`;
+- alargamiento postónico, ausencia de fricativización castellana de `b/d/g` y velarización contextual de `n` son fonética, no ortografía → `HALL-0123`;
+- neutralización contextual de vocales cortadas/quebradas al perder acento en frases estrechas/compuestos, sin generalización a toda adyacencia → `HALL-0124`.
 
 ```text
 FORTIS_LENIS != VOICE_ONLY
@@ -244,9 +196,75 @@ AUDIO_SURFACE -> SPELLING_CORRECTION = forbidden_without_independent_orthographi
 NOT_ALL_WORD_ADJACENCY_NEUTRALIZES = true
 ```
 
+### Frase nominal y determinación — §§4.4, 6.4–6.8
+
+- orden interno de la frase nominal: cantidad/plural antes del sustantivo; modificadores, poseedor, relativa y demostrativo en posiciones postnominales documentadas → `HALL-0125`;
+- ausencia de artículos equivalentes exactos a `el/la`; usos documentados de `ca` y `ti` → `HALL-0126`;
+- demostrativos dependientes y postnominales → `HALL-0127`;
+- interrogativos nominales prenominales y sensibles a clase semántica → `HALL-0128`;
+- intensificación con `nabé/dunabé` y construcciones lexicalmente restringidas → `HALL-0129`.
+
+```text
+SPANISH_NP_ORDER != DIDXAZA_TEMPLATE
+SPANISH_ARTICLE -> BLIND_DIDXAZA_DETERMINER_INSERTION = forbidden
+SPANISH_INTERROGATIVE_GLOSS != SUFFICIENT_FOR_SELECTION
+SPANISH_muy != SINGLE_UNIVERSAL_DIDXAZA_OPERATOR
+```
+
+### Preposiciones y relaciones espaciales — capítulo 9
+
+- gran parte de las relaciones preposicionales se expresan mediante términos de partes del cuerpo, a veces reducidos → `HALL-0130`;
+- `runi` tiene uso preposicional causal, `ne` es preposición nativa de compañía en la clasificación de GP y `de/pur/para` son préstamos documentados → `HALL-0131`.
+
+```text
+BODY_PART_NOUN_OR_RELATOR = RESOLVE_BY_CONSTRUCTION
+SPANISH_PREPOSITION_GLOSS != UNIQUE_DIDXAZA_FORM
+ne = PREPOSITION_OR_COORDINATOR_BY_CONSTRUCTION
+```
+
+### Oración básica y predicación — capítulo 12
+
+- valencia y orden verbal inicial; V–S–CD–CI como orden más común con dos complementos → `HALL-0132`;
+- varias estrategias copulativas/predicativas sin una cópula universal equivalente a `ser/estar` → `HALL-0133`;
+- `nuu` para ubicación/existencia y verbos posicionales específicos → `HALL-0134`;
+- condiciones atmosféricas con verbos impersonales sin sujeto → `HALL-0135`.
+
+```text
+VALENCY_FIRST = true
+SPANISH_SVO != DEFAULT_DIDXAZA_TEMPLATE
+SPANISH_SER_ESTAR != SINGLE_DIDXAZA_COPULA
+POSITIONAL_SEMANTICS_SHOULD_NOT_BE_ERASED_BY_SPANISH_GLOSS = true
+EXPLETIVE_SUBJECT = NOT_REQUIRED_IN_GP_DESCRIPTION
+```
+
+### Verbos compuestos y frases verbales — §§7.7–7.8
+
+- compuestos con sustantivos, `la'dxi'`, partes del cuerpo, adjetivos y `né`; significado a menudo convencional → `HALL-0136`;
+- frases verbales verbo+sustantivo/adjetivo, algunas idiomáticas → `HALL-0137`.
+
+```text
+COMPOUND_VERB != VERBAL_PHRASE_BY_DEFAULT
+LITERAL_COMPONENT_GLOSSES != GUARANTEED_CONVENTIONAL_MEANING
+WORD_BY_WORD_SPANISH_TRANSLATION = unsafe
+BLIND_PRODUCTIVE_COMPOUND_GENERATION = forbidden
+```
+
+### Conjunciones, interjecciones y cohesión narrativa — §§8.7, 10, 11
+
+- inventarios coordinados/subordinados y multifuncionalidad de `ne` → `HALL-0138`;
+- interjecciones con funciones pragmáticas y restricciones sociales documentadas → `HALL-0139`;
+- adverbios de introducción como recursos de cohesión, con `sicarí'` ligado explícitamente a apertura de cuento → `HALL-0140`.
+
+```text
+INTERJECTION != NEUTRAL_DISCOURSE_FILLER_BY_DEFAULT
+REGISTER_OR_SPEAKER_RESTRICTION = MUST_BE_PRESERVED_WHEN_DOCUMENTED
+NARRATIVE_CONNECTOR != NEUTRAL_CONVERSATIONAL_FILLER
+GENRE_METADATA_REQUIRED_FOR_REUSE = true
+```
+
 ## Relación con el dispositivo
 
-`dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, registries de persona/posesión, paradigmas y otras compilaciones técnicas contienen conocimiento derivado de esta obra.
+`dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, registries, paradigmas y otras compilaciones técnicas contienen conocimiento derivado de esta obra.
 
 ```text
 JUCHITAN_LINGUISTIC_CORE != SOURCE
@@ -256,8 +274,22 @@ GRAMATICA_POPULAR = SOURCE
 
 Las compilaciones técnicas pueden servir para localizar temas o ejemplos; cualquier afirmación que se promueva o revise en Voces debe poder justificarse en la Gramática Popular o en evidencia posterior de autoridad pertinente.
 
-## Deuda restante
+## Cierre P0 estructural — 2026-09-04
 
-El backfill ya cierra bloques prioritarios de sistema verbal/aspectual, persona, posesión, causatividad/valencia, imperativos/movimiento, negación/partículas/preguntas, combinación de oraciones y el Apéndice técnico. **No equivale todavía a una reingesta semántica exhaustiva de toda la Gramática Popular.**
+El backfill dirigido alcanza **suficiencia estructural P0** para recuperación rápida y para alimentar Analyzer/Corrector/Tutor/Generator con conocimiento adjudicado de alto valor.
 
-El siguiente trabajo debe seguir siendo dirigido por coordenadas de alto valor y por huecos reales detectados contra los índices históricos. Debe evitar reabrir capítulos ya adjudicados salvo contradicción, nueva evidencia o necesidad de mayor granularidad.
+Esto **no significa ingesta exhaustiva** de cada lexema, ejemplo o texto del libro. Permanecen recuperables bajo demanda:
+
+- inventarios léxicos finos;
+- ejemplos adicionales de paradigmas ya representados;
+- usos de género del capítulo 15 que no sean necesarios para una consulta concreta;
+- granularidad adicional cuando una contradicción o implementación específica la exija.
+
+```text
+GRAMATICA_POPULAR_P0_STRUCTURAL_BACKFILL = SUFFICIENT
+GRAMATICA_POPULAR_EXHAUSTIVE_SEMANTIC_INGESTA = false
+FULL_LINEAR_REREAD_REQUIRED = false
+REOPEN_ONLY_FOR_TARGETED_QUERY_CONTRADICTION_OR_MISSING_GRANULARITY = true
+```
+
+El siguiente P0 del checkpoint es Pickett–Villalobos–Marlett 2009/2010 + corrigendum.
