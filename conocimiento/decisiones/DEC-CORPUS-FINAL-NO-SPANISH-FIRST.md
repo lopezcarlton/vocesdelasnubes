@@ -22,7 +22,7 @@ decision: >
   Las herramientas de chat o sistemas derivados pueden asistir en investigación, análisis,
   contraste o generación experimental, pero no autorizan por sí mismas un producto final.
   La incorporación final continúa sujeta a la validación lingüística y metodológica pertinente.
-estado: vigente
+estado: reemplazada
 fecha: 2026-09-03
 responsable: Emiliano López Carlton
 validadores:
@@ -50,7 +50,7 @@ impacta_a:
   - futuros corpus y productos pedagógicos
   - diseño de futuras herramientas de generación
 reemplaza: null
-reemplazada_por: null
+reemplazada_por: DEC-GRADIENTE-DISENO-DIDXAZA-CENTRADO
 condiciones_de_revision:
   - "evidencia empírica que obligue a precisar qué cuenta como diseño Spanish-first"
   - "resultados de nuevas vías de generación o elicitación centradas en Didxazá"
