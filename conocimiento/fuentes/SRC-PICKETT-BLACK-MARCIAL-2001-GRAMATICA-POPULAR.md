@@ -179,6 +179,50 @@ STRIP_TONE_BEFORE_ANALYSIS = unsafe
 MOVEMENT_AUXILIARY_PATTERN != UNIVERSAL_FOR_ALL_VERBS
 ```
 
+### Negación, partículas y preguntas — bloque dirigido §§8.4–8.6 y 13.1–13.3
+
+Se reabrieron sólo las secciones necesarias para resolver distribución de negadores, partículas dependientes y cambios de orden interrogativos.
+
+Hallazgos promovidos antes de este tramo:
+
+- `HALL-0110`–`HALL-0113` registran negación/partículas/orden e interrogación recuperados directamente de los pasajes correspondientes;
+- §13.3 añade que `guiruti'`/`gasti'` deben frontalizarse cuando son el único negativo o aparecen con `di'`; con `qué`, pueden permanecer postverbales o frontalizarse, pero no intervenir entre `qué` y el verbo; `cadi` no aparece con `qué` y encabeza la palabra o frase que niega → `HALL-0114`.
+
+Límite de autoridad:
+
+```text
+GP2001_NEGATION_DESCRIPTION = BIBLIOGRAPHIC_EVIDENCE
+GP2001_NEGATION_DESCRIPTION != CONTEMPORARY_NORMATIVE_ADJUDICATION
+```
+
+La distribución de `qué` descrita por la Gramática no reemplaza evidencia comunitaria posterior sobre uso o preferencia contemporánea.
+
+### Combinación de oraciones — bloque dirigido capítulo 14
+
+Se reabrieron exclusivamente las pp. impresas 102–110 (PDF pp. 111–119).
+
+Hallazgos promovidos:
+
+- coordinación con `ne` y coordinación sin conjunción para acciones sinonímicas o secuenciales; en algunas secuencias el sujeto aparece sólo en uno de los verbos → `HALL-0115`;
+- los complementos oracionales no requieren una conjunción equivalente al español `que` y siguen al sujeto u objeto indirecto del verbo principal → `HALL-0116`;
+- distintos verbos rectores imponen restricciones diferentes sobre el complemento y la correferencia de sujeto → `HALL-0117`;
+- las preguntas indirectas se describen como complementos de `anna'` “saber” o `rinabadiidxa'` “preguntar” → `HALL-0118`;
+- las subordinadas adverbiales codifican tiempo, lugar, modo, propósito, causa, concesión, condición o comparación; si aparecen al inicio pueden terminar en `la?` como frontera → `HALL-0119`;
+- las relativas con `ni` modifican frases nominales y el rol interno del antecedente debe recuperarse por estructura/valencia, no por una glosa fija → `HALL-0120`;
+- una relativa puede carecer de antecedente nominal expreso y funcionar como sujeto u objeto con interpretación indefinida → `HALL-0121`.
+
+Límites conservados:
+
+```text
+VERB_SEQUENCE != AUTOMATIC_SUBORDINATION
+SPANISH_que != UNIVERSAL_DIDXAZA_COMPLEMENTIZER
+RECTOR_LEMMA_MATTERS_FOR_CLAUSAL_COMPLEMENTS = true
+DIRECT_QUESTION != INDIRECT_QUESTION
+ADVERBIAL_RELATION_FIRST = true
+ni != FIXED_SPANISH_RELATIVE_TRANSLATION
+HEADLESS_RELATIVE_DOES_NOT_REQUIRE_INSERTED_GENERIC_NOUN = true
+```
+
 ## Relación con el dispositivo
 
 `dispositivo/core/JUCHITAN_LINGUISTIC_CORE_v0_27.md`, registries de persona/posesión, paradigmas y otras compilaciones técnicas contienen conocimiento derivado de esta obra.
@@ -193,4 +237,6 @@ Las compilaciones técnicas pueden servir para localizar temas o ejemplos; cualq
 
 ## Deuda restante
 
-El backfill anterior corrige los huecos detectados durante la lectura del Alfabeto de 1956 y cierra cinco bloques prioritarios —sistema verbal/aspectual, persona pronominal, posesión, causatividad/valencia e imperativos/movimiento—, pero **no equivale a una reingesta semántica exhaustiva de toda la Gramática Popular**. La obra debe seguir revisándose por bloques contra las coordenadas de ingesta histórica para asegurar que todo conocimiento reutilizable haya sido promovido a Voces con provenance y sin depender del core derivado.
+El backfill ya cierra bloques prioritarios de sistema verbal/aspectual, persona, posesión, causatividad/valencia, imperativos/movimiento, negación/partículas/preguntas y combinación de oraciones. **No equivale todavía a una reingesta semántica exhaustiva de toda la Gramática Popular.**
+
+El siguiente trabajo debe seguir siendo dirigido por coordenadas de alto valor y por huecos reales detectados contra los índices históricos. Debe evitar reabrir capítulos ya adjudicados salvo contradicción, nueva evidencia o necesidad de mayor granularidad.
