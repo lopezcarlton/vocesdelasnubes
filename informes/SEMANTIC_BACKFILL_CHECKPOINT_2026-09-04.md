@@ -180,32 +180,10 @@ La ejecución dirigida confirmó que `JUCHITAN_LINGUISTIC_CORE_v0_27` era útil 
 Bloques cerrados hasta este checkpoint:
 
 1. **Sistema verbal/aspectual §7.2–§7.3** → `HALL-0077`–`HALL-0089`.
-   - perfecto corregido: acción repetida a lo largo del tiempo + uso negativo de intervalo;
-   - habitual/completivo/progresivo/estativo no se equiparan mecánicamente a tiempos del español;
-   - potencial = construcción sensible, no sólo capacidad/posibilidad;
-   - Juego 1C: la fuente afirma explícitamente potencial sin prefijo;
-   - `u` del Juego 2 como vocal temática causativa permanece hipótesis de la fuente;
-   - Juego 1A/1B/1C/2 de GP no se iguala automáticamente a A/B/C/D de PBK2016.
 2. **Persona §5.1–§5.1.2** → `HALL-0090`–`HALL-0096`.
-   - independientes y dependientes conservados como tipos funcionales distintos;
-   - 3P puede quedar sin marca segmental si el contexto recupera el referente;
-   - 1SG/2SG incluyen fusiones y alternancias de raíz;
-   - inclusivo/exclusivo documentado sin convertirlo en nivel pedagógico fijo.
 3. **Posesión §4.2 y §6.6** → `HALL-0097`–`HALL-0101`.
-   - tres estrategias distintas;
-   - alternancias bajo `xh-/x-`;
-   - sustantivos siempre poseídos no aceptan `xh-/x-`;
-   - `xti'` admite poseedor dependiente o nominal y no concuerda con género/número de lo poseído.
 4. **Causatividad/valencia §7.1 y §7.4** → `HALL-0102`–`HALL-0105`.
-   - causatividad incrementa valencia;
-   - `si-` es la forma más común, no la única;
-   - otros prefijos, alternancias y excepciones requieren evidencia por lema/paradigma;
-   - no generar causativos ciegamente por analogía.
 5. **Imperativos/movimiento §7.5–§7.6** → `HALL-0106`–`HALL-0109`.
-   - singular y plural imperativo tienen construcciones distintas;
-   - `ir/venir` tienen progresivo especial;
-   - tono puede distinguir progresivo y futuro de `venir` aun con la misma forma segmental;
-   - auxiliares de movimiento seleccionan verbo principal en potencial para movimiento con intención.
 
 Entidades/vistas actualizadas sin crear capas nuevas:
 
@@ -227,8 +205,84 @@ BLIND_CAUSATIVE_GENERATION = forbidden_without_lexeme_or_paradigm_evidence
 COR001 = ANALYSIS_TARGET_ONLY
 ```
 
+P0-A permanece `IN_PROGRESS`; no se declara completa la Gramática Popular ni se relee linealmente el libro.
+
+## 10. P0-A Gramática Popular — avance dirigido posterior
+
+Después del checkpoint anterior se cerraron tres bloques adicionales, todos verificados directamente contra los pasajes pertinentes del PDF original y sin usar el JLC como autoridad.
+
+### 10.1 Negación, partículas dependientes y preguntas
+
+`HALL-0110`–`HALL-0114`.
+
+Resultados de alto valor:
+
+- distribución diferenciada de negadores y partículas dependientes;
+- preguntas sí/no y preguntas de información con patrones de orden distintos;
+- `guiruti'`/`gasti'` presentan restricciones de posición según la construcción;
+- con `qué`, el pronombre negativo puede quedar postverbal o frontalizarse, pero no intervenir entre `qué` y el verbo;
+- `cadi` niega palabra/frase y no aparece junto con `qué` en la descripción de GP2001.
+
+Límite:
+
+```text
+GP2001_NEGATION_DESCRIPTION != CONTEMPORARY_NORMATIVE_ADJUDICATION
+```
+
+La presencia de `qué` en la Gramática no reemplaza evidencia comunitaria posterior sobre preferencia o uso contemporáneo.
+
+### 10.2 Combinación de oraciones — capítulo 14
+
+`HALL-0115`–`HALL-0121`.
+
+Se distinguieron:
+
+- coordinación con `ne` y coordinación sin conjunción;
+- complementos oracionales sin conjunción equivalente a español `que`;
+- restricciones de correferencia y selección según verbo rector;
+- preguntas indirectas como subtipo propio;
+- subordinadas adverbiales por relación semántica;
+- `la?` como frontera posible en subordinadas iniciales;
+- relativas con `ni`;
+- relativas sin antecedente expreso con función nominal.
+
+Reglas reforzadas:
+
+```text
+VERB_SEQUENCE != AUTOMATIC_SUBORDINATION
+SPANISH_que != UNIVERSAL_DIDXAZA_COMPLEMENTIZER
+RECTOR_LEMMA_MATTERS_FOR_CLAUSAL_COMPLEMENTS = true
+DIRECT_QUESTION != INDIRECT_QUESTION
+ADVERBIAL_RELATION_FIRST = true
+HEADLESS_RELATIVE_DOES_NOT_REQUIRE_INSERTED_GENERIC_NOUN = true
+```
+
+### 10.3 Apéndice para lingüistas — pp. 123–125
+
+`HALL-0122`–`HALL-0124`.
+
+Resultados de alto valor para corrector/audio:
+
+- fuerte/débil no equivale simplemente a sordo/sonoro;
+- alargamiento postónico de fuertes, ausencia de fricativización castellana en `b/d/g` y velarización contextual de `n` son realizaciones fonéticas, no reglas ortográficas;
+- vocales cortadas/quebradas pueden neutralizarse fonéticamente al perder el acento principal en compuestos/frases estrechas;
+- otras frases conservan rasgos tónicos de ambas palabras, por lo que no toda adyacencia produce neutralización.
+
+```text
+CITATION_FORM != CONTEXTUAL_PHONETIC_SURFACE
+PHONETIC_NEUTRALIZATION != ORTHOGRAPHIC_DELETION
+AUDIO_SURFACE -> SPELLING_CORRECTION = forbidden_without_independent_orthographic_evidence
+```
+
+Estado después de este avance:
+
+```text
+HALL-0077..HALL-0124 = CANONICAL_ADJUDICATED_GP_BACKFILL
+SRC_GP_READING_MEMORY = UPDATED_THROUGH_APPENDIX_HIGH_VALUE_BLOCKS
+TEORIA.md = v1.7
+GRAMATICA_POPULAR_P0_A = IN_PROGRESS
+```
+
 ### Próximo bloque dirigido dentro de P0-A
 
-Continuar por **negación, partículas dependientes y orden/interrogación** (cap. 8 y cap. 13), porque tienen impacto directo en Analyzer/Corrector/Tutor y el índice técnico histórico contiene reglas resumidas que deben verificarse contra la fuente. Después, cubrir subordinación/relativas y sólo entonces los géneros textuales/apéndice técnico que sigan pendientes de promoción semántica.
-
-P0-A permanece `IN_PROGRESS`; no se declara completa la Gramática Popular ni se relee linealmente el libro.
+No volver a capítulos ya adjudicados. El siguiente barrido debe localizar **huecos estructurales todavía sin HALL canónico** en los capítulos nominales/adjetivales, preposiciones y oración básica, priorizando sólo aquello con impacto real en Analyzer/Corrector/Tutor/Generator. Los textos del capítulo 15 deben tratarse por género y no convertirse en estilo conversacional neutro por defecto.
