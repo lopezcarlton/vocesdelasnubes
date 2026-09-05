@@ -1,7 +1,7 @@
 # INICIAR AQUÍ — VOCES DE LAS NUBES
 
 **Estado:** `ACTIVE_REENTRY / LAZY_TARGETED_LOADING`  
-**Actualizado:** 2026-09-04
+**Actualizado:** 2026-09-05
 
 ## Objetivo
 
@@ -55,6 +55,8 @@ PREGUNTA
 -> responder
 ```
 
+Los `TEO-*` materializados se encuentran en `conocimiento/aplicaciones_teoricas/`. Deben consultarse cuando la pregunta no sea simplemente “qué dice la fuente”, sino **cómo interpreta o utiliza Voces una propuesta bibliográfica**.
+
 Para una consulta ordinaria **no es necesario abrir de nuevo el PDF, libro, audio o fuente original** cuando el conocimiento requerido ya esté suficientemente registrado y adjudicado en Voces.
 
 Tampoco es necesario leer por defecto:
@@ -63,6 +65,7 @@ Tampoco es necesario leer por defecto:
 - todas las vistas temáticas;
 - toda la bibliografía;
 - todos los `SRC`;
+- todas las aplicaciones teóricas;
 - el repositorio del dispositivo.
 
 ## 2.2 Consulta de una fuente ya estudiada
@@ -129,7 +132,7 @@ Abrir sólo la vista temática correspondiente y sus entidades de respaldo:
 - metodología → `conocimiento/METODOLOGIA.md`;
 - corpus → `conocimiento/CORPUS.md`;
 - validación → `conocimiento/VALIDACION.md`;
-- teoría → `conocimiento/TEORIA.md`;
+- teoría → `conocimiento/TEORIA.md` y, sólo cuando haga falta la aplicación bibliográfica concreta, `conocimiento/aplicaciones_teoricas/`;
 - audio → `conocimiento/AUDIO.md`;
 - bibliografía → `conocimiento/BIBLIOGRAFIA.md` y `conocimiento/fuentes/README.md`.
 
@@ -147,10 +150,13 @@ Una `DEC` vigente gobierna las vistas dentro de su alcance, subordinada a la Arq
 
 `conocimiento/fuentes/` es la puerta canónica de acceso a gramáticas, vocabularios, artículos, corpus, diccionarios, normas, sesiones y otras fuentes.
 
+`conocimiento/aplicaciones_teoricas/` conserva las entidades `TEO-*`: no son fuentes nuevas ni decisiones del proyecto, sino la capa explícita que separa **lo que una fuente propone** de **cómo Voces la interpreta o aplica**.
+
 Una fuente puede estar registrada mediante `SRC-*` aunque el payload original viva fuera del repositorio por derechos, tamaño o condiciones de acceso.
 
 ```text
 SRC_RECORD = CANONICAL_SOURCE_IDENTITY
+TEO_RECORD = PROJECT_INTERPRETATION_OF_BIBLIOGRAPHIC_PROPOSAL
 PAYLOAD_MAY_LIVE_OUTSIDE_REPOSITORY = true
 DEVICE_OUTPUT != SOURCE
 ```
@@ -179,9 +185,9 @@ La ruta correcta es:
 ```text
 TECHNICAL_RECOVERY
 -> IDENTIFY ORIGINAL SRC / SOURCE COORDINATE
--> VERIFY SOURCE PASSAGE IF NEW ADJUDICATION IS NEEDED
--> PROMOTE OR CORRECT IN VOCES
--> DEVICE LATER CONSUMES APPROVED KNOWLEDGE
+-> VERIFY SOURCE_PASSAGE IF NEW_ADJUDICATION_IS_NEEDED
+-> PROMOTE_OR_CORRECT_IN_VOCES
+-> DEVICE_LATER_CONSUMES_APPROVED_KNOWLEDGE
 ```
 
 No convertir runtime, SQLite, JLC, registry, Analyzer, Tutor o Generator en autoridad lingüística.
