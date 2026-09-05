@@ -1,9 +1,9 @@
 # PEDAGOGIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.5  
+**Versión:** 1.6  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-09-03
+**Fecha:** 2026-09-05
 
 ## 1. Objetivo pedagógico
 
@@ -60,11 +60,20 @@ Las estructuras deben reaparecer en distintos contextos. La repetición es pedag
 
 ### 2.4 Producción activa
 
-El aprendiz debe intentar producir la expresión antes de escuchar el modelo completo o antes de su segunda repetición.
+La producción oral forma parte deliberada del método. BIB044/Swain aporta fundamento para distinguir comprensión de capacidad productiva y para considerar que el output puede crear oportunidades de uso significativo, prueba de hipótesis y procesamiento sintáctico (`HALL-0208`–`HALL-0210`; `TEO-SWAIN-OUTPUT-VOCES`).
+
+La regla operativa actual de **intentar producir antes de escuchar el modelo completo o antes de su segunda repetición** es, sin embargo, una elección de diseño de Voces. BIB044 no prescribe ese formato, no determina la posición ni duración de una pausa y no demuestra por sí sola que esta secuencia produzca mayor aprendizaje.
+
+```text
+OUTPUT_RELEVANCE = BIBLIOGRAPHICALLY_SUPPORTED
+PAUSE_BEFORE_MODEL = PROJECT_DESIGN_TO_BE_TESTED
+```
 
 ### 2.5 Aprendizaje sin presión
 
 El material debe reducir el temor al error y permitir repetición privada. La producción se plantea como ensayo, no como examen inmediato.
+
+La producción activa y la baja presión no se consideran incompatibles: el proyecto busca oportunidades reales de intento sin convertir cada producción en evaluación pública o sanción inmediata.
 
 ### 2.6 Memoria como componente central bajo justificación explícita
 
@@ -72,11 +81,44 @@ La memorización forma parte deliberada del método actual: el aprendiz necesita
 
 `BL-025` debe fundamentar con bibliografía y pruebas de aprendizaje qué papel cumplen la recuperación activa, el espaciamiento, las secuencias formulaicas, la reutilización y la transferencia, y cómo se evita el tedio señalado por docentes de orientación constructivista.
 
+BIB044 fortalece la justificación de **producir** y poner a prueba recursos lingüísticos, pero no cierra esta deuda: no constituye evidencia específica sobre memorización, espaciamiento o automatización dentro del formato de Voces.
+
 ```text
 MEMORY = CENTRAL_COMPONENT
 ROTE_REPETITION = NOT_SUFFICIENT
 CONSTRUCTIVIST_COMPATIBILITY = OPEN_FOR_JUSTIFICATION
+SWAIN_OUTPUT != SPACING_OR_MEMORY_EVIDENCE
 ```
+
+### 2.7 Material pedagógico no equivale automáticamente a revitalización
+
+BIB046/Sallabank permite clasificar la producción de gramáticas, diccionarios y materiales de aprendizaje como parte del `corpus planning` (`HALL-0211`). También distingue expansión de dominios y una ruta fática ligada al hogar, socialización e identidad (`HALL-0212`).
+
+Para Voces esto obliga a separar dos afirmaciones:
+
+1. producir buenos materiales puede aumentar recursos disponibles para aprender y usar didxazá;
+2. producir esos materiales **no demuestra por sí solo** recuperación de transmisión intergeneracional, uso familiar ni revitalización efectiva.
+
+El anclaje escolar actual puede ampliar un dominio de uso y aprendizaje, pero no debe presentarse automáticamente como restablecimiento de transmisión familiar. Del mismo modo, trabajar con diálogos cotidianos no basta para afirmar que Voces pertenece a la `phatic route` (`TEO-SALLABANK-CORPUS-PLANNING-REVITALIZACION`).
+
+```text
+LEARNING_MATERIALS = CORPUS_PLANNING_CONTRIBUTION
+SCHOOL_USE != FAMILY_TRANSMISSION_BY_DEFAULT
+EVERYDAY_DIALOGUE != PHATIC_ROUTE_BY_DEFAULT
+```
+
+### 2.8 Rendición de cuentas comunitaria y no esencialismo
+
+BIB047/McCarty y Lee propone, para contextos indígenas de Estados Unidos, una pedagogía culturalmente sostenida/revitalizadora con rendición de cuentas basada en la comunidad y atención no homogeneizante a necesidades expresadas localmente (`HALL-0214`, `HALL-0215`). También documenta dimensiones emocionales de recuperación lingüística (`HALL-0216`) y advierte contra usar la competencia en la lengua patrimonial como criterio de autenticidad indígena (`HALL-0217`).
+
+Voces adopta estos hallazgos como **marco de vigilancia teórica**, no como prueba de consenso local ni como receta transferible sin ajustes. En particular:
+
+- los públicos y necesidades locales no deben suponerse homogéneos;
+- una persona con dominio limitado del didxazá no debe ser tratada como culturalmente menos auténtica por ese hecho;
+- vergüenza, pérdida o exclusión pueden ser dimensiones relevantes, pero no se atribuyen automáticamente a cada participante;
+- las reglas concretas de autoría, rechazo y validación de hablantes dentro de Voces proceden de decisiones propias del proyecto, aunque sean compatibles con este marco.
+
+Esta sección no crea por sí sola un nuevo `PRIN` constitucional. La aplicación formal queda registrada en `TEO-MCCARTY-LEE-CSRP-COMUNIDAD`.
 
 ## 3. Papel del input
 
@@ -84,17 +126,21 @@ El input principal es oral. Debe ser comprensible en grado suficiente, breve, co
 
 El equivalente en español sirve como apoyo para anticipar significado, no como estructura que deba traducirse literalmente.
 
+BIB044 no elimina la función del input: su aporte relevante es mostrar que comprensión y exposición abundantes no garantizan por sí solas desarrollo productivo equivalente (`HALL-0208`). Voces trabaja por tanto con una combinación de input y producción, no con una sustitución de uno por otra.
+
 ## 4. Papel de la escucha
 
 La escucha reiterada permite reconocer unidades sonoras, familiarizarse con ritmo y pronunciación, anticipar expresiones, comparar la producción propia y reforzar memoria.
 
+Las funciones exactas de la escucha reiterada dentro de la retención y transferencia de Voces siguen necesitando evaluación empírica con aprendices.
+
 ## 5. Papel de la repetición
 
-La repetición se utiliza con tres finalidades: reconocimiento, recuperación y consolidación.
+La repetición se utiliza con tres finalidades de diseño: reconocimiento, recuperación y consolidación.
 
 No se considera suficiente repetir una frase de forma mecánica. El material debe favorecer que una estructura aparezca en diferentes situaciones.
 
-La repetición espaciada mediante tarjetas puede servir como formato inicial de práctica, pero no define la totalidad del sistema pedagógico.
+La repetición espaciada mediante tarjetas puede servir como formato inicial de práctica, pero no define la totalidad del sistema pedagógico y su efecto específico dentro de Voces permanece abierto en `BL-025`.
 
 ## 6. Diseño de progresión
 
@@ -201,23 +247,34 @@ La producción masiva de borradores permanece fuera del flujo activo mientras no
 
 ## 7. Papel del error
 
-El error es parte del intento de producción. La secuencia de pausa y modelo permite que el aprendiz formule una hipótesis, escuche la forma validada, compare, ajuste y repita.
+El error es parte del intento de producción. La secuencia de pausa y modelo utilizada por Voces permite formular una hipótesis de producción, escuchar una forma validada, comparar, ajustar y repetir.
 
-Las fuentes no documentan un sistema formal de corrección, retroalimentación o clasificación de errores.
+BIB044 respalda específicamente la función del output como oportunidad para **probar hipótesis sobre la lengua meta** (`HALL-0210`). No demuestra que el ciclo exacto `pausa → modelo → comparación → repetición` sea superior a otras formas de retroalimentación; esa aplicación permanece como diseño del proyecto.
+
+Las fuentes actualmente adjudicadas no documentan todavía un sistema formal de corrección, retroalimentación o clasificación de errores para Voces.
 
 ## 8. Papel de la producción
 
-La producción oral está integrada desde el diseño del material. Las pausas deben permitir un intento real.
+La producción oral está integrada desde el diseño del material. Las pausas deben permitir un intento real conforme al formato que se esté probando.
 
-La producción no debe limitarse a repetir después del audio; también debe incluir anticipación y recuperación.
+BIB044 aporta tres soportes precisos para mantener producción activa: la comprensión alta puede coexistir con debilidad productiva (`HALL-0208`), el output puede empujar hacia una expresión más precisa (`HALL-0209`) y puede ofrecer uso significativo, prueba de hipótesis y procesamiento sintáctico (`HALL-0210`).
+
+La producción no debe limitarse a repetir después del audio; el proyecto explora también anticipación y recuperación. Estas últimas son **aplicaciones propias** y no deben adjudicarse automáticamente a Swain 1985.
 
 ## 9. Evaluación del aprendizaje
 
-Las fuentes identifican como relevantes comprensión auditiva, recuperación sin apoyo, producción, transferencia a otra situación, retención y disposición para continuar usando el material.
+El proyecto considera relevantes, como dimensiones posibles de evaluación, comprensión auditiva, recuperación sin apoyo, producción, transferencia a otra situación, retención y disposición para continuar usando el material. Esta lista es una agenda de evaluación de Voces, no un instrumento validado derivado de una sola fuente.
 
 No existe todavía un sistema de evaluación validado con aprendices.
 
-El piloto actual permite producir material suficientemente definido para que esa validación sea posible más adelante, pero no la sustituye.
+El antecedente BIB002/Rafael-Pérez et al. confirma además una distinción útil: probar funcionamiento de una aplicación con usuarios no equivale a demostrar adquisición lingüística. El artículo reporta validación funcional, pero no medidas pre/post, retención, transferencia ni comparación entre grupos (`HALL-0199`).
+
+```text
+FUNCTIONAL_TESTING != LEARNING_OUTCOME_EVIDENCE
+PROJECT_EVALUATION_DIMENSIONS != VALIDATED_INSTRUMENT
+```
+
+El piloto actual permite producir material suficientemente definido para que una evaluación de aprendizaje sea posible más adelante, pero no la sustituye.
 
 ## 10. Limitaciones y carácter evolutivo
 
@@ -236,7 +293,9 @@ No puede documentarse todavía de forma definitiva:
 - criterios de aprobación por nivel;
 - tratamiento diferenciado por edad o perfil;
 - protocolo formal de retroalimentación;
-- evidencia empírica sobre retención o transferencia.
+- evidencia empírica sobre retención o transferencia;
+- evidencia de que los materiales escolares de Voces producen uso familiar o transmisión intergeneracional;
+- validación local suficiente para trasladar sin ajustes marcos de CSRP desarrollados en otros contextos indígenas.
 
 Este documento debe evolucionar junto con la evidencia lingüística, metodológica y pedagógica del proyecto. Las clasificaciones actuales son herramientas de trabajo y no deben convertirse en restricciones permanentes por inercia documental.
 
@@ -257,3 +316,18 @@ Se aclara que P continúa siendo una escala válida de análisis cuya delimitaci
 Se retiran formulaciones que deferían decisiones pedagógicas a una implementación técnica. Las líneas técnicas pueden producir preguntas o hallazgos candidatos, pero sólo participan en esta vista después de ser adjudicadas dentro del Sistema de Conocimiento conforme a `DEC-AUTORIDAD-SISTEMA-CONOCIMIENTO`.
 
 La actualización es arquitectónica: **no redefine G/P, no cierra P1–P5 y no incorpora todavía ninguna decisión de la reunión con Irma Pineda.**
+
+## Cambio 2026-09-05 — backfill bibliográfico pedagógico
+
+Se incorporan las aplicaciones teóricas adjudicadas de BIB044, BIB046 y BIB047 y se corrigen cuatro mezclas previas entre fuente y aplicación del proyecto:
+
+- Swain 1985 fundamenta relevancia del output, `pushed output`, prueba de hipótesis y procesamiento sintáctico, pero no la regla exacta de pausa antes del modelo ni la función formal posterior de `noticing the gap`;
+- Sallabank permite reconocer materiales de aprendizaje como `corpus planning`, pero no equiparar automáticamente escolarización con transmisión intergeneracional ni diálogo cotidiano con `phatic route`;
+- McCarty y Lee fundamentan rendición de cuentas comunitaria, atención local no homogeneizante y crítica del esencialismo hablante/no hablante, pero no determinan los roles concretos de colaboradores de Voces;
+- la validación funcional de una aplicación educativa no se trata como evidencia suficiente de adquisición lingüística (`HALL-0199`).
+
+Aplicaciones relacionadas:
+
+- `TEO-SWAIN-OUTPUT-VOCES`;
+- `TEO-SALLABANK-CORPUS-PLANNING-REVITALIZACION`;
+- `TEO-MCCARTY-LEE-CSRP-COMUNIDAD`.
