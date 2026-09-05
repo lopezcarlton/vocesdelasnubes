@@ -39,6 +39,48 @@ La versión consultada declara:
 - headwords escritos siguiendo el borrador 2016 de la `Norma del sistema de escritura de la lengua zapoteca`;
 - representaciones adicionales PDLMA para documentación fonológica y morfológica.
 
+## Repositorio fuente publicado y granularidad de representación — recuperación dirigida 2026-09-04
+
+La contribución dispone de un repositorio fuente público, `dictionaria/didxazageneral`. Para la recuperación dirigida se fijó el commit:
+
+```text
+76c22cf30c23d8f4bc5c83c11013a8cb24fe0f85
+```
+
+La implementación que genera los datos CLDF distingue expresamente los canales gráficos:
+
+- los `Headword` se recuperan de `jz_ap`;
+- el `Primary_Text` de ejemplos se recupera de `jz_ap`;
+- los campos `Potential`, `Habitual` y `Completive` se recuperan de `jz_pdlma`;
+- PDLMA y Alfabeto Popular permanecen como representaciones separadas.
+
+Por ello, una forma flexiva PDLMA no debe convertirse en coincidencia superficial AP eliminando mecánicamente guiones, signos tonales u otros marcadores.
+
+### Recuperación puntual de la familia `ndani`
+
+La entrada fuente `ndani` tiene headword AP `rindani`, POS verbal y PDLMA `-ndani`. Su sentido 1234 registra:
+
+```text
+Habitual PDLMA:   ri-ndani
+Completive PDLMA: gu-ndani
+Potential PDLMA:  gi-nda!ni ()
+```
+
+con el sentido ‘nacer, germinar, brotar, retoñar’, principalmente de plantas. Dictionaria contiene además varias entradas construidas sobre `ndani` y una entrada tonalmente distinta `rindanì` ‘cargarlo’, por lo que la semejanza segmental no autoriza colapsar los registros.
+
+En el canal AP aparecen ejemplos con la superficie `Gundani`, entre ellos los ejemplos 4094, 4098 y 13602. La inspección de las asociaciones crudas en `sense_field_example` y `sense_example` mostró que las filas recuperadas para esos ejemplos tienen `field_id = null`: existe asociación de ejemplo con un sentido, pero no una etiqueta explícita `CMP` en ese vínculo.
+
+El ejemplo 13602 está asociado al sentido 7387 de `rì' rica'` ‘por aquí y por allá’, aun cuando la oración también contiene `gundani`. Esto confirma que `Sense_IDs` de un ejemplo no equivale a identidad léxica de cada token de la oración.
+
+La evidencia promovida se formaliza en `HALL-0187`.
+
+```text
+JZ_AP != JZ_PDLMA
+PDLMA_INFLECTION_FIELD != AUTOMATIC_AP_SURFACE
+EXAMPLE_SENSE_ID != TOKEN_LEVEL_SENSE_BY_DEFAULT
+FIELD_ID_NULL != EXPLICIT_MORPHOLOGICAL_FEATURE_ASSOCIATION
+```
+
 ## Clases verbales
 
 Dictionaria señala que la clasificación morfológica de sus verbos se basa en Pérez Báez y Kaufman (2016). Por ello deben distinguirse dos preguntas:
