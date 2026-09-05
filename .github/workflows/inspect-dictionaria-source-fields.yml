@@ -1,0 +1,94 @@
+name: inspect-dictionaria-source-fields
+
+on:
+  push:
+    branches:
+      - "research/dictionaria-valency-relations-*"
+    paths:
+      - ".github/workflows/inspect-dictionaria-source-fields.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Voces
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Inspect pinned Dictionaria SQLite
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC="${RUNNER_TEMP}/didxazageneral"
+          git init "$SRC"
+          git -C "$SRC" remote add origin https://github.com/dictionaria/didxazageneral.git
+          git -C "$SRC" fetch --depth=1 origin 76c22cf30c23d8f4bc5c83c11013a8cb24fe0f85
+          git -C "$SRC" checkout --detach FETCH_HEAD
+          python - <<'PY'
+          import json, os, sqlite3
+          from collections import Counter, defaultdict
+          from pathlib import Path
+
+          commit = "76c22cf30c23d8f4bc5c83c11013a8cb24fe0f85"
+          db = Path(os.environ["RUNNER_TEMP"]) / "didxazageneral/raw/jzd.dictionaria.sqlite"
+          con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+          con.row_factory = sqlite3.Row
+          try:
+              field_counts = {
+                  str(r["field_id"]): int(r["n"])
+                  for r in con.execute(
+                      "SELECT field_id, COUNT(*) AS n FROM sense_field GROUP BY field_id ORDER BY field_id"
+                  )
+              }
+              patterns = ("ACT", "CAUS", "VERS", "VAL", "TRANS", "INTR", "DYAD", "TRIAD", "ROOT")
+              relation_like = {
+                  k: v for k, v in field_counts.items()
+                  if any(p in k.upper() for p in patterns)
+              }
+              pos_counts = {
+                  str(r["pos_id"]): int(r["n"])
+                  for r in con.execute(
+                      "SELECT pos_id, COUNT(*) AS n FROM entry GROUP BY pos_id ORDER BY pos_id"
+                  )
+              }
+              pos_relation_like = {
+                  k: v for k, v in pos_counts.items()
+                  if any(p in k.upper() for p in ("CAUS", "VERS", ":I", ":T"))
+              }
+
+              # Field IDs declared by metadata tables, if available.
+              declared = []
+              for table in ("field", "sense_field_type", "field_type"):
+                  exists = con.execute(
+                      "SELECT 1 FROM sqlite_master WHERE type='table' AND name=?", (table,)
+                  ).fetchone()
+                  if exists:
+                      cols = [r[1] for r in con.execute(f"PRAGMA table_info({table})")]
+                      rows = [dict(r) for r in con.execute(f"SELECT * FROM {table}")]
+                      declared.append({"table": table, "columns": cols, "rows": rows})
+
+              result = {
+                  "source_commit": commit,
+                  "sense_field_row_count": sum(field_counts.values()),
+                  "distinct_present_field_ids": len(field_counts),
+                  "present_field_counts": field_counts,
+                  "relation_like_present_field_counts": relation_like,
+                  "entry_pos_id_count": len(pos_counts),
+                  "relation_like_pos_counts": pos_relation_like,
+                  "declared_field_metadata_tables": declared,
+              }
+              out = Path(os.environ["RUNNER_TEMP"]) / "DICTIONARIA_SOURCE_FIELD_INVENTORY.json"
+              out.write_text(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True), encoding="utf-8")
+              print("SOURCE_FIELD_INVENTORY=" + json.dumps(result, ensure_ascii=False, sort_keys=True))
+          finally:
+              con.close()
+          PY
+
+      - name: Upload field inventory
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: dictionaria-source-field-inventory-76c22cf
+          path: ${{ runner.temp }}/DICTIONARIA_SOURCE_FIELD_INVENTORY.json
