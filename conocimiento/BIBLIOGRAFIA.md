@@ -1,9 +1,9 @@
 # BIBLIOGRAFIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.4  
+**Versión:** 1.5  
 **Estado:** Borrador consolidado  
-**Fecha:** 2026-09-03  
+**Fecha:** 2026-09-05  
 
 ---
 
@@ -90,7 +90,7 @@ Las fuentes registradas como revisadas a profundidad incluyen:
 
 - BIB001 — Manzo (2009).
 - BIB002 — Rafael-Pérez et al. (2024).
-- BIB003 — Vocabulario zapoteco del Istmo, ILV (5ª ed.).
+- BIB003 — Vocabulario zapoteco del Istmo, ILV (5ª ed.; consulta histórica superficial en junio-julio de 2026 y backfill lexicográfico posterior suficiente el 2026-09-04).
 - BIB004 — Pickett, Black y Marcial Cerqueda (2001).
 - BIB016 — Pickett, Villalobos y Marlett (2009).
 - BIB017 — Pérez Báez, Cata y Bueno Holle (2015).
@@ -103,6 +103,8 @@ Las fuentes registradas como revisadas a profundidad incluyen:
 - BIB065 — Bueno Holle (2019).
 
 El campo `Revisado` de la hoja de cálculo es la fuente operativa de verdad para el estado de lectura. Esta lista sólo destaca fuentes ya utilizadas intensivamente por el proyecto y no pretende sustituir la hoja.
+
+La profundidad actual de una fuente puede ser mayor que la lectura originalmente reportada en un informe histórico. En particular, `BIB003` fue consultada superficialmente en junio-julio de 2026 y recibió un backfill semántico/lexicográfico posterior.
 
 ---
 
@@ -143,7 +145,7 @@ Se registra una línea de lectura crítica sobre:
 - ideología de la documentación;
 - vitalidad y desplazamiento.
 
-ALAI (1978) se utiliza para contextualizar críticamente la actividad del ILV.
+ALAI (1978) se utiliza para contextualizar críticamente la actividad del ILV. Por su orientación política explícita, sus afirmaciones históricas concretas deben distinguirse entre caracterización de la fuente y hechos corroborados independientemente.
 
 ---
 
@@ -236,6 +238,8 @@ La sección 3 es una selección de fuentes ya trabajadas intensivamente; no debe
 
 La asignación completa de IDs se administra en la hoja maestra, actualmente sincronizada hasta `BIB091`. El campo `Revisado` de cada fila sigue siendo la fuente de verdad para el estado de lectura.
 
+Cuando se reconstruye un informe histórico, debe conservarse además el nivel de lectura que realmente tuvo la fuente en ese momento, aunque una revisión posterior haya aumentado su cobertura.
+
 ---
 
 # 11. Limitaciones del documento
@@ -265,19 +269,33 @@ En julio de 2026 el prefijo `B` fue sustituido por `BIB` conservando la numeraci
 
 ## 12.2 Remapeo de fuentes revisadas en mayo 2026
 
-Las siete fuentes documentadas como revisadas a profundidad en mayo de 2026 tienen ahora los siguientes identificadores en el sistema vigente:
+Las siete fuentes documentadas como revisadas en el informe de mayo de 2026 tienen ahora los siguientes identificadores en el sistema vigente:
 
 | Anterior | Vigente | Referencia |
 |----------|---------|-----------|
 | B001 | BIB001 | Manzo (2009) |
 | B002 | BIB002 | Rafael-Pérez et al. (2024) — Aplicación web preexistente para Didxazá |
-| B003 | BIB003 | Vocabulario zapoteco del Istmo (revisión parcial en mayo) |
+| B016 | BIB016 | Pickett, Villalobos y Marlett (2009) |
 | B017 | BIB017 | Pérez Báez, Cata y Bueno Holle (2015) |
 | B018 | BIB018 | Proyectolaos / Cortamortaja (2018) |
 | B019 | BIB019 | ALAI (1978) |
 | B041 | BIB041 | Muntzel (1998) |
 
+Una versión anterior de este Markdown colocó incorrectamente `BIB003` en esta tabla. El informe entregado de mayo enumera `B016`, no `B003`.
+
 **Nota:** BIB002 (Rafael-Pérez et al. 2024) es un antecedente conocido del proyecto que requiere análisis de diferenciadores y cobertura para evitar que sea usada como argumento en contra del proyecto en presentaciones futuras.
+
+### 12.2.1 Lectura histórica de BIB003
+
+`BIB003` aparece en el informe bimestral de junio-julio de 2026. Emiliano aclaró el 2026-09-05 que esa consulta fue **superficial/funcional**, suficiente para usar el Vocabulario como herramienta de verificación léxica, pero no equivalente a una lectura integral a profundidad.
+
+Posteriormente, el 2026-09-04, el proyecto realizó un backfill lexicográfico dirigido que dejó `SRC-PICKETT-2007-VOCABULARIO-ZAPOTECO-ISTMO` en estado `semantic_backfill_p1_lexicographic_sufficient_2026-09-04`.
+
+```text
+BIB003_JUN_JUL_2026_READING = superficial_functional
+BIB003_CURRENT_SOURCE_MEMORY = later_deeper_backfill
+HISTORICAL_READING_STATE != CURRENT_INGESTA_STATE
+```
 
 ## 12.3 Nuevas entradas
 
@@ -326,3 +344,18 @@ SRC_ID = VALID_SOURCE_ID
 BIB_ID = ASSIGN_ONLY_FROM_MASTER_SPREADSHEET
 NO_GUESSED_BIB_IDS = true
 ```
+
+---
+
+# 14. Backfill desde informes institucionales — 2026-09-05
+
+Se inició la recuperación sistemática de lecturas y hallazgos que habían sido reportados institucionalmente antes de que existiera la arquitectura actual `BIB → SRC → HALL`.
+
+Primer lote materializado:
+
+- `BIB001` → `SRC-MANZO-2009-XNEZA-RUTA-PALABRA` → `HALL-0194`–`HALL-0196`;
+- `BIB002` → `SRC-RAFAEL-PEREZ-ETAL-2024-WEB-APPLICATION-DIIDXAZA` → `HALL-0197`–`HALL-0199`;
+- `BIB018` → `SRC-PROYECTOLAOS-2018-PICKETT-VILLALOBOS` → `HALL-0200`–`HALL-0202`;
+- `BIB019` → `SRC-ALAI-1978-ILV-IMPERIALISMO` → `HALL-0203`–`HALL-0204`.
+
+El criterio aplicado fue volver al pasaje pertinente de la fuente original antes de promover cada hallazgo. Las implicaciones escritas en los informes históricos no se transformaron automáticamente en conocimiento vigente: cuando una formulación era interpretación del proyecto, inferencia excesiva o detalle no verificable en la fuente, quedó documentada como límite y no como HALL.
