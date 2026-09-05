@@ -94,6 +94,30 @@ La teoría general de las clases A–D no debe reconstruirse desde un registro a
 
 Para consultas ordinarias de un verbo concreto, preferir el registro fuente de Dictionaria y conservar los códigos de atribución del registro. Si una clase sólo puede recuperarse temporalmente desde `DIC_VERB_2385_v0_1.csv`, tratar ese CSV como derivado de recuperación hasta volver al registro documental pertinente.
 
+## Relaciones de valencia en el snapshot fijado — auditoría dirigida 2026-09-05
+
+El generador fuente contiene soporte para convertir campos denominados `ACT+X`, `ACT-X`, `CAUSX` y `VERSX` a relaciones más/menos activas, causativas y versivas. Una inspección reproducible del SQLite fuente del mismo commit fijado mostró, sin embargo, que **ninguno de esos campos está poblado en este snapshot**. Tampoco existe otro `sense_field` presente con nombre equivalente de raíz, valencia, díada, tríada, causativo o miembro más/menos activo.
+
+El inventario completo realmente presente se limita a:
+
+```text
+AND CMP CTF ETYMX FUT HAB POT PRF PRG PUB_DEF SEMFX STA
+```
+
+La auditoría y el hash del SQLite se conservan en:
+
+`conocimiento/derivados/DICTIONARIA_VALENCY_RELATION_FIELD_AUDIT_2026-09-05.md`
+
+Esto es una constatación del estado de **este snapshot documental**, no una afirmación de ausencia lingüística:
+
+```text
+GENERATOR_SUPPORT_FOR_RELATION_FIELDS != POPULATED_RELATION_DATA
+NO_RELATION_FIELD_ROWS_IN_PINNED_SNAPSHOT != LINGUISTIC_ABSENCE_OF_RELATIONS
+ENTRY_LEVEL_CAUSATIVE_CODE != BASIC_TO_CAUSATIVE_LINK
+```
+
+Por ello las relaciones concretas de valencia se recuperan de Pérez Báez 2015 cuando la fuente las declara directamente, no reconstruyéndolas por semejanza desde Dictionaria.
+
 ## Derechos y atribución
 
 La contribución declara CC BY 4.0, pero la atribución no debe reducirse al nombre del sitio. Los registros incluyen códigos que acreditan hablantes y fuentes publicadas. Cualquier derivado reutilizable debe conservar la atribución pertinente por registro cuando esté disponible.
