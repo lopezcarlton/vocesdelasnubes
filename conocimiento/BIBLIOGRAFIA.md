@@ -1,7 +1,7 @@
 # BIBLIOGRAFIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.5  
+**Versión:** 1.6  
 **Estado:** Borrador consolidado  
 **Fecha:** 2026-09-05  
 
@@ -98,7 +98,8 @@ Las fuentes registradas como revisadas a profundidad incluyen:
 - BIB019 — ALAI (1978).
 - BIB041 — Muntzel (1998).
 - BIB044 — Swain (1985).
-- BIB046 — Austin y Sallabank (2012).
+- BIB046 — Sallabank (2011; publicación online 2012).
+- BIB047 — McCarty y Lee (2014).
 - BIB052 — Calderón Corona (2021).
 - BIB065 — Bueno Holle (2019).
 
@@ -110,14 +111,20 @@ La profundidad actual de una fuente puede ser mayor que la lectura originalmente
 
 # 4. Bibliografía metodológica y pedagógica
 
-Los documentos de contexto mencionan como relevantes:
+La recuperación desde los informes institucionales permitió materializar ya las referencias exactas y memorias persistentes de lectura de tres fuentes centrales:
 
-- Krashen.
-- Swain.
-- Sallabank.
-- McCarty y Lee.
+- `BIB044` — Merrill Swain (1985), “Communicative competence: Some roles of comprehensible input and comprehensible output in its development”, en Gass & Madden (eds.), *Input in Second Language Acquisition*, pp. 235–253 → `SRC-SWAIN-1985-COMPREHENSIBLE-OUTPUT`.
+- `BIB046` — Julia Sallabank, “Language policy for endangered languages”, capítulo 14 de *The Cambridge Handbook of Endangered Languages*, pp. 277–290. La edición impresa es de 2011 y Cambridge registra publicación online en 2012 → `SRC-SALLABANK-2011-2012-LANGUAGE-POLICY-ENDANGERED`.
+- `BIB047` — Teresa L. McCarty y Tiffany S. Lee (2014), “Critical Culturally Sustaining/Revitalizing Pedagogy and Indigenous Education Sovereignty”, *Harvard Educational Review* 84(1):101–124 → `SRC-MCCARTY-LEE-2014-CSRP-EDUCATION-SOVEREIGNTY`.
 
-No se dispone en las fuentes de fichas completas suficientes para consolidar todas sus referencias exactas.
+Krashen permanece como referencia teórica mencionada en documentos pedagógicos, pero su identidad bibliográfica exacta y cobertura de lectura histórica todavía deben distinguirse antes de tratarlo como una fuente backfilleada equivalente a las tres anteriores.
+
+```text
+BIB044_EXACT_SOURCE = MATERIALIZED
+BIB046_EXACT_SOURCE = MATERIALIZED
+BIB047_EXACT_SOURCE = MATERIALIZED
+KRASHEN_HISTORICAL_READING_PROVENANCE = PENDING
+```
 
 ---
 
@@ -351,11 +358,31 @@ NO_GUESSED_BIB_IDS = true
 
 Se inició la recuperación sistemática de lecturas y hallazgos que habían sido reportados institucionalmente antes de que existiera la arquitectura actual `BIB → SRC → HALL`.
 
-Primer lote materializado:
+## 14.1 Primer lote — informe de mayo
 
 - `BIB001` → `SRC-MANZO-2009-XNEZA-RUTA-PALABRA` → `HALL-0194`–`HALL-0196`;
 - `BIB002` → `SRC-RAFAEL-PEREZ-ETAL-2024-WEB-APPLICATION-DIIDXAZA` → `HALL-0197`–`HALL-0199`;
 - `BIB018` → `SRC-PROYECTOLAOS-2018-PICKETT-VILLALOBOS` → `HALL-0200`–`HALL-0202`;
 - `BIB019` → `SRC-ALAI-1978-ILV-IMPERIALISMO` → `HALL-0203`–`HALL-0204`.
+
+`BIB016` y `BIB017` ya contaban con backfill semántico suficiente previo. `BIB041` se cerró en el segundo lote por requerir una corrección explícita de atribución.
+
+## 14.2 Segundo lote — Muntzel y marco pedagógico de junio-julio
+
+- `BIB041` → `SRC-MUNTZEL-1998-RESENA-GRAMATICA-POPULAR` → `HALL-0205`–`HALL-0207`;
+- `BIB044` → `SRC-SWAIN-1985-COMPREHENSIBLE-OUTPUT` → `HALL-0208`–`HALL-0210`;
+- `BIB046` → `SRC-SALLABANK-2011-2012-LANGUAGE-POLICY-ENDANGERED` → `HALL-0211`–`HALL-0213`;
+- `BIB047` → `SRC-MCCARTY-LEE-2014-CSRP-EDUCATION-SOVEREIGNTY` → `HALL-0214`–`HALL-0217`.
+
+Durante este lote se corrigieron cuatro simplificaciones de los informes históricos sin modificar retrospectivamente los informes entregados:
+
+1. la afirmación “sin corpus amplio y fiel no puede construirse una teoría” aparece en BIB041 en la voz de **Muntzel**, no como cita atribuible a Pickett;
+2. BIB044 sustenta `pushed output`, prueba de hipótesis y atención a la forma/sintaxis, pero `noticing the gap` como función formal corresponde a desarrollos posteriores de la hipótesis de output;
+3. BIB046 define la `phatic route` en términos de uso doméstico, socialización e identidad; clasificar a Voces como perteneciente a esa ruta es una interpretación del proyecto, no un hecho declarado por Sallabank;
+4. BIB047 documenta historias de vergüenza lingüística y exclusión, pero el pasaje revisado no demuestra la formulación más específica del informe según la cual esa vergüenza se adquirió durante la formación escolar de los docentes.
+
+Además, `HALL-0217` recupera un hallazgo relevante que no había quedado destacado en el informe: McCarty y Lee advierten contra usar la competencia lingüística como criterio de autenticidad indígena.
+
+## 14.3 Criterio aplicado
 
 El criterio aplicado fue volver al pasaje pertinente de la fuente original antes de promover cada hallazgo. Las implicaciones escritas en los informes históricos no se transformaron automáticamente en conocimiento vigente: cuando una formulación era interpretación del proyecto, inferencia excesiva o detalle no verificable en la fuente, quedó documentada como límite y no como HALL.
