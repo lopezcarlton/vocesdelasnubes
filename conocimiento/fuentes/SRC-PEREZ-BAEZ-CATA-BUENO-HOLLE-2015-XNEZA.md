@@ -101,6 +101,22 @@ SPANISH_STRESS_ORTHOGRAPHY_AS_TEMPLATE = unsafe
 XNEZA_STRESS_PROPOSAL != AUTOMATIC_CURRENT_NORM
 ```
 
+## Recuperación dirigida de ejemplo — 2026-09-04
+
+Una consulta puntual motivada por un hueco observado en el Analyzer reabrió únicamente el pasaje pertinente de *Teria*, conforme a `LAZY_TARGETED_LOADING`. El enunciado (127) contiene la superficie exacta:
+
+```text
+Cue’be’ zugaa sti binnilaanu cabidxiaa:
+```
+
+La fuente permite promover **atestación documental de la superficie `binnilaanu`**, registrada en `HALL-0186`. El pasaje consultado no proporciona segmentación morfológica ni glosa interlineal de esa forma. La existencia independiente de `laanu` en `HALL-0096` no autoriza componer por semejanza gráfica un análisis `binni + laanu`.
+
+```text
+XNEZA_EXAMPLE_127_ATTESTS_SURFACE(binnilaanu) = true
+XNEZA_EXAMPLE_127_SEGMENTS(binnilaanu) = false
+STRING_OVERLAP_WITH_LAANU != MORPHOLOGICAL_PROOF
+```
+
 ## Consecuencias para el dispositivo
 
 ```text
