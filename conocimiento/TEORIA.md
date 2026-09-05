@@ -1,17 +1,26 @@
 # TEORIA
 
 **Proyecto:** Voces de las Nubes  
-**Versión:** 1.8  
+**Versión:** 1.9  
 **Estado:** Borrador consolidado y evolutivo  
-**Fecha:** 2026-09-04  
+**Fecha:** 2026-09-05  
 
 ---
 
 # 1. Introducción
 
-Este documento registra los marcos intelectuales mencionados en los documentos de contexto y su influencia explícita sobre decisiones del proyecto.
+Este documento registra los marcos intelectuales mencionados en los documentos de contexto y su influencia explícita sobre decisiones y líneas de trabajo del proyecto.
 
-No constituye una revisión exhaustiva de las obras ni sustituye las fichas bibliográficas.
+No constituye una revisión exhaustiva de las obras ni sustituye las fichas bibliográficas, los hallazgos o las aplicaciones teóricas (`TEO`). Desde el backfill del 5 de septiembre de 2026 se distingue de manera explícita:
+
+```text
+BIB/SRC = fuente bibliográfica
+HALL = afirmación adjudicada de la fuente
+TEO = interpretación y uso dentro de Voces
+DEC/PRIN = adopción del proyecto cuando corresponda
+```
+
+Una afinidad entre una fuente y una decisión vigente no debe reconstruirse retrospectivamente como si la fuente hubiera sido la procedencia histórica de esa decisión.
 
 ---
 
@@ -28,34 +37,80 @@ Se retoman nociones relacionadas con:
 
 Estas ideas sustentan el énfasis inicial en escucha y comprensión.
 
+La identidad bibliográfica exacta y la cobertura histórica de lectura de Krashen todavía no han recibido el mismo backfill fuente → HALL → TEO realizado para Swain, Sallabank y McCarty–Lee. Por tanto, esta sección conserva carácter de antecedente teórico y debe precisarse antes de hacer atribuciones más finas.
+
 ## 2.2 Merrill Swain
 
-Se retoma la hipótesis del output.
+BIB044/Swain 1985 se incorpora ahora mediante `HALL-0208`–`HALL-0210` y `TEO-SWAIN-OUTPUT-VOCES`.
 
-La producción obliga al aprendiz a notar vacíos entre lo que quiere decir y lo que puede construir.
+La evidencia adjudicada sostiene que:
 
-Como aplicación de trabajo del proyecto, este marco ha contribuido a explorar:
+- comprensión y exposición abundantes pueden coexistir con debilidades productivas (`HALL-0208`);
+- el output comprensible puede empujar al aprendiz hacia una expresión más precisa, coherente y apropiada y aumentar la atención a los medios de expresión (`HALL-0209`);
+- Swain atribuye al output oportunidades de uso contextualizado y significativo, prueba de hipótesis y paso desde procesamiento puramente semántico hacia procesamiento sintáctico (`HALL-0210`).
+
+Como aplicación de trabajo, Voces explora:
 
 - pausas de producción;
+- intento antes o entre modelos;
 - recuperación activa;
 - diseño de enunciados producibles;
-- comparación con un modelo.
+- comparación con una realización validada.
 
-La eficacia y combinación concreta de estas prácticas dentro de Voces debe seguir evaluándose con bibliografía específica y aprendices; no se atribuye a Swain una receta didáctica cerrada para el proyecto.
+Esas operaciones **no son una receta prescrita por BIB044**. El formato concreto debe evaluarse con aprendices.
+
+La formulación anterior de esta vista decía que “la producción obliga al aprendiz a notar vacíos”. Esa frase mezclaba BIB044 con refinamientos posteriores de la hipótesis de output. `noticing/noticing the gap` como función formal no se adjudica a Swain 1985 en el estado bibliográfico actual.
+
+```text
+SWAIN_1985 = OUTPUT_RELEVANCE + PUSHED_OUTPUT + HYPOTHESIS_TESTING + SYNTACTIC_PROCESSING
+PAUSE_BEFORE_MODEL = PROJECT_APPLICATION
+NOTICING_FUNCTION = LATER_OUTPUT_REFINEMENT_NOT_BIB044_BY_DEFAULT
+```
 
 ## 2.3 Keren Rice, Leanne Hinton, Julia Sallabank y enfoques de revitalización
 
-Los documentos de contexto atribuyen a Sallabank una influencia sobre el vínculo entre lengua, vida cotidiana, documentación y revitalización.
+BIB046/Sallabank queda materializada mediante `HALL-0211`–`HALL-0213` y `TEO-SALLABANK-CORPUS-PLANNING-REVITALIZACION`.
 
-La aplicación concreta es priorizar usos reales y materiales vinculados a la transmisión.
+Sallabank permite distinguir:
+
+- **corpus planning:** incluye documentación, codificación, grafización, estandarización, modernización, desarrollo ortográfico, diccionarios, gramáticas y materiales de aprendizaje (`HALL-0211`);
+- **domain expansion:** ampliación de dominios, frecuentemente apoyada en escolarización y otras intervenciones (`HALL-0212`);
+- **phatic route:** uso en el hogar, socialización e identificación entre lengua e identidad (`HALL-0212`);
+- posibles efectos no deseados del apoyo oficial cuando genera dependencia o desplaza actividad comunitaria voluntaria (`HALL-0213`).
+
+La aplicación concreta a Voces es más precisa que la formulación anterior “priorizar usos reales y materiales vinculados a la transmisión”:
+
+1. los corpus y materiales de Voces pueden entenderse como contribuciones de `corpus planning`;
+2. su presencia escolar o disponibilidad pública no constituye por sí sola evidencia de revitalización;
+3. el trabajo cotidiano o conversacional no convierte automáticamente al proyecto en `phatic route`;
+4. cualquier afirmación sobre recuperación de transmisión familiar requiere evidencia específica de uso, socialización y transmisión en hogares o redes pertinentes.
+
+```text
+MATERIALS = CORPUS_PLANNING_CONTRIBUTION
+SCHOOL_DOMAIN_EXPANSION != FAMILY_TRANSMISSION_BY_DEFAULT
+EVERYDAY_CONTENT != PHATIC_ROUTE_BY_DEFAULT
+```
 
 ## 2.4 Teresa McCarty y Tiffany Lee
 
-Se retoman ideas de soberanía educativa indígena.
+BIB047 se incorpora mediante `HALL-0214`–`HALL-0217` y `TEO-MCCARTY-LEE-CSRP-COMUNIDAD`.
 
-La aplicación concreta es reconocer a los hablantes como autoridades y coautores, no como proveedores instrumentales de datos.
+McCarty y Lee proponen una pedagogía crítica culturalmente sostenida/revitalizadora (CSRP) que combina:
 
-## 2.5 Velma Pickett, Cheryl Black, Vicente Marcial y obras descriptivas del Didxazá
+- atención a relaciones asimétricas de poder y legados coloniales;
+- recuperación y revitalización de lenguas y conocimientos desplazados;
+- rendición de cuentas basada en la comunidad (`HALL-0214`);
+- atención no homogeneizante a intereses, recursos y necesidades expresados localmente (`HALL-0215`);
+- reconocimiento de dimensiones emocionales como vergüenza, pérdida, empatía o dolor en procesos de recuperación (`HALL-0216`);
+- crítica a esencializar la identidad indígena mediante la oposición hablante/no hablante (`HALL-0217`).
+
+La aplicación previa de esta vista decía que el marco conduce concretamente a “reconocer a los hablantes como autoridades y coautores, no como proveedores instrumentales de datos”. Esa formulación era demasiado directa. BIB047 sustenta rendición de cuentas comunitaria y necesidades definidas localmente, pero **no determina los roles concretos de colaboradores dentro de Voces**.
+
+Las reglas de autoría, poder de rechazo, modificación y trazabilidad de hablantes en Voces proceden de decisiones propias como `DEC-GRADIENTE-DISENO-DIDXAZA-CENTRADO`. Son compatibles con CSRP, pero su procedencia no se reescribe retrospectivamente.
+
+También se adopta como vigilancia teórica que la competencia en didxazá no debe convertirse en criterio de autenticidad cultural.
+
+## 2.5 Velma Pickett, Cheryl Black, Vicente Marcial, Martha C. Muntzel y obras descriptivas del Didxazá
 
 La Gramática popular del zapoteco del Istmo se utiliza como referencia estructural.
 
@@ -69,23 +124,39 @@ Sirve para:
 - orientar preguntas;
 - controlar análisis.
 
+BIB041/Muntzel explicita además que una gramática popular busca presentar de manera práctica y accesible datos básicos y estructura general para no especialistas (`HALL-0205`) y sostiene metodológicamente la importancia de un corpus amplio y fiel para construir teoría (`HALL-0206`).
+
+`TEO-MUNTZEL-CORPUS-DESCRIPCION` aplica estas ideas sin convertirlas en una regla de exhaustividad para COR002: descripción, corpus y currículo son funciones distintas.
+
+La afirmación de prestigio lingüístico reproducida por Muntzel procede del Vocabulario, no de evidencia primaria propia de la reseña (`HALL-0207`).
+
+```text
+DESCRIPTIVE_GRAMMAR != PEDAGOGICAL_SEQUENCE
+BROAD_FAITHFUL_CORPUS = MUNTZEL_METHODOLOGICAL_POSITION
+BROAD_PROJECT_COVERAGE != BEGINNER_CORPUS_EXHAUSTIVENESS
+```
+
 ## 2.6 Pickett, Villalobos y Marlett
 
-La descripción fonética citada fundamenta decisiones sobre:
+La descripción fonética citada fundamenta decisiones y análisis sobre:
 
 - tres tonos fonémicos;
-- nomenclatura A, B y BA;
+- contraste entre análisis fonológico, superficie fonética y ortografía;
 - relevancia de perfiles de hablantes;
-- necesidad de preservar rasgos fonéticos en audio.
+- necesidad de preservar información fonética y prosódica en audio.
+
+La terminología y notación concreta se mantienen subordinadas a las fuentes y HALL adjudicados correspondientes; no se extrapolan automáticamente como norma ortográfica.
 
 ## 2.7 Gabriela Pérez Báez, Víctor Cata y otros
 
 Las fuentes citadas sustentan:
 
-- complejidad de la transcripción;
-- participación de hablantes en decisiones de segmentación y escritura;
-- distinción entre etimología y pronunciación fluida en la forma Didxazá;
-- necesidad de coautoría en transcripciones.
+- complejidad de la transcripción y segmentación;
+- participación de hablantes en decisiones de escritura y análisis;
+- separación entre palabra fonológica, gramatical y ortográfica;
+- necesidad de no convertir análisis lingüístico en prescripción ortográfica automática.
+
+Las reglas concretas de co-diseño y autoría de Voces se adoptan mediante decisiones propias del proyecto y no se atribuyen en bloque a una sola fuente bibliográfica.
 
 ## 2.8 ALAI y lectura crítica del Instituto Lingüístico de Verano
 
@@ -96,21 +167,25 @@ El proyecto adopta una postura crítica:
 - evita presentar esas obras como neutrales;
 - no las descarta cuando resultan útiles.
 
+El backfill de BIB019 distingue además entre lo que el documento político de ALAI **afirma sobre el ILV/WBT** y lo que puede tratarse como hecho histórico independientemente corroborado. La fuente documenta explícitamente una lectura en la que lingüística, alfabetización, traducción bíblica y evangelización aparecen articuladas dentro de una estrategia misionera, pero sus tesis políticas generales no se convierten automáticamente en hechos neutrales del proyecto.
+
 ---
 
-# 3. Conceptos adoptados
+# 3. Conceptos adoptados o aplicados con reservas
 
-- Input comprensible.
-- Producción como mecanismo relevante de aprendizaje.
-- Noticing derivado del intento de producción.
-- Filtro afectivo y aprendizaje de baja presión.
+- Input comprensible, pendiente de backfill bibliográfico exacto en la línea Krashen.
+- Producción como mecanismo relevante de aprendizaje (`HALL-0208`–`HALL-0210`).
+- Output empujado hacia mayor precisión y prueba de hipótesis (`HALL-0209`, `HALL-0210`).
+- Atención a medios de expresión durante la producción; no se identifica automáticamente con la función posterior de `noticing the gap`.
+- Filtro afectivo y aprendizaje de baja presión, todavía con provenance bibliográfica por precisar.
 - Reutilización de patrones.
-- Aprendizaje situado.
-- Función comunicativa.
-- Participación comunitaria.
-- Soberanía educativa indígena.
-- Oralidad como fuente primaria.
-- Gramática descriptiva como referencia, no como currículo.
+- Aprendizaje situado y función comunicativa.
+- Participación y rendición de cuentas comunitaria como marco de evaluación teórica (`HALL-0214`, `HALL-0215`).
+- Soberanía educativa indígena como marco de BIB047, sujeto a contextualización local.
+- No esencializar identidad indígena mediante competencia lingüística (`HALL-0217`).
+- Distinción entre materiales/corpus planning y resultados reales de revitalización (`HALL-0211`, `HALL-0212`).
+- Oralidad como fuente primaria conforme a la Jerarquía de Verdad del proyecto.
+- Gramática descriptiva como referencia, no como currículo (`HALL-0205`).
 - Validación según autoridad pertinente.
 
 ---
@@ -119,7 +194,7 @@ El proyecto adopta una postura crítica:
 
 ## 4.1 Gramática como secuencia de enseñanza
 
-Se descarta ordenar el aprendizaje siguiendo capítulos descriptivos.
+Se descarta ordenar el aprendizaje siguiendo capítulos descriptivos. El hecho de que una gramática sea accesible o “popular” no la convierte en un currículo de adquisición (`HALL-0205`).
 
 ## 4.2 Listas temáticas como arquitectura principal
 
@@ -127,17 +202,27 @@ Se descartan como estructura suficiente para niveles posteriores.
 
 ## 4.3 Traducción lineal desde el español
 
-Se descarta como proceso central de creación.
+Se descarta como proceso central de creación. La decisión vigente se formula con mayor precisión en `DEC-GRADIENTE-DISENO-DIDXAZA-CENTRADO`, que reemplazó una prohibición binaria por un gradiente de precomposición, autoría y trazabilidad.
 
 ## 4.4 Exposición pasiva como método suficiente
 
-Se descarta porque la producción y la recuperación cumplen funciones que deben evaluarse dentro de una pedagogía más amplia.
+Se descarta tratar comprensión/exposición como explicación suficiente de la competencia productiva. BIB044 documenta precisamente que aprendices con exposición y comprensión altas podían conservar debilidades productivas (`HALL-0208`).
 
-## 4.5 Fuente bibliográfica como autoridad absoluta
+Esto no implica descartar el input; implica asignar a la producción una función adicional.
+
+## 4.5 Material pedagógico como evidencia automática de revitalización
+
+Se descarta inferir que la existencia de corpus, aplicaciones, materiales escolares o recursos de aprendizaje demuestra por sí sola recuperación de transmisión intergeneracional. BIB046 obliga a distinguir corpus planning, expansión de dominios y uso familiar/socializador (`HALL-0211`, `HALL-0212`).
+
+## 4.6 Competencia lingüística como criterio de autenticidad indígena
+
+Se descarta utilizar el dominio del didxazá como prueba de autenticidad cultural o como fundamento para degradar la pertenencia de personas con competencia limitada. Esta vigilancia se deriva de `HALL-0217` y debe contextualizarse localmente.
+
+## 4.7 Fuente bibliográfica como autoridad absoluta
 
 Se descarta para usos contemporáneos cuando contradice evidencia comunitaria de autoridad pertinente.
 
-## 4.6 Herramientas automáticas como evidencia
+## 4.8 Herramientas automáticas como evidencia
 
 Se descarta considerar sus resultados como validación lingüística o teórica.
 
@@ -145,15 +230,20 @@ Se descarta considerar sus resultados como validación lingüística o teórica.
 
 # 5. Influencia sobre la metodología
 
-Los marcos teóricos influyen en:
+Los marcos teóricos influyen actualmente en:
 
-- prioridad de escucha;
-- exploración de pausas y producción;
-- diseño de enunciados producibles;
-- selección de situaciones reales;
-- reconocimiento de hablantes como coautores;
-- uso crítico de bibliografía;
-- separación entre gramática y progresión pedagógica.
+- prioridad de escucha sin tratar el input como mecanismo suficiente para toda competencia;
+- exploración de producción activa y oportunidades de `pushed output`;
+- diseño de enunciados producibles y contextualizados;
+- prueba de hipótesis mediante producción, sin atribuir a Swain el formato técnico exacto de Voces;
+- selección de situaciones reales y revisión de su adecuación local;
+- atención a necesidades expresadas por públicos y colaboradores concretos;
+- uso crítico de bibliografía y separación entre descripción, aplicación teórica y decisión;
+- separación entre gramática y progresión pedagógica;
+- distinción entre producción de materiales y evidencia de revitalización efectiva;
+- cuidado de no convertir competencia lingüística en criterio identitario.
+
+Las reglas operativas de autoría, rechazo y trazabilidad de hablantes se sostienen en decisiones vigentes del proyecto. La bibliografía puede mostrar compatibilidad y aportar marcos interpretativos, pero no reemplaza esa procedencia.
 
 ---
 
@@ -166,6 +256,10 @@ La evolución teórica y metodológica contribuyó a reemplazar:
 - cantidad por productividad y reutilización;
 - traducción lineal como molde por elicitación y co-diseño sensibles al Didxazá;
 - repetición superficial como único criterio por reutilización estructural y recuperación contextualizada.
+
+BIB041 añade una orientación metodológica general: la teoría necesita evidencia amplia y fiel del idioma (`HALL-0206`). Voces interpreta esa orientación a escala de proyecto, no como exigencia de que cada corpus pedagógico sea exhaustivo. `DEC-COBERTURA-CORPUS-PROGRESIVA` sigue separando el recorte del piloto principiante de la aspiración global de cobertura.
+
+BIB046 permite además reconocer que producir corpus y materiales de aprendizaje es una forma de `corpus planning` (`HALL-0211`). Ese reconocimiento describe el tipo de actividad; no prueba eficacia revitalizadora.
 
 Las **microescenas** permanecen disponibles como fragmentos derivados, unidades de práctica o estímulos breves cuando resultan útiles. No son la unidad primaria obligatoria de COR002; esa función corresponde actualmente a la conversación completa conforme a `CORPUS.md`.
 
@@ -183,7 +277,13 @@ La pedagogía vigente trabaja con una combinación revisable de:
 - contexto comunicativo;
 - repetición y espaciamiento cuando estén pedagógicamente justificados para la tarea y el público.
 
+BIB044 respalda la relevancia del output, la presión comunicativa hacia mayor precisión, la prueba de hipótesis y el procesamiento sintáctico (`HALL-0208`–`HALL-0210`). No respalda por sí sola la regla exacta de pausa antes del modelo ni la eficacia de la recuperación espaciada.
+
 No se considera cerrado todavía el papel exacto de la memorización, la recuperación activa o el espaciamiento dentro de Voces. `BL-025` debe distinguir repetición mecánica, recuperación, práctica espaciada, secuencias formulaicas, automatización, transferencia y tedio, y contrastar esas decisiones con bibliografía y aprendices reales.
+
+BIB047 añade dos controles relevantes para el diseño pedagógico: atender necesidades locales sin homogeneizar (`HALL-0215`) y evitar que niveles de competencia se conviertan en jerarquías de autenticidad cultural (`HALL-0217`). Estas aplicaciones requieren validación contextual en Juchitán y no se transforman automáticamente en reglas curriculares universales.
+
+BIB046 añade una limitación de alcance: materiales escolares y aprendizaje pueden contribuir a planificación y expansión de dominios, pero no equivalen por sí solos a recuperación de transmisión familiar (`HALL-0211`, `HALL-0212`).
 
 Por tanto:
 
@@ -192,6 +292,9 @@ MEMORIZATION = ACTIVE_METHOD_COMPONENT
 MEMORIZATION != COMPLETE_PEDAGOGY
 SPACING_EFFECT_IN_VOCES = TO_BE_VALIDATED
 RETENTION != ENGAGEMENT
+OUTPUT_RELEVANCE != VALIDATED_AUDIO_FORMAT
+SCHOOL_LEARNING != FAMILY_TRANSMISSION_BY_DEFAULT
+PROFICIENCY != CULTURAL_AUTHENTICITY
 ```
 
 ---
@@ -200,11 +303,14 @@ RETENTION != ENGAGEMENT
 
 - Validez específica de estos marcos para aprendices de Didxazá.
 - Relación entre aprendizaje de segunda lengua y revitalización.
+- Evidencia real de uso familiar, socialización y transmisión intergeneracional asociada a materiales de Voces.
 - Papel de la variación dialectal en la progresión.
 - Equilibrio entre ortografía, fonología y escucha.
 - Justificación y límites pedagógicos de memoria, recuperación y espaciamiento (`BL-025`).
 - Evaluación empírica de materiales y metodología con aprendices.
 - Alcance real de los materiales y la metodología del proyecto en procesos de transmisión intergeneracional.
+- Validación local de las aplicaciones derivadas de CSRP y de otros marcos formulados en contextos distintos a Juchitán.
+- Identidad bibliográfica exacta y backfill de los marcos de Krashen y de otras referencias pedagógicas aún no materializadas.
 
 ---
 
@@ -213,14 +319,28 @@ RETENTION != ENGAGEMENT
 No puede documentarse todavía:
 
 - referencias bibliográficas completas para todos los autores mencionados;
-- citas textuales;
-- páginas específicas para todas las afirmaciones;
+- citas textuales y páginas específicas para todas las afirmaciones históricas de esta vista;
 - comparación sistemática entre autores;
 - revisión exhaustiva de literatura;
 - posición final sobre adquisición de segundas lenguas frente a revitalización;
-- resultados empíricos que confirmen la aplicación de los marcos.
+- resultados empíricos que confirmen la aplicación de los marcos en aprendices de didxazá;
+- evidencia suficiente para atribuir efectos de transmisión familiar a los materiales actuales;
+- una traducción local cerrada de CSRP a la gobernanza específica de Voces.
 
 El cierre de `BL-016` significa que existe una **base teórica operativa suficiente para trabajar**, no que la teoría esté terminada o sea inmutable. Las deudas concretas siguen registrándose en tareas específicas como `BL-021`, `BL-022`, `BL-023` y `BL-025`.
+
+## 9.1 Backfill de aplicaciones teóricas — 2026-09-05
+
+La recuperación de los informes institucionales permitió materializar por primera vez la capa `TEO` para cuatro lecturas que ya influían en el discurso del proyecto:
+
+- `TEO-MUNTZEL-CORPUS-DESCRIPCION` ← `HALL-0205`–`HALL-0207`;
+- `TEO-SWAIN-OUTPUT-VOCES` ← `HALL-0208`–`HALL-0210`;
+- `TEO-SALLABANK-CORPUS-PLANNING-REVITALIZACION` ← `HALL-0211`–`HALL-0213`;
+- `TEO-MCCARTY-LEE-CSRP-COMUNIDAD` ← `HALL-0214`–`HALL-0217`.
+
+Esta actualización corrige una práctica anterior en la que la vista mezclaba a veces **lo que decía una fuente** con **la forma concreta en que Voces decidió aplicarla**.
+
+No se crearon nuevas `DEC` ni `PRIN` únicamente porque la bibliografía fuera compatible con compromisos existentes. Cuando una decisión ya tenía otra procedencia, esa procedencia se conserva.
 
 ---
 
